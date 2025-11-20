@@ -1,89 +1,97 @@
 {
-  "challenge_metadata": {
-    "title": "UX Challenge",
-    "organization": "meliuxteam",
-    "purpose": [
-      "Entender como é trabalhar na equipe de UX",
-      "Avaliar tecnicamente habilidades de design e/ou escrita"
-    ],
-    "disclaimer": "Exercício de simulação com problemas fictícios ou já resolvidos. Direitos autorais permanecem com o candidato.",
-    "document_type": "Design Challenge Brief"
+  "project_documentation": {
+    "id": "meli_ux_challenge_2024",
+    "title": "UX Challenge - Meli+",
+    "context": "Exercício prático de design e UX writing para avaliação técnica.",
+    "status": "Simulação",
+    "last_update": "Consolidado de múltiplas fontes (Artigo + PDF + Imagem de Contexto)"
   },
-  "content": {
-    "project_scope": {
-      "main_objective": "Melhorar a experiência do Meli+",
-      "product_definition": {
-        "name": "Meli+",
-        "description": "Novo programa de benefícios do Mercado Livre e Mercado Pago. Assinatura mensal.",
-        "plans": [
-          {
-            "type": "Plano 1",
-            "benefits": [
-              "Vantagens no frete em todas as compras",
-              "Parcelas extras sem juros",
-              "Cashback em criptomoedas"
-            ]
-          },
-          {
-            "type": "Plano 2",
-            "benefits": [
-              "Todos os benefícios do plano anterior",
-              "Acesso a conteúdos de streaming",
-              "Descontos promocionais de parceiros renomados"
-            ]
-          }
-        ]
-      }
+  "part_1_methodology_reference": {
+    "source_article": {
+      "title": "Senhoras, crianças e conteúdo em primeiro lugar",
+      "subtitle": "Por que o design de experiência do usuário começa com a narrativa",
+      "author": "Emiliano Cosenza",
+      "core_philosophy": "Content-First Design",
+      "summary": "A experiência do usuário deve ser linear e baseada em uma narrativa, assim como uma história, antes de se desenhar telas."
     },
-    "instructions": {
-      "step_1_context": {
-        "scenario": "Trabalho em conjunto com um analista (designer ou ux writer) que apresentou explorações iniciais.",
-        "context_materials": "Landing do Meli+ e fluxo para adicionar meio de pagamento alternativo.",
-        "action_required": "Baixar o arquivo Figma (proposta) e importá-lo para os Rascunhos."
+    "key_techniques_to_apply": [
+      {
+        "technique": "Conteúdo em Primeiro Lugar",
+        "description": "Definir a história completa que conecta as ações do usuário antes de criar wireframes ou UI."
       },
-      "step_2_execution": {
-        "goal": "Criar uma proposta inovadora que resolva as oportunidades identificadas.",
-        "requirements": [
-          "Solução visual impactante e persuasiva",
-          "Justificativas das decisões tomadas",
-          "Auxílio na tomada de decisão"
-        ],
-        "deliverables": [
-          {
-            "task_id": "A",
-            "description": "Crie uma landing inovadora para incentivar os usuários do Mercado Livre ou Mercado Pago a inscreverem-se no programa Meli+."
-          },
-          {
-            "task_id": "B",
-            "description": "Desenvolva um fluxo para adicionar um meio de pagamento alternativo ao principal na seção de configurações da assinatura, garantindo que a pessoa usuária não perca o acesso aos benefícios."
-          }
+      {
+        "technique": "O Briefing de Conteúdo",
+        "required_definitions": [
+          "Objetivos do negócio",
+          "Público-alvo (Persona)",
+          "Sentimentos (Pontos de dor e Humor/Mood)"
         ]
       },
-      "step_3_strategy": {
-        "action": "Faça uma proposta de priorização das iterações criadas.",
-        "requirement": "Explique o motivo dessa hierarquização."
+      {
+        "technique": "Protótipo de Conteúdo",
+        "description": "Escrever a interação como um roteiro de teatro (texto) para validar o fluxo antes do visual."
       }
-    },
-    "submission": {
-      "format": "Arquivo Figma",
-      "method": "Enviado por e-mail para analisar a construção da proposta."
-    },
-    "tips_and_guidelines": {
-      "resources": [
-        "Apps do Mercado Livre e Mercado Pago",
-        "Behance (Sistema de Design e Identidade)",
-        "Artigo no Medium (Content First)"
-      ],
-      "core_values": [
-        "Consistência e história são importantes",
-        "Vanguarda do design UX",
-        "Perfil curioso e inovador"
-      ],
-      "design_direction": [
-        "A identidade do Meli+ deve relacionar-se com Mercado Livre e Mercado Pago",
-        "Liberdade para quebrar padrões de design",
-        "Objetivo de despertar desejo no usuário"
+    ]
+  },
+  "part_2_challenge_brief": {
+    "product_definition": {
+      "name": "Meli+",
+      "description": "Novo programa de benefícios (assinatura mensal) do Mercado Livre e Mercado Pago.",
+      "value_proposition": [
+        {
+          "plan_type": "Básico",
+          "features": [
+            "Frete grátis/vantajoso em todas as compras",
+            "Parcelas extras sem juros",
+            "Cashback em criptomoedas"
+          ]
+        },
+        {
+          "plan_type": "Premium (Básico + Streaming)",
+          "features": [
+            "Todos os benefícios do plano básico",
+            "Acesso a conteúdos de streaming (plataformas renomadas)",
+            "Grandes descontos promocionais"
+          ]
+        }
       ]
+    },
+    "strategic_goals": {
+      "business_objectives": {
+        "acquisition": "Aumentar a adesão de novos assinantes do Meli+.",
+        "retention_critical": "Melhorar a taxa de cancelamentos involuntários causados por pendências no pagamento (erro ou falta de cobrança)."
+      },
+      "ux_objectives": {
+        "landing_page": "Garantir que os usuários compreendam e escolham o plano de benefícios mais conveniente para eles.",
+        "admin_panel": "Garantir que os usuários já cadastrados incluam um meio de pagamento alternativo (backup) para evitar interrupção do serviço."
+      }
+    },
+    "target_audience": {
+      "profiles": "Usuários do Mercado Livre e Mercado Pago.",
+      "emotional_context": "Desejo por benefícios, necessidade de confiança no pagamento, busca por entretenimento."
+    },
+    "tasks_and_deliverables": {
+      "task_1_acquisition": {
+        "component": "Landing Page Meli+",
+        "objective": "Criar uma proposta inovadora e persuasiva para incentivar a inscrição.",
+        "requirements": "Visual impactante, quebra de padrões, despertar desejo."
+      },
+      "task_2_retention": {
+        "component": "Fluxo de Configuração de Pagamento",
+        "objective": "Desenvolver fluxo para adicionar meio de pagamento secundário.",
+        "context": "Ocorre na seção de configurações da assinatura.",
+        "success_metric": "O usuário não perder o acesso aos benefícios por falha no cartão principal."
+      },
+      "task_3_strategy": {
+        "component": "Racional de Priorização",
+        "objective": "Propor uma ordem de iterações e justificar a hierarquização das tarefas."
+      }
+    },
+    "design_guidelines": {
+      "brand_consistency": "A identidade deve conversar tanto com Mercado Livre quanto com Mercado Pago.",
+      "innovation_level": "Alta. Encoraja-se quebrar padrões de design para ser atraente.",
+      "methodology": "Utilizar abordagem 'Content First' (baseada no artigo de referência).",
+      "output_format": "Arquivo Figma importado e editado."
     }
   }
 }
