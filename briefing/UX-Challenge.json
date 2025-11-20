@@ -1,0 +1,89 @@
+{
+  "challenge_metadata": {
+    "title": "UX Challenge",
+    "organization": "meliuxteam",
+    "purpose": [
+      "Entender como é trabalhar na equipe de UX",
+      "Avaliar tecnicamente habilidades de design e/ou escrita"
+    ],
+    "disclaimer": "Exercício de simulação com problemas fictícios ou já resolvidos. Direitos autorais permanecem com o candidato.",
+    "document_type": "Design Challenge Brief"
+  },
+  "content": {
+    "project_scope": {
+      "main_objective": "Melhorar a experiência do Meli+",
+      "product_definition": {
+        "name": "Meli+",
+        "description": "Novo programa de benefícios do Mercado Livre e Mercado Pago. Assinatura mensal.",
+        "plans": [
+          {
+            "type": "Plano 1",
+            "benefits": [
+              "Vantagens no frete em todas as compras",
+              "Parcelas extras sem juros",
+              "Cashback em criptomoedas"
+            ]
+          },
+          {
+            "type": "Plano 2",
+            "benefits": [
+              "Todos os benefícios do plano anterior",
+              "Acesso a conteúdos de streaming",
+              "Descontos promocionais de parceiros renomados"
+            ]
+          }
+        ]
+      }
+    },
+    "instructions": {
+      "step_1_context": {
+        "scenario": "Trabalho em conjunto com um analista (designer ou ux writer) que apresentou explorações iniciais.",
+        "context_materials": "Landing do Meli+ e fluxo para adicionar meio de pagamento alternativo.",
+        "action_required": "Baixar o arquivo Figma (proposta) e importá-lo para os Rascunhos."
+      },
+      "step_2_execution": {
+        "goal": "Criar uma proposta inovadora que resolva as oportunidades identificadas.",
+        "requirements": [
+          "Solução visual impactante e persuasiva",
+          "Justificativas das decisões tomadas",
+          "Auxílio na tomada de decisão"
+        ],
+        "deliverables": [
+          {
+            "task_id": "A",
+            "description": "Crie uma landing inovadora para incentivar os usuários do Mercado Livre ou Mercado Pago a inscreverem-se no programa Meli+."
+          },
+          {
+            "task_id": "B",
+            "description": "Desenvolva um fluxo para adicionar um meio de pagamento alternativo ao principal na seção de configurações da assinatura, garantindo que a pessoa usuária não perca o acesso aos benefícios."
+          }
+        ]
+      },
+      "step_3_strategy": {
+        "action": "Faça uma proposta de priorização das iterações criadas.",
+        "requirement": "Explique o motivo dessa hierarquização."
+      }
+    },
+    "submission": {
+      "format": "Arquivo Figma",
+      "method": "Enviado por e-mail para analisar a construção da proposta."
+    },
+    "tips_and_guidelines": {
+      "resources": [
+        "Apps do Mercado Livre e Mercado Pago",
+        "Behance (Sistema de Design e Identidade)",
+        "Artigo no Medium (Content First)"
+      ],
+      "core_values": [
+        "Consistência e história são importantes",
+        "Vanguarda do design UX",
+        "Perfil curioso e inovador"
+      ],
+      "design_direction": [
+        "A identidade do Meli+ deve relacionar-se com Mercado Livre e Mercado Pago",
+        "Liberdade para quebrar padrões de design",
+        "Objetivo de despertar desejo no usuário"
+      ]
+    }
+  }
+}
