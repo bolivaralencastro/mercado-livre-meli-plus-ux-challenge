@@ -11,9 +11,10 @@ Este repositório documenta o estudo de caso completo de UX para o **Meli+**, o 
 - 📈 Melhorar a percepção de valor do programa
 
 ### 📅 Timeline do Projeto
-- **Duração:** 7 dias (sprint intensivo) + 2 dias (revisão)
-- **Fases:** 8 fases organizadas e otimizadas
-- **[Ver Timeline Completa](./PROJETO-TIMELINE.md)** - Cronograma detalhado para entrega em 7 dias
+- **Período:** 20 a 26 de novembro de 2025 (7 dias calendário)
+- **Prazo final:** 26 de novembro às 22h
+- **Fases:** 8 fases organizadas conforme disponibilidade real
+- **[Ver Timeline Completa](./PROJETO-TIMELINE.md)** - Cronograma personalizado com datas e horários específicos
 - **[Configurar GitHub Project](./GITHUB-PROJECT-SETUP.md)** - Guia para criar o projeto com timeline
 
 ---

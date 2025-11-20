@@ -4,10 +4,26 @@
 
 Este documento define a timeline completa do projeto de UX para o Meli+, organizando todas as etapas necessárias para a entrega do resultado final do desafio proposto pelo Mercado Livre.
 
-**Duração Total:** 7 dias (1 semana sprint intensivo)  
-**Equipe:** Designer UX/UI solo ou pequena equipe  
-**Objetivo:** Criar documentação completa de UX para o Meli+ com foco em velocidade e qualidade  
-**Meta:** Finalizar em 5-6 dias para permitir 1-2 dias de revisão com profissional e testes com usuários
+**Período:** 20 de novembro (quarta) a 26 de novembro (terça) - 7 dias calendário  
+**Prazo Final:** 26 de novembro  
+**Equipe:** Designer UX/UI solo  
+**Objetivo:** Criar documentação completa de UX para o Meli+ aproveitando disponibilidade variável  
+
+### 📅 Cronograma Personalizado
+
+**Dias de alta disponibilidade (trabalho intensivo):**
+- **Quarta, 20/11 (HOJE - FERIADO):** 10-12h disponíveis ⭐
+- **Sábado, 23/11:** 10-12h disponíveis ⭐
+- **Domingo, 24/11:** 10-12h disponíveis ⭐
+
+**Dias de disponibilidade limitada (apenas noite):**
+- **Quinta, 21/11:** 3-4h à noite (trabalho 8h-17h)
+- **Segunda, 25/11:** 3-4h à noite (trabalho 8h-17h)
+- **Terça, 26/11:** 3-4h à noite (trabalho 8h-17h) + ENTREGA FINAL
+
+**Total estimado:** ~46-52 horas de trabalho ao longo de 7 dias
+
+**Meta:** Finalizar trabalho principal até domingo (24/11) para usar segunda e terça (25-26/11) para revisão final e ajustes
 
 ---
 
@@ -47,421 +63,395 @@ Este documento define a timeline completa do projeto de UX para o Meli+, organiz
 
 ---
 
-## 📆 Timeline Detalhada por Fase
+## 📆 Timeline Detalhada por Fase - Cronograma Real
 
-### Dia 1 (Manhã): Fase 1 - Briefing e Alinhamento
-**Período:** Dia 1 - Manhã (4h)  
-**Status:** 🟢 Concluído  
+### 🗓️ Quarta-feira, 20/11 (FERIADO - 12h disponíveis)
+
+#### Manhã (4h): Fase 1 - Briefing e Alinhamento
+**Horário:** 8h-12h  
+**Status:** 🔵 Planejado  
 **Responsável:** Designer UX
 
-#### Objetivos
+**Objetivos:**
 - Definir escopo e objetivos do projeto
 - Estabelecer métricas de sucesso
 - Criar documentação inicial
 
-#### Entregas
-- ✅ Documento de briefing completo
-- ✅ Objetivos de negócio documentados
-- ✅ KPIs estabelecidos
-- ✅ Cronograma inicial
+**Entregas:**
+- [ ] Documento de briefing completo
+- [ ] Objetivos de negócio documentados
+- [ ] KPIs estabelecidos
+- [ ] Cronograma validado
 
-#### Marcos (Milestones)
-- **M1.1:** Briefing documentado (Manhã do Dia 1)
-
----
-
-### Dia 1 (Tarde) - Dia 2: Fase 2 - Pesquisa e Descoberta
-**Período:** Dia 1 Tarde + Dia 2 (12h total)  
-**Status:** 🟢 Concluído  
+#### Tarde (8h): Fase 2 - Pesquisa e Descoberta (INÍCIO)
+**Horário:** 13h-21h  
+**Status:** 🔵 Planejado  
 **Responsável:** Designer UX
 
-#### Objetivos
-- Entender profundamente os usuários através de pesquisa secundária
-- Mapear jornadas atuais e dores
-- Analisar concorrência
-- Coletar dados de fontes existentes
+**Objetivos:**
+- Desk research intensivo
+- Análise de concorrência
+- Início da definição de personas
 
-#### Entregas
-- ✅ Pesquisa desk research realizada
-- ✅ Benchmark de 3-5 concorrentes principais (Amazon Prime, Rappi Prime, etc.)
-- ✅ Personas definidas baseadas em dados secundários
-- ✅ Jornadas de usuário mapeadas (as-is)
-- ✅ Relatório de insights e descobertas
+**Tarefas:**
+- [ ] Analisar dados existentes sobre Meli+
+- [ ] Revisar reviews e feedback de usuários online
+- [ ] Benchmark Amazon Prime (análise completa)
+- [ ] Benchmark Rappi Prime (análise completa)
+- [ ] Começar benchmark de mais 2-3 concorrentes
+- [ ] Consolidar insights principais
 
-#### Tarefas Aceleradas
-1. **Pesquisa Secundária** (Dia 1 Tarde - 4h)
-   - [ ] Analisar dados existentes sobre Meli+
-   - [ ] Revisar reviews e feedback de usuários online
-   - [ ] Analisar fóruns e redes sociais
-   - [ ] Consolidar insights principais
-
-2. **Benchmark Competitivo** (Dia 2 Manhã - 4h)
-   - [ ] Analisar Amazon Prime (features, pricing, UX)
-   - [ ] Analisar Rappi Prime
-   - [ ] Analisar 2-3 concorrentes adicionais
-   - [ ] Documentar melhores práticas
-   - [ ] Criar matriz comparativa
-
-3. **Síntese** (Dia 2 Tarde - 4h)
-   - [ ] Criar 3 personas baseadas em dados
-   - [ ] Mapear jornadas atuais (as-is)
-   - [ ] Identificar top 5 pain points
-   - [ ] Consolidar insights principais
-
-#### Marcos (Milestones)
-- **M2.1:** Benchmark finalizado (Dia 2 Manhã)
-- **M2.2:** Personas e insights prontos (Dia 2 Tarde)
+**Meta do dia:** Finalizar briefing + 60-70% da pesquisa
 
 ---
 
-### Dia 3: Fase 3 - Estratégia e Definição
-**Período:** Dia 3 (8h)  
-**Status:** 🟢 Concluído  
+### 🗓️ Quinta-feira, 21/11 (Noite - 4h disponíveis)
+
+#### Noite (4h): Fase 2 - Pesquisa e Descoberta (CONCLUSÃO) + Fase 3 (INÍCIO)
+**Horário:** 18h-22h  
+**Status:** 🔵 Planejado  
 **Responsável:** Designer UX
 
-#### Objetivos
-- Definir estratégia de design
-- Criar hipóteses de solução priorizadas
-- Estabelecer princípios de design
+**Objetivos:**
+- Finalizar pesquisa e benchmark
+- Criar personas
+- Iniciar estratégia
 
-#### Entregas
-- ✅ 3 pilares de design definidos (Clareza, Simplicidade, Confiança)
-- ✅ 5-8 hipóteses de solução documentadas
-- ✅ Matriz de priorização (impacto x esforço)
-- ✅ Princípios de design documentados
+**Tarefas:**
+- [ ] Finalizar benchmark de concorrentes
+- [ ] Criar 3 personas baseadas em dados
+- [ ] Mapear jornadas atuais (as-is)
+- [ ] Identificar top 5 pain points
+- [ ] Começar a definir pilares de design
 
-#### Tarefas Aceleradas
-1. **Definição Estratégica** (Manhã - 4h)
-   - [ ] Definir "How Might We" questions
-   - [ ] Estabelecer 3 pilares de design
-   - [ ] Criar princípios orientadores
-
-2. **Geração e Priorização de Hipóteses** (Tarde - 4h)
-   - [ ] Brainstorm de soluções potenciais
-   - [ ] Documentar 5-8 hipóteses principais
-   - [ ] Criar matriz impacto x esforço
-   - [ ] Priorizar para MVP
-
-#### Marcos (Milestones)
-- **M3.1:** Estratégia e hipóteses priorizadas (Dia 3 EOD)
+**Meta do dia:** Pesquisa 100% completa + estratégia iniciada (30%)
 
 ---
 
-### Dia 4: Fase 4 - Ideação e Wireframes
-**Período:** Dia 4 (8h)  
-**Status:** 🟢 Concluído  
+### 🗓️ Sexta-feira, 22/11 (Buffer/Descanso)
+
+**Dia de pausa estratégica** - Descansar e preparar para sprint de fim de semana intensivo  
+**Opcional:** Se necessário, fazer ajustes ou adiantar algo (2-3h)
+
+---
+
+### 🗓️ Sábado, 23/11 (12h disponíveis) ⭐
+
+#### Manhã e Tarde (8h): Fase 3 - Estratégia (CONCLUSÃO) + Fase 4 (INÍCIO)
+**Horário:** 8h-12h, 14h-18h  
+**Status:** 🔵 Planejado  
+**Responsável:** Designer UX
+
+**Objetivos:**
+- Finalizar estratégia
+- Criar todas as hipóteses
+- Iniciar wireframes
+
+**Tarefas - Estratégia (4h):**
+- [ ] Finalizar 3 pilares de design
+- [ ] Definir "How Might We" questions
+- [ ] Documentar 5-8 hipóteses principais
+- [ ] Criar matriz impacto x esforço
+- [ ] Priorizar para MVP
+
+**Tarefas - Ideação (4h):**
+- [ ] Mapear 3-4 fluxos principais
+- [ ] Começar wireframes (8-10 telas)
+- [ ] Definir arquitetura básica
+
+#### Noite (4h): Fase 4 - Ideação e Wireframes (CONTINUAÇÃO)
+**Horário:** 19h-23h  
+**Status:** 🔵 Planejado
+
+**Tarefas:**
+- [ ] Continuar wireframes (mais 5-7 telas)
+- [ ] Refinar fluxos de usuário
+- [ ] Validar arquitetura da informação
+
+**Meta do dia:** Estratégia 100% + Wireframes 80% completos (15-17 telas)
+
+---
+
+### 🗓️ Domingo, 24/11 (12h disponíveis) ⭐
+
+#### Manhã (4h): Fase 4 - Ideação (CONCLUSÃO)
+**Horário:** 8h-12h  
+**Status:** 🔵 Planejado  
 **Responsável:** Designer UX/UI
 
-#### Objetivos
-- Criar wireframes de baixa/média fidelidade
-- Mapear fluxos de usuário principais
-- Definir arquitetura da informação
+**Tarefas:**
+- [ ] Finalizar wireframes restantes
+- [ ] Completar todos os fluxos
+- [ ] Validação interna dos wireframes
+- [ ] Preparar para UI design
 
-#### Entregas
-- ✅ Wireframes de 15-20 telas principais
-- ✅ 3-5 fluxos de usuário completos mapeados
-- ✅ Arquitetura da informação definida
-
-#### Tarefas Aceleradas
-1. **Fluxos Principais** (Manhã - 3h)
-   - [ ] Fluxo: Landing page → Assinatura
-   - [ ] Fluxo: Dashboard de benefícios
-   - [ ] Fluxo: Gestão de pagamentos
-
-2. **Wireframes** (Tarde - 5h)
-   - [ ] Landing page otimizada
-   - [ ] Fluxo de assinatura (3 passos)
-   - [ ] Dashboard de assinante
-   - [ ] Gestão de meios de pagamento
-   - [ ] Telas principais (versões desktop/mobile)
-
-#### Marcos (Milestones)
-- **M4.1:** Wireframes e fluxos completos (Dia 4 EOD)
-
----
-
-### Dia 5: Fase 5 - UI Design de Alta Fidelidade
-**Período:** Dia 5 (10h - dia intensivo)  
-**Status:** 🟢 Concluído  
+#### Tarde e Noite (8h): Fase 5 - UI Design de Alta Fidelidade (INTENSIVO)
+**Horário:** 14h-22h  
+**Status:** 🔵 Planejado  
 **Responsável:** Designer UI
 
-#### Objetivos
-- Criar design visual de alta fidelidade das telas principais
-- Definir sistema de design básico
-- Produzir especificações visuais essenciais
+**Objetivos:**
+- Criar design de alta fidelidade completo
+- Design system básico
 
-#### Entregas
-- ✅ Telas de alta fidelidade (15-20 screens principais)
-- ✅ Sistema de design básico (cores, tipografia, componentes principais)
-- ✅ Especificações visuais essenciais
+**Tarefas - Design System (3h):**
+- [ ] Definir paleta de cores (baseada no Mercado Livre)
+- [ ] Estabelecer tipografia
+- [ ] Criar componentes base (buttons, inputs, cards)
+- [ ] Grid system básico
 
-#### Tarefas Aceleradas
-1. **Design System Básico** (Manhã - 3h)
-   - [ ] Definir paleta de cores
-   - [ ] Estabelecer tipografia
-   - [ ] Criar componentes base (buttons, inputs, cards)
+**Tarefas - UI Design (5h):**
+- [ ] Landing Page (desktop + mobile)
+- [ ] Fluxo de Assinatura (3 telas principais)
+- [ ] Dashboard de Economia (2 telas)
+- [ ] Gestão de Pagamentos (2-3 telas)
+- [ ] Estados principais (loading, error, success)
 
-2. **UI Design das Telas Principais** (Tarde - 7h)
-   - [ ] Landing Page (desktop + mobile)
-   - [ ] Fluxo de Assinatura (3 telas)
-   - [ ] Dashboard de Economia
-   - [ ] Gestão de Pagamentos
-   - [ ] Estados principais (loading, error, success)
-
-#### Marcos (Milestones)
-- **M5.1:** Telas principais finalizadas (Dia 5 EOD)
+**Meta do dia:** 100% das telas principais em alta fidelidade
 
 ---
 
-### Dia 6 (Manhã): Fase 6 - Prototipagem e Validação Rápida
-**Período:** Dia 6 Manhã (4h)  
-**Status:** 🟢 Concluído  
+### 🗓️ Segunda-feira, 25/11 (Noite - 4h disponíveis)
+
+#### Noite (4h): Fase 6 - Prototipagem + Fase 7 - Apresentação
+**Horário:** 18h-22h  
+**Status:** 🔵 Planejado  
 **Responsável:** Designer UX
 
-#### Objetivos
-- Criar protótipo interativo básico
-- Realizar validação rápida (se possível)
+**Objetivos:**
+- Criar protótipo interativo
+- Iniciar documentação e apresentação
 
-#### Entregas
-- ✅ Protótipo Figma interativo básico
-- ✅ Fluxos principais conectados
-- ✅ Validação heurística realizada
+**Tarefas - Prototipagem (2h):**
+- [ ] Conectar telas no Figma
+- [ ] Implementar interações básicas
+- [ ] Testar navegação principal
+- [ ] Validação heurística rápida
 
-#### Tarefas Aceleradas
-1. **Prototipagem** (3h)
-   - [ ] Conectar telas no Figma
-   - [ ] Implementar interações básicas
-   - [ ] Testar navegação
+**Tarefas - Apresentação (2h):**
+- [ ] Escrever narrativa do projeto
+- [ ] Começar case study
+- [ ] Documentar principais decisões
 
-2. **Validação Interna** (1h)
-   - [ ] Avaliação heurística
-   - [ ] Checklist de usabilidade
-   - [ ] Ajustes críticos
-
-#### Marcos (Milestones)
-- **M6.1:** Protótipo pronto (Dia 6 Meio-dia)
+**Meta do dia:** Protótipo navegável + 60% da apresentação
 
 ---
 
-### Dia 6 (Tarde): Fase 7 - Apresentação e Documentação
-**Período:** Dia 6 Tarde (4h)  
-**Status:** 🟢 Concluído  
+### 🗓️ Terça-feira, 26/11 (Noite - 4h + ENTREGA) 🎯
+
+#### Noite (4h): Fase 7 - Apresentação (CONCLUSÃO) + Fase 8 - Entrega Final
+**Horário:** 18h-22h  
+**Status:** 🔵 Planejado  
 **Responsável:** Designer UX
 
-#### Objetivos
-- Criar narrativa do projeto
-- Preparar apresentação executiva
-- Documentar processo e decisões
+**Objetivos:**
+- Finalizar apresentação
+- Consolidar documentação
+- Revisar tudo
+- ENTREGA FINAL
 
-#### Entregas
-- ✅ Narrativa completa do projeto
-- ✅ Apresentação/deck (slides ou documento)
-- ✅ Documentação do processo
+**Tarefas - Apresentação (1.5h):**
+- [ ] Finalizar narrativa
+- [ ] Completar case study
+- [ ] Preparar deck/slides se necessário
 
-#### Tarefas Aceleradas
-1. **Narrativa e Documentação** (3h)
-   - [ ] Escrever narrativa do projeto
-   - [ ] Documentar principais decisões
-   - [ ] Criar case study
+**Tarefas - Entrega Final (2.5h):**
+- [ ] Organizar repositório completamente
+- [ ] Criar índice navegável
+- [ ] Exportar todos os assets
+- [ ] Revisar documentação completa
+- [ ] Validar links e recursos
+- [ ] Fazer backup final
+- [ ] **SUBMETER PROJETO**
 
-2. **Apresentação** (1h)
-   - [ ] Estruturar apresentação
-   - [ ] Adicionar visualizações principais
-   - [ ] Preparar demo
-
-#### Marcos (Milestones)
-- **M7.1:** Documentação completa (Dia 6 EOD)
+**Meta do dia:** PROJETO 100% COMPLETO E ENTREGUE! ✅
 
 ---
 
-### Dia 6 (Noite) - Dia 7: Fase 8 - Entrega Final e Revisão
-**Período:** Dia 6 Noite + Dia 7 (4h)  
-**Status:** 🟢 Concluído  
-**Responsável:** Designer UX
-
-#### Objetivos
-- Consolidar toda a documentação
-- Preparar entrega final
-- Realizar revisão completa
-
-#### Entregas
-- ✅ Resumo executivo final
-- ✅ Repositório organizado e documentado
-- ✅ Todos os assets exportados
-- ✅ Revisão completa realizada
-
-#### Tarefas Finais
-1. **Consolidação** (2h)
-   - [ ] Organizar repositório
-   - [ ] Criar índice navegável
-   - [ ] Revisar toda documentação
-   - [ ] Exportar assets
-
-2. **Revisão e Ajustes** (2h)
-   - [ ] Review final de qualidade
-   - [ ] Correções de última hora
-   - [ ] Validação de links e recursos
-
-#### Marcos (Milestones)
-- **M8.1:** Projeto finalizado e pronto para entrega (Fim do Dia 7)
-
----
-
-### 🎯 Dias 7-8: BUFFER - Revisão com Profissional e Testes
-**Período:** Dias 7-8 (2 dias reservados)  
-**Responsável:** Designer + Revisor Externo + Usuários Teste
-
-#### Atividades de Revisão
-- [ ] Revisão com profissional de UX
-- [ ] Testes rápidos com 2-3 usuários (se possível)
-- [ ] Ajustes finais baseados em feedback
-- [ ] Preparação final para submissão
-
-#### Meta
-Ter o projeto completo no **Dia 6** para garantir tempo de revisão e refinamento nos **Dias 7-8**.
-
----
-
-## 📊 Visão de Gantt (Resumo) - 7 Dias Sprint
+## 📊 Visão de Gantt (Resumo) - Cronograma Real 20-26 de Novembro
 
 ```
-Dias:     1       2       3       4       5       6       7
-──────────────────────────────────────────────────────────
-Briefing  █▓
-Pesquisa  ▓██████████
+Data:      20/11  21/11  22/11  23/11  24/11  25/11  26/11
+Dia:       Qua    Qui    Sex    Sáb    Dom    Seg    Ter
+           (Fer)  (Not)  (Buf)  (Full) (Full) (Not)  (Not+Ent)
+────────────────────────────────────────────────────────────
+Briefing   ████
+Pesquisa   ████████▓▓▓▓
 Estratégia              ████████
-Ideação                         ████████
-UI Design                               ██████████
-Protótipo                                       ████
-Apresent.                                       ▓███
-Entrega                                           ████
-Revisão                                               ████████
-──────────────────────────────────────────────────────────
-         Manhã|Tarde      |       |       |       |       |
+Ideação                        ████████████
+UI Design                              ████████████
+Protótipo                                      ████
+Apresent.                                      ▓███
+Entrega                                            ████
+────────────────────────────────────────────────────────────
+Horas:     12h    4h     -      12h    12h    4h     4h
 ```
 
 **Legenda:**
-- █ Trabalho intensivo
-- ▓ Trabalho parcial/início
-- Dia 7: Finalização e início do período de revisão
-- Dias 7-8: Revisão com profissional e usuários
+- █ Trabalho intensivo (horas de alta produtividade)
+- ▓ Trabalho parcial/transição
+- **Fer** = Feriado (dia inteiro disponível)
+- **Not** = Apenas noite (3-4h)
+- **Buf** = Buffer/descanso opcional
+- **Full** = Fim de semana (dia inteiro disponível)
+- **Ent** = Entrega final
+
+### Distribuição de Horas por Dia
+- **20/11 (Qua):** 12h - Briefing + Pesquisa inicial
+- **21/11 (Qui):** 4h noite - Finalizar pesquisa + iniciar estratégia  
+- **22/11 (Sex):** Descanso/buffer (opcional 2-3h para ajustes)
+- **23/11 (Sáb):** 12h - Estratégia + Ideação (wireframes)
+- **24/11 (Dom):** 12h - Finalizar ideação + UI Design completo
+- **25/11 (Seg):** 4h noite - Protótipo + iniciar apresentação
+- **26/11 (Ter):** 4h noite - Finalizar apresentação + ENTREGA
+
+**Total:** ~46-48h de trabalho efetivo
 
 ---
 
-## 🎯 Milestones Principais (GitHub Milestones)
+## 🎯 Milestones Principais - Cronograma Real
 
-### Milestone 1: Setup e Pesquisa (Dia 1-2)
-**Data:** Dia 1-2  
-**Objetivo:** Entender o problema e usuários rapidamente  
-**Entregas:** Briefing + Pesquisa (desk research + benchmark)
+### Milestone 1: Fundação e Pesquisa
+**Data:** 20-21 de novembro (Qua-Qui)  
+**Objetivo:** Entender o problema e usuários através de desk research  
+**Entregas:** Briefing + Pesquisa completa + Personas
 
-### Milestone 2: Estratégia e Conceitos (Dia 3-4)
-**Data:** Dia 3-4  
-**Objetivo:** Definir direção e criar soluções  
-**Entregas:** Estratégia + Hipóteses + Wireframes
-
-### Milestone 3: Design Visual (Dia 5)
-**Data:** Dia 5  
-**Objetivo:** Criar design de alta fidelidade  
-**Entregas:** UI Design completo + Design system básico
-
-### Milestone 4: Protótipo e Documentação (Dia 6)
-**Data:** Dia 6  
-**Objetivo:** Finalizar e documentar  
-**Entregas:** Protótipo + Apresentação + Documentação
-
-### Milestone 5: Revisão e Entrega (Dia 7-8)
-**Data:** Dia 7-8  
-**Objetivo:** Revisar e refinar com feedback externo  
-**Entregas:** Projeto final revisado e aprovado
+**Checkpoint:** Fim de quinta à noite - Pesquisa 100% completa
 
 ---
-## 📋 Checklist de Progresso Geral - Sprint 7 Dias
 
-### Planejamento e Setup (Pré-Sprint)
-- [ ] Ferramentas configuradas (Figma, repositório)
-- [ ] Cronograma de 7 dias definido
-- [ ] Objetivos claros estabelecidos
+### Milestone 2: Estratégia e Estrutura
+**Data:** 23 de novembro (Sábado)  
+**Objetivo:** Definir direção estratégica e criar estrutura das soluções  
+**Entregas:** Estratégia completa + Wireframes principais
 
-### Dia 1 Manhã: Briefing ⏰
+**Checkpoint:** Fim de sábado - Estratégia definida + 80% dos wireframes
+
+---
+
+### Milestone 3: Design Visual Completo
+**Data:** 24 de novembro (Domingo)  
+**Objetivo:** Criar todo o design de alta fidelidade  
+**Entregas:** Wireframes finalizados + UI Design completo + Design system
+
+**Checkpoint:** Fim de domingo - TODAS as telas principais em alta fidelidade
+
+---
+
+### Milestone 4: Protótipo e Documentação
+**Data:** 25 de novembro (Segunda à noite)  
+**Objetivo:** Tornar navegável e documentar  
+**Entregas:** Protótipo Figma interativo + Apresentação iniciada
+
+**Checkpoint:** Fim de segunda - Protótipo funcionando + 70% da apresentação
+
+---
+
+### Milestone 5: ENTREGA FINAL
+**Data:** 26 de novembro (Terça à noite) 🎯  
+**Objetivo:** Finalizar e entregar projeto completo  
+**Entregas:** Apresentação completa + Documentação consolidada + PROJETO ENTREGUE
+
+**Checkpoint:** Até 22h de terça - PROJETO 100% COMPLETO E SUBMETIDO
+
+---
+## 📋 Checklist de Progresso Geral - Cronograma Real 20-26/Nov
+
+### 🗓️ Quarta, 20/11 - HOJE (Feriado - 12h)
+#### Manhã (4h): Briefing
 - [ ] Objetivos definidos
 - [ ] Escopo delimitado
 - [ ] Métricas estabelecidas
 - [ ] Documentação inicial criada
 
-### Dia 1 Tarde + Dia 2: Pesquisa ⏰
-- [ ] Desk research realizada
-- [ ] Benchmark concluído (3-5 concorrentes: Amazon Prime, Rappi Prime, etc.)
-- [ ] Personas criadas (baseadas em dados secundários)
-- [ ] Insights principais documentados
-- [ ] Jornadas mapeadas
+#### Tarde e Noite (8h): Pesquisa - Parte 1
+- [ ] Desk research iniciado
+- [ ] Benchmark Amazon Prime completo
+- [ ] Benchmark Rappi Prime completo
+- [ ] Reviews de usuários analisados
+- [ ] Primeiros insights documentados
 
-### Dia 3: Estratégia ⏰
-- [ ] Pilares de design definidos (3)
+### 🗓️ Quinta, 21/11 (Noite - 4h)
+#### Pesquisa - Parte 2 + Estratégia Inicial
+- [ ] Benchmark finalizado (mais 2-3 concorrentes)
+- [ ] Personas criadas (baseadas em dados secundários)
+- [ ] Jornadas mapeadas
+- [ ] Insights principais documentados
+- [ ] Pilares de design iniciados
+
+### 🗓️ Sexta, 22/11 (Buffer/Descanso)
+- [ ] Descanso estratégico
+- [ ] (Opcional) Ajustes ou avanços se necessário
+
+### 🗓️ Sábado, 23/11 (Fim de semana - 12h)
+#### Manhã e Tarde (8h): Estratégia Completa + Ideação Inicial
+- [ ] Pilares de design finalizados (3)
 - [ ] Hipóteses criadas (5-8)
 - [ ] Priorização realizada (matriz impacto x esforço)
-- [ ] Princípios de design estabelecidos
+- [ ] Fluxos principais mapeados (3-4)
+- [ ] Wireframes iniciados (8-10 telas)
 
-### Dia 4: Ideação ⏰
-- [ ] Wireframes criados (15-20 telas principais)
-- [ ] Fluxos mapeados (3-5 principais)
+#### Noite (4h): Ideação Continuação
+- [ ] Mais wireframes (5-7 telas)
 - [ ] Arquitetura da informação definida
-- [ ] Conceitos validados internamente
+- [ ] Validação interna dos fluxos
 
-### Dia 5: UI Design ⏰
+### 🗓️ Domingo, 24/11 (Fim de semana - 12h)
+#### Manhã (4h): Finalizar Ideação
+- [ ] Wireframes finalizados (15-20 telas totais)
+- [ ] Todos os fluxos completos
+- [ ] Conceitos validados
+
+#### Tarde e Noite (8h): UI Design COMPLETO
 - [ ] Design system básico criado
 - [ ] Telas finalizadas (15-20 principais)
 - [ ] Componentes base documentados
 - [ ] Estados principais desenhados
+- [ ] Landing Page (desktop + mobile)
+- [ ] Fluxo de Assinatura (3 telas)
+- [ ] Dashboard + Gestão de Pagamentos
 
-### Dia 6 Manhã: Protótipo ⏰
+### 🗓️ Segunda, 25/11 (Noite - 4h)
+#### Protótipo + Apresentação Inicial
 - [ ] Protótipo interativo criado (Figma)
 - [ ] Fluxos principais conectados
-- [ ] Navegação testada internamente
+- [ ] Navegação testada
 - [ ] Validação heurística realizada
-
-### Dia 6 Tarde: Apresentação ⏰
 - [ ] Narrativa escrita
-- [ ] Apresentação/deck criado
-- [ ] Case study documentado
-- [ ] Demo preparada
+- [ ] Case study iniciado (60%)
 
-### Dia 6 Noite + Dia 7: Entrega ⏰
+### 🗓️ Terça, 26/11 (Noite - 4h) - ENTREGA FINAL 🎯
+#### Apresentação Final + Entrega
+- [ ] Narrativa finalizada
+- [ ] Case study completado
+- [ ] Apresentação/deck pronto
 - [ ] Resumo executivo finalizado
 - [ ] Documentação completa e organizada
 - [ ] Repositório navegável
 - [ ] Todos os assets exportados
-
-### Dia 7-8: Revisão e Refinamento 🎯
-- [ ] Revisão com profissional de UX
-- [ ] Testes com 2-3 usuários (se possível)
-- [ ] Ajustes finais implementados
-- [ ] Projeto final aprovado
+- [ ] Validação final de links e recursos
+- [ ] **PROJETO SUBMETIDO ✅**
 
 ---
 
-## 👥 Responsabilidades - Sprint Solo/Pequena Equipe
+## 👥 Distribuição de Trabalho - Cronograma Real
 
-### Distribuição de Trabalho (7 Dias)
+| Data | Dia | Fase | Carga | Prioridade |
+|------|-----|------|-------|------------|
+| 20/11 | Qua (Fer) | Briefing + Pesquisa 1 | 12h | 🔴 Crítica |
+| 21/11 | Qui (Noite) | Pesquisa 2 + Estratégia 1 | 4h | 🔴 Crítica |
+| 22/11 | Sex | Buffer/Descanso | 0-3h | 🟢 Opcional |
+| 23/11 | Sáb | Estratégia + Ideação | 12h | 🔴 Crítica |
+| 24/11 | Dom | Ideação + UI Design | 12h | 🔴 Crítica |
+| 25/11 | Seg (Noite) | Protótipo + Apresentação | 4h | 🟡 Alta |
+| 26/11 | Ter (Noite) | Apresentação + ENTREGA | 4h | 🔴 Crítica |
 
-| Dia | Fase | Responsável | Carga Horária | Prioridade |
-|-----|------|-------------|---------------|------------|
-| 1 (M) | Briefing | Designer UX | 4h | Alta |
-| 1 (T) + 2 | Pesquisa | Designer UX | 12h | Alta |
-| 3 | Estratégia | Designer UX | 8h | Alta |
-| 4 | Ideação | Designer UX/UI | 8h | Alta |
-| 5 | UI Design | Designer UI | 10h | Alta |
-| 6 (M) | Protótipo | Designer UX | 4h | Alta |
-| 6 (T) | Apresentação | Designer UX | 4h | Média |
-| 6 (N) + 7 | Entrega | Designer UX | 4h | Alta |
-| 7-8 | Revisão | Designer + Externo | 16h | Crítica |
+**Total:** ~46-48h de trabalho efetivo  
+**Prazo final:** 26/11 às 22h
 
-**Total de horas diretas:** ~54h (média de 9h/dia durante 6 dias)  
-**Buffer para revisão:** 2 dias completos
+### Perfil Necessário
 
-### Perfil Ideal do Designer
-
-**Habilidades Necessárias:**
+**Habilidades Essenciais:**
 - UX Research (desk research e análise competitiva)
 - UX Design (wireframes, fluxos, arquitetura)
 - UI Design (visual design, design system)
@@ -487,77 +477,161 @@ Revisão                                               ████████
 | Burnout por ritmo intenso | Média | Alto | Pausas regulares, jornada máxima de 10h/dia |
 | Qualidade comprometida pela pressa | Média | Alto | Revisão nos Dias 7-8, checklist de qualidade |
 | Falta de dados primários (sem tempo para pesquisa) | Alta | Médio | Uso de desk research e dados secundários confiáveis |
-| Não ter tempo para revisão externa | Baixa | Alto | Finalizar no Dia 6, garantir 2 dias de buffer |
+## 🚨 Riscos e Mitigações - Cronograma Real 20-26/Nov
 
-### Plano de Contingência
-- **Priorização rigorosa:** Foco nas telas e fluxos principais, secundário pode ser esboçado
-- **Timeboxing:** Cada fase tem limite de tempo fixo, não pode estourar
-- **Documentação mínima viável:** Durante o sprint, foco em fazer. Documentar detalhadamente na revisão
-- **Backup diário:** Salvar progresso em múltiplos locais (Figma, Git, Drive)
-- **Checklist de qualidade:** Validação rápida ao fim de cada dia
+### Riscos Identificados
+
+| Risco | Probabilidade | Impacto | Mitigação |
+|-------|--------------|---------|-----------|
+| Perder foco/energia no feriado (20/11) | Média | Alto | Começar cedo (8h), fazer pausas estratégicas, usar timeboxing |
+| Baixa produtividade nas noites (21, 25, 26) | Média | Médio | Focar apenas no essencial nessas sessões, preparar antes |
+| Sexta (22/11) gerar ansiedade por pausa | Baixa | Médio | Ver como dia de descanso estratégico, essencial para performance |
+| Não conseguir 12h efetivas no fim de semana | Média | Alto | Começar cedo, eliminar distrações, ter refeições prontas |
+| Burnout no domingo (24/11) | Média | Crítico | Fazer pausas, dividir UI design em blocos de 2h |
+| Não finalizar a tempo (26/11) | Baixa | Crítico | Buffer de sexta, priorizar o essencial, ter plano B |
+
+### Plano de Contingência Específico
+
+**Se atrasar na Quinta (21/11):**
+- Usar sexta (22/11) para recuperar pesquisa/estratégia
+- Reduzir escopo de pesquisa (focar em 3 concorrentes em vez de 5)
+
+**Se atrasar no Sábado (23/11):**
+- Comprimir wireframes para 12-15 telas em vez de 15-20
+- Usar domingo manhã para terminar wireframes
+
+**Se atrasar no Domingo (24/11):**
+- Reduzir design system (só o essencial: cores, botões, inputs)
+- Focar em 12-15 telas de alta fidelidade em vez de 15-20
+- Usar segunda à noite para finalizar UI se necessário
+
+**Plano de Emergência Final:**
+- **Mínimo viável:** 10-12 telas de alta qualidade são suficientes se muito bem executadas
+- **Cortar:** Microinterações, estados secundários, telas menos importantes
+- **Manter:** Landing page, fluxo de assinatura (3 telas), dashboard (2 telas), gestão pagamento (2 telas)
+
+### Estratégias de Sucesso
+
+- **Priorização rigorosa:** Fazer o essencial muito bem, não tudo de forma mediana
+- **Timeboxing estrito:** Alarmes a cada 2h para validar progresso
+- **Pausas estratégicas:** 10min a cada 2h para manter energia
+- **Backup automático:** Figma auto-save + commits Git a cada 2-3h
+- **Checklist visual:** Marcar progresso visivelmente para motivação
+- **Ambiente preparado:** Ter tudo pronto (referências, templates, café, comida)
+
+---
+
+## 📞 Check-ins e Validações - Cronograma Real
+
+### Rituais Diários
+
+**Fim de cada sessão de trabalho (15min):**
+- ✅ O que completei nesta sessão?
+- 🎯 Estou no caminho certo para o milestone do dia?
+- ⚠️ Algum bloqueio ou problema?
+- 📋 Preparação para próxima sessão
+
+### Checkpoints Críticos
+
+**20/11 (Qua) EOD - 21h:**
+- ✅ Briefing completo?
+- ✅ Benchmark de pelo menos 2 concorrentes completo?
+- ✅ Primeiros insights documentados?
+- **Decisão:** Continuar ou ajustar escopo de pesquisa?
+
+**21/11 (Qui) EOD - 22h:**
+- ✅ Pesquisa 100% completa?
+- ✅ Personas criadas?
+- ✅ Pilares de design iniciados?
+- **Decisão:** Preciso usar sexta para recuperar?
+
+**23/11 (Sáb) EOD - 23h:**
+- ✅ Estratégia completa e documentada?
+- ✅ Pelo menos 80% dos wireframes prontos?
+- **Decisão:** Estou confortável para UI design amanhã?
+
+**24/11 (Dom) EOD - 22h:** 🎯 **CHECKPOINT MAIS CRÍTICO**
+- ✅ TODOS os wireframes finalizados?
+- ✅ TODAS as telas de UI em alta fidelidade?
+- ✅ Design system básico pronto?
+- **Decisão:** Estou pronto para prototipar segunda, ou preciso ajustar?
+
+**25/11 (Seg) EOD - 22h:**
+- ✅ Protótipo navegável?
+- ✅ Apresentação 60-70% pronta?
+- **Decisão:** O que priorizar terça para entregar no prazo?
+
+**26/11 (Ter) EOD - 22h:** ⚡ **DEADLINE FINAL**
+- ✅ PROJETO COMPLETO E SUBMETIDO
 
 ---
 
-## 📞 Comunicação e Check-ins - Sprint 7 Dias
+## 🎓 Critérios de Sucesso - Cronograma Real
 
-### Rituais Recomendados
+### Critérios Mínimos de Aceitação por Dia
 
-**Check-in Diário (fim do dia - 15min)**
-- Autoavaliação: O que completei hoje?
-- Planejamento: Foco para amanhã
-- Bloqueios: O que está impedindo progresso?
-- Ajustes: Preciso realocar tempo?
+**Ao Final de 20/11 (Qua EOD - 21h):**
+- ✅ Briefing completo e documentado
+- ✅ Benchmark de 2-3 concorrentes completo
+- ✅ Primeiros insights documentados
+- ✅ Preparação para continuar pesquisa quinta
 
-**Mid-Sprint Check (Dia 3 - 30min)**
-- Review de progresso até metade
-- Validação de que está no caminho certo
-- Ajustes de escopo se necessário
+**Ao Final de 21/11 (Qui EOD - 22h):**
+- ✅ Pesquisa 100% completa
+- ✅ 3 personas criadas e validadas
+- ✅ Jornadas mapeadas
+- ✅ Top 5 pain points identificados
+- ✅ Pilares de design iniciados (pelo menos 2/3)
 
-**Pre-Review Check (Dia 6 EOD - 1h)**
-- Review completo do trabalho
-- Preparação para revisão externa
-- Lista de ajustes para os Dias 7-8
+**Ao Final de 23/11 (Sáb EOD - 23h):**
+- ✅ Estratégia completa (3 pilares + 5-8 hipóteses)
+- ✅ Matriz de priorização pronta
+- ✅ Pelo menos 80% dos wireframes (12-16 telas)
+- ✅ 3-4 fluxos principais mapeados
 
-**Revisão com Profissional (Dia 7 - 2h)**
-- Apresentação do projeto completo
-- Feedback estruturado
-- Lista priorizada de ajustes
+**Ao Final de 24/11 (Dom EOD - 22h):** 🎯 **DIA MAIS CRÍTICO**
+- ✅ 100% dos wireframes finalizados (15-20 telas)
+- ✅ Design system básico criado
+- ✅ TODAS as telas principais em alta fidelidade (15-20)
+- ✅ Landing page, fluxo de assinatura, dashboard, gestão de pagamentos prontos
+- ✅ Estados principais desenhados
 
-**Testes com Usuários (Dia 7-8 - 4h total)**
-- 2-3 sessões rápidas de teste (30min cada)
-- Validação dos fluxos principais
-- Ajustes críticos de usabilidade
+**Ao Final de 25/11 (Seg EOD - 22h):**
+- ✅ Protótipo Figma 100% navegável
+- ✅ Fluxos principais conectados e testados
+- ✅ Apresentação/case study 70% pronto
+- ✅ Narrativa escrita
 
-### Canais de Comunicação
-- **Notas pessoais:** Diário de decisões e aprendizados
-- **GitHub:** Commits frequentes com mensagens claras
-- **Figma:** Comentários para marcar dúvidas ou decisões
-- **Backup:** Google Drive ou similar para segurança
+**Ao Final de 26/11 (Ter EOD - 22h):** ⚡ **ENTREGA FINAL**
+- ✅ Apresentação 100% completa
+- ✅ Case study finalizado
+- ✅ Documentação consolidada
+- ✅ Repositório organizado
+- ✅ **PROJETO SUBMETIDO**
+
+### Critérios de Qualidade
+
+**Mínimo aceitável (essencial entregar):**
+- Documentação clara do processo de UX
+- 12-15 telas de alta fidelidade bem executadas
+- Protótipo navegável dos fluxos principais
+- Case study coerente (problema → solução → impacto)
+- Apresentação estruturada
+
+**Ideal (se tempo permitir):**
+- 15-20 telas de alta fidelidade
+- Design system mais completo
+- Microinterações no protótipo
+- Validação com usuário externo
+- Métricas projetadas documentadas
+
+**Cortar se necessário (priorização):**
+- Telas secundárias/edge cases
+- Animações complexas
+- Documentação excessivamente detalhada
+- Múltiplas variações de design
 
 ---
----
-
-## 🎓 Critérios de Sucesso - Sprint 7 Dias
-
-### Critérios Mínimos de Aceitação
-
-**Ao Final do Dia 2 (Pesquisa):**
-- ✅ Desk research de 3-5 concorrentes completo
-- ✅ 3 personas baseadas em dados secundários
-- ✅ Top 5 insights documentados
-
-**Ao Final do Dia 3 (Estratégia):**
-- ✅ 3 pilares de design claros
-- ✅ 5-8 hipóteses priorizadas
-- ✅ Direção estratégica definida
-
-**Ao Final do Dia 4 (Ideação):**
-- ✅ Wireframes das 15-20 telas principais
-- ✅ 3-5 fluxos principais mapeados
-- ✅ Arquitetura da informação definida
-
-**Ao Final do Dia 5 (UI Design):**
-- ✅ Telas de alta fidelidade das principais screens
 - ✅ Design system básico funcional
 - ✅ Componentes principais prontos
 
@@ -728,51 +802,75 @@ Revisão                                               ████████
 
 ---
 
-## ✨ Conclusão
+## ✨ Conclusão - Cronograma Real 20-26 de Novembro
 
-Este timeline de **7 dias** foi estruturado para entregar um case de UX completo e de alta qualidade para o desafio Meli+ do Mercado Livre.
+Este timeline foi **personalizado** para sua disponibilidade real entre 20 e 26 de novembro, aproveitando ao máximo os dias de alta disponibilidade (feriado e fim de semana) e adaptando-se às restrições dos dias de trabalho.
 
-### Diferencial Desta Abordagem
+### Estratégia Otimizada
 
-**Sprint Intensivo mas Sustentável:**
-- 6 dias de trabalho focado (média 9h/dia)
-- 2 dias de buffer para revisão e refinamento
-- Evita burnout através de timeboxing e priorização clara
+**Aproveitamento Inteligente do Tempo:**
+- **Dias de pico (Qua, Sáb, Dom):** 36h de trabalho intensivo - 75% do projeto
+- **Noites limitadas (Qui, Seg, Ter):** 12h focadas em finalização e ajustes
+- **Buffer estratégico (Sex):** Descanso essencial para performance do fim de semana
 
-**Foco em Qualidade:**
-- Todas as 8 fases do processo de UX são cumpridas
-- Revisão profissional garantida nos dias 7-8
-- Validação com usuários reais (se possível)
+**Distribuição Inteligente:**
+- Fases pesadas (Pesquisa, UI Design) nos dias de maior disponibilidade
+- Fases de finalização (Protótipo, Apresentação) nas noites úteis
+- Sexta como válvula de segurança caso necessário
 
-**Realista e Pragmático:**
-- Aceita limitações de tempo
-- Usa desk research em vez de pesquisa primária extensa
-- Foca no essencial, mas faz com excelência
+### Cronograma Visual
 
-### Resultado Esperado
+```
+20/11 (Qua - Feriado)     ████████████  Briefing + Pesquisa 1
+21/11 (Qui - Noite)       ████          Pesquisa 2 + Estratégia 1
+22/11 (Sex - Buffer)      (descanso)    Preparação mental
+23/11 (Sáb - Full)        ████████████  Estratégia + Ideação
+24/11 (Dom - Full)        ████████████  Ideação + UI Design
+25/11 (Seg - Noite)       ████          Protótipo + Apresentação
+26/11 (Ter - ENTREGA)     ████          Finalização + SUBMIT
+```
 
-Ao final dos 7-8 dias, você terá:
+### O Que Você Terá ao Final (26/11 às 22h)
 
-✅ **Documentação completa** do processo de UX  
-✅ **Wireframes e designs de alta fidelidade** das telas principais  
+✅ **Processo de UX completo** documentado (8 fases)  
+✅ **15-20 telas de alta fidelidade** das interfaces principais  
 ✅ **Protótipo interativo** navegável no Figma  
-✅ **Case study** bem estruturado e apresentável  
-✅ **Projeto revisado** por profissional e validado  
+✅ **Case study profissional** com problema → solução → impacto  
+✅ **Apresentação estruturada** pronta para submeter  
 
-### Palavras Finais
+### Fatores Críticos de Sucesso
 
-> "Em UX, **processo** importa tanto quanto **resultado**. Este timeline garante ambos."
+🎯 **Foco total nos dias de pico** - eliminar distrações  
+⏰ **Timeboxing rigoroso** - respeitar limites de cada fase  
+🔋 **Gerenciar energia** - pausas estratégicas, não burnout  
+💾 **Backup constante** - salvar progresso a cada 2-3h  
+✂️ **Priorização brutal** - fazer o essencial excepcionalmente bem  
 
-**Boa sorte no desafio! 🚀**
+### Mensagem Final
+
+**Este cronograma é apertado mas viável.** 
+
+O segredo é:
+1. Começar cedo nos dias de pico (8h da manhã)
+2. Fazer pausas estratégicas (10min a cada 2h)
+3. Não perfeccionar demais - "ótimo" é melhor que "perfeito atrasado"
+4. Ter confiança no processo - cada fase foi calibrada para o tempo disponível
+
+**Você consegue! 💪**
+
+O domingo (24/11) será o dia mais intenso - se chegar ao final com todas as telas em alta fidelidade, o resto é "só" montagem e documentação.
 
 ---
 
-**📅 Última atualização:** 2025-11-20  
-**📌 Timeline:** 7 dias (sprint intensivo) + 2 dias (revisão)  
+**📅 Cronograma:** 20 a 26 de novembro de 2025  
+**⏰ Prazo final:** 26/11 às 22h  
+**💼 Total de horas:** ~46-48h efetivas  
 **🎯 Objetivo:** Case de UX Meli+ completo e profissional  
-**✅ Status:** Pronto para uso
+**✅ Status:** Pronto para executar - COMECE HOJE!
 
 ---
 
-*Timeline criado para o desafio Meli+ / Mercado Livre*  
-*Adaptado para entrega em 7 dias com tempo de revisão*
+*Timeline personalizado para o desafio Meli+ / Mercado Livre*  
+*Adaptado para disponibilidade real de 20-26 de novembro*  
+*Última atualização: 20 de novembro de 2025, 12h*
+

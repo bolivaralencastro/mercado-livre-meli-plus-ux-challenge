@@ -2,118 +2,115 @@
 
 ## 🎯 Resumo Executivo
 
-Este repositório inclui uma **timeline de 7 dias** (sprint intensivo) para o projeto Meli+ UX Challenge, com 2 dias adicionais para revisão e refinamento.
+Este repositório inclui uma **timeline personalizada de 20 a 26 de novembro** para o projeto Meli+ UX Challenge, otimizada para sua disponibilidade real durante este período.
 
-### 📚 Documentos Criados
+### 📚 Documentos Atualizados
 
-| Documento | Descrição | Tamanho |
-|-----------|-----------|---------|
-| **PROJETO-TIMELINE.md** | Timeline de 7 dias com todas as 8 fases otimizadas | ~25KB |
-| **GITHUB-PROJECT-SETUP.md** | Guia passo a passo para configurar o GitHub Project | 7.6KB |
-| **Issue Templates (8)** | Templates para criar issues de cada fase | .github/ISSUE_TEMPLATE/ |
+| Documento | Descrição | Status |
+|-----------|-----------|--------|
+| **PROJETO-TIMELINE.md** | Timeline de 7 dias com cronograma real (20-26/nov) | ✅ Atualizado |
+| **GITHUB-PROJECT-SETUP.md** | Guia passo a passo para configurar o GitHub Project | 📋 Referência |
+| **Issue Templates (8)** | Templates para criar issues de cada fase | 📋 Uso opcional |
 
 ---
 
-## 🚀 Como Usar
+## 🚀 Como Usar Este Guia
 
-### Opção 1: Visualizar a Timeline (Mais Rápido)
+### Passo 1: Entender Sua Disponibilidade
 1. Abra [PROJETO-TIMELINE.md](./PROJETO-TIMELINE.md)
-2. Navegue pelas 8 fases do sprint de 7 dias
-3. Veja cronogramas, entregas e marcos diários
+2. Veja o cronograma específico para 20-26 de novembro
+3. Entenda a distribuição de horas por dia
 
-### Opção 2: Criar GitHub Project (Recomendado)
-1. Siga o guia em [GITHUB-PROJECT-SETUP.md](./GITHUB-PROJECT-SETUP.md)
-2. Adapte as datas para 7 dias em vez de 12 semanas
-3. Use os issue templates para criar tarefas
-4. Gerencie o sprint visualmente
+### Passo 2: Começar HOJE (20/11)
+1. **Manhã (8h-12h):** Fase 1 - Briefing
+2. **Tarde (13h-21h):** Fase 2 - Pesquisa (parte 1)
+3. Meta: Ter briefing + 60-70% da pesquisa ao final do dia
 
----
-
-## 📅 Timeline em Resumo
-
-### 7 Dias Sprint + 2 Dias Revisão | 8 Fases | 5 Milestones
-
-```
-┌────────────────────────────────────────────┐
-│  Dias:   1     2     3     4     5     6   7-8  │
-├────────────────────────────────────────────┤
-│  Briefing      █▓                          │
-│  Pesquisa      ▓██████████                 │
-│  Estratégia                ████████        │
-│  Ideação                           ████████│
-│  UI Design                         ██████████
-│  Protótipo                                 ████
-│  Apresent.                                 ▓███
-│  Entrega                                   ████
-│  Revisão                                       ████████
-└────────────────────────────────────────────┘
-
-Milestone 1: Setup/Pesquisa    ▓▓ (Dia 1-2)
-Milestone 2: Estratégia/Ideação        ▓▓ (Dia 3-4)
-Milestone 3: Design                       ▓▓ (Dia 5)
-Milestone 4: Protótipo/Docs                  ▓ (Dia 6)
-Milestone 5: Revisão/Entrega                   ▓▓ (Dia 7-8)
-```
-
-**Meta:** Finalizar trabalho principal em 6 dias, usar dias 7-8 para revisão com profissional e usuários
+### Passo 3: Seguir o Cronograma
+- Usar timeboxing rigoroso
+- Fazer check-ins ao final de cada sessão
+- Ajustar se necessário (sexta é buffer)
 
 ---
 
-## 🎯 8 Fases do Projeto (Sprint 7 Dias)
+## 📅 Timeline em Resumo - Datas Reais
 
-### 📋 Fase 1: Briefing e Alinhamento
-**Dia 1 Manhã (4h)** | Foco: Setup
-- Definir escopo e objetivos
-- Documentação inicial
-- Template: `.github/ISSUE_TEMPLATE/fase-1-briefing.md`
+### 20/11 (Qua - Feriado) → 26/11 (Ter - Entrega) | 7 dias | ~46-48h
 
-### 🔍 Fase 2: Pesquisa e Descoberta
-**Dia 1 Tarde + Dia 2 (12h)** | Foco: Desk Research
-- Benchmark de 3-5 concorrentes
-- Personas baseadas em dados secundários
-- Template: `.github/ISSUE_TEMPLATE/fase-2-pesquisa.md`
+```
+┌────────────────────────────────────────────────────────┐
+│  Data:    20/11  21/11  22/11  23/11  24/11  25/11  26/11│
+│  Dia:     Qua    Qui    Sex    Sáb    Dom    Seg    Ter │
+│           (Fer)  (Not)  (Buf)  (Full) (Full) (Not)  (Ent)│
+├────────────────────────────────────────────────────────┤
+│  Briefing  ████                                        │
+│  Pesquisa  ████████▓▓▓▓                                │
+│  Estratég.              ████████                       │
+│  Ideação                       ████████████            │
+│  UI Design                             ████████████    │
+│  Protótip.                                     ████    │
+│  Apresent.                                     ▓███    │
+│  Entrega                                           ████│
+└────────────────────────────────────────────────────────┘
 
-### 🎯 Fase 3: Estratégia e Definição
-**Dia 3 (8h)** | Foco: Direção
-- 3 pilares de design
-- 5-8 hipóteses priorizadas
-- Template: `.github/ISSUE_TEMPLATE/fase-3-estrategia.md`
+Horas:       12h    4h     -      12h    12h    4h     4h
+```
 
-### 💡 Fase 4: Ideação e Wireframes
-**Dia 4 (8h)** | Foco: Estrutura
-- 15-20 wireframes principais
-- 3-5 fluxos mapeados
-- Template: `.github/ISSUE_TEMPLATE/fase-4-ideacao.md`
+**Dias críticos (alta disponibilidade):**
+- ⭐ 20/11 (Qua): Feriado - 12h disponíveis
+- ⭐ 23/11 (Sáb): Fim de semana - 12h disponíveis
+- ⭐ 24/11 (Dom): Fim de semana - 12h disponíveis (DIA MAIS CRÍTICO)
 
-### 🎨 Fase 5: UI Design de Alta Fidelidade
-**Dia 5 (10h - intensivo)** | Foco: Visual
-- Design system básico
-- 15-20 telas finais
-- Template: `.github/ISSUE_TEMPLATE/fase-5-ui-design.md`
+**Dias limitados (apenas noite):**
+- 21/11 (Qui): 4h à noite
+- 25/11 (Seg): 4h à noite
+- 26/11 (Ter): 4h à noite + ENTREGA FINAL
 
-### 🖱️ Fase 6: Prototipagem e Validação
-**Dia 6 Manhã (4h)** | Foco: Interação
-- Protótipo Figma interativo
-- Validação heurística
-- Template: `.github/ISSUE_TEMPLATE/fase-6-prototipo.md`
+---
 
-### 📊 Fase 7: Apresentação
-**Dia 6 Tarde (4h)** | Foco: Storytelling
-- Narrativa do projeto
-- Case study completo
-- Template: `.github/ISSUE_TEMPLATE/fase-7-apresentacao.md`
+## 🎯 Cronograma Detalhado por Data
 
-### ✅ Fase 8: Entrega Final
-**Dia 6 Noite + Dia 7 (4h)** | Foco: Finalização
-- Documentação consolidada
-- Repositório organizado
-- Template: `.github/ISSUE_TEMPLATE/fase-8-entrega.md`
+### 📋 20/11 (Qua - Feriado): Briefing + Pesquisa Parte 1
+**Disponível: 12h** | Foco: Fundação do projeto
+- Manhã (4h): Briefing completo
+- Tarde/Noite (8h): Desk research e benchmark inicial
+- Meta: Briefing + 60-70% da pesquisa
 
-### 🎯 Dias 7-8: Revisão e Refinamento
-**Crítico para qualidade final**
-- Revisão com profissional UX
-- Testes com 2-3 usuários
-- Ajustes finais
+### 🔍 21/11 (Qui - Noite): Pesquisa Parte 2 + Estratégia Início
+**Disponível: 4h noite** | Foco: Finalizar pesquisa
+- Completar benchmark
+- Criar personas
+- Mapear jornadas
+- Iniciar pilares de design
+
+### 💤 22/11 (Sex): Buffer Estratégico
+**Descanso** | Preparação para sprint de fim de semana
+- Opcional: 2-3h para ajustes se necessário
+- Importante: Descansar para ter energia sáb/dom
+
+### 🎯 23/11 (Sáb - Full): Estratégia + Ideação
+**Disponível: 12h** | Foco: Estrutura e wireframes
+- Manhã/Tarde (8h): Finalizar estratégia completa
+- Noite (4h): Wireframes (8-10 telas)
+- Meta: Estratégia 100% + 80% wireframes
+
+### 💡 24/11 (Dom - Full): Ideação + UI Design ⭐ **DIA CRÍTICO**
+**Disponível: 12h** | Foco: Finalizar wireframes + criar todo UI
+- Manhã (4h): Finalizar wireframes (total 15-20)
+- Tarde/Noite (8h): UI Design COMPLETO
+- Meta: TODAS as telas em alta fidelidade
+
+### 🎨 25/11 (Seg - Noite): Protótipo + Apresentação
+**Disponível: 4h noite** | Foco: Tornar navegável
+- Prototipagem (2h): Conectar telas no Figma
+- Apresentação (2h): Narrativa e case study
+- Meta: Protótipo navegável + 70% apresentação
+
+### ✅ 26/11 (Ter - Noite): ENTREGA FINAL 🎯
+**Disponível: 4h noite** | Foco: Finalizar e submeter
+- Apresentação (1.5h): Completar case study
+- Entrega (2.5h): Revisar tudo e organizar
+- **22h: SUBMETER PROJETO**
 
 ---
 
@@ -247,51 +244,53 @@ mercado-livre-meli-plus-ux-challenge/
 
 ---
 
-## ❓ FAQ - Sprint 7 Dias
+## ❓ FAQ - Cronograma Real 20-26/Nov
 
-### P: Por que 7 dias em vez de 12 semanas?
-**R:** O prazo foi ajustado para atender à necessidade de entregar em 7 dias, com 2 dias extras para revisão profissional e testes com usuários, totalizando 9 dias até a entrega final.
+### P: Por que este cronograma específico?
+**R:** Foi personalizado para sua disponibilidade real: aproveitando o feriado (20/11), fim de semana (23-24/11) para trabalho intensivo, e usando as noites de dias úteis (21, 25, 26/11) para finalização.
 
-### P: É possível fazer um case de qualidade em apenas 7 dias?
-**R:** Sim, com foco e priorização. O sprint usa desk research (dados secundários) em vez de pesquisa primária extensa, e foca nas telas e fluxos principais. A qualidade é garantida pela revisão nos dias 7-8.
+### P: É possível terminar até 26/11 com qualidade?
+**R:** Sim! Com ~46-48h de trabalho efetivo distribuídas estrategicamente. Os dias de maior disponibilidade (Qua, Sáb, Dom = 36h) cobrem 75% do projeto. As noites (12h) são para finalização e ajustes.
 
-### P: Como adaptar se tiver menos tempo (ex: 5 dias)?
-**R:** Combine fases (Briefing + Pesquisa em 1 dia), reduza número de telas (10-15 em vez de 15-20), pule prototipagem avançada e use wireframes clicáveis.
+### P: E se eu atrasar em algum dia?
+**R:** Sexta (22/11) é seu buffer estratégico. Se necessário, use 2-3h sexta para recuperar. Também há planos de contingência no PROJETO-TIMELINE.md para cada cenário de atraso.
 
-### P: E se tiver mais tempo (10-14 dias)?
-**R:** Adicione pesquisa primária (5-10 entrevistas), faça testes de usabilidade reais com 5-8 usuários, crie design system mais completo, adicione microinterações.
+### P: Qual o dia mais crítico?
+**R:** Domingo (24/11) é o DIA MAIS CRÍTICO. Você precisa sair deste dia com TODAS as telas de alta fidelidade prontas. Se conseguir isso, o resto é "só" montagem e documentação.
 
-### P: Como uso os issue templates com o sprint de 7 dias?
-**R:** Os templates ainda são úteis como checklists. Adapte os timeframes de "semanas" para "dias" conforme a nova timeline.
+### P: Como aproveitar melhor o feriado (20/11)?
+**R:** Comece cedo (8h), faça pausas de 10min a cada 2h, tenha refeições preparadas, elimine distrações. Objetivo: sair com briefing completo + 70% da pesquisa.
 
-### P: Preciso criar o GitHub Project?
-**R:** Não é obrigatório para um sprint de 7 dias. Use uma checklist simples ou Trello. GitHub Project é mais útil para projetos mais longos.
+### P: E se não der tempo de fazer tudo?
+**R:** Priorize: 12-15 telas muito bem feitas > 20 telas medianas. Foque em: Landing page, fluxo de assinatura (3 telas), dashboard (2 telas), gestão de pagamentos (2 telas). Isso sozinho já é um case forte.
 
-### P: Onde está o protótipo?
-**R:** O link para o protótipo Figma será criado durante o sprint e documentado em `/prototipo/README.md`
+### P: Preciso trabalhar todas as 12h dos dias de fim de semana?
+**R:** Tente fazer pelo menos 10h efetivas. Distribua: 4h manhã (8h-12h) + 4h tarde (14h-18h) + 2-4h noite (19h-22h). Pausas são essenciais!
 
-### P: Como garantir qualidade em tão pouco tempo?
-**R:** Timeboxing rigoroso, foco no essencial, uso de templates e recursos prontos, e principalmente: 2 dias de revisão externa nos dias 7-8.
-
----
-
-## 🎉 Resumo - Timeline 7 Dias
-
-✅ **Timeline ajustada** de 12 semanas para 7 dias + 2 revisão  
-✅ **8 Fases otimizadas** para sprint intensivo  
-✅ **Gantt chart atualizado** com visualização em dias  
-✅ **Milestones adaptados** para entregas diárias  
-✅ **Buffer de revisão** garantido (Dias 7-8)  
-✅ **Issue templates** ainda aplicáveis como checklists  
-✅ **Guias práticos** para executar o sprint com sucesso  
-
-**Status:** Timeline adaptada e pronta para sprint de 7 dias! 🚀
-
-**Diferencial:** Foco em **qualidade** com **velocidade**, garantindo tempo para **revisão profissional** antes da entrega final.
+### P: Como usar os issue templates?
+**R:** Use como checklists diários. Não precisa criar issues no GitHub - apenas marque as tarefas conforme completa no próprio template.
 
 ---
 
-*Última atualização: 2025-11-20*  
-*Versão: 2.0 - Adaptado para Sprint 7 Dias*  
-*Prazo: 7 dias trabalho + 2 dias revisão = 9 dias total até entrega final*
+## 🎉 Resumo - Cronograma Real Personalizado
+
+✅ **Timeline personalizada** para 20-26 de novembro  
+✅ **Datas e horários específicos** baseados em sua disponibilidade  
+✅ **Gantt chart** com dias reais da semana  
+✅ **Checkpoints diários** para validar progresso  
+✅ **Planos de contingência** para cada cenário de atraso  
+✅ **Buffer estratégico** (sexta 22/11)  
+✅ **Dia crítico identificado** (domingo 24/11)  
+
+**Status:** Pronto para começar HOJE (20/11)! 🚀
+
+**Próximo passo:** Abrir o [PROJETO-TIMELINE.md](./PROJETO-TIMELINE.md) e começar a Fase 1 - Briefing (AGORA, 8h da manhã)
+
+---
+
+*Última atualização: 20 de novembro de 2025, 12h*  
+*Versão: 3.0 - Cronograma Real Personalizado*  
+*Prazo final: 26 de novembro às 22h*  
+*Total horas: ~46-48h efetivas*
+
 
