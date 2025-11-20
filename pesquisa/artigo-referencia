@@ -1,0 +1,116 @@
+{
+  "article_metadata": {
+    "title": "Senhoras, crianças e conteúdo em primeiro lugar",
+    "subtitle": "Por que o design de experiência do usuário começa com a narrativa.",
+    "author": "Emiliano Cosenza",
+    "publication_date": "2016-10-06",
+    "read_time": "11 minutos",
+    "platform_stats": {
+      "claps": 879,
+      "comments": 14
+    },
+    "url_slug": "senhoras-criancas-e-conteudo-em-primeiro-lugar"
+  },
+  "content": {
+    "introduction": {
+      "heading": "Por onde começar?",
+      "image_reference": "Uma brilhante charge de Alberto Montt — Doses Diárias",
+      "text_body": [
+        "Quando começamos a projetar a experiência de um produto digital, coisas estranhas acontecem. Temos as ideias, as pessoas certas e talvez até o tempo a nosso favor. Parece que não precisamos de mais nada. Mas aí surge aquela maldita pergunta: por onde começar?",
+        "As discussões giram em círculos, os rostos se fecham; ninguém chega a um consenso. Uma sensação de que tudo irá para o infinito e além permeia a equipe, até que alguém diz: 'Vamos começar fazendo alguns esboços de tela. Depois, vamos analisar os casos de uso que faltam, adicionar o texto e pronto.'",
+        "O resultado? O produto funciona, mas só isso. A experiência do usuário é banal e passa despercebida.",
+        "Há muito tempo atrás, quando eu tinha 12 anos... perguntei à minha mãe: 'Por onde eu começo?'. Ela respondeu: 'Em princípio, Emiliano'.",
+        "Ao longo dos anos, compreendi que por trás dessa verdade óbvia residia a ideia de sequência. Tudo o que vivenciamos está ordenado segundo uma linha do tempo. As experiências do usuário são lineares.",
+        "Por que não pensar no design de experiência do usuário como uma história? No fim das contas, trata-se de projetar uma sequência de tarefas ordenadas no tempo."
+      ]
+    },
+    "section_why_story": {
+      "heading": "Por que deveríamos pensar em uma história?",
+      "interview_insight": {
+        "source": "Alby Ojeda (roteirista de videogames)",
+        "quote": "Eu sempre comparo isso ao desastre que seria para um filme se, na primeira vez que um produtor fala com o roteirista, ele dissesse: 'Olha, já filmamos essas cenas de perseguição... Escreva uma história digna de Oscar com esse material.'",
+        "conclusion": "A história é a arquitetura da informação da experiência que estamos projetando."
+      },
+      "benefits": [
+        {
+          "title": "As histórias nos fazem brincar de antropólogos",
+          "description": "Cada vez que alguém usa nosso produto, está nos contando uma história. Isso nos permite ver do que precisam, o que os motiva e como se relacionam com a marca."
+        },
+        {
+          "title": "As histórias simplificam até as coisas mais complexas",
+          "description": "Lembrar de informações complexas é mais fácil quando lidas como uma história."
+        },
+        {
+          "title": "As histórias tornam as conexões entre as coisas mais claras",
+          "description": "Em uma história, as relações causais são facilmente percebidas e lembradas."
+        },
+        {
+          "title": "As histórias ajudam a dar vida à experiência",
+          "description": "A literatura e os videogames criam imersão. Ao projetar UX, buscamos essa mesma imersão: atenção total, naturalidade e fluxo sem atritos."
+        }
+      ]
+    },
+    "techniques": {
+      "intro": "3 técnicas para projetar a experiência como uma história",
+      "technique_1": {
+        "name": "Conteúdo em Primeiro Lugar",
+        "concept": "Assim como 'Mulheres e crianças primeiro' em um naufrágio, devemos definir a história antes das telas.",
+        "action": "Definir qual história vamos contar antes de projetar as telas ou escolher os componentes de interação.",
+        "benefits": [
+          "Compreender os objetivos do usuário e remover distrações.",
+          "Detectar rapidamente problemas de interação.",
+          "Explorar a UX antes de esboçar ou codificar (falhar rápido e barato)."
+        ]
+      },
+      "technique_2": {
+        "name": "O briefing de conteúdo",
+        "concept": "Um documento que faz perguntas para ajudar a tomar decisões sobre design e conteúdo.",
+        "key_questions": [
+          {
+            "question": "Quais são os objetivos do negócio ou do produto?",
+            "purpose": "Listar objetivos e problemas a resolver. Funciona como checklist."
+          },
+          {
+            "question": "Qual é o público-alvo?",
+            "purpose": "Compreender a pessoa por trás do usuário (Arquétipo da Persona)."
+          },
+          {
+            "question": "Quais são os sentimentos dos usuários?",
+            "sub_categories": [
+              {
+                "name": "Pontos problemáticos (Pain Points)",
+                "description": "Momentos de desconforto. Ajudam a pensar nos climas e ideias a comunicar."
+              },
+              {
+                "name": "Humor (Mood)",
+                "description": "Adaptar a mensagem ao estado de espírito do usuário. Utilizar uma tabela de dupla entrada (palavras-chave de estado de espírito vs. promessas do produto)."
+              }
+            ]
+          }
+        ]
+      },
+      "technique_3": {
+        "name": "Protótipo da História",
+        "concept": "Um protótipo de conteúdo (texto) que simula a interação do início ao fim.",
+        "benefits": [
+          "Técnica barata e de baixa fidelidade.",
+          "Foco na estrutura.",
+          "Visão completa dos casos de uso.",
+          "Revela pontos de contato e áreas de atrito."
+        ],
+        "steps_to_create": [
+          "Seja claro quanto ao objetivo do usuário e ao ponto de partida (gatilho).",
+          "Comece a escrever a conversa do produto com o usuário como um roteiro de teatro.",
+          "Amarre as mãos e não se autocensure (deixe fluir).",
+          "Façam isso em equipe (brainstorming)."
+        ]
+      }
+    },
+    "conclusion": {
+      "heading": "Tudo tem um fim",
+      "reference": "Roland Barthes afirmou que a arte de contar histórias está presente em todos os tempos e em todas as sociedades.",
+      "final_argument": "Se somos uma máquina biológica de contar histórias, por que não colocar seus mecanismos a serviço da experiência de nossos produtos digitais? Sem dúvida, precisamos começar pela história. Porque se criarmos uma boa história, criaremos uma boa experiência.",
+      "call_to_action": "Se você gostou do que leu, dê um aplauso 👏 e recomende."
+    }
+  }
+}
