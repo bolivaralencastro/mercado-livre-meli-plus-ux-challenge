@@ -4,9 +4,10 @@
 
 Este documento define a timeline completa do projeto de UX para o Meli+, organizando todas as etapas necessárias para a entrega do resultado final do desafio proposto pelo Mercado Livre.
 
-**Duração Total:** 12 semanas (3 meses)  
-**Equipe:** UX Research (2), UX/UI Design (3), Product Manager (1)  
-**Objetivo:** Transformar a experiência do Meli+ através de design centrado no usuário
+**Duração Total:** 7 dias (1 semana sprint intensivo)  
+**Equipe:** Designer UX/UI solo ou pequena equipe  
+**Objetivo:** Criar documentação completa de UX para o Meli+ com foco em velocidade e qualidade  
+**Meta:** Finalizar em 5-6 dias para permitir 1-2 dias de revisão com profissional e testes com usuários
 
 ---
 
@@ -48,708 +49,730 @@ Este documento define a timeline completa do projeto de UX para o Meli+, organiz
 
 ## 📆 Timeline Detalhada por Fase
 
-### Semanas 1-2: Fase 1 - Briefing e Alinhamento
-**Período:** Semana 1-2  
+### Dia 1 (Manhã): Fase 1 - Briefing e Alinhamento
+**Período:** Dia 1 - Manhã (4h)  
 **Status:** 🟢 Concluído  
-**Responsável:** Product Manager + UX Lead
+**Responsável:** Designer UX
 
 #### Objetivos
 - Definir escopo e objetivos do projeto
-- Alinhar expectativas com stakeholders
 - Estabelecer métricas de sucesso
 - Criar documentação inicial
 
 #### Entregas
 - ✅ Documento de briefing completo
-- ✅ Definição de stakeholders
 - ✅ Objetivos de negócio documentados
 - ✅ KPIs estabelecidos
 - ✅ Cronograma inicial
 
 #### Marcos (Milestones)
-- **M1.1:** Kickoff com stakeholders (Dia 1)
-- **M1.2:** Briefing aprovado (Dia 5)
-- **M1.3:** Equipe alinhada (Dia 10)
+- **M1.1:** Briefing documentado (Manhã do Dia 1)
 
 ---
 
-### Semanas 2-4: Fase 2 - Pesquisa e Descoberta
-**Período:** Semana 2-4  
+### Dia 1 (Tarde) - Dia 2: Fase 2 - Pesquisa e Descoberta
+**Período:** Dia 1 Tarde + Dia 2 (12h total)  
 **Status:** 🟢 Concluído  
-**Responsável:** UX Research Team
+**Responsável:** Designer UX
 
 #### Objetivos
-- Entender profundamente os usuários
+- Entender profundamente os usuários através de pesquisa secundária
 - Mapear jornadas atuais e dores
 - Analisar concorrência
-- Coletar dados quantitativos e qualitativos
+- Coletar dados de fontes existentes
 
 #### Entregas
-- ✅ 25 entrevistas em profundidade realizadas
-- ✅ 500+ respostas em questionários
-- ✅ Benchmark de 5 concorrentes principais
-- ✅ Personas definidas (Marina, Carlos, Juliana)
-- ✅ Jornadas de usuário mapeadas
+- ✅ Pesquisa desk research realizada
+- ✅ Benchmark de 3-5 concorrentes principais (Amazon Prime, Rappi Prime, etc.)
+- ✅ Personas definidas baseadas em dados secundários
+- ✅ Jornadas de usuário mapeadas (as-is)
 - ✅ Relatório de insights e descobertas
 
-#### Tarefas
-1. **Pesquisa Qualitativa** (Semana 2-3)
-   - [ ] Recrutar participantes (15 usuários atuais, 10 potenciais)
-   - [ ] Preparar roteiro de entrevistas
-   - [ ] Conduzir 25 entrevistas em profundidade
-   - [ ] Realizar 3 sessões de grupo focal
-   - [ ] Executar 15 testes de usabilidade do fluxo atual
-   - [ ] Sintetizar insights qualitativos
-
-2. **Pesquisa Quantitativa** (Semana 2-4)
-   - [ ] Criar questionário online
-   - [ ] Distribuir e coletar 500+ respostas
-   - [ ] Analisar dados de uso e abandono
-   - [ ] Estudar métricas de suporte e cancelamento
-   - [ ] Gerar relatórios estatísticos
-
-3. **Benchmark Competitivo** (Semana 3-4)
-   - [ ] Analisar Amazon Prime
-   - [ ] Analisar Rappi Prime
-   - [ ] Analisar outras 3 plataformas
-   - [ ] Documentar melhores práticas
-   - [ ] Identificar gaps e oportunidades
-
-4. **Síntese** (Semana 4)
-   - [ ] Criar personas baseadas em dados
-   - [ ] Mapear jornadas atuais (as-is)
+#### Tarefas Aceleradas
+1. **Pesquisa Secundária** (Dia 1 Tarde - 4h)
+   - [ ] Analisar dados existentes sobre Meli+
+   - [ ] Revisar reviews e feedback de usuários online
+   - [ ] Analisar fóruns e redes sociais
    - [ ] Consolidar insights principais
-   - [ ] Apresentar descobertas aos stakeholders
+
+2. **Benchmark Competitivo** (Dia 2 Manhã - 4h)
+   - [ ] Analisar Amazon Prime (features, pricing, UX)
+   - [ ] Analisar Rappi Prime
+   - [ ] Analisar 2-3 concorrentes adicionais
+   - [ ] Documentar melhores práticas
+   - [ ] Criar matriz comparativa
+
+3. **Síntese** (Dia 2 Tarde - 4h)
+   - [ ] Criar 3 personas baseadas em dados
+   - [ ] Mapear jornadas atuais (as-is)
+   - [ ] Identificar top 5 pain points
+   - [ ] Consolidar insights principais
 
 #### Marcos (Milestones)
-- **M2.1:** Pesquisa qualitativa completa (Dia 15)
-- **M2.2:** Pesquisa quantitativa completa (Dia 20)
-- **M2.3:** Benchmark finalizado (Dia 22)
-- **M2.4:** Apresentação de insights (Dia 28)
+- **M2.1:** Benchmark finalizado (Dia 2 Manhã)
+- **M2.2:** Personas e insights prontos (Dia 2 Tarde)
 
 ---
 
-### Semanas 5-6: Fase 3 - Estratégia e Definição
-**Período:** Semana 5-6  
+### Dia 3: Fase 3 - Estratégia e Definição
+**Período:** Dia 3 (8h)  
 **Status:** 🟢 Concluído  
-**Responsável:** UX Lead + Product Manager
+**Responsável:** Designer UX
 
 #### Objetivos
 - Definir estratégia de design
-- Criar hipóteses de solução
-- Priorizar oportunidades
+- Criar hipóteses de solução priorizadas
 - Estabelecer princípios de design
 
 #### Entregas
 - ✅ 3 pilares de design definidos (Clareza, Simplicidade, Confiança)
-- ✅ 8 hipóteses de solução documentadas
+- ✅ 5-8 hipóteses de solução documentadas
 - ✅ Matriz de priorização (impacto x esforço)
-- ✅ Roadmap de implementação (3 fases)
 - ✅ Princípios de design documentados
 
-#### Tarefas
-1. **Definição Estratégica** (Semana 5)
-   - [ ] Workshop de síntese com equipe
+#### Tarefas Aceleradas
+1. **Definição Estratégica** (Manhã - 4h)
    - [ ] Definir "How Might We" questions
-   - [ ] Estabelecer pilares de design
+   - [ ] Estabelecer 3 pilares de design
    - [ ] Criar princípios orientadores
 
-2. **Geração de Hipóteses** (Semana 5-6)
+2. **Geração e Priorização de Hipóteses** (Tarde - 4h)
    - [ ] Brainstorm de soluções potenciais
-   - [ ] Documentar 8 hipóteses principais
-   - [ ] Definir métricas de validação
-   - [ ] Mapear dependências técnicas
-
-3. **Priorização** (Semana 6)
+   - [ ] Documentar 5-8 hipóteses principais
    - [ ] Criar matriz impacto x esforço
-   - [ ] Priorizar hipóteses
-   - [ ] Definir MVP e fases futuras
-   - [ ] Alinhar roadmap com stakeholders
+   - [ ] Priorizar para MVP
 
 #### Marcos (Milestones)
-- **M3.1:** Pilares de design aprovados (Dia 32)
-- **M3.2:** Hipóteses validadas (Dia 38)
-- **M3.3:** Roadmap alinhado (Dia 42)
+- **M3.1:** Estratégia e hipóteses priorizadas (Dia 3 EOD)
 
 ---
 
-### Semanas 6-8: Fase 4 - Ideação e Wireframes
-**Período:** Semana 6-8  
+### Dia 4: Fase 4 - Ideação e Wireframes
+**Período:** Dia 4 (8h)  
 **Status:** 🟢 Concluído  
-**Responsável:** UX/UI Design Team
+**Responsável:** Designer UX/UI
 
 #### Objetivos
-- Criar wireframes de baixa fidelidade
-- Mapear fluxos de usuário
+- Criar wireframes de baixa/média fidelidade
+- Mapear fluxos de usuário principais
 - Definir arquitetura da informação
-- Explorar soluções criativas
 
 #### Entregas
-- ✅ Wireframes de baixa fidelidade (25+ telas)
-- ✅ Fluxos de usuário completos mapeados
+- ✅ Wireframes de 15-20 telas principais
+- ✅ 3-5 fluxos de usuário completos mapeados
 - ✅ Arquitetura da informação definida
-- ✅ Sketches e conceitos iniciais
-- ✅ Validação interna dos fluxos
 
-#### Tarefas
-1. **Brainstorming e Conceitos** (Semana 6-7)
-   - [ ] Sessões de crazy 8's
-   - [ ] Sketches de soluções
-   - [ ] Exploração de alternativas
-   - [ ] Seleção de melhores conceitos
-
-2. **Mapeamento de Fluxos** (Semana 7)
+#### Tarefas Aceleradas
+1. **Fluxos Principais** (Manhã - 3h)
    - [ ] Fluxo: Landing page → Assinatura
-   - [ ] Fluxo: Gestão de pagamentos
    - [ ] Fluxo: Dashboard de benefícios
-   - [ ] Fluxo: Onboarding
-   - [ ] Fluxo: Cancelamento
-   - [ ] Validar todos os edge cases
+   - [ ] Fluxo: Gestão de pagamentos
 
-3. **Wireframes** (Semana 7-8)
+2. **Wireframes** (Tarde - 5h)
    - [ ] Landing page otimizada
    - [ ] Fluxo de assinatura (3 passos)
    - [ ] Dashboard de assinante
    - [ ] Gestão de meios de pagamento
-   - [ ] Telas secundárias e modais
-   - [ ] Responsive design (mobile/desktop)
-
-4. **Arquitetura da Informação** (Semana 8)
-   - [ ] Sitemap completo
-   - [ ] Hierarquia de navegação
-   - [ ] Taxonomia de conteúdo
-   - [ ] Estrutura de dados
+   - [ ] Telas principais (versões desktop/mobile)
 
 #### Marcos (Milestones)
-- **M4.1:** Conceitos aprovados (Dia 45)
-- **M4.2:** Fluxos validados (Dia 50)
-- **M4.3:** Wireframes completos (Dia 56)
+- **M4.1:** Wireframes e fluxos completos (Dia 4 EOD)
 
 ---
 
-### Semanas 8-10: Fase 5 - UI Design de Alta Fidelidade
-**Período:** Semana 8-10  
+### Dia 5: Fase 5 - UI Design de Alta Fidelidade
+**Período:** Dia 5 (10h - dia intensivo)  
 **Status:** 🟢 Concluído  
-**Responsável:** UI Design Team
+**Responsável:** Designer UI
 
 #### Objetivos
-- Criar design de alta fidelidade
-- Desenvolver sistema de design
-- Produzir especificações visuais
-- Garantir acessibilidade e consistência
+- Criar design visual de alta fidelidade das telas principais
+- Definir sistema de design básico
+- Produzir especificações visuais essenciais
 
 #### Entregas
-- ✅ Telas de alta fidelidade (25+ screens)
-- ✅ Sistema de design e componentes
-- ✅ Guia de estilo completo
-- ✅ Especificações para desenvolvimento
-- ✅ Assets exportados e organizados
+- ✅ Telas de alta fidelidade (15-20 screens principais)
+- ✅ Sistema de design básico (cores, tipografia, componentes principais)
+- ✅ Especificações visuais essenciais
 
-#### Tarefas
-1. **Sistema de Design** (Semana 8-9)
+#### Tarefas Aceleradas
+1. **Design System Básico** (Manhã - 3h)
    - [ ] Definir paleta de cores
    - [ ] Estabelecer tipografia
-   - [ ] Criar grid system
-   - [ ] Desenvolver componentes base
-   - [ ] Tokens de design
-   - [ ] Documentar padrões
+   - [ ] Criar componentes base (buttons, inputs, cards)
 
-2. **UI Design** (Semana 9-10)
-   - [ ] Landing page (desktop + mobile)
-   - [ ] Fluxo de assinatura (3 telas)
-   - [ ] Dashboard de economia
-   - [ ] Gestão de pagamentos
-   - [ ] Onboarding
-   - [ ] Telas de erro e estados vazios
-   - [ ] Microinterações
-
-3. **Especificações** (Semana 10)
-   - [ ] Redlines e medidas
-   - [ ] Comportamentos e animações
-   - [ ] Estados (hover, active, disabled)
-   - [ ] Responsividade (breakpoints)
-   - [ ] Acessibilidade (WCAG 2.1 AA)
-
-4. **Validação** (Semana 10)
-   - [ ] Review interno de design
-   - [ ] Validação com stakeholders
-   - [ ] Ajustes e refinamentos
-   - [ ] Aprovação final
+2. **UI Design das Telas Principais** (Tarde - 7h)
+   - [ ] Landing Page (desktop + mobile)
+   - [ ] Fluxo de Assinatura (3 telas)
+   - [ ] Dashboard de Economia
+   - [ ] Gestão de Pagamentos
+   - [ ] Estados principais (loading, error, success)
 
 #### Marcos (Milestones)
-- **M5.1:** Design system pronto (Dia 60)
-- **M5.2:** Telas principais finalizadas (Dia 65)
-- **M5.3:** Especificações completas (Dia 70)
+- **M5.1:** Telas principais finalizadas (Dia 5 EOD)
 
 ---
 
-### Semanas 10-11: Fase 6 - Prototipagem e Testes
-**Período:** Semana 10-11  
+### Dia 6 (Manhã): Fase 6 - Prototipagem e Validação Rápida
+**Período:** Dia 6 Manhã (4h)  
 **Status:** 🟢 Concluído  
-**Responsável:** UX Design + UX Research
+**Responsável:** Designer UX
 
 #### Objetivos
-- Criar protótipo interativo de alta fidelidade
-- Conduzir testes de usabilidade
-- Validar soluções com usuários reais
-- Iterar baseado em feedback
+- Criar protótipo interativo básico
+- Realizar validação rápida (se possível)
 
 #### Entregas
-- ✅ Protótipo Figma interativo completo
-- ✅ 20 testes de usabilidade realizados
-- ✅ Relatório de resultados e insights
-- ✅ Iterações implementadas
-- ✅ Validação de métricas (SUS, NPS)
+- ✅ Protótipo Figma interativo básico
+- ✅ Fluxos principais conectados
+- ✅ Validação heurística realizada
 
-#### Tarefas
-1. **Prototipagem** (Semana 10)
-   - [ ] Criar protótipo no Figma
-   - [ ] Implementar interações
-   - [ ] Conectar todos os fluxos
-   - [ ] Adicionar animações
-   - [ ] Testar navegação internamente
+#### Tarefas Aceleradas
+1. **Prototipagem** (3h)
+   - [ ] Conectar telas no Figma
+   - [ ] Implementar interações básicas
+   - [ ] Testar navegação
 
-2. **Preparação dos Testes** (Semana 10)
-   - [ ] Definir 8 cenários de teste
-   - [ ] Recrutar 20 participantes
-   - [ ] Criar roteiro de teste
-   - [ ] Preparar métricas (SUS, NPS, tarefas)
-   - [ ] Setup de ferramentas (gravação, analytics)
-
-3. **Execução dos Testes** (Semana 11)
-   - [ ] Conduzir 20 sessões (45min cada)
-   - [ ] Observar e documentar comportamentos
-   - [ ] Coletar métricas quantitativas
-   - [ ] Gravar feedback qualitativo
-   - [ ] Identificar problemas e oportunidades
-
-4. **Análise e Iteração** (Semana 11)
-   - [ ] Sintetizar resultados
-   - [ ] Calcular métricas (SUS: 84, NPS: +65)
-   - [ ] Priorizar ajustes necessários
-   - [ ] Implementar melhorias no protótipo
-   - [ ] Validar mudanças internamente
+2. **Validação Interna** (1h)
+   - [ ] Avaliação heurística
+   - [ ] Checklist de usabilidade
+   - [ ] Ajustes críticos
 
 #### Marcos (Milestones)
-- **M6.1:** Protótipo pronto para testes (Dia 72)
-- **M6.2:** Testes completados (Dia 76)
-- **M6.3:** Iterações finalizadas (Dia 77)
+- **M6.1:** Protótipo pronto (Dia 6 Meio-dia)
 
 ---
 
-### Semana 11-12: Fase 7 - Apresentação aos Stakeholders
-**Período:** Semana 11-12  
+### Dia 6 (Tarde): Fase 7 - Apresentação e Documentação
+**Período:** Dia 6 Tarde (4h)  
 **Status:** 🟢 Concluído  
-**Responsável:** UX Lead + Product Manager
+**Responsável:** Designer UX
 
 #### Objetivos
-- Criar narrativa convincente do projeto
+- Criar narrativa do projeto
 - Preparar apresentação executiva
-- Comunicar resultados e impacto
-- Obter aprovação para implementação
+- Documentar processo e decisões
 
 #### Entregas
 - ✅ Narrativa completa do projeto
-- ✅ Deck de apresentação
-- ✅ Vídeo demo do protótipo
-- ✅ Documentação para diferentes audiências
-- ✅ Aprovação dos stakeholders
+- ✅ Apresentação/deck (slides ou documento)
+- ✅ Documentação do processo
 
-#### Tarefas
-1. **Criação de Conteúdo** (Semana 11)
+#### Tarefas Aceleradas
+1. **Narrativa e Documentação** (3h)
    - [ ] Escrever narrativa do projeto
-   - [ ] Documentar jornada de UX
-   - [ ] Compilar dados e resultados
-   - [ ] Criar storytelling com dados
+   - [ ] Documentar principais decisões
+   - [ ] Criar case study
 
-2. **Deck de Apresentação** (Semana 11-12)
+2. **Apresentação** (1h)
    - [ ] Estruturar apresentação
-   - [ ] Criar slides executivos
-   - [ ] Adicionar visualizações de dados
-   - [ ] Incluir capturas do protótipo
-   - [ ] Preparar versões por audiência
-
-3. **Demo e Vídeo** (Semana 12)
-   - [ ] Criar vídeo walkthrough
-   - [ ] Preparar demo ao vivo
-   - [ ] Destacar principais features
-   - [ ] Mostrar antes/depois
-
-4. **Apresentações** (Semana 12)
-   - [ ] Apresentar para liderança (C-level)
-   - [ ] Apresentar para product/tech teams
-   - [ ] Q&A e feedback
-   - [ ] Obter aprovação formal
+   - [ ] Adicionar visualizações principais
+   - [ ] Preparar demo
 
 #### Marcos (Milestones)
-- **M7.1:** Narrativa e deck prontos (Dia 80)
-- **M7.2:** Apresentação para C-level (Dia 82)
-- **M7.3:** Aprovação obtida (Dia 84)
+- **M7.1:** Documentação completa (Dia 6 EOD)
 
 ---
 
-### Semana 12: Fase 8 - Entrega e Handoff
-**Período:** Semana 12  
+### Dia 6 (Noite) - Dia 7: Fase 8 - Entrega Final e Revisão
+**Período:** Dia 6 Noite + Dia 7 (4h)  
 **Status:** 🟢 Concluído  
-**Responsável:** Toda a equipe
+**Responsável:** Designer UX
 
 #### Objetivos
 - Consolidar toda a documentação
-- Preparar handoff para desenvolvimento
-- Documentar próximos passos
-- Estabelecer métricas de acompanhamento
+- Preparar entrega final
+- Realizar revisão completa
 
 #### Entregas
 - ✅ Resumo executivo final
-- ✅ Documentação técnica completa
-- ✅ Roadmap de implementação detalhado
-- ✅ KPIs e métricas de sucesso
-- ✅ Recomendações e próximos passos
 - ✅ Repositório organizado e documentado
+- ✅ Todos os assets exportados
+- ✅ Revisão completa realizada
 
-#### Tarefas
-1. **Documentação Final** (Dia 80-82)
-   - [ ] Resumo executivo
-   - [ ] Consolidar todas as fases
+#### Tarefas Finais
+1. **Consolidação** (2h)
    - [ ] Organizar repositório
    - [ ] Criar índice navegável
    - [ ] Revisar toda documentação
+   - [ ] Exportar assets
 
-2. **Handoff para Desenvolvimento** (Dia 82-84)
-   - [ ] Especificações técnicas
-   - [ ] Design system documentado
-   - [ ] Fluxos e edge cases
-   - [ ] Requisitos de analytics
-   - [ ] Considerações de segurança
-
-3. **Roadmap de Implementação** (Dia 83-84)
-   - [ ] Fase 1: MVP (meses 1-3)
-   - [ ] Fase 2: Expansão (meses 4-6)
-   - [ ] Fase 3: Otimização (meses 7-12)
-   - [ ] Dependências e riscos
-   - [ ] Estimativas de esforço
-
-4. **Métricas e KPIs** (Dia 84)
-   - [ ] Definir KPIs de aquisição
-   - [ ] Definir KPIs de retenção
-   - [ ] Definir KPIs de valor
-   - [ ] Definir KPIs de experiência
-   - [ ] Setup de dashboards de analytics
-
-5. **Fechamento** (Dia 84)
-   - [ ] Retrospectiva com equipe
-   - [ ] Documentar lições aprendidas
-   - [ ] Celebrar conquistas
-   - [ ] Planejar acompanhamento pós-lançamento
+2. **Revisão e Ajustes** (2h)
+   - [ ] Review final de qualidade
+   - [ ] Correções de última hora
+   - [ ] Validação de links e recursos
 
 #### Marcos (Milestones)
-- **M8.1:** Documentação completa (Dia 82)
-- **M8.2:** Handoff realizado (Dia 83)
-- **M8.3:** Projeto finalizado (Dia 84)
+- **M8.1:** Projeto finalizado e pronto para entrega (Fim do Dia 7)
 
 ---
 
-## 📊 Visão de Gantt (Resumo)
+### 🎯 Dias 7-8: BUFFER - Revisão com Profissional e Testes
+**Período:** Dias 7-8 (2 dias reservados)  
+**Responsável:** Designer + Revisor Externo + Usuários Teste
+
+#### Atividades de Revisão
+- [ ] Revisão com profissional de UX
+- [ ] Testes rápidos com 2-3 usuários (se possível)
+- [ ] Ajustes finais baseados em feedback
+- [ ] Preparação final para submissão
+
+#### Meta
+Ter o projeto completo no **Dia 6** para garantir tempo de revisão e refinamento nos **Dias 7-8**.
+
+---
+
+## 📊 Visão de Gantt (Resumo) - 7 Dias Sprint
 
 ```
-Semanas:  1  2  3  4  5  6  7  8  9  10 11 12
-─────────────────────────────────────────────
-Briefing         ██
-Pesquisa         ████████
-Estratégia                  ████
-Ideação                     ████████
-UI Design                         ████████
-Protótipo                               ████
-Apresentação                            ████
-Entrega                                    ██
-─────────────────────────────────────────────
+Dias:     1       2       3       4       5       6       7
+──────────────────────────────────────────────────────────
+Briefing  █▓
+Pesquisa  ▓██████████
+Estratégia              ████████
+Ideação                         ████████
+UI Design                               ██████████
+Protótipo                                       ████
+Apresent.                                       ▓███
+Entrega                                           ████
+Revisão                                               ████████
+──────────────────────────────────────────────────────────
+         Manhã|Tarde      |       |       |       |       |
 ```
+
+**Legenda:**
+- █ Trabalho intensivo
+- ▓ Trabalho parcial/início
+- Dia 7: Finalização e início do período de revisão
+- Dias 7-8: Revisão com profissional e usuários
 
 ---
 
 ## 🎯 Milestones Principais (GitHub Milestones)
 
-### Milestone 1: Fundação (Semanas 1-4)
-**Data:** Semana 1-4  
-**Objetivo:** Entender o problema e os usuários  
-**Entregas:** Briefing + Pesquisa completa
+### Milestone 1: Setup e Pesquisa (Dia 1-2)
+**Data:** Dia 1-2  
+**Objetivo:** Entender o problema e usuários rapidamente  
+**Entregas:** Briefing + Pesquisa (desk research + benchmark)
 
-### Milestone 2: Estratégia (Semanas 5-6)
-**Data:** Semana 5-6  
-**Objetivo:** Definir direção e soluções  
-**Entregas:** Estratégia + Hipóteses priorizadas
+### Milestone 2: Estratégia e Conceitos (Dia 3-4)
+**Data:** Dia 3-4  
+**Objetivo:** Definir direção e criar soluções  
+**Entregas:** Estratégia + Hipóteses + Wireframes
 
-### Milestone 3: Design (Semanas 6-10)
-**Data:** Semana 6-10  
-**Objetivo:** Criar soluções visuais  
-**Entregas:** Wireframes + UI Design completo
+### Milestone 3: Design Visual (Dia 5)
+**Data:** Dia 5  
+**Objetivo:** Criar design de alta fidelidade  
+**Entregas:** UI Design completo + Design system básico
 
-### Milestone 4: Validação (Semanas 10-11)
-**Data:** Semana 10-11  
-**Objetivo:** Testar e validar soluções  
-**Entregas:** Protótipo + Resultados de testes
+### Milestone 4: Protótipo e Documentação (Dia 6)
+**Data:** Dia 6  
+**Objetivo:** Finalizar e documentar  
+**Entregas:** Protótipo + Apresentação + Documentação
 
-### Milestone 5: Entrega Final (Semana 12)
-**Data:** Semana 12  
-**Objetivo:** Documentar e entregar  
-**Entregas:** Apresentação + Documentação completa
+### Milestone 5: Revisão e Entrega (Dia 7-8)
+**Data:** Dia 7-8  
+**Objetivo:** Revisar e refinar com feedback externo  
+**Entregas:** Projeto final revisado e aprovado
+
+---
+## 📋 Checklist de Progresso Geral - Sprint 7 Dias
+
+### Planejamento e Setup (Pré-Sprint)
+- [ ] Ferramentas configuradas (Figma, repositório)
+- [ ] Cronograma de 7 dias definido
+- [ ] Objetivos claros estabelecidos
+
+### Dia 1 Manhã: Briefing ⏰
+- [ ] Objetivos definidos
+- [ ] Escopo delimitado
+- [ ] Métricas estabelecidas
+- [ ] Documentação inicial criada
+
+### Dia 1 Tarde + Dia 2: Pesquisa ⏰
+- [ ] Desk research realizada
+- [ ] Benchmark concluído (3-5 concorrentes: Amazon Prime, Rappi Prime, etc.)
+- [ ] Personas criadas (baseadas em dados secundários)
+- [ ] Insights principais documentados
+- [ ] Jornadas mapeadas
+
+### Dia 3: Estratégia ⏰
+- [ ] Pilares de design definidos (3)
+- [ ] Hipóteses criadas (5-8)
+- [ ] Priorização realizada (matriz impacto x esforço)
+- [ ] Princípios de design estabelecidos
+
+### Dia 4: Ideação ⏰
+- [ ] Wireframes criados (15-20 telas principais)
+- [ ] Fluxos mapeados (3-5 principais)
+- [ ] Arquitetura da informação definida
+- [ ] Conceitos validados internamente
+
+### Dia 5: UI Design ⏰
+- [ ] Design system básico criado
+- [ ] Telas finalizadas (15-20 principais)
+- [ ] Componentes base documentados
+- [ ] Estados principais desenhados
+
+### Dia 6 Manhã: Protótipo ⏰
+- [ ] Protótipo interativo criado (Figma)
+- [ ] Fluxos principais conectados
+- [ ] Navegação testada internamente
+- [ ] Validação heurística realizada
+
+### Dia 6 Tarde: Apresentação ⏰
+- [ ] Narrativa escrita
+- [ ] Apresentação/deck criado
+- [ ] Case study documentado
+- [ ] Demo preparada
+
+### Dia 6 Noite + Dia 7: Entrega ⏰
+- [ ] Resumo executivo finalizado
+- [ ] Documentação completa e organizada
+- [ ] Repositório navegável
+- [ ] Todos os assets exportados
+
+### Dia 7-8: Revisão e Refinamento 🎯
+- [ ] Revisão com profissional de UX
+- [ ] Testes com 2-3 usuários (se possível)
+- [ ] Ajustes finais implementados
+- [ ] Projeto final aprovado
 
 ---
 
-## 📋 Checklist de Progresso Geral
+## 👥 Responsabilidades - Sprint Solo/Pequena Equipe
 
-### Planejamento e Setup ✅
-- [x] Equipe alocada
-- [x] Ferramentas configuradas
-- [x] Cronograma definido
-- [x] Stakeholders identificados
+### Distribuição de Trabalho (7 Dias)
 
-### Fase 1: Briefing ✅
-- [x] Objetivos definidos
-- [x] Escopo delimitado
-- [x] Métricas estabelecidas
-- [x] Kickoff realizado
+| Dia | Fase | Responsável | Carga Horária | Prioridade |
+|-----|------|-------------|---------------|------------|
+| 1 (M) | Briefing | Designer UX | 4h | Alta |
+| 1 (T) + 2 | Pesquisa | Designer UX | 12h | Alta |
+| 3 | Estratégia | Designer UX | 8h | Alta |
+| 4 | Ideação | Designer UX/UI | 8h | Alta |
+| 5 | UI Design | Designer UI | 10h | Alta |
+| 6 (M) | Protótipo | Designer UX | 4h | Alta |
+| 6 (T) | Apresentação | Designer UX | 4h | Média |
+| 6 (N) + 7 | Entrega | Designer UX | 4h | Alta |
+| 7-8 | Revisão | Designer + Externo | 16h | Crítica |
 
-### Fase 2: Pesquisa ✅
-- [x] Entrevistas realizadas (25)
-- [x] Questionários coletados (500+)
-- [x] Benchmark concluído (5 concorrentes)
-- [x] Personas criadas (3)
-- [x] Insights documentados
+**Total de horas diretas:** ~54h (média de 9h/dia durante 6 dias)  
+**Buffer para revisão:** 2 dias completos
 
-### Fase 3: Estratégia ✅
-- [x] Pilares de design definidos (3)
-- [x] Hipóteses criadas (8)
-- [x] Priorização realizada
-- [x] Roadmap aprovado
+### Perfil Ideal do Designer
 
-### Fase 4: Ideação ✅
-- [x] Wireframes criados (25+ telas)
-- [x] Fluxos mapeados (5 principais)
-- [x] Arquitetura definida
-- [x] Conceitos validados
+**Habilidades Necessárias:**
+- UX Research (desk research e análise competitiva)
+- UX Design (wireframes, fluxos, arquitetura)
+- UI Design (visual design, design system)
+- Prototipagem (Figma avançado)
+- Documentação técnica
+- Apresentação e storytelling
 
-### Fase 5: UI Design ✅
-- [x] Design system criado
-- [x] Telas finalizadas (25+)
-- [x] Especificações documentadas
-- [x] Acessibilidade validada
-
-### Fase 6: Protótipo ✅
-- [x] Protótipo interativo criado
-- [x] Testes realizados (20 usuários)
-- [x] Métricas coletadas (SUS: 84, NPS: +65)
-- [x] Iterações implementadas
-
-### Fase 7: Apresentação ✅
-- [x] Narrativa escrita
-- [x] Deck criado
-- [x] Demo preparada
-- [x] Stakeholders apresentados
-- [x] Aprovação obtida
-
-### Fase 8: Entrega ✅
-- [x] Resumo executivo finalizado
-- [x] Documentação completa
-- [x] Handoff realizado
-- [x] Roadmap de implementação
-- [x] KPIs definidos
+**Ferramentas:**
+- Figma (design e prototipagem)
+- Markdown/GitHub (documentação)
+- Google Suite (apresentação)
+- Ferramentas de análise competitiva
 
 ---
 
-## 👥 Matriz RACI
-
-### Por Fase
-
-| Fase | UX Research | UX/UI Design | Product Manager | Stakeholders |
-|------|-------------|--------------|-----------------|--------------|
-| Briefing | C | C | R/A | I |
-| Pesquisa | R/A | C | I | I |
-| Estratégia | C | C | R/A | C |
-| Ideação | C | R/A | C | I |
-| UI Design | I | R/A | C | I |
-| Protótipo | R | R/A | C | I |
-| Apresentação | C | C | R/A | C/A |
-| Entrega | C | C | R/A | A |
-
-**Legenda:**
-- R: Responsible (Responsável pela execução)
-- A: Accountable (Responsável final/aprovação)
-- C: Consulted (Consultado)
-- I: Informed (Informado)
-
----
-
-## 🚨 Riscos e Mitigações
+## 🚨 Riscos e Mitigações - Sprint 7 Dias
 
 ### Riscos Identificados
 
 | Risco | Probabilidade | Impacto | Mitigação |
 |-------|--------------|---------|-----------|
-| Atraso na pesquisa (recrutamento) | Média | Alto | Buffer de 1 semana, plano B de recrutamento |
-| Mudança de escopo mid-project | Média | Alto | Scope freeze após semana 4 |
-| Feedback negativo em testes | Baixa | Médio | Iteração rápida, tempo reservado |
-| Limitações técnicas impedem ideias | Média | Médio | Validação técnica early, soluções alternativas |
-| Stakeholders não aprovam | Baixa | Alto | Envolvimento contínuo, validações parciais |
+| Scope creep durante o sprint | Alta | Crítico | Scope freeze no Dia 1, foco total em MVP |
+| Burnout por ritmo intenso | Média | Alto | Pausas regulares, jornada máxima de 10h/dia |
+| Qualidade comprometida pela pressa | Média | Alto | Revisão nos Dias 7-8, checklist de qualidade |
+| Falta de dados primários (sem tempo para pesquisa) | Alta | Médio | Uso de desk research e dados secundários confiáveis |
+| Não ter tempo para revisão externa | Baixa | Alto | Finalizar no Dia 6, garantir 2 dias de buffer |
 
 ### Plano de Contingência
-- **Buffer de tempo:** 1 semana reservada entre fases críticas
-- **Aprovações incrementais:** Validar com stakeholders a cada milestone
-- **Comunicação:** Updates semanais de progresso
-- **Priorização clara:** MVP definido desde o início
+- **Priorização rigorosa:** Foco nas telas e fluxos principais, secundário pode ser esboçado
+- **Timeboxing:** Cada fase tem limite de tempo fixo, não pode estourar
+- **Documentação mínima viável:** Durante o sprint, foco em fazer. Documentar detalhadamente na revisão
+- **Backup diário:** Salvar progresso em múltiplos locais (Figma, Git, Drive)
+- **Checklist de qualidade:** Validação rápida ao fim de cada dia
 
 ---
 
-## 📞 Comunicação e Rituais
+## 📞 Comunicação e Check-ins - Sprint 7 Dias
 
-### Reuniões Regulares
+### Rituais Recomendados
 
-**Daily Standup** (15min)
-- Frequência: Diária
-- Participantes: Equipe de UX
-- Formato: O que fiz / Vou fazer / Bloqueios
+**Check-in Diário (fim do dia - 15min)**
+- Autoavaliação: O que completei hoje?
+- Planejamento: Foco para amanhã
+- Bloqueios: O que está impedindo progresso?
+- Ajustes: Preciso realocar tempo?
 
-**Weekly Review** (1h)
-- Frequência: Toda sexta-feira
-- Participantes: Equipe + PM
-- Formato: Demo de progresso + planejamento próxima semana
+**Mid-Sprint Check (Dia 3 - 30min)**
+- Review de progresso até metade
+- Validação de que está no caminho certo
+- Ajustes de escopo se necessário
 
-**Stakeholder Update** (30min)
-- Frequência: Quinzenal
-- Participantes: Liderança + Equipe
-- Formato: Apresentação de progresso e decisões
+**Pre-Review Check (Dia 6 EOD - 1h)**
+- Review completo do trabalho
+- Preparação para revisão externa
+- Lista de ajustes para os Dias 7-8
 
-**Retrospectiva** (1h)
-- Frequência: Ao final de cada fase
-- Participantes: Equipe completa
-- Formato: O que funcionou / Não funcionou / Melhorias
+**Revisão com Profissional (Dia 7 - 2h)**
+- Apresentação do projeto completo
+- Feedback estruturado
+- Lista priorizada de ajustes
+
+**Testes com Usuários (Dia 7-8 - 4h total)**
+- 2-3 sessões rápidas de teste (30min cada)
+- Validação dos fluxos principais
+- Ajustes críticos de usabilidade
 
 ### Canais de Comunicação
-- **Slack:** Comunicação diária e quick questions
-- **GitHub:** Documentação, issues, milestones
-- **Figma:** Design, protótipos, comentários
-- **Meetings:** Decisões importantes e alinhamentos
+- **Notas pessoais:** Diário de decisões e aprendizados
+- **GitHub:** Commits frequentes com mensagens claras
+- **Figma:** Comentários para marcar dúvidas ou decisões
+- **Backup:** Google Drive ou similar para segurança
+
+---
+---
+
+## 🎓 Critérios de Sucesso - Sprint 7 Dias
+
+### Critérios Mínimos de Aceitação
+
+**Ao Final do Dia 2 (Pesquisa):**
+- ✅ Desk research de 3-5 concorrentes completo
+- ✅ 3 personas baseadas em dados secundários
+- ✅ Top 5 insights documentados
+
+**Ao Final do Dia 3 (Estratégia):**
+- ✅ 3 pilares de design claros
+- ✅ 5-8 hipóteses priorizadas
+- ✅ Direção estratégica definida
+
+**Ao Final do Dia 4 (Ideação):**
+- ✅ Wireframes das 15-20 telas principais
+- ✅ 3-5 fluxos principais mapeados
+- ✅ Arquitetura da informação definida
+
+**Ao Final do Dia 5 (UI Design):**
+- ✅ Telas de alta fidelidade das principais screens
+- ✅ Design system básico funcional
+- ✅ Componentes principais prontos
+
+**Ao Final do Dia 6 (Protótipo + Docs):**
+- ✅ Protótipo Figma navegável
+- ✅ Documentação completa do processo
+- ✅ Apresentação/case study pronto
+
+**Ao Final dos Dias 7-8 (Revisão):**
+- ✅ Feedback de profissional incorporado
+- ✅ Validação com 2-3 usuários (se possível)
+- ✅ Projeto final polido e pronto
+
+### Critérios de Qualidade
+
+**Mínimo aceitável:**
+- Documentação clara e bem estruturada
+- Design coerente e profissional
+- Fluxos principais funcionando no protótipo
+- Caso de UX bem contado (problema → solução → impacto)
+
+**Ideal (se tempo permitir):**
+- Animações e microinterações no protótipo
+- Testes com usuários reais completados
+- Métricas de validação coletadas
+- Design system mais completo
 
 ---
 
-## 🎓 Critérios de Sucesso
+## 📚 Recursos e Ferramentas - Sprint 7 Dias
 
-### Critérios de Aceitação por Fase
+### Ferramentas Essenciais
+- **Design e Prototipagem:** Figma (principal)
+- **Documentação:** Markdown, GitHub/GitLab
+- **Pesquisa:** Google (desk research), sites de concorrentes
+- **Apresentação:** Google Slides, Canva ou Figma Slides
+- **Organização:** Notion, Trello ou checklist simples
+- **Backup:** Google Drive ou Dropbox
 
-**Pesquisa:** 
-- ✅ Mínimo 20 entrevistas realizadas
-- ✅ 3 personas validadas
-- ✅ Benchmark de 5 concorrentes completo
+### Recursos Recomendados
 
-**Estratégia:**
-- ✅ Hipóteses priorizadas e documentadas
-- ✅ Roadmap aprovado por stakeholders
+**Para Pesquisa (Dia 1-2):**
+- Reviews no Google Play/App Store do Mercado Livre
+- Artigos sobre Amazon Prime e Rappi Prime
+- Fóruns (Reddit, Reclame Aqui)
+- Nielsen Norman Group (artigos de UX)
+- Dados públicos sobre e-commerce e assinaturas
 
-**Design:**
-- ✅ 100% das telas principais desenhadas
-- ✅ Design system funcional
-- ✅ WCAG 2.1 AA compliance
+**Para Design (Dia 4-5):**
+- Figma Community (componentes e templates)
+- Material Design (referências)
+- Design systems de outras empresas (Airbnb, Uber)
+- Unsplash/Pexels (imagens se necessário)
 
-**Protótipo:**
-- ✅ SUS Score > 80
-- ✅ Taxa de conclusão de tarefas > 85%
-- ✅ NPS > 50
+**Para Validação (Dia 6-8):**
+- Checklist heurístico (Nielsen)
+- WCAG checklist básico
+- Profissional de UX da rede pessoal
+- Amigos/família como usuários teste
 
-**Entrega:**
-- ✅ Documentação completa e aprovada
-- ✅ Handoff realizado com sucesso
-- ✅ Equipe de dev pronta para começar
-
----
-
-## 📚 Recursos e Ferramentas
-
-### Ferramentas Utilizadas
-- **Design:** Figma
-- **Research:** UserTesting, Optimal Workshop
-- **Documentação:** Markdown, GitHub
-- **Analytics:** Mixpanel, Google Analytics
-- **Colaboração:** Slack, Miro, Notion
-- **Apresentação:** Google Slides, Loom
-
-### Repositório de Documentos
+### Estrutura do Repositório
 ```
-/briefing         - Contexto e objetivos
-/pesquisa         - Research findings
-/estrategia       - Strategy e hipóteses
-/ideacao          - Wireframes e fluxos
-/ui-design        - High-fidelity designs
-/prototipo        - Prototype e test results
-/apresentacao     - Presentations e narrativa
-/entrega          - Final deliverables
+/briefing         - Contexto e objetivos (Dia 1)
+/pesquisa         - Benchmark e insights (Dia 1-2)
+/estrategia       - Pilares e hipóteses (Dia 3)
+/ideacao          - Wireframes e fluxos (Dia 4)
+/ui-design        - Telas finais (Dia 5)
+/prototipo        - Link Figma e validações (Dia 6)
+/apresentacao     - Case study e narrativa (Dia 6)
+/entrega          - Resumo final (Dia 7)
 ```
 
 ---
 
-## 📈 Métricas de Sucesso do Projeto
+## 📈 Métricas de Sucesso do Projeto - Sprint 7 Dias
 
-### Impacto em Negócio (Projetado)
+### Métricas do Sprint
+- ⏰ **Entrega no prazo:** Finalizar trabalho principal em 6 dias
+- 📋 **Completude:** Todas as fases essenciais completadas
+- ✅ **Qualidade:** Revisão profissional aprovada
+- 🎯 **Objetivos:** Case de UX completo e apresentável
+
+### Impacto Esperado no Meli+ (Projetado)
+*Baseado nas soluções propostas no case*
+
+**Negócio:**
 - 📈 Conversão em assinaturas: **+25-30%**
 - 📈 Taxa de retenção: **+20%**
 - 📈 LTV (Lifetime Value): **+25-35%**
 - 📉 Cancelamentos involuntários: **-30%**
 
-### Impacto em Experiência
+**Experiência:**
 - ⏱️ Tempo para assinar: **-50%** (5min → 2.5min)
-- 😊 SUS Score: **84/100** (vs 62/100 atual)
+- 😊 SUS Score projetado: **84/100** (vs 62/100 atual)
 - ✅ Compreensão de benefícios: **92%** (vs 56% atual)
 - 🎯 Taxa de conclusão: **85%**
 
-### Métricas do Projeto
-- ⏰ Entrega no prazo: **100%**
-- 💰 Dentro do orçamento: **100%**
-- ✅ Aprovação de stakeholders: **100%**
-- 🎯 Objetivos atingidos: **100%**
+*Nota: Estas são projeções baseadas em benchmarks e boas práticas, não validadas com testes reais devido ao prazo*
 
 ---
 
-## 🚀 Próximos Passos Pós-Projeto
+## 🚀 Após o Sprint - Próximos Passos
 
-### Implementação - Fase 1 (Meses 1-3)
-- Landing page otimizada
-- Fluxo de assinatura simplificado
-- Dashboard de economia
-- Gestão de pagamentos
+### Imediato (Dias 7-8)
+- 🔍 Revisão com profissional de UX
+- 👥 Testes rápidos com 2-3 usuários
+- ✏️ Ajustes finais baseados em feedback
+- 📦 Preparação para submissão/apresentação
 
-### Implementação - Fase 2 (Meses 4-6)
-- Onboarding educativo
-- Notificações proativas
-- Gamificação
+### Se o Projeto For Aprovado (Futura Implementação)
+
+**Fase 1 - MVP (Meses 1-3):**
+- Landing page otimizada com calculadora
+- Fluxo de assinatura simplificado (3 passos)
+- Dashboard básico de economia
+- Gestão melhorada de pagamentos
+
+**Fase 2 - Expansão (Meses 4-6):**
+- Onboarding educativo interativo
+- Sistema de notificações proativas
+- Gamificação de benefícios
 - Recomendações personalizadas
 
-### Implementação - Fase 3 (Meses 7-12)
+**Fase 3 - Otimização (Meses 7-12):**
 - Testes A/B contínuos
 - Personalização avançada
-- Novos benefícios
+- Novos benefícios baseados em dados
 - Expansão regional
 
 ---
 
-## 📝 Notas e Observações
+## 📝 Lições Aprendidas e Dicas
 
-### Lições Aprendidas
-- Pesquisa profunda economiza tempo de desenvolvimento
-- Envolvimento de stakeholders early evita retrabalho
-- Testes frequentes validam hipóteses rapidamente
-- Simplicidade > Complexidade
+### Para um Sprint de 7 Dias Bem-Sucedido
 
-### Agradecimentos
-- Usuários que participaram da pesquisa
-- Equipe de UX pela dedicação
-- Stakeholders pela confiança
-- Todos que tornaram este projeto possível
+**O que funciona:**
+- ✅ **Foco absoluto:** Eliminar distrações, 100% dedicação
+- ✅ **Escopo realista:** Aceitar limitações, fazer o essencial muito bem
+- ✅ **Desk research:** Usar dados secundários economiza tempo
+- ✅ **Templates e recursos:** Não reinventar a roda, usar Figma Community
+- ✅ **Timeboxing rígido:** Cada fase tem tempo máximo, não ultrapassar
+- ✅ **Documentar durante:** Não deixar documentação para o final
+
+**O que evitar:**
+- ❌ Scope creep (adicionar "só mais uma coisinha")
+- ❌ Perfeccionismo excessivo (buscar "bom o suficiente", não perfeito)
+- ❌ Pular etapas (cada fase importa)
+- ❌ Trabalhar além de 10h/dia (burnout prejudica qualidade)
+- ❌ Deixar backup/save para depois (salvar constantemente)
+
+### Adaptações para Contextos Diferentes
+
+**Se tiver menos tempo (5 dias):**
+- Combinar Briefing + Pesquisa em 1 dia
+- Pular prototipagem avançada, usar wireframes clickable
+- Reduzir número de telas (10-15 principais)
+
+**Se tiver mais tempo (10-14 dias):**
+- Adicionar pesquisa primária (5-10 entrevistas rápidas)
+- Fazer testes de usabilidade reais (5-8 usuários)
+- Criar design system mais completo
+- Adicionar mais variações e microinterações
+
+**Se tiver equipe (2-3 pessoas):**
+- Paralelizar: 1 pessoa em Research enquanto outra faz Briefing
+- Dia 4-5: UX faz wireframes enquanto UI prepara design system
+- Ganhar 1-2 dias no cronograma total
+
+---
+
+## ✨ Conclusão
+
+Este timeline de **7 dias** foi estruturado para entregar um case de UX completo e de alta qualidade para o desafio Meli+ do Mercado Livre.
+
+### Diferencial Desta Abordagem
+
+**Sprint Intensivo mas Sustentável:**
+- 6 dias de trabalho focado (média 9h/dia)
+- 2 dias de buffer para revisão e refinamento
+- Evita burnout através de timeboxing e priorização clara
+
+**Foco em Qualidade:**
+- Todas as 8 fases do processo de UX são cumpridas
+- Revisão profissional garantida nos dias 7-8
+- Validação com usuários reais (se possível)
+
+**Realista e Pragmático:**
+- Aceita limitações de tempo
+- Usa desk research em vez de pesquisa primária extensa
+- Foca no essencial, mas faz com excelência
+
+### Resultado Esperado
+
+Ao final dos 7-8 dias, você terá:
+
+✅ **Documentação completa** do processo de UX  
+✅ **Wireframes e designs de alta fidelidade** das telas principais  
+✅ **Protótipo interativo** navegável no Figma  
+✅ **Case study** bem estruturado e apresentável  
+✅ **Projeto revisado** por profissional e validado  
+
+### Palavras Finais
+
+> "Em UX, **processo** importa tanto quanto **resultado**. Este timeline garante ambos."
+
+**Boa sorte no desafio! 🚀**
 
 ---
 
 **📅 Última atualização:** 2025-11-20  
-**📌 Status:** Projeto Concluído ✅  
-**🎯 Próximo passo:** Implementação Fase 1
+**📌 Timeline:** 7 dias (sprint intensivo) + 2 dias (revisão)  
+**🎯 Objetivo:** Case de UX Meli+ completo e profissional  
+**✅ Status:** Pronto para uso
 
 ---
 
-*Desenvolvido com ❤️ pela equipe de UX do Mercado Livre*
+*Timeline criado para o desafio Meli+ / Mercado Livre*  
+*Adaptado para entrega em 7 dias com tempo de revisão*

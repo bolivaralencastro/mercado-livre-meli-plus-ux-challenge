@@ -2,13 +2,13 @@
 
 ## 🎯 Resumo Executivo
 
-Este repositório agora inclui uma **timeline completa** do projeto Meli+ UX Challenge, organizada para ser usada em um GitHub Project.
+Este repositório inclui uma **timeline de 7 dias** (sprint intensivo) para o projeto Meli+ UX Challenge, com 2 dias adicionais para revisão e refinamento.
 
 ### 📚 Documentos Criados
 
 | Documento | Descrição | Tamanho |
 |-----------|-----------|---------|
-| **PROJETO-TIMELINE.md** | Timeline detalhada com todas as 8 fases do projeto | 22KB |
+| **PROJETO-TIMELINE.md** | Timeline de 7 dias com todas as 8 fases otimizadas | ~25KB |
 | **GITHUB-PROJECT-SETUP.md** | Guia passo a passo para configurar o GitHub Project | 7.6KB |
 | **Issue Templates (8)** | Templates para criar issues de cada fase | .github/ISSUE_TEMPLATE/ |
 
@@ -18,131 +18,149 @@ Este repositório agora inclui uma **timeline completa** do projeto Meli+ UX Cha
 
 ### Opção 1: Visualizar a Timeline (Mais Rápido)
 1. Abra [PROJETO-TIMELINE.md](./PROJETO-TIMELINE.md)
-2. Navegue pelas 8 fases do projeto
-3. Veja cronogramas, entregas e marcos
+2. Navegue pelas 8 fases do sprint de 7 dias
+3. Veja cronogramas, entregas e marcos diários
 
 ### Opção 2: Criar GitHub Project (Recomendado)
 1. Siga o guia em [GITHUB-PROJECT-SETUP.md](./GITHUB-PROJECT-SETUP.md)
-2. Configure o projeto com views de Timeline, Board e Table
+2. Adapte as datas para 7 dias em vez de 12 semanas
 3. Use os issue templates para criar tarefas
-4. Gerencie o projeto visualmente
+4. Gerencie o sprint visualmente
 
 ---
 
 ## 📅 Timeline em Resumo
 
-### 12 Semanas | 8 Fases | 5 Milestones
+### 7 Dias Sprint + 2 Dias Revisão | 8 Fases | 5 Milestones
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│  Semanas:  1    2    3    4    5    6    7    8    9   10   11   12  │
-├─────────────────────────────────────────────────────────┤
-│  Fase 1: Briefing          ██                           │
-│  Fase 2: Pesquisa          ████████                     │
-│  Fase 3: Estratégia                   ████              │
-│  Fase 4: Ideação                      ████████          │
-│  Fase 5: UI Design                          ████████    │
-│  Fase 6: Protótipo                                ████  │
-│  Fase 7: Apresentação                             ████  │
-│  Fase 8: Entrega                                     ██ │
-└─────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────┐
+│  Dias:   1     2     3     4     5     6   7-8  │
+├────────────────────────────────────────────┤
+│  Briefing      █▓                          │
+│  Pesquisa      ▓██████████                 │
+│  Estratégia                ████████        │
+│  Ideação                           ████████│
+│  UI Design                         ██████████
+│  Protótipo                                 ████
+│  Apresent.                                 ▓███
+│  Entrega                                   ████
+│  Revisão                                       ████████
+└────────────────────────────────────────────┘
 
-Milestone 1: Fundação      ▓▓▓▓▓▓▓▓ (Semanas 1-4)
-Milestone 2: Estratégia                  ▓▓▓▓ (Semanas 5-6)
-Milestone 3: Design                      ▓▓▓▓▓▓▓▓ (Semanas 6-10)
-Milestone 4: Validação                              ▓▓▓▓ (Semanas 10-11)
-Milestone 5: Entrega                                   ▓▓ (Semana 12)
+Milestone 1: Setup/Pesquisa    ▓▓ (Dia 1-2)
+Milestone 2: Estratégia/Ideação        ▓▓ (Dia 3-4)
+Milestone 3: Design                       ▓▓ (Dia 5)
+Milestone 4: Protótipo/Docs                  ▓ (Dia 6)
+Milestone 5: Revisão/Entrega                   ▓▓ (Dia 7-8)
 ```
+
+**Meta:** Finalizar trabalho principal em 6 dias, usar dias 7-8 para revisão com profissional e usuários
 
 ---
 
-## 🎯 8 Fases do Projeto
+## 🎯 8 Fases do Projeto (Sprint 7 Dias)
 
 ### 📋 Fase 1: Briefing e Alinhamento
-**Semanas 1-2** | Status: ✅ Concluído
+**Dia 1 Manhã (4h)** | Foco: Setup
 - Definir escopo e objetivos
-- Alinhar stakeholders
+- Documentação inicial
 - Template: `.github/ISSUE_TEMPLATE/fase-1-briefing.md`
 
 ### 🔍 Fase 2: Pesquisa e Descoberta
-**Semanas 2-4** | Status: ✅ Concluído
-- 25 entrevistas + 500 questionários
-- Benchmark de 5 concorrentes
+**Dia 1 Tarde + Dia 2 (12h)** | Foco: Desk Research
+- Benchmark de 3-5 concorrentes
+- Personas baseadas em dados secundários
 - Template: `.github/ISSUE_TEMPLATE/fase-2-pesquisa.md`
 
 ### 🎯 Fase 3: Estratégia e Definição
-**Semanas 5-6** | Status: ✅ Concluído
+**Dia 3 (8h)** | Foco: Direção
 - 3 pilares de design
-- 8 hipóteses de solução
+- 5-8 hipóteses priorizadas
 - Template: `.github/ISSUE_TEMPLATE/fase-3-estrategia.md`
 
 ### 💡 Fase 4: Ideação e Wireframes
-**Semanas 6-8** | Status: ✅ Concluído
-- 25+ wireframes
-- 5 fluxos principais
+**Dia 4 (8h)** | Foco: Estrutura
+- 15-20 wireframes principais
+- 3-5 fluxos mapeados
 - Template: `.github/ISSUE_TEMPLATE/fase-4-ideacao.md`
 
 ### 🎨 Fase 5: UI Design de Alta Fidelidade
-**Semanas 8-10** | Status: ✅ Concluído
-- Design system completo
-- 25+ telas de alta fidelidade
+**Dia 5 (10h - intensivo)** | Foco: Visual
+- Design system básico
+- 15-20 telas finais
 - Template: `.github/ISSUE_TEMPLATE/fase-5-ui-design.md`
 
-### 🖱️ Fase 6: Prototipagem e Testes
-**Semanas 10-11** | Status: ✅ Concluído
-- Protótipo interativo
-- 20 testes de usabilidade
+### 🖱️ Fase 6: Prototipagem e Validação
+**Dia 6 Manhã (4h)** | Foco: Interação
+- Protótipo Figma interativo
+- Validação heurística
 - Template: `.github/ISSUE_TEMPLATE/fase-6-prototipo.md`
 
-### 📊 Fase 7: Apresentação aos Stakeholders
-**Semanas 11-12** | Status: ✅ Concluído
+### 📊 Fase 7: Apresentação
+**Dia 6 Tarde (4h)** | Foco: Storytelling
 - Narrativa do projeto
-- Deck de apresentação
+- Case study completo
 - Template: `.github/ISSUE_TEMPLATE/fase-7-apresentacao.md`
 
-### ✅ Fase 8: Entrega e Handoff
-**Semana 12** | Status: ✅ Concluído
-- Documentação completa
-- Handoff para desenvolvimento
+### ✅ Fase 8: Entrega Final
+**Dia 6 Noite + Dia 7 (4h)** | Foco: Finalização
+- Documentação consolidada
+- Repositório organizado
 - Template: `.github/ISSUE_TEMPLATE/fase-8-entrega.md`
+
+### 🎯 Dias 7-8: Revisão e Refinamento
+**Crítico para qualidade final**
+- Revisão com profissional UX
+- Testes com 2-3 usuários
+- Ajustes finais
 
 ---
 
 ## 📊 Resultados Esperados
 
-### Impacto em Negócio
+### Sprint de 7 Dias
+- ⏰ **Trabalho principal:** 6 dias completos
+- 🔍 **Buffer de revisão:** 2 dias garantidos
+- 📋 **Completude:** Todas as 8 fases cumpridas
+- ✅ **Qualidade:** Revisão profissional realizada
+
+### Impacto Projetado no Meli+ (baseado nas soluções propostas)
 - 📈 **+25-30%** conversão em assinaturas
 - 📈 **+20%** taxa de retenção
 - 📈 **+25-35%** LTV (Lifetime Value)
 - 📉 **-30%** cancelamentos involuntários
 
-### Impacto em Experiência
+### Melhoria de Experiência (projeções)
 - ⏱️ **-50%** tempo para assinar (5min → 2.5min)
-- 😊 **84/100** SUS Score (vs 62/100 atual)
+- 😊 **84/100** SUS Score projetado (vs 62/100)
 - ✅ **92%** compreensão de benefícios (vs 56%)
 - 🎯 **85%** taxa de conclusão do fluxo
 
+*Nota: Projeções baseadas em benchmarks, não validadas com testes extensivos devido ao prazo*
+
 ---
 
-## 🛠️ Próximos Passos
+## 🛠️ Como Executar o Sprint de 7 Dias
 
-### Para o Usuário do Repositório:
+### Preparação (Antes do Dia 1):
+1. ✅ Ler a timeline completa em `PROJETO-TIMELINE.md`
+2. ✅ Configurar ferramentas (Figma, GitHub, etc.)
+3. ✅ Organizar workspace e eliminar distrações
+4. ✅ Preparar checklist diário baseado nos templates
 
-1. **Explorar a Timeline**
-   ```bash
-   # Abrir documento principal
-   cat PROJETO-TIMELINE.md
-   ```
+### Durante o Sprint (Dias 1-6):
+1. **Seguir timeboxing rigoroso** - cada fase tem tempo máximo
+2. **Documentar enquanto faz** - não deixar para depois
+3. **Fazer check-in diário** - validar progresso
+4. **Salvar constantemente** - backup em múltiplos locais
+5. **Focar no essencial** - evitar scope creep
 
-2. **Configurar GitHub Project** (Opcional mas Recomendado)
-   - Seguir passos em `GITHUB-PROJECT-SETUP.md`
-   - Criar issues usando os templates
-   - Visualizar timeline no GitHub Projects
-
-3. **Navegar pelas Fases**
-   - Cada pasta contém documentação da fase
-   - Use o README.md como índice principal
-   - Veja entrega/resumo-final.md para visão completa
+### Após o Sprint (Dias 7-8):
+1. **Dia 7:** Revisão com profissional de UX
+2. **Dia 7-8:** Testes rápidos com 2-3 usuários
+3. **Dia 8:** Implementar ajustes críticos
+4. **Final:** Projeto pronto para submissão/apresentação
 
 ---
 
@@ -229,36 +247,51 @@ mercado-livre-meli-plus-ux-challenge/
 
 ---
 
-## ❓ FAQ
+## ❓ FAQ - Sprint 7 Dias
 
-### P: Como uso os issue templates?
-**R:** No GitHub, vá em "Issues" → "New issue" e você verá os templates listados. Escolha o da fase desejada.
+### P: Por que 7 dias em vez de 12 semanas?
+**R:** O prazo foi ajustado para atender à necessidade de entregar em 7 dias, com 2 dias extras para revisão profissional e testes com usuários, totalizando 9 dias até a entrega final.
+
+### P: É possível fazer um case de qualidade em apenas 7 dias?
+**R:** Sim, com foco e priorização. O sprint usa desk research (dados secundários) em vez de pesquisa primária extensa, e foca nas telas e fluxos principais. A qualidade é garantida pela revisão nos dias 7-8.
+
+### P: Como adaptar se tiver menos tempo (ex: 5 dias)?
+**R:** Combine fases (Briefing + Pesquisa em 1 dia), reduza número de telas (10-15 em vez de 15-20), pule prototipagem avançada e use wireframes clicáveis.
+
+### P: E se tiver mais tempo (10-14 dias)?
+**R:** Adicione pesquisa primária (5-10 entrevistas), faça testes de usabilidade reais com 5-8 usuários, crie design system mais completo, adicione microinterações.
+
+### P: Como uso os issue templates com o sprint de 7 dias?
+**R:** Os templates ainda são úteis como checklists. Adapte os timeframes de "semanas" para "dias" conforme a nova timeline.
 
 ### P: Preciso criar o GitHub Project?
-**R:** Não é obrigatório. Você pode apenas consultar o PROJETO-TIMELINE.md. Mas o Project oferece visualização interativa melhor.
-
-### P: Posso adaptar a timeline?
-**R:** Sim! A timeline é um guia. Ajuste conforme necessário para seu contexto.
+**R:** Não é obrigatório para um sprint de 7 dias. Use uma checklist simples ou Trello. GitHub Project é mais útil para projetos mais longos.
 
 ### P: Onde está o protótipo?
-**R:** O link para o protótipo Figma está em `/prototipo/README.md`
+**R:** O link para o protótipo Figma será criado durante o sprint e documentado em `/prototipo/README.md`
 
-### P: Como acompanho o progresso?
-**R:** Use GitHub Project (se configurado) ou marque checkboxes nos issue templates.
+### P: Como garantir qualidade em tão pouco tempo?
+**R:** Timeboxing rigoroso, foco no essencial, uso de templates e recursos prontos, e principalmente: 2 dias de revisão externa nos dias 7-8.
 
 ---
 
-## 🎉 Resumo
+## 🎉 Resumo - Timeline 7 Dias
 
-✅ **8 Issue Templates** criados para cada fase  
-✅ **Timeline de 12 semanas** completamente documentada  
-✅ **Guia de setup** do GitHub Project passo a passo  
-✅ **5 Milestones** definidos para marcos principais  
-✅ **README atualizado** com referências à timeline  
+✅ **Timeline ajustada** de 12 semanas para 7 dias + 2 revisão  
+✅ **8 Fases otimizadas** para sprint intensivo  
+✅ **Gantt chart atualizado** com visualização em dias  
+✅ **Milestones adaptados** para entregas diárias  
+✅ **Buffer de revisão** garantido (Dias 7-8)  
+✅ **Issue templates** ainda aplicáveis como checklists  
+✅ **Guias práticos** para executar o sprint com sucesso  
 
-**Status:** Projeto de timeline completo e pronto para uso! 🚀
+**Status:** Timeline adaptada e pronta para sprint de 7 dias! 🚀
+
+**Diferencial:** Foco em **qualidade** com **velocidade**, garantindo tempo para **revisão profissional** antes da entrega final.
 
 ---
 
 *Última atualização: 2025-11-20*  
-*Versão: 1.0*
+*Versão: 2.0 - Adaptado para Sprint 7 Dias*  
+*Prazo: 7 dias trabalho + 2 dias revisão = 9 dias total até entrega final*
+
