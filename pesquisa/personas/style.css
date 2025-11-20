@@ -1,11 +1,12 @@
 :root {
-    --primary-color: #2D3277; /* Meli Blue */
-    --accent-color: #FFE600; /* Meli Yellow */
-    --text-color: #333333;
-    --text-light: #666666;
-    --bg-color: #F5F5F5;
-    --card-bg: #FFFFFF;
-    --gap: 16px;
+    /* Mapping to Andes Design System */
+    --primary-color: var(--andes-secondary); /* Blue */
+    --accent-color: var(--andes-primary); /* Yellow */
+    --text-color: var(--andes-neutral-800);
+    --text-light: var(--andes-neutral-600);
+    --bg-color: var(--andes-neutral-100);
+    --card-bg: var(--andes-neutral-0);
+    --gap: var(--andes-spacing-m);
 }
 
 * {
@@ -18,7 +19,7 @@ body, html {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--andes-font-family);
     background-color: var(--bg-color);
     color: var(--text-color);
 }
@@ -108,8 +109,8 @@ body, html {
     color: var(--text-color);
     background: var(--card-bg);
     padding: 24px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-radius: var(--andes-radius-l);
+    box-shadow: var(--andes-shadow-sm);
 }
 
 .persona-details-grid {
@@ -121,8 +122,8 @@ body, html {
 .detail-card {
     background: var(--card-bg);
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-radius: var(--andes-radius-l);
+    box-shadow: var(--andes-shadow-sm);
 }
 
 .detail-title {
@@ -185,8 +186,8 @@ body, html {
 .detail-card {
     background: var(--card-bg);
     padding: 24px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-radius: var(--andes-radius-l);
+    box-shadow: var(--andes-shadow-sm);
     transition: transform 0.2s;
 }
 
@@ -196,11 +197,11 @@ body, html {
 }
 
 .warning-card {
-    border-left: 4px solid #FF4444;
+    border-left: 4px solid var(--andes-error);
 }
 
 .success-card {
-    border-left: 4px solid #00C851;
+    border-left: 4px solid var(--andes-success);
 }
 
 .detail-title {
@@ -255,17 +256,19 @@ body, html {
 /* Controls */
 .slider-controls {
     position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 40px;
+    left: 40px;
+    bottom: auto;
+    transform: none;
     display: flex;
     align-items: center;
     gap: 20px;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
     padding: 10px 20px;
     border-radius: 50px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 
 .control-btn {
@@ -280,7 +283,7 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.3s;
+    transition: var(--andes-transition);
 }
 
 .control-btn:hover {
