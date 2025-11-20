@@ -10,6 +10,12 @@ Este repositório documenta o estudo de caso completo de UX para o **Meli+**, o 
 - 💳 Facilitar a gestão de meios de pagamento
 - 📈 Melhorar a percepção de valor do programa
 
+### 📅 Timeline do Projeto
+- **Duração:** 12 semanas (3 meses)
+- **Fases:** 8 fases de trabalho organizadas
+- **[Ver Timeline Completa](./PROJETO-TIMELINE.md)** - Cronograma detalhado com todas as etapas
+- **[Configurar GitHub Project](./GITHUB-PROJECT-SETUP.md)** - Guia para criar o projeto com timeline
+
 ---
 
 ## 📁 Estrutura do Repositório
