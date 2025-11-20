@@ -1,0 +1,4002 @@
+[
+    {
+        "Usuario":"\u00datil D",
+        "Titulo":"Bizarro",
+        "Comentario":"Acabei de fazer um pix. O app me obrigou a sair da conta e retornar realizando um novo login. Quando fui tentar e logar novamente, n\u00e3o foi poss\u00edvel, da erro no sistema. Absurdo.",
+        "Nota":1,
+        "Versao_App":"2.411.1",
+        "ID_Review":13413520147
+    },
+    {
+        "Usuario":"joseviana10",
+        "Titulo":"App muito bom",
+        "Comentario":"Comodidade, facilidade, taxas baixas e muito mais.",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13412938113
+    },
+    {
+        "Usuario":"Sawmonix",
+        "Titulo":"Cad\u00ea a aproxima\u00e7\u00e3o no iPhone?",
+        "Comentario":"Um banco desses n\u00e3o ter a op\u00e7\u00e3o de usar o cart\u00e3o na Apple Pay ta de sacanagem.",
+        "Nota":3,
+        "Versao_App":"2.411.1",
+        "ID_Review":13412874922
+    },
+    {
+        "Usuario":"taianylugao",
+        "Titulo":"n\u00e3o tem pagamento pelo apple pay",
+        "Comentario":"eu s\u00f3 uso cart\u00e3o pelo celular e n\u00e3o tem essa op\u00e7\u00e3o me for\u00e7a a n\u00e3o usar o cart\u00e3o.",
+        "Nota":2,
+        "Versao_App":"2.411.0",
+        "ID_Review":13412684881
+    },
+    {
+        "Usuario":"labeanc",
+        "Titulo":"Mercado pago: simples, pr\u00e1tico e rende muito",
+        "Comentario":"O mercado pago do mercado livre, \u00e9 um aplicativo extremamente f\u00e1cil de usar , funciona como uma conta banc\u00e1ria completa e como maquininha de cart\u00e3o, ainda faz seu dinheiro render muito bem",
+        "Nota":5,
+        "Versao_App":"2.411.0",
+        "ID_Review":13412397422
+    },
+    {
+        "Usuario":"Pessimo servi\u00e7o melhorem!!",
+        "Titulo":"Pessimo suporte",
+        "Comentario":"Suporte da equipe mercado pago \u00e9 pessimo, prenderam meu dinheiro",
+        "Nota":1,
+        "Versao_App":"2.411.0",
+        "ID_Review":13411163467
+    },
+    {
+        "Usuario":"Miots1",
+        "Titulo":"Cr\u00e9ditos",
+        "Comentario":"Queria o aumento de cr\u00e9dito de cart\u00e3o e empr\u00e9stimos . J\u00e1 que pago em dia , mas fora isso \u00e9 um app muito bom  .",
+        "Nota":4,
+        "Versao_App":"2.411.0",
+        "ID_Review":13410646330
+    },
+    {
+        "Usuario":"guilhermerodriguesbarbosa",
+        "Titulo":".",
+        "Comentario":"Ultimamente t\u00e1 quase imposs\u00edvel de usar esse banco tranca demais n\u00e3o d\u00e1 mais pra fazer uma compra r\u00e1pida via pix no mercado",
+        "Nota":2,
+        "Versao_App":"2.411.0",
+        "ID_Review":13410587253
+    },
+    {
+        "Usuario":"01Jheff",
+        "Titulo":"Gostava mais do aplicativo na com azul",
+        "Comentario":"Se poss\u00edvel, retornem com o design antigo do aplicativo, eu achava mais legal ele na cor azul.",
+        "Nota":3,
+        "Versao_App":"2.410.0",
+        "ID_Review":13410328717
+    },
+    {
+        "Usuario":"Dua zhera",
+        "Titulo":"Good",
+        "Comentario":"Bom",
+        "Nota":5,
+        "Versao_App":"2.411.0",
+        "ID_Review":13410300226
+    },
+    {
+        "Usuario":"Dayane Fani",
+        "Titulo":"P\u00e9ssimos!",
+        "Comentario":"M\u00e1quina n\u00e3o funciona, um transtorno absurdo pra trocar. N\u00e3o tem um bom atendimento, tudo \u00e9 enrolado e te fazem perder um absurdo de tempo! N\u00e3o vale o estresse!",
+        "Nota":1,
+        "Versao_App":"2.410.0",
+        "ID_Review":13409425220
+    },
+    {
+        "Usuario":"Fabio O Pedroso",
+        "Titulo":"Ml\/mp",
+        "Comentario":"Qual a dificuldade de unificar os dois app em um s\u00f3 , s\u00f3 mudar o modo banco e modo compras no pr\u00f3prio app igual outros app de compras , ia aumentar os clientes e lucros com o mp ,",
+        "Nota":3,
+        "Versao_App":"2.410.0",
+        "ID_Review":13409407870
+    },
+    {
+        "Usuario":"nshehehbd",
+        "Titulo":"Jejue",
+        "Comentario":"Jshehehejeje",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13409350831
+    },
+    {
+        "Usuario":"comegente76",
+        "Titulo":"APAR\u00caNCIA",
+        "Comentario":"Tava tudo ok, mais essa nova interface deixa a desejar.. n\u00e3o \u00e9 fluida como a antiga e cheia de coisas desnecess\u00e1rias.",
+        "Nota":2,
+        "Versao_App":"2.410.0",
+        "ID_Review":13409293763
+    },
+    {
+        "Usuario":"Lidia Carolina Leal",
+        "Titulo":"L\u00eddia Leal",
+        "Comentario":"Podia",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13409119654
+    },
+    {
+        "Usuario":"Ulisses 2",
+        "Titulo":"Pagamento",
+        "Comentario":"\u201cPerdi\u201d 400 reais por causa desse aplicativo. Fui programar uma conta pra ser paga no dia do vencimento, que era um m\u00eas depois, o app leu o QR code do pix em vez do c\u00f3digo de barras, selecionei \u201cpagar\u201d pra programar a data de pagamento, e o app fez o pagamento na hora. 400 reais foram embora adiantado.",
+        "Nota":1,
+        "Versao_App":"2.410.0",
+        "ID_Review":13409032168
+    },
+    {
+        "Usuario":"Fabinho rea",
+        "Titulo":"Muito bom",
+        "Comentario":"No momento melhor banco em tudo",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13408759481
+    },
+    {
+        "Usuario":"ASC TN",
+        "Titulo":"App otimizado",
+        "Comentario":"Depois da \u00faltima mudan\u00e7a, ficou melhor pra navegar.",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13408740372
+    },
+    {
+        "Usuario":"Elira-SP",
+        "Titulo":"P\u00e9ssimo (n\u00e3o resgata)",
+        "Comentario":"Tento fazer uma transfer\u00eancia de uma outra conta para a mesma titularidade e ocorre erro(sem internet)",
+        "Nota":1,
+        "Versao_App":"2.410.0",
+        "ID_Review":13408489838
+    },
+    {
+        "Usuario":"Fneto157",
+        "Titulo":"N\u00e3o d\u00e1 cr\u00e9dito",
+        "Comentario":"Oque fazer com 60 reais",
+        "Nota":1,
+        "Versao_App":"2.410.0",
+        "ID_Review":13407592807
+    },
+    {
+        "Usuario":"Cabellinho39",
+        "Titulo":"Bom",
+        "Comentario":"Por enquanto est\u00e1 \u00f3timo , tou gostando bastante . Inclusive, os cupons",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13407430316
+    },
+    {
+        "Usuario":"Leandro Schramm",
+        "Titulo":"Juros e taxas abusivas",
+        "Comentario":"N\u00e3o cobrem nada por aqui e nem peguem empr\u00e9stimos",
+        "Nota":1,
+        "Versao_App":"2.410.0",
+        "ID_Review":13407291124
+    },
+    {
+        "Usuario":"sergiorani",
+        "Titulo":"N\u00e3o \u00e9 compat\u00edvel com a Carteira da Apple.",
+        "Comentario":"Arrumem isso.",
+        "Nota":4,
+        "Versao_App":"2.410.0",
+        "ID_Review":13407124078
+    },
+    {
+        "Usuario":"Christiano Gibson",
+        "Titulo":"Falta ApplePay Cart\u00e3o MercadoPago",
+        "Comentario":"Falta op\u00e7\u00e3o de adicionar o cart\u00e3o do mercado pago virtual ou f\u00edsico a carteira da Apple Pay",
+        "Nota":2,
+        "Versao_App":"2.410.0",
+        "ID_Review":13407081741
+    },
+    {
+        "Usuario":"glauberely",
+        "Titulo":"Excelente",
+        "Comentario":"10",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13407080833
+    },
+    {
+        "Usuario":"Tol\u00eado",
+        "Titulo":"Tbkg",
+        "Comentario":"Guincho Funcgu Um carro  Uiva Huggies Humberto Gvj Uh Hgfyg",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13406819444
+    },
+    {
+        "Usuario":"edmilsonitusp",
+        "Titulo":"Em vez de melhorar parece q piorou",
+        "Comentario":"Ele est\u00e1 dando muito bug vc tira o dinheiro do cofrinho e ele demora para atualizar e as vezes n\u00e3o atualiza  Aconteceu tamb\u00e9m de s\u00f3 fazer pix para as pessoas q est\u00e3o no hist\u00f3rico se vc colar uma chave ele n\u00e3o est\u00e1 fazendo  Uso muito o App mas j\u00e1 est\u00e1 me deixando nervoso.",
+        "Nota":2,
+        "Versao_App":"2.410.0",
+        "ID_Review":13406328503
+    },
+    {
+        "Usuario":"Alem\u00e3o Produtor",
+        "Titulo":"Alem\u00e3o Produtor",
+        "Comentario":"Eu Recomendo",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13406110694
+    },
+    {
+        "Usuario":"Ph9301",
+        "Titulo":"Frete",
+        "Comentario":"Poderia dar mais frete gr\u00e1tis",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13405686314
+    },
+    {
+        "Usuario":"Alfa2200",
+        "Titulo":"Alfa",
+        "Comentario":"10",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13405029923
+    },
+    {
+        "Usuario":"bnducorte",
+        "Titulo":"Bom dms",
+        "Comentario":"\u00d3timo App",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13404668003
+    },
+    {
+        "Usuario":"Lucas1372",
+        "Titulo":"Coloca o modo recarga jogo",
+        "Comentario":"Seria bom se tivesse recarga jogo",
+        "Nota":1,
+        "Versao_App":"2.410.0",
+        "ID_Review":13404383724
+    },
+    {
+        "Usuario":"Ed_2023",
+        "Titulo":"CARTEIRA DIGITAL",
+        "Comentario":"Pq o cart\u00e3o n\u00e3o \u00e9 aceito na carteira digital do iPhone??",
+        "Nota":3,
+        "Versao_App":"2.410.0",
+        "ID_Review":13403296136
+    },
+    {
+        "Usuario":"Ed.viana",
+        "Titulo":"Apple Wallet",
+        "Comentario":"Poderiam colocar no Apple Wallet, \u00e9 ruim demais que uso direto",
+        "Nota":1,
+        "Versao_App":"2.410.0",
+        "ID_Review":13403042337
+    },
+    {
+        "Usuario":"Sssbbah",
+        "Titulo":"Erro",
+        "Comentario":"Poxa, toda vez o app fica dando erro p qualquer coisa, a\u00ed tenho que ficar esperando pra voltar ao normal",
+        "Nota":1,
+        "Versao_App":"2.410.0",
+        "ID_Review":13402643281
+    },
+    {
+        "Usuario":"Tati pago",
+        "Titulo":"Cart\u00e3o mercado pago",
+        "Comentario":"19",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13401509029
+    },
+    {
+        "Usuario":"FELIPE_FX",
+        "Titulo":"A nova vers\u00e3o",
+        "Comentario":"Est\u00e1 demais a nova vers\u00e3o, simplesmente amei. Sugiro apenas que criem o modo escuro. Vai ficar show!",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13401379864
+    },
+    {
+        "Usuario":"@jalin",
+        "Titulo":"Ruim",
+        "Comentario":"N\u00e3o funciona no meu iPhone 16 pro max fica bugado na tela inicial estava interessado em pedir um cart\u00e3o mais me decepcionei",
+        "Nota":1,
+        "Versao_App":"2.410.0",
+        "ID_Review":13401282196
+    },
+    {
+        "Usuario":"Escolhido Pedro subsequente",
+        "Titulo":"Banco Fraco",
+        "Comentario":"N\u00e3o gosto do mercado pago e depois que mudou a tela to odiando e outra nunca deu liberdade para fazer um empr\u00e9stimo . J\u00e1 a Nubank me emprestou 2000 reais em segundos e estou pagando tudo em dia. Mercado pago \u00e9 um banco fraco.",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13401015935
+    },
+    {
+        "Usuario":"ErikaFreitas",
+        "Titulo":"Falta ApplePay",
+        "Comentario":"Pra ficar melhor precisa disponibilizar a fun\u00e7\u00e3o ApplePay",
+        "Nota":3,
+        "Versao_App":"2.410.0",
+        "ID_Review":13400771295
+    },
+    {
+        "Usuario":"Wbileo",
+        "Titulo":"Funcional",
+        "Comentario":"Simples e objetivo",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13400465074
+    },
+    {
+        "Usuario":"Patriciasda",
+        "Titulo":"Pagamento de fatura",
+        "Comentario":"N\u00e3o consigo fazer o pagamento da minha fatura",
+        "Nota":1,
+        "Versao_App":"2.410.0",
+        "ID_Review":13399083194
+    },
+    {
+        "Usuario":"Kakatua157",
+        "Titulo":"\ud83e\udd73",
+        "Comentario":"Um dos melhores  bancos que tem no Brasil !!!!",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13399036729
+    },
+    {
+        "Usuario":"teodoroosvaldo",
+        "Titulo":"Osvaldo Teodoro dos Santos",
+        "Comentario":"10",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13398856917
+    },
+    {
+        "Usuario":"Amanda Belela",
+        "Titulo":"O melhor",
+        "Comentario":"O melhor banco digital disparado! Para mim, \u00e9 o que mais rende! Top demais! E ainda consigo pagar cart\u00e3o com meu celular.",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13398308043
+    },
+    {
+        "Usuario":"@gu2702",
+        "Titulo":"\u00d3timo",
+        "Comentario":"Excelente aplicativo, com bastante recurso e bem funcional \/ din\u00e2mico! 10\/10",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13397151209
+    },
+    {
+        "Usuario":"Golpe do pix",
+        "Titulo":"Banco lixo",
+        "Comentario":"Levei um golpe de pix e n\u00e3o querem devolver meu dinheiro, como pode isso? Se fosse o contr\u00e1rio eu estava levado processo.",
+        "Nota":1,
+        "Versao_App":"2.410.0",
+        "ID_Review":13396660628
+    },
+    {
+        "Usuario":"Jen\u00ef",
+        "Titulo":"Melhor banco",
+        "Comentario":"Nota mil",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13395013525
+    },
+    {
+        "Usuario":"anapaula_2408",
+        "Titulo":"Sem benef\u00edcios",
+        "Comentario":"J\u00e1 foi bom ,hoje n\u00e3o vejo benef\u00edcios,limiteno cart\u00e3o cr\u00e9dito de apenas R$ 300,00 a uns dois anos nem sei porque continuo usando",
+        "Nota":1,
+        "Versao_App":"2.410.0",
+        "ID_Review":13394734957
+    },
+    {
+        "Usuario":"Lania Patricia",
+        "Titulo":"Etermama10",
+        "Comentario":"10",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13394531727
+    },
+    {
+        "Usuario":"silva rattis",
+        "Titulo":"O cart\u00e3o carteira digitais iOS",
+        "Comentario":"O app \u00e9 \u00f3timo, s\u00f3 que o cart\u00e3o n\u00e3o est\u00e1 nas carteiras digitais iOS",
+        "Nota":4,
+        "Versao_App":"2.410.0",
+        "ID_Review":13394406826
+    },
+    {
+        "Usuario":"Kds 52555",
+        "Titulo":"Bom",
+        "Comentario":"O app \u00e9 bom no iPhone tem hora que d\u00e1 uns bugs  Deixo uma sugest\u00e3o poderia liberar o carta do mercado pago na carteira da Apple pois acho que seria de grande ajuda  E tamb\u00e9m melhorem a estabilidade  das criptos pois j\u00e1 faz uma semana que o sistema t\u00e1 fora do ar",
+        "Nota":4,
+        "Versao_App":"2.410.0",
+        "ID_Review":13393956211
+    },
+    {
+        "Usuario":"Laianny Lopes",
+        "Titulo":"N\u00e3o \u00e9 compat\u00edvel com Apple",
+        "Comentario":"Como pode n\u00e3o d\u00e1 pra pagar com iPhone por aproxima\u00e7\u00e3o por favor melhora isso",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13393556544
+    },
+    {
+        "Usuario":"Leiliane Costa 123",
+        "Titulo":"Banco Maravilhoso",
+        "Comentario":"Sempre me socorrendo \ud83d\ude05",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13392844600
+    },
+    {
+        "Usuario":"Mantesco",
+        "Titulo":"Muito bom",
+        "Comentario":"Melhor app de banco",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13392782601
+    },
+    {
+        "Usuario":"Chibiribas",
+        "Titulo":"Maravilhoso",
+        "Comentario":"Melhor banco",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13392679716
+    },
+    {
+        "Usuario":"Eliz\u00e2ngela linda",
+        "Titulo":"Eliz",
+        "Comentario":"Muito bom app",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13392608082
+    },
+    {
+        "Usuario":"EullerLima",
+        "Titulo":"Muito bom !!",
+        "Comentario":"App f\u00e1cil de mexer, e o banco sensacional",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13392590535
+    },
+    {
+        "Usuario":"Ningu\u00e9m resolve?",
+        "Titulo":"Insatisfeito",
+        "Comentario":"Tentei vender minhas criptomoedas e n\u00e3o consigo pois diz que a dois ou tr\u00eas dias est\u00e1 em manuten\u00e7\u00e3o, s\u00f3 que com as outras criptomoedas est\u00e1 tudo certo e se fosse um caso urgente? Que est\u00e1 acontecendo que a pessoa n\u00e3o pode mexer com seu dinheiro na hora? Manuten\u00e7\u00e3o com tr\u00eas dias \u00e9 demais",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13392403973
+    },
+    {
+        "Usuario":"Juraci Vieira",
+        "Titulo":"Suporte a autentica\u00e7\u00e3o de 2 fatores com hardware",
+        "Comentario":"2 fatores de autentica\u00e7\u00e3o usando o celular e c\u00e2mera \u00e9 extremamente limitante e inseguro. Eu gostaria de usar minhas chaves f\u00edsicas (Yubikey) para ter uma seguran\u00e7a maior e mais facilidade ao autenticar.",
+        "Nota":3,
+        "Versao_App":"2.409.0",
+        "ID_Review":13392383215
+    },
+    {
+        "Usuario":"Brunotpk",
+        "Titulo":"Insatisfeito",
+        "Comentario":"Fiz uma venda de 1050 me cobrou 128 reais \ud83d\ude21",
+        "Nota":1,
+        "Versao_App":"2.410.0",
+        "ID_Review":13392328522
+    },
+    {
+        "Usuario":"J@M3$ PRO",
+        "Titulo":"Sem pontualidade \ud83d\udc4e\ud83c\udffc\ud83d\udc4e\ud83c\udffc",
+        "Comentario":"Era pra fatura fechar dia 12, j\u00e1 \u00e9 dia 13 e ainda consta como aberta, como que se planeja aquisi\u00e7\u00f5es com um cart\u00e3o desses??",
+        "Nota":3,
+        "Versao_App":"2.410.0",
+        "ID_Review":13391918563
+    },
+    {
+        "Usuario":"Tomcruz 2",
+        "Titulo":"Muito bom mesmo",
+        "Comentario":"O cart\u00e3o de cr\u00e9dito poderia ter a op\u00e7\u00e3o de aproxima\u00e7\u00e3o pelo celular.  N\u00e3o d\u00e1 pra add ele na carteira digital do celular.  Da\u00ed tem que fica carregando ele direto. Onde acaba que as vezes deixo de usar por n\u00e3o est\u00e1 comigo. Se estivesse na carteira digital do celular usaria mas   Mas o mas muito bom",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13391796109
+    },
+    {
+        "Usuario":"S3nha",
+        "Titulo":"Senhas",
+        "Comentario":"N\u00e3o existe senha de transa\u00e7\u00e3o",
+        "Nota":2,
+        "Versao_App":"2.410.0",
+        "ID_Review":13391412196
+    },
+    {
+        "Usuario":"J.S.RO",
+        "Titulo":"Corrijam esse aplicativo",
+        "Comentario":"Eu que sempre amei o aplicativo que tinha leitura de QR Code r\u00e1pida, agora, depois dessas duas \u00faltima atualiza\u00e7\u00f5es , estou quase desinstalando, pois n\u00e3o abre a c\u00e2mera no aplicativo, para pagar com pix CR Code. Socorro!!",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13391182450
+    },
+    {
+        "Usuario":"Lu Rocha 86",
+        "Titulo":"Clonaram meu cart\u00e3o virtual e fizeram compras sem meu consentimento",
+        "Comentario":"N\u00e3o consigo contato com a ouvidoria pra cancelar a compra",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13390937072
+    },
+    {
+        "Usuario":"Anonimo0194",
+        "Titulo":"O melhor banco, mas\u2026",
+        "Comentario":"Disponibiliza o cartao pra usar na carteria do celular",
+        "Nota":3,
+        "Versao_App":"2.410.0",
+        "ID_Review":13389960350
+    },
+    {
+        "Usuario":"SEGUIR P O ALVO",
+        "Titulo":"CRESCENDO SEMPRE",
+        "Comentario":"Intuitivo, f\u00e1cil de usar o aplicativo.",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13389783863
+    },
+    {
+        "Usuario":"babictorereal",
+        "Titulo":"Melhor cart\u00e3o",
+        "Comentario":"\u00d3timo",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13389531359
+    },
+    {
+        "Usuario":"KiraBased",
+        "Titulo":"Decente.",
+        "Comentario":"Faltam recursos como investimentos e compatibilidade com Apple Pay, n\u00e3o tenho certeza se esses recursos est\u00e3o dispon\u00edveis a pessoas com maioridade, pois n\u00e3o a atingi ainda (outros bancos que aceitam menores de idade como Banco Inter e Nubank possuem esses recursos). O aplicativo \u00e9 bem intuitivo e sua interface \u00e9 bem limpa, no geral.",
+        "Nota":4,
+        "Versao_App":"2.410.0",
+        "ID_Review":13389400759
+    },
+    {
+        "Usuario":"Fam\u00edliah",
+        "Titulo":"Excelente aplicativo",
+        "Comentario":"Um \u00f3timo aplicativo",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13388709069
+    },
+    {
+        "Usuario":"LD.Comercio",
+        "Titulo":"09",
+        "Comentario":"Bom",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13388644690
+    },
+    {
+        "Usuario":"Denise_gshjjd",
+        "Titulo":"N\u00e3o h\u00e1 suporte ao cliente",
+        "Comentario":"N\u00e3o tem suporte para o cliente, eles te obriga a falar com uma IA e as op\u00e7\u00f5es pra falar com o representante \u00e9 mandar mensagem por e-mail,ou eles te ligar. Selecionei liga\u00e7\u00e3o em in\u00fameras tentativas e ningu\u00e9m nunca ligou,e-mail te respondem em 3,4 dias e vc fica com o problema sem solucionar.um c\u00famulo do absurdo isso vou encerrar minha conta",
+        "Nota":2,
+        "Versao_App":"2.410.0",
+        "ID_Review":13388494627
+    },
+    {
+        "Usuario":"S\u00e9rgio Vasconcelos",
+        "Titulo":"Horr\u00edvel",
+        "Comentario":"Falta de respeito com o cliente",
+        "Nota":1,
+        "Versao_App":"2.410.0",
+        "ID_Review":13387031260
+    },
+    {
+        "Usuario":"Roney12390",
+        "Titulo":"Cart\u00e3o por aproxima\u00e7\u00e3o de iPhone",
+        "Comentario":"At\u00e9 quando vai ficar sem a gente conseguir usar cart\u00e3o virtual por aproxima\u00e7\u00e3o atrav\u00e9s do App no iPhone",
+        "Nota":3,
+        "Versao_App":"2.410.0",
+        "ID_Review":13386655212
+    },
+    {
+        "Usuario":"Rafaguima00",
+        "Titulo":"App bom, mas precisa de algumas corre\u00e7\u00f5es",
+        "Comentario":"Eu conseguia fazer tudo o que queria dentro do app, mas agora ele t\u00e1 muito lento. Sempre que eu abro o app no celular, a tela parece que cai para 2 FPS e eu fico incapaz de mexer no app",
+        "Nota":3,
+        "Versao_App":"2.410.0",
+        "ID_Review":13386577703
+    },
+    {
+        "Usuario":"Chateada!!!",
+        "Titulo":"Conta suspensa",
+        "Comentario":"Minha conta foi suspensa e nunca mais consegui acessar!!!",
+        "Nota":1,
+        "Versao_App":"2.410.0",
+        "ID_Review":13386296189
+    },
+    {
+        "Usuario":"Pasqualli29",
+        "Titulo":"Um lixo",
+        "Comentario":"Parcelaram minha fatura sem meu consentimento, o 0800 n\u00e3o atenderam, nem o nubank da tanta dor de cabe\u00e7a, uma conta de 2,995 virou 4,500! Vou tirar esse dinheiro da onde?",
+        "Nota":1,
+        "Versao_App":"2.410.0",
+        "ID_Review":13386131523
+    },
+    {
+        "Usuario":"Mclavely",
+        "Titulo":"Apple Pay",
+        "Comentario":"J\u00e1 passou da hora de ter Apple Pay aqui n\u00e3o \u00e9?",
+        "Nota":1,
+        "Versao_App":"2.410.0",
+        "ID_Review":13385928098
+    },
+    {
+        "Usuario":"Cripto n\u00e3o compre",
+        "Titulo":"Cripto moedas",
+        "Comentario":"A todo momento principalmente na hora que sobe o aplicativo apresenta erro e n\u00e3o deixa vendermos na hora que queremos",
+        "Nota":2,
+        "Versao_App":"2.410.0",
+        "ID_Review":13385405350
+    },
+    {
+        "Usuario":"ale.wang",
+        "Titulo":"Reconhecimento facial n\u00e3o funciona no iPad",
+        "Comentario":"Reconhecimento facial n\u00e3o funciona no iPad e \u00e9 a 2\u00aa forma de verifica\u00e7\u00e3o da conta",
+        "Nota":1,
+        "Versao_App":"2.410.0",
+        "ID_Review":13385294718
+    },
+    {
+        "Usuario":"ivyna leticia",
+        "Titulo":"P\u00e9ssimo",
+        "Comentario":"Suspenderam Minha Conta E N\u00e3o Devolveram O Dinheiro Que Tava Dentro Que Era Do Meu Aluguel",
+        "Nota":1,
+        "Versao_App":"2.410.0",
+        "ID_Review":13385126392
+    },
+    {
+        "Usuario":"Fernanda Momesso",
+        "Titulo":"Parcelas sempre com juros",
+        "Comentario":"Regular",
+        "Nota":3,
+        "Versao_App":"2.410.0",
+        "ID_Review":13384368130
+    },
+    {
+        "Usuario":"Rennercbp",
+        "Titulo":"Layout",
+        "Comentario":"Poderia colocar op\u00e7\u00e3o escuro e kd o cart\u00e3o para Apple Pay",
+        "Nota":3,
+        "Versao_App":"2.410.0",
+        "ID_Review":13382854246
+    },
+    {
+        "Usuario":"Mikael palmeira",
+        "Titulo":"Mikael Vin\u00edcius palmeira",
+        "Comentario":"Sim",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13382441782
+    },
+    {
+        "Usuario":"Brucce.W",
+        "Titulo":"Opini\u00e3o",
+        "Comentario":"Perfeito",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13382381262
+    },
+    {
+        "Usuario":"BennyMts",
+        "Titulo":"Piorou era fazer pix por Copia e cola !!",
+        "Comentario":"N\u00e3o consigo realizar pix via copia e cola porque mesmo cola do certo n\u00e3o sai da tela de inserir a chave",
+        "Nota":3,
+        "Versao_App":"2.410.0",
+        "ID_Review":13382364296
+    },
+    {
+        "Usuario":"ale mack",
+        "Titulo":"5 estrelas",
+        "Comentario":"Muito bom",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13381866696
+    },
+    {
+        "Usuario":"Nu Empresa",
+        "Titulo":"Mercado Pago",
+        "Comentario":"Pra mim o melhor Banco da atualidade.",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13381696432
+    },
+    {
+        "Usuario":"Mercado Pagoo",
+        "Titulo":"Excelente",
+        "Comentario":"Melhor Banco Digital",
+        "Nota":5,
+        "Versao_App":"2.410.0",
+        "ID_Review":13381228659
+    },
+    {
+        "Usuario":"Avney Artur",
+        "Titulo":"Melhor banco digital",
+        "Comentario":"Muito top e cheio de benef\u00edcios pra nos clientes",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13381008809
+    },
+    {
+        "Usuario":"JacksonTattoo pi",
+        "Titulo":"N\u00e3o d\u00e1 para antecipar as fatura do cart\u00e3o",
+        "Comentario":"Coloquem a op\u00e7\u00e3o de antecipar as faturas do cart\u00e3o que nem a do Nubank isso vai facilitar muito para mim",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13380526302
+    },
+    {
+        "Usuario":"Cabra colares",
+        "Titulo":"Traca seu dinheiro",
+        "Comentario":"N\u00e3o resolve meu problema, j\u00e1 estar com mais de m\u00eas",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13380475878
+    },
+    {
+        "Usuario":"Frost SE",
+        "Titulo":"Incompleto",
+        "Comentario":"Ainda falta algumas funcionalidades j\u00e1 presentes em bancos concorrentes, por exemplo a antecipa\u00e7\u00e3o do pagamento de empr\u00e9stimos com descontos direto no app, antecipa\u00e7\u00e3o de parcelas do cartao de cr\u00e9dito, s\u00e3o fun\u00e7\u00f5es simples que j\u00e1 deveria estar dispon\u00edvel.",
+        "Nota":2,
+        "Versao_App":"2.409.0",
+        "ID_Review":13378674896
+    },
+    {
+        "Usuario":"Nickie\u2019",
+        "Titulo":"Pode melhorar",
+        "Comentario":"Exemplo acrescentando a op\u00e7\u00e3o de antecipar parcelas e ter um descontinho tamb\u00e9m",
+        "Nota":2,
+        "Versao_App":"2.409.0",
+        "ID_Review":13377649161
+    },
+    {
+        "Usuario":"Helo\ud83d\ude02",
+        "Titulo":"\u00d3timo",
+        "Comentario":"Melhor mercado que existe compro sem medo",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13377315069
+    },
+    {
+        "Usuario":"JeffersonAntunes1",
+        "Titulo":"Faltou apenas Suporte so Wallet Apple",
+        "Comentario":"At\u00e9 o momento estou satisfeito, por\u00e9m sinto falta do pagamento por aproxima\u00e7\u00e3o igual ao Nubank. Liberando isso estar\u00e1 perfeito. Atualiza\u00e7\u00e3o 09\/11\/2025 sem resposta e sem a inclus\u00e3o do pagamento por aproxima\u00e7\u00e3o.",
+        "Nota":3,
+        "Versao_App":"2.409.0",
+        "ID_Review":13376868475
+    },
+    {
+        "Usuario":"morroni0711",
+        "Titulo":"O melhor banco digital",
+        "Comentario":"Excelente",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13376069158
+    },
+    {
+        "Usuario":"Kaiqueu",
+        "Titulo":"N\u00c3O TEM COMPROMISSO COM OS CLIENTES",
+        "Comentario":"Fiz um pagamento de um valor consider\u00e1vel, atrasei devido alguns imprevistos e ap\u00f3s me ligarem fiz uma promessa de pagamento, e assim o fiz, paguei toda d\u00edvida tanto empr\u00e9stimo, como cart\u00e3o de cr\u00e9dito, a promessa era \u201c n\u00e3o vamos bloquear seu cart\u00e3o, e n\u00e3o vamos bloquear seu limite de empr\u00e9stimo, e ainda iremos reajustar a pontua\u00e7\u00e3o de cr\u00e9dito aqui no banco.  Agora oque eu tenho ?  Score baixo, limite de empr\u00e9stimo bloqueado, cart\u00e3o de cr\u00e9dito bloqueado. Deveriam no m\u00ednimo ter tido a transpar\u00eancia de falar a verdade,  eu iria pagar do mesmo modo, estava atrapalhando minha vida financeira, mas oque fica \u00e9 ?  Um banco como esse \u00e9 de se confiar ? J\u00e1 cancelei meu sal\u00e1rio aqui e n\u00e3o pretendo retornar a usar novamente.",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13374566874
+    },
+    {
+        "Usuario":"jmggjkijbbvds",
+        "Titulo":"Insatisfeita",
+        "Comentario":"Aplicativo  Funcionava otimamente , mas bloquearam minha conta sem aviso pr\u00e9vio reteram meu dinheiro  Nem o cart\u00e3o de cr\u00e9dito,deles consigo pagar enfim ainda estou aguardando eles liberarem meu dinheiro . Conta de m\u00e1quina e tudo",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13374281206
+    },
+    {
+        "Usuario":"Lun@67",
+        "Titulo":"Melhor sai-te de compra",
+        "Comentario":"Ele \u00e9 meu sai-te compra preferido",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13373908369
+    },
+    {
+        "Usuario":"P\u00e9um",
+        "Titulo":"Muito ruim",
+        "Comentario":"Cart\u00e3o virtual n\u00e3o funciona por nada",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13373588598
+    },
+    {
+        "Usuario":"Vitoooooooorrrrrrrrrr",
+        "Titulo":"Sistema de seguran\u00e7a fraco e suporte inexistente",
+        "Comentario":"Tive o meu cart\u00e3o clonado, dps de muita luta consegui falar com um atendente pq houve uma compra que eu n\u00e3o reconheci. O engra\u00e7ado que eles notaram a atividade suspeita mas deixaram ser efetuada. \u00c9 um sistema reativo, vou precisar pagar 600 a mais por m\u00eas pq eles me disseram que n\u00e3o podem contestar. E no WhatsApp fica trocando de atendente, s\u00f3 aparecem pra dar Oi e ignoram at\u00e9 o sistema trocar automaticamente. \u00c9 um verdadeiro circo",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13372878001
+    },
+    {
+        "Usuario":"Algdsantos37",
+        "Titulo":"App \u00f3timo",
+        "Comentario":"Funcionalidades \u00f3timas e bons servi\u00e7os oferecidos, por\u00e9m envia muita notifica\u00e7\u00e3o oferecendo produtos, isso deixa a experi\u00eancia final desagrad\u00e1vel",
+        "Nota":3,
+        "Versao_App":"2.409.0",
+        "ID_Review":13372717753
+    },
+    {
+        "Usuario":"V\u2019itu",
+        "Titulo":"Sem auporte ApplePay",
+        "Comentario":"uma pena que ainda n\u00e3o tem esse suporte pra adicionar o cart\u00e3o na carteira digital da Apple. Fora isso \u00e9 um bom banco, usando como principal atualmente",
+        "Nota":4,
+        "Versao_App":"2.409.0",
+        "ID_Review":13372398905
+    },
+    {
+        "Usuario":"H.motta",
+        "Titulo":"Pagar por aproxima\u00e7\u00e3o",
+        "Comentario":"Deveria ter a op\u00e7\u00e3o de pagar por aproxima\u00e7\u00e3o usando o iPhone,adicionar o cartao na carteira, nao ter essa op\u00e7\u00e3o na iPhone me obriga usar outros bancos.",
+        "Nota":4,
+        "Versao_App":"2.409.0",
+        "ID_Review":13371751236
+    },
+    {
+        "Usuario":"herus22",
+        "Titulo":"Limite de Pix",
+        "Comentario":"Depois que colocar um limite de Pix sem autoriza\u00e7\u00e3o do cliente tem que esperar 24 hora para modificar e passar um Pix no valor desejado. T\u00e1 horr\u00edvel essa modifica\u00e7\u00e3o",
+        "Nota":3,
+        "Versao_App":"2.409.0",
+        "ID_Review":13371722543
+    },
+    {
+        "Usuario":"Daniel danielzando",
+        "Titulo":"RUIM!",
+        "Comentario":"O cart\u00e3o n\u00e3o funciona c Apple Pay, eu quis entrar na minha conta est\u00e1 pedindo facial e n\u00e3o reconhecem minha face. Antes usava o ID do pr\u00f3prio celular agora saiu do nada.",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13371445658
+    },
+    {
+        "Usuario":"iniciando no ios",
+        "Titulo":"Quase Completo",
+        "Comentario":"Falta incluir apple pay no cart\u00e3o de cr\u00e9dito, nfc, era de mais simples  visualiza\u00e7\u00e3o de movimenta\u00e7\u00e3o, agora est\u00e1 mais chato, tamb\u00e9m ficou ruim de ver os contatos cadastrados na area de pix",
+        "Nota":4,
+        "Versao_App":"2.409.0",
+        "ID_Review":13371144205
+    },
+    {
+        "Usuario":"Luna L.\ud83c\udf19",
+        "Titulo":"Melhor banco",
+        "Comentario":"Parei de usar outros bancos, atualmente \u00e9 o banco com melhor rendimento de CDI de todos, atualmente estou rendendo 105% do CDI, 2% a 3% a mais que os outros!",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13370552379
+    },
+    {
+        "Usuario":"Expectativa do futuro",
+        "Titulo":"\u00d3timo incentivador",
+        "Comentario":"Acredito que ser\u00e1 rent\u00e1vel, vou testar .",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13370450211
+    },
+    {
+        "Usuario":"Num tem nutem",
+        "Titulo":"Top",
+        "Comentario":"Top",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13370152558
+    },
+    {
+        "Usuario":"Brenosan",
+        "Titulo":"Melhor banco",
+        "Comentario":"Muito top o banco, gosto muito",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13369876972
+    },
+    {
+        "Usuario":"Gabriel Fernandes J\u00fanior",
+        "Titulo":"Maravilhosa",
+        "Comentario":"Amo",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13369843129
+    },
+    {
+        "Usuario":"Nessa Moraes",
+        "Titulo":"Elogio",
+        "Comentario":"Pode ser usado em caso de emerg\u00eancia hora e lugar. Oferece condi\u00e7\u00f5es para voc\u00ea sair do aperto",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13368958814
+    },
+    {
+        "Usuario":"zegasolina",
+        "Titulo":"Muito ruim",
+        "Comentario":"-0",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13368783936
+    },
+    {
+        "Usuario":"Thata 101",
+        "Titulo":"Bom",
+        "Comentario":"Mto Bom",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13368717107
+    },
+    {
+        "Usuario":"Ppardinho",
+        "Titulo":"Falha no agendamento do pix copy paste.",
+        "Comentario":"Verifiquem o m\u00e9todo de agendamento do pix copia cola, n\u00e3o consigo agendar antes vencimento, aceita apenas pagamento no momento.",
+        "Nota":4,
+        "Versao_App":"2.409.0",
+        "ID_Review":13368045904
+    },
+    {
+        "Usuario":"gu27gyhib",
+        "Titulo":"Suporte para Apple Pay",
+        "Comentario":"Um dos melhores bancos de 2025, mas vcs precisam ter suporte para Apple Pay. Est\u00e3o perdendo vendas por essa falta de suporte.  Deveriam inserir as demais informa\u00e7\u00f5es no cart\u00e3o tbm, alguns clientes ficam confusos com a falta de informa\u00e7\u00e3o. Sei que temos acesso no app, mas os cart\u00f5es deveriam vir com todas as informa\u00e7\u00f5es igual os outros bancos.",
+        "Nota":4,
+        "Versao_App":"2.409.0",
+        "ID_Review":13367989957
+    },
+    {
+        "Usuario":"Ricardoo89Lee",
+        "Titulo":"App Funciona Bem",
+        "Comentario":"App atende a maioria das necessidades de forma muito objetiva",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13367823209
+    },
+    {
+        "Usuario":"Freiitas.rh",
+        "Titulo":"App nao abre",
+        "Comentario":"Meu aplicativo nao abre no ios 18",
+        "Nota":2,
+        "Versao_App":"2.409.0",
+        "ID_Review":13367207024
+    },
+    {
+        "Usuario":"maycomax",
+        "Titulo":"Limite e lucros",
+        "Comentario":"Me Liberou Limite \u00d3timo, as compras pelo mercado Livre com o Cart\u00e3o de credito do mercado pago parcelas com vantagem, e cash back. e libera muitos modos de empr\u00e9stimo, juros e bem alto dos empr\u00e9stimos isso e ruim. mais ajuda \u00f3timo Banco , so deviam melhorar no juros do empr\u00e9stimo",
+        "Nota":4,
+        "Versao_App":"2.409.0",
+        "ID_Review":13365959628
+    },
+    {
+        "Usuario":"Analuoljjioljnvffssh",
+        "Titulo":"Banco muito completo",
+        "Comentario":"Muito eficiente!",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13365758650
+    },
+    {
+        "Usuario":"real_lluu",
+        "Titulo":"N\u00e3o t\u00f4 conseguindo fazer pix com chave aleat\u00f3rio",
+        "Comentario":"Eu t\u00f4 tentando fazer um pix com chave aleat\u00f3rio e eu n\u00e3o consigo fazer de forma nenhuma",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13365754558
+    },
+    {
+        "Usuario":"caah barbosa",
+        "Titulo":"Top",
+        "Comentario":"Melhor escolha de banco que eu fiz",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13364719879
+    },
+    {
+        "Usuario":"freitas 29",
+        "Titulo":"Atualiza\u00e7\u00e3o. P\u00e9ssima",
+        "Comentario":"\u00daltima atualiza\u00e7\u00e3o para aparelhos mais antigos ficou horr\u00edvel o App era simples e pratico agora s\u00f3 buga e n\u00e3o consegue. Fazer uma transfer\u00eancia com agilidade",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13364292017
+    },
+    {
+        "Usuario":"Pantezafi",
+        "Titulo":"responder",
+        "Comentario":"si me gusta y espero mi tarjeta Mercado Pago",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13364169502
+    },
+    {
+        "Usuario":"fabricio 3.14",
+        "Titulo":"Era bom ficou horr\u00edvel",
+        "Comentario":"Aplicativo era otimo , limpo sem frescura agora com a atualiza\u00e7\u00e3o ficou horr\u00edvel N\u00e3o abre a aba de cart\u00f5es N\u00e3o puxa direto pix copiado",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13364124841
+    },
+    {
+        "Usuario":"wallisson v b",
+        "Titulo":"Avalia\u00e7\u00e3o",
+        "Comentario":"Muito bom",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13363689910
+    },
+    {
+        "Usuario":"Theo Siqueira",
+        "Titulo":"Mercado pago",
+        "Comentario":"100",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13363653980
+    },
+    {
+        "Usuario":"Leila Vinter",
+        "Titulo":"Cart\u00e3o",
+        "Comentario":"Muito bom",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13363527277
+    },
+    {
+        "Usuario":"AZaikoski",
+        "Titulo":"Falta o ApplePAY",
+        "Comentario":"Muito bom. Limites OK. Para ficar \u00f3timo, precisam com urg\u00eancia, liberar o car\u00e3o para inclus\u00e3o no ApplePAY.",
+        "Nota":4,
+        "Versao_App":"2.409.0",
+        "ID_Review":13362674685
+    },
+    {
+        "Usuario":"Amora dorme",
+        "Titulo":"N\u00e3o faz uma avalia\u00e7\u00e3o justa",
+        "Comentario":"Compro muito mais nunca me dar um cr\u00e9dito justo, poderia avaliar melhor os clientes, manda uma miss\u00e3o para comprar com um cart\u00e3o de cr\u00e9dito me dar um limite p\u00e9ssimo parecendo que estou no Serasa e uma vergonha.",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13361923398
+    },
+    {
+        "Usuario":"Nicaciobhz",
+        "Titulo":"P\u00e9ssimo \u00edcone amarelo",
+        "Comentario":"Poderiam voltar para o \u00edcone azul? Toda hora abro o aplicativo achando que estou abrindo o mercado livre. E quando tento achar o mercado pago muita Dificuldade. Que ideia infeliz.",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13361698482
+    },
+    {
+        "Usuario":"Cel-alme",
+        "Titulo":"Garantido!",
+        "Comentario":"Sempre recomendo porque semipreciosas bem atendido e todos os problemas resolvido.",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13361668833
+    },
+    {
+        "Usuario":"TeuCruz",
+        "Titulo":"\u00d3timo aplicativo",
+        "Comentario":"Muito bom! S\u00f3 uma sugest\u00e3o: incluam o cart\u00e3o de voc\u00eas no Apple Pay.",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13361614585
+    },
+    {
+        "Usuario":"Gianni5908",
+        "Titulo":"Fracasso",
+        "Comentario":"A autentica\u00e7\u00e3o facial n\u00e3o funciona de jeito nenhum e me cobraram uma d\u00edvida que n\u00e3o reconhe\u00e7o e n\u00e3o consigo resolver.",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13361523346
+    },
+    {
+        "Usuario":"Iarajaa",
+        "Titulo":"Conta encerrada",
+        "Comentario":"Minha conta foi emcerrada sem motivo nenhum , meu dinheiiro ficou preso la e tenho ainda umas faturas pra pagar , suspenderam minha conta com dinheiro na conta sem motivo aplausivo nao me avisaram de nada e nem me deram motivos , resolvam meu problema ou entao entro com uma a\u00e7\u00e3o judicial contra por danos morais  voces e sera pior para voc\u00eas",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13361067964
+    },
+    {
+        "Usuario":"Ana Sousa de va",
+        "Titulo":"The best",
+        "Comentario":"O melhor aplicativo de banco on-line que ja usei",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13360885404
+    },
+    {
+        "Usuario":"S\u00e9rip",
+        "Titulo":"Avalia\u00e7\u00e3o mercado pago",
+        "Comentario":"Estou gostando muito do ap , sendo que ainda n\u00e3o inaugurei a minha loja, por isso ainda n\u00e3o posso falar sobre a m\u00e1quina de cart\u00e3o, espero em breve pode ter algum cr\u00e9dito para poder comprar meus equipamentos .",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13360808265
+    },
+    {
+        "Usuario":"Gih cardoso",
+        "Titulo":"Top 10",
+        "Comentario":"Melhor de todos",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13360022038
+    },
+    {
+        "Usuario":"novamentemente",
+        "Titulo":"N\u00e3o gostei",
+        "Comentario":"Comprei um artigo e o mercado pago enviou o dinheiro para o estelionat\u00e1rio antes de eu receber o produto Mercado Pago nunca mais",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13359706115
+    },
+    {
+        "Usuario":"RhuMarcelo",
+        "Titulo":"Mwfmarcelo",
+        "Comentario":"5 estrelas",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13359427507
+    },
+    {
+        "Usuario":"joelma\/magnifica",
+        "Titulo":"Mercado pago",
+        "Comentario":"\u00d3timo",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13359154570
+    },
+    {
+        "Usuario":"Loys Burgos",
+        "Titulo":"Muito bom!!",
+        "Comentario":"Excelente!!",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13358277374
+    },
+    {
+        "Usuario":"Psouza16@",
+        "Titulo":"Excelente banco",
+        "Comentario":"Gosto muito de trabalhar com o mercado pago,tive um \u00f3timo atendimento quando precisei,cart\u00e3o de cr\u00e9dito bom.",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13357740773
+    },
+    {
+        "Usuario":"0r4fss",
+        "Titulo":"cart\u00e3o na carteira digital",
+        "Comentario":"n\u00e3o d\u00e1 para colocar o cart\u00e3o do mercado pago na carteira da apple e isso \u00e9 rid\u00edculo, adicionem o suporte logo",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13356856633
+    },
+    {
+        "Usuario":"Lyonn Costa",
+        "Titulo":"Carteira Digital do iPhone",
+        "Comentario":"\u00d3timo banco, uso para pagar minhas contas e fazer minhas vendas do meu estabelecimento, gosto muito da conta digital mercado pago.  Por\u00e9m deseixa a deseja na quest\u00e3o da carteira digital para usar o cart\u00e3o virtual, hoje n\u00e3o uso mais cart\u00e3o f\u00edsico, s\u00f3 utilizo meu smartphone, por\u00e9m meu aparelho \u00e9 iPhone, e n\u00e3o consigo cadastrar meu cart\u00e3o virtual na minha carteira da Apple. Tirando esse ponto negativo de resto, \u00e9 perfeito \u2665\ufe0f",
+        "Nota":4,
+        "Versao_App":"2.409.0",
+        "ID_Review":13356636877
+    },
+    {
+        "Usuario":"Duduoficial083",
+        "Titulo":"Pagamento Por Aproxima\u00e7\u00e3o",
+        "Comentario":"Eu n\u00e3o ando com cart\u00e3o, e o mercado pago n\u00e3o est\u00e1 dispon\u00edvel adicionar o cart\u00e3o na carteira para pagar por aproxima\u00e7\u00e3o usando a carteira digital da Apple , queria que botassem em funcionamento no iPhone adicionar o cart\u00e3o de voc\u00eas  :(",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13356053076
+    },
+    {
+        "Usuario":"Jander careca",
+        "Titulo":"Excelente",
+        "Comentario":"Top",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13355644755
+    },
+    {
+        "Usuario":"Misael Bastos",
+        "Titulo":"Erro",
+        "Comentario":"A aba cart\u00e3o no iPhone 6 n\u00e3o abre de jeito nenhum.",
+        "Nota":3,
+        "Versao_App":"2.409.0",
+        "ID_Review":13355499984
+    },
+    {
+        "Usuario":"Daniloqm123",
+        "Titulo":"Encontrar os comprovantes",
+        "Comentario":"Qual a dificuldade de voc\u00eas disponibilizarem os comprovantes no extrato? A gente tem que procurar a op\u00e7\u00e3o \u201catividades\u201d para ter acesso a um comprovante. Existem formas inteligentes e pr\u00e1ticas para disponibilizar os comprovantes como outros bancos fazem.",
+        "Nota":4,
+        "Versao_App":"2.409.0",
+        "ID_Review":13355024209
+    },
+    {
+        "Usuario":"Diego S Albuquerque",
+        "Titulo":"S\u00f3 esse lixo pq \u00e9 obrigat\u00f3rio para comprar no mercado livre.",
+        "Comentario":"S\u00f3 esse lixo pq \u00e9 obrigat\u00f3rio para comprar no mercado livre.",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13353913981
+    },
+    {
+        "Usuario":"_deborahm",
+        "Titulo":"Apple Pay",
+        "Comentario":"Adoro o app. S\u00f3 falta dar pra colocar o cart\u00e3o na Apple Pay.",
+        "Nota":4,
+        "Versao_App":"2.409.0",
+        "ID_Review":13353873146
+    },
+    {
+        "Usuario":"R1sh1",
+        "Titulo":"Pode melhorar!",
+        "Comentario":"Alguns recursos s\u00e3o pouco amig\u00e1veis ou ficam inacess\u00edveis (sem justificativa) em determinadas situa\u00e7\u00f5es. Por exemplo, a op\u00e7\u00e3o de se AGENDAR um pagamento deveria estar SEMPRE dispon\u00edvel, independentemente de como acesso tal pagamento.",
+        "Nota":4,
+        "Versao_App":"2.409.0",
+        "ID_Review":13353610978
+    },
+    {
+        "Usuario":"Mathhrodrigues",
+        "Titulo":"Melhor App",
+        "Comentario":"App ficou sensacional",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13353481806
+    },
+    {
+        "Usuario":"Mkfilip",
+        "Titulo":"Levei um golpe de maquininha e se quer reembolsaram!",
+        "Comentario":"App ruim e de baixa qualidade e se n\u00e3o resolverem meu problema n\u00e3o irei retornar a usar essa m\u00e1quina!",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13352703369
+    },
+    {
+        "Usuario":"keziapinheiro",
+        "Titulo":"N\u00e3o recomendo",
+        "Comentario":"App p\u00e9ssimo de mexer, de dif\u00edcil comunica\u00e7\u00e3o e esclarecimentos.",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13352647515
+    },
+    {
+        "Usuario":"Kaarotoo",
+        "Titulo":"Bug em pagar com pix",
+        "Comentario":"Sempre que paga com pix, vc cola a chave ele da um erro, vc tem que entrar na p\u00e1gina copiar de novo (o iOS apaga da memoria quando vc cola direto), s\u00f3 na segunda vez ele reconhece . Fica ruim gerenciar isso, da muito trabalho pagar conta com esse bug",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13352564372
+    },
+    {
+        "Usuario":"Lord Akhanta",
+        "Titulo":"Muito ruim",
+        "Comentario":"Muito ruim me ofereceu cr\u00e9dito a\u00ed quando abri. Conta disse que n\u00e3o estava dispon\u00edvel pra minha conta desinstalando o mercado pago e excluindo. Conta tamb\u00e9m",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13352484667
+    },
+    {
+        "Usuario":"Ufuut",
+        "Titulo":"Bom",
+        "Comentario":"Ytop",
+        "Nota":5,
+        "Versao_App":"2.409.0",
+        "ID_Review":13352401074
+    },
+    {
+        "Usuario":"Zucon Rodrigo",
+        "Titulo":"Bug AP entrar",
+        "Comentario":"N\u00e3o consigo entrar na minha conta pelo app",
+        "Nota":1,
+        "Versao_App":"2.409.0",
+        "ID_Review":13352085646
+    },
+    {
+        "Usuario":"Metroid1988",
+        "Titulo":"Parceria",
+        "Comentario":"\u00d3timo",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13351583071
+    },
+    {
+        "Usuario":"afhkydvjhf",
+        "Titulo":"Atualiza\u00e7\u00e3o",
+        "Comentario":"O App t\u00e1 muito ruim, n\u00e3o carrega a \u00e1rea de cart\u00e3o, muito p\u00e9ssimo",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13351513533
+    },
+    {
+        "Usuario":"MarlosChizoti",
+        "Titulo":"Engana\u00e7\u00e3o",
+        "Comentario":"Fraudam o sistema financeiro, prometem rendimentos que n\u00e3o entregam e mentem sobre problemas internos. N\u00e3o \u00e9 confi\u00e1vel.",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13350009089
+    },
+    {
+        "Usuario":"Euclmo",
+        "Titulo":"Horr\u00edvel",
+        "Comentario":"A \u00faltima atualiza\u00e7\u00e3o ficou horr\u00edvel, complicada! Antes era t\u00e3o simples fazer o pagamento da d\u00edvida de compras on-line, agora n\u00e3o sei nem como se paga.",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13349423344
+    },
+    {
+        "Usuario":"$rruim",
+        "Titulo":"Comunica\u00e7\u00e3o",
+        "Comentario":"Muito dif\u00edcil resolver um problema com eles j\u00e1 estou a 4 anos tentando um cart\u00e3o para meu neg\u00f3cio",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13349402929
+    },
+    {
+        "Usuario":"J. Santana77",
+        "Titulo":"Avalia\u00e7\u00e3o",
+        "Comentario":"Gostei bastante, pra melhorar ainda mais minha satisfa\u00e7\u00e3o s\u00f3 se aumentarem meu limite!",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13349030988
+    },
+    {
+        "Usuario":"Dias614",
+        "Titulo":"App perfeito",
+        "Comentario":"App perfeito por\u00e9m se desse para fazer compra com cart\u00e3o virtual no Apple play seria melhor ainda mais fora isso o app \u00e9 perfeito nota mil",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13347795360
+    },
+    {
+        "Usuario":"Salva na pessoa de Jesus",
+        "Titulo":"Sobre o mercado pago",
+        "Comentario":"Otimo tudo e nem claro por aqui \u00e9 seguro at\u00e9 agora",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13347758382
+    },
+    {
+        "Usuario":"Melhor app e banco",
+        "Titulo":"O melhor App",
+        "Comentario":"Mercado pago al\u00e9m de nos ajudar nas horas precisas, tem o app evolu\u00eddo e f\u00e1cil de usar em todos os momentos que precisamos! Parab\u00e9ns",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13347748873
+    },
+    {
+        "Usuario":"Litra\u00e7o",
+        "Titulo":"\u00d3timo",
+        "Comentario":"\u00d3timo",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13347677898
+    },
+    {
+        "Usuario":"Papi0908",
+        "Titulo":"Muito bom!",
+        "Comentario":"Excelente",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13347652839
+    },
+    {
+        "Usuario":"Nn abaixe",
+        "Titulo":"App ruim",
+        "Comentario":"O app \u00e9 horr\u00edvel, bloqueia seu e-mail sem motivo, com o dinheiro l\u00e1 dentro, nn abaixem.!",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13346994359
+    },
+    {
+        "Usuario":"RaulLopes7",
+        "Titulo":"Um banco perfeito, mas\u2026",
+        "Comentario":"No geral come\u00e7ando pelos elogios, o banco \u00e9 muito simples e intuitivo, \u00e9 muito f\u00e1cil de voc\u00ea achar todas as informa\u00e7\u00f5es e o Chatbot com a intelig\u00eancia artificial \u00e9 muito bom. Al\u00e9m disso tamb\u00e9m \u00e9 f\u00e1cil de conectar com outras contas e puxar o dinheiro de outras contas. Se voc\u00ea fizer portabilidade de sal\u00e1rio para o Mercado pagoter\u00e1 120 por cento do CD rendendo todos os dias em seu dinheiro. Algo legal \u00e9 que voc\u00ea tem cashback em todas as contas feitas no mercado livre, que se juntar o frete FULL, \u00e9 muito bom. Para mim foi algo diferencial muito importante.  Uma coisa que senti muito e sinto ainda \u00e9 a falta de investimentos no aplicativo. Ao tentar investir s\u00f3 tem renda fixa (o que n\u00e3o faz muito sentido se voc\u00ea tiver o valor rendendo a 120 por cento do CDI, consequentemente o valor vai ser menor se voc\u00ea investir. A falta principal que me neste aplicativo \u00e9 realmente a diversifica\u00e7\u00e3o de investimentos eu n\u00e3o encontro fundos imobili\u00e1rios n\u00e3o encontram Home Broker com a\u00e7\u00f5es com a\u00e7\u00f5es internacionais tamb\u00e9m n\u00e3o localizam e acho que seria um ponto de melhoria De resto eu amo o banco!",
+        "Nota":4,
+        "Versao_App":"2.408.1",
+        "ID_Review":13344517206
+    },
+    {
+        "Usuario":"Enterprise SS",
+        "Titulo":"N\u00e3o \u00e9 banco, n\u00e3o respeitam voc\u00ea",
+        "Comentario":"Isso est\u00e1 longe de ser um banco \u00e9 um gatway de argentinos que acham que mandam alguma coisa, o minist\u00e9rio p\u00fablico deve prender eles por uns dias para eles aprenderem a respeitar o dinheiro Das pessoas. Eles suspendem contas arbitrariamente sem qualquer justificativa e travam seu dinheiro. Se essa empreseca de quinta tivesse ag\u00eancia f\u00edsica os gerentes j\u00e1 estariam linchados por essa atitude.  Al\u00f4 minist\u00e9rio p\u00fablico, banco central, vamos fazer algo contra esses criminosos que passam por cima da lei e do c\u00f3digo de defesa do consumidor.",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13344491122
+    },
+    {
+        "Usuario":"@kinostour",
+        "Titulo":"Facilidade",
+        "Comentario":"At\u00e9 o momento n\u00e3o tive problemas com o Mercado Pago. Fix PIX pro meu banco preferido e correu tudo ok.",
+        "Nota":4,
+        "Versao_App":"2.408.1",
+        "ID_Review":13344467483
+    },
+    {
+        "Usuario":"Thiagospeed",
+        "Titulo":"Bug e Apple Pay",
+        "Comentario":"Ao fazer a leitura do qrcode, na proxima tela a barra do pix continua na frente do bot\u00e3o \"pagar\". E outra, n\u00e3o tem como avaliar bem se no iphone n\u00e3o d\u00e1 suporte ao Apple pay.",
+        "Nota":3,
+        "Versao_App":"2.408.1",
+        "ID_Review":13344109508
+    },
+    {
+        "Usuario":"engenhariaunida2003",
+        "Titulo":"Senhor",
+        "Comentario":"10",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13343073328
+    },
+    {
+        "Usuario":"Gabriel02828282828",
+        "Titulo":"Uma vergonha",
+        "Comentario":"N\u00e3o suporta integra\u00e7\u00e3o com Apple Pay em pleno 2025",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13342784753
+    },
+    {
+        "Usuario":"Crazy dog do mato",
+        "Titulo":"O melhor banco digital",
+        "Comentario":"Muito bom,resolve tudo em instantes quanto mais voc\u00ea usa mais limite voc\u00ea ganha \ud83d\ude0d",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13342724830
+    },
+    {
+        "Usuario":"suehtam123",
+        "Titulo":"\u00d3timo! \ud83d\udc4c\ud83c\udffb",
+        "Comentario":"N\u00e3o tenho reclama\u00e7\u00f5es em rela\u00e7\u00e3o ao banco. S\u00f3 gostaria que o cart\u00e3o Mercado Pago pudesse ser integrado \u00e0 carteira do Apple Pay.",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13342668347
+    },
+    {
+        "Usuario":"Cleojf",
+        "Titulo":"Perfeito",
+        "Comentario":"Rende muito",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13342335898
+    },
+    {
+        "Usuario":"Yasmin Petrin",
+        "Titulo":"Tirando todos benef\u00edcios meli+",
+        "Comentario":"N\u00e3o compensa mais assinar meli+, tiraram o deezer, est\u00e3o tirando parcelas extras sem juros e cash s\u00f3 pagando com cart\u00e3o mercado pago, daqui a pouco nem frete gr\u00e1tis tem mais, j\u00e1 vou cancelar.",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13340307891
+    },
+    {
+        "Usuario":"Guilherme 38",
+        "Titulo":"\u00datil",
+        "Comentario":"Muito bom apesar de n\u00e3o ter liberado o cart\u00e3o de cr\u00e9dito ainda",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13339995022
+    },
+    {
+        "Usuario":"MDor\u00e7a",
+        "Titulo":"Atualizou para induzir ao erro e pagar tarifa!",
+        "Comentario":"O app sempre foi muito bom, mas agora a realiza\u00e7\u00e3o de PIX INDUZ AO ERRO PARA VC PAGAR TARIFA! Achei isso UM ABSURDO. Onde j\u00e1 se viu, n\u00e3o aparecer mais a op\u00e7\u00e3o de utilizar \u201csaldo da conta\u201d e sim vir pr\u00e9 SELECIONADO Cart\u00e3o de Cr\u00e9dito?!!! Absurdo isso. N\u00e3o pode ficar assim!",
+        "Nota":2,
+        "Versao_App":"2.407.0",
+        "ID_Review":13339872488
+    },
+    {
+        "Usuario":"@Vanessa.AN",
+        "Titulo":"Nova atualiza\u00e7\u00e3o ruim",
+        "Comentario":"N\u00e3o gostei da nova atualiza\u00e7\u00e3o, muito dif\u00edcil pra achar as op\u00e7\u00f5es desejadas, a vers\u00e3o anterior era \u00f3tima .",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13339536911
+    },
+    {
+        "Usuario":"Kosglad",
+        "Titulo":"Parem de estragar o app",
+        "Comentario":"Depois das ultimas atualiza\u00e7\u00f5es nem a \u00e1rea pix aparece mais! Incr\u00edvel como consegue ficar pior a cada atualiza\u00e7\u00e3o! Como vou fazer pix a se nem o suporte do banco consegue ajudar?",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13339381702
+    },
+    {
+        "Usuario":"MarioSGO1",
+        "Titulo":"N\u00e3o tem suporte",
+        "Comentario":"Se por acaso vc perder ou roubarem seu celular a recomenda\u00e7\u00e3o \u00e9 entre no app e cancele o cart\u00e3o \ud83d\ude02 suporte apenas por um chat de IA que tem uma receita de \u201cbolo\u201d pronta, se resolver seu problema ok, se n\u00e3o ela repete a mesma coisa em um lupe, quando voc\u00ea que j\u00e1 tentou tudo que ela disse, ent\u00e3o fala tente novamente mais tarde.",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13338597981
+    },
+    {
+        "Usuario":"Geu.",
+        "Titulo":"Est\u00e1 horr\u00edvel, ap\u00f3s essa atualiza\u00e7\u00e3o",
+        "Comentario":"Acesso d\u00e1 sempre erro, ficou pessimo o aplicativo.",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13338533755
+    },
+    {
+        "Usuario":"nao leiam\ud83e\udd26\ud83c\udffb\u200d\u2640\ufe0f",
+        "Titulo":"App parou",
+        "Comentario":"N\u00e3o estou conseguindo finalizar nada no aplicativo, nem pagamentos, dep\u00f3sitos, nada\u2026 precisando muito de ajuda\u2026.",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13338369111
+    },
+    {
+        "Usuario":"Jean S Matos",
+        "Titulo":"Excelente",
+        "Comentario":"Melhor app de compras on-line tem de tudo",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13338298832
+    },
+    {
+        "Usuario":"Kkkkkikihin",
+        "Titulo":"Ruim",
+        "Comentario":"Horr\u00edvel",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13337642080
+    },
+    {
+        "Usuario":"admin195368376465824835893063",
+        "Titulo":"Aplicativo bugado",
+        "Comentario":"Arrumem esse app pois est\u00e1 debitando da conta valores que j\u00e1 foram pagos (empr\u00e9stimo)",
+        "Nota":2,
+        "Versao_App":"2.408.1",
+        "ID_Review":13337595910
+    },
+    {
+        "Usuario":"Adsb1313",
+        "Titulo":"Alvaro bispo",
+        "Comentario":"Banco",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13336386736
+    },
+    {
+        "Usuario":"Mah Marcelo",
+        "Titulo":"Estava \u00f3timo, ap\u00f3s \u00faltima atualiza\u00e7\u00e3o ficou ruim",
+        "Comentario":"Ficou p\u00e9ssimo, Tem que voltar como era antes",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13336050322
+    },
+    {
+        "Usuario":"Ca.boa",
+        "Titulo":"Funcionalidades melhores",
+        "Comentario":"O cart\u00e3o \u00e9 muito \u00fatil e suas facilidades de parcelamento das compras \u00e9 incr\u00edvel. S\u00f3 p\u00e9ca nas funcionalidades do cart\u00e3o para pagamento ao qual n\u00e3o se consegue adiantar parcelas e liquidar um compra quando se pode. Dessa forma atrapalha no seu poder de compra , interfere no limite e caso n\u00e3o tenha cuidado voc\u00ea pode se complicar com as dividas. Seria muito bom se investissem em funcionalidade melhores de pagamento.",
+        "Nota":4,
+        "Versao_App":"2.408.1",
+        "ID_Review":13335925928
+    },
+    {
+        "Usuario":"Muito pensou",
+        "Titulo":"Que vcs resolvam meu problema",
+        "Comentario":"O aplicativo n\u00e3o est\u00e1 pegando para desbloquear o cart\u00e3o e n\u00e3o aparece nenhum sinal para desbloquear o cart\u00e3o f\u00edsico",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13335905648
+    },
+    {
+        "Usuario":"uchihdfv",
+        "Titulo":"Afe",
+        "Comentario":"O app n\u00e3o baixa!",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13335846041
+    },
+    {
+        "Usuario":"?apelido",
+        "Titulo":"Promessa falsa",
+        "Comentario":"Ficou me encomendando mandando msg sem parar uma atr\u00e1s da outra que tinha um cart\u00e3o de cr\u00e9dito liberado abaixei me cadastrei abri uma conta e era mentira.",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13335344891
+    },
+    {
+        "Usuario":"Jdjmat_6",
+        "Titulo":"Parcelamento cart\u00e3o de cr\u00e9dito e juros",
+        "Comentario":"Na parte de cr\u00e9dito e app n\u00e3o tenho que reclamar, mas na parte de solu\u00e7\u00f5es e negocia\u00e7\u00e3o \u00e9 p\u00e9ssimo. Se voc\u00ea precisar parcelar sua fatura do cart\u00e3o, se prepare. Juros altos e planos curtos, que n\u00e3o trazem solu\u00e7\u00f5es para voc\u00ea ficar em dia. Como um gerente faz falta nessas horas\u2026",
+        "Nota":2,
+        "Versao_App":"2.408.1",
+        "ID_Review":13335318027
+    },
+    {
+        "Usuario":"TRP8488",
+        "Titulo":"Top",
+        "Comentario":"Show",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13334609657
+    },
+    {
+        "Usuario":"SofiCidrao",
+        "Titulo":"Atualiza\u00e7\u00e3o",
+        "Comentario":"O app ficou p\u00e9ssimo depois da atualiza\u00e7\u00e3o",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13334332277
+    },
+    {
+        "Usuario":"Acsmel",
+        "Titulo":"N\u00e3o presta",
+        "Comentario":"Horr\u00edvel as pessoas conseguem acessar as contas das pessoas voc\u00eas bloquearam minha conta n\u00e3o tenho acesso enquanto isso pessoas que moram em outra cidade tem acesso e eu n\u00e3o consigo ainda conseguiram tomar empr\u00e9stimo e voc\u00eas agora querem me cobrar por uma coisa que eu n\u00e3o fiz",
+        "Nota":2,
+        "Versao_App":"2.408.1",
+        "ID_Review":13334265301
+    },
+    {
+        "Usuario":"Yvas15",
+        "Titulo":"David Alves",
+        "Comentario":"Melhor banco de 2025",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13333962387
+    },
+    {
+        "Usuario":"Uma pilantragem",
+        "Titulo":"Decep\u00e7\u00e3o",
+        "Comentario":"Me roubando na cara dura",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13333918345
+    },
+    {
+        "Usuario":"nataroots",
+        "Titulo":"App muito bom",
+        "Comentario":"Gosto da experi\u00eancia de UI e features dispon\u00edveis, al\u00e9m do rendimento, parab\u00e9ns ao time de desenvolvimento!",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13333655391
+    },
+    {
+        "Usuario":"FarmaVida",
+        "Titulo":"P\u00e9ssimo",
+        "Comentario":"P\u00e9ssima experi\u00eancia. Minha conta foi SUSPENSA sem motivos claros e estou sem usar com produtos a serem devolvidos, gerando preju\u00edzos e danos morais.",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13333630284
+    },
+    {
+        "Usuario":"Thales Galli",
+        "Titulo":"UX razo\u00e1vel",
+        "Comentario":"Eu acho a UX muito razo\u00e1vel\u2026 principalmente no extrato. Por ser digital, o app precisa ser o carro chefe, tem que ser visualmente f\u00e1cil e bonito",
+        "Nota":3,
+        "Versao_App":"2.408.1",
+        "ID_Review":13333229879
+    },
+    {
+        "Usuario":"Lucas ADN",
+        "Titulo":"\u00d3timo",
+        "Comentario":"Nova atualiza\u00e7\u00e3o ficou show !",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13332819844
+    },
+    {
+        "Usuario":"Volpijoias",
+        "Titulo":"Melhor que antes",
+        "Comentario":"Fizeram um excelente atualiza\u00e7\u00e3o.",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13331158197
+    },
+    {
+        "Usuario":"jpebia",
+        "Titulo":"Inseguran\u00e7a total",
+        "Comentario":"Clonaram o meu cart\u00e3o e passaram 24 vezes, contestei, registrei ocorr\u00eancia, e simplesmente disseram que n\u00e3o podiam fazer nada!!! TOMEM CUIDADO, banco digital \u00e9 furada!!!",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13330403289
+    },
+    {
+        "Usuario":"Guto0077",
+        "Titulo":"Muito bom",
+        "Comentario":"O melhor para o meu dinheiro",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13329477783
+    },
+    {
+        "Usuario":"Nillbarbosa",
+        "Titulo":"O melhor!!!",
+        "Comentario":"O melhor e mais seguro lugar de comprar! Compre e v\u00e1 dormir em paz, porque v\u00e3o entregar o que voc\u00ea comprou!\ud83d\udc4f\ud83d\udc4f\ud83d\udc4f",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13328990666
+    },
+    {
+        "Usuario":"Mozinho farmacia",
+        "Titulo":"Excelente institui\u00e7\u00e3o",
+        "Comentario":"Dez em tudo que faz",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13328156736
+    },
+    {
+        "Usuario":"katsonNu",
+        "Titulo":"Excelente",
+        "Comentario":"Nota 10",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13327355475
+    },
+    {
+        "Usuario":"Marceloedubh",
+        "Titulo":"Nao aceita antecipar parcelas. Nao recomendo.",
+        "Comentario":"Zero",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13327162793
+    },
+    {
+        "Usuario":"luizferp",
+        "Titulo":"Top",
+        "Comentario":"Top",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13327152371
+    },
+    {
+        "Usuario":"P4u10_2000",
+        "Titulo":"MP the best !!!",
+        "Comentario":"Mais que sensacional !!!!",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13326611441
+    },
+    {
+        "Usuario":"luis222@",
+        "Titulo":"a",
+        "Comentario":"sempre usei mas essas \u00faltimas atualiza\u00e7\u00f5es\u2026tao deixando a desejar area pix horrivel.",
+        "Nota":2,
+        "Versao_App":"2.408.1",
+        "ID_Review":13326567117
+    },
+    {
+        "Usuario":"Srta.Lily82",
+        "Titulo":"Muito bom!",
+        "Comentario":"Super f\u00e1cil de utilizar! E com muitas ofertas de vantagens",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13326463827
+    },
+    {
+        "Usuario":"Cleyson barros",
+        "Titulo":"Top",
+        "Comentario":"Atende todas expectativas",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13326323787
+    },
+    {
+        "Usuario":"Roosttt",
+        "Titulo":"Juros alto, toma seu dinheiro sem avisar",
+        "Comentario":"Tem plataformas melhores",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13326260472
+    },
+    {
+        "Usuario":"Gabriel e Mel",
+        "Titulo":"Dificuldade",
+        "Comentario":"Muito dif\u00edcil encontrar as op\u00e7\u00f5es que precisamos",
+        "Nota":3,
+        "Versao_App":"2.407.0",
+        "ID_Review":13326251059
+    },
+    {
+        "Usuario":"Amvalentim",
+        "Titulo":"Atualiza\u00e7\u00e3o",
+        "Comentario":"Depois da ultima atualiza\u00e7\u00e3o n\u00e3o consigo sair do App, seja para fechar ou deslogar\u2026. A solu\u00e7\u00e3o que encontrei foi desinstalar o app e logar com outra contra. Por\u00e9m tenho tr\u00eas contas, se todas as vezes tiver que fazer isso fica dif\u00edcil\u2026,",
+        "Nota":4,
+        "Versao_App":"2.408.1",
+        "ID_Review":13326185453
+    },
+    {
+        "Usuario":"qsiana",
+        "Titulo":"Aba cart\u00e3o",
+        "Comentario":"Depois da duas \u00faltimas atualiza\u00e7\u00f5es  nao abre mais a aba cart\u00e3o",
+        "Nota":3,
+        "Versao_App":"2.408.1",
+        "ID_Review":13326099366
+    },
+    {
+        "Usuario":"Inaldo 1010",
+        "Titulo":"Percimo",
+        "Comentario":"0",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13325314493
+    },
+    {
+        "Usuario":"Quero acessar a conta",
+        "Titulo":"Agendamento de pagamentos",
+        "Comentario":"Agora piorou, pois antes se conseguia fazer agendamento de pagamentos, menos do cart\u00e3o Mercado Pago, agora n\u00e3o se pode mais fazer agendamentos para pagamentos futuros. A cada atualiza\u00e7\u00e3o o aplicativo diminui as funcionalidades?!?!?!",
+        "Nota":3,
+        "Versao_App":"2.408.1",
+        "ID_Review":13325226292
+    },
+    {
+        "Usuario":"Horsenpower",
+        "Titulo":"N\u00e3o oferece desconto",
+        "Comentario":"Cr\u00e9dito",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13325133585
+    },
+    {
+        "Usuario":"Jbsoysa",
+        "Titulo":"Avalia\u00e7\u00e3o positiva",
+        "Comentario":"Muito bem explicado todos os comandos.",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13324811314
+    },
+    {
+        "Usuario":"Manuldiniz",
+        "Titulo":"Resolvo tudo em um s\u00f3 lugar",
+        "Comentario":"Pr\u00e1tico e acess\u00edvel",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13324706928
+    },
+    {
+        "Usuario":"tocadasgatas",
+        "Titulo":"P\u00e9ssimo",
+        "Comentario":"Ruim",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13324680148
+    },
+    {
+        "Usuario":"BrunoRoschini",
+        "Titulo":"Muito completo",
+        "Comentario":"Aplicativo top",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13324473178
+    },
+    {
+        "Usuario":"Ivomax19",
+        "Titulo":"Apple pay",
+        "Comentario":"So merece uma estrela, ningu\u00e9m utiliza mais cart\u00f5es f\u00edsicos, precisamos que o cart\u00e3o fique dispon\u00edvel na apple pay pra ontem.",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13323200615
+    },
+    {
+        "Usuario":"Daniazevedo17",
+        "Titulo":"Melhor banco digital",
+        "Comentario":"Gosto muito, \u00e9 meu banco favorito \ud83d\ude0d",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13323131975
+    },
+    {
+        "Usuario":"Thiago Nascimento88",
+        "Titulo":"Muito bom!!!",
+        "Comentario":"Deveria poder dar mais estrelas.",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13323005548
+    },
+    {
+        "Usuario":"GrandeFernando",
+        "Titulo":"GrandeFernando",
+        "Comentario":"10",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13322961561
+    },
+    {
+        "Usuario":"Inacio-inacio",
+        "Titulo":"Banco horr\u00edvel",
+        "Comentario":"Sem suporte",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13322524960
+    },
+    {
+        "Usuario":"jrbittencourt",
+        "Titulo":"A nova interface ficou \u00f3tima e moderna",
+        "Comentario":"Finalmente atualizaram e sa\u00edram do s\u00e9culo XX kkk",
+        "Nota":5,
+        "Versao_App":"2.408.1",
+        "ID_Review":13321842995
+    },
+    {
+        "Usuario":"mirelLa lourenCo",
+        "Titulo":"nao consigo ver informacoes do meu cartao virtual",
+        "Comentario":"essa nova atualiza\u00e7\u00e3o ta horrivel, nao to conseguindo fazer mais nada, preciso urgente ver as informa\u00e7\u00f5es do meu cart\u00e3o virtual mas quando eu clico na op\u00e7\u00e3o \u201ccart\u00f5es\u201d a tela fica branca!",
+        "Nota":1,
+        "Versao_App":"2.408.1",
+        "ID_Review":13321520228
+    },
+    {
+        "Usuario":"Raphael Sandre",
+        "Titulo":"Apple Pay",
+        "Comentario":"O aplicativo ficou bom, a nova interface melhorou bastante, mas, tem tantas institui\u00e7\u00f5es menores que tem Apple Pay integrado e uma do porte do mercado pago n\u00e3o ter \u00e9 meio que um atraso.",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13321397416
+    },
+    {
+        "Usuario":"Kauane199",
+        "Titulo":"Bom",
+        "Comentario":"Bom",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13321113132
+    },
+    {
+        "Usuario":"GILDOS BAR",
+        "Titulo":"Cristiano dos Santos Teodoro",
+        "Comentario":"GILDOS BAR",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13321090983
+    },
+    {
+        "Usuario":"nyldosam",
+        "Titulo":"Melhor app \u00f3timo vendedores muita facilidade de compra muitas varia\u00e7\u00f5es",
+        "Comentario":"Obrigado",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13320819991
+    },
+    {
+        "Usuario":"012_bruniss",
+        "Titulo":"n\u00e3o gostei",
+        "Comentario":"Essa nova atualiza\u00e7\u00e3o n\u00e3o est\u00e1 deixando eu ver os meus cart\u00e3o, principalmente o cart\u00e3o virtual. Eu fui realizar uma compra e n\u00e3o consegui ver os detalhes do meu cart\u00e3o virtual\u2026",
+        "Nota":3,
+        "Versao_App":"2.407.0",
+        "ID_Review":13319320916
+    },
+    {
+        "Usuario":"DouglasMartins7",
+        "Titulo":"Bom demais",
+        "Comentario":"Ce t\u00e1 doido de bao",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13319085840
+    },
+    {
+        "Usuario":"Bmkpd",
+        "Titulo":"Muito bom",
+        "Comentario":"Nota 10",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13318334629
+    },
+    {
+        "Usuario":"Melhore mais o aplicativo",
+        "Titulo":"Complicado",
+        "Comentario":"Nada  simples o aplicativo at\u00e9 mesmo para fazer um pix de Qr code, que vergonha que eu passo para pagar algo com mercado pago  decep\u00e7\u00e3o.",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13317442988
+    },
+    {
+        "Usuario":"Dr Eudes Guerra",
+        "Titulo":"O melhor banco digital",
+        "Comentario":"\u00d3tima experi\u00eancia um banco que deixa o cliente tranquilo e seguro nota 10",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13317235969
+    },
+    {
+        "Usuario":"Souza Felipejf",
+        "Titulo":"Praticidade 100",
+        "Comentario":"Bem explicativo f\u00e1cil de usar e muito confi\u00e1vel",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13316427397
+    },
+    {
+        "Usuario":"Willian Vitor S. Fdes",
+        "Titulo":"\u00daltima atualiza\u00e7\u00e3o pesou muito o app",
+        "Comentario":"O app era bom, mas depois da \u00faltima atualiza\u00e7\u00e3o deixou a desejar",
+        "Nota":3,
+        "Versao_App":"2.407.0",
+        "ID_Review":13316358903
+    },
+    {
+        "Usuario":"Tiagoadvir",
+        "Titulo":"Bugadissimo",
+        "Comentario":"O app depois da \u00faltima atualiza est\u00e1 corroendo absolutamente todo o seu investimento em 200 a 300 reais o dia o suporte s\u00f3 dia que \u00e9 falha mas sem retornos concretos. J\u00e1 acionei o BANCO CENTRAL e caso n\u00e3o haja a corre\u00e7\u00e3o dos meus valores entrarei na justi\u00e7a!",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13316103019
+    },
+    {
+        "Usuario":"Daniel Karven",
+        "Titulo":"Aplicativo amarelo? Mercado livre por acaso?",
+        "Comentario":"Como que fazem um \u00edcone identifico a outro? Tava branco e azul a\u00ed coloca o amarelo pra que? Quanta falta de criatividade s\u00f3 pra confundi quem usa os dois, p\u00e9ssimo.",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13315329178
+    },
+    {
+        "Usuario":"Juro pra vc",
+        "Titulo":"Jheny",
+        "Comentario":"10",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13314868318
+    },
+    {
+        "Usuario":"Pse n\u00e9",
+        "Titulo":"Muito ruim",
+        "Comentario":"O aplicativo n\u00e3o aceita mais transfer\u00eancias no meu celular. Se quero realizar algum pagamento\/ transfer\u00eancia, o teclado da problema. Prenderam meu dinheiro",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13314030134
+    },
+    {
+        "Usuario":"Jaques__",
+        "Titulo":"Aplicativo de banco muito bom",
+        "Comentario":"Excelente aplicativo, rende muito e \u00e9 super pr\u00e1tico e eficiente",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13313939718
+    },
+    {
+        "Usuario":"Paulonnjgvvh",
+        "Titulo":"Top",
+        "Comentario":"\ud83e\udd20",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13313760162
+    },
+    {
+        "Usuario":"Mateuzg",
+        "Titulo":"5 estrelas",
+        "Comentario":"\u00f3timo banco, recomendo!",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13313695463
+    },
+    {
+        "Usuario":"Iuri 45",
+        "Titulo":"\u00d3timo aplicativo",
+        "Comentario":"\u00d3timo aplicativo muito \u00fatil",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13313681369
+    },
+    {
+        "Usuario":"Shall2000",
+        "Titulo":"Muito bom.",
+        "Comentario":"App muito bom, espero construir limite para utilizar!\ud83d\udd25\ud83d\udc4f\ud83c\udffb",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13312049735
+    },
+    {
+        "Usuario":"jiraya.caua",
+        "Titulo":"Luis Fernando",
+        "Comentario":"Jiraya",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13310837679
+    },
+    {
+        "Usuario":"Ana J\u00faliax",
+        "Titulo":"Banco digital",
+        "Comentario":"Uso a anos e nunca tive problema, mas ap\u00f3s a \u00faltima atualiza\u00e7\u00e3o a interface deixou a desejar. Gostei que ficou mais intuitiva mas a vers\u00e3o antiga era mais agrad\u00e1vel de navegar.",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13310259080
+    },
+    {
+        "Usuario":"N\u00e3o temhsbnehdbhe",
+        "Titulo":"Atualiza\u00e7\u00e3o",
+        "Comentario":"Depois da atualiza\u00e7\u00e3o ficou pessimo. Eu voto para voltar para a anterior",
+        "Nota":2,
+        "Versao_App":"2.407.0",
+        "ID_Review":13310084040
+    },
+    {
+        "Usuario":"MELHORAR COFRE DO MP",
+        "Titulo":"Atualiza\u00e7\u00e3o boa mas precisa de melhoria",
+        "Comentario":"O layout da nova atualiza\u00e7\u00e3o ficou muito bom, muito mais cara de banco profissional. O aplicativo ainda precisa de ajustes, a aba de cart\u00f5es com v\u00e1rios cart\u00f5es ficou muito mais confusa, na \u00e1rea pix tirava a aba de favoritos. Favor adicionar uma aba de favoritos ao clicar em pix. Adicionar tamb\u00e9m um bot\u00e3o que, ap\u00f3s digitar\/colar um pix vc seleciona o valor e abaixo esteja uma op\u00e7\u00e3o de j\u00e1 adicionar aos favoritos ali. VOLTEM COM A COR AZUL, essa mistura de cor \u00e9 feia dms. Agrade\u00e7o.",
+        "Nota":4,
+        "Versao_App":"2.407.0",
+        "ID_Review":13309677106
+    },
+    {
+        "Usuario":"Maria da Penha Rodrigu\u00eas",
+        "Titulo":"10",
+        "Comentario":"Maria",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13309573354
+    },
+    {
+        "Usuario":"Eduuxx",
+        "Titulo":"ERROS SIST\u00caMICOS RECORRENTES",
+        "Comentario":"A tempos venho sofrendo com \u201can\u00e1lise de seguran\u00e7a do sistema\u201d em transa\u00e7\u00f5es. In\u00fameras vezes, as quais at\u00e9 ja se estenderam a dias, minhas transa\u00e7\u00f5es via pix s\u00e3o recusadas com mensagem justificativa de que \u201crecusamos esta transa\u00e7\u00e3o pois pode ser um golpe\u201d. Pois bem, golpe em transa\u00e7\u00e3o para minha pr\u00f3pria titularidade, quem sabe para terceiro que tem transa\u00e7\u00f5es em comum recorrente em cred e d\u00e9b, inclusive este, registrado como contato seguro!  Inadmiss\u00edvel tais recusas com argumento de \u201csistema de seguran\u00e7a\u201d, ainda pedem que aguarde 24 hrs para uma nova tentativa!  Que sistema de seguran\u00e7a \u00e9 este?  Em oportunidades que busquei informa\u00e7\u00f5es, atendentes relataram que estava tudo ok em minha conta, que n\u00e3o possu\u00eda nenhuma, NENHUMA pend\u00eancia, nunca se quer realizei relatos relacionados a seguran\u00e7a, transa\u00e7\u00e3o n\u00e3o reconhecida ou qualquer assunto do g\u00eanero!   A quest\u00e3o aqui \u00e9 que este erro sist\u00eamico tem sido recorrente, prejudicando muitas transa\u00e7\u00f5es necess\u00e1rias e ainda em determinados momentos causando desconforto!",
+        "Nota":2,
+        "Versao_App":"2.407.0",
+        "ID_Review":13309269411
+    },
+    {
+        "Usuario":"sosocristine",
+        "Titulo":"Maravilhoso!",
+        "Comentario":"Nota mil",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13308981833
+    },
+    {
+        "Usuario":"Gbsmacedo",
+        "Titulo":"Deletar minha conta",
+        "Comentario":"Toda vez que abro o app e tenho que ver Anita como refer\u00eancia de quest\u00f5es financeiras, aumentam as chances de excluir minha conta. Est\u00e3o conseguindo. \ud83d\udc4f",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13308078618
+    },
+    {
+        "Usuario":"Rbdarlon",
+        "Titulo":"Sejam compat\u00edveis com a apple\ud83d\ude4f\ud83c\udffb",
+        "Comentario":"Bom",
+        "Nota":4,
+        "Versao_App":"2.407.0",
+        "ID_Review":13307897987
+    },
+    {
+        "Usuario":"Jon&s",
+        "Titulo":"Nova atualiza\u00e7\u00e3o",
+        "Comentario":"O aplicativo era \u00f3timo, veio essa nova atualiza\u00e7\u00e3o e ele ficou horr\u00edvel, ficou uma confus\u00e3o, est\u00e1 dif\u00edcil o manuseio!",
+        "Nota":3,
+        "Versao_App":"2.407.0",
+        "ID_Review":13307781684
+    },
+    {
+        "Usuario":"Enis244",
+        "Titulo":"Enis",
+        "Comentario":"\u00d3timo",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13307425537
+    },
+    {
+        "Usuario":"Offcp2",
+        "Titulo":"Cr\u00e9dito",
+        "Comentario":"Deveriam ter uma nova an\u00e1lise de cr\u00e9dito, eu por exemplo, fiz o cart\u00e3o com 18 anos e tive cr\u00e9dito, n paguei, hoje com 25 ainda estou sem cr\u00e9dito, mesmo com nome limpo, a mentalidade muda!!",
+        "Nota":3,
+        "Versao_App":"2.407.0",
+        "ID_Review":13306153576
+    },
+    {
+        "Usuario":"Gutoxit",
+        "Titulo":"Raiva",
+        "Comentario":"Fica toda hora pedindo reconhecimento facial toma no cu Mn desgra\u00e7a de aplicativo",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13306133486
+    },
+    {
+        "Usuario":"ElMpago",
+        "Titulo":"Falta de NFC",
+        "Comentario":"Muito bom. Mas sinto muita falta de n\u00e3o ter op\u00e7\u00e3o de colocar o cart\u00e3o de cr\u00e9dito na carteira para fazer pagamentos pelo NFC, alterem isso por favor.",
+        "Nota":4,
+        "Versao_App":"2.407.0",
+        "ID_Review":13305843848
+    },
+    {
+        "Usuario":"sairte",
+        "Titulo":"O melhor e. Garantido",
+        "Comentario":"Continuem assim topp!",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13305230902
+    },
+    {
+        "Usuario":"Crpetrilli",
+        "Titulo":"N\u00e3o consigo falar com a central de ajuda",
+        "Comentario":"Estou h\u00e1 bastante tempo tentando falar na central de ajuda \u00e9 s\u00f3 fica \u201crodando\u201d, est\u00e1 travando. Est\u00e1 aparecendo em minha faturas compras QUE EU CANCELEI com o comerciante.",
+        "Nota":1,
+        "Versao_App":"2.405.3",
+        "ID_Review":13305198031
+    },
+    {
+        "Usuario":"Viitur",
+        "Titulo":"CDB TURBINADO",
+        "Comentario":"Deveria mostrar o rendimento di\u00e1rio do CDB turbinado, ia ajudar muito.",
+        "Nota":4,
+        "Versao_App":"2.407.0",
+        "ID_Review":13305118113
+    },
+    {
+        "Usuario":"Danilaa44",
+        "Titulo":"Danila",
+        "Comentario":"10",
+        "Nota":3,
+        "Versao_App":"2.407.0",
+        "ID_Review":13304734522
+    },
+    {
+        "Usuario":"jianfranceschet",
+        "Titulo":"Top",
+        "Comentario":"Muito eficaz",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13304677592
+    },
+    {
+        "Usuario":"Allveza",
+        "Titulo":"RUIM",
+        "Comentario":"Nao aceita aproxima\u00e7\u00e3o pela carteira da Apple",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13304655923
+    },
+    {
+        "Usuario":"decccci",
+        "Titulo":"Pessimo merece 10 estrelas a baixo de zero",
+        "Comentario":"Nota D\u00f3",
+        "Nota":2,
+        "Versao_App":"2.407.0",
+        "ID_Review":13304184586
+    },
+    {
+        "Usuario":"ucas_santoss",
+        "Titulo":"Duas logos id\u00eanticas",
+        "Comentario":"Fica dif\u00edcil, quando penso que entro no mercado pago entro no mercado livre. Voltem a logo anterior",
+        "Nota":2,
+        "Versao_App":"2.407.0",
+        "ID_Review":13303971050
+    },
+    {
+        "Usuario":"sensata3",
+        "Titulo":"Sem funcionar",
+        "Comentario":"Aplicativo t\u00e1 uma M\u2026 n\u00e3o funciona nada depois que atualizou!",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13303787715
+    },
+    {
+        "Usuario":"Luis10Cunha",
+        "Titulo":"Bom",
+        "Comentario":"Bom",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13303261325
+    },
+    {
+        "Usuario":"Well Leal",
+        "Titulo":"Apple Wallet",
+        "Comentario":"Ainda n\u00e3o d\u00e1 para adicionar no Apple Wallet, e a nova tela cart\u00f5es ficou horr\u00edvel, aparece 3 vers\u00f5es do mesmo cart\u00e3o do Mercado Pago. Seria melhor mostrar apenas um cart\u00e3o e, ao clicar, ter as op\u00e7\u00f5es de gerar cart\u00e3o virtual de d\u00e9bito ou cr\u00e9dito. Al\u00e9m disso o aplicativo fica travando.",
+        "Nota":2,
+        "Versao_App":"2.407.0",
+        "ID_Review":13301982577
+    },
+    {
+        "Usuario":"Laize Souza",
+        "Titulo":"Feio",
+        "Comentario":"Sei que deveria avaliar o desempenho do aplicativo, que por sinal, \u00e9 muito bom. Muitas funcionalidades, bastante responsivo, etc., mas esse amarelo com azul e branco \u00e9 de doer as vistas. Sangra os olhos. Por que tiraram o azul e branco pra colocar esse amarelo a\u00ed? Sei que remete ao Mercado Livre, mas n\u00e3o harmonizou. Ficou irritante.",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13301906846
+    },
+    {
+        "Usuario":"dj adilsoon",
+        "Titulo":"Muito bom",
+        "Comentario":"Nota 10",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13301360618
+    },
+    {
+        "Usuario":"Samilabbb",
+        "Titulo":"Meu banco",
+        "Comentario":"Estou amando",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13300726032
+    },
+    {
+        "Usuario":"Christopher_tv",
+        "Titulo":"Pior atualiza\u00e7\u00e3o",
+        "Comentario":"O menu agora \u00e9 super polu\u00eddo, n\u00e3o tem mais facilidade alguma, podiam contratar algu\u00e9m de user experience ou voltar a atualiza\u00e7\u00e3o antiga",
+        "Nota":2,
+        "Versao_App":"2.407.0",
+        "ID_Review":13300704210
+    },
+    {
+        "Usuario":"iPhone do Danyel.",
+        "Titulo":"Novo visual",
+        "Comentario":"Top!",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13300520209
+    },
+    {
+        "Usuario":"Robsonrv",
+        "Titulo":"Muito bom",
+        "Comentario":"Top",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13300206058
+    },
+    {
+        "Usuario":"ton.aguiar",
+        "Titulo":"DOC24",
+        "Comentario":"Simplesmente o app t\u00e1 todo bugado. N\u00e3o entra no link da consulta e n\u00e3o abre o link para marcar novas consultas. Assim n\u00e3o tem como usar o servi\u00e7o que paguei.",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13299601249
+    },
+    {
+        "Usuario":"andarielmel",
+        "Titulo":"Cobran\u00e7as indevidas",
+        "Comentario":"Ruim",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13299477923
+    },
+    {
+        "Usuario":"passageiro 000",
+        "Titulo":"N\u00e3o tem funcionalidade em aparelhos antigos",
+        "Comentario":"O app funciona muito mal em aparelhos antigos, por\u00e9m n\u00e3o obsoletos.",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13299289287
+    },
+    {
+        "Usuario":"R1ckXd",
+        "Titulo":"Piorou",
+        "Comentario":"Perdeu uma das melhores funcionalidades\/diferenciais: o pagamento via pix qrcode direto na tela inicial. Pra quem est\u00e1 num caixa ou numa compra na rua, faz um diferen\u00e7a enorme esses toques a mais da tela.",
+        "Nota":3,
+        "Versao_App":"2.407.0",
+        "ID_Review":13299094379
+    },
+    {
+        "Usuario":"Studio Dp",
+        "Titulo":"P\u00e9ssimo",
+        "Comentario":"A Cada dia pouco se pode ter uma solu\u00e7\u00e3o de problemas.",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13298988441
+    },
+    {
+        "Usuario":"marcosjun",
+        "Titulo":"Nao te ajuda",
+        "Comentario":"Sempre com problemas, taxas alt\u00edssima, vc nao pode prog pagamentos pra nao esquecer, s\u00f3 paga no dia, nao aceita na walet Iphone, cart\u00e3o credito bloqueia tudo sempre dificil usar! Passei varios perrengues dependendo so deles!",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13298972416
+    },
+    {
+        "Usuario":"Sriello",
+        "Titulo":"Muito bom",
+        "Comentario":"Top",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13298782779
+    },
+    {
+        "Usuario":"Cuidado, banco n tem seguran\u00e7a",
+        "Titulo":"Levei um golpe nas minhas vendas, e o mercado pago n me assegurou",
+        "Comentario":"Infelizmente esse banco n tem seguran\u00e7a",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13298681036
+    },
+    {
+        "Usuario":"Wai Code",
+        "Titulo":"Atualiza\u00e7\u00e3o",
+        "Comentario":"Nova vers\u00e3o ficou muito boa! Parab\u00e9ns a equipe.",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13297800918
+    },
+    {
+        "Usuario":"correiaxllan",
+        "Titulo":"Pior aplicativo",
+        "Comentario":"Horr\u00edvel! De gra\u00e7a est\u00e1 caro!",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13297730062
+    },
+    {
+        "Usuario":"Mel bom",
+        "Titulo":"Efici\u00eancia",
+        "Comentario":"Transpar\u00eancia",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13297548561
+    },
+    {
+        "Usuario":"iramons",
+        "Titulo":"Suporte fraco",
+        "Comentario":"Como \u00e9 poss\u00edvel passar o dia todo tentando resolver um problema, ser passado de pessoa em pessoa no whatsapp e ningu\u00e9m absolutamente resolver, nem sequer entender seu problema? E surreal o quanto \u00e9 despreparado esse suporte, resolvam isso ou v\u00e3o perder muitos clientes!",
+        "Nota":2,
+        "Versao_App":"2.407.0",
+        "ID_Review":13297541719
+    },
+    {
+        "Usuario":"Lucas Trindade",
+        "Titulo":"Melhorou mt",
+        "Comentario":"Hoje \u00e9 meu principal banco",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13297537481
+    },
+    {
+        "Usuario":"En\u00e9dio Rezende",
+        "Titulo":"Estragaram o app para deixa mais bonito",
+        "Comentario":"Est\u00e1 mais bonito? Com certeza, mas agora est\u00e1 travando o app e voc\u00ea n\u00e3o acha nada. P\u00e9ssimo!",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13297408809
+    },
+    {
+        "Usuario":"Al\u00ea_Rocha",
+        "Titulo":"Muito bom",
+        "Comentario":"Cumpre o prometido",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13296788496
+    },
+    {
+        "Usuario":"BrunoDiCarlo",
+        "Titulo":"Horr\u00edvel",
+        "Comentario":"Sem estabilidade, cortam sua linha de cr\u00e9dito do mais absoluto nada.",
+        "Nota":1,
+        "Versao_App":"2.404.1",
+        "ID_Review":13296785055
+    },
+    {
+        "Usuario":"Deh Cerq",
+        "Titulo":"Ux\/Ui perfeito",
+        "Comentario":"Parab\u00e9ns!!! O app com essa atualiza\u00e7\u00e3o trouxe uma experi\u00eancia ao usu\u00e1rio incr\u00edvel, deixou tudo mais bonito e moderno tamb\u00e9m na interface.",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13296782545
+    },
+    {
+        "Usuario":"Soviietic",
+        "Titulo":"Aplicativo Bom",
+        "Comentario":"N\u00e3o compat\u00edvel com carteira Apple.",
+        "Nota":2,
+        "Versao_App":"2.407.0",
+        "ID_Review":13296343429
+    },
+    {
+        "Usuario":"Dannivf",
+        "Titulo":"\u00daltimas modifica\u00e7\u00f5es",
+        "Comentario":"Amo o MP! Mas vi pelo menos 2 mudan\u00e7as recentemente e eu particularmente n\u00e3o estou feliz com elas. Parece que a inten\u00e7\u00e3o \u00e9 fundir MP e ML. At\u00e9 as cores mudaram. A diferencia\u00e7\u00e3o das cores era excelente. Agora tem an\u00fancios no MP. \u00c0s vezes nem sei em que aplicativo estou! O ML ter acesso ao MP ok, apesar de eu ainda achar um pouco perigoso. Acho que s\u00f3 devia aparecer na hora do pagamento. Mas banco \u00e9 banco e tem que ter caracter\u00edsticas de banco, fun\u00e7\u00f5es de banco e nada mais. N\u00e3o tem que misturar. J\u00e1 estou me sentindo insegura pra usar o MP. Espero que repensem as mudan\u00e7as",
+        "Nota":4,
+        "Versao_App":"2.407.0",
+        "ID_Review":13296257069
+    },
+    {
+        "Usuario":"killylopes",
+        "Titulo":"Atualiza\u00e7\u00e3o",
+        "Comentario":"Horr\u00edvel essa nova atualiza\u00e7\u00e3o para quem usa ios n\u00e3o d\u00e1 pra mexer no app \u00edcones em baixo n\u00e3o d\u00e1 pra arrastar",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13296182682
+    },
+    {
+        "Usuario":"Usu\u00e1rio ea",
+        "Titulo":"Horr\u00edvel",
+        "Comentario":"O cart\u00e3o n\u00e3o permite colocar na carteira do iPhone . Uma b o s t a",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13296152764
+    },
+    {
+        "Usuario":"Yuri Z.",
+        "Titulo":"Carteira digital e erro no app",
+        "Comentario":"Est\u00e1 com erro em \u201cgastos por categoria\u201d ao analisar o \u201cextrato\u201d. Precisam colocar suporte pro cart\u00e3o de cr\u00e9dito\/d\u00e9bito na carteira digital, eu tenho limite pr\u00e9-aprovado mas enquanto n\u00e3o tiver suporte n\u00e3o irei pedir o cart\u00e3o\u2026",
+        "Nota":3,
+        "Versao_App":"2.407.0",
+        "ID_Review":13295900265
+    },
+    {
+        "Usuario":"fabiano mtr",
+        "Titulo":"N\u00e3o abri cart\u00f5es",
+        "Comentario":"Dps da \u00faltima atualiza\u00e7\u00e3o n\u00e3o abri mais fun\u00e7\u00e3o cart\u00f5es",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13295878604
+    },
+    {
+        "Usuario":"VazFilho",
+        "Titulo":"Excelente",
+        "Comentario":"Top",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13295726199
+    },
+    {
+        "Usuario":"Kbruno96",
+        "Titulo":"Amei o novo visual!!!",
+        "Comentario":"Ficou lindo e responsivo!",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13295641615
+    },
+    {
+        "Usuario":"Iairk",
+        "Titulo":"Algu\u00e9m me ajuda",
+        "Comentario":"Est\u00e1 atualiza\u00e7\u00e3o est\u00e1 horr\u00edvel n\u00e3o estou conseguindo entra pra acessar o meu cart\u00e3o ,estou tentando entra pro Central de ajuda e n\u00e3o quer entra oque eu fa\u00e7o ?? J\u00e1 apaguei o app e baixei de novo e nada ..",
+        "Nota":2,
+        "Versao_App":"2.407.0",
+        "ID_Review":13295526657
+    },
+    {
+        "Usuario":"sebazera",
+        "Titulo":"Pr\u00e1tico e r\u00e1pido",
+        "Comentario":"Bem agilizado para o dia a dia",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13294601647
+    },
+    {
+        "Usuario":"jayme louro",
+        "Titulo":"P\u00e9ssima atualiza\u00e7\u00e3o",
+        "Comentario":"O app nao puxa a agenda de telefone p poder fazer pix! P\u00e9ssimo atualiza\u00e7\u00e3o! Regrediu! Tinha essa op\u00e7\u00e3o",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13293664527
+    },
+    {
+        "Usuario":"Jardim MS News",
+        "Titulo":"Muito bom",
+        "Comentario":"10",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13293608646
+    },
+    {
+        "Usuario":"ViTkM",
+        "Titulo":"N\u00e3o pagam resgate",
+        "Comentario":"Solicitei resgate de CDB, supostamente de liquidez di\u00e1ria, na parte da manh\u00e3. O app informa que o dinheiro estaria em conta at\u00e9 as 15h00. Agora s\u00e3o 21h30 e nada ainda. N\u00e3o d\u00e1 para confiar.",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13293211209
+    },
+    {
+        "Usuario":"Ghhrcexecv",
+        "Titulo":"Mudan\u00e7a app",
+        "Comentario":"O design ficou p\u00e9ssimo confunde com Mercado pago e demorei um tempo pra descobrir como fazer pix meu Deus ficou p\u00e9ssimo a est\u00e9tica antes era mais bonito e f\u00e1cil as funcionalidades do aplicativo",
+        "Nota":4,
+        "Versao_App":"2.407.0",
+        "ID_Review":13293018173
+    },
+    {
+        "Usuario":"Mvsghj",
+        "Titulo":"Mercado",
+        "Comentario":"Meu aplicativo n\u00e3o est\u00e1 funcionando, j\u00e1 voltou a funcionar?",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13292949143
+    },
+    {
+        "Usuario":"Javabasv",
+        "Titulo":"Nova atualiza\u00e7\u00e3o",
+        "Comentario":"Essa nova atualiza\u00e7\u00e3o est\u00e1 horr\u00edvel !! App sempre fora do ar e super lento. Revejam essa atualiza\u00e7\u00e3o, uso a conta a muito tempo e nunca vi uma atualiza\u00e7\u00e3o t\u00e3o ruim quanto essa\u2026",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13292918604
+    },
+    {
+        "Usuario":"p@ul7nh4",
+        "Titulo":"Nova atualiza\u00e7\u00e3o deixou o aplicativo horr\u00edvel",
+        "Comentario":"Mercado pago tem as taxas de juros muito elevada, eu j\u00e1 sou cliente a mais de 7 anos e fa\u00e7o  bastante venda e mesmo assim os juros s\u00e3o altos, o o que me fazia ficar nele era apenas o aplicativo que era bem f\u00e1cil de mexer e pr\u00e1tico. por\u00e9m sua nova atualiza\u00e7\u00e3o deixou o aplicativo confuso e dif\u00edcil de mexer, sem falar que muito pesado tamb\u00e9m. Acho que era isso que faltava pra mim encerrar minha conta e ir procurar coisa melhor.",
+        "Nota":2,
+        "Versao_App":"2.407.0",
+        "ID_Review":13292893298
+    },
+    {
+        "Usuario":"Dany.souza",
+        "Titulo":"Pr\u00e1tico",
+        "Comentario":"Super recomendo",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13292818053
+    },
+    {
+        "Usuario":"Travandooo.44",
+        "Titulo":"Travando",
+        "Comentario":"N\u00e3o t\u00e1 chegando meu pix e t\u00e1 travando",
+        "Nota":1,
+        "Versao_App":"2.407.0",
+        "ID_Review":13292762552
+    },
+    {
+        "Usuario":"alexsxt66",
+        "Titulo":"Ok",
+        "Comentario":"\u00d3timo app",
+        "Nota":5,
+        "Versao_App":"2.407.0",
+        "ID_Review":13292613867
+    },
+    {
+        "Usuario":"Renato Benito",
+        "Titulo":"Estelionato",
+        "Comentario":"P\u00e9ssimo",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13292552551
+    },
+    {
+        "Usuario":"gihh.w.",
+        "Titulo":"20.10.2025",
+        "Comentario":"20.10.2025 gostaria de relatar um problema, depois da ultima atualiza\u00e7\u00e3o o aplicativo est\u00e1 muito lento e n\u00e3o consigo mexer no app, gostaria que esse problema fosse resolvido o mais r\u00e1pido poss\u00edvel!",
+        "Nota":3,
+        "Versao_App":"2.406.2",
+        "ID_Review":13292280303
+    },
+    {
+        "Usuario":"Guto F silva",
+        "Titulo":"Operacional",
+        "Comentario":"Ap\u00f3s a atualiza\u00e7\u00e3o o sistema est\u00e1 horr\u00edvel",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13292252085
+    },
+    {
+        "Usuario":"Cristian Consultor",
+        "Titulo":"Muito \u00e1gil e pr\u00e1tico.",
+        "Comentario":"Nota 5 estrelas",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13292238874
+    },
+    {
+        "Usuario":"feehfontinelly",
+        "Titulo":"Perfeito o app",
+        "Comentario":"Top",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13292204234
+    },
+    {
+        "Usuario":"Falhasssss",
+        "Titulo":"Aplicativo n\u00e3o est\u00e1 funcionando",
+        "Comentario":"O que est\u00e1 acontecendo com o aplicativo , n\u00e3o est\u00e1 aparecendo saldo e nem da pra pagar as coisas resolvam logo isso . N\u00e3o pagarei juros de nada.",
+        "Nota":2,
+        "Versao_App":"2.406.2",
+        "ID_Review":13292151401
+    },
+    {
+        "Usuario":"Bruno@90",
+        "Titulo":"Falha no sistema",
+        "Comentario":"Houve uma falha no sistema integrado de pagamento on-line a mais de hora pra resolver e nada, no dia 20\/10\/2025",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13292120208
+    },
+    {
+        "Usuario":"Hugo Viana bshssh",
+        "Titulo":"Lixo de atualiza\u00e7\u00e3o",
+        "Comentario":"Resolva esses problemas da nova atualiza\u00e7\u00e3o",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13292077257
+    },
+    {
+        "Usuario":"ticia162",
+        "Titulo":"Sistema fora do ar",
+        "Comentario":"N\u00e3o estou conseguindo acessar o app",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13292068369
+    },
+    {
+        "Usuario":"thays barbie",
+        "Titulo":"Decepcionante",
+        "Comentario":"Se tivesse uma nota abaixo de zero, essa seria a minha nota! O app j\u00e1 foi bom, mas agora est\u00e1 sem funcionar e n\u00e3o carrega o saldo e nem o valor do cofrinho. Eu clico na minha conta e o meu saldo aparece zerado! Um absurdo isso! Resolvam logo isso.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13292041855
+    },
+    {
+        "Usuario":"llooreennaa",
+        "Titulo":"N\u00e3o carrega nada",
+        "Comentario":"Por favor resolvam logo, fica dando erro pra ver na hora de investir dinheiro",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13292031328
+    },
+    {
+        "Usuario":"Meu chubileu",
+        "Titulo":"Orrivel",
+        "Comentario":"\u00c9 horr\u00edvel esse banco cobra a taxa do Pix eu fa\u00e7o uma transi\u00e7\u00e3o muito alto deixa meu dia meu investimento no cofrinho tudo que eu fa\u00e7o a taxa\u00e7\u00e3o tudo tudo tudo horr\u00edvel horr\u00edvel eu n\u00e3o indico para ningu\u00e9m e minha fam\u00edlia todos Mercado pago meu pai tem duas empresas do Mercado pago est\u00e1 horr\u00edvel eu n\u00e3o acredito ele em cobre no Pix e outros cobre nada",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13292027706
+    },
+    {
+        "Usuario":"Kirohilsake",
+        "Titulo":"Atualiza\u00e7\u00e3o",
+        "Comentario":"Hoje dia 20\/10\/25 app t\u00e1 horr\u00edvel tem saldo em conta mas quando vamos fazer um pagamento diz que saldo est\u00e1 insuficiente",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13292006342
+    },
+    {
+        "Usuario":"Henrique amor do pai",
+        "Titulo":"Sempre q preciso esse aplicativo me deixa na m\u00e3o",
+        "Comentario":"Sempre q preciso esse aplicativo me deixa na m\u00e3o",
+        "Nota":2,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291998974
+    },
+    {
+        "Usuario":"Rochagomes",
+        "Titulo":"APP FORA DO AR",
+        "Comentario":"Hoje 20\/10\/2025 o aplicativo n\u00e3o funciona, fui pesquisar e vi que outros usu\u00e1rios est\u00e3o com a mesma dificuldade",
+        "Nota":3,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291968214
+    },
+    {
+        "Usuario":"Ladroes90",
+        "Titulo":"N\u00e3o deixam retirar",
+        "Comentario":"Eles n\u00e3o est\u00e3o deixando retirar o dinheiro pois eu fui comprar um lanche e ele n\u00e3o liberou para mim retirar o dinheiro",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291945598
+    },
+    {
+        "Usuario":"Jfelipesbak",
+        "Titulo":"App fora do ar",
+        "Comentario":"Hoje dia 20 de outubro o aplicativo do mercado pago est\u00e1 com instabilidade\/ fora do ar, nenhum usu\u00e1rio do app est\u00e1 conseguindo fazer transfer\u00eancias, nem pagar contas. Quando voc\u00eas v\u00e3o resolver isso mercado pago?",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291944013
+    },
+    {
+        "Usuario":"Bridhaaa",
+        "Titulo":"Excl\u00eancia Mercado Pago",
+        "Comentario":"Ol\u00e1 Senhores! Mui contente com atendimento e qualidade do app e servi\u00e7os prestados.",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291933768
+    },
+    {
+        "Usuario":"itsgiovanx",
+        "Titulo":"\u201cn\u00e3o foi poss\u00edvel carregar suas informa\u00e7\u00f5es, tente mais tarde\u201d",
+        "Comentario":"confiei de deixar meu dinheiro no mercado pago e passei vergonha no caixa do mercado pois o aplicativo simplesmente parou de funcionar com todo meu dinheiro l\u00e1 dentro.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291933396
+    },
+    {
+        "Usuario":"SALDO TRABADO",
+        "Titulo":"SALDO TRAVADO",
+        "Comentario":"Estou usando o aplicativo a aproximadamente 2 meses, e hoje tive problema, enviei todo meu dinheiro pro aplicativo e est\u00e1 travado, n\u00e3o consta no extrato, apenas na visualiza\u00e7\u00e3o, mas n\u00e3o consigo enviar dinheiro pra outra conta ou fazer pix e pagamentos, oque houve??? Preciso do meu dinheiro",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291912235
+    },
+    {
+        "Usuario":"Joao_Vitor_",
+        "Titulo":"Precisando do meu dinheiro quando fui comprar e ta com problema",
+        "Comentario":"Carni\u00e7a de banco",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291911092
+    },
+    {
+        "Usuario":"EllyMota",
+        "Titulo":"Bug total",
+        "Comentario":"N\u00e3o consigo ter acesso ao saldo, recebi um Pix e n\u00e3o consta na conta.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291905999
+    },
+    {
+        "Usuario":"Megarafas",
+        "Titulo":"O app n\u00e3o t\u00e1 funcionando",
+        "Comentario":"Hoje dia 20\/10 o app est\u00e1 com estabilidade n\u00e3o est\u00e1 funcionando pix\/saldo\/cofrinho nada t\u00e1 funcionando",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291897942
+    },
+    {
+        "Usuario":"Josadaque Gon\u00e7alves",
+        "Titulo":"App bugado",
+        "Comentario":"App horr\u00edvel, n\u00e3o consigo emitir um extrato de transa\u00e7\u00e3o.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291869496
+    },
+    {
+        "Usuario":"RannyFernandes",
+        "Titulo":"P\u00e9ssimo",
+        "Comentario":"O app completamente inst\u00e1vel, deixando a gente na m\u00e3o quando mais precisamos",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291851194
+    },
+    {
+        "Usuario":"Lehmax 123",
+        "Titulo":"Sempre da erro no sistema",
+        "Comentario":"Sempre d\u00e1 atualiza\u00e7\u00e3o e demora pra voltar e voc\u00ea fica sem conseguir olhar extrato e fazer Pix e n\u00e3o consegue olhar transa\u00e7\u00f5es",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291836219
+    },
+    {
+        "Usuario":"Tigeeeet",
+        "Titulo":"Travamento",
+        "Comentario":"Est\u00e1 trancando muito o app e n consigo fazer pix",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291835568
+    },
+    {
+        "Usuario":"Cliente h\u00e1 5 anos",
+        "Titulo":"Atendimento pessimo",
+        "Comentario":"Rob\u00f4s que n\u00e3o resolvem o problema e nem transferem para um atendimento humano   Antes tudo era culpa do sistema e atualmente \u00e9 a intelig\u00eancia artificial a  desculpa para as empresas fazerem pouco caso dos clientes",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291810475
+    },
+    {
+        "Usuario":"gustavokshdwkdb",
+        "Titulo":"pior escolha",
+        "Comentario":"mudei para esse banco essa semana, no primeiro dia da semana o aplicativo cai e meu dinheiro fica bloqueado sem eu conseguir usar\u2026",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291794918
+    },
+    {
+        "Usuario":"?lara",
+        "Titulo":"O aplicativo n\u00e3o est\u00e1 funcionando hoje",
+        "Comentario":"Nunca tive problemas com o mercado pago por\u00e9m n\u00e3o me sinto segura aqui o app n\u00e3o est\u00e1 funcionando nada j\u00e1 atualizei 2 vezes s\u00f3 essa semana t\u00e1 estranho isso como uso meu dinheiro se nada funciona?",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291792562
+    },
+    {
+        "Usuario":"Klxcn",
+        "Titulo":"N\u00e3o est\u00e1 atualizando o saldo",
+        "Comentario":"Estou com meu valor prezo, vc est\u00e1 dando problema",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291780951
+    },
+    {
+        "Usuario":"Dani Gomes134",
+        "Titulo":"Atualiza\u00e7\u00e3o horr\u00edvel",
+        "Comentario":"Depois dessa nova atualiza\u00e7\u00e3o o app nunca mais prestou, horr\u00edvel",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291768357
+    },
+    {
+        "Usuario":"MR\ud83d\udc69\ud83c\udffb",
+        "Titulo":"App ruim",
+        "Comentario":"Ja fiz 3 atualiza\u00e7\u00f5es e n\u00e3o consigo abrir o mercado pago sem vir ak no app store pra escolher mercado pago ta muito ruim",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291596759
+    },
+    {
+        "Usuario":"Marchione.Beto",
+        "Titulo":"Pix travado e dinheiro preso em 20\/10\/2025",
+        "Comentario":"0",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291591305
+    },
+    {
+        "Usuario":"cansado do iti",
+        "Titulo":"Atualiza\u00e7\u00e3o mercado pago",
+        "Comentario":"O aplicativo estar uma nerds Essa \u00faltima atualiza\u00e7\u00e3o , n\u00e3o estar me permitindo nem mesmo fazer pix cada dia que passa o aplicativo estar ruim , pelo amor Deus ajeitem esse neg\u00f3cio n\u00e3o dar mais para usar",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291586990
+    },
+    {
+        "Usuario":"Bielzn -0",
+        "Titulo":"Problemas hj",
+        "Comentario":"N est\u00e1 funcionando q houve",
+        "Nota":4,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291573842
+    },
+    {
+        "Usuario":"skolimoski",
+        "Titulo":"Banco sem sinal",
+        "Comentario":"Estou com dinheiro em conta e na hora de mandar o pix diz q n\u00e3o tenho saldo.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291556877
+    },
+    {
+        "Usuario":"Victor Ota",
+        "Titulo":"App fora do ar",
+        "Comentario":"Desde cedo tentando fazer transfer\u00eancia mas n\u00e3o consigo acessar meu saldo! Zero suporte, pois n\u00e3o d\u00e1 acessar o chat nem respondem email. Simplesmente parou tudo depois dessa ultima atualiza\u00e7\u00e3o",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291552922
+    },
+    {
+        "Usuario":"JaquelineFerr",
+        "Titulo":"Atualiza\u00e7\u00e3o lenta",
+        "Comentario":"Ficou horr\u00edvel essa nova atualiza\u00e7\u00e3o, aplicativo super lento Com dinheiro em conta fui fazer uma compra e o cart\u00e3o n\u00e3o passou \ud83d\ude21",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291552197
+    },
+    {
+        "Usuario":"Thaidombds",
+        "Titulo":"N\u00e3o est\u00e1 funcionando",
+        "Comentario":"Est\u00e1 dando erro no pix",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291549305
+    },
+    {
+        "Usuario":"They allot",
+        "Titulo":"Fica. Toda hora com sinal fora do ar",
+        "Comentario":"App t\u00e1 horr\u00edvel de usar",
+        "Nota":2,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291539224
+    },
+    {
+        "Usuario":"Adelcio souza",
+        "Titulo":"S\u00f3 tem um problema",
+        "Comentario":"\u00danico problema \u00e9 que h\u00e1 momentos onde o aplicativo para de funciona e vc n\u00e3o consegue movimentar seu dinheiro, fazer pix, usar cart\u00e3o\u2026 em fim, j\u00e1 passei por situa\u00e7\u00f5es onde tive de desistir da compra por n\u00e3o conseguir usar o cart\u00e3o ou mesmo o pix, mesmo tendo dinheiro na conta.",
+        "Nota":3,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291479998
+    },
+    {
+        "Usuario":"DiegoAleFerrari",
+        "Titulo":"Tudo t\u00e1 dando erro",
+        "Comentario":"Desde a atualiza\u00e7\u00e3o tudo t\u00e1 ruim, pix t\u00e1 dando erro, o resgate do cofrinho com erros, tem que tentar 2 ou 3 vezes, pagamento de DDA\u2026 enfim, t\u00e1 pessimo. Melhor fazer um rollback a\u00ed.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291448464
+    },
+    {
+        "Usuario":"Eudexter",
+        "Titulo":"Atualiza\u00e7\u00e3o",
+        "Comentario":"Depois dessa atualiza\u00e7\u00e3o do aplicativo t\u00e1 um lixo muito ruim pessimo poderia ter deixado como estava mesmo!",
+        "Nota":2,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291427019
+    },
+    {
+        "Usuario":"ervanovite",
+        "Titulo":"Hj deixou a desejar",
+        "Comentario":"Hj merece essa avalia\u00e7\u00e3o nem para colocar atendente",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291291109
+    },
+    {
+        "Usuario":"Leeandro!",
+        "Titulo":"Sempre com Instabilidade",
+        "Comentario":"Desde a ultima atualiza\u00e7\u00e3o esta impossivel usar esse banco, vc paga o cart\u00e3o limite n\u00e3o libera,  coloca dinheiro na conta e n\u00e3o consegue realizar transa\u00e7\u00f5es. Assim n\u00e3o da!!",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291254022
+    },
+    {
+        "Usuario":"Gabri Duarte",
+        "Titulo":"Cor do App",
+        "Comentario":"Pessoal, eu amo o banco e utilizo para tudo mas n\u00e3o gostei da nova cor do app, dificulta pois acaba confundindo com o mercado livre, acho que  poderiam votar para a cor anterior!",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291160532
+    },
+    {
+        "Usuario":"Heliojr19",
+        "Titulo":"\u00cdcone confuso",
+        "Comentario":"Gente por favor voltem esse \u00edcone para a cor azul, toda hora confunde a gente com o app do mercado livre.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291027527
+    },
+    {
+        "Usuario":"Gvvghjiu",
+        "Titulo":"P\u00e9ssimo para investimentos:",
+        "Comentario":"Mesmo com liquidez di\u00e1ria em dias \u00fateis levam horas para liberarem o valor!",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13291014543
+    },
+    {
+        "Usuario":"HSTacio",
+        "Titulo":"Ningu\u00e9m responde do suporte",
+        "Comentario":"Meu saldo t\u00e1 bugado e preciso fazer meus pagamentos e ningu\u00e9m no suporte responde ! Bora mi ajuda a\u00ed \u00e1guem . E dinheiro tem na conta e no cofre !",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13290976590
+    },
+    {
+        "Usuario":"Rinaldi Tavares",
+        "Titulo":"Descaso",
+        "Comentario":"Pessima",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13290866615
+    },
+    {
+        "Usuario":"Jupcg40",
+        "Titulo":"Decep\u00e7\u00e3o",
+        "Comentario":"Al\u00e9m de n\u00e3o reembolsar por compras que faltam, ainda tira dinheiro da nossa conta",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13290863333
+    },
+    {
+        "Usuario":"Thiago.TP",
+        "Titulo":"Saldo n\u00e3o est\u00e1 atualizando",
+        "Comentario":"Est\u00e1 recorrente, ap\u00f3s dep\u00f3sito o saldo n\u00e3o est\u00e1 atualizando",
+        "Nota":3,
+        "Versao_App":"2.406.2",
+        "ID_Review":13290847125
+    },
+    {
+        "Usuario":"williaraujo",
+        "Titulo":"Aplicativo",
+        "Comentario":"O mercado pago ultimamente est\u00e1 horr\u00edvel, demora p atualiza, vive dando erro. Isso depois dessa atualiza\u00e7\u00e3o.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13290832432
+    },
+    {
+        "Usuario":"Kzevy10",
+        "Titulo":"Aplicativo muito poluido de an\u00fancios n\u00e3o est\u00e1 funcionando direito como esperado",
+        "Comentario":"Aplicativo muito poluido de an\u00fancios n\u00e3o est\u00e1 funcionando direito como esperado",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13290817257
+    },
+    {
+        "Usuario":"daniel.rds",
+        "Titulo":"Desempenho",
+        "Comentario":"Usava em um aparelho mais antigo e funcionava perfeito, ap\u00f3s a reestilizacao o App ficou lento, travando e crashando..algumas op\u00e7\u00f5es q eram de f\u00e1cil localiza\u00e7\u00e3o, agora est\u00e3o escondidas e ruins de encontrar. APP piorou, se pudesse daria nota 0.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13290656680
+    },
+    {
+        "Usuario":"Previato",
+        "Titulo":"Arrumem por favor",
+        "Comentario":"Voc\u00eas mexeram no design do app e pioraram v\u00e1rias coisas. Quando vou fazer um PIX e seleciono meu nome para transferir para outro banco, n\u00e3o mostra mais o n\u00famero da ag\u00eancia, tornando a fun\u00e7\u00e3o in\u00fatil, j\u00e1 que eu tenho duas contas com o mesmo n\u00famero mas ag\u00eancias diferentes. Mesmo no resumo final voc\u00eas n\u00e3o mostram essa informa\u00e7\u00e3o. Por favor corrijam isso.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13290445436
+    },
+    {
+        "Usuario":"Dalylla Souza",
+        "Titulo":"Atualizaram pra pior",
+        "Comentario":"Pior atualiza\u00e7\u00e3o, recebi meu pagamento e n\u00e3o consigo nem se quer mexer no app pq sempre t\u00e1 dando erro, eu quero que resolva",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13290203669
+    },
+    {
+        "Usuario":"Guilaon",
+        "Titulo":"Muito inst\u00e1vel",
+        "Comentario":"Ultimamente o aplicativo vem sofrendo com muita instabilidade, quando vc precisa fzr algum pix ou pagar alguma coisa fica apenas carregando, n foi s\u00f3 um dia, j\u00e1 tem algum tempo q isso vem acontecendo.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13290161897
+    },
+    {
+        "Usuario":"CEO.73",
+        "Titulo":"Precisam melhorar",
+        "Comentario":"Tudo deixa de funcionar do nada\u2026 Acabei de passar vergonha. Coloquei gasolina na moto, e quando fui pagar\u2026 Nada funcionou. Nem pix, nem inserindo, nem aproximando com o cart\u00e3o ou o celular! Triste! Melhorem a qualidade de voc\u00eas! E tire essa colora\u00e7\u00e3o horr\u00edvel, amarelo feio esse da plataforma. Voltem pro azul e branco apenas!",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13290145107
+    },
+    {
+        "Usuario":"Maniakzim",
+        "Titulo":"Terrible App",
+        "Comentario":"Every time you need the app it doesn\u2019t work. I\u2019m not going to use it anymore.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13289990509
+    },
+    {
+        "Usuario":"jlmm68",
+        "Titulo":"Top",
+        "Comentario":"Muito top tudo.",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13289133585
+    },
+    {
+        "Usuario":"Robinho cabe\u00e7a",
+        "Titulo":"Robson",
+        "Comentario":"10",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13289031614
+    },
+    {
+        "Usuario":"Edlenda",
+        "Titulo":"Dinheiro sumindo",
+        "Comentario":"Pessima boto dinheiro nesse app e n\u00e3o chega j\u00e1 passei mais de 500 e continua zero na conta",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13288982312
+    },
+    {
+        "Usuario":"velhamistura",
+        "Titulo":"Jos\u00e9 Carlos Teles Vieira",
+        "Comentario":"10",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13288493137
+    },
+    {
+        "Usuario":"Jorgesrc",
+        "Titulo":"\u00d3timo",
+        "Comentario":"10",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13288372424
+    },
+    {
+        "Usuario":"Leoniba",
+        "Titulo":"\u00d3timo",
+        "Comentario":"\u00d3timo",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13287974508
+    },
+    {
+        "Usuario":"ancelgua22",
+        "Titulo":"Elogio",
+        "Comentario":"Positiva",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13287576263
+    },
+    {
+        "Usuario":"cisco gre",
+        "Titulo":"Muito pr\u00e1tico o App",
+        "Comentario":"Funciona muito bem.",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13287546820
+    },
+    {
+        "Usuario":"El- Alex08",
+        "Titulo":"Mudan\u00e7a de cor",
+        "Comentario":"Essa cor amarela n\u00e3o ficou legal e ainda confunde bastante com o app mercado livre, recomendo mudar",
+        "Nota":2,
+        "Versao_App":"2.406.2",
+        "ID_Review":13287442602
+    },
+    {
+        "Usuario":"Karine Santos ss",
+        "Titulo":"Suporte ruim",
+        "Comentario":"P\u00e9ssimo app",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13287269272
+    },
+    {
+        "Usuario":"Hagi Lopes",
+        "Titulo":"N\u00e3o h\u00e1 suporte!",
+        "Comentario":"App tem muitos bugs e nenhum suporte!",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13287213829
+    },
+    {
+        "Usuario":"TIANOBOEIRA",
+        "Titulo":"Simples e eficiente",
+        "Comentario":"App perfeito, fa\u00e7o tudo por ele",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13286493883
+    },
+    {
+        "Usuario":"ajpmota",
+        "Titulo":"Reconhecimento de documentos",
+        "Comentario":"Ruim , aplicativo n\u00e3o reconhece documento scaneado",
+        "Nota":3,
+        "Versao_App":"2.406.2",
+        "ID_Review":13286338644
+    },
+    {
+        "Usuario":"Lobomau067",
+        "Titulo":"Bom",
+        "Comentario":"\u00d3timo",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13284575996
+    },
+    {
+        "Usuario":"Glauber Lessa",
+        "Titulo":"Excelente",
+        "Comentario":"Muito bom",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13284381494
+    },
+    {
+        "Usuario":"Ybagma",
+        "Titulo":"Favorito",
+        "Comentario":"Meu banco digital favorito, gosto bastante da interface, pena que n\u00e3o me d\u00e3o cr\u00e9dito",
+        "Nota":4,
+        "Versao_App":"2.406.2",
+        "ID_Review":13283555512
+    },
+    {
+        "Usuario":"Miguel SbragaM",
+        "Titulo":"Apple Pay",
+        "Comentario":"Faltou a integra\u00e7\u00e3o com o Apple Pay, que \u00e9 um ponto fundamental para um banco nos dias de hoje. De resto, o banco funciona perfeitamente.",
+        "Nota":3,
+        "Versao_App":"2.406.2",
+        "ID_Review":13283250558
+    },
+    {
+        "Usuario":"7hed",
+        "Titulo":"Realizar pagamentos pela carteira Apple",
+        "Comentario":"Por favor, precisamos adicionar o cart\u00e3o na carteira Apple, para realizar pagamentos sem a necessidade de est\u00e1 andando com o cart\u00e3o f\u00edsico.",
+        "Nota":4,
+        "Versao_App":"2.406.2",
+        "ID_Review":13283090700
+    },
+    {
+        "Usuario":"ba.biss",
+        "Titulo":"Moroso",
+        "Comentario":"P\u00c9SSIMA experi\u00eancia de usu\u00e1rio. Aplicativo pesado, cheio de requisitos para fazer coisas simples. Independente da internet o aplicativo s\u00f3 fica com o carregamento na tela branca. Imposs\u00edvel avan\u00e7ar no que precisa. P\u00e9ssimo! Nunca tive tanta dificuldade para fazer o b\u00e1sico.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13282931479
+    },
+    {
+        "Usuario":"Juliano RJ",
+        "Titulo":"N\u00e3o respeita as configura\u00e7\u00f5es de notifica\u00e7\u00f5es para n\u00e3o receber notifica\u00e7\u00f5es de promo\u00e7\u00f5es",
+        "Comentario":"N\u00e3o respeita as configura\u00e7\u00f5es de notifica\u00e7\u00f5es para n\u00e3o receber notifica\u00e7\u00f5es de promo\u00e7\u00f5es",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13282618462
+    },
+    {
+        "Usuario":"Guilhermo77",
+        "Titulo":"N\u00e3o me concedem limite mesmo fazendo tudo certinho",
+        "Comentario":"Sou concursado, tenho mais de 10k de limite em meu banco principal e simplesmente n\u00e3o me d\u00e3o limite, apenas m\u00edseros 103 reais de linha de cr\u00e9dito. Simplesmente desisti, n\u00e3o vou ficar me humilhando pra institui\u00e7\u00e3o financeira n\u00e3o. J\u00e1 subi contracheque, conectei todas as contas banc\u00e1rias e eu compro pro volta de 1000 reais por m\u00eas no mercado livre e ainda assim n\u00e3o possuo limite.  lament\u00e1vel. n\u00e3o vale a pena o tempo jogado fora.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13282124118
+    },
+    {
+        "Usuario":"Kkdjdtug",
+        "Titulo":"10",
+        "Comentario":"Bom",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13281771128
+    },
+    {
+        "Usuario":"Mercado livre mara",
+        "Titulo":"O melhor e mais confi\u00e1vel de todos",
+        "Comentario":"Adoro comprar pelo mercado al\u00e9m d\u00e1 confiabilidade tem a rapidez das entregas eu amo",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13281582438
+    },
+    {
+        "Usuario":"Padrino*",
+        "Titulo":"Top demais",
+        "Comentario":"Recomendo nota 10",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13281064288
+    },
+    {
+        "Usuario":"MD BARBER",
+        "Titulo":"Banco digital respons\u00e1vel",
+        "Comentario":"Excelente",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13280997005
+    },
+    {
+        "Usuario":"Dudjdjdn",
+        "Titulo":"Atualiza\u00e7\u00e3o",
+        "Comentario":"Nova atualiza\u00e7\u00e3o ficou horr\u00edvel , ao inv\u00e9s de facilitar para os usu\u00e1rios dificulta . Fora os bugs que o aplicativo da !",
+        "Nota":2,
+        "Versao_App":"2.406.2",
+        "ID_Review":13279993537
+    },
+    {
+        "Usuario":"khcdj d",
+        "Titulo":"Saldo bloqueado",
+        "Comentario":"O aplicativo simplesmente bloqueou a conta do meu irm\u00e3o, com dinheiro que ele recebeu da PLR da empresa que ele trabalha, a plataforma est\u00e1 com o dinheiro dele e simplesmente N\u00c3O RESOLVEM NADA. N\u00e3o tem suporte, desligam na cara dele. N\u00e3o confiem o dinheiro de voc\u00eas na plataforma!",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13279908492
+    },
+    {
+        "Usuario":"Andressarcks",
+        "Titulo":"P\u00e9ssimo!",
+        "Comentario":"Aplicativo muito ruim, nada intuitivo, n\u00e3o tem possibilidade de conectar com o Apple Pay (s\u00e9rio que em 2025 n\u00e3o foram atr\u00e1s disso p*rra?!) sem falar no estresse que \u00e9 n\u00e3o saber se vai dar pra pagar por pix qr code pq a c\u00e2mera deles abre quando ela quer!!! Que \u00f3dio!",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13278856626
+    },
+    {
+        "Usuario":"Robson Daudt",
+        "Titulo":"Muito bom",
+        "Comentario":"\u00c9 uma solu\u00e7\u00e3o pr\u00e1tica e r\u00e1pida para minha vida!",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13278852806
+    },
+    {
+        "Usuario":"TitoSilvaJF",
+        "Titulo":"Bom banco",
+        "Comentario":"Bom app nada reclamar!",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13278827617
+    },
+    {
+        "Usuario":"MatheusCortezz",
+        "Titulo":"Avalia\u00e7\u00e3o cultura woke",
+        "Comentario":"Parar com essa de annita",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13278578447
+    },
+    {
+        "Usuario":"VPablo_",
+        "Titulo":"Area de Cart\u00f5es n\u00e3o abre!",
+        "Comentario":"Uso o app h\u00e1 mais de 4 anos e com a nova atualiza\u00e7\u00e3o, a \u00e1rea de cart\u00f5es n\u00e3o abre. Corrijam logo, por favor..",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13278557007
+    },
+    {
+        "Usuario":"Ktol\u00e9",
+        "Titulo":"Letras pequenas",
+        "Comentario":"Poderia ser um pouco maior as letras e n\u00fameros",
+        "Nota":3,
+        "Versao_App":"2.406.2",
+        "ID_Review":13278549036
+    },
+    {
+        "Usuario":"George190",
+        "Titulo":"Melhor plataforma de banco digital e conta de pagamentos",
+        "Comentario":"Excepcional",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13278477349
+    },
+    {
+        "Usuario":"C Cordeiro",
+        "Titulo":"Super seguro",
+        "Comentario":"Nota 10",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13278439525
+    },
+    {
+        "Usuario":"Lascaegua1",
+        "Titulo":"\u00d3timo",
+        "Comentario":"\u2026",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13278388812
+    },
+    {
+        "Usuario":"dinhojc",
+        "Titulo":"Muito bom",
+        "Comentario":"100%",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13278368732
+    },
+    {
+        "Usuario":"Izoniobr",
+        "Titulo":"Pix",
+        "Comentario":"Esta nova atualiza\u00e7\u00e3o bagun\u00e7ou com o acesso r\u00e1pido ao QR Code do pix, volta a\u00ed \ud83d\udc4d\ud83c\udffb",
+        "Nota":4,
+        "Versao_App":"2.406.2",
+        "ID_Review":13278229102
+    },
+    {
+        "Usuario":"victor lopes lindo",
+        "Titulo":"Cart\u00e3o de cr\u00e9dito",
+        "Comentario":"Nunca vi demorar 2 faturas para a devolu\u00e7\u00e3o de uma compra, isso \u00e9 inadmiss\u00edvel! Nos outros quesitos estou satisfeito.  Pretendo cancelar o cart\u00e3o de cr\u00e9dito e deixar apenas a conta corrente.",
+        "Nota":2,
+        "Versao_App":"2.406.2",
+        "ID_Review":13278066379
+    },
+    {
+        "Usuario":"Av app Apple",
+        "Titulo":"Excelente",
+        "Comentario":"R\u00e1pido pr\u00e1tico e dispon\u00edvel sempre que necess\u00e1rio, tudo o que precisamos num s\u00f3 lugar. Amooo esse aplicativo \u00e9 banco.",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13277639375
+    },
+    {
+        "Usuario":"Hforti",
+        "Titulo":"Custo benef\u00edcio",
+        "Comentario":"\u00d3timo para compras no mercado livre.",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13277555237
+    },
+    {
+        "Usuario":"JR Dj 2025",
+        "Titulo":"Vers\u00e3o antiga \u00e9 melhor",
+        "Comentario":"Esse novo tema \u00e9 p\u00e9ssimo. A outra vers\u00e3o era mas r\u00e1pido e mais f\u00e1cil. Agora mudaram tudo ficou feio e lento. Por favor voltem pra vers\u00e3o antiga. Ficou parecendo o Mercado livre a gente se confunde todinho parece que a gente t\u00e1 dentro do mercado livre o do mercado pago. Ficou p\u00e9ssimo\ud83e\udd26\ud83c\udffb\u200d\u2642\ufe0fComo conseguirem piorar o que estava bom. Que inovar? Tragam mas vantagens, facilidade e rapidez, pois \u00e9 isso que o cliente precisa. Mudar o tema, as cores ou vers\u00e3o do aplicativo isso n\u00e3o \u00e9 vantagem para o cliente. N\u00e3o reconhece o c\u00f3digo do pix pra fazer uma recarga. Tive que transferir o dinheiro pro Nubank pra fazer a recarga no meu chip e deu certo.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13276338631
+    },
+    {
+        "Usuario":"mgCapixaba",
+        "Titulo":"Interface Confusa e N\u00e3o Oferece o Essencial",
+        "Comentario":"Dif\u00edcil compreender oq est\u00e1 acontecendo no aplicativo, n\u00e3o para encontrar coisas \u00f3bvias como vencimento da fatura do cart\u00e3o",
+        "Nota":2,
+        "Versao_App":"2.406.2",
+        "ID_Review":13275993214
+    },
+    {
+        "Usuario":"Gp$;$;&;",
+        "Titulo":"Pior banco que j\u00e1 tive",
+        "Comentario":"Tomei um golpe e n\u00e3o fizeram nada me tiraram dinheiro apenas",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13275854750
+    },
+    {
+        "Usuario":"rlimarios",
+        "Titulo":"PAREM DE MUDAR A INTERFACE!!!",
+        "Comentario":"Ficou muito ruim essa nova atualiza\u00e7\u00e3o, vou mudar de banco s\u00f3 por causa dessa nova atualiza\u00e7\u00e3o.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13275623014
+    },
+    {
+        "Usuario":"Jair osk",
+        "Titulo":".",
+        "Comentario":"Muito bom",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13275476237
+    },
+    {
+        "Usuario":"cassiane  brasil",
+        "Titulo":"meu mercado pago t\u00e1 sem saldo sendo que to com 4 reias na conta",
+        "Comentario":".",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13274884169
+    },
+    {
+        "Usuario":"' esta otimo",
+        "Titulo":"mercado",
+        "Comentario":"melhor aplicativo que ja usei",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13274483304
+    },
+    {
+        "Usuario":"KLSOliveira",
+        "Titulo":"Praticidade e seguran\u00e7a",
+        "Comentario":"Falar em praticidade e seguran\u00e7a do mercado pago \u00e9 satisfat\u00f3rio demais. Ofertas e servi\u00e7os pertinentes e com conforto e seguran\u00e7a de qualidade\u2026 parab\u00e9ns continue evoluindo cada vez mais.",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13273950667
+    },
+    {
+        "Usuario":"ingri123",
+        "Titulo":"T\u00e1 travando",
+        "Comentario":"T\u00e1 travando n\u00e3o consigo fazer mais nada nem fazer pix nem pagamento",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13273928061
+    },
+    {
+        "Usuario":"b4rrett0",
+        "Titulo":"Demora para libera\u00e7\u00e3o do valor de vendas",
+        "Comentario":"1 m\u00eas para liberar o valor de uma venda que fiz um absurdo  fiz o dep\u00f3sito de um produto dia 12\/10 o valor s\u00f3 receberei dia 10\/11 ,",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13273859069
+    },
+    {
+        "Usuario":"metshgcxza",
+        "Titulo":"Propaganda enganosa!",
+        "Comentario":"Coloquei todo meu dinheiro nesse mercado pago e recebi um e-mail que a partir do dia 13\/10\/2025 meu dinheiro n\u00e3o iria mais render 105% do cdi na conta corrente, so iria render o limite m\u00e1ximo de 100 mil e tenho 950 mil . Como pode na p\u00e1gina  do banco dizer traga seu dinheiro pro mercado pago ! Boa seu dinheiro rendendo 105 % do cdi at\u00e9 final de novembro, deposite 1000 todo m\u00eas . Infelizmente vou ter que tirar todo meu dinheiro e procurar um banco s\u00f3lido que n\u00e3o engana ningu\u00e9m. Isso que eu iria transferir mais ums 500 mil .",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13273482718
+    },
+    {
+        "Usuario":"Vinicius felippi",
+        "Titulo":"\u00d3timo site",
+        "Comentario":"R\u00e1pido e f\u00e1cil de usar, aplicativo muito bom para transa\u00e7\u00f5es e compras",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13272174496
+    },
+    {
+        "Usuario":"Eumesmo90",
+        "Titulo":"Voltem ao design anterior",
+        "Comentario":"Layout anterior era mais original e satisfat\u00f3rio. Esse design semelhante ao app do mercado livre parece \u00e9 feio de doer.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13271984286
+    },
+    {
+        "Usuario":"nego bento",
+        "Titulo":"Avaliar excelente",
+        "Comentario":"10",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13271901873
+    },
+    {
+        "Usuario":"Kdu Jackson",
+        "Titulo":"\u00d3timo aplicativo",
+        "Comentario":"Eu nunca precisei falar com o atendimento pois eu nunca tive problema com ele ainda.  Confesso que no come\u00e7o eu fiquei um pouco receoso, mas estou aos poucos migrando a maioria das minhas poupan\u00e7as e reservas de emerg\u00eancia para c\u00e1. Achei um aplicativo flu\u00eddo, layout moderno intuitivo, e tem rendimentos nos cofrinhos acima dos seus concorrentes.  Confesso, todavia, que quanto ao cart\u00e3o de cr\u00e9dito, n\u00e3o \u00e9 t\u00e3o bom as funcionalidades no aplicativo quanto \u00e9 no Nubank (em quest\u00e3o de antecipa\u00e7\u00e3o de parcelas, por exemplo, quando o Nubank e o BTG d\u00e1 descontos e pelo que eu entendi no Mercado Pago n\u00e3o tem essas op\u00e7\u00f5es). - Por esta raz\u00e3o ainda continuo usando cart\u00f5es das concorrentes com mais frequ\u00eancias do que uso aqui.  Em geral, n\u00e3o tenho o que queixar desse aplicativo.",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13271765448
+    },
+    {
+        "Usuario":"1234567carlos",
+        "Titulo":"Avalia\u00e7\u00e3o",
+        "Comentario":"Sem benef\u00edcio nenhum para o cliente,j\u00e1 estou cancelando",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13271663496
+    },
+    {
+        "Usuario":"karlacristina111",
+        "Titulo":"Antecipa\u00e7\u00e3o de receb\u00edveis",
+        "Comentario":"Aplicativo com essa ultima atualiza\u00e7\u00e3o sumiu meu bot\u00e3o de antecipa\u00e7\u00e3o mesmo tendo deixado assinalado para antecipar ainda al\u00e9m de tudo agor aparece qur n\u00e3o cumpro boas pr\u00e1ticas na conta .Voc\u00eas est\u00e3o de brincadeira j\u00e1 entrei em contato com a ouvidoria.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13271421537
+    },
+    {
+        "Usuario":"Matheus.cs",
+        "Titulo":"Prote\u00e7\u00e3o",
+        "Comentario":"A a \u00faltima atualiza\u00e7\u00e3o foi muito boa mudou bem visual mas poderia ter uma op\u00e7\u00e3o que escondesse os cofrinhos porque ficam muito vis\u00edveis e tamb\u00e9m incluir um modo escuro seria interessante.",
+        "Nota":4,
+        "Versao_App":"2.406.2",
+        "ID_Review":13271212921
+    },
+    {
+        "Usuario":"Pericles Vagner",
+        "Titulo":"Horr\u00edvel \u00e9 cheio de bug",
+        "Comentario":"Pior ainda quando colocam propaganda de Anita em banco. Sem no\u00e7\u00e3o.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13270661565
+    },
+    {
+        "Usuario":"3421morais",
+        "Titulo":"Conta bloqueada",
+        "Comentario":"N\u00e3o tem ningu\u00e9m pra vc falar. saque n\u00e3o funciona.  N\u00e3o respondem email.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13270465932
+    },
+    {
+        "Usuario":"Raphael Sanches",
+        "Titulo":"Logotipo amarelo confunde",
+        "Comentario":"Seria bom colocar op\u00e7\u00e3o deseja alterar logotipo do fundo amarelo ou azul",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13270369525
+    },
+    {
+        "Usuario":"Tjdnehxi",
+        "Titulo":"Sou for\u00e7ado a usar",
+        "Comentario":"A autentica\u00e7\u00e3o no mercado livre me obriga a usar esse app.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13270320578
+    },
+    {
+        "Usuario":"Juros parcelas",
+        "Titulo":"Parou no tempo",
+        "Comentario":"O cart\u00e3o n\u00e3o consigo colocar na carteira digital do iPhone. N\u00e3o tem op\u00e7\u00e3o de adiantar as parcelas de uma compra. N\u00e3o d\u00e1 pra pagar por aproxima\u00e7\u00e3o quando o vendedor usa o iPhone como maquininha. \u00danica coisa boa foi o limite.",
+        "Nota":3,
+        "Versao_App":"2.406.2",
+        "ID_Review":13270257212
+    },
+    {
+        "Usuario":"dinheiro agosa",
+        "Titulo":"CONTA SUSPENSA",
+        "Comentario":"Sou vendedora de conte\u00fado digital, vendo online e as pessoas est\u00e3o comprando, usando o pacote e depois denunciando! E minha conta cai por\u201dfraude\u201d da onde que \u00e9 fraude? sendo que tenho print! provas que o conte\u00fado entrega como cliente pede! Que injusti\u00e7a! Bando de folgados quem denuncia! E AGORA S\u00d3 POSSO SACAR MEU DINHEIRO DO MEU SUOR DAQUI 2 semanas?????? Quero meu dinheiro AGORAAAAAAAAAAAA QUE PALHA\u00c7ADA",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13270050259
+    },
+    {
+        "Usuario":"Gomez \ud83c\udf35",
+        "Titulo":"\u00d3timo",
+        "Comentario":"O melhor app que j\u00e1 usei , muito f\u00e1cil de usar , tou amando demais \ud83d\udc96",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13269980251
+    },
+    {
+        "Usuario":"Junyxx",
+        "Titulo":"Pagamentos n\u00e3o aceitos",
+        "Comentario":"Todas os lan\u00e7amentos da empresa Localiza s\u00e3o bloqueados, a conta n\u00e3o \u00e9 paga e ningu\u00e9m apresenta uma solu\u00e7\u00e3o.",
+        "Nota":1,
+        "Versao_App":"2.406.2",
+        "ID_Review":13269929064
+    },
+    {
+        "Usuario":"Kb\u00e7a.hill",
+        "Titulo":"Sandro",
+        "Comentario":"Top de aplicativo muito funcional",
+        "Nota":5,
+        "Versao_App":"2.406.2",
+        "ID_Review":13269631934
+    },
+    {
+        "Usuario":"F\u00e1bio.audio",
+        "Titulo":"Funcionando",
+        "Comentario":"2025. At\u00e9 agora est\u00e1 funcionando sem problemas para compras no ML. E como cart\u00e3o f\u00edsico. Gostaria que pudesse usar ele na carteira digital. Mas at\u00e9 hoje n\u00e3o \u00e9 compat\u00edvel. S\u00f3 falta isso para eu trocar por 5\ud83c\udf1f",
+        "Nota":4,
+        "Versao_App":"2.405.3",
+        "ID_Review":13269305903
+    },
+    {
+        "Usuario":"PriS Sena",
+        "Titulo":"Atualiza\u00e7\u00e3o lixo",
+        "Comentario":"Essa nova atualiza\u00e7\u00e3o \u00e9 uma vergonha, app que era t\u00e3o simples, f\u00e1cil e \u00e1gil. S\u00f3 d\u00e1 erro e ficou com uma configura\u00e7\u00e3o pessima!",
+        "Nota":1,
+        "Versao_App":"2.405.3",
+        "ID_Review":13268952097
+    },
+    {
+        "Usuario":"\u00c9der C Silva",
+        "Titulo":"Top!!",
+        "Comentario":"Excelente para compras parcelados!",
+        "Nota":5,
+        "Versao_App":"2.405.3",
+        "ID_Review":13268873394
+    },
+    {
+        "Usuario":"Stihhf",
+        "Titulo":"Excelente",
+        "Comentario":"S\u00faper genial",
+        "Nota":5,
+        "Versao_App":"2.405.3",
+        "ID_Review":13267528762
+    },
+    {
+        "Usuario":"2606silmarinha",
+        "Titulo":"Bom",
+        "Comentario":"Bom",
+        "Nota":5,
+        "Versao_App":"2.405.3",
+        "ID_Review":13267296141
+    },
+    {
+        "Usuario":"Rnsampa",
+        "Titulo":"P\u00e9ssimo!!!",
+        "Comentario":"Essa \u00faltima atualiza\u00e7\u00e3o ficou horr\u00edvel. O meu leitor de QR Code simplesmente parou de funcionar e eu n\u00e3o consigo mais fazer pagamento Pix. Pra que foram mexer no que estava bom? N\u00e3o consigo entender isso. Estragaram o App!",
+        "Nota":1,
+        "Versao_App":"2.405.3",
+        "ID_Review":13267236747
+    },
+    {
+        "Usuario":"Meus neg\u00f3cios",
+        "Titulo":"\u00d3timo",
+        "Comentario":"Muito bom",
+        "Nota":5,
+        "Versao_App":"2.405.3",
+        "ID_Review":13267127925
+    },
+    {
+        "Usuario":"Glecimar",
+        "Titulo":"N\u00e3o tenho confian\u00e7a",
+        "Comentario":"Uso o ML de compras, como banco n\u00e3o gosto",
+        "Nota":1,
+        "Versao_App":"2.405.3",
+        "ID_Review":13266561401
+    },
+    {
+        "Usuario":"Raiva dos que falam mentiras",
+        "Titulo":"Robson Oliveira",
+        "Comentario":"Pior atendimento que j\u00e1 tive na minha vida \ud83e\udd2c\ud83d\ude21",
+        "Nota":1,
+        "Versao_App":"2.405.3",
+        "ID_Review":13266419310
+    },
+    {
+        "Usuario":"Dr. Arismar de Melo",
+        "Titulo":"P\u00e9ssimo!",
+        "Comentario":"P\u00e9ssimo e-commerce.",
+        "Nota":1,
+        "Versao_App":"2.405.3",
+        "ID_Review":13266299478
+    },
+    {
+        "Usuario":"juaopdro",
+        "Titulo":"Melhor banco do Brasil!",
+        "Comentario":"Aplicativo muito fluido, intuitivo e funcional.",
+        "Nota":5,
+        "Versao_App":"2.405.3",
+        "ID_Review":13266262902
+    },
+    {
+        "Usuario":"Filipe Salese",
+        "Titulo":"Funciona 100%",
+        "Comentario":"Tudo 100%",
+        "Nota":5,
+        "Versao_App":"2.405.3",
+        "ID_Review":13266222364
+    },
+    {
+        "Usuario":"Guilherme onorato senna",
+        "Titulo":"\ud83d\udc4e\ud83c\udffd",
+        "Comentario":"Atualizei o aplicativo e sumiu meu dinheiro",
+        "Nota":1,
+        "Versao_App":"2.404.1",
+        "ID_Review":13266045498
+    },
+    {
+        "Usuario":"Brabo d",
+        "Titulo":"Rian Silva",
+        "Comentario":"Meu banco favorito",
+        "Nota":5,
+        "Versao_App":"2.405.2",
+        "ID_Review":13264645484
+    },
+    {
+        "Usuario":"Christian Simoes da Cruz",
+        "Titulo":"Mercado pago",
+        "Comentario":"\u00d3timo app, totalmente integrado ao app do mercado livre",
+        "Nota":5,
+        "Versao_App":"2.405.2",
+        "ID_Review":13264581602
+    },
+    {
+        "Usuario":"< Arty >",
+        "Titulo":"Problema na valida\u00e7\u00e3o",
+        "Comentario":"Como a c\u00e2mera traseira do meu dispositivo n\u00e3o funciona n\u00e3o consigo efetuar o login no app, gostaria que permitissem a utiliza\u00e7\u00e3o da c\u00e2mera frontal para a login.",
+        "Nota":3,
+        "Versao_App":"2.405.2",
+        "ID_Review":13263577489
+    },
+    {
+        "Usuario":"Jbrunoramos",
+        "Titulo":"Atendimento",
+        "Comentario":"Comprei uma Empresa que tem conta no mercado livre e n\u00e3o consigo usar, pois esta com reconhecimento facial do antigo s\u00f3cio, entro em contato, Os atendentes come\u00e7am o atendimento e n\u00e3o terminam.",
+        "Nota":1,
+        "Versao_App":"2.405.2",
+        "ID_Review":13263402832
+    },
+    {
+        "Usuario":"Thiago.007",
+        "Titulo":"Falta de suporte",
+        "Comentario":"Sem suporte por compra realizada no cart\u00e3o produto veio com defeito fiz a devolu\u00e7\u00e3o e nada de estorno mais de 6 meses e o prazo era 3 j\u00e1 me derem uns 3 prazos diferentes e at\u00e9 agora nada n\u00e3o recomendo esss cart\u00e3o de cr\u00e9dito pra ningu\u00e9m busquem outros bancos online como o inter",
+        "Nota":1,
+        "Versao_App":"2.405.2",
+        "ID_Review":13263367180
+    },
+    {
+        "Usuario":"Bruno Beli",
+        "Titulo":"Horr\u00edvel atualiza\u00e7\u00e3o",
+        "Comentario":"Horr\u00edvel",
+        "Nota":1,
+        "Versao_App":"2.405.2",
+        "ID_Review":13263331974
+    },
+    {
+        "Usuario":"najcksnxknx",
+        "Titulo":"Decepcionante",
+        "Comentario":"Depois dessa atualiza\u00e7\u00e3o o app ficou inutiliz\u00e1vel! Trava horrores e o pior, n\u00e3o consigo fazer transfer\u00eancia pelo copia e cola. Reparem esse erro que muitos est\u00e3o apontando!",
+        "Nota":1,
+        "Versao_App":"2.405.2",
+        "ID_Review":13263117367
+    },
+    {
+        "Usuario":"Hamstevet",
+        "Titulo":"Atendimento ruim",
+        "Comentario":"P\u00e9ssimo para qdo precisa resolver algo",
+        "Nota":1,
+        "Versao_App":"2.404.1",
+        "ID_Review":13261862443
+    },
+    {
+        "Usuario":"Melhorem!todos s\u00e3o iguais",
+        "Titulo":"Quero tbm",
+        "Comentario":"Outros recebem b\u00f4nus por ter dinheiro na conta e eu n\u00e3o, uma amiga depositou 14 reais no outro dia tava com 15 e 50",
+        "Nota":2,
+        "Versao_App":"2.405.2",
+        "ID_Review":13261609363
+    },
+    {
+        "Usuario":"Allan B17",
+        "Titulo":"Sem Op\u00e7\u00e3o de Compartilhar Boleto da Fatura do Cart\u00e3o",
+        "Comentario":"Gosto de deixar salvo o boleto na nuvem, mas obrigado ao MP por n\u00e3o disponibilizar um simples bot\u00e3o para compartilhar o boleto da fatura do cart\u00e3o, obrigando a fazer um print da tela, e ficando em p\u00e9ssima resolu\u00e7\u00e3o!",
+        "Nota":1,
+        "Versao_App":"2.405.2",
+        "ID_Review":13261440740
+    },
+    {
+        "Usuario":"RuanRvb",
+        "Titulo":"Ruan",
+        "Comentario":"Bons rendimentos. Acesso todo dia, nunca tive problema do aplicativo ter ficado fora do ar",
+        "Nota":5,
+        "Versao_App":"2.405.2",
+        "ID_Review":13260935628
+    },
+    {
+        "Usuario":"G do mangue",
+        "Titulo":"F\u00e1cil funcionalidade",
+        "Comentario":"9",
+        "Nota":5,
+        "Versao_App":"2.405.2",
+        "ID_Review":13260867367
+    },
+    {
+        "Usuario":"bueno1968",
+        "Titulo":"Top",
+        "Comentario":"Top",
+        "Nota":5,
+        "Versao_App":"2.405.2",
+        "ID_Review":13260810693
+    },
+    {
+        "Usuario":"\/-\u2026.",
+        "Titulo":"Atualiza\u00e7\u00e3o ruim",
+        "Comentario":"N\u00e3o gostei dessa nova atualiza\u00e7\u00e3o, ficou p\u00e9ssimo pra achar as coisas",
+        "Nota":3,
+        "Versao_App":"2.404.1",
+        "ID_Review":13260755876
+    },
+    {
+        "Usuario":"wilsonsaopedro2014123",
+        "Titulo":"Pr\u00e1tico",
+        "Comentario":"Al\u00e9m de ser um dos melhores bancos o seu dinheiro rende muito mais, f\u00e1cil de navegar e muito seguro",
+        "Nota":5,
+        "Versao_App":"2.405.2",
+        "ID_Review":13260366199
+    },
+    {
+        "Usuario":"Jycyvu",
+        "Titulo":"Taxas abusivas",
+        "Comentario":"Pessimo",
+        "Nota":1,
+        "Versao_App":"2.405.2",
+        "ID_Review":13259184774
+    },
+    {
+        "Usuario":"MaykiMD",
+        "Titulo":"N\u00e3o Cadastra no iPay",
+        "Comentario":"O aplicativo \u00e9 bom, mas falta o banco permitir o cadastro na Carteira do iPhone, pois iria ajudar muito na hora das compras!",
+        "Nota":3,
+        "Versao_App":"2.405.2",
+        "ID_Review":13258941878
+    },
+    {
+        "Usuario":"Priever",
+        "Titulo":"Melhor",
+        "Comentario":"To gostado",
+        "Nota":5,
+        "Versao_App":"2.405.2",
+        "ID_Review":13258858945
+    },
+    {
+        "Usuario":"Bug ou defeito",
+        "Titulo":"App com defeito",
+        "Comentario":"Aplicativo consta alguns erros mediante com troca de tela, n\u00e3o carrega direito e precisa ficar voltando e entrando novamente na aba para carregar direito",
+        "Nota":3,
+        "Versao_App":"2.405.2",
+        "ID_Review":13258644385
+    },
+    {
+        "Usuario":"pauloricardovsk",
+        "Titulo":"Lixo",
+        "Comentario":"Arruma essa desgra\u00e7a, n\u00e3o d\u00e1 pra escanear o documento, t\u00f4 com a conta parada",
+        "Nota":1,
+        "Versao_App":"2.405.2",
+        "ID_Review":13258558548
+    },
+    {
+        "Usuario":"LFTF",
+        "Titulo":"Pior fintech do Brasil",
+        "Comentario":"N\u00e3o percam tempo com essa plataforma. N\u00e3o tem canais de atendimento via telefone. No WhatsApp n\u00e3o respondem e quando respondem n\u00e3o resolvem nada. N\u00e3o vale nada!",
+        "Nota":1,
+        "Versao_App":"2.405.2",
+        "ID_Review":13257580077
+    },
+    {
+        "Usuario":"Ale Arruda",
+        "Titulo":"HORR\u00cdVEL",
+        "Comentario":"Pessimo, o app n\u00e3o me deixa transferir meu dinheiro, eles querem me obrigar a gastar no app pra eles faturarem mais\u2026 um lixo !",
+        "Nota":1,
+        "Versao_App":"2.405.2",
+        "ID_Review":13257386640
+    },
+    {
+        "Usuario":"Colorado RQ",
+        "Titulo":"Identifica\u00e7\u00e3o",
+        "Comentario":"Facilitaria muito se logo na primeira p\u00e1gina do app constasse o n\u00famero do banco, n\u00famero da ag\u00eancia e n\u00famero da conta corrente.",
+        "Nota":4,
+        "Versao_App":"2.405.2",
+        "ID_Review":13256710005
+    },
+    {
+        "Usuario":"Sousa.neres",
+        "Titulo":"Melhor banco",
+        "Comentario":"Melhor banco melhor cart\u00e3o melhor tudo . Apenas",
+        "Nota":5,
+        "Versao_App":"2.405.2",
+        "ID_Review":13254215583
+    },
+    {
+        "Usuario":"Benef\u00edcios exclusivos \ud83d\ude09\ud83d\udc4c\ud83c\udffc",
+        "Titulo":"Precisa de mais benef\u00edcios exclusivos no app, mais tirando isso est\u00e1 tudo \u00f3timo, deixo claro minha",
+        "Comentario":"Sim. O app \u00e9 muito bom mesmo recomendo, por\u00e9m eu confesso os outros app tem melhores benef\u00edcios inclusos. Tchau obrigada,.",
+        "Nota":4,
+        "Versao_App":"2.405.2",
+        "ID_Review":13254100729
+    },
+    {
+        "Usuario":"Nena mariano",
+        "Titulo":"Boa tarde",
+        "Comentario":"10",
+        "Nota":5,
+        "Versao_App":"2.405.2",
+        "ID_Review":13254100469
+    },
+    {
+        "Usuario":"neguinshow",
+        "Titulo":"Funcional",
+        "Comentario":"Gostava das cores azul antiga mesmo entendendo o prop\u00f3sito, achei feio. Quando o app no momento atual dessa avalia\u00e7\u00e3o, no iOS o pagamento com pix copia e cola e QR code est\u00e1 bem inst\u00e1vel, ocorre erros que atrasam o pagamento nos estabelecimentos, duas vezes precisei transferir para outra conta para pagar, e uma vez paguei no cr\u00e9dito para ser mais r\u00e1pido. Espero que melhore. A interface atualizada perdeu a originalidade.",
+        "Nota":4,
+        "Versao_App":"2.405.2",
+        "ID_Review":13254078478
+    },
+    {
+        "Usuario":"qlxbxnalwmnnOwkeie",
+        "Titulo":"Mercado pago da uma moral",
+        "Comentario":"ja trabalhei uma vez com voc\u00eas,estou querendo fazer uma reforma no meu nogocio!!",
+        "Nota":2,
+        "Versao_App":"2.405.2",
+        "ID_Review":13253838522
+    },
+    {
+        "Usuario":"Openheimer 08\/07\/09",
+        "Titulo":"Praticidade",
+        "Comentario":"Aplicativo eficiente, justo e confi\u00e1vel. Supera as expectativas.",
+        "Nota":5,
+        "Versao_App":"2.405.2",
+        "ID_Review":13253718325
+    },
+    {
+        "Usuario":"Arena break out",
+        "Titulo":"IOS",
+        "Comentario":"Aproxima\u00e7\u00e3o",
+        "Nota":3,
+        "Versao_App":"2.405.2",
+        "ID_Review":13253302151
+    }
+]
