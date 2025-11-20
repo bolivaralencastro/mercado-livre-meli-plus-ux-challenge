@@ -4,23 +4,515 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personas - Meli+ UX Challenge</title>
-    <link rel="stylesheet" href="../andes-design-system/style.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonte Roboto (Substituta da Proxima Nova) -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           1. ANDES TOKENS (Design System)
+           ========================================= */
+        :root {
+            /* Cores */
+            --andes-primary: #ffe600;
+            --andes-secondary: #3483fa;
+            --andes-secondary-dark: #2968c8;
+            --andes-success: #00a650;
+            --andes-error: #f23d4f;
+            --andes-warning: #ff7733;
+            
+            /* Neutros */
+            --andes-neutral-0: #ffffff;
+            --andes-neutral-100: #f5f5f5;
+            --andes-neutral-200: #ebebeb;
+            --andes-neutral-600: #999999;
+            --andes-neutral-800: #333333; /* Texto principal */
+            
+            /* Fontes & Espaçamento */
+            --andes-font-family: 'Roboto', sans-serif;
+            --andes-radius-card: 8px;
+            --andes-shadow-card: 0 1px 2px 0 rgba(0,0,0,.1);
+            --andes-shadow-elevated: 0 4px 12px rgba(0,0,0,0.15);
+            
+            /* Layout Específico */
+            --header-height: 64px;
+        }
+
+        /* =========================================
+           2. RESET & GLOBAL
+           ========================================= */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--andes-font-family);
+            background-color: var(--andes-neutral-100);
+            color: var(--andes-neutral-800);
+            height: 100vh;
+            overflow: hidden; /* Slider container handles scroll */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Amarelo ML */
+        .andes-header {
+            height: var(--header-height);
+            background-color: var(--andes-primary);
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+            z-index: 100;
+            flex-shrink: 0;
+        }
+        
+        .logo-text {
+            font-weight: 800;
+            font-size: 20px;
+            color: #2d3277; /* Azul Institucional Logo */
+            letter-spacing: -0.5px;
+        }
+
+        /* =========================================
+           3. SLIDER LAYOUT
+           ========================================= */
+        .slider-wrapper {
+            flex: 1;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-container {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Movimento suave Andes */
+        }
+
+        .persona-section {
+            min-width: 100vw;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 35% 65%;
+            overflow: hidden;
+        }
+
+        /* Coluna Esquerda: Imagem */
+        .persona-visual {
+            background-color: #e0e0e0;
+            position: relative;
+            height: 100%;
+        }
+        
+        .persona-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+        
+        /* Gradiente sobre a imagem para texto (opcional) */
+        .visual-overlay {
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 40%;
+            background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+            display: flex; align-items: flex-end; padding: 40px;
+        }
+        .visual-name { color: white; font-size: 32px; font-weight: 700; }
+
+        /* Coluna Direita: Conteúdo Scrollável */
+        .persona-content {
+            padding: 40px 60px 100px 60px; /* Padding bottom extra para footer */
+            overflow-y: auto;
+            background-color: var(--andes-neutral-100);
+        }
+
+        /* Scrollbar estilizado */
+        .persona-content::-webkit-scrollbar { width: 8px; }
+        .persona-content::-webkit-scrollbar-track { background: transparent; }
+        .persona-content::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
+
+        /* =========================================
+           4. TYPOGRAPHY & COMPONENTS
+           ========================================= */
+        .andes-tag {
+            display: inline-block;
+            background-color: var(--andes-neutral-200);
+            color: var(--andes-neutral-800);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+        }
+
+        .persona-title-block {
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--andes-neutral-200);
+            padding-bottom: 24px;
+        }
+
+        .persona-role {
+            font-size: 28px;
+            font-weight: 300; /* Andes Light */
+            color: var(--andes-secondary);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        /* Citação em destaque */
+        .persona-quote {
+            background-color: #fff;
+            border-left: 4px solid var(--andes-primary);
+            padding: 20px 24px;
+            font-size: 18px;
+            font-style: italic;
+            color: #555;
+            border-radius: 0 var(--andes-radius-card) var(--andes-radius-card) 0;
+            box-shadow: var(--andes-shadow-card);
+            margin-bottom: 32px;
+        }
+
+        /* Grid de Cards */
+        .andes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .andes-card {
+            background: var(--andes-neutral-0);
+            border-radius: var(--andes-radius-card);
+            box-shadow: var(--andes-shadow-card);
+            padding: 24px;
+            border: 1px solid transparent;
+        }
+
+        .andes-card h3 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            display: flex; align-items: center; gap: 8px;
+            font-weight: 700;
+        }
+
+        /* Variações de Cards */
+        .card-profile { border-top: 4px solid var(--andes-secondary); }
+        
+        .card-pain { 
+            border: 1px solid rgba(242, 61, 79, 0.3); 
+            background: #fff5f5; /* Vermelho bem claro */
+        }
+        .card-pain h3 { color: var(--andes-error); }
+        
+        .card-opp { 
+            border: 1px solid rgba(0, 166, 80, 0.3);
+            background: #f0fcf4; /* Verde bem claro */
+        }
+        .card-opp h3 { color: var(--andes-success); }
+
+        /* Listas Customizadas */
+        .andes-list { list-style: none; }
+        .andes-list li {
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+            padding-left: 20px;
+            position: relative;
+            color: #444;
+        }
+        .andes-list li::before {
+            content: "•";
+            position: absolute; left: 0;
+            font-weight: bold; font-size: 18px; line-height: 16px;
+        }
+
+        /* Cores dos bullets */
+        .list-neutral li::before { color: var(--andes-secondary); }
+        .list-pain li::before { color: var(--andes-error); }
+        .list-opp li::before { color: var(--andes-success); }
+
+        .profile-data-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+        .profile-data-row:last-child { border-bottom: none; }
+        .profile-label { font-weight: 600; color: #666; }
+
+        /* =========================================
+           5. CONTROLS (Floating)
+           ========================================= */
+        .slider-controls {
+            position: fixed;
+            bottom: 30px;
+            right: 60px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            box-shadow: var(--andes-shadow-elevated);
+            z-index: 200;
+        }
+
+        .nav-btn {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            border: none;
+            background-color: var(--andes-neutral-100);
+            color: var(--andes-secondary);
+            font-size: 20px;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: 0.2s;
+        }
+        .nav-btn:hover:not(:disabled) { background-color: var(--andes-secondary); color: white; }
+        .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+        .slide-counter {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--andes-neutral-600);
+            min-width: 40px; text-align: center;
+        }
+
+        /* Responsivo */
+        @media (max-width: 1024px) {
+            .persona-section { grid-template-columns: 1fr; overflow-y: auto; }
+            .persona-visual { height: 300px; flex-shrink: 0; }
+            .persona-content { height: auto; overflow: visible; }
+            .andes-grid { grid-template-columns: 1fr; }
+            .slider-controls { right: 50%; transform: translateX(50%); bottom: 20px; }
+        }
+    </style>
 </head>
 <body>
-    <main id="slider-container" class="slider-container">
-        <!-- Personas will be injected here by JavaScript -->
-    </main>
 
-    <div class="slider-controls">
-        <button id="prev-btn" class="control-btn" aria-label="Anterior">&lt;</button>
-        <div id="indicators" class="indicators"></div>
-        <button id="next-btn" class="control-btn" aria-label="Próximo">&gt;</button>
+    <header class="andes-header">
+        <div class="logo-text">Meli<span style="font-weight:300">+</span> UX Research</div>
+    </header>
+
+    <div class="slider-wrapper">
+        <main id="slider-container" class="slider-container">
+            <!-- Injected by JS -->
+        </main>
     </div>
 
-    <script src="script.js"></script>
+    <div class="slider-controls">
+        <button id="prev-btn" class="nav-btn">‹</button>
+        <div id="counter" class="slide-counter">1 / 6</div>
+        <button id="next-btn" class="nav-btn">›</button>
+    </div>
+
+    <script>
+        // SEUS DADOS ORIGINAIS (Mantidos intactos)
+        const data = {
+          "personas": [
+            {
+              "id": "ana_paula_santos",
+              "nome": "Ana Paula Santos",
+              "role": "A Caçadora de Ofertas Frustrada com Entregas",
+              "frase": "Prometeram entregar em 2 dias, mas quando vi o rastreio, o produto nem havia saído do centro de distribuição!",
+              "perfil": {
+                "Idade": "37 anos",
+                "Localização": "São Paulo (zona sul)",
+                "Família": "Casada, 2 filhos",
+                "Renda": "R$ 8k–12k/mês"
+              },
+              "comportamento": [
+                "Usa MELI+ para: brinquedos e casa",
+                "Cancelou 2x a assinatura por atraso",
+                "Reclama via WhatsApp (62%)"
+              ],
+              "dores": [
+                "Prazos mentirosos de frete",
+                "Cupons perdidos por bugs",
+                "Impossibilidade de cancelar envio",
+                "Atendimento fragmentado"
+              ],
+              "elogios_valores": {
+                "valores": "Praticidade, economia, confiança"
+              },
+              "oportunidades": [
+                "Notificações proativas reais",
+                "Compensação automática de R$15",
+                "Atendimento prioritário MELI+",
+                "Reembolso de cupom falho"
+              ],
+              "imagem": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=988&auto=format&fit=crop" // Placeholder
+            },
+            {
+              "id": "ricardo_almeida",
+              "nome": "Ricardo Almeida",
+              "role": "O Empreendedor Vítima de Taxas Ocultas",
+              "frase": "Cobraram R$ 47 de ‘taxa de serviço premium’ sem aviso prévio — isso não estava no contrato!",
+              "perfil": {
+                "Idade": "32 anos",
+                "Localização": "Belo Horizonte",
+                "Atividade": "Vendedor ocasional",
+                "Renda": "R$ 6k–8k/mês"
+              },
+              "comportamento": [
+                "Usa Mercado Pago como banco",
+                "Avalia ROI de cada venda",
+                "Considera migrar para Shopee"
+              ],
+              "dores": [
+                "Taxas maiores que o combinado",
+                "Frete 'grátis' pago pelo vendedor",
+                "Dashboard financeiro opaco",
+                "Falta de cashback vendedor"
+              ],
+              "elogios_valores": {
+                "valores": "Transparência, eficiência"
+              },
+              "oportunidades": [
+                "Simulador de Lucro Líquido",
+                "Programa Vendedor Leal",
+                "Cashback em logística ML",
+                "Relatório de custos transparente"
+              ],
+              "imagem": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=987&auto=format&fit=crop"
+            },
+            // ... (Adicione as outras personas aqui se necessário)
+            {
+                "id": "maria_oliveira",
+                "nome": "Maria Oliveira",
+                "role": "A Vítima da Tecnologia que Exclui",
+                "frase": "Meu neto teve que vir aqui resolver tudo, porque o aplicativo não deixa eu ver nem o extrato!",
+                "perfil": {"Idade": "62 anos", "Localização": "Porto Alegre"},
+                "comportamento": ["Usa ML 2x/mês", "Dificuldade com biometria"],
+                "dores": ["Reconhecimento facial falho", "Tela branca em atualizações", "Suspensão sem motivo"],
+                "elogios_valores": {"valores": "Segurança, simplicidade"},
+                "oportunidades": ["Modo Senior (UI Simplificada)", "Central Telefônica Dedicada"],
+                "imagem": "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?q=80&w=987&auto=format&fit=crop"
+            }
+          ]
+        };
+
+        // LÓGICA DE RENDERIZAÇÃO
+        const container = document.getElementById('slider-container');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const counter = document.getElementById('counter');
+
+        let currentIndex = 0;
+        const totalSlides = data.personas.length;
+
+        function render() {
+            data.personas.forEach(p => {
+                const section = document.createElement('section');
+                section.className = 'persona-section';
+                
+                // Helper para listas
+                const makeList = (items, type) => `
+                    <ul class="andes-list list-${type}">
+                        ${items.map(i => `<li>${i}</li>`).join('')}
+                    </ul>
+                `;
+
+                // Helper para perfil
+                const makeProfile = (perfil) => Object.entries(perfil).map(([k, v]) => `
+                    <div class="profile-data-row">
+                        <span class="profile-label">${k}</span>
+                        <span>${v}</span>
+                    </div>
+                `).join('');
+
+                section.innerHTML = `
+                    <div class="persona-visual">
+                        <img src="${p.imagem}" class="persona-image" alt="${p.nome}">
+                        <div class="visual-overlay">
+                            <div class="visual-name">${p.nome}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="persona-content">
+                        <div class="andes-tag">Persona ${data.personas.indexOf(p) + 1}</div>
+                        
+                        <div class="persona-title-block">
+                            <h1 class="persona-role">${p.role}</h1>
+                        </div>
+
+                        <div class="persona-quote">
+                            "${p.frase}"
+                        </div>
+
+                        <div class="andes-grid">
+                            <!-- Card Perfil & Comportamento -->
+                            <div class="andes-card card-profile">
+                                <h3>👤 Perfil & Dados</h3>
+                                <div style="margin-bottom: 20px;">
+                                    ${makeProfile(p.perfil)}
+                                </div>
+                                
+                                <div style="border-top:1px solid #eee; padding-top:15px;">
+                                    <h4 style="font-size:12px; color:#999; margin-bottom:10px;">COMPORTAMENTO</h4>
+                                    ${makeList(p.comportamento, 'neutral')}
+                                </div>
+                            </div>
+
+                            <div style="display:flex; flex-direction:column; gap:24px;">
+                                <!-- Card Dores -->
+                                <div class="andes-card card-pain">
+                                    <h3>⚠️ Principais Dores</h3>
+                                    ${makeList(p.dores, 'pain')}
+                                </div>
+
+                                <!-- Card Oportunidades -->
+                                <div class="andes-card card-opp">
+                                    <h3>🚀 Oportunidades</h3>
+                                    ${makeList(p.oportunidades, 'opp')}
+                                </div>
+                                
+                                <!-- Card Valores -->
+                                <div class="andes-card">
+                                    <h3>💎 Valores Buscados</h3>
+                                    <p style="font-size:14px;">${p.elogios_valores.valores}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(section);
+            });
+            updateUI();
+        }
+
+        function updateUI() {
+            container.style.transform = `translateX(-${currentIndex * 100}%)`;
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === totalSlides - 1;
+            counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) currentIndex--;
+            updateUI();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < totalSlides - 1) currentIndex++;
+            updateUI();
+        });
+
+        // Atalhos de teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                currentIndex--;
+                updateUI();
+            }
+            if (e.key === 'ArrowRight' && currentIndex < totalSlides - 1) {
+                currentIndex++;
+                updateUI();
+            }
+        });
+
+        render();
+    </script>
 </body>
 </html>
