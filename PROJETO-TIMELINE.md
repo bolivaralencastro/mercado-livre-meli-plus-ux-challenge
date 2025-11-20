@@ -4,7 +4,7 @@
 
 Este documento define a timeline completa do projeto de UX para o Meli+, organizando todas as etapas necessárias para a entrega do resultado final do desafio proposto pelo Mercado Livre.
 
-**Período:** 20 de novembro (quarta) a 26 de novembro (terça) - 7 dias calendário  
+**Período:** 20 de novembro (quinta) a 26 de novembro (quarta) - 7 dias calendário  
 **Prazo Final:** 26 de novembro  
 **Equipe:** Designer UX/UI solo  
 **Objetivo:** Criar documentação completa de UX para o Meli+ aproveitando disponibilidade variável  
@@ -12,18 +12,18 @@ Este documento define a timeline completa do projeto de UX para o Meli+, organiz
 ### 📅 Cronograma Personalizado
 
 **Dias de alta disponibilidade (trabalho intensivo):**
-- **Quarta, 20/11 (HOJE - FERIADO):** 10-12h disponíveis ⭐
-- **Sábado, 23/11:** 10-12h disponíveis ⭐
-- **Domingo, 24/11:** 10-12h disponíveis ⭐
+- **Quinta, 20/11 (HOJE - FERIADO):** 10-12h disponíveis ⭐
+- **Domingo, 23/11:** 10-12h disponíveis ⭐
+- **Segunda, 24/11:** 10-12h disponíveis ⭐
 
 **Dias de disponibilidade limitada (apenas noite):**
-- **Quinta, 21/11:** 3-4h à noite (trabalho 8h-17h)
-- **Segunda, 25/11:** 3-4h à noite (trabalho 8h-17h)
-- **Terça, 26/11:** 3-4h à noite (trabalho 8h-17h) + ENTREGA FINAL
+- **Sexta, 21/11:** 3-4h à noite (trabalho 8h-17h)
+- **Terça, 25/11:** 3-4h à noite (trabalho 8h-17h)
+- **Quarta, 26/11:** 3-4h à noite (trabalho 8h-17h) + ENTREGA FINAL
 
 **Total estimado:** ~46-52 horas de trabalho ao longo de 7 dias
 
-**Meta:** Finalizar trabalho principal até domingo (24/11) para usar segunda e terça (25-26/11) para revisão final e ajustes
+**Meta:** Finalizar trabalho principal até segunda (24/11) para usar terça e quarta (25-26/11) para revisão final e ajustes
 
 ---
 
@@ -65,7 +65,7 @@ Este documento define a timeline completa do projeto de UX para o Meli+, organiz
 
 ## 📆 Timeline Detalhada por Fase - Cronograma Real
 
-### 🗓️ Quarta-feira, 20/11 (FERIADO - 12h disponíveis)
+### 🗓️ Quinta-feira, 20/11 (FERIADO - 12h disponíveis)
 
 #### Manhã (4h): Fase 1 - Briefing e Alinhamento
 **Horário:** 8h-12h  
@@ -105,7 +105,7 @@ Este documento define a timeline completa do projeto de UX para o Meli+, organiz
 
 ---
 
-### 🗓️ Quinta-feira, 21/11 (Noite - 4h disponíveis)
+### 🗓️ Sexta-feira, 21/11 (Noite - 4h disponíveis)
 
 #### Noite (4h): Fase 2 - Pesquisa e Descoberta (CONCLUSÃO) + Fase 3 (INÍCIO)
 **Horário:** 18h-22h  
@@ -128,14 +128,14 @@ Este documento define a timeline completa do projeto de UX para o Meli+, organiz
 
 ---
 
-### 🗓️ Sexta-feira, 22/11 (Buffer/Descanso)
+### 🗓️ Sábado, 22/11 (Buffer/Descanso)
 
 **Dia de pausa estratégica** - Descansar e preparar para sprint de fim de semana intensivo  
 **Opcional:** Se necessário, fazer ajustes ou adiantar algo (2-3h)
 
 ---
 
-### 🗓️ Sábado, 23/11 (12h disponíveis) ⭐
+### 🗓️ Domingo, 23/11 (12h disponíveis) ⭐
 
 #### Manhã e Tarde (8h): Fase 3 - Estratégia (CONCLUSÃO) + Fase 4 (INÍCIO)
 **Horário:** 8h-12h, 14h-18h  
@@ -172,7 +172,7 @@ Este documento define a timeline completa do projeto de UX para o Meli+, organiz
 
 ---
 
-### 🗓️ Domingo, 24/11 (12h disponíveis) ⭐
+### 🗓️ Segunda-feira, 24/11 (12h disponíveis) ⭐
 
 #### Manhã (4h): Fase 4 - Ideação (CONCLUSÃO)
 **Horário:** 8h-12h  
@@ -211,7 +211,7 @@ Este documento define a timeline completa do projeto de UX para o Meli+, organiz
 
 ---
 
-### 🗓️ Segunda-feira, 25/11 (Noite - 4h disponíveis)
+### 🗓️ Terça-feira, 25/11 (Noite - 4h disponíveis)
 
 #### Noite (4h): Fase 6 - Prototipagem + Fase 7 - Apresentação
 **Horário:** 18h-22h  
@@ -237,7 +237,7 @@ Este documento define a timeline completa do projeto de UX para o Meli+, organiz
 
 ---
 
-### 🗓️ Terça-feira, 26/11 (Noite - 4h + ENTREGA) 🎯
+### 🗓️ Quarta-feira, 26/11 (Noite - 4h + ENTREGA) 🎯
 
 #### Noite (4h): Fase 7 - Apresentação (CONCLUSÃO) + Fase 8 - Entrega Final
 **Horário:** 18h-22h  
@@ -272,7 +272,7 @@ Este documento define a timeline completa do projeto de UX para o Meli+, organiz
 
 ```
 Data:      20/11  21/11  22/11  23/11  24/11  25/11  26/11
-Dia:       Qua    Qui    Sex    Sáb    Dom    Seg    Ter
+Dia:       Qui    Sex    Sáb    Dom    Seg    Ter    Qua
            (Fer)  (Not)  (Buf)  (Full) (Full) (Not)  (Not+Ent)
 ────────────────────────────────────────────────────────────
 Briefing   ████
@@ -297,13 +297,13 @@ Horas:     12h    4h     -      12h    12h    4h     4h
 - **Ent** = Entrega final
 
 ### Distribuição de Horas por Dia
-- **20/11 (Qua):** 12h - Briefing + Pesquisa inicial
-- **21/11 (Qui):** 4h noite - Finalizar pesquisa + iniciar estratégia  
-- **22/11 (Sex):** Descanso/buffer (opcional 2-3h para ajustes)
-- **23/11 (Sáb):** 12h - Estratégia + Ideação (wireframes)
-- **24/11 (Dom):** 12h - Finalizar ideação + UI Design completo
-- **25/11 (Seg):** 4h noite - Protótipo + iniciar apresentação
-- **26/11 (Ter):** 4h noite - Finalizar apresentação + ENTREGA
+- **20/11 (Qui):** 12h - Briefing + Pesquisa inicial
+- **21/11 (Sex):** 4h noite - Finalizar pesquisa + iniciar estratégia  
+- **22/11 (Sáb):** Descanso/buffer (opcional 2-3h para ajustes)
+- **23/11 (Dom):** 12h - Estratégia + Ideação (wireframes)
+- **24/11 (Seg):** 12h - Finalizar ideação + UI Design completo
+- **25/11 (Ter):** 4h noite - Protótipo + iniciar apresentação
+- **26/11 (Qua):** 4h noite - Finalizar apresentação + ENTREGA
 
 **Total:** ~46-48h de trabalho efetivo
 
@@ -312,52 +312,52 @@ Horas:     12h    4h     -      12h    12h    4h     4h
 ## 🎯 Milestones Principais - Cronograma Real
 
 ### Milestone 1: Fundação e Pesquisa
-**Data:** 20-21 de novembro (Qua-Qui)  
+**Data:** 20-21 de novembro (Qui-Sex)  
 **Objetivo:** Entender o problema e usuários através de desk research  
 **Entregas:** Briefing + Pesquisa completa + Personas
 
-**Checkpoint:** Fim de quinta à noite - Pesquisa 100% completa
+**Checkpoint:** Fim de sexta à noite - Pesquisa 100% completa
 
 ---
 
 ### Milestone 2: Estratégia e Estrutura
-**Data:** 23 de novembro (Sábado)  
+**Data:** 23 de novembro (Domingo)  
 **Objetivo:** Definir direção estratégica e criar estrutura das soluções  
 **Entregas:** Estratégia completa + Wireframes principais
 
-**Checkpoint:** Fim de sábado - Estratégia definida + 80% dos wireframes
+**Checkpoint:** Fim de domingo - Estratégia definida + 80% dos wireframes
 
 ---
 
 ### Milestone 3: Design Visual Completo
-**Data:** 24 de novembro (Domingo)  
+**Data:** 24 de novembro (Segunda)  
 **Objetivo:** Criar todo o design de alta fidelidade  
 **Entregas:** Wireframes finalizados + UI Design completo + Design system
 
-**Checkpoint:** Fim de domingo - TODAS as telas principais em alta fidelidade
+**Checkpoint:** Fim de segunda - TODAS as telas principais em alta fidelidade
 
 ---
 
 ### Milestone 4: Protótipo e Documentação
-**Data:** 25 de novembro (Segunda à noite)  
+**Data:** 25 de novembro (Terça à noite)  
 **Objetivo:** Tornar navegável e documentar  
 **Entregas:** Protótipo Figma interativo + Apresentação iniciada
 
-**Checkpoint:** Fim de segunda - Protótipo funcionando + 70% da apresentação
+**Checkpoint:** Fim de terça - Protótipo funcionando + 70% da apresentação
 
 ---
 
 ### Milestone 5: ENTREGA FINAL
-**Data:** 26 de novembro (Terça à noite) 🎯  
+**Data:** 26 de novembro (Quarta à noite) 🎯  
 **Objetivo:** Finalizar e entregar projeto completo  
 **Entregas:** Apresentação completa + Documentação consolidada + PROJETO ENTREGUE
 
-**Checkpoint:** Até 22h de terça - PROJETO 100% COMPLETO E SUBMETIDO
+**Checkpoint:** Até 22h de quarta - PROJETO 100% COMPLETO E SUBMETIDO
 
 ---
 ## 📋 Checklist de Progresso Geral - Cronograma Real 20-26/Nov
 
-### 🗓️ Quarta, 20/11 - HOJE (Feriado - 12h)
+### 🗓️ Quinta, 20/11 - HOJE (Feriado - 12h)
 #### Manhã (4h): Briefing
 - [ ] Objetivos definidos
 - [ ] Escopo delimitado
@@ -371,7 +371,7 @@ Horas:     12h    4h     -      12h    12h    4h     4h
 - [ ] Reviews de usuários analisados
 - [ ] Primeiros insights documentados
 
-### 🗓️ Quinta, 21/11 (Noite - 4h)
+### 🗓️ Sexta, 21/11 (Noite - 4h)
 #### Pesquisa - Parte 2 + Estratégia Inicial
 - [ ] Benchmark finalizado (mais 2-3 concorrentes)
 - [ ] Personas criadas (baseadas em dados secundários)
@@ -379,11 +379,11 @@ Horas:     12h    4h     -      12h    12h    4h     4h
 - [ ] Insights principais documentados
 - [ ] Pilares de design iniciados
 
-### 🗓️ Sexta, 22/11 (Buffer/Descanso)
+### 🗓️ Sábado, 22/11 (Buffer/Descanso)
 - [ ] Descanso estratégico
 - [ ] (Opcional) Ajustes ou avanços se necessário
 
-### 🗓️ Sábado, 23/11 (Fim de semana - 12h)
+### 🗓️ Domingo, 23/11 (Fim de semana - 12h)
 #### Manhã e Tarde (8h): Estratégia Completa + Ideação Inicial
 - [ ] Pilares de design finalizados (3)
 - [ ] Hipóteses criadas (5-8)
@@ -396,7 +396,7 @@ Horas:     12h    4h     -      12h    12h    4h     4h
 - [ ] Arquitetura da informação definida
 - [ ] Validação interna dos fluxos
 
-### 🗓️ Domingo, 24/11 (Fim de semana - 12h)
+### 🗓️ Segunda, 24/11 (Fim de semana - 12h)
 #### Manhã (4h): Finalizar Ideação
 - [ ] Wireframes finalizados (15-20 telas totais)
 - [ ] Todos os fluxos completos
@@ -411,7 +411,7 @@ Horas:     12h    4h     -      12h    12h    4h     4h
 - [ ] Fluxo de Assinatura (3 telas)
 - [ ] Dashboard + Gestão de Pagamentos
 
-### 🗓️ Segunda, 25/11 (Noite - 4h)
+### 🗓️ Terça, 25/11 (Noite - 4h)
 #### Protótipo + Apresentação Inicial
 - [ ] Protótipo interativo criado (Figma)
 - [ ] Fluxos principais conectados
@@ -420,7 +420,7 @@ Horas:     12h    4h     -      12h    12h    4h     4h
 - [ ] Narrativa escrita
 - [ ] Case study iniciado (60%)
 
-### 🗓️ Terça, 26/11 (Noite - 4h) - ENTREGA FINAL 🎯
+### 🗓️ Quarta, 26/11 (Noite - 4h) - ENTREGA FINAL 🎯
 #### Apresentação Final + Entrega
 - [ ] Narrativa finalizada
 - [ ] Case study completado
@@ -438,13 +438,13 @@ Horas:     12h    4h     -      12h    12h    4h     4h
 
 | Data | Dia | Fase | Carga | Prioridade |
 |------|-----|------|-------|------------|
-| 20/11 | Qua (Fer) | Briefing + Pesquisa 1 | 12h | 🔴 Crítica |
-| 21/11 | Qui (Noite) | Pesquisa 2 + Estratégia 1 | 4h | 🔴 Crítica |
-| 22/11 | Sex | Buffer/Descanso | 0-3h | 🟢 Opcional |
-| 23/11 | Sáb | Estratégia + Ideação | 12h | 🔴 Crítica |
-| 24/11 | Dom | Ideação + UI Design | 12h | 🔴 Crítica |
-| 25/11 | Seg (Noite) | Protótipo + Apresentação | 4h | 🟡 Alta |
-| 26/11 | Ter (Noite) | Apresentação + ENTREGA | 4h | 🔴 Crítica |
+| 20/11 | Qui (Fer) | Briefing + Pesquisa 1 | 12h | 🔴 Crítica |
+| 21/11 | Sex (Noite) | Pesquisa 2 + Estratégia 1 | 4h | 🔴 Crítica |
+| 22/11 | Sáb | Buffer/Descanso | 0-3h | 🟢 Opcional |
+| 23/11 | Dom | Estratégia + Ideação | 12h | 🔴 Crítica |
+| 24/11 | Seg | Ideação + UI Design | 12h | 🔴 Crítica |
+| 25/11 | Ter (Noite) | Protótipo + Apresentação | 4h | 🟡 Alta |
+| 26/11 | Qua (Noite) | Apresentação + ENTREGA | 4h | 🔴 Crítica |
 
 **Total:** ~46-48h de trabalho efetivo  
 **Prazo final:** 26/11 às 22h
@@ -487,23 +487,23 @@ Horas:     12h    4h     -      12h    12h    4h     4h
 | Baixa produtividade nas noites (21, 25, 26) | Média | Médio | Focar apenas no essencial nessas sessões, preparar antes |
 | Sexta (22/11) gerar ansiedade por pausa | Baixa | Médio | Ver como dia de descanso estratégico, essencial para performance |
 | Não conseguir 12h efetivas no fim de semana | Média | Alto | Começar cedo, eliminar distrações, ter refeições prontas |
-| Burnout no domingo (24/11) | Média | Crítico | Fazer pausas, dividir UI design em blocos de 2h |
+| Burnout na segunda (24/11) | Média | Crítico | Fazer pausas, dividir UI design em blocos de 2h |
 | Não finalizar a tempo (26/11) | Baixa | Crítico | Buffer de sexta, priorizar o essencial, ter plano B |
 
 ### Plano de Contingência Específico
 
-**Se atrasar na Quinta (21/11):**
-- Usar sexta (22/11) para recuperar pesquisa/estratégia
+**Se atrasar na Sexta (21/11):**
+- Usar sábado (22/11) para recuperar pesquisa/estratégia
 - Reduzir escopo de pesquisa (focar em 3 concorrentes em vez de 5)
 
-**Se atrasar no Sábado (23/11):**
+**Se atrasar no Domingo (23/11):**
 - Comprimir wireframes para 12-15 telas em vez de 15-20
-- Usar domingo manhã para terminar wireframes
+- Usar segunda manhã para terminar wireframes
 
-**Se atrasar no Domingo (24/11):**
+**Se atrasar na Segunda (24/11):**
 - Reduzir design system (só o essencial: cores, botões, inputs)
 - Focar em 12-15 telas de alta fidelidade em vez de 15-20
-- Usar segunda à noite para finalizar UI se necessário
+- Usar terça à noite para finalizar UI se necessário
 
 **Plano de Emergência Final:**
 - **Mínimo viável:** 10-12 telas de alta qualidade são suficientes se muito bem executadas
@@ -533,35 +533,35 @@ Horas:     12h    4h     -      12h    12h    4h     4h
 
 ### Checkpoints Críticos
 
-**20/11 (Qua) EOD - 21h:**
+**20/11 (Qui) EOD - 21h:**
 - ✅ Briefing completo?
 - ✅ Benchmark de pelo menos 2 concorrentes completo?
 - ✅ Primeiros insights documentados?
 - **Decisão:** Continuar ou ajustar escopo de pesquisa?
 
-**21/11 (Qui) EOD - 22h:**
+**21/11 (Sex) EOD - 22h:**
 - ✅ Pesquisa 100% completa?
 - ✅ Personas criadas?
 - ✅ Pilares de design iniciados?
-- **Decisão:** Preciso usar sexta para recuperar?
+- **Decisão:** Preciso usar sábado para recuperar?
 
-**23/11 (Sáb) EOD - 23h:**
+**23/11 (Dom) EOD - 23h:**
 - ✅ Estratégia completa e documentada?
 - ✅ Pelo menos 80% dos wireframes prontos?
 - **Decisão:** Estou confortável para UI design amanhã?
 
-**24/11 (Dom) EOD - 22h:** 🎯 **CHECKPOINT MAIS CRÍTICO**
+**24/11 (Seg) EOD - 22h:** 🎯 **CHECKPOINT MAIS CRÍTICO**
 - ✅ TODOS os wireframes finalizados?
 - ✅ TODAS as telas de UI em alta fidelidade?
 - ✅ Design system básico pronto?
-- **Decisão:** Estou pronto para prototipar segunda, ou preciso ajustar?
+- **Decisão:** Estou pronto para prototipar terça, ou preciso ajustar?
 
-**25/11 (Seg) EOD - 22h:**
+**25/11 (Ter) EOD - 22h:**
 - ✅ Protótipo navegável?
 - ✅ Apresentação 60-70% pronta?
-- **Decisão:** O que priorizar terça para entregar no prazo?
+- **Decisão:** O que priorizar quarta para entregar no prazo?
 
-**26/11 (Ter) EOD - 22h:** ⚡ **DEADLINE FINAL**
+**26/11 (Qua) EOD - 22h:** ⚡ **DEADLINE FINAL**
 - ✅ PROJETO COMPLETO E SUBMETIDO
 
 ---
@@ -570,39 +570,39 @@ Horas:     12h    4h     -      12h    12h    4h     4h
 
 ### Critérios Mínimos de Aceitação por Dia
 
-**Ao Final de 20/11 (Qua EOD - 21h):**
+**Ao Final de 20/11 (Qui EOD - 21h):**
 - ✅ Briefing completo e documentado
 - ✅ Benchmark de 2-3 concorrentes completo
 - ✅ Primeiros insights documentados
-- ✅ Preparação para continuar pesquisa quinta
+- ✅ Preparação para continuar pesquisa sexta
 
-**Ao Final de 21/11 (Qui EOD - 22h):**
+**Ao Final de 21/11 (Sex EOD - 22h):**
 - ✅ Pesquisa 100% completa
 - ✅ 3 personas criadas e validadas
 - ✅ Jornadas mapeadas
 - ✅ Top 5 pain points identificados
 - ✅ Pilares de design iniciados (pelo menos 2/3)
 
-**Ao Final de 23/11 (Sáb EOD - 23h):**
+**Ao Final de 23/11 (Dom EOD - 23h):**
 - ✅ Estratégia completa (3 pilares + 5-8 hipóteses)
 - ✅ Matriz de priorização pronta
 - ✅ Pelo menos 80% dos wireframes (12-16 telas)
 - ✅ 3-4 fluxos principais mapeados
 
-**Ao Final de 24/11 (Dom EOD - 22h):** 🎯 **DIA MAIS CRÍTICO**
+**Ao Final de 24/11 (Seg EOD - 22h):** 🎯 **DIA MAIS CRÍTICO**
 - ✅ 100% dos wireframes finalizados (15-20 telas)
 - ✅ Design system básico criado
 - ✅ TODAS as telas principais em alta fidelidade (15-20)
 - ✅ Landing page, fluxo de assinatura, dashboard, gestão de pagamentos prontos
 - ✅ Estados principais desenhados
 
-**Ao Final de 25/11 (Seg EOD - 22h):**
+**Ao Final de 25/11 (Ter EOD - 22h):**
 - ✅ Protótipo Figma 100% navegável
 - ✅ Fluxos principais conectados e testados
 - ✅ Apresentação/case study 70% pronto
 - ✅ Narrativa escrita
 
-**Ao Final de 26/11 (Ter EOD - 22h):** ⚡ **ENTREGA FINAL**
+**Ao Final de 26/11 (Qua EOD - 22h):** ⚡ **ENTREGA FINAL**
 - ✅ Apresentação 100% completa
 - ✅ Case study finalizado
 - ✅ Documentação consolidada
@@ -821,13 +821,13 @@ Este timeline foi **personalizado** para sua disponibilidade real entre 20 e 26 
 ### Cronograma Visual
 
 ```
-20/11 (Qua - Feriado)     ████████████  Briefing + Pesquisa 1
-21/11 (Qui - Noite)       ████          Pesquisa 2 + Estratégia 1
-22/11 (Sex - Buffer)      (descanso)    Preparação mental
-23/11 (Sáb - Full)        ████████████  Estratégia + Ideação
-24/11 (Dom - Full)        ████████████  Ideação + UI Design
-25/11 (Seg - Noite)       ████          Protótipo + Apresentação
-26/11 (Ter - ENTREGA)     ████          Finalização + SUBMIT
+20/11 (Qui - Feriado)     ████████████  Briefing + Pesquisa 1
+21/11 (Sex - Noite)       ████          Pesquisa 2 + Estratégia 1
+22/11 (Sáb - Buffer)      (descanso)    Preparação mental
+23/11 (Dom - Full)        ████████████  Estratégia + Ideação
+24/11 (Seg - Full)        ████████████  Ideação + UI Design
+25/11 (Ter - Noite)       ████          Protótipo + Apresentação
+26/11 (Qua - ENTREGA)     ████          Finalização + SUBMIT
 ```
 
 ### O Que Você Terá ao Final (26/11 às 22h)
@@ -858,7 +858,7 @@ O segredo é:
 
 **Você consegue! 💪**
 
-O domingo (24/11) será o dia mais intenso - se chegar ao final com todas as telas em alta fidelidade, o resto é "só" montagem e documentação.
+O segunda (24/11) será o dia mais intenso - se chegar ao final com todas as telas em alta fidelidade, o resto é "só" montagem e documentação.
 
 ---
 
@@ -872,5 +872,5 @@ O domingo (24/11) será o dia mais intenso - se chegar ao final com todas as tel
 
 *Timeline personalizado para o desafio Meli+ / Mercado Livre*  
 *Adaptado para disponibilidade real de 20-26 de novembro*  
-*Última atualização: 20 de novembro de 2025, 12h*
+*Última atualização: 20 de novembro de 2025, 09:30h*
 
