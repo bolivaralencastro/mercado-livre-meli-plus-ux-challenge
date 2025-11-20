@@ -35,24 +35,25 @@ body, html {
     height: 100vh;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: var(--gap);
-    padding: 40px 60px; /* Generous padding */
-    align-items: center;
-    overflow-y: auto; /* Allow scrolling if content is too tall on small screens */
+    gap: 0; /* Remove gap to let image touch edges */
+    padding: 0; /* Remove padding to let image touch edges */
+    align-items: start;
+    overflow: hidden;
 }
 
 /* Left Side: Image */
 .persona-image-container {
-    grid-column: 1 / 6;
-    height: 80%;
+    grid-column: 1 / 5; /* 4 columns for image */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #e0e0e0;
-    border-radius: 20px;
+    border-radius: 0; /* Remove border radius */
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
     position: relative;
+    z-index: 10;
 }
 
 .persona-image {
@@ -71,12 +72,13 @@ body, html {
 
 /* Right Side: Content */
 .persona-content {
-    grid-column: 6 / 13;
-    padding-left: 40px;
+    grid-column: 5 / 13; /* 8 columns for content */
+    padding: 60px 80px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 80%;
+    height: 100vh;
+    overflow-y: auto; /* Scrollable content */
+    background-color: var(--bg-color);
 }
 
 .persona-header {
@@ -150,6 +152,104 @@ body, html {
     display: inline-block;
     width: 1em;
     margin-left: -1em;
+}
+
+/* New Styles for Detailed Content */
+.persona-quote {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.persona-quote blockquote {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--primary-color);
+    border-left: 4px solid var(--accent-color);
+    padding-left: 20px;
+    line-height: 1.5;
+}
+
+.persona-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding-bottom: 80px; /* Space for controls */
+}
+
+.grid-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.detail-card {
+    background: var(--card-bg);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.detail-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.warning-card {
+    border-left: 4px solid #FF4444;
+}
+
+.success-card {
+    border-left: 4px solid #00C851;
+}
+
+.detail-title {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    margin-bottom: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.detail-list li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+}
+
+.detail-list li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    flex-shrink: 0;
+}
+
+.values-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.sub-title {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    margin-top: 16px;
+}
+
+.italic-list li {
+    font-style: italic;
+    color: #555;
 }
 
 /* Controls */
@@ -233,5 +333,12 @@ body, html {
     
     .slider-controls {
         display: none; /* Hide controls on mobile, just scroll */
+    }
+}
+
+/* Responsive adjustments for new layout */
+@media (max-width: 1200px) {
+    .persona-grid-layout {
+        grid-template-columns: 1fr;
     }
 }
