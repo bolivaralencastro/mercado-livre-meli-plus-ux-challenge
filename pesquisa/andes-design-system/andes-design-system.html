@@ -785,6 +785,135 @@
       color: #999;
     }
 
+    /* ==========================================================================
+       11. ONBOARDING MODAL (TOUR)
+       ========================================================================== */
+
+    /* Container específico do Onboarding (tamanho fixo) */
+    .ob-modal-container {
+      width: 600px;
+      background: white;
+      border-radius: 8px;
+      position: relative; /* Para posicionar as setas absolutas */
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      overflow: visible; /* Importante para as setas saírem do box */
+    }
+
+    /* Botão Fechar (X) */
+    .ob-close {
+      position: absolute;
+      top: 16px; right: 16px;
+      background: transparent; border: none;
+      cursor: pointer; color: #999; z-index: 10;
+      font-size: 24px; line-height: 1;
+    }
+    .ob-close:hover { color: #666; }
+
+    /* Área dos Slides */
+    .ob-slides-wrapper {
+      overflow: hidden;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .ob-slide {
+      display: none; /* Escondido por padrão */
+      flex-direction: column;
+      align-items: center;
+      animation: fadeSlide 0.3s ease;
+    }
+    .ob-slide.active { display: flex; }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateX(10px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Imagem do Slide (Topo) */
+    .ob-image-box {
+      width: 100%;
+      height: 320px;
+      background-color: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid #f5f5f5;
+    }
+    .ob-image-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+
+    /* Texto do Slide (Baixo) */
+    .ob-content-box {
+      padding: 40px 60px;
+      text-align: center;
+    }
+
+    .ob-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--andes-neutral-800);
+      line-height: 1.25;
+    }
+
+    .ob-text {
+      font-size: 16px;
+      color: var(--andes-neutral-600);
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    /* Navegação (Setas Flutuantes) */
+    .ob-nav-btn {
+      position: absolute;
+      top: 55%; /* Levemente abaixo do meio */
+      transform: translateY(-50%);
+      width: 56px; height: 56px;
+      background: white;
+      border-radius: 50%;
+      border: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      color: var(--andes-secondary);
+      font-size: 24px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 20;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .ob-nav-btn:hover { transform: translateY(-50%) scale(1.1); }
+    .ob-nav-btn:disabled { opacity: 0; pointer-events: none; } /* Esconde se não tiver */
+
+    .ob-prev { left: -28px; }
+    .ob-next { right: -28px; }
+
+    /* Paginação (Dots) */
+    .ob-pagination {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding-bottom: 40px;
+    }
+
+    .ob-dot {
+      width: 8px; height: 8px;
+      background-color: #e0e0e0;
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+    .ob-dot.active { background-color: var(--andes-secondary); }
+
+    /* Botão Final */
+    .ob-btn-final {
+      margin-top: 24px;
+      padding: 12px 48px;
+      font-size: 16px;
+    }
+
   </style>
 </head>
 <body>
@@ -821,6 +950,7 @@
       <a href="#meli-plus">Planos Meli+</a>
       <a href="#categories">Categorias</a>
       <a href="#modals">Modais</a>
+      <a href="#onboarding">Onboarding</a>
       <a href="#carousel">Carrossel</a>
     </div>
   </nav>
@@ -1598,6 +1728,98 @@
 
     </div>
 
+    <!-- SEÇÃO: ONBOARDING -->
+    <div id="onboarding" class="docs-section">
+      <h2 class="docs-section-title">Onboarding Tour</h2>
+      
+      <button class="andes-button andes-button--action" onclick="openOnboarding()">
+        Iniciar Tour de Vendas
+      </button>
+
+      <!-- OVERLAY DO ONBOARDING -->
+      <div id="onboardingModal" class="andes-modal-overlay" style="display: none;">
+        
+        <div class="ob-modal-container">
+          <button class="ob-close" onclick="closeOnboarding()">×</button>
+          
+          <div class="ob-slides-wrapper">
+            
+            <!-- SLIDE 1 -->
+            <div class="ob-slide active" data-index="0">
+              <div class="ob-image-box">
+                <!-- Placeholder simulando a interface do ML -->
+                <img src="https://placehold.co/600x320/f5f5f5/ddd?text=Interface+Anuncios" alt="Print 1">
+              </div>
+              <div class="ob-content-box">
+                <h3 class="ob-title">Comece a criar seu primeiro anúncio</h3>
+                <p class="ob-text">Na seção "Anúncios", você poderá começar a anunciar. Já deixe preparadas as informações do seu produto.</p>
+              </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="ob-slide" data-index="1">
+              <div class="ob-image-box">
+                <img src="https://placehold.co/600x320/f5f5f5/ddd?text=Interface+Perguntas" alt="Print 2">
+              </div>
+              <div class="ob-content-box">
+                <h3 class="ob-title">Se você receber perguntas, responda-as rapidamente</h3>
+                <p class="ob-text">Na seção "Perguntas", você encontra as dúvidas dos compradores. Responda para aumentar suas chances.</p>
+              </div>
+            </div>
+
+            <!-- SLIDE 3 -->
+            <div class="ob-slide" data-index="2">
+              <div class="ob-image-box">
+                <img src="https://placehold.co/600x320/f5f5f5/ddd?text=Interface+Vendas" alt="Print 3">
+              </div>
+              <div class="ob-content-box">
+                <h3 class="ob-title">Ao concretizar a venda, gerencie seu envio de um só lugar</h3>
+                <p class="ob-text">Em "Vendas", é possível identificar em qual etapa do processo cada venda está.</p>
+              </div>
+            </div>
+
+            <!-- SLIDE 4 -->
+            <div class="ob-slide" data-index="3">
+              <div class="ob-image-box">
+                <img src="https://placehold.co/600x320/f5f5f5/ddd?text=Interface+Financeiro" alt="Print 4">
+              </div>
+              <div class="ob-content-box">
+                <h3 class="ob-title">O dinheiro da sua venda estará disponível no Mercado Pago</h3>
+                <p class="ob-text">Na seção "Resumo", é possível revisar o status da sua receita e identificar pendências.</p>
+              </div>
+            </div>
+
+            <!-- SLIDE 5 (FINAL) -->
+            <div class="ob-slide" data-index="4">
+              <div class="ob-image-box">
+                <img src="https://placehold.co/600x320/ffe600/333?text=Sucesso!" alt="Print 5">
+              </div>
+              <div class="ob-content-box">
+                <h3 class="ob-title">Continue vendendo e crescendo como vendedor</h3>
+                <p class="ob-text">Em "Resumo", você também encontrará recomendações para entender seu desempenho.</p>
+                <button class="andes-button andes-button--primary ob-btn-final" onclick="closeOnboarding()">Entendi</button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- CONTROLES -->
+          <button class="ob-nav-btn ob-prev" id="obPrev" onclick="changeObSlide(-1)">‹</button>
+          <button class="ob-nav-btn ob-next" id="obNext" onclick="changeObSlide(1)">›</button>
+
+          <!-- PAGINAÇÃO -->
+          <div class="ob-pagination" id="obDots">
+            <div class="ob-dot active"></div>
+            <div class="ob-dot"></div>
+            <div class="ob-dot"></div>
+            <div class="ob-dot"></div>
+            <div class="ob-dot"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
     <!-- SEÇÃO: CAROUSEL -->
     <div id="carousel" class="docs-section" style="border:none;">
       <h2 class="docs-section-title">Carrossel</h2>
@@ -1664,6 +1886,53 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeModal();
     });
+
+    // Onboarding: Controle de slides
+    let currentObSlide = 0;
+    const totalObSlides = 5;
+
+    function openOnboarding() {
+      document.getElementById('onboardingModal').style.display = 'flex';
+      currentObSlide = 0;
+      updateObUI();
+    }
+
+    function closeOnboarding() {
+      document.getElementById('onboardingModal').style.display = 'none';
+    }
+
+    function changeObSlide(direction) {
+      currentObSlide += direction;
+      if (currentObSlide < 0) currentObSlide = 0;
+      if (currentObSlide >= totalObSlides) currentObSlide = totalObSlides - 1;
+      updateObUI();
+    }
+
+    function updateObUI() {
+      // 1. Mudar Slides
+      const slides = document.querySelectorAll('.ob-slide');
+      slides.forEach((s, i) => {
+        s.classList.toggle('active', i === currentObSlide);
+      });
+
+      // 2. Atualizar Setas (Esconder se for o primeiro ou último)
+      const prevBtn = document.getElementById('obPrev');
+      const nextBtn = document.getElementById('obNext');
+      
+      // Esconde seta esquerda no primeiro slide
+      prevBtn.style.opacity = currentObSlide === 0 ? '0' : '1';
+      prevBtn.style.pointerEvents = currentObSlide === 0 ? 'none' : 'auto';
+
+      // Esconde seta direita no último slide (pois tem botão azul)
+      nextBtn.style.opacity = currentObSlide === (totalObSlides - 1) ? '0' : '1';
+      nextBtn.style.pointerEvents = currentObSlide === (totalObSlides - 1) ? 'none' : 'auto';
+
+      // 3. Atualizar Dots
+      const dots = document.querySelectorAll('.ob-dot');
+      dots.forEach((d, i) => {
+        d.classList.toggle('active', i === currentObSlide);
+      });
+    }
   </script>
 
 </body>
