@@ -21,7 +21,16 @@ Este repositório documenta o estudo de caso completo de UX para o **Meli+**, o 
 
 ## 📁 Estrutura do Repositório
 
-Este é um projeto **exclusivamente de documentação**. Toda a estrutura está organizada em pastas temáticas com documentação em Markdown e em português.
+Este repositório combina **documentação de UX completa** com uma **aplicação web interativa** construída em Next.js 14. A estrutura está organizada em duas partes principais:
+
+### 🌐 Aplicação Web (app-web/)
+Aplicação Next.js 14 com App Router e TypeScript para prototipagem e teste de páginas com o Design System Andes.
+- **Stack:** Next.js 14, App Router, TypeScript, Tailwind CSS
+- **Objetivo:** Construir e testar páginas das soluções propostas
+- **[Ver documentação da aplicação](./app-web/README.md)**
+
+### 📚 Documentação UX
+Toda a estrutura de documentação está organizada em pastas temáticas com arquivos Markdown em português.
 
 ### 🗂️ Navegação por Fase do Projeto
 
@@ -180,10 +189,11 @@ Criar segurança através de transparência, facilidade de cancelamento e prote�
 4. Revise os resultados de testes de usabilidade
 
 ### Para Desenvolvedores
-1. Entenda os [Fluxos](./ideacao/fluxos.md) técnicos
-2. Revise as [especificações de telas](./ui-design/telas.md)
-3. Consulte o sistema de design
-4. Veja as considerações de segurança
+1. **[Inicie a aplicação Next.js](./app-web/README.md)** - Comece aqui para rodar o projeto
+2. Entenda os [Fluxos](./ideacao/fluxos.md) técnicos
+3. Revise as [especificações de telas](./ui-design/telas.md)
+4. Consulte o sistema de design
+5. Veja as considerações de segurança
 
 ### Para Pesquisadores
 1. Estude a metodologia de [Pesquisa](./pesquisa/README.md)
