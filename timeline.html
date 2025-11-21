@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timeline do Projeto - Meli+ UX Challenge</title>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  
+  <!-- Fonte Roboto (Andes Design System) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. DESIGN TOKENS (Variáveis Globais) - Extraído de andes-design-system.html
+       ========================================================================== */
+    :root {
+      /* --- CORES INSTITUCIONAIS --- */
+      --andes-primary: #ffe600;
+      --andes-primary-dark: #e6cf00;
+      --andes-secondary: #3483fa;
+      --andes-secondary-dark: #2968c8;
+      --andes-secondary-bg: rgba(65,137,230,.15);
+      --andes-success: #00a650;
+      --andes-warning: #ff7733;
+      --andes-error: #f23d4f;
+      --andes-purple-meli: #8e24aa;
+
+      /* --- NEUTROS & FUNDOS --- */
+      --andes-neutral-0: #ffffff;
+      --andes-neutral-100: #f5f5f0;
+      --andes-neutral-200: #ebebeb;
+      --andes-neutral-300: #e6e6e6;
+      --andes-neutral-600: #999999;
+      --andes-neutral-800: #333333;
+      --andes-neutral-900: #000000;
+      --andes-bg-page: #ededed;
+
+      /* --- TIPOGRAFIA --- */
+      --andes-font-family: 'Roboto', sans-serif;
+      --andes-font-size-m: 16px;
+      --andes-font-size-xl: 24px;
+      --andes-font-size-xxl: 32px;
+
+      /* --- ESPAÇAMENTO & BORDAS --- */
+      --andes-radius-l: 8px;
+      --andes-shadow-sm: 0 1px 2px 0 rgba(0,0,0,.1);
+      --andes-shadow-md: 0 4px 8px 0 rgba(0,0,0,.12);
+      --andes-transition: all .2s ease;
+    }
+
+    /* ==========================================================================
+       2. ESTILOS DA PÁGINA
+       ========================================================================== */
+    * { box-sizing: border-box; }
+    
+    body {
+      font-family: var(--andes-font-family);
+      background-color: var(--andes-bg-page);
+      color: var(--andes-neutral-800);
+      margin: 0;
+      padding: 40px;
+    }
+    
+    .main-container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .docs-title {
+        font-size: var(--andes-font-size-xxl);
+        font-weight: 300;
+        color: var(--andes-neutral-800);
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+        .gantt-card {
+
+          background: var(--andes-neutral-0);
+
+          border-radius: var(--andes-radius-l);
+
+          box-shadow: var(--andes-shadow-sm);
+
+          border: 1px solid var(--andes-neutral-200);
+
+          padding: 24px;
+
+          /* overflow e resize removidos daqui */
+
+        }
+
+    
+
+        .gantt-wrapper {
+
+          width: 100%;
+
+          overflow-x: auto; /* Garante a rolagem horizontal */
+
+          -webkit-overflow-scrolling: touch; /* Melhora a experiência em dispositivos móveis */
+
+        }
+
+    
+
+        #gantt_chart {
+
+            width: 100%; /* O gráfico ocupa 100% do wrapper */
+
+        }
+
+    
+
+        /* Customização do Tooltip do Google Charts */
+
+        .google-visualization-tooltip {
+
+            font-family: var(--andes-font-family) !important;
+
+            border-radius: var(--andes-radius-l) !important;
+
+            box-shadow: var(--andes-shadow-md) !important;
+
+            border: 1px solid var(--andes-neutral-200) !important;
+
+            background: var(--andes-neutral-0) !important;
+
+            padding: 12px !important;
+
+        }
+
+        .google-visualization-tooltip-item {
+
+            font-size: 14px !important;
+
+            line-height: 1.4 !important;
+
+        }
+
+        .google-visualization-tooltip-item > span:first-child {
+
+            font-weight: 700 !important;
+
+            color: var(--andes-neutral-800) !important;
+
+        }
+
+         .google-visualization-tooltip-item > span:last-child {
+
+            color: var(--andes-neutral-600) !important;
+
+        }
+
+      </style>
+
+    
+
+      <script type="text/javascript">
+
+        google.charts.load('current', {'packages':['gantt']});
+
+        google.charts.setOnLoadCallback(drawChart);
+
+    
+
+        function getStatus(percentComplete) {
+
+            if (percentComplete === 100) return 'Completo';
+
+            if (percentComplete > 0) return 'Em Progresso';
+
+            return 'Pendente';
+
+        }
+
+    
+
+        function drawChart() {
+
+    
+
+          var data = new google.visualization.DataTable();
+
+          data.addColumn('string', 'Task ID');
+
+          data.addColumn('string', 'Task Name');
+
+          data.addColumn('string', 'Status');
+
+          data.addColumn('date', 'Start Date');
+
+          data.addColumn('date', 'End Date');
+
+          data.addColumn('number', 'Duration');
+
+          data.addColumn('number', 'Percent Complete');
+
+          data.addColumn('string', 'Dependencies');
+
+    
+
+          const year = 2025;
+
+          const month = 10; // 0-indexed para Novembro
+
+    
+
+          const tasks = [
+
+            ['fase-1', 'Fase 1: Briefing e Alinhamento', new Date(year, month, 20), new Date(year, month, 20, 12), 100, null],
+
+            ['fase-2', 'Fase 2: Pesquisa e Descoberta', new Date(year, month, 20, 13), new Date(year, month, 21, 22), 100, 'fase-1'],
+
+            ['fase-3', 'Fase 3: Estratégia', new Date(year, month, 23, 8), new Date(year, month, 23, 18), 100, 'fase-2'],
+
+            ['fase-4', 'Fase 4: Ideação e Wireframes', new Date(year, month, 23, 14), new Date(year, month, 24, 12), 80, 'fase-3'],
+
+            ['fase-5', 'Fase 5: UI Design de Alta Fidelidade', new Date(year, month, 24, 14), new Date(year, month, 24, 22), 50, 'fase-4'],
+
+            ['fase-6', 'Fase 6: Prototipagem', new Date(year, month, 25, 18), new Date(year, month, 25, 20), 0, 'fase-5'],
+
+            ['fase-7', 'Fase 7: Apresentação', new Date(year, month, 25, 20), new Date(year, month, 26, 20), 0, 'fase-6'],
+
+            ['fase-8', 'Fase 8: Entrega Final', new Date(year, month, 26, 20), new Date(year, month, 26, 22), 0, 'fase-7']
+
+          ];
+
+          
+
+          const rows = tasks.map(task => {
+
+              const [id, name, start, end, percent, dependency] = task;
+
+              return [id, name, getStatus(percent), start, end, null, percent, dependency];
+
+          });
+
+    
+
+          data.addRows(rows);
+
+          
+
+          const ganttHeaderHeight = 45;
+
+          const ganttTrackHeight = 45;
+
+          const chartHeight = ganttHeaderHeight + (tasks.length * ganttTrackHeight);
+
+    
+
+          var options = {
+
+            height: chartHeight,
+
+            width: '100%', // Adapta-se ao container, que agora tem rolagem
+
+            gantt: {
+
+              trackHeight: ganttTrackHeight,
+
+              barHeight: 28,
+
+              criticalPathEnabled: false,
+
+              arrow: {
+
+                angle: 100,
+
+                width: 1,
+
+                color: '#AAB3BF',
+
+                radius: 0
+
+              },
+
+              labelStyle: {
+
+                fontName: 'Roboto',
+
+                fontSize: 14,
+
+                color: '#333333'
+
+              },
+
+              palette: [
+
+                { "color": "#00a650", "dark": "#008a43", "light": "#e5f6ed" },
+
+                { "color": "#3483fa", "dark": "#2968c8", "light": "#d2e3fc" },
+
+                { "color": "#e6e6e6", "dark": "#cccccc", "light": "#f5f5f5" }
+
+              ]
+
+            },
+
+            backgroundColor: 'transparent'
+
+          };
+
+    
+
+          var chart = new google.visualization.Gantt(document.getElementById('gantt_chart'));
+
+    
+
+          chart.draw(data, options);
+
+        }
+
+      </script>
+
+    </head>
+
+    <body>
+
+      <main class="main-container">
+
+        <h1 class="docs-title">📅 Timeline do Projeto: Meli+ UX Challenge</h1>
+
+        <div class="gantt-card">
+
+          <div class="gantt-wrapper">
+
+            <div id="gantt_chart"></div>
+
+          </div>
+
+        </div>
+
+      </main>
+
+    </body>
+
+    </html>
+
+    
