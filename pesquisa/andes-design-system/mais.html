@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andes UI - Mercado Livre Design System Completo</title>
+  
+  <!-- Fonte Roboto (Substituta da Proxima Nova) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. DESIGN TOKENS (Variáveis Globais)
+       ========================================================================== */
+    :root {
+      /* --- CORES INSTITUCIONAIS --- */
+      --andes-primary: #ffe600;           /* Amarelo ML */
+      --andes-primary-dark: #e6cf00;
+      --andes-secondary: #3483fa;         /* Azul Ação */
+      --andes-secondary-dark: #2968c8;
+      --andes-secondary-bg: rgba(65,137,230,.15);
+      --andes-success: #00a650;           /* Verde */
+      --andes-warning: #ff7733;           /* Laranja */
+      --andes-error: #f23d4f;             /* Vermelho */
+      --andes-purple-meli: #8e24aa;       /* Roxo Meli+ */
+
+      /* --- NEUTROS & FUNDOS --- */
+      --andes-neutral-0: #ffffff;
+      --andes-neutral-100: #f5f5f0;
+      --andes-neutral-200: #ebebeb;       /* Cinza Borda/Divider */
+      --andes-neutral-300: #e6e6e6;
+      --andes-neutral-600: #999999;       /* Texto fraco */
+      --andes-neutral-800: #333333;       /* Texto forte */
+      --andes-neutral-900: #000000;
+      --andes-bg-page: #ededed;           /* Fundo clássico */
+      --andes-bg-auth: #f5f5f5;           /* Fundo Auth/Checkout */
+
+      /* --- TIPOGRAFIA --- */
+      --andes-font-family: 'Roboto', sans-serif;
+      --andes-font-size-xs: 12px;
+      --andes-font-size-s: 14px;
+      --andes-font-size-m: 16px;
+      --andes-font-size-l: 18px;
+      --andes-font-size-xl: 24px;
+      --andes-font-size-xxl: 32px;
+
+      /* --- ESPAÇAMENTO & BORDAS --- */
+      --andes-radius-s: 4px;
+      --andes-radius-m: 6px;
+      --andes-radius-l: 8px;
+      --andes-radius-pill: 2rem;
+
+      /* --- SOMBRAS --- */
+      --andes-shadow-sm: 0 1px 2px 0 rgba(0,0,0,.1);
+      --andes-shadow-md: 0 4px 8px 0 rgba(0,0,0,.12);
+      --andes-transition: all .2s ease;
+    }
+
+    /* ==========================================================================
+       2. ESTILOS DA DOCUMENTAÇÃO (Layout do Showcase)
+       ========================================================================== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: var(--andes-font-family);
+      background-color: #f9f9f9;
+      color: var(--andes-neutral-800);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .docs-sidebar {
+      width: 250px;
+      background: #2d3277; /* Azul escuro Institucional */
+      color: white;
+      padding: 20px;
+      position: fixed;
+      height: 100%;
+      overflow-y: auto;
+    }
+    .docs-logo { font-size: 20px; font-weight: 700; margin-bottom: 30px; color: #ffe600; display: flex; align-items: center; gap: 10px; }
+    .docs-nav a {
+      display: block; padding: 10px; color: rgba(255,255,255,0.7); text-decoration: none; border-radius: 4px; margin-bottom: 5px;
+    }
+    .docs-nav a:hover, .docs-nav a.active { background: rgba(255,255,255,0.1); color: white; }
+    .docs-nav strong { display: block; margin-top: 20px; margin-bottom: 10px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #ffe600; }
+
+    /* Conteúdo Principal */
+    .docs-main {
+      margin-left: 250px;
+      padding: 40px;
+      width: 100%;
+    }
+
+    .docs-section {
+      margin-bottom: 60px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 40px;
+    }
+    .docs-section-title { font-size: 28px; margin-bottom: 20px; font-weight: 300; color: #666; }
+    .docs-grid { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start; }
+    
+    /* Container de demonstração com fundo específico */
+    .demo-box {
+      background: var(--andes-bg-page);
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      width: 100%;
+    }
+    .demo-box.white { background: white; }
+
+    /* ==========================================================================
+       3. COMPONENTES (ATOMS)
+       ========================================================================== */
+    
+    /* --- BUTTONS --- */
+    .andes-button {
+      display: inline-flex; align-items: center; justify-content: center;
+      border: none; border-radius: var(--andes-radius-m);
+      font-weight: 600; cursor: pointer; transition: var(--andes-transition);
+      padding: 12px 24px; font-size: 15px; text-decoration: none;
+    }
+    .andes-button--primary { background: var(--andes-secondary); color: white; }
+    .andes-button--primary:hover { background: var(--andes-secondary-dark); }
+    
+    .andes-button--action { background: var(--andes-primary); color: var(--andes-neutral-900); }
+    .andes-button--action:hover { background: var(--andes-primary-dark); }
+    
+    .andes-button--transparent { background: var(--andes-secondary-bg); color: var(--andes-secondary); }
+    .andes-button--transparent:hover { background: rgba(65,137,230,.2); }
+    
+    .andes-button--link { background: none; color: var(--andes-secondary); padding: 0; font-weight: 400; }
+    .andes-button--link:hover { color: var(--andes-secondary-dark); }
+
+    .andes-button--full { width: 100%; }
+
+    /* --- BADGES --- */
+    .andes-badge {
+      display: inline-flex; align-items: center; padding: 3px 6px;
+      border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase;
+    }
+    .andes-badge--promo { background: var(--andes-primary); color: var(--andes-neutral-900); }
+    .andes-badge--full { background: var(--andes-success); color: white; font-style: italic; }
+    .andes-badge--new { background: var(--andes-secondary); color: white; }
+    .andes-badge--bestseller { background: var(--andes-warning); color: white; border-radius: 3px; }
+
+    /* --- MONEY AMOUNT --- */
+    .andes-money { display: flex; align-items: flex-start; line-height: 1; color: var(--andes-neutral-800); }
+    .andes-money__symbol { font-size: 0.6em; margin-top: 0.2em; margin-right: 2px; }
+    .andes-money__fraction { font-size: 1em; font-weight: 300; }
+    .andes-money__cents { font-size: 0.5em; margin-top: 0.1em; }
+    .andes-money-strike { text-decoration: line-through; color: var(--andes-neutral-600); font-size: 12px; margin-bottom: 4px; display: block;}
+    .andes-money-discount { color: var(--andes-success); font-size: 12px; font-weight: 600; margin-left: 6px; }
+
+    /* --- INPUTS --- */
+    .andes-form-group { margin-bottom: 16px; position: relative; }
+    .andes-label { font-size: 14px; color: var(--andes-neutral-800); margin-bottom: 6px; display: block; }
+    .andes-input {
+      width: 100%; height: 48px; border: 1px solid #ccc; border-radius: var(--andes-radius-m);
+      padding: 0 12px; font-size: 16px; outline: none; transition: .2s;
+    }
+    .andes-input:focus { border-color: var(--andes-secondary); }
+    .andes-input-icon { position: absolute; right: 12px; top: 38px; color: var(--andes-secondary); cursor: pointer; }
+
+    /* --- FEEDBACK / LOADER --- */
+    .andes-spinner {
+      width: 48px; height: 48px; border: 4px solid rgba(0,0,0,0.1);
+      border-left-color: var(--andes-secondary); border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 24px;
+    }
+
+    /* Loading component wrapper */
+    .andes-loading-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .andes-loading-text {
+      font-size: 16px;
+      color: var(--andes-neutral-800);
+    }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+
+    /* ==========================================================================
+       4. COMPONENTES (MOLECULES & ORGANISMS)
+       ========================================================================== */
+
+    /* --- CARD GENÉRICO --- */
+    .andes-card {
+      background: white; border-radius: var(--andes-radius-l);
+      box-shadow: var(--andes-shadow-sm); border: 1px solid rgba(0,0,0,.05);
+      overflow: hidden;
+    }
+
+    /* --- GRID PRODUCT CARD --- */
+    .grid-card { width: 240px; transition: .2s; cursor: pointer; }
+    .grid-card:hover { box-shadow: var(--andes-shadow-md); }
+    .grid-card__img { 
+      height: 240px; border-bottom: 1px solid #eee; position: relative;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .grid-card__img img { max-width: 90%; max-height: 90%; }
+    .grid-card__content { padding: 16px; display: flex; flex-direction: column; gap: 6px; }
+    .grid-card__title { font-size: 14px; color: #333; line-height: 1.3; font-weight: 300; }
+    .grid-card__shipping { font-size: 12px; color: var(--andes-success); font-weight: 600; }
+
+    /* --- PDP BUY BOX --- */
+    .pdp-card { width: 320px; padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+    .pdp-benefit { 
+      background: #effceb; color: var(--andes-success); padding: 8px; 
+      border-radius: 4px; font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 8px;
+    }
+
+    /* --- AUTH LIST (Login) --- */
+    .auth-list { max-width: 400px; width: 100%; display: flex; flex-direction: column; gap: 12px; }
+    .auth-item {
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--andes-bg-auth); padding: 16px; border-radius: 6px;
+      cursor: pointer; text-decoration: none; color: #333; transition: .2s;
+    }
+    .auth-item:hover { background: #e0e0e0; }
+    .auth-icon-box { 
+      width: 40px; height: 40px; background: rgba(52,131,250,.1); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; color: var(--andes-secondary);
+    }
+
+    /* --- USER PILL --- */
+    .user-pill {
+      display: inline-flex; align-items: center; gap: 10px;
+      border: 1px solid #ddd; border-radius: 30px; padding: 6px 16px 6px 6px;
+    }
+    .user-avatar { width: 30px; height: 30px; background: #f1f1f1; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #999; }
+
+    /* --- CHECKOUT PAYMENT ROW --- */
+    .pay-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; }
+    .pay-icon { width: 40px; height: 40px; border: 1px solid #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 10px; color: #1a1f71; }
+
+    /* --- CHECKOUT SUMMARY --- */
+    .summary-card { padding: 20px; width: 300px; }
+    .summary-row { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 10px; color: #333; }
+    .summary-divider { height: 1px; background: #eee; margin: 15px 0; }
+    .summary-total { display: flex; justify-content: space-between; font-size: 18px; font-weight: 600; margin-bottom: 20px; }
+
+    /* --- MELI+ PRICING CARD --- */
+    .meli-card {
+      width: 280px; position: relative; transition: .2s;
+      border: 1px solid transparent;
+    }
+    .meli-card:hover { transform: translateY(-5px); box-shadow: var(--andes-shadow-md); }
+    .meli-header { padding: 20px 20px 10px; }
+    .meli-tag { 
+      background: linear-gradient(90deg, #a90f90, #0c1a51); color: white; 
+      padding: 4px 8px; border-radius: 10px; font-size: 10px; font-weight: 800;
+    }
+    .meli-price-box { padding: 0 20px 20px; border-bottom: 1px solid #f1f1f1; }
+    .meli-list { list-style: none; padding: 20px; margin: 0; font-size: 13px; color: #555; flex: 1; }
+    .meli-list li { margin-bottom: 10px; padding-left: 15px; position: relative; }
+    .meli-list li::before { content: '•'; color: #a90f90; position: absolute; left: 0; font-weight: bold; }
+    .meli-logos { display: flex; gap: 5px; margin-top: 5px; }
+    .meli-logo { width: 24px; height: 24px; background: #000; color: white; font-size: 6px; display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+
+    /* --- CAROUSEL --- */
+    .carousel-wrapper { position: relative; width: 100%; max-width: 800px; }
+    .carousel-track { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 10px; }
+    .carousel-track::-webkit-scrollbar { display: none; }
+    .carousel-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 40px; height: 40px; background: white; border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0,0,0,.2); border: none; cursor: pointer;
+      color: var(--andes-secondary); font-size: 24px; z-index: 2; display: flex; align-items: center; justify-content: center;
+    }
+    .c-prev { left: -20px; }
+    .c-next { right: -20px; }
+
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR DE NAVEGAÇÃO -->
+  <nav class="docs-sidebar">
+    <div class="docs-logo">
+      <!-- Simbolo ML -->
+      <svg width="30" height="20" viewBox="0 0 50 34" fill="currentColor"><path d="M32.6 22.4C32.6 26.7 30.5 28.3 27.7 28.3C25.5 28.3 24.3 27 23.7 25.9L23.6 25.9V28H19.5V13.3H23.6V15.6L23.7 15.6C24.5 14.2 25.8 13 28 13C31.2 13 32.6 15.2 32.6 19V22.4ZM28.5 19.2C28.5 17.3 27.8 16.1 26 16.1C24.4 16.1 23.6 17.3 23.6 19.3V22.1C23.6 23.9 24.3 25.2 26 25.2C27.7 25.2 28.5 24 28.5 22.2V19.2Z"/></svg>
+      Andes UI
+    </div>
+    <div class="docs-nav">
+      <strong>Atoms</strong>
+      <a href="#buttons">Botões</a>
+      <a href="#badges">Badges & Status</a>
+      <a href="#inputs">Formulários</a>
+      <a href="#feedback">Loaders</a>
+      
+      <strong>Molecules</strong>
+      <a href="#product-cards">Cards de Produto</a>
+      <a href="#auth">Autenticação</a>
+      <a href="#checkout">Checkout & Pagamento</a>
+      
+      <strong>Organisms</strong>
+      <a href="#meli-plus">Planos Meli+</a>
+      <a href="#carousel">Carrossel</a>
+    </div>
+  </nav>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="docs-main">
+
+    <!-- SEÇÃO: BOTÕES -->
+    <div id="buttons" class="docs-section">
+      <h2 class="docs-section-title">Botões</h2>
+      <div class="docs-grid">
+        <button class="andes-button andes-button--action">Comprar agora</button>
+        <button class="andes-button andes-button--primary">Assinar Meli+</button>
+        <button class="andes-button andes-button--transparent">Adicionar ao carrinho</button>
+        <button class="andes-button andes-button--primary" disabled>Desabilitado</button>
+        <button class="andes-button andes-button--link">Link simples</button>
+      </div>
+    </div>
+
+    <!-- SEÇÃO: BADGES -->
+    <div id="badges" class="docs-section">
+      <h2 class="docs-section-title">Badges & Preços</h2>
+      <div class="docs-grid">
+        <div class="demo-box white" style="width: auto;">
+          <div style="margin-bottom: 10px;"><span class="andes-badge andes-badge--promo">15% OFF</span></div>
+          <div style="margin-bottom: 10px;"><span class="andes-badge andes-badge--full">⚡ FULL</span></div>
+          <div style="margin-bottom: 10px;"><span class="andes-badge andes-badge--bestseller">1º MAIS VENDIDO</span></div>
+          <div style="margin-bottom: 10px;"><span class="andes-badge andes-badge--new">NOVO</span></div>
+        </div>
+        
+        <div class="demo-box white" style="width: auto;">
+          <!-- Preço Formatado -->
+          <div class="andes-money-strike">R$ 1.299,00</div>
+          <div class="andes-money" style="font-size: 32px;">
+            <span class="andes-money__symbol">R$</span>
+            <span class="andes-money__fraction">1.149</span>
+            <span class="andes-money__cents">90</span>
+            <span class="andes-money-discount">12% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEÇÃO: INPUTS -->
+    <div id="inputs" class="docs-section">
+      <h2 class="docs-section-title">Inputs de Formulário</h2>
+      <div class="docs-grid">
+        <div class="demo-box white" style="max-width: 400px;">
+          <div class="andes-form-group">
+            <label class="andes-label">E-mail ou telefone</label>
+            <input type="text" class="andes-input">
+          </div>
+          
+          <div class="andes-form-group">
+            <label class="andes-label">Código de segurança (CVV)</label>
+            <input type="text" class="andes-input" placeholder="Ex: 123" maxlength="3">
+            <div class="andes-input-icon">?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEÇÃO: PRODUCT CARDS -->
+    <div id="product-cards" class="docs-section">
+      <h2 class="docs-section-title">Cards de Produto</h2>
+      <div class="docs-grid">
+        
+        <!-- Card Grid (Search) -->
+        <div>
+          <p>Grid View</p>
+          <div class="andes-card grid-card">
+            <div class="grid-card__img">
+              <div style="position:absolute; top:10px; left:10px;"><span class="andes-badge andes-badge--bestseller">MAIS VENDIDO</span></div>
+              <img src="https://http2.mlstatic.com/D_Q_NP_2X_803645-MLA95971342776_102025-E.webp">
+            </div>
+            <div class="grid-card__content">
+              <div class="grid-card__title">Capa Silicone Aveludada Galaxy A55</div>
+              <div class="andes-money" style="font-size: 20px;">
+                <span class="andes-money__symbol">R$</span>
+                <span class="andes-money__fraction">28</span>
+                <span class="andes-money__cents">40</span>
+                <span class="andes-money-discount">5% OFF</span>
+              </div>
+              <div class="grid-card__shipping">Chegará grátis amanhã</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Buy Box (PDP) -->
+        <div>
+          <p>PDP Buy Box</p>
+          <div class="andes-card pdp-card">
+            <span style="font-size:12px; color:#666;">Novo | +1000 vendidos</span>
+            <h1 style="font-size: 20px; line-height:1.2; margin:0;">Samsung Galaxy A55 5G 128GB Dual SIM</h1>
+            
+            <div class="andes-money" style="font-size: 36px;">
+                <span class="andes-money__symbol">R$</span>
+                <span class="andes-money__fraction">1.799</span>
+                <span class="andes-money__cents">00</span>
+            </div>
+
+            <div class="pdp-benefit">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
+              <span>Chegará <b>grátis amanhã</b></span>
+            </div>
+
+            <button class="andes-button andes-button--full andes-button--primary">Comprar agora</button>
+            <button class="andes-button andes-button--full andes-button--transparent">Adicionar ao carrinho</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SEÇÃO: AUTENTICAÇÃO -->
+    <div id="auth" class="docs-section">
+      <h2 class="docs-section-title">Componentes de Autenticação</h2>
+      <div class="docs-grid">
+        
+        <!-- User Pill -->
+        <div class="user-pill">
+          <div class="user-avatar">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+          </div>
+          <div>
+            <div style="font-size:13px; font-weight:500;">usuario@email.com</div>
+            <a href="#" style="font-size:12px; color:#3483fa; text-decoration:none;">Trocar conta</a>
+          </div>
+        </div>
+
+        <!-- Auth List -->
+        <div class="auth-list">
+          <a href="#" class="auth-item">
+            <div style="display:flex; gap:15px; align-items:center;">
+              <div class="auth-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM15 15h6v6h-6z"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
+              </div>
+              <div>
+                <div style="font-weight:500;">Código QR</div>
+                <div style="font-size:13px; color:#666;">Escaneie com o app do Mercado Livre</div>
+              </div>
+            </div>
+            <div style="color:#ccc;">›</div>
+          </a>
+
+          <a href="#" class="auth-item">
+            <div style="display:flex; gap:15px; align-items:center;">
+              <div class="auth-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3a4 4 0 1 0 8 0"/><path d="M3 21v-2a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v2"/></svg>
+              </div>
+              <div>
+                <div style="font-weight:500;">Reconhecimento Facial</div>
+                <div style="font-size:13px; color:#666;">Usar a câmera do seu dispositivo</div>
+              </div>
+            </div>
+            <div style="color:#ccc;">›</div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SEÇÃO: CHECKOUT -->
+    <div id="checkout" class="docs-section">
+      <h2 class="docs-section-title">Checkout</h2>
+      <div class="docs-grid">
+        
+        <div class="demo-box" style="max-width: 400px;">
+          <div class="andes-card" style="padding: 20px; box-shadow: none;">
+            <div class="pay-row">
+              <div style="display:flex; gap:12px; align-items:center;">
+                <div class="pay-icon">VISA</div>
+                <div>
+                  <div style="font-size:14px;">Visa **** 4748</div>
+                  <div style="font-size:12px; color:#999;">Crédito</div>
+                </div>
+              </div>
+              <a href="#" style="font-size:13px; color:#3483fa; text-decoration:none;">Alterar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="andes-card summary-card">
+          <div style="font-weight:600; margin-bottom:20px;">Resumo da assinatura</div>
+          <div class="summary-row">
+            <span>Meli+ Essencial</span>
+            <span>R$ 9,90</span>
+          </div>
+          <div class="summary-divider"></div>
+          <div class="summary-total">
+            <span>Total</span>
+            <span>R$ 9,90</span>
+          </div>
+          <button class="andes-button andes-button--primary andes-button--full">Pagar assinatura</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SEÇÃO: MELI+ PRICING -->
+    <div id="meli-plus" class="docs-section">
+      <h2 class="docs-section-title">Planos Meli+</h2>
+      <div class="docs-grid">
+        
+        <!-- Card Meli+ -->
+        <div class="andes-card meli-card">
+          <div style="position:absolute; top:0; right:0; background:#e6f7ef; color:#00a650; font-size:10px; padding:3px 6px; border-bottom-left-radius:6px; font-weight:700;">OFERTA</div>
+          <div class="meli-header">
+            <span class="meli-tag">meli+</span> <span style="font-weight:700; margin-left:5px;">MEGA</span>
+          </div>
+          <div class="meli-price-box">
+            <span class="andes-money-strike">R$ 74,90</span>
+            <div class="andes-money" style="font-size: 28px;">
+              <span class="andes-money__symbol">R$</span>
+              <span class="andes-money__fraction">39</span>
+              <span class="andes-money__cents">90</span>
+              <span class="andes-money-discount">46% OFF</span>
+            </div>
+            <div style="font-size:12px; color:#666;">/mês por 2 meses</div>
+          </div>
+          <ul class="meli-list">
+            <li>
+              Entretenimento incluído:
+              <div class="meli-logos">
+                <div class="meli-logo" style="background:#000;">D+</div>
+                <div class="meli-logo" style="background:#e50914;">N</div>
+                <div class="meli-logo" style="background:#000;">MAX</div>
+              </div>
+            </li>
+            <li>Frete Grátis em milhões de produtos</li>
+            <li>Deezer Premium grátis por 12 meses</li>
+          </ul>
+          <div style="padding:20px;">
+            <button class="andes-button andes-button--primary andes-button--full">Assinar Mega</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SEÇÃO: FEEDBACK -->
+    <div id="feedback" class="docs-section">
+      <h2 class="docs-section-title">Feedback & Loading</h2>
+      <div class="docs-grid">
+        <div class="demo-box white" style="display:flex; justify-content:center; align-items:center; flex-direction:column; padding:50px;">
+            <div class="andes-loading-container">
+              <div class="andes-spinner"></div>
+              <div class="andes-loading-text">Mais alguns segundos...</div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- SEÇÃO: CAROUSEL -->
+    <div id="carousel" class="docs-section" style="border:none;">
+      <h2 class="docs-section-title">Carrossel</h2>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn c-prev" id="prevBtn">‹</button>
+        <div class="carousel-track" id="track">
+          <!-- Slides (Cards) -->
+          <div class="andes-card grid-card"><div class="grid-card__img"><img src="https://http2.mlstatic.com/D_Q_NP_2X_600898-MLA93500836737_092025-E.webp"></div><div class="grid-card__content"><div class="grid-card__title">Item 1</div></div></div>
+          <div class="andes-card grid-card"><div class="grid-card__img"><img src="https://http2.mlstatic.com/D_Q_NP_2X_816144-MLA95501220875_102025-E.webp"></div><div class="grid-card__content"><div class="grid-card__title">Item 2</div></div></div>
+          <div class="andes-card grid-card"><div class="grid-card__img"><img src="https://http2.mlstatic.com/D_Q_NP_2X_880212-MLA95843614919_102025-E.webp"></div><div class="grid-card__content"><div class="grid-card__title">Item 3</div></div></div>
+          <div class="andes-card grid-card"><div class="grid-card__img"><img src="https://http2.mlstatic.com/D_Q_NP_2X_963935-MLA96107846087_102025-E.webp"></div><div class="grid-card__content"><div class="grid-card__title">Item 4</div></div></div>
+          <div class="andes-card grid-card"><div class="grid-card__img"><img src="https://http2.mlstatic.com/D_Q_NP_2X_803645-MLA95971342776_102025-E.webp"></div><div class="grid-card__content"><div class="grid-card__title">Item 5</div></div></div>
+        </div>
+        <button class="carousel-btn c-next" id="nextBtn">›</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // Lógica simples do Carrossel
+    const track = document.getElementById('track');
+    const next = document.getElementById('nextBtn');
+    const prev = document.getElementById('prevBtn');
+    const slideWidth = 260; // Card width + gap
+
+    next.addEventListener('click', () => {
+      track.scrollBy({ left: slideWidth, behavior: 'smooth' });
+    });
+
+    prev.addEventListener('click', () => {
+      track.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
