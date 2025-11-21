@@ -684,6 +684,107 @@
       font-weight: 400;
     }
 
+    /* ==========================================================================
+       10. DESIGN TOKENS DOCUMENTATION
+       ========================================================================== */
+
+    .token-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .token-color {
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      overflow: hidden;
+      text-align: center;
+      background: white;
+    }
+
+    .token-color__swatch {
+      height: 80px;
+      width: 100%;
+      border-bottom: 1px solid #eee;
+    }
+
+    .token-color__label {
+      padding: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #666;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-word;
+    }
+
+    .token-color__value {
+      padding: 4px 8px;
+      font-size: 10px;
+      color: #999;
+      font-family: monospace;
+      background: #f9f9f9;
+    }
+
+    .token-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .token-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px;
+      border-bottom: 1px solid #eee;
+      font-size: 13px;
+      align-items: center;
+    }
+
+    .token-list li:last-child {
+      border-bottom: none;
+    }
+
+    .token-list__name {
+      font-weight: 500;
+      color: var(--andes-neutral-800);
+      font-family: monospace;
+    }
+
+    .token-list__value {
+      color: var(--andes-neutral-600);
+      font-size: 12px;
+    }
+
+    .token-typography {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      background: white;
+    }
+
+    .token-typography__sample {
+      flex: 1;
+    }
+
+    .token-typography__label {
+      min-width: 120px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #666;
+      font-family: monospace;
+    }
+
+    .token-typography__info {
+      font-size: 11px;
+      color: #999;
+    }
+
   </style>
 </head>
 <body>
@@ -696,6 +797,13 @@
       Andes UI
     </div>
     <div class="docs-nav">
+      <strong>Foundation</strong>
+      <a href="#tokens-colors">Cores</a>
+      <a href="#tokens-typography">Tipografia</a>
+      <a href="#tokens-spacing">Espaçamento</a>
+      <a href="#tokens-radius">Bordas</a>
+      <a href="#tokens-shadows">Sombras</a>
+      
       <strong>Atoms</strong>
       <a href="#buttons">Botões</a>
       <a href="#badges">Badges & Status</a>
@@ -716,6 +824,221 @@
       <a href="#carousel">Carrossel</a>
     </div>
   </nav>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="docs-main">
+
+    <!-- SEÇÃO: TOKENS - CORES -->
+    <div id="tokens-colors" class="docs-section">
+      <h2 class="docs-section-title">Paleta de Cores</h2>
+      
+      <h3 style="font-size: 16px; margin-bottom: 16px; margin-top: 24px; font-weight: 600;">Cores Institucionais</h3>
+      <div class="token-grid">
+        <div class="token-color">
+          <div class="token-color__swatch" style="background: #ffe600;"></div>
+          <div class="token-color__label">Primary</div>
+          <div class="token-color__value">#ffe600</div>
+        </div>
+        <div class="token-color">
+          <div class="token-color__swatch" style="background: #e6cf00;"></div>
+          <div class="token-color__label">Primary Dark</div>
+          <div class="token-color__value">#e6cf00</div>
+        </div>
+        <div class="token-color">
+          <div class="token-color__swatch" style="background: #3483fa;"></div>
+          <div class="token-color__label">Secondary</div>
+          <div class="token-color__value">#3483fa</div>
+        </div>
+        <div class="token-color">
+          <div class="token-color__swatch" style="background: #2968c8;"></div>
+          <div class="token-color__label">Secondary Dark</div>
+          <div class="token-color__value">#2968c8</div>
+        </div>
+        <div class="token-color">
+          <div class="token-color__swatch" style="background: #00a650;"></div>
+          <div class="token-color__label">Success</div>
+          <div class="token-color__value">#00a650</div>
+        </div>
+        <div class="token-color">
+          <div class="token-color__swatch" style="background: #ff7733;"></div>
+          <div class="token-color__label">Warning</div>
+          <div class="token-color__value">#ff7733</div>
+        </div>
+        <div class="token-color">
+          <div class="token-color__swatch" style="background: #f23d4f;"></div>
+          <div class="token-color__label">Error</div>
+          <div class="token-color__value">#f23d4f</div>
+        </div>
+        <div class="token-color">
+          <div class="token-color__swatch" style="background: #8e24aa;"></div>
+          <div class="token-color__label">Meli+</div>
+          <div class="token-color__value">#8e24aa</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 16px; margin-bottom: 16px; margin-top: 24px; font-weight: 600;">Cores Neutras</h3>
+      <div class="token-grid">
+        <div class="token-color">
+          <div class="token-color__swatch" style="background: #ffffff; border: 1px solid #ccc;"></div>
+          <div class="token-color__label">Neutro 0</div>
+          <div class="token-color__value">#ffffff</div>
+        </div>
+        <div class="token-color">
+          <div class="token-color__swatch" style="background: #f5f5f0;"></div>
+          <div class="token-color__label">Neutro 100</div>
+          <div class="token-color__value">#f5f5f0</div>
+        </div>
+        <div class="token-color">
+          <div class="token-color__swatch" style="background: #ebebeb;"></div>
+          <div class="token-color__label">Neutro 200</div>
+          <div class="token-color__value">#ebebeb</div>
+        </div>
+        <div class="token-color">
+          <div class="token-color__swatch" style="background: #e6e6e6;"></div>
+          <div class="token-color__label">Neutro 300</div>
+          <div class="token-color__value">#e6e6e6</div>
+        </div>
+        <div class="token-color">
+          <div class="token-color__swatch" style="background: #999999;"></div>
+          <div class="token-color__label">Neutro 600</div>
+          <div class="token-color__value">#999999</div>
+        </div>
+        <div class="token-color">
+          <div class="token-color__swatch" style="background: #333333;"></div>
+          <div class="token-color__label">Neutro 800</div>
+          <div class="token-color__value">#333333</div>
+        </div>
+        <div class="token-color">
+          <div class="token-color__swatch" style="background: #000000;"></div>
+          <div class="token-color__label">Neutro 900</div>
+          <div class="token-color__value">#000000</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEÇÃO: TOKENS - TIPOGRAFIA -->
+    <div id="tokens-typography" class="docs-section">
+      <h2 class="docs-section-title">Tipografia</h2>
+      <div style="background: white; border-radius: 8px; border: 1px solid #ddd; overflow: hidden;">
+        <div class="token-typography">
+          <div class="token-typography__label">font-family</div>
+          <div class="token-typography__sample" style="font-family: 'Roboto', sans-serif;">Roboto, sans-serif</div>
+          <div class="token-typography__info">Fonte principal</div>
+        </div>
+      </div>
+      <h3 style="font-size: 16px; margin-bottom: 16px; margin-top: 24px; font-weight: 600;">Tamanhos</h3>
+      <ul class="token-list">
+        <li>
+          <span class="token-list__name">--andes-font-size-xs</span>
+          <span class="token-list__value">12px</span>
+        </li>
+        <li>
+          <span class="token-list__name">--andes-font-size-s</span>
+          <span class="token-list__value">14px</span>
+        </li>
+        <li>
+          <span class="token-list__name">--andes-font-size-m</span>
+          <span class="token-list__value">16px</span>
+        </li>
+        <li>
+          <span class="token-list__name">--andes-font-size-l</span>
+          <span class="token-list__value">18px</span>
+        </li>
+        <li>
+          <span class="token-list__name">--andes-font-size-xl</span>
+          <span class="token-list__value">24px</span>
+        </li>
+        <li>
+          <span class="token-list__name">--andes-font-size-xxl</span>
+          <span class="token-list__value">32px</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- SEÇÃO: TOKENS - ESPAÇAMENTO -->
+    <div id="tokens-spacing" class="docs-section">
+      <h2 class="docs-section-title">Espaçamento</h2>
+      <p style="color: #666; margin-bottom: 16px;">Use espaçamento consistente para criar harmonia visual. A base é <strong>4px</strong>.</p>
+      <ul class="token-list">
+        <li>
+          <span class="token-list__name">4px</span>
+          <span class="token-list__value">base</span>
+        </li>
+        <li>
+          <span class="token-list__name">8px</span>
+          <span class="token-list__value">xs</span>
+        </li>
+        <li>
+          <span class="token-list__name">12px</span>
+          <span class="token-list__value">s</span>
+        </li>
+        <li>
+          <span class="token-list__name">16px</span>
+          <span class="token-list__value">m (gap, padding)</span>
+        </li>
+        <li>
+          <span class="token-list__name">20px</span>
+          <span class="token-list__value">l</span>
+        </li>
+        <li>
+          <span class="token-list__name">24px</span>
+          <span class="token-list__value">xl</span>
+        </li>
+        <li>
+          <span class="token-list__name">32px</span>
+          <span class="token-list__value">xxl</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- SEÇÃO: TOKENS - BORDAS (BORDER-RADIUS) -->
+    <div id="tokens-radius" class="docs-section">
+      <h2 class="docs-section-title">Bordas Arredondadas</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px;">
+        <div style="background: white; border: 1px solid #ddd; border-radius: 4px; padding: 24px; text-align: center;">
+          <div style="width: 40px; height: 40px; background: var(--andes-secondary); border-radius: 4px; margin: 0 auto 12px;"></div>
+          <div style="font-size: 12px; font-weight: 600; color: #666; margin-bottom: 4px;">--andes-radius-s</div>
+          <div style="font-size: 11px; color: #999;">4px</div>
+        </div>
+        <div style="background: white; border: 1px solid #ddd; border-radius: 6px; padding: 24px; text-align: center;">
+          <div style="width: 40px; height: 40px; background: var(--andes-secondary); border-radius: 6px; margin: 0 auto 12px;"></div>
+          <div style="font-size: 12px; font-weight: 600; color: #666; margin-bottom: 4px;">--andes-radius-m</div>
+          <div style="font-size: 11px; color: #999;">6px</div>
+        </div>
+        <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 24px; text-align: center;">
+          <div style="width: 40px; height: 40px; background: var(--andes-secondary); border-radius: 8px; margin: 0 auto 12px;"></div>
+          <div style="font-size: 12px; font-weight: 600; color: #666; margin-bottom: 4px;">--andes-radius-l</div>
+          <div style="font-size: 11px; color: #999;">8px</div>
+        </div>
+        <div style="background: white; border: 1px solid #ddd; border-radius: 2rem; padding: 24px; text-align: center;">
+          <div style="width: 40px; height: 40px; background: var(--andes-secondary); border-radius: 2rem; margin: 0 auto 12px;"></div>
+          <div style="font-size: 12px; font-weight: 600; color: #666; margin-bottom: 4px;">--andes-radius-pill</div>
+          <div style="font-size: 11px; color: #999;">2rem</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEÇÃO: TOKENS - SOMBRAS -->
+    <div id="tokens-shadows" class="docs-section">
+      <h2 class="docs-section-title">Sombras & Efeitos</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px;">
+        <div style="background: white; padding: 24px; border-radius: 8px; box-shadow: 0 1px 2px 0 rgba(0,0,0,.1); text-align: center;">
+          <div style="font-size: 12px; font-weight: 600; color: #666; margin-bottom: 8px;">--andes-shadow-sm</div>
+          <div style="font-size: 11px; color: #999; font-family: monospace;">0 1px 2px</div>
+        </div>
+        <div style="background: white; padding: 24px; border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0,0,0,.12); text-align: center;">
+          <div style="font-size: 12px; font-weight: 600; color: #666; margin-bottom: 8px;">--andes-shadow-md</div>
+          <div style="font-size: 11px; color: #999; font-family: monospace;">0 4px 8px</div>
+        </div>
+      </div>
+      <h3 style="font-size: 16px; margin-bottom: 16px; margin-top: 24px; font-weight: 600;">Transição</h3>
+      <ul class="token-list">
+        <li>
+          <span class="token-list__name">--andes-transition</span>
+          <span class="token-list__value">all 0.2s ease</span>
+        </li>
+      </ul>
+    </div>
 
   <!-- CONTEÚDO PRINCIPAL -->
   <main class="docs-main">
