@@ -379,6 +379,117 @@
       border-radius: 20px;
     }
 
+    /* ==========================================================================
+       7. CATEGORIES MOSAIC (HOME)
+       ========================================================================== */
+
+    .categories-wrapper {
+      background: var(--andes-neutral-0);
+      border-radius: var(--andes-radius-l);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      padding: 24px;
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .cat-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .cat-header h2 {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--andes-neutral-800);
+      margin: 0;
+    }
+
+    .cat-header a {
+      font-size: 14px;
+      color: var(--andes-secondary);
+      text-decoration: none;
+      font-weight: 400;
+    }
+    .cat-header a:hover { color: var(--andes-secondary-dark); }
+
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .cat-card {
+      background: var(--andes-neutral-0);
+      border: 1px solid var(--andes-neutral-200);
+      border-radius: var(--andes-radius-m);
+      display: flex;
+      overflow: hidden;
+      height: 80px;
+      text-decoration: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+
+    .cat-card:hover {
+      border-color: #ccc;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .cat-card__img {
+      width: 80px;
+      height: 100%;
+      background-color: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cat-card__img img {
+      max-width: 70%;
+      max-height: 70%;
+      mix-blend-mode: multiply;
+    }
+
+    .cat-card__text {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      font-size: 15px;
+      line-height: 1.2;
+      color: var(--andes-neutral-800);
+      font-weight: 400;
+    }
+
+    .cat-nav-arrow {
+      position: absolute;
+      right: -20px;
+      top: 55%;
+      transform: translateY(-50%);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border: none;
+      color: var(--andes-secondary);
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: transform 0.2s;
+    }
+    .cat-nav-arrow:hover { transform: translateY(-50%) scale(1.05); }
+
+    @media (max-width: 900px) {
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
   </style>
 </head>
 <body>
@@ -404,6 +515,8 @@
       
       <strong>Organisms</strong>
       <a href="#meli-plus">Planos Meli+</a>
+      <a href="#categories">Categorias</a>
+      <a href="#modals">Modais</a>
       <a href="#carousel">Carrossel</a>
     </div>
   </nav>
@@ -654,6 +767,128 @@
               <div class="andes-loading-text">Mais alguns segundos...</div>
             </div>
           </div>
+      </div>
+    </div>
+
+    <!-- SEÇÃO: CATEGORIAS (MOSAICO) -->
+    <div id="categories" class="docs-section">
+      <h2 class="docs-section-title">Categorias (Mosaico)</h2>
+      
+      <!-- Container Principal -->
+      <div class="categories-wrapper">
+        
+        <!-- Header -->
+        <div class="cat-header">
+          <h2>Categorias</h2>
+          <a href="#">Mostrar todas as categorias</a>
+        </div>
+
+        <!-- Grid de Cards -->
+        <div class="cat-grid">
+          
+          <!-- Card 1: Carros -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__img">
+              <img src="https://placehold.co/60x60/e53935/FFF?text=Carro" alt="Carro">
+            </div>
+            <div class="cat-card__text">Carros, Motos e Outros</div>
+          </a>
+
+          <!-- Card 2: Celulares -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__img">
+              <img src="https://placehold.co/60x60/1e88e5/FFF?text=Mobile" alt="Celular">
+            </div>
+            <div class="cat-card__text">Celulares e Telefones</div>
+          </a>
+
+          <!-- Card 3: Eletro -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__img">
+              <img src="https://placehold.co/60x60/757575/FFF?text=Eletro" alt="Eletro">
+            </div>
+            <div class="cat-card__text">Eletrodomésticos</div>
+          </a>
+
+          <!-- Card 4: Ferramentas -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__img">
+              <img src="https://placehold.co/60x60/fb8c00/FFF?text=Tools" alt="Ferramentas">
+            </div>
+            <div class="cat-card__text">Ferramentas</div>
+          </a>
+
+          <!-- Card 5: Acessórios -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__img">
+              <img src="https://placehold.co/60x60/424242/FFF?text=Pneu" alt="Pneu">
+            </div>
+            <div class="cat-card__text">Acessórios para Veículos</div>
+          </a>
+
+          <!-- Card 6: Moda -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__img">
+              <img src="https://placehold.co/60x60/8e24aa/FFF?text=Moda" alt="Moda">
+            </div>
+            <div class="cat-card__text">Calçados, Roupas e Bolsas</div>
+          </a>
+
+          <!-- Card 7: Esportes -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__img">
+              <img src="https://placehold.co/60x60/43a047/FFF?text=Gym" alt="Gym">
+            </div>
+            <div class="cat-card__text">Esportes e Fitness</div>
+          </a>
+
+          <!-- Card 8: Beleza -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__img">
+              <img src="https://placehold.co/60x60/ec407a/FFF?text=Make" alt="Beleza">
+            </div>
+            <div class="cat-card__text">Beleza e Cuidado Pessoal</div>
+          </a>
+
+          <!-- Card 9: Casa -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__img">
+              <img src="https://placehold.co/60x60/795548/FFF?text=Casa" alt="Casa">
+            </div>
+            <div class="cat-card__text">Casa, Móveis e Decoração</div>
+          </a>
+
+          <!-- Card 10: Informatica -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__img">
+              <img src="https://placehold.co/60x60/3949ab/FFF?text=PC" alt="PC">
+            </div>
+            <div class="cat-card__text">Informática</div>
+          </a>
+
+          <!-- Card 11: Imóveis -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__img">
+              <img src="https://placehold.co/60x60/6d4c41/FFF?text=Imóvel" alt="Imóvel">
+            </div>
+            <div class="cat-card__text">Imóveis</div>
+          </a>
+
+          <!-- Card 12: Eletrônicos -->
+          <a href="#" class="cat-card">
+            <div class="cat-card__img">
+              <img src="https://placehold.co/60x60/000000/FFF?text=Audio" alt="Audio">
+            </div>
+            <div class="cat-card__text">Eletrônicos, Áudio e Vídeo</div>
+          </a>
+
+        </div>
+
+        <!-- Botão Flutuante (Seta) -->
+        <button class="cat-nav-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+
       </div>
     </div>
 
