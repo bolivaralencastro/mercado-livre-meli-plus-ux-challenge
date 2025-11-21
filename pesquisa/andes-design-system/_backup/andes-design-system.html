@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andes Design System (Mercado Livre) - Completo (backup)</title>
+  
+  <!-- Fonte Roboto para substituir a Proxima Nova -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SECTION 1: ATOMS -->
+  <div class="ds-section">
+    <h2 class="ds-title">Andes Atoms</h2>
+    
+    <div class="ds-grid">
+      <!-- Buttons -->
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <strong>Buttons</strong>
+        <button class="andes-button andes-button--action">Comprar (Action)</button>
+        <button class="andes-button andes-button--primary">Primário (Azul)</button>
+        <button class="andes-button andes-button--transparent">Secundário</button>
+        <button class="andes-button andes-button--primary" disabled>Desabilitado</button>
+      </div>
+
+      <!-- Badges -->
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <strong>Badges</strong>
+        <div><span class="andes-badge andes-badge--promo">15% OFF</span></div>
+        <div><span class="andes-badge andes-badge--full">⚡ FULL</span></div>
+        <div><span class="andes-badge andes-badge--best-seller">1º MAIS VENDIDO</span></div>
+      </div>
+
+      <!-- Prices -->
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <strong>Money Format</strong>
+        <div class="andes-money-prev">R$ 1.400</div>
+        <div class="andes-money-amount" style="font-size: 32px;">
+          <span class="andes-money-amount__symbol">R$</span>
+          <span class="andes-money-amount__fraction">1.249</span>
+          <span class="andes-money-amount__cents">90</span>
+          <span class="andes-money-discount">10% OFF</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: MOLECULES (CARDS) -->
+  <div class="ds-section">
+    <h2 class="ds-title">Andes Molecules</h2>
+    <div class="ds-grid">
+      
+      <!-- COMPONENTE 1: GRID CARD -->
+      <div>
+        <p style="margin-bottom:10px; color:#666;">Grid Item (Search)</p>
+        <div class="andes-card grid-card">
+          <div class="grid-card__img-box">
+            <div style="position:absolute; top:10px; left:10px;">
+                <span class="andes-badge andes-badge--best-seller">1º MAIS VENDIDO</span>
+            </div>
+            <img src="https://http2.mlstatic.com/D_Q_NP_2X_803645-MLA95971342776_102025-E.webp">
+          </div>
+          <div class="grid-card__content">
+            <div class="grid-card__title">Capa Capinha Silicone Aveludada Galaxy A55</div>
+            <div>
+                <span class="andes-money-prev">R$ 50,00</span>
+                <div class="andes-money-amount" style="font-size: 20px;">
+                  <span class="andes-money-amount__symbol">R$</span>
+                  <span class="andes-money-amount__fraction">35</span>
+                  <span class="andes-money-amount__cents">90</span>
+                  <span class="andes-money-discount">25% OFF</span>
+                </div>
+            </div>
+            <div class="grid-card__shipping">Chegará grátis amanhã</div>
+            <span style="font-size:10px; color:#999;">Vendido por iFlow</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPONENTE 2: PDP BUY BOX -->
+      <div>
+        <p style="margin-bottom:10px; color:#666;">PDP Buy Box</p>
+        <div class="andes-card pdp-card">
+          <span style="font-size:12px; color:#666;">Novo | +1000 vendidos</span>
+          <h1 class="pdp-title">Samsung Galaxy A55 5G 128GB Dual SIM</h1>
+          
+          <div>
+            <div class="andes-money-amount" style="font-size: 36px;">
+                <span class="andes-money-amount__symbol">R$</span>
+                <span class="andes-money-amount__fraction">1.799</span>
+                <span class="andes-money-amount__cents">00</span>
+            </div>
+            <div style="font-size:14px; margin-top:5px;">em 10x R$ 179,90 sem juros</div>
+          </div>
+
+          <div class="pdp-benefit">
+            <span>🚛 Chegará <b>grátis amanhã</b></span>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:8px; margin-top:10px;">
+            <button class="andes-button andes-button--full andes-button--primary">Comprar agora</button>
+            <button class="andes-button andes-button--full andes-button--transparent">Adicionar ao carrinho</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 3: ORGANISMS (CAROUSEL) -->
+  <div class="ds-section" style="border:none;">
+    <h2 class="ds-title">Andes Organisms (Carousel)</h2>
+    
+    <div class="andes-carousel-wrapper" id="myCarousel">
+        <button class="andes-carousel__control control-prev">‹</button>
+        
+        <div class="andes-carousel-snapped">
+            <!-- Slide 1 -->
+            <div class="andes-carousel__slide">
+                <div class="andes-card grid-card">
+                    <div class="grid-card__img-box"><img src="https://http2.mlstatic.com/D_Q_NP_2X_600898-MLA93500836737_092025-E.webp"></div>
+                    <div class="grid-card__content">
+                        <div class="grid-card__title">Capa iPhone Transparente</div>
+                        <div class="andes-money-amount" style="font-size:20px"><span class="andes-money-amount__fraction">R$ 22</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="andes-carousel__slide">
+                <div class="andes-card grid-card">
+                    <div class="grid-card__img-box"><img src="https://http2.mlstatic.com/D_Q_NP_2X_816144-MLA95501220875_102025-E.webp"></div>
+                    <div class="grid-card__content">
+                        <div class="grid-card__title">Capa iPhone Laranja</div>
+                        <div class="andes-money-amount" style="font-size:20px"><span class="andes-money-amount__fraction">R$ 25</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="andes-carousel__slide">
+                <div class="andes-card grid-card">
+                    <div class="grid-card__img-box"><img src="https://http2.mlstatic.com/D_Q_NP_2X_880212-MLA95843614919_102025-E.webp"></div>
+                    <div class="grid-card__content">
+                        <div class="grid-card__title">Capa Galaxy S24</div>
+                        <div class="andes-money-amount" style="font-size:20px"><span class="andes-money-amount__fraction">R$ 35</span></div>
+                    </div>
+                </div>
+            </div>
+             <!-- Slide 4 -->
+             <div class="andes-carousel__slide">
+                <div class="andes-card grid-card">
+                    <div class="grid-card__img-box"><img src="https://http2.mlstatic.com/D_Q_NP_2X_963935-MLA96107846087_102025-E.webp"></div>
+                    <div class="grid-card__content">
+                        <div class="grid-card__title">Fone TWS Bluetooth</div>
+                        <div class="andes-money-amount" style="font-size:20px"><span class="andes-money-amount__fraction">R$ 60</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="andes-carousel__control control-next">›</button>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT PARA O CARROSSEL -->
+  <script src="script.js"></script>
+
+</body>
+</html>
