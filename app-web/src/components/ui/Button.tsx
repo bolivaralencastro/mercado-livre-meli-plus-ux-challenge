@@ -22,12 +22,14 @@ export function Button({
   disabled = false,
   className = '',
 }: ButtonProps) {
-  const baseStyles = 'rounded-lg font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
+  const baseStyles = 
+    'rounded-lg font-semibold transition-all duration-200 ' +
+    'focus:outline-none focus:ring-2 focus:ring-offset-2';
   
   const variantStyles = {
-    primary: 'bg-blue-600 hover:bg-blue-700 text-white focus:ring-blue-500',
-    secondary: 'bg-gray-600 hover:bg-gray-700 text-white focus:ring-gray-500',
-    outline: 'border-2 border-blue-600 text-blue-600 hover:bg-blue-50 focus:ring-blue-500',
+    primary: 'bg-ml-blue hover:bg-blue-700 text-white focus:ring-ml-blue',
+    secondary: 'bg-ml-gray-400 hover:bg-ml-gray-900 text-white focus:ring-ml-gray-400',
+    outline: 'border-2 border-ml-blue text-ml-blue hover:bg-blue-50 focus:ring-ml-blue',
   };
   
   const sizeStyles = {
