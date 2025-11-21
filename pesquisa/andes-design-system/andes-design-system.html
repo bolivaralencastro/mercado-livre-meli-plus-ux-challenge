@@ -609,6 +609,81 @@
       width: 100%;
     }
 
+    /* ==========================================================================
+       9. THEMATIC CARD (SYI - SEU INTERESSE)
+       ========================================================================== */
+
+    .andes-card--flat {
+      box-shadow: none;
+      border: 1px solid var(--andes-neutral-200);
+    }
+
+    .andes-card--padding-0 {
+      overflow: hidden;
+    }
+
+    .andes-card--animated {
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+
+    .andes-card--animated:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .andes-card__content {
+      padding: 0;
+    }
+
+    .syi-product__card-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 24px 16px;
+      text-align: center;
+      width: 100%;
+      min-height: 180px;
+      background: white;
+    }
+
+    .syi-product__card-image {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+    }
+
+    .syi-product__card-image img {
+      max-width: 80%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .syi-product__card-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--andes-neutral-800);
+      line-height: 1.3;
+    }
+
+    .andes-typography {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    .andes-typography--type-body {
+      font-family: var(--andes-font-family);
+    }
+
+    .andes-typography--weight-regular {
+      font-weight: 400;
+    }
+
   </style>
 </head>
 <body>
@@ -629,6 +704,7 @@
       
       <strong>Molecules</strong>
       <a href="#product-cards">Cards de Produto</a>
+      <a href="#thematic-cards">Cards Temáticos</a>
       <a href="#pricing">Preços e Descontos</a>
       <a href="#auth">Autenticação</a>
       <a href="#checkout">Checkout & Pagamento</a>
@@ -871,6 +947,86 @@
           </ul>
           <div style="padding:20px;">
             <button class="andes-button andes-button--primary andes-button--full">Assinar Mega</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SEÇÃO: CARDS TEMÁTICOS (SEU INTERESSE) -->
+    <div id="thematic-cards" class="docs-section">
+      <h2 class="docs-section-title">Cards Temáticos (Seu Interesse)</h2>
+      <div class="docs-grid" style="max-width: 900px;">
+        
+        <!-- Card 1: Produtos -->
+        <div class="andes-card andes-card--flat andes-card--padding-0 andes-card--animated" style="width: 160px; height: 180px;">
+          <div class="andes-card__content">
+            <div class="syi-product__card-container">
+              <div class="syi-product__card-image">
+                <img decoding="async" src="https://http2.mlstatic.com/frontend-assets/syi-frontend-core/shoe_side.svg" alt="Produtos">
+              </div>
+              <span class="andes-typography syi-product__card-title">Produtos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Ofertas -->
+        <div class="andes-card andes-card--flat andes-card--padding-0 andes-card--animated" style="width: 160px; height: 180px;">
+          <div class="andes-card__content">
+            <div class="syi-product__card-container">
+              <div class="syi-product__card-image">
+                <img decoding="async" src="https://http2.mlstatic.com/frontend-assets/syi-frontend-core/lightning.svg" alt="Ofertas">
+              </div>
+              <span class="andes-typography syi-product__card-title">Ofertas do Dia</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Supermercado -->
+        <div class="andes-card andes-card--flat andes-card--padding-0 andes-card--animated" style="width: 160px; height: 180px;">
+          <div class="andes-card__content">
+            <div class="syi-product__card-container">
+              <div class="syi-product__card-image">
+                <img decoding="async" src="https://http2.mlstatic.com/frontend-assets/syi-frontend-core/cart.svg" alt="Supermercado">
+              </div>
+              <span class="andes-typography syi-product__card-title">Supermercado</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Eletrônicos -->
+        <div class="andes-card andes-card--flat andes-card--padding-0 andes-card--animated" style="width: 160px; height: 180px;">
+          <div class="andes-card__content">
+            <div class="syi-product__card-container">
+              <div class="syi-product__card-image">
+                <img decoding="async" src="https://http2.mlstatic.com/frontend-assets/syi-frontend-core/tv.svg" alt="Eletrônicos">
+              </div>
+              <span class="andes-typography syi-product__card-title">Eletrônicos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Moda -->
+        <div class="andes-card andes-card--flat andes-card--padding-0 andes-card--animated" style="width: 160px; height: 180px;">
+          <div class="andes-card__content">
+            <div class="syi-product__card-container">
+              <div class="syi-product__card-image">
+                <img decoding="async" src="https://http2.mlstatic.com/frontend-assets/syi-frontend-core/shirt.svg" alt="Moda">
+              </div>
+              <span class="andes-typography syi-product__card-title">Moda & Acessórios</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Casa -->
+        <div class="andes-card andes-card--flat andes-card--padding-0 andes-card--animated" style="width: 160px; height: 180px;">
+          <div class="andes-card__content">
+            <div class="syi-product__card-container">
+              <div class="syi-product__card-image">
+                <img decoding="async" src="https://http2.mlstatic.com/frontend-assets/syi-frontend-core/home.svg" alt="Casa">
+              </div>
+              <span class="andes-typography syi-product__card-title">Casa & Decoração</span>
+            </div>
           </div>
         </div>
 
