@@ -284,6 +284,101 @@
     .c-prev { left: -20px; }
     .c-next { right: -20px; }
 
+    /* ==========================================================================
+       6. MODAL & OVERLAY
+       ========================================================================== */
+
+    /* O Fundo Escuro que cobre a tela */
+    .andes-modal-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(2px);
+    }
+
+    /* O Container do Modal */
+    .andes-modal {
+      background: white;
+      width: 100%;
+      max-width: 700px;
+      border-radius: var(--andes-radius-l);
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      animation: modalFadeIn 0.3s ease-out;
+    }
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .andes-modal__content--dark {
+      background-color: #222;
+      color: white;
+      padding: 40px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .modal-promo-title {
+      font-size: 24px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin: 24px 0;
+      letter-spacing: 0.5px;
+    }
+    .streaming-grid {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .streaming-box {
+      width: 100px;
+      height: 70px;
+      background: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      font-weight: 800;
+      font-size: 12px;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+    }
+    .price-hero {
+      display: flex;
+      align-items: flex-start;
+      line-height: 1;
+      justify-content: center;
+    }
+    .price-hero span { font-weight: 500; }
+    .price-hero__symbol { font-size: 24px; margin-top: 8px; margin-right: 4px; }
+    .price-hero__value { font-size: 80px; font-weight: 600; letter-spacing: -2px; }
+    .price-hero__cents { font-size: 24px; margin-top: 8px; }
+    .price-hero__period { font-size: 24px; align-self: center; margin-left: 8px; font-weight: 300; }
+    .modal-disclaimer { font-size: 14px; color: #aaa; margin-top: 16px; }
+    .andes-modal__footer {
+      background: white;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      border-top: 1px solid #eee;
+    }
+    .meli-tag--large {
+      font-size: 14px;
+      padding: 6px 12px;
+      border-radius: 20px;
+    }
+
   </style>
 </head>
 <body>
@@ -562,6 +657,64 @@
       </div>
     </div>
 
+    <!-- SEÇÃO: MODAIS -->
+    <div id="modals" class="docs-section">
+      <h2 class="docs-section-title">Modais (Promoção)</h2>
+      
+      <!-- Botão para abrir o modal (Demo) -->
+      <button class="andes-button andes-button--primary" id="openModalBtn">
+        Abrir Modal Meli+
+      </button>
+
+      <!-- O MODAL EM SI -->
+      <div id="demoModal" class="andes-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="andes-modal" role="document">
+          
+          <!-- Parte Escura (Visual) -->
+          <div class="andes-modal__content--dark">
+            
+            <!-- Logo Meli+ -->
+            <div class="meli-tag meli-tag--large">
+              meli+ <span style="font-weight:900; margin-left:4px;">MEGA</span>
+            </div>
+
+            <h2 class="modal-promo-title">4 Streamings, 1 Assinatura</h2>
+
+            <!-- Logos dos Parceiros -->
+            <div class="streaming-grid">
+              <div class="streaming-box" style="color:#000;">Disney+</div>
+              <div class="streaming-box" style="color:#e50914;">NETFLIX</div>
+              <div class="streaming-box" style="color:#fff; background:#000;">HBO max</div>
+              <div class="streaming-box" style="color:#000;"> tv</div>
+            </div>
+
+            <!-- Preço -->
+            <div class="price-hero">
+              <span class="price-hero__symbol">R$</span>
+              <span class="price-hero__value">39</span>
+              <span class="price-hero__cents">,90</span>
+              <span class="price-hero__period">/mês*</span>
+            </div>
+
+            <p class="modal-disclaimer">*Depois de 2 meses, você pagará R$ 74,90/mês.</p>
+          </div>
+
+          <!-- Footer Claro (Ações) -->
+          <div class="andes-modal__footer">
+            <button class="andes-button andes-button--primary" style="padding: 16px 32px; font-size: 16px;">
+              Assinar Meli+ Mega
+            </button>
+            
+            <button class="andes-button andes-button--link" id="closeModalBtn">
+              Em outro momento
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
     <!-- SEÇÃO: CAROUSEL -->
     <div id="carousel" class="docs-section" style="border:none;">
       <h2 class="docs-section-title">Carrossel</h2>
@@ -588,12 +741,45 @@
     const prev = document.getElementById('prevBtn');
     const slideWidth = 260; // Card width + gap
 
-    next.addEventListener('click', () => {
+    next && next.addEventListener('click', () => {
       track.scrollBy({ left: slideWidth, behavior: 'smooth' });
     });
 
-    prev.addEventListener('click', () => {
+    prev && prev.addEventListener('click', () => {
       track.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+    });
+
+    // Modal: abrir/fechar e acessibilidade
+    const openModalBtn = document.getElementById('openModalBtn');
+    const demoModal = document.getElementById('demoModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    function openModal() {
+      if (!demoModal) return;
+      demoModal.style.display = 'flex';
+      demoModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      const focusable = demoModal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      focusable && focusable.focus();
+    }
+    function closeModal() {
+      if (!demoModal) return;
+      demoModal.style.display = 'none';
+      demoModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      openModalBtn && openModalBtn.focus();
+    }
+
+    openModalBtn && openModalBtn.addEventListener('click', openModal);
+    closeModalBtn && closeModalBtn.addEventListener('click', closeModal);
+
+    // fechar clicando no overlay (fora do modal)
+    demoModal && demoModal.addEventListener('click', (e) => {
+      if (e.target === demoModal) closeModal();
+    });
+
+    // fechar com ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
     });
   </script>
 
