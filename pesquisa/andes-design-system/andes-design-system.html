@@ -490,6 +490,125 @@
       .cat-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
+    /* ==========================================================================
+       8. MONEY AMOUNT COMBO & REBATES
+       ========================================================================== */
+
+    .andes-money-amount-combo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .andes-money-amount {
+      display: flex;
+      align-items: flex-start;
+      line-height: 1;
+    }
+
+    .andes-money-amount--previous {
+      text-decoration: line-through;
+      color: var(--andes-neutral-600);
+      font-size: 14px;
+    }
+
+    .andes-money-amount__currency-symbol {
+      font-size: 0.6em;
+      margin-right: 2px;
+      margin-top: 2px;
+    }
+
+    .andes-money-amount__fraction {
+      font-size: 1em;
+      font-weight: 500;
+    }
+
+    .andes-money-amount__cents {
+      font-size: 0.5em;
+      margin-top: 2px;
+      margin-left: 1px;
+    }
+
+    .andes-money-amount__discount {
+      background: var(--andes-success);
+      color: white;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-left: 4px;
+      text-transform: uppercase;
+    }
+
+    .andes-money-amount-combo__main-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .andes-money-amount-combo__main {
+      display: flex;
+      align-items: flex-start;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--andes-neutral-800);
+    }
+
+    .andes-rebates-pill {
+      display: inline-block;
+      background: rgba(0, 166, 80, 0.1);
+      color: var(--andes-success);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .andes-money-card {
+      background: white;
+      border: 1px solid var(--andes-neutral-200);
+      border-radius: 8px;
+      padding: 20px;
+      width: 280px;
+    }
+
+    .andes-money-card__image {
+      width: 100%;
+      height: 180px;
+      background: #f5f5f5;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .andes-money-card__image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .andes-money-card__title {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--andes-neutral-800);
+      line-height: 1.3;
+      margin-bottom: 12px;
+      min-height: 36px;
+    }
+
+    .andes-money-card__price-section {
+      margin-bottom: 12px;
+    }
+
+    .andes-money-card__cta {
+      width: 100%;
+    }
+
   </style>
 </head>
 <body>
@@ -510,6 +629,7 @@
       
       <strong>Molecules</strong>
       <a href="#product-cards">Cards de Produto</a>
+      <a href="#pricing">Preços e Descontos</a>
       <a href="#auth">Autenticação</a>
       <a href="#checkout">Checkout & Pagamento</a>
       
@@ -754,6 +874,58 @@
           </div>
         </div>
 
+      </div>
+    </div>
+
+    <!-- SEÇÃO: PREÇOS COM DESCONTO (MONEY AMOUNT COMBO) -->
+    <div id="pricing" class="docs-section">
+      <h2 class="docs-section-title">Preços com Desconto & Rebates</h2>
+      <div class="docs-grid">
+        
+        <!-- Exemplo 1: Combo de Preço Simples -->
+        <div class="demo-box white" style="max-width: 320px;">
+          <div style="font-size: 12px; color: #666; margin-bottom: 8px;">Preço com Desconto</div>
+          <div class="andes-money-amount-combo">
+            <s class="andes-money-amount andes-money-amount--previous">
+              <span class="andes-money-amount__currency-symbol">R$</span>
+              <span class="andes-money-amount__fraction">59,90</span>
+            </s>
+            <div class="andes-money-amount-combo__main-container">
+              <span class="andes-money-amount-combo__main">
+                <span class="andes-money-amount__currency-symbol">R$</span>
+                <span class="andes-money-amount__fraction">37</span>
+                <span class="andes-money-amount__cents">,91</span>
+              </span>
+              <span class="andes-money-amount__discount">36% OFF</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exemplo 2: Card de Produto com Preço + Rebate -->
+        <div class="andes-money-card">
+          <div class="andes-money-card__image">
+            <img src="https://http2.mlstatic.com/D_Q_NP_846189-MLA96094515175_102025-V.webp" alt="Cerveja Heineken">
+          </div>
+          <h3 class="andes-money-card__title">Cerveja Puro Malte Lager Premium Com 8 Latas 269ml</h3>
+          <div class="andes-rebates-pill">60% OFF Linha de crédito</div>
+          <div class="andes-money-card__price-section">
+            <div class="andes-money-amount-combo">
+              <s class="andes-money-amount andes-money-amount--previous">
+                <span class="andes-money-amount__currency-symbol">R$</span>
+                <span class="andes-money-amount__fraction">59,90</span>
+              </s>
+              <div class="andes-money-amount-combo__main-container">
+                <span class="andes-money-amount-combo__main">
+                  <span class="andes-money-amount__currency-symbol">R$</span>
+                  <span class="andes-money-amount__fraction">37</span>
+                  <span class="andes-money-amount__cents">,91</span>
+                </span>
+                <span class="andes-money-amount__discount">36% OFF</span>
+              </div>
+            </div>
+          </div>
+          <button class="andes-button andes-button--full andes-button--primary" style="margin-top: 8px;">Adicionar ao carrinho</button>
+        </div>
       </div>
     </div>
 
