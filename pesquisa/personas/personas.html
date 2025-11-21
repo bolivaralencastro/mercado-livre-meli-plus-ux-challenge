@@ -58,6 +58,7 @@
             background-color: var(--andes-primary);
             display: flex;
             align-items: center;
+            justify-content: space-between; /* Separa logo e controles */
             padding: 0 40px;
             box-shadow: 0 1px 0 rgba(0,0,0,0.1);
             z-index: 100;
@@ -243,40 +244,34 @@
         .profile-label { font-weight: 600; color: #666; }
 
         /* =========================================
-           5. CONTROLS (Floating)
+           5. CONTROLS (Header)
            ========================================= */
         .slider-controls {
-            position: fixed;
-            bottom: 30px;
-            right: 60px;
             display: flex;
             align-items: center;
-            gap: 16px;
-            background: white;
-            padding: 8px 16px;
-            border-radius: 50px;
-            box-shadow: var(--andes-shadow-elevated);
-            z-index: 200;
+            gap: 12px;
         }
 
         .nav-btn {
-            width: 40px; height: 40px;
+            width: 32px; height: 32px;
             border-radius: 50%;
             border: none;
-            background-color: var(--andes-neutral-100);
-            color: var(--andes-secondary);
-            font-size: 20px;
+            background-color: transparent; /* Ghost button no header */
+            color: #2d3277; /* Azul Institucional */
+            font-size: 24px;
             cursor: pointer;
             display: flex; align-items: center; justify-content: center;
             transition: 0.2s;
         }
-        .nav-btn:hover:not(:disabled) { background-color: var(--andes-secondary); color: white; }
+        .nav-btn:hover:not(:disabled) { 
+            background-color: rgba(45, 50, 119, 0.1); 
+        }
         .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
 
         .slide-counter {
             font-size: 14px;
-            font-weight: 500;
-            color: var(--andes-neutral-600);
+            font-weight: 600;
+            color: #2d3277;
             min-width: 40px; text-align: center;
         }
 
@@ -286,7 +281,7 @@
             .persona-visual { height: 300px; flex-shrink: 0; }
             .persona-content { height: auto; overflow: visible; }
             .andes-grid { grid-template-columns: 1fr; }
-            .slider-controls { right: 50%; transform: translateX(50%); bottom: 20px; }
+            .andes-header { padding: 0 20px; }
         }
     </style>
 </head>
@@ -294,6 +289,12 @@
 
     <header class="andes-header">
         <div class="logo-text">Meli<span style="font-weight:300">+</span> UX Research</div>
+        
+        <div class="slider-controls">
+            <button id="prev-btn" class="nav-btn">‹</button>
+            <div id="counter" class="slide-counter">1 / 6</div>
+            <button id="next-btn" class="nav-btn">›</button>
+        </div>
     </header>
 
     <div class="slider-wrapper">
@@ -302,14 +303,7 @@
         </main>
     </div>
 
-    <div class="slider-controls">
-        <button id="prev-btn" class="nav-btn">‹</button>
-        <div id="counter" class="slide-counter">1 / 6</div>
-        <button id="next-btn" class="nav-btn">›</button>
-    </div>
-
     <script>
-        // SEUS DADOS ORIGINAIS (Mantidos intactos)
         const data = {
           "personas": [
             {
@@ -320,30 +314,37 @@
               "perfil": {
                 "Idade": "37 anos",
                 "Localização": "São Paulo (zona sul)",
-                "Família": "Casada, 2 filhos",
-                "Renda": "R$ 8k–12k/mês"
+                "Família": "Casada, 2 filhos (7 e 10 anos)",
+                "Formação": "Ensino superior completo",
+                "Renda": "R$ 8.000–12.000/mês",
+                "Frequência": "5–7 compras/mês no ML; assinante MELI+ Total há 8 meses"
               },
               "comportamento": [
-                "Usa MELI+ para: brinquedos e casa",
-                "Cancelou 2x a assinatura por atraso",
-                "Reclama via WhatsApp (62%)"
+                "Usa MELI+ para: brinquedos, produtos de casa, eletrônicos pequenos",
+                "Cancelou 2x a assinatura nos últimos 18 meses por problemas de entrega",
+                "68% das usuárias com perfil semelhante não renovam após 2 atrasos consecutivos",
+                "Comunica frustração via: WhatsApp (62%), Reclame Aqui (23%), redes sociais (15%)"
               ],
               "dores": [
-                "Prazos mentirosos de frete",
-                "Cupons perdidos por bugs",
-                "Impossibilidade de cancelar envio",
-                "Atendimento fragmentado"
+                "Prazos mentirosos: “Frete grátis em 3 dias” → entrega em 12 dias",
+                "Cupons perdidos por cancelamentos automáticos do sistema",
+                "Impossibilidade de cancelar antes do envio quando o app está instável",
+                "Atendimento fragmentado: “Um fala uma coisa, outro fala outra, e ninguém resolve”"
               ],
               "elogios_valores": {
-                "valores": "Praticidade, economia, confiança"
+                "elogios": [
+                  "“Os descontos do MELI+ são reais — economizei R$ 220 em fraldas este ano”",
+                  "“Quando funciona, é muito mais rápido que ir ao supermercado”"
+                ],
+                "valores": "Praticidade, economia, confiança, transparência"
               },
               "oportunidades": [
-                "Notificações proativas reais",
-                "Compensação automática de R$15",
-                "Atendimento prioritário MELI+",
-                "Reembolso de cupom falho"
+                "Notificações proativas com geolocalização do entregador + ETA atualizado em tempo real",
+                "Compensação automática de R$ 15 em créditos quando entrega atrasa >24h do prometido",
+                "Canal de atendimento prioritário para assinantes MELI+ (tempo médio de resposta <15 min)",
+                "Sistema de “cupons garantidos”: se cancelado por falha do ML, o benefício é reembolsado automaticamente"
               ],
-              "imagem": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=988&auto=format&fit=crop" // Placeholder
+              "imagem": "ana_paula_santos.webp"
             },
             {
               "id": "ricardo_almeida",
@@ -353,43 +354,186 @@
               "perfil": {
                 "Idade": "32 anos",
                 "Localização": "Belo Horizonte",
-                "Atividade": "Vendedor ocasional",
-                "Renda": "R$ 6k–8k/mês"
+                "Estado Civil": "Solteiro",
+                "Formação": "Administração de Empresas",
+                "Renda": "R$ 6.000–8.000/mês (variável)",
+                "Atividade": "Vendedor ocasional (eletrônicos usados) + microconsultor digital"
               },
               "comportamento": [
-                "Usa Mercado Pago como banco",
-                "Avalia ROI de cada venda",
-                "Considera migrar para Shopee"
+                "Usa Mercado Pago como conta principal (recebe, paga, investe)",
+                "Tem conta no Nubank e PicPay como backup",
+                "Avalia ROI de cada transação: compara taxas, prazos de liberação e benefícios",
+                "55% dos vendedores com perfil semelhante consideram migrar para Shopee em 2025"
               ],
               "dores": [
-                "Taxas maiores que o combinado",
-                "Frete 'grátis' pago pelo vendedor",
-                "Dashboard financeiro opaco",
-                "Falta de cashback vendedor"
+                "Taxas maiores que o combinado: “Anunciava 12%, mas cobraram 16,5% + R$ 6,75 fixo”",
+                "Frete ‘grátis’ que custa caro: ML cobra do vendedor, reduzindo margem",
+                "Dashboard financeiro opaco: não mostra lucro líquido estimado antes da venda",
+                "Falta de cashback para vendedores fiéis (enquanto Nubank e PicPay oferecem)"
               ],
               "elogios_valores": {
-                "valores": "Transparência, eficiência"
+                "elogios": [
+                  "“O Pix é imbatível — rápido, seguro e sem taxas”",
+                  "“Quando usei a logística ML, os prazos foram cumpridos”"
+                ],
+                "valores": "Transparência, eficiência, rentabilidade, autonomia"
               },
               "oportunidades": [
-                "Simulador de Lucro Líquido",
-                "Programa Vendedor Leal",
-                "Cashback em logística ML",
-                "Relatório de custos transparente"
+                "Dashboard de Lucro Líquido em Tempo Real com simulação antes da publicação",
+                "Programa “Vendedor Leal”: redução progressiva de taxas (até 8%) para quem mantém >95% de satisfação por 6 meses",
+                "Cashback de 2% em vendas para quem usa 100% da logística ML",
+                "Relatório mensal de “Custo Total por Venda” com comparação vs. concorrentes"
               ],
-              "imagem": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=987&auto=format&fit=crop"
+              "imagem": "ricardo_almeida.webp"
             },
-            // ... (Adicione as outras personas aqui se necessário)
             {
-                "id": "maria_oliveira",
-                "nome": "Maria Oliveira",
-                "role": "A Vítima da Tecnologia que Exclui",
-                "frase": "Meu neto teve que vir aqui resolver tudo, porque o aplicativo não deixa eu ver nem o extrato!",
-                "perfil": {"Idade": "62 anos", "Localização": "Porto Alegre"},
-                "comportamento": ["Usa ML 2x/mês", "Dificuldade com biometria"],
-                "dores": ["Reconhecimento facial falho", "Tela branca em atualizações", "Suspensão sem motivo"],
-                "elogios_valores": {"valores": "Segurança, simplicidade"},
-                "oportunidades": ["Modo Senior (UI Simplificada)", "Central Telefônica Dedicada"],
-                "imagem": "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?q=80&w=987&auto=format&fit=crop"
+              "id": "maria_oliveira",
+              "nome": "Maria Oliveira",
+              "role": "A Vítima da Tecnologia que Exclui",
+              "frase": "Meu neto teve que vir aqui resolver tudo, porque o aplicativo não deixa eu ver nem o extrato!",
+              "perfil": {
+                "Idade": "62 anos",
+                "Localização": "Porto Alegre",
+                "Situação": "Viúva, 3 filhos adultos",
+                "Formação": "Ensino médio completo",
+                "Renda": "R$ 3.000–4.000/mês (aposentadoria + pensão)",
+                "Tecnologia": "Smartphone há 14 meses; ajuda dos filhos para atualizações"
+              },
+              "comportamento": [
+                "Usa ML para: presentes, roupas, itens de casa (2–3x/mês)",
+                "3,2x mais chances de ter conta suspensa por falha no reconhecimento facial",
+                "63% dos usuários 55+ relatam: “app trava ao tentar ver saldo”",
+                "Prefere contato por telefone (78%) ou presencial (15%)"
+              ],
+              "dores": [
+                "Reconhecimento facial não funciona em iPads ou com óculos de leitura",
+                "Tela branca ao acessar “Cartões” após atualizações",
+                "Suspensão de conta sem explicação clara",
+                "Interface muda demais — “não consigo mais achar nada”"
+              ],
+              "elogios_valores": {
+                "elogios": [
+                  "“O Pix para meus netos é maravilhoso — rápido e sem burocracia”",
+                  "“Quando o atendente é paciente, me sinto segura”"
+                ],
+                "valores": "Segurança, simplicidade, respeito, apoio humano"
+              },
+              "oportunidades": [
+                "Modo “Senior” com fonte aumentada, botões maiores e navegação linear",
+                "Central Telefônica Dedicada (linha direta, sem URA)",
+                "Vídeos tutoriais em português claro (narrados por voz feminina, 60+ anos)",
+                "Atendimento presencial em parceria com redes de farmácias"
+              ],
+              "imagem": "maria_oliveira.webp"
+            },
+            {
+              "id": "gabriel_ferreira",
+              "nome": "Gabriel Ferreira",
+              "role": "O Influenciador Digital que Exige Integração",
+              "frase": "Por que preciso de 3 apps diferentes para usar o que deveria estar tudo no Mercado Pago?",
+              "perfil": {
+                "Idade": "26 anos",
+                "Localização": "Rio de Janeiro",
+                "Formação": "Tecnologia da Informação",
+                "Renda": "R$ 5.000–7.000/mês",
+                "Dispositivos": "iPhone 15 Pro, Apple Watch, Macbook Air",
+                "Serviços": "MELI+ Mega, Nubank, PicPay, Spotify, Apple One"
+              },
+              "comportamento": [
+                "Usuário diário de 4–5 apps financeiros",
+                "89% dos usuários 20–30 com iPhone exigem Apple Pay",
+                "74% pagariam 20% a mais na assinatura por integração total com Apple",
+                "Cancela serviços em <48h após experiência frustante"
+              ],
+              "dores": [
+                "“Apple Pay ou nada!” — principal motivo de churn entre jovens premium",
+                "Muita biometria: até 5 solicitações por sessão",
+                "MELI+ Mega não inclui YouTube Premium (principal motivo de cancelamento)",
+                "App trava após atualizações — “a última atualização estragou tudo”"
+              ],
+              "elogios_valores": {
+                "elogios": [
+                  "“O cashback é bom, mas poderia ser melhor”",
+                  "“Gosto da ideia do MELI+ — só falta entregar direito”"
+                ],
+                "valores": "Integração, performance, elegância técnica, status digital"
+              },
+              "oportunidades": [
+                "Integração oficial com Apple Pay + NFC no cartão físico",
+                "Benefícios “à la carte” no MELI+: usuário escolhe 2 ou 3 streamings",
+                "Modo Escuro nativo + UX Apple-style (gestos, animações, feedback tátil)",
+                "Suporte técnico em tempo real via chat para problemas de streaming"
+              ],
+              "imagem": "gabriel_ferreira.webp"
+            },
+            {
+              "id": "thiago_rocha",
+              "nome": "Thiago Rocha",
+              "role": "O Vendedor que Busca Fugir das Taxas",
+              "frase": "Taxa de 18% para produtos com margem de 25% é inviável. Estou indo pra Shopee.",
+              "perfil": {
+                "Idade": "29 anos",
+                "Localização": "Fortaleza",
+                "Atividade": "Microempreendedor (artigos de pesca, acessórios para celular)",
+                "Renda": "R$ 3.500–9.000/mês (variável)",
+                "Marketplaces": "ML (60%), Instagram (30%), Shopee (10% e crescendo)"
+              },
+              "comportamento": [
+                "Vende acessórios e pequenos produtos",
+                "Sensível a taxas e custos logísticos",
+                "Concorrência asiática oferece cashback + logística mais barata"
+              ],
+              "dores": [
+                "Taxas não competitivas: Shopee cobra 10–12%, ML cobra 16–18%",
+                "Frete “grátis” reduz margem: “O cliente acha que é de graça, mas eu pago R$ 22”",
+                "Falta de analytics avançados para ajuste de preço e estoque"
+              ],
+              "elogios_valores": {
+                "elogios": [],
+                "valores": "Rentabilidade, competitividade, baixo custo"
+              },
+              "oportunidades": [
+                "Programa “Vendedor Leal” com taxas progressivas",
+                "Ferramenta de “Cálculo de Lucro Líquido” integrada ao anúncio",
+                "Logística ML com preço competitivo para categorias de baixa margem",
+                "Cashback por volume: R$ 0,50 a cada R$ 100 em vendas com logística própria"
+              ],
+              "imagem": "thiago_rocha.webp"
+            },
+            {
+              "id": "camila_lima",
+              "nome": "Camila Lima",
+              "role": "A Millennial que Desistiu do MELI+",
+              "frase": "Paguei R$ 149 pelo MELI+ Mega, mas não consegui vincular a HBO Max por 15 dias.",
+              "perfil": {
+                "Idade": "31 anos",
+                "Localização": "Curitiba",
+                "Família": "Recém-casada, planeja filhos",
+                "Renda": "R$ 6.500/mês",
+                "Serviços": "Ex-MELI+ Total, agora usa Nubank + Amazon Prime + HBO Max separado"
+              },
+              "comportamento": [
+                "Usuária crítica de serviços digitais",
+                "Valoriza conveniência, streamings e custo-benefício",
+                "Cancelou assinatura por falha técnica"
+              ],
+              "dores": [
+                "Falha na vinculação de streamings (52% das menções)",
+                "Cashback incompatível com outros benefícios (“não acumula”)",
+                "Suporte lento para problemas digitais (média de 72h)",
+                "Falta de YouTube Premium no pacote"
+              ],
+              "elogios_valores": {
+                "elogios": [],
+                "valores": "Conveniência, funcionamento perfeito, flexibilidade"
+              },
+              "oportunidades": [
+                "“MELI+ Flex”: usuário escolhe 2 ou 3 streamings",
+                "Suporte técnico em tempo real via chat para streamings",
+                "Integração com YouTube Premium",
+                "Cashback ampliado: 5% em compras com streamings ativos"
+              ],
+              "imagem": "camila_lima.webp"
             }
           ]
         };
@@ -404,6 +548,7 @@
         const totalSlides = data.personas.length;
 
         function render() {
+            container.innerHTML = ''; // Clear existing content
             data.personas.forEach(p => {
                 const section = document.createElement('section');
                 section.className = 'persona-section';
@@ -422,10 +567,23 @@
                         <span>${v}</span>
                     </div>
                 `).join('');
+                
+                // Helper para elogios
+                const makeElogios = (elogios) => {
+                    if (!elogios || elogios.length === 0) return '';
+                    return `
+                        <div style="margin-top: 16px; border-top: 1px solid #eee; padding-top: 12px;">
+                            <h4 style="font-size:12px; color:#999; margin-bottom:8px;">O QUE DIZEM</h4>
+                            <ul class="andes-list list-neutral" style="font-style: italic; font-size: 13px;">
+                                ${elogios.map(e => `<li>${e}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `;
+                };
 
                 section.innerHTML = `
                     <div class="persona-visual">
-                        <img src="${p.imagem}" class="persona-image" alt="${p.nome}">
+                        <img src="${p.imagem}" class="persona-image" alt="${p.nome}" onerror="this.src='https://placehold.co/600x800?text=Imagem+Indisponível'">
                         <div class="visual-overlay">
                             <div class="visual-name">${p.nome}</div>
                         </div>
@@ -473,6 +631,7 @@
                                 <div class="andes-card">
                                     <h3>💎 Valores Buscados</h3>
                                     <p style="font-size:14px;">${p.elogios_valores.valores}</p>
+                                    ${makeElogios(p.elogios_valores.elogios)}
                                 </div>
                             </div>
                         </div>
