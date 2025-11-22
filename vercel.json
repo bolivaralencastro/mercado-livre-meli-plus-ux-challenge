@@ -1,7 +1,4 @@
 {
-  "rootDirectory": "app-web",
-  "buildCommand": "cd app-web && npm run build",
-  "devCommand": "cd app-web && npm run dev",
-  "installCommand": "cd app-web && npm install",
-  "outputDirectory": "app-web/.next"
+  "framework": "nextjs",
+  "root": "app-web"
 }
