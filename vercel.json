@@ -1,11 +1,3 @@
 {
-  "builds": [
-    {
-      "src": "app-web/package.json",
-      "use": "@vercel/next",
-      "config": {
-        "rootDirectory": "app-web"
-      }
-    }
-  ]
+  "framework": "nextjs"
 }
