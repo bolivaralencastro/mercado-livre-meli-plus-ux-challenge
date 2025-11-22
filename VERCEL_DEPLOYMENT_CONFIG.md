@@ -55,15 +55,9 @@ Foram feitas várias tentativas de configuração no arquivo `vercel.json` na ra
   }
   ```
 
-### Tentativa 3 (Configuração Atual)
+### Tentativa Final: Remoção do `vercel.json`
 
-- **Arquivo**: `vercel.json`
-- **Conteúdo**:
-  ```json
-  {
-    "buildCommand": "cd app-web && npm install --legacy-peer-deps && npm run build"
-  }
-  ```
-- **Descrição**: Esta configuração instrui a Vercel a executar um único comando de build. O comando primeiro navega para o diretório `app-web`, depois instala as dependências e finalmente executa o build do Next.js.
+- **Ação**: O arquivo `vercel.json` na raiz do projeto foi **removido**.
+- **Justificativa**: Esta ação foi tomada para garantir que a Vercel utilize as configurações definidas diretamente no painel da Vercel (Project Settings), sem a interferência de um `vercel.json` local. Em cenários de monorepo, muitas vezes é recomendado definir o "Root Directory" e os comandos de build/instalação diretamente na interface da Vercel, em vez de depender de um arquivo `vercel.json` que pode ser interpretado de forma diferente.
 
 Espero que este resumo ajude a diagnosticar o problema.
