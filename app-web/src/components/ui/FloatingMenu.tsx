@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect, useCallback } from 'react';
 
 interface FloatingMenuProps {
@@ -154,7 +156,8 @@ const FloatingMenu: React.FC<FloatingMenuProps> = ({ menuItems }) => {
         </nav>
         
         <div className="andes-fab-menu__footer">
-          <p className="andes-fab-menu__hint">Pressione 'M' para {isOpen ? 'fechar' : 'abrir'} o menu</p>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          <p className="andes-fab-menu__hint">Pressione 'M' para {isOpen ? "fechar" : "abrir"} o menu</p>
         </div>
       </div>
     </>

@@ -43,6 +43,7 @@ export default function DefinindoAEstrategiaPage() {
           <AndesCard key={pillar.name} className="border-t-4 border-blue-500">
             <div className="p-6">
               <h2 className="text-2xl font-bold text-blue-600 mb-2">{pillar.name}</h2>
+              {/* eslint-disable-next-line react/no-unescaped-entities */}
               <p className="text-lg text-gray-600 italic mb-6">"{pillar.description}"</p>
               <h3 className="font-bold text-gray-800 mb-3">Como:</h3>
               <ul className="list-disc list-inside text-gray-700 space-y-2">

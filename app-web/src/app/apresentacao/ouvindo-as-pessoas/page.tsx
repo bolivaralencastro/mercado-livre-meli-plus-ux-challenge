@@ -81,6 +81,7 @@ export default function OuvindoAsPessoasPage() {
             <AndesCard key={insight.title}>
               <div className="p-6 bg-yellow-50">
                 <h3 className="text-xl font-bold text-yellow-800 mb-2">🔍 {insight.title}</h3>
+                {/* eslint-disable-next-line react/no-unescaped-entities */}
                 <blockquote className="text-gray-600 italic mb-4">"{insight.quote}"</blockquote>
                 <ul className="list-disc list-inside text-gray-700 space-y-1">
                   {insight.points.map(point => <li key={point}>{point}</li>)}
