@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import AndesButton from "./AndesButton";
 
 interface OnboardingSlideData {
@@ -38,13 +39,12 @@ const AndesOnboardingModal: React.FC<AndesOnboardingModalProps> = ({
     }
   };
 
-  const handleEsc = (event: KeyboardEvent) => {
-    if (event.key === "Escape") {
-      onClose();
-    }
-  };
-
   useEffect(() => {
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
     window.addEventListener("keydown", handleEsc);
     return () => {
       window.removeEventListener("keydown", handleEsc);
@@ -77,7 +77,7 @@ const AndesOnboardingModal: React.FC<AndesOnboardingModalProps> = ({
               data-index={index}
             >
               <div className="ob-image-box">
-                <img src={slide.imageUrl} alt={slide.title} />
+                <Image src={slide.imageUrl} alt={slide.title} width={100} height={100} />
               </div>
               <div className="ob-content-box">
                 <h3 className="ob-title">{slide.title}</h3>

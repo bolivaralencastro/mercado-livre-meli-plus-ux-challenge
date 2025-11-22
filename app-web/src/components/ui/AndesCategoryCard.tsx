@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface AndesCategoryCardProps {
   imageUrl: string;
@@ -18,7 +19,7 @@ const AndesCategoryCard: React.FC<AndesCategoryCardProps> = ({
   return (
     <a href={href} className={`cat-card ${className || ""}`}>
       <div className="cat-card__img">
-        <img src={imageUrl} alt={imageAlt || text} />
+        <Image src={imageUrl} alt={imageAlt || text} width={100} height={100} />
       </div>
       <div className="cat-card__text">{text}</div>
     </a>

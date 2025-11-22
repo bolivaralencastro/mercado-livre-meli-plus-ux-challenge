@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import AndesCard from "./AndesCard";
 
 interface AndesThematicCardProps {
@@ -23,7 +24,7 @@ const AndesThematicCard: React.FC<AndesThematicCardProps> = ({
     >
       <div className="syi-product__card-container">
         <div className="syi-product__card-image">
-          <img decoding="async" src={imageUrl} alt={imageAlt || title} />
+          <Image decoding="async" src={imageUrl} alt={imageAlt || title} width={100} height={100} />
         </div>
         <span className="andes-typography syi-product__card-title">
           {title}

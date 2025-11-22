@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import AndesCard from "./AndesCard";
 import AndesMoney from "./AndesMoney";
 import AndesBadge from "./AndesBadge";
@@ -32,7 +33,7 @@ const AndesGridCard: React.FC<AndesGridCardProps> = ({
             <AndesBadge variant="bestseller">{badgeText}</AndesBadge>
           </div>
         )}
-        <img src={imageUrl} alt={title} />
+        <Image src={imageUrl} alt={title} width={100} height={100} />
       </div>
       <div className="grid-card__content">
         <div className="grid-card__title">{title}</div>
