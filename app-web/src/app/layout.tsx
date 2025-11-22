@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import "../styles/andes-components.css";
+import MainLayout from "@/components/layout/MainLayout";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,7 +16,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Meli+ UX Challenge - Next.js App",
+  title: "Meli+ UX Challenge",
   description: "Aplicação web para prototipagem do Meli+, programa de assinatura do Mercado Livre. Construído com Next.js 14, App Router e TypeScript.",
 };
 
@@ -29,7 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <MainLayout>{children}</MainLayout>
       </body>
     </html>
   );
