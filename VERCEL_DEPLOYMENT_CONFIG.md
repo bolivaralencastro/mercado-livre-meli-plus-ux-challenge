@@ -2,6 +2,10 @@
 
 Este documento resume as configurações aplicadas ao projeto para tentar resolver os problemas de deploy na Vercel.
 
+## 0. Estrutura do Projeto
+
+É importante notar que a aplicação principal do Next.js está localizada no subdiretório `app-web`. O restante do repositório contém documentação e outros artefatos. Esta estrutura de monorepo é a principal razão por trás das configurações específicas do `vercel.json`, pois a Vercel precisa ser explicitamente instruída sobre onde encontrar a aplicação Next.js para construir e implantar corretamente.
+
 ## 1. Correções no Código da Aplicação
 
 Para garantir um build limpo e sem avisos (warnings), as seguintes alterações foram feitas no código-fonte da aplicação Next.js (`app-web`):
