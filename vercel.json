@@ -1,17 +1,11 @@
 {
   "builds": [
     {
-      "src": "app-web/package.json",
+      "src": "app-web/**/*",
       "use": "@vercel/next",
       "config": {
         "rootDirectory": "app-web"
       }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "app-web/$1"
     }
   ]
 }
