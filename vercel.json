@@ -1,19 +1,7 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "app-web/**/*",
-      "use": "@vercel/next",
-      "config": {
-        "rootDirectory": "app-web"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "app-web/$1",
-      "continue": true
-    }
-  ]
+  "rootDirectory": "app-web",
+  "buildCommand": "cd app-web && npm run build",
+  "devCommand": "cd app-web && npm run dev",
+  "installCommand": "cd app-web && npm install",
+  "outputDirectory": "app-web/.next"
 }
