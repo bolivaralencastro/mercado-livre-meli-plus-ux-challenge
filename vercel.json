@@ -1,16 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "app-web/package.json",
-      "use": "@vercel/next",
-      "config": {}
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "app-web/$1"
-    }
-  ]
+  "framework": "nextjs",
+  "root": "app-web"
 }
