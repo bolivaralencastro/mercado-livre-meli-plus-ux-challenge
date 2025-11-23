@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 
 interface MenuItem {
   label: string;
@@ -13,19 +14,29 @@ interface Position {
   y: number;
 }
 
+const MENU_STORAGE_KEY = 'floatingMenuPosition';
+const MENU_WIDTH = 280;
+const MENU_HEIGHT = 64;
+const DROPDOWN_WIDTH_CLASS = 'w-52';
+
 const SimpleFloatingMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 }); // Valor inicial temporário
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState<{ x: number; y: number } | null>(null);
   const [selectedPage, setSelectedPage] = useState('Página Inicial');
   const [isClient, setIsClient] = useState(false);
 
+  const router = useRouter();
+  const pathname = usePathname();
+
   const menuRef = useRef<HTMLDivElement>(null);
   const dragHandleRef = useRef<HTMLDivElement>(null);
 
-  const menuItems: MenuItem[] = [
+  const menuItems = useMemo<MenuItem[]>(() => ([
     { label: 'Página Inicial', href: '/', icon: '🏠' },
+    { label: 'Programação', href: '/programacao', icon: '💻' },
     { label: 'Briefing', href: '/briefing', icon: '📋' },
     { label: 'Pesquisa', href: '/pesquisa', icon: '🔍' },
     { label: 'Estratégia', href: '/estrategia', icon: '🎯' },
@@ -34,20 +45,66 @@ const SimpleFloatingMenu = () => {
     { label: 'Protótipo', href: '/prototipo', icon: '🧪' },
     { label: 'Apresentação', href: '/apresentacao', icon: '📊' },
     { label: 'Entrega', href: '/entrega', icon: '📦' },
-    { label: 'Programação', href: '/programacao', icon: '💻' },
-  ];
+  ]), []);
+
+  const clampPosition = useCallback((nextPosition: Position): Position => {
+    if (!isClient) {
+      return nextPosition;
+    }
+
+    const maxX = Math.max(window.innerWidth - MENU_WIDTH, 16);
+    const maxY = Math.max(window.innerHeight - MENU_HEIGHT, 16);
+
+    return {
+      x: Math.min(Math.max(16, nextPosition.x), maxX),
+      y: Math.min(Math.max(16, nextPosition.y), maxY),
+    };
+  }, [isClient]);
+
+  const computeInitialPosition = useCallback((): Position => {
+    const storedPosition = localStorage.getItem(MENU_STORAGE_KEY);
+
+    if (storedPosition) {
+      try {
+        const parsed = JSON.parse(storedPosition) as Position;
+        return clampPosition(parsed);
+      } catch (error) {
+        console.error('Erro ao ler posição do menu:', error);
+      }
+    }
+
+    const horizontalOffset = Math.max(window.innerWidth - MENU_WIDTH, 16);
+    const verticalOffset = Math.max(window.innerHeight - 32 - MENU_HEIGHT, 16);
+
+    return { x: horizontalOffset, y: verticalOffset };
+  }, [clampPosition]);
 
   // Definir posição inicial após montagem do componente
   useEffect(() => {
     setIsClient(true);
-    setPosition({ x: window.innerWidth - 250, y: 20 });
+    setPosition(computeInitialPosition());
 
     const handleResize = () => {
-      setPosition({ x: window.innerWidth - 250, y: 20 });
+      setPosition(prev => clampPosition(prev));
     };
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
+  }, [clampPosition, computeInitialPosition]);
+
+  useEffect(() => {
+    if (isClient) {
+      localStorage.setItem(MENU_STORAGE_KEY, JSON.stringify(position));
+    }
+  }, [isClient, position]);
+
+  const toggleVisibility = useCallback(() => {
+    setIsVisible(prevVisible => {
+      if (prevVisible) {
+        setIsOpen(false);
+      }
+      return !prevVisible;
+    });
   }, []);
 
   // Funções de arrasto
@@ -63,12 +120,12 @@ const SimpleFloatingMenu = () => {
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     if (dragging && offset) {
-      setPosition({
+      setPosition(prev => clampPosition({
         x: e.clientX - offset.x,
         y: e.clientY - offset.y,
-      });
+      }));
     }
-  }, [dragging, offset]);
+  }, [clampPosition, dragging, offset]);
 
   const handleMouseUp = useCallback(() => {
     setDragging(false);
@@ -101,15 +158,37 @@ const SimpleFloatingMenu = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isOpen]);
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key.toLowerCase() === 'm') {
+        toggleVisibility();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [toggleVisibility]);
+
+  useEffect(() => {
+    const currentPage = menuItems.find(item => item.href === pathname);
+
+    if (currentPage) {
+      setSelectedPage(currentPage.label);
+    }
+
+    setIsOpen(false);
+  }, [menuItems, pathname]);
+
   // Navegar para página selecionada
   const navigateToPage = (href: string) => {
-    window.location.href = href;
+    router.push(href);
   };
 
   // Navegar para próxima página
   const goToNextPage = () => {
     const currentIndex = menuItems.findIndex(item => item.label === selectedPage);
-    const nextIndex = (currentIndex + 1) % menuItems.length;
+    const safeIndex = currentIndex === -1 ? 0 : currentIndex;
+    const nextIndex = (safeIndex + 1) % menuItems.length;
     const nextPage = menuItems[nextIndex];
     setSelectedPage(nextPage.label);
     navigateToPage(nextPage.href);
@@ -118,14 +197,15 @@ const SimpleFloatingMenu = () => {
   // Navegar para página anterior
   const goToPrevPage = () => {
     const currentIndex = menuItems.findIndex(item => item.label === selectedPage);
-    const prevIndex = (currentIndex - 1 + menuItems.length) % menuItems.length;
+    const safeIndex = currentIndex === -1 ? 0 : currentIndex;
+    const prevIndex = (safeIndex - 1 + menuItems.length) % menuItems.length;
     const prevPage = menuItems[prevIndex];
     setSelectedPage(prevPage.label);
     navigateToPage(prevPage.href);
   };
 
   // Não renderizar nada durante a renderização do servidor
-  if (!isClient) {
+  if (!isClient || !isVisible) {
     return null;
   }
 
@@ -169,7 +249,7 @@ const SimpleFloatingMenu = () => {
       <div className="relative">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center space-x-2 px-2 py-1 rounded hover:bg-gray-100"
+          className={`flex items-center justify-between space-x-2 px-3 py-2 rounded hover:bg-gray-100 ${DROPDOWN_WIDTH_CLASS}`}
           aria-haspopup="true"
           aria-expanded={isOpen}
         >
@@ -182,7 +262,7 @@ const SimpleFloatingMenu = () => {
 
         {/* Dropdown */}
         {isOpen && (
-          <div className="absolute left-0 mt-1 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10 max-h-60 overflow-y-auto">
+          <div className={`absolute left-0 mt-1 ${DROPDOWN_WIDTH_CLASS} bg-white border border-gray-200 rounded-md shadow-lg z-10 max-h-60 overflow-y-auto`}>
             <ul>
               {menuItems.map((item, index) => (
                 <li key={index}>
