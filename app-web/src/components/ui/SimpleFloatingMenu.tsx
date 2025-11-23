@@ -18,7 +18,6 @@ const MENU_STORAGE_KEY = 'floatingMenuPosition';
 const MENU_WIDTH = 320;
 const MENU_WIDTH_CLASS = 'w-[320px]';
 const BAR_HEIGHT = 56;
-const DROPDOWN_WIDTH_CLASS = 'w-[320px]';
 const VERTICAL_MARGIN = 16;
 const BOTTOM_OFFSET = 32;
 const KEYBOARD_ITEMS = ['1','2','3','4','5','6','7','8','9','0'] as const;
@@ -311,7 +310,7 @@ const SimpleFloatingMenu = () => {
             updateDropdownDirection();
             setIsDropdownOpen(prev => !prev);
           }}
-          className={`flex w-full items-center justify-between rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-left ${DROPDOWN_WIDTH_CLASS}`}
+          className="flex w-full items-center justify-between rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-left"
           aria-expanded={isDropdownOpen}
           aria-controls="floating-menu-dropdown"
         >
@@ -321,7 +320,7 @@ const SimpleFloatingMenu = () => {
         <div
           id="floating-menu-dropdown"
           ref={dropdownRef}
-          className={`absolute ${dropdownPositionClass} ${DROPDOWN_WIDTH_CLASS} rounded-md border border-gray-200 bg-white shadow-lg max-h-64 overflow-y-auto transition transform ${
+          className={`absolute ${dropdownPositionClass} w-full rounded-md border border-gray-200 bg-white shadow-lg max-h-64 overflow-y-auto transition transform ${
             isDropdownOpen ? 'visible opacity-100 translate-y-0 pointer-events-auto' : 'invisible opacity-0 translate-y-1 pointer-events-none'
           }`}
           aria-hidden={!isDropdownOpen}
