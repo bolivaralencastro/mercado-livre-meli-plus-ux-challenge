@@ -38,6 +38,7 @@ const SimpleFloatingMenu = () => {
   const [isClient, setIsClient] = useState(false);
   const [dropdownDirection, setDropdownDirection] = useState<DropdownDirection>("up");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   const router = useRouter();
   const pathname = usePathname();
@@ -135,6 +136,13 @@ const SimpleFloatingMenu = () => {
     }
   }, [isClient, position]);
 
+  useEffect(() => {
+    if (!isClient) return;
+
+    const isCasesPage = pathname?.startsWith("/pesquisa/cases") ?? false;
+    setIsVisible(!isCasesPage);
+  }, [isClient, pathname]);
+
   const handleMouseDown = (event: React.MouseEvent) => {
     if (dragHandleRef.current?.contains(event.target as Node)) {
       setDragging(true);
@@ -231,6 +239,14 @@ const SimpleFloatingMenu = () => {
     const handleNumberNavigation = (event: KeyboardEvent) => {
       const pressedKey = event.key as (typeof KEYBOARD_ITEMS)[number];
       if (!KEYBOARD_ITEMS.includes(pressedKey)) {
+        if (event.key.toLowerCase() === "m") {
+          const target = event.target as HTMLElement | null;
+          if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable)) {
+            return;
+          }
+
+          setIsVisible((prev) => !prev);
+        }
         return;
       }
 
@@ -288,11 +304,12 @@ const SimpleFloatingMenu = () => {
 
   const currentPageItem = menuItems.find((item) => item.label === selectedPage);
   const dropdownPositionClass = dropdownDirection === "down" ? "top-full mt-2" : "bottom-full mb-2";
+  const visibilityClasses = isVisible ? "opacity-100" : "pointer-events-none opacity-0";
 
   return (
     <div
       ref={menuRef}
-      className="fixed z-50 flex w-fit flex-col gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 shadow-lg"
+      className={`fixed z-50 flex w-fit flex-col gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 shadow-lg transition-opacity duration-200 ${visibilityClasses}`}
       style={{
         left: position.x,
         top: position.y,
