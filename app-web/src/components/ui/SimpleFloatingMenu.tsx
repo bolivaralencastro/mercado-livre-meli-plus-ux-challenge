@@ -15,9 +15,9 @@ interface Position {
 }
 
 const MENU_STORAGE_KEY = 'floatingMenuPosition';
-const MENU_WIDTH = 320;
+const MENU_WIDTH = 360;
 const BAR_HEIGHT = 56;
-const DROPDOWN_WIDTH_CLASS = 'w-56';
+const DROPDOWN_WIDTH_CLASS = 'w-full min-w-[240px]';
 const VERTICAL_MARGIN = 16;
 const BOTTOM_OFFSET = 32;
 const KEYBOARD_ITEMS = ['1','2','3','4','5','6','7','8','9','0'] as const;
@@ -232,7 +232,7 @@ const SimpleFloatingMenu = () => {
   return (
     <div
       ref={menuRef}
-      className="fixed z-50 flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 shadow-lg w-[320px]"
+      className="fixed z-50 flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 shadow-lg w-[360px]"
       style={{
         left: position.x,
         top: position.y,
@@ -250,7 +250,7 @@ const SimpleFloatingMenu = () => {
         </svg>
       </div>
 
-      <div className="h-8 w-px bg-gray-200" />
+      <div className="h-10 w-px self-stretch bg-gray-200" aria-hidden="true" />
 
       <div className="flex items-center gap-1">
         <button
@@ -273,9 +273,9 @@ const SimpleFloatingMenu = () => {
         </button>
       </div>
 
-      <div className="h-8 w-px bg-gray-200" />
+      <div className="h-10 w-px self-stretch bg-gray-200" aria-hidden="true" />
 
-      <div className="relative flex-1">
+      <div className="relative flex-1 min-w-[260px]">
         <div className={`flex items-center justify-between rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-sm ${DROPDOWN_WIDTH_CLASS}`}>
           <span className="font-medium text-gray-900">{formatLabel(currentPageItem)}</span>
           <span className="text-xs text-gray-500">⌄</span>
