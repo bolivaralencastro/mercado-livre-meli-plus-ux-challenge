@@ -4,8 +4,9 @@ import personasManifest from "./personas-manifest.json";
 // Base path for personas data
 export const PERSONAS_BASE_PATH = path.join(
   process.cwd(),
-  "..",
-  "02-pesquisa",
+  "src",
+  "app",
+  "pesquisa",
   "personas",
 );
 
