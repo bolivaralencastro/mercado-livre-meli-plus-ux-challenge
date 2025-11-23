@@ -1,0 +1,39 @@
+// Extracted components from HTML files - Andes Design System
+export { default as AndesFilterTag } from './AndesFilterTag';
+export { default as AndesFlashOfferTag } from './AndesFlashOfferTag';
+export { default as AndesSwitch } from './AndesSwitch';
+export { default as AndesHighlightedFilter } from './AndesHighlightedFilter';
+export { default as AndesResultCard } from './AndesResultCard';
+export { default as AndesRecommendationCard } from './AndesRecommendationCard';
+export { default as AndesEmptyState } from './AndesEmptyState';
+export { default as AndesSortMenu } from './AndesSortMenu';
+export { default as AndesLoyaltyWidget } from './AndesLoyaltyWidget';
+export { default as AndesHelpMenu } from './AndesHelpMenu';
+export { default as AndesOffersCarousel } from './AndesOffersCarousel';
+export { default as AndesDropdownMenu } from './AndesDropdownMenu';
+
+// Existing components
+export { default as AndesAuthItem } from './AndesAuthItem';
+export { default as AndesAuthList } from './AndesAuthList';
+export { default as AndesBadge } from './AndesBadge';
+export { default as AndesButton } from './AndesButton';
+export { default as AndesCard } from './AndesCard';
+export { default as AndesCarousel } from './AndesCarousel';
+export { default as AndesCategoriesMosaic } from './AndesCategoriesMosaic';
+export { default as AndesCategoryCard } from './AndesCategoryCard';
+export { default as AndesFormGroup } from './AndesFormGroup';
+export { default as AndesGridCard } from './AndesGridCard';
+export { default as AndesInput } from './AndesInput';
+export { default as AndesLabel } from './AndesLabel';
+export { default as AndesLoadingContainer } from './AndesLoadingContainer';
+export { default as AndesMeliCard } from './AndesMeliCard';
+export { default as AndesModal } from './AndesModal';
+export { default as AndesMoney } from './AndesMoney';
+export { default as AndesOnboardingModal } from './AndesOnboardingModal';
+export { default as AndesPayRow } from './AndesPayRow';
+export { default as AndesPaymentCard } from './AndesPaymentCard';
+export { default as AndesPdpCard } from './AndesPdpCard';
+export { default as AndesSpinner } from './AndesSpinner';
+export { default as AndesSummaryCard } from './AndesSummaryCard';
+export { default as AndesThematicCard } from './AndesThematicCard';
+export { default as AndesUserPill } from './AndesUserPill';
