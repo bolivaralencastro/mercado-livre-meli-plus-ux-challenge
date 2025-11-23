@@ -6,7 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 interface MenuItem {
   label: string;
   href: string;
-  icon: string;
+  number: number;
 }
 
 interface Position {
@@ -15,49 +15,59 @@ interface Position {
 }
 
 const MENU_STORAGE_KEY = 'floatingMenuPosition';
-const MENU_WIDTH = 280;
-const MENU_HEIGHT = 64;
-const DROPDOWN_WIDTH_CLASS = 'w-52';
+const MENU_WIDTH = 320;
+const BAR_HEIGHT = 56;
+const DROPDOWN_WIDTH_CLASS = 'w-56';
+const VERTICAL_MARGIN = 16;
+const BOTTOM_OFFSET = 32;
+const KEYBOARD_ITEMS = ['1','2','3','4','5','6','7','8','9','0'] as const;
+
+type DropdownDirection = 'up' | 'down';
 
 const SimpleFloatingMenu = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [position, setPosition] = useState<Position>({ x: 0, y: 0 }); // Valor inicial temporário
+  const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState<{ x: number; y: number } | null>(null);
-  const [selectedPage, setSelectedPage] = useState('Página Inicial');
+  const [selectedPage, setSelectedPage] = useState('Home');
   const [isClient, setIsClient] = useState(false);
+  const [dropdownDirection, setDropdownDirection] = useState<DropdownDirection>('up');
 
   const router = useRouter();
   const pathname = usePathname();
 
   const menuRef = useRef<HTMLDivElement>(null);
   const dragHandleRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const menuItems = useMemo<MenuItem[]>(() => ([
-    { label: 'Página Inicial', href: '/', icon: '🏠' },
-    { label: 'Programação', href: '/programacao', icon: '💻' },
-    { label: 'Briefing', href: '/briefing', icon: '📋' },
-    { label: 'Pesquisa', href: '/pesquisa', icon: '🔍' },
-    { label: 'Estratégia', href: '/estrategia', icon: '🎯' },
-    { label: 'Ideação', href: '/ideacao', icon: '💡' },
-    { label: 'UI Design', href: '/ui-design', icon: '🎨' },
-    { label: 'Protótipo', href: '/prototipo', icon: '🧪' },
-    { label: 'Apresentação', href: '/apresentacao', icon: '📊' },
-    { label: 'Entrega', href: '/entrega', icon: '📦' },
+    { label: 'Home', href: '/', number: 1 },
+    { label: 'Programação', href: '/programacao', number: 2 },
+    { label: 'Briefing', href: '/briefing', number: 3 },
+    { label: 'Pesquisa', href: '/pesquisa', number: 4 },
+    { label: 'Estratégia', href: '/estrategia', number: 5 },
+    { label: 'Ideação', href: '/ideacao', number: 6 },
+    { label: 'UI Design', href: '/ui-design', number: 7 },
+    { label: 'Protótipo', href: '/prototipo', number: 8 },
+    { label: 'Apresentação', href: '/apresentacao', number: 9 },
+    { label: 'Entrega', href: '/entrega', number: 10 },
   ]), []);
+
+  const formatLabel = useCallback((item: MenuItem | undefined) => {
+    if (!item) return '';
+    return `${item.number}. ${item.label}`;
+  }, []);
 
   const clampPosition = useCallback((nextPosition: Position): Position => {
     if (!isClient) {
       return nextPosition;
     }
 
-    const maxX = Math.max(window.innerWidth - MENU_WIDTH, 16);
-    const maxY = Math.max(window.innerHeight - MENU_HEIGHT, 16);
+    const maxX = Math.max(window.innerWidth - MENU_WIDTH, VERTICAL_MARGIN);
+    const maxY = Math.max(window.innerHeight - BAR_HEIGHT, VERTICAL_MARGIN);
 
     return {
-      x: Math.min(Math.max(16, nextPosition.x), maxX),
-      y: Math.min(Math.max(16, nextPosition.y), maxY),
+      x: Math.min(Math.max(VERTICAL_MARGIN, nextPosition.x), maxX),
+      y: Math.min(Math.max(VERTICAL_MARGIN, nextPosition.y), maxY),
     };
   }, [isClient]);
 
@@ -73,13 +83,12 @@ const SimpleFloatingMenu = () => {
       }
     }
 
-    const horizontalOffset = Math.max(window.innerWidth - MENU_WIDTH, 16);
-    const verticalOffset = Math.max(window.innerHeight - 32 - MENU_HEIGHT, 16);
+    const centeredX = Math.max((window.innerWidth - MENU_WIDTH) / 2, VERTICAL_MARGIN);
+    const verticalOffset = Math.max(window.innerHeight - BAR_HEIGHT - BOTTOM_OFFSET, VERTICAL_MARGIN);
 
-    return { x: horizontalOffset, y: verticalOffset };
+    return { x: centeredX, y: verticalOffset };
   }, [clampPosition]);
 
-  // Definir posição inicial após montagem do componente
   useEffect(() => {
     setIsClient(true);
     setPosition(computeInitialPosition());
@@ -98,16 +107,6 @@ const SimpleFloatingMenu = () => {
     }
   }, [isClient, position]);
 
-  const toggleVisibility = useCallback(() => {
-    setIsVisible(prevVisible => {
-      if (prevVisible) {
-        setIsOpen(false);
-      }
-      return !prevVisible;
-    });
-  }, []);
-
-  // Funções de arrasto
   const handleMouseDown = (e: React.MouseEvent) => {
     if (dragHandleRef.current?.contains(e.target as Node)) {
       setDragging(true);
@@ -120,7 +119,7 @@ const SimpleFloatingMenu = () => {
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     if (dragging && offset) {
-      setPosition(prev => clampPosition({
+      setPosition(clampPosition({
         x: e.clientX - offset.x,
         y: e.clientY - offset.y,
       }));
@@ -128,9 +127,11 @@ const SimpleFloatingMenu = () => {
   }, [clampPosition, dragging, offset]);
 
   const handleMouseUp = useCallback(() => {
-    setDragging(false);
-    setOffset(null);
-  }, []);
+    if (dragging) {
+      setDragging(false);
+      setOffset(null);
+    }
+  }, [dragging]);
 
   useEffect(() => {
     if (dragging) {
@@ -144,30 +145,28 @@ const SimpleFloatingMenu = () => {
     };
   }, [dragging, handleMouseMove, handleMouseUp]);
 
-  // Gerenciar clique fora do menu
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+  const updateDropdownDirection = useCallback(() => {
+    if (!isClient || !menuRef.current || !dropdownRef.current) {
+      return;
     }
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isOpen]);
+
+    const barRect = menuRef.current.getBoundingClientRect();
+    const dropdownRect = dropdownRef.current.getBoundingClientRect();
+    const spaceBelow = window.innerHeight - barRect.bottom;
+    const spaceAbove = barRect.top;
+
+    const shouldOpenUp = spaceBelow < dropdownRect.height + VERTICAL_MARGIN && spaceAbove > spaceBelow;
+    setDropdownDirection(shouldOpenUp ? 'up' : 'down');
+  }, [isClient]);
 
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key.toLowerCase() === 'm') {
-        toggleVisibility();
-      }
-    };
+    updateDropdownDirection();
+  }, [position, updateDropdownDirection]);
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [toggleVisibility]);
+  useEffect(() => {
+    window.addEventListener('resize', updateDropdownDirection);
+    return () => window.removeEventListener('resize', updateDropdownDirection);
+  }, [updateDropdownDirection]);
 
   useEffect(() => {
     const currentPage = menuItems.find(item => item.href === pathname);
@@ -175,57 +174,74 @@ const SimpleFloatingMenu = () => {
     if (currentPage) {
       setSelectedPage(currentPage.label);
     }
-
-    setIsOpen(false);
   }, [menuItems, pathname]);
 
-  // Navegar para página selecionada
-  const navigateToPage = (href: string) => {
+  const navigateToPage = useCallback((href: string) => {
     router.push(href);
-  };
+  }, [router]);
 
-  // Navegar para próxima página
-  const goToNextPage = () => {
+  const goToNextPage = useCallback(() => {
     const currentIndex = menuItems.findIndex(item => item.label === selectedPage);
     const safeIndex = currentIndex === -1 ? 0 : currentIndex;
     const nextIndex = (safeIndex + 1) % menuItems.length;
     const nextPage = menuItems[nextIndex];
     setSelectedPage(nextPage.label);
     navigateToPage(nextPage.href);
-  };
+  }, [menuItems, navigateToPage, selectedPage]);
 
-  // Navegar para página anterior
-  const goToPrevPage = () => {
+  const goToPrevPage = useCallback(() => {
     const currentIndex = menuItems.findIndex(item => item.label === selectedPage);
     const safeIndex = currentIndex === -1 ? 0 : currentIndex;
     const prevIndex = (safeIndex - 1 + menuItems.length) % menuItems.length;
     const prevPage = menuItems[prevIndex];
     setSelectedPage(prevPage.label);
     navigateToPage(prevPage.href);
-  };
+  }, [menuItems, navigateToPage, selectedPage]);
 
-  // Não renderizar nada durante a renderização do servidor
-  if (!isClient || !isVisible) {
+  useEffect(() => {
+    const handleNumberNavigation = (event: KeyboardEvent) => {
+      const pressedKey = event.key as typeof KEYBOARD_ITEMS[number];
+      if (!KEYBOARD_ITEMS.includes(pressedKey)) {
+        return;
+      }
+
+      const target = event.target as HTMLElement | null;
+      if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)) {
+        return;
+      }
+
+      const itemIndex = KEYBOARD_ITEMS.indexOf(pressedKey);
+      const targetItem = menuItems[itemIndex];
+      if (targetItem) {
+        setSelectedPage(targetItem.label);
+        navigateToPage(targetItem.href);
+      }
+    };
+
+    window.addEventListener('keydown', handleNumberNavigation);
+    return () => window.removeEventListener('keydown', handleNumberNavigation);
+  }, [menuItems, navigateToPage]);
+
+  if (!isClient) {
     return null;
   }
 
-  // Encontrar o item atual
   const currentPageItem = menuItems.find(item => item.label === selectedPage);
+  const dropdownPositionClass = dropdownDirection === 'down' ? 'top-full mt-2' : 'bottom-full mb-2';
 
   return (
     <div
       ref={menuRef}
-      className="fixed bg-white rounded-lg shadow-lg border border-gray-200 z-50 flex items-center p-2 space-x-2"
+      className="fixed z-50 flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 shadow-lg w-[320px]"
       style={{
         left: position.x,
         top: position.y,
         cursor: dragging ? 'grabbing' : 'default',
       }}
     >
-      {/* Botão de arrasto */}
       <div
         ref={dragHandleRef}
-        className="cursor-move p-2 rounded hover:bg-gray-100"
+        className="cursor-move rounded p-2 hover:bg-gray-100"
         onMouseDown={handleMouseDown}
         aria-label="Arrastar menu"
       >
@@ -234,68 +250,61 @@ const SimpleFloatingMenu = () => {
         </svg>
       </div>
 
-      {/* Botão de seta para trás */}
-      <button
-        onClick={goToPrevPage}
-        className="p-1 rounded hover:bg-gray-100"
-        aria-label="Página anterior"
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      </button>
+      <div className="h-8 w-px bg-gray-200" />
 
-      {/* Dropdown com nome da página atual */}
-      <div className="relative">
+      <div className="flex items-center gap-1">
         <button
-          onClick={() => setIsOpen(!isOpen)}
-          className={`flex items-center justify-between space-x-2 px-3 py-2 rounded hover:bg-gray-100 ${DROPDOWN_WIDTH_CLASS}`}
-          aria-haspopup="true"
-          aria-expanded={isOpen}
+          onClick={goToPrevPage}
+          className="rounded p-1 hover:bg-gray-100"
+          aria-label="Página anterior"
         >
-          <span>{currentPageItem?.icon}</span>
-          <span>{selectedPage}</span>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </button>
-
-        {/* Dropdown */}
-        {isOpen && (
-          <div className={`absolute left-0 mt-1 ${DROPDOWN_WIDTH_CLASS} bg-white border border-gray-200 rounded-md shadow-lg z-10 max-h-60 overflow-y-auto`}>
-            <ul>
-              {menuItems.map((item, index) => (
-                <li key={index}>
-                  <button
-                    onClick={() => {
-                      setSelectedPage(item.label);
-                      navigateToPage(item.href);
-                      setIsOpen(false);
-                    }}
-                    className={`w-full text-left px-3 py-2 hover:bg-blue-100 flex items-center space-x-2 ${
-                      item.label === selectedPage ? 'bg-blue-100' : ''
-                    }`}
-                  >
-                    <span>{item.icon}</span>
-                    <span>{item.label}</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        <button
+          onClick={goToNextPage}
+          className="rounded p-1 hover:bg-gray-100"
+          aria-label="Próxima página"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
       </div>
 
-      {/* Botão de seta para frente */}
-      <button
-        onClick={goToNextPage}
-        className="p-1 rounded hover:bg-gray-100"
-        aria-label="Próxima página"
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      </button>
+      <div className="h-8 w-px bg-gray-200" />
+
+      <div className="relative flex-1">
+        <div className={`flex items-center justify-between rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-sm ${DROPDOWN_WIDTH_CLASS}`}>
+          <span className="font-medium text-gray-900">{formatLabel(currentPageItem)}</span>
+          <span className="text-xs text-gray-500">⌄</span>
+        </div>
+        <div
+          ref={dropdownRef}
+          className={`absolute ${dropdownPositionClass} ${DROPDOWN_WIDTH_CLASS} rounded-md border border-gray-200 bg-white shadow-lg max-h-64 overflow-y-auto`}
+        >
+          <ul className="divide-y divide-gray-100">
+            {menuItems.map(item => (
+              <li key={item.href}>
+                <button
+                  onClick={() => {
+                    setSelectedPage(item.label);
+                    navigateToPage(item.href);
+                  }}
+                  className={`flex w-full items-center gap-3 px-3 py-2 text-left text-sm hover:bg-blue-50 ${
+                    item.label === selectedPage ? 'bg-blue-100 font-semibold' : ''
+                  }`}
+                  aria-label={`Ir para ${formatLabel(item)}`}
+                >
+                  <span className="text-gray-700">{item.number}</span>
+                  <span className="text-gray-900">{item.label}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
