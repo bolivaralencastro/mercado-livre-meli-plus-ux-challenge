@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import "../styles/andes-components.css";
 import MainLayout from "@/components/layout/MainLayout";
-import SimpleFloatingMenu from "@/components/ui/SimpleFloatingMenu";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,7 +32,6 @@ export default function RootLayout({
       >
         <MainLayout>
           {children}
-          <SimpleFloatingMenu />
         </MainLayout>
       </body>
     </html>
