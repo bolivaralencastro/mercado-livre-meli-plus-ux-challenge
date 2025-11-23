@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { NextRequest, NextResponse } from "next/server";
+import { PERSONAS_BASE_PATH, ALLOWED_IMAGE_EXTENSIONS, IMAGE_CONTENT_TYPES } from "@/lib/personas-config";
 
 interface RouteParams {
   params: {
@@ -8,29 +9,6 @@ interface RouteParams {
     image: string;
   };
 }
-
-const PERSONAS_BASE_PATH = path.join(
-  process.cwd(),
-  "..",
-  "02-pesquisa",
-  "personas",
-);
-
-const ALLOWED_IMAGE_EXTENSIONS = new Set([
-  ".png",
-  ".jpg",
-  ".jpeg",
-  ".webp",
-  ".gif",
-]);
-
-const CONTENT_TYPES: Record<string, string> = {
-  ".png": "image/png",
-  ".jpg": "image/jpeg",
-  ".jpeg": "image/jpeg",
-  ".webp": "image/webp",
-  ".gif": "image/gif",
-};
 
 export async function GET(_request: NextRequest, { params }: RouteParams) {
   const { persona, image } = params;
@@ -52,7 +30,7 @@ export async function GET(_request: NextRequest, { params }: RouteParams) {
 
   try {
     const fileBuffer = await fs.readFile(normalizedImagePath);
-    const contentType = CONTENT_TYPES[ext] || "application/octet-stream";
+    const contentType = IMAGE_CONTENT_TYPES[ext] || "application/octet-stream";
 
     return new NextResponse(fileBuffer, {
       headers: {

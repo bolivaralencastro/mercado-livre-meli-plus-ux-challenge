@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import { PERSONAS_BASE_PATH, ALLOWED_IMAGE_EXTENSIONS } from "./personas-config";
 
 export interface PersonaEntry {
   slug: string;
@@ -12,21 +13,6 @@ export interface PersonaData {
   htmlPath: string;
   images: string[];
 }
-
-const PERSONAS_BASE_PATH = path.join(
-  process.cwd(),
-  "..",
-  "02-pesquisa",
-  "personas",
-);
-
-const ALLOWED_IMAGE_EXTENSIONS = new Set([
-  ".png",
-  ".jpg",
-  ".jpeg",
-  ".webp",
-  ".gif",
-]);
 
 const normalizeTitle = (slug: string): string =>
   slug

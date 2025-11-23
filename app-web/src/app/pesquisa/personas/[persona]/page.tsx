@@ -22,7 +22,8 @@ export default async function PersonaDetailPage({ params }: PersonaPageProps) {
   try {
     htmlContent = await getPersonaHtmlContent(params.persona);
   } catch (error) {
-    console.error("Error loading persona HTML:", error);
+    // Log error without exposing file system details
+    console.error("Error loading persona content:", params.persona);
     return (
       <div className="mx-auto max-w-5xl px-6 py-12">
         <h1 className="text-3xl font-bold text-gray-900">Erro ao carregar persona</h1>

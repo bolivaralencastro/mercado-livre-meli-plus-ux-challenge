@@ -1,7 +1,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useMemo } from "react";
+import DOMPurify from "dompurify";
 import { PersonaEntry } from "@/lib/personas";
 
 interface PersonaViewerProps {
@@ -53,17 +54,25 @@ const PersonaViewer = ({ personas, currentPersonaSlug, htmlContent, images }: Pe
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [navigateToPrevious, navigateToNext, router]);
 
-  // Process HTML content to fix image paths
-  const processedHtml = htmlContent
-    .replace(/src="([^"]+\.(webp|png|jpg|jpeg|gif))"/gi, (match, imagePath) => {
-      // If it's a relative path (not starting with http/https), prepend the persona assets path
-      if (!imagePath.startsWith('http') && !imagePath.startsWith('/')) {
-        return `src="/pesquisa/personas/${currentPersonaSlug}/assets/${imagePath}"`;
-      }
-      return match;
-    })
-    .replace(/<link rel="stylesheet" href="\.\.\/personas\.css">/g, '')
-    .replace(/<script src="\.\.\/personas\.js"><\/script>/g, '');
+  // Process HTML content to fix image paths and sanitize
+  const processedHtml = useMemo(() => {
+    const html = htmlContent
+      .replace(/src="([^"]+\.(webp|png|jpg|jpeg|gif))"/gi, (match, imagePath) => {
+        // If it's a relative path (not starting with http/https), prepend the persona assets path
+        if (!imagePath.startsWith('http') && !imagePath.startsWith('/')) {
+          return `src="/pesquisa/personas/${encodeURIComponent(currentPersonaSlug)}/assets/${encodeURIComponent(imagePath)}"`;
+        }
+        return match;
+      })
+      .replace(/<link rel="stylesheet" href="\.\.\/personas\.css">/g, '')
+      .replace(/<script src="\.\.\/personas\.js"><\/script>/g, '');
+    
+    // Sanitize HTML to prevent XSS
+    return DOMPurify.sanitize(html, {
+      ALLOWED_TAGS: ['div', 'section', 'img', 'h1', 'h2', 'h3', 'h4', 'p', 'span', 'ul', 'li', 'blockquote', 'strong', 'em', 'br'],
+      ALLOWED_ATTR: ['class', 'style', 'src', 'alt', 'id'],
+    });
+  }, [htmlContent, currentPersonaSlug]);
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col bg-gray-100">
