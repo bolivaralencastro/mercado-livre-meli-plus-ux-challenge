@@ -1,0 +1,384 @@
+Project Name	Image Filename	Extracted Text
+150104767 Nueva sección de Tus gastos en Mercado Pago	behance_150104767_11.png	"Buscamos talentos para sumar al equipo
+
+Si te gustan los desafios, el trabajo en equipo, el diseno y la
+tecnologia, no dudes en contactarnos."
+150104767 Nueva sección de Tus gastos en Mercado Pago	behance_150104767_07.png	"06
+
+ANALISIS
+
+Categorias
+
+Definimos la paleta de colores en base a la recurrencia y criterios de la psicologia del color.
+Las categorias mas recurrentes tienen colores mas luminosos.
+
+ 
+
+© Indumentaria
+
+#176D65 Comidas
+Educacion oF bebidas.
+#2873BB #A977F3
+
+    
+
+Préstamos y
+financiacién
+#FFB452
+
+        
+
+Transporte
+#827CF7
+Hogar
+Otros #1FA397
+#6088F7
+Facturas y
+servicios
+#EO60DA
+Supermercado
+#59A735
+
+ 
+
+Salud y cuidado
+personal
+#BF50EB"
+150104767 Nueva sección de Tus gastos en Mercado Pago	behance_150104767_09.png	"RESULTADOS
+
+ 
+
+éQueé les parecio la nueva seccion a nuestras
+personas usuarias?
+
+66 “Me puedo hacer una idea de cuanto y en
+
+e C “jQué super! Ayuda en el control qué he estado gastando mi dinero” #¥
+
+financiero” &
+
+(4 C “Saber como diferenciar gastos es una forma
+inteligente de hacer que los usuarios de la
+aplicacion planifiquen su vida financiera” ®
+
+C (4 “;Me parecio muy bueno! Ahora sé cuanto
+gasto cada mes y también en qué gasto
+eae
+
+iGracias por visitarnos!"
+150104767 Nueva sección de Tus gastos en Mercado Pago	behance_150104767_08.png	"07
+
+CONTROL
+
+Recategorizar o
+quitar un gasto
+
+Con este feature Joao puede
+cambiar un gasto de categoria o
+quitarlo del panel en caso que lo
+necesite.
+
+ 
+
+ 
+
+< Gastos por categoria
+
+ 
+
+$ 400
+
+$0
+
+4 gastos
+
+Plaza Hogar
+
+Is
+
+ 
+
+Comidas y bebidas $ 395
+
+Dic Ene Feb Mar Abr May
+Plaza Hogar - $ 110°
+Pago
+
+S Cambiar categoria
+IFood
+
+ty Quitar gasto
+Pago
+Mc Donald's - $ 14300
+Pago 12 de Mayo
+KFC - $ 5200
+Pago 12 de Mayo
+
+ 
+
+A
+a aes Se a ne ronan ern ree memNEES"
+150104767 Nueva sección de Tus gastos en Mercado Pago	behance_150104767_02.png	"—
+
+VAMOS CON UN EJEMPLO
+
+Como maneja Joao
+su dinero
+
+Joao tiene un emprendimiento propio. Suena con
+cambiar su auto pero siente que nunca “llega”.
+Todos los meses Joao anota algunos de sus
+gastos en un cuaderno. Sin embargo, la falta de
+constancia hace que no pueda tener un registro
+claro de a donde se va su dinero."
+150104767 Nueva sección de Tus gastos en Mercado Pago	behance_150104767_12.png	"éQuerés ver mas? ;Seguinos!
+
+No te olvides de apreciar, comentar y seguirnos para no perderte
+las ultimas novedades del equipo de UX de Mercado Libre.
+
+Bé oF y @0
+
+Behance Dribbble Instagram Twitter Medium
+
+wy"
+150104767 Nueva sección de Tus gastos en Mercado Pago	behance_150104767_01.png	"Mercado Pago Equipo UX
+
+Julio 2022
+
+ 
+
+$ 4.965
+
+ 
+
+© Hogar $ 2.73700
+
+ 
+
+Comidas y bebidas $ 52200
+Transporte $ 44600
+© Shopping $ 40000
+
+NUEVA SECCION
+Tus gastos Ores * 200""
+Con este feature las personas
+usuarias pueden:
+Conocer sus categorias de gasto Tener un analisis de cOmo Tomar decisiones que mejoren
+mes ames. evolucionan sus gastos. sus finanzas personales.
+
+UNA NECESIDAD
+Hablamos con nuestras personas usuarias y
+detectamos que tenian una necesidad en comun:
+Controlar sus gastos para poder ahorrar."
+150104767 Nueva sección de Tus gastos en Mercado Pago	behance_150104767_10.png	"mercadolibreuxteam
+
+UT
+
+  
+
+x
+
+Créditos
+
+Cc
+
+Xx
+
+Federico Codino
+Leandro Di Pasquale
+Gaston Vega
+
+Silvana Corvalan
+
+Ivan Pianciola
+
+Agustina Ocampo
+
+Ana Silveira
+
+Josefina Cornejo Stewart
+Carolina Querino Castro
+Ingrid Astasio
+
+Paula Guerrero
+
+UX Research
+Facundo Ruiz
+Karina Alexandra Diaz Arias
+
+Raphael De Lima Sanches
+
+Desarrollo
+
+Sebastian Velez Ruiz
+Ariel Rey
+
+Diego Baquero
+
+Brian Wider
+
+Andrea Arcila Marin
+Gerardo Caceres
+Fernando Sanabria
+Victor Pastrana
+
+Edison Aristizabal
+Jenny Lopez
+
+Sebastian Agudelo Ruiz
+Daniel Acosta
+
+David Gomez Munoz
+Pedro Jose Castillo Baez
+
+Daniela Diaz Gomez
+
+Melania Miranda
+Esteban Ulke
+Martin Scebba
+Lara Mateo
+Melina Tabor
+Lucas Villanueva
+
+Juan Pablo Ferrari
+
+Producto
+
+Andrés Bernasconi
+Fernando Giannoni
+Nicolas Rebussone
+Danilo Palomares Roselli
+
+Jose Vitor Melare Pizol"
+150104767 Nueva sección de Tus gastos en Mercado Pago	behance_150104767_03.png	"ECOMO PODEMOS AYUDARLO?
+
+Facilitando el registro,
+categorizacion y analisis
+de gastos
+
+Cada vez que Jodo hace un pago o
+compra ubicamos automaticamente ese
+gasto en la categoria correspondiente.
+
+ 
+
+< Detalle de operacién
+
+10 de julio - 12:30 h | # 3139439294
+
+$ 22.999”
+
+Compra de Smart TV 40 pulgadas
+
+@& Mercado Libre
+
+Categoria
+
+e Electronica
+
+[=] Ir al detalle"
+150104767 Nueva sección de Tus gastos en Mercado Pago	behance_150104767_05.png	"04
+
+INFORMACION
+Panel de gastos
+
+Un grafico de torta donde puede dimensionar rapidamente sus gastos mensuales y detectar las
+categorias en las que mas dinero gasta.
+
+1 8 |
+
+< Tus gastos
+
+ 
+
+< Julio 2022
+
+Con el controlador superior Jodo 1 fs
+accede a meses anteriores. 0 $ 4.965*
+
+  
+ 
+
+Las principales categorias son
+
+Hogar $ 2.73700
+9 tapeables.
+
+Comidas y bebidas $ 52200
+
+© Transporte $ 44600
+© Shopping $ 40000
+
+—
+
+© @
+
+Ordenamos las categorias de |
+mayor a menor gasto."
+150104767 Nueva sección de Tus gastos en Mercado Pago	behance_150104767_04.gif	"Peete
+
+ 
+
+03
+
+SOLUCION
+
+gComo ayudamos a Joao
+a organizar sus gastos?
+
+@ Anotamos sus gastos
+
+Incluimos en la seccién cada compra y
+pago hechos con dinero disponible.
+
+© Categorizamos
+automaticamente
+
+Asi Joao tiene siempre sus gastos
+ordenados.
+
+© Analizamos mes a mes
+
+Le ofrecemos un resumen mensual que le permite
+tener mayor control de su dinero."
+150104767 Nueva sección de Tus gastos en Mercado Pago	behance_150104767_06.png	"ANALISIS
+
+Gastos por categoria
+
+Joao puede comparar los ultimos 6
+
+meses de una categoria, conocer su
+evolucion en el tiempo y cual fue su
+consumo maximo.
+
+El grafico de barra
+permite una comparativa
+rapida y facil entre meses.
+
+ 
+
+< Gastos por categoria
+
+Comidas y bebidas $ 395°
+
+Dic Ene Feb Mar Abr May
+
+4 gastos
+
+. Ze Feijoada - $ 110°°
+Feiojada
+
+Pago 16 de Mayo
+
+IFood - $ 900
+Pago 15 de Mayo
+
+ 
+
+Mc Donald’s - $ 14300
+
+ 
+
+Un listado con los
+gastos que componen
+cada categoria."

@@ -1,0 +1,436 @@
+Project Name	Image Filename	Extracted Text
+70016903 Experiencia Mapas	behance_70016903_03.gif	
+70016903 Experiencia Mapas	behance_70016903_05.gif	"Cierra tarde Punto Pickit
+
+Abretemprano Mas filtros B . 4
+
+Punto Pickit (Saavedra)
+
+800 mts. Plaza 3855, Saavedra (1430)
+La V de 10 - 18 hs
+
+A partir del 4 de mayo
+Gratis v
+
+Correo Argentino (Saavedra)
+
+1km. Av. Melidn 1923, Saavedra (1430) an A
+La Vde 10 -18 hs
+
+ 
+
+somente
+
+pence
+A partir del 4 de mayo
+Gratis v
+
+Punto Axion (Saavedra)
+
+1.3 km. Av. Melidn 2190, Saavedra (1430)
+LaV de 10 -18 hs
+
+A partir del 7 de mayo
+Gratis v
+
+OCA (Saavedra)"
+70016903 Experiencia Mapas	behance_70016903_07.gif	Cierra tarde
+70016903 Experiencia Mapas	behance_70016903_04.png	"Abre los domingos X
+
+04. FILTROS RAPIDOS Y AVANZADOS
+
+Para las busquedas avanzadas,
+pensamos una microinteraccion
+
+de filtrado.
+
+ 
+
+tf
+
+@"
+70016903 Experiencia Mapas	behance_70016903_02.png	"01. CONTEXTO
+
+Partimos del analisis
+del feedback de
+nuestros usuarios.
+
+Encuestamos a un grupo de
+compradores recurrentes para detectar
+cuales eran los drivers que motivaban
+la seleccién de una sucursal de retiro
+por sobre otra.
+
+DRIVERS
+
+Distancia
+
+Imprescindible para entender qué
+relacion hay entre la oferta de
+sucursales y la cercania al user.
+
+Informacion de sucursal
+
+Feedback interactivo con el mapa.
+Brinda la informacién exacta de
+disponibilidad.
+
+Costo de envio
+
+Si bien es un driver secundario,
+le otorgamos un lugar propio para
+facilitar su lectura.
+
+ 
+  
+   
+
+03. SISTEMA ICONOGRAFICO
+
+Definimos qué aspecto
+y comportamiento tendra
+nuestra iconografia.
+
+ 
+
+ 
+
+ 
+
+ 
+
+  
+   
+    
+ 
+   
+  
+  
+ 
+ 
+ 
+ 
+  
+ 
+    
+   
+     
+
+No estoy en casa para
+3 3
+
+recibir mi compra.
+
+Poder identificar la cercania frente a la oferta
+de sucursales seria de gran ayuda para el
+user.
+
+& éComo sé qué sucursales &
+
+abren los sabados?
+
+Detectar aquellas necesidades especificas
+de cierto grupo de usuarios, otorgando un
+lugar de lectura y acceso a las mismas.
+
+Selecciona una sucursal
+
+@y Federal 9 ‘
+
+1195 | :
+
+x Campode |
+, Deportes : @ de
+» 1 es
+
+¥
+oe % Espacio Memoria y i 4
+a ‘ DerechosHumanos + — foridly
+= ! imanos
+%
+%
+
+we Fe ‘
+soe 5 % :
+we on % .
+eyo @ O cenari
+9 : O cenaro
+
+a
+% ss
+& oh
+of
+
+»
+
+oe
+
+st gp get RIO v
+
+* mows’ 8 :
+
+Parque Saavedra © Y :
+sa aae® :
+or eae %
+oe a
+
+Showcase Belgrano @
+
+vase Belgrano. 9
+Flundacil 9
+
+Fundacién Fleni
+
+ 
+
+ 
+
+Action
+
+ 
+
+ 
+
+A partir del 29 de abril $75
+
+A partir del 4 de mayo Gratig
+A partir del 29 de abril $75
+A partir del 29 de abril $75
+
+Plaza 3855, Saavedra (1430)
+LaV de 10 - 18 hs
+
+Quiero ver los distintos
+puntos de entrega.
+El radio de busqueda de sucursales deberia
+
+ser amplio, la codificaci6n de las mismas
+clara. gPodriamos sumar motion?
+
+Quisiera recibir mi
+compra lo antes posible.
+Podriamos sumar inteligencias que sugieran
+
+la mejor sucursal que se adapte al
+comportamiento de compra del usuario.
+
+02. DISENO
+
+Disenhamos la estructura del
+paso de seleccion segun los
+drivers encontrados.
+
+Parque De La Memoria
+
+o
+
+9° Estadio Monumental Antonio Vespucio Liberti
+Emelec contra:River...+ 19:15
+
+Parque Norte Q
+Q Tierra Santa
+Ay.
+Xe
+°0,
+205,
+Go Ds
+ves
+
+Plaza Parques
+Nacionales Argentinos
+
+Ab im. Cantilo
+
+Sng Aeroparque
+Internacional
+Jorge Newbery 4,
+a
+
+Corre
+
+Plaza ‘
+LaVc
+
+ 
+
+Jerarquizamos el mejor
+tipo de retiro disponible
+a la sucursal, dejando las
+otras opciones debajo
+de una interacci6n
+secundaria."
+70016903 Experiencia Mapas	behance_70016903_08.png	"Abre los sabados CO
+
+Abre los domingos CO
+
+Tipo de sucursal
+
+  
+
+Correo Argentino
+
+Hay 80 sucursales en esta zona
+Aplicar
+
+05. DISENO EN MOVIMIENTO
+
+Por ultimo, definimos el motion
+que dispararian las
+interacciones, y animamos
+
+un prototipo
+
+Para las animaciones
+definimos momentos
+de la card: default, full
+y collapsed."
+70016903 Experiencia Mapas	behance_70016903_09.gif	"Estas en
+
+Saavedra
+CP 1430
+
+Envio a otra ubicacién
+
+Quiero retirar el producto"
+70016903 Experiencia Mapas	behance_70016903_11.gif	
+70016903 Experiencia Mapas	behance_70016903_12.png	"éQué te parecio este proceso?
+jDejanos tu feedback!
+
+     
+
+CREDITOS
+
+Gracias al trabajo
+en equipo.
+
+Desarrollo UX
+
+Gabriel Bianchi Agustin Jeansalle
+Dario Diaz Eugenia Corei
+Jorge Salas Pablo Runco
+Agustin Ragazzini Fernando Martin
+Juan Panzetta Alejandra Ponce
+Santiago Rosa Victoria Bouvier
+Maximiliano Sibert German Gaussmann
+Julio Castillo Samanta Oppezzo
+Lucia Garbarini Laura Alvez
+Julieta Puente Mercedes Fiz
+Julian Centurion Leandro Brovelli
+Nelson Pugliese Barbara Orlando
+Matias del Bel Santiago Roberts
+
+Pablo Pellegrino
+Roger Patifio
+Agustin Brafia
+Agustina Demaldé
+Joel Bertoldi
+Federico Bazan
+Pablo Igounet
+Gabriela Segura Guzman
+Roman Pastore
+Santiago Mifio
+Fernando de Caro
+
+Lucas Gonzalez
+
+mercadolibreuxteam
+
+we
+
+gQuerés ver mas? Seguinos.
+
+No te olvides de apreciar, comentar y seguirnos para no perderte
+las Ultimas novedades del equipo de UX de Mercado Libre.
+
+Be Q vy
+
+Behance Dribbble Instagram Twitter Medium
+
+S"
+70016903 Experiencia Mapas	behance_70016903_01.png	"nueva
+experiencia
+mapas
+
+< Selecciond una sucursal
+Abre temprano Abre los domingos Punto Pickit
+Ee aS er y ; a a
+a a
+
+ 
+
+ 
+
+ 
+
+~ x
+VILLA URQUIZA
+
+ 
+
+o
+OBJETIVO
+
+Correo Argentino (Saavedra)
+
+Peas 3855 Sensis 130 ~Como mejorar
+sone ge mane la seleccion de retiro
+_ en sucursal?"
+70016903 Experiencia Mapas	behance_70016903_06.png	"éCoOmo construimos los filtros?
+
+Eje semantico
+
+Mejora la comprension del filtro, nos da la
+posibilidad de medir a través de un
+metadato.
+
+Eje categorico
+
+Orden y ponderacion. Como se organizan
+los filtros, cuales mostramos primero,
+cuales por fuera.
+
+LaV de 8a 16 hs.
+LaV de 8a 18hs.
+
+LaVde9a19hs. = “Cierra tarde”
+costo DISPONIBILIDAD TIPO
+Gratis Abre temprano Correo Argentino
+
+Abre los sabados
+
+OCA
+Andreani"
+70016903 Experiencia Mapas	behance_70016903_10.png	"card slide-up / ease-in
+
+ 
+
+map zoom-out / ease-in
+
+ 
+
+CTA wrapper fade-out / ease-oul
+
+promesas fade-in secuencial / ease-in
+
+TIMELINE OPENING
+
+ 
+
+card slide-down / ease-out
+
+ 
+
+map zoom-in to fix / ease-in-out
+
+oo
+CTA wrapper fade-in / ease-in
+
+promesas fade-out secuencial / ease-in
+
+TIMELINE CLOSING
+
+“Por ejemplo, para la
+informacion de la sucursal,
+asignamos un timing
+especifico para su apertura
+y otro para el cierre.”"

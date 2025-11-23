@@ -1,0 +1,556 @@
+Project Name	Image Filename	Extracted Text
+154797391 Cómo rediseñamos el Administrador de Mercado Crédito	behance_154797391_01.png	"S
+
+Como redisenamos
+
+Completa tus datos para solicitar el
+
+el Administrador de a
+Mercado Credito
+
+Ofertas disponibles
+DINERO EXPRESS CUOTA FIJA PORCENTAJE DE VE
+
+Tienes -—— Tienes Tienes
+disponible hasta disponible hasta disponible hasta
+$100.000 q @>. $100.000.000 6: $100.000.000
+
+Caduca en 30 dias Caduca en 30 dias
+
+ 
+
+Producto activo
+
+01 Dinero Express
+INTRODUCCION $ 40.000
+
+Vence el 22 de jul
+
+gQueé es
+Mercado Crédito?
+
+Preguntas frecuentes
+
+Cdémo pagar mis cuotas >
+Es un producto que ofrece diferentes tipos de |
+financiaci6n segun tu necesidad y condicién Qué pasa si me atraso >
+(vendedores, compradores, etc.).
+Nace con la intenci6n de generar mas inclusi6n Cudndo vencié mi cuota >
+
+financiera en LATAM. -
+
+ 
+
+Desde el Administrador de créditos, la persona
+usuaria atraviesa diferentes etapas del journey:
+Adquisicion, activaci6n, engagement y revenue.
+Lo utiliza principalmente para gestionar sus
+lineas de créditos activas."
+154797391 Cómo rediseñamos el Administrador de Mercado Crédito	behance_154797391_05.png	"El antes y despues
+
+Ademas de lo estructural, majoramos la UI y le dimos
+mas ritmo a la navegacion
+
+Sumamos titulos de seccién, dandole Financiamiento para tu
+
+Vence en 5 dias visibilidad al user sobre a cual admin
+
+Puedes pagarlo ahora o esperar a que lo ha ingresado negocio
+cobremos de tu dinero disponible.
+
+Completa tus datos para solicitar tu
+Los mensajes extraordinarios ahora proximo crédito
+
+Productos activos tienen su lugar y jerarquia
+
+Préstamo $ 10.000
+
+Septiembre 2018
+Ofertas disponibles
+Ofertas mas claras
+6 de noviembre Definimos cual era la informacion
+necesaria para que la persona usuaria
+tome decisi6n sobre la adquisicién de
+
+un crédito: ; ‘ . a
+Monto de cuota $ 1.980,30 disponible hasta disponible
+
+; -_ $100.000 $100.00
+— Nombre de la linea de crédito
+
+— Pill destacando condicidn de la oferta Caduca en 30 dias
+— Monto disponible
+
+-Fecha de expiracion de la oferta
+
+— CTA con wording que anticipe al
+
+usuario lo que viene
+
+DINERO EXPRESS CUOTA FI
+
+Tienes . Tienes
+
+Productos activos
+
+e=ir Préstamo a cuota fija
+Estar al dia es mas facil [acre:
+
+Segun el estado del crédito se
+Dinero Express disponibiliza informacion, siempre
+6 de septiembre ubicada en el mismo lugar dentro
+del mdédulo para que la persona $ 1.500
+Se debita usuaria no deba reinterpretar todo Vence el 04 de ago
+el tiempo el cdédigo de lectura.
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Cuota 5 de 12
+
+13 de septiembre
+
+Solo un CTA principal, el resto de @ Vence en 5 dias
+
+las acciones que se pueden hacer Puedes pagarlo ahora o esperar a
+
+en este mddulo se disponibiliza que lo cobremos de tu dinero
+Total a pagar
+desde el detalle. disponible.
+
+R Dinero Express
+
+$ 40.000
+
+. . Vence el 22 de ago
+Ofertas disponibles
+
+Tienes disponible un nuevo
+
+Preguntas frecuentes
+crédito de {$ 250.000
+
+Ayuda contextualizada Cémo pagar mis cuotas
+Se traen al frente las tres preguntas
+
+mas relevantes en funcion al estado . ;
+de sus créditos. Qué pasa si me atraso
+
+Préstamos finalizados
+Cuando vencio mi cuota
+
+élienes dudas?
+
+Acceso créditos finalizados
+
+Se disponibiliza en el footer del L1,
+
+porque es una seccion poco @G _ Préstamos finalizados
+consultada por la persona usuaria
+
+segun nuestras métricas.
+
+ 
+
+Validamos con personas
+
+12 personas usuarias
+2 paises
+
+11 de 12 personas pudieron definir correctamente
+qué es Mercado Crédito, destacando que pueden
+solicitarlo desde la app sin tantos tramites, papeleos
+oO requisitos.
+
+12 de 12 personas entendieron la logica de
+ordenamiento de las cards de cobranza, asi como
+también pudieron entrar al detalle del préstamo para
+ver el progresivo del pago y para hacer la
+cancelacion anticipada."
+154797391 Cómo rediseñamos el Administrador de Mercado Crédito	behance_154797391_02.png	"~SG06
+
+02
+
+CONTEXTO
+
+El Administrador, ese Frankenstein
+
+ 
+
+ 
+
+ 
+
+ADMIN CON OFERTAS Y ADMIN CON OFERTAS Y ADMIN SIN OFERTAS Y
+PRODUCTO ACTIVO AL DIA PRODUCTO ACTIVO AL DiA & PRODUCTO ACTIVO VENCIDO
+POR VENCER
+Al habilitar mas lineas de créditos con — “s)) te
+sae . € Mercado Crédito € Mercado Crédito € Mercado Crédito
+caracteristicas diferentes y responder a
+necesidades de Marketing y otras areas, eee ® © En 2 dias vence tu cucta as
+se vi O afe cta d a la a rq Uu itectu ra d e Tienes disponible un nuevo . beponblal shore conan Pagel totes mayor, _
+. C . crédito de {$ 250.000}
+informacion e storytelling del Productos activos
+. , Resumen de tu deuda
+Administrador, lo que genero problemas Dinero Express ‘ Préstamo $ 10.000 2 cvotas
+. . ene Ten hoy hasta $ {7.000} y devuelvelos en 7 dias Septiembre 2018
+de consistencia, carga cognitiva y vocnecuee ce Débito parcial - $ 20,30
+enten d i mie nto Productos activos 2de3 6 de noviembre Falta pagar $ 9.610,10
+
+Septiembre 2018
+Esto, entre otras cosas, incrementd las moni us so esl Adelantar dinero
+2de3 6 de noviembre
+
+consultas al area de CX sobre uso basico
+
+Pagar todo el préstamo
+
+d el p rod Uu cto. Monto de cuota $ 1.980,30 Tengo problemas para pagar
+Lele fleet (0) -) Quiero generar una promesa de pago >
+vA nisi Ooo ee a e Vista de la
+También comenzamos a tener dificultades Pagar todo el préstamo
+Dinero Express Productos activos pa nta lla
+para trackear la originacion y adquisicion mee teenwreaee sin scroll
+Necesito ayuda > se debita Dinero Express
+de los p roductos. desspenbe 6 de Septiembre 2018
+Se vencié el
+13 de septiembre
+Total a pagar $ 7.300
+Pagar ahora
+Recargo acumulado $100
+Necesito ayuda > Total a devolver $ 7.400
+Ofertas disponibles @®
+
+Préstamo $ 10.000
+
+Julio 2018
+Tienes disponible un nuevo
+
+aah >» Proxima cuota Se vencid el
+cole elicetel C3 rane) Bde 6 21 de septiembre
+Cuota $ 1.980,30
+
+Recargo $ 250,10
+
+Monto de cuota $ 2.230,40
+
+@® éTienes dudas? >
+
+03
+
+DESAFIO
+
+Disenar una
+experiencia escalable
+
+Pensar un diseno modular para la incorporaci6n
+de futuras lineas de créditos/productos.
+
+Disenar en funcién a etapas de un funnel:
+Adquisicién, activacioén, cobranza, etc. para
+reducir carga cognitiva y customizar
+experiencias.
+
+Hacerlo intuitivo y autogestionable para reducir
+contact rate por el uso basico de la linea: Como
+pago, cuales son los requisitos, qué
+caracteristicas tiene cada producto, etc.
+
+Trabajar en una experiencia
+contextual y no reactiva.
+
+OKRs
+
+Disminuir el contact rate a CX.
+
+Incrementar la adquisicién.
+
+Incrementar la activaci6on.
+
+Mejorar la cobranza (disminuir casos de mora tardia).
+
+ 
+
+04
+
+PROCESO"
+154797391 Cómo rediseñamos el Administrador de Mercado Crédito	behance_154797391_03.png	"A
+
+Definimos 4 principios
+para la construccion de
+componentes que velen
+por los objetivos
+
+B Mapeamos el estado del Administrador por
+
+AGRUPABILIDAD
+Informacion organizada
+
+Agrupar informacion por
+afinidad para facilitar el
+escaneo a través de bloques y
+grupos que puedan entenderse
+por si mismos y que a SU vez
+contemplen el storytelling
+general de acuerdo al estadio
+del administrador.
+
+RELEVANCIA
+Informacion progresiva
+
+Priorizar los datos y acciones
+mas relevantes para el usuario
+segun el estadio del
+administrador. Y evaluar qué
+informacién corresponde
+mostrar en el administrador y
+qué informaci6n corresponde a
+otra pantalla o espacio visual.
+
+momento del journey y casuistica
+
+PREVISIBILIDAD
+Informacion suficiente
+
+Asegurar que cada
+componente tenga la
+informacién minima y necesaria
+para que el usuario entienda la
+historia que le estamos
+contando. Respetando la
+ubicacion de areas tematicas
+independientemente del
+estadio del administrador.
+
+PERSONALIZACION
+Informacion relevante
+
+Customizar la experiencia
+completa del administrador
+segun las necesidades y
+situaci6n del usuario y los
+estadios del administrador.
+
+ADQUISION ACTIVACION ENGAGEMENT/RECURRENCIA REVENUE
+
+EMPTY STATE ENROLLMENT FTU 6 RECURRENTE COBRANZA
+
+[sin ofertas] [con ofertas] [con ofertas & upsell] [al dia] [por vencer] [vencido]"
+154797391 Cómo rediseñamos el Administrador de Mercado Crédito	behance_154797391_04.png	"El viaje de Juana
+
+El Administrador como
+videojuego
+
+D
+
+Empezamos
+con el
+wireframe
+
+Cada bloque se prendera a
+medida que Juana vaya
+desbloqueandolos
+
+EMPTY CON OFERTA
+Juana descubra Al entrar Vuelve a
+entre sus descubre un ingresar al
+opciones de mundo nuevo, administrador y
+Mercado Pago lleno de descubre que su
+que tiene oportunidades y primera
+Mercado aventuras aventura (oferta)
+Crédito y decide fue activada
+acceder
+
+Definimos objetivos principales y
+secundarios por cada uno de los hitos
+
+NIVEL 2
+
+COBRANZA
+AL DIA / POR
+VENCER
+
+Una vez que
+transita por esa
+aventura,
+descubre una
+nueva
+
+NIVEL 3
+OFERTAS +
+PRODUCTOS Desbloquea
+ACTIVOS otro camino
+
+Entra en modo
+experto
+
+NIVEL A
+
+COBRANZA
+VENCIDA
+
+COMUNICACIONES
+EXTRAORDINARIAS
+
+Bloque que se prende dependiendo
+la necesidad (ej. Regulaciones -
+retraso en el cobro)
+
+BLOQUE DE
+
+ORIGINACION
+
+Bloque educacional para un que entra
+por primera vez al admin. Prendido de
+ofertas.
+
+BLOQUE DE
+
+COBRANZA
+
+Bloque que se prende cuando el
+usuario origine por primera vez algun
+producto.
+
+AYUDA
+
+Bloque de ayuda contextual. Cambia
+en funcion del estado del admin.
+
+BLOQUE DE
+
+CROSS-SELL
+
+Bloque que se prende dependiendo
+la necesidad. x-Sell con iniciativas
+fuera de credits
+
+CREDITOS
+
+FINALIZADOS
+
+Bloque que se prende cuando el
+usuario termine de pagar por
+completo su primer préstamo.
+
+éComo se distribuiran
+
+en el admin?
+
+< Mercado Crédito
+
+COMUNICACIONES
+EXTRAORDINARIAS
+
+ORIGINACION
+
+COBRANZA
+
+AYUDA
+
+X-SELLING
+
+CREDITOS FINALIZADOS
+
+NIVEL 4
+
+OFERTAS +
+PRODUCTOS
+ACTIVOS"
+154797391 Cómo rediseñamos el Administrador de Mercado Crédito	behance_154797391_06.png	"mercadolibreuxteam
+
+iGracias por visitarnos!
+
+Equipos que participaron en la iniciativa
+
+[Q4-2020 a Q1 2022]
+
+UX
+
+Debora Lambrechts
+Marcela Sosa Palacios
+Ruth Barinboim
+
+Chiro Fernandez
+
+COLABORADORES
+Pablo Piccolotto
+Aime Gomez Molina
+Leonardo Fontani
+Pablo Sanchez Olguin
+Santiago Rivero
+Patricia Alva Silva
+Irving H. Sanchez
+Claudia Khiabet
+Lucas Cimo
+
+Bruno Ceriani
+
+Jorge Campos Quiros
+
+IT
+
+Mauro Michelini
+Valentin Orfila
+Sebastian Henzenn
+Diego Marchetti
+Joseph Ramirez
+Ezequiel Soler
+
+Alejo Echeguia
+
+COLABORADORES
+Ivan Ascierto
+
+Mario Pozzo
+
+Producto
+
+Guillermina De San Martin
+Josefina Saenz
+
+Victoria Roshchupnika
+Yanina Navarro
+
+Sabrina Barrera
+
+Juan Manuel Murcia Levy
+Matias Alvarez
+
+Ramiro Donis
+
+Jorge Luis Castro Felix
+
+Mauricio Gigena
+Diego Bersano
+
+Matias Alaniz
+
+éQuereés ver mas? Seguinos.
+
+No te olvides de apreciar, comentar y seguirnos para no perderte
+
+las ultimas novedades del equipo de UX de Mercado Libre.
+
+Be ep
+
+Behance Dribbble
+
+Instagram Twitter
+
+wey
+
+vy
+
+Medium"

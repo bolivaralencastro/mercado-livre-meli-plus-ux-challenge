@@ -1,0 +1,451 @@
+Project Name	Image Filename	Extracted Text
+182678517 A evolução da central de pagamentos do Mercado Pago	behance_182678517_04.png	"Suas contas
+
+Contas com lembrete ou em débito automatico.
+
++ Claro* aN =TIM
+
+Cadastrar Telefone Luz Casa Meu
+conta Mae Telefone
+
+Ver mais
+
+ 
+
+03
+
+MODULO: CONFIGURADOR
+
+Cadastro que garante
+mais controle e
+praticidade
+
+A partir do cadastro, a pessoa usuadria pode escolher
+a funcionalidade mais conveniente para controlar o
+pagamento de cada uma de suas contas."
+182678517 A evolução da central de pagamentos do Mercado Pago	behance_182678517_05.png	"04
+
+MODULO: PAGAMENTOS
+
+Acesso rapido ao
+fluxo de pagamento
+
+Escolhemos usar um botao flutuante sempre visivel
+que permite o pagamento de contas de consumo,
+servicos, boletos e tributos em apenas um toque.
+
+Ver mais
+
+ 
+
+Pagar nova conta"
+182678517 A evolução da central de pagamentos do Mercado Pago	behance_182678517_09.png	"RESULTADOS
+
+Aumentamos o engajamento
+de pessoas pagantes
+
+   
+
+NPS MELHORA NO CHURN AUMENTO MAPS
+fe)
++6pp +7,5pp +7%
+*Net Promoter Score é a métrica que indica o *Churn 6 a métrica que indica o numero de *MAPs € a métrica que indica o numero de
+nivel de satisfagdo das pessoas usuarias. pessoas usuarias que cancelam um servico. pessoas usuadrias pagam contas todos os meses.
+
+ 
+
+O QUE DIZEM AS PESSOAS USUARIAS
+
+(4 (4 Um app cheio de opcodes para varias
+situagdes, qualquer pessoa, por mais
+leiga que seja.
+
+Alison
+
+ 
+
+(4 (4 Muito bom! Flexivel, justo e bastante
+intuitivo de usar.
+
+Fabio
+66 Melhor banco digital.
+
+Daniela
+
+Obrigado por nos acompanhar!"
+182678517 A evolução da central de pagamentos do Mercado Pago	behance_182678517_01.png	"Mercado Pago
+
+a evolugcao da central ee
+de pagamentos do c=
+
+Vence em 20/mai
+
+Mercado Pago las
+
+Sera debitado em 28/mai
+
+ 
+    
+  
+ 
+
+ 
+
+Como reformulamos a secao “Contas e servicos” =T™M Meu Tefone >
+para torna-la o melhor lugar para a organiza¢ao
+de compromissos financeiros.
+
+Sugestdes para vocé arate
+
+7 6 Cadastre Oi em débito
+automatico e ganhe Tai ele}
+
+ 
+
+| Suas contas
+
+ 
+
+| Contas com lab ce
+| Be automatico,
+
+QUAL O OBJETIVO
+
+Garantir uma experiéncia de
+pagamento e gestao de contas
+completa e descomplicada
+
+A secao pretende oferecer tudo que as pessoas usuarias precisam
+para pagar e controlar suas contas em um mesmo aplicativo.
+
+QUAIS OS DESAFIOS
+
+ 
+  
+ 
+   
+
+“Cadastro” como modelo mental Mercado competitivo Interface eficiente e simples
+Oferecer um ambiente digital
+com opgdes de pagamento
+e gestao relevantes e faceis
+
+de compreender e de usar.
+
+Trazer diferenciais de
+usabilidade e de funcionalidade
+diante de uma concorréncia
+
+ja bem estabelecida.
+
+Mostrar que o cadastro em
+funcionalidades como lembrete
+e débito automatico garante
+maior controle das contas."
+182678517 A evolução da central de pagamentos do Mercado Pago	behance_182678517_02.png	"COMO RESOLVEMOS
+
+Organizamos a interface principal em modulos
+que permitem diferentes formas de gestao
+
+01
+
+MODULO: CENTRALIZADOR
+
+Visao de todos
+os compromissos
+
+< Contas e servicos
+
+ 
+
+fina nceiros A pagar Historico
+
+Exibimos um panorama do passado, Sera debitado hoje
+
+presente e futuro de todas as contas. Dien} Disney+ >
+R$ 27,90
+
+Vence em 14/fev
+
+Temavi Servicos Cond...
+
+R$ 400,10
+
+Sera debitado em 20/fev
+Claro« Claro >
+R$ 132,00"
+182678517 A evolução da central de pagamentos do Mercado Pago	behance_182678517_08.png	"PROCESSO DE TRABALHO
+
+Time multidisciplinar e colaborativo
+
+GY
+
+ 
+
+Ideagao Checks Prod + IT Iteragao Testes externos Telas em alta Desenvolvimento Testes internos
+e QA C)
+Primeiras Alinhamento Ajustes apds Validagao com Entregas Backend Validagdo com outras Lan¢gamento
+exploracgdes de objetivos feedbacks pessoas usuarias de handoff e Frontend areas da companhia nas lojas
+
+TC
+
+de aplicativos"
+182678517 A evolução da central de pagamentos do Mercado Pago	behance_182678517_10.png	"mercadolibreuxteam
+
+UT
+
+  
+
+x
+
+Créditos
+
+Cc
+
+X
+
+Paulo Rubiano
+
+Luiz Henrique Mioto Galbiatti
+Dana Lopez
+
+Camila Spessot
+
+Danila Bermejo
+
+Danilo Barra
+
+Lau Panic
+
+Ana Livia Machado Nunes
+Maria Micaela Donelli
+Sergio Daniel Florez
+Tainah Fernandes
+
+Manu Silva
+
+Ba Lisboa
+
+UX Research
+
+Maria Sol Velazquez
+Cybelle Salvatico
+Jorge Arturo Montiel
+Ailin Resch
+
+Desarrollo
+
+Tomas Wainberg
+
+Javier Spano
+
+Mariano David Gitelman
+Arthur Junqueira Cancado
+Javier Spano
+
+Mauro Javier Alderete
+William Moraes Da Silva
+Pablo Ariel Lopez
+
+Daniel Goldberg
+
+Fernando Dias Silva
+Carlos Philipe Mendes Bahia
+Murilo Silveira Fontes
+Santiago Bullaude
+
+Thiago Antonio Ramalho
+Pablo Martin Bazan
+
+Felipe Gonzalez
+
+Francisco Sicardi Riobo
+Thiago Da Silva Lima Pinto
+Pablo Agustin Tocci
+Sebastian Panetta
+
+Ignacio Ezequiel Gimenez
+Rafael Felipe De Figueiredo
+Martin Ortega
+
+Mauro Gonzalez
+
+Ady Junior
+
+Quer ver mais? Siga nossas redes
+
+Everton Rodrigo Lima
+Jotazér Leite
+
+Clecio Miranda De Oliveira
+Ezequiel Ignacio Aliotta
+Gabriel Couto
+
+Darlan Gomes Jambersi
+Maran Parana Morimoto Paes
+Joao Gabriel Dos Anjos
+Pablo Rodrigo Lima
+Edileuson Lucas Dias Santos
+Thiago Almeida Leite
+Vinicius Cardoso De Castro
+Andres Serrano
+
+Jorge Montoya
+
+Julian Cantor
+
+Omar Sotelo
+
+Pedro Torres
+
+Wanderson Ferreira Dias
+
+Producto
+
+Renato Sanches Lhamas Higute
+Constanza Crespo Rey
+
+Anto Almada
+
+Santiago Omar Frasso
+
+Larissa Tobar Da Costa
+
+Nao deixe de curtir, comentar e nos seguir para nao perder as
+ultimas novidades da equipe de UX do Mercado Livre.
+
+Bé oF y @0
+
+Behance Dribbble Instagram Twitter Medium
+
+wey"
+182678517 A evolução da central de pagamentos do Mercado Pago	behance_182678517_06.png	"DESTAQUE
+
+Novo modelo mental e um portfolio
+com mais funcionalidades
+
+ 
+
+< Cadastrar Claro
+
+Cadastro de contas
+simplificado
+
+ 
+
+Cadastrar débito automatico >
+
+< Cadastrar conta Vocé ganha tempo e tranquilidade i—tel Tastee oce emul lee CLL.)
+com suas contas pagas sempre no pessoa usuaria a cadastrar todas as suas
+dia certo. Cancele quando quiser. j .
+Q Digite o nome da empresa | | contas para pagar e gerenciar tudo em um so
+app.
+
+Mais buscadas por outras pessoas:
+
+Cadastrar lembrete Ja nesta primeira versdo de ""Contas e servicos"",
+
+vivo TM D Receba notificacées para nao oferecemos um portfdlio de funcionalidades
+manence esquecer do vencimento da fatura. mais completo com as opcées de débito
+automatico e lembrete.
+
+Vivo TIM celular Saneago
+
+2
+2, cvT
+
+Light GVT - Global
+
+T Vv) O01 Cadastrar nova conta
+
+—_
+
+embasa CEE.
+
+Embasa  CPFL Paulista A v) O2 Buscara empresa
+
+CEMIG
+
+casan
+
+cemig an Amazonas q @}e; Selecionar a opcao disponivel
+distribuicao telefonia"
+182678517 A evolução da central de pagamentos do Mercado Pago	behance_182678517_07.png	"ANTES E DEPOIS
+
+Cada coisa em seu lugar
+
+Toda a interface foi pensada para a pessoa usuaria acessar e concluir
+facilmente as agdes de pagamento e de gestdo.
+
+2021 . 2023
+
+< Pagar boletos e tributos < Contas e servicos
+
+A pagar Hist6rico
+
+Digitar Escanear
+Sera debitado hoje
+Disney+
+R$ 27,90
+Proximos vencimentos
+
+Vence em 14/fev
+
+Temavi Servicos Cond... R$ 40010 Temavi Servicos Cond...
+R$ 400,10
+
+VENCE AMANHA
+
+Sera debitado em 20/fev
+—,  Assinatura Disney+ R$ 27,90 Claro
++
+
+Pague até 14/02 R$ 132,00
+
+Ver mais
+
+Vence em 14/05
+
+Temavi Servicos Cond... R$ 40010
+(@)
+
+Sugestdes para vocé
+
+g Cadastre Oi em débito
+automatico e ganhe tempo
+
+Ver todos (12)
+
+Pagamentos agendados
+
+Self English R$ 225,00 Suas contas
+@)
+
+Agendado para amanha Contas com lembrete ou em débito automatico.
+
+gra CPFL Piratininga R$ 194,00
+casi Agendado para 03/05
+
+Casa do Construtor R$ 126,00
+
+Pagar nova conta"
+182678517 A evolução da central de pagamentos do Mercado Pago	behance_182678517_03.png	"4
+
+Cadastre Oi em débito
+automatico e ganhe tempo
+
+ 
+
+02
+
+MODULO: SUGESTOES
+
+Propostas
+personalizadas
+
+Identificamos as contas ja pagas pela pessoa usuaria
+e sugerimos o cadastro direto em funcionalidades
+como débito automatico ou lembrete.
+
+Com menos passos, por aqui, o cadastro é ainda mais
+rapido do que através de ""Cadastrar nova conta""."

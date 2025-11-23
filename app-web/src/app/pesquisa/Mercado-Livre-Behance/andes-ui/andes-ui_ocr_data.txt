@@ -1,0 +1,625 @@
+Project Name	Image Filename	Extracted Text
+72037475 Andes UI	behance_72037475_07.gif	"Tipogratia
+Spacing
+
+Color
+
+Breadcrumb
+Button
+
+card
+
+Checkbox
+Dropdown select
+List select
+Message
+
+Modal
+Pagination
+
+Radio button
+
+ee eee Ee
+
+Ren! Reet)
+
+Porte)
+
+Pier
+
+ 
+
+Estado
+
+Se utilizan para dar feedback al usuario de diferentes estados de elementos 0 procesos.
+
+tran Da)
+
+ 
+
+Color
+
+Pateta
+Aplicacién
+Paleta
+
+Jerarquias de color
+
+Para algunos colores, ademés del valor principal
+‘visten tonos secundaros y terciarios. El uso de
+estos valores estélimitado 0 un acompatamiento 0
+relverze del colo primatio, es deci, ne deben
+aplicarse de manera independiente,"
+72037475 Andes UI	behance_72037475_01.gif	"Mercado Libre UX Team S
+
+Andes UI
+
+User Interface System
+por Mercado Libre
+
+oso
+
+OL) &"
+72037475 Andes UI	behance_72037475_06.png	"n ipsum dolor
+
+| ipsum dolor
+ipsum dolor
+
+sum dolor
+
+ipsum dolor
+sum dolor
+um dolor
+
+im dolor
+
+1 dolor
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+   
+
+; Iphone X 128gb $ 45.500
+Modal title x New
+Smeg Coffee Maker Red $ 2.450
+Great
+Nike Paris T-shirt Men $890
+New
+Adidas Urban Line $ 2.900
+France Blue
+New
+Trek Bike 2018 $ 23.500
+Right now
+Bonona  Semplo x Bamoio Dropdown v Dropdown v
+Dropggnn » Dropggwn v
+© Hello x
+Textfield Dropdown Y This information might be useful
+Textfield
+Input text] Dropdown a aS
+Seen ea eects
+Textfield
+Input text] Dropdown Y ATT)
+Not good Not good ee tM a ics)
+Moan
+Levent Reed
+Primary text Label
+Primary text
+Primary text 5) Label & Secondary text farted
+Primary text Sea]
+Label
+Pr text
+mimes Primary text
+Label Secondary text
+Ez Primary text
+Button Secondary text
+Button Unselected .
+x Modal title
+Button
+D @ Selected
+Loading
+< >
+C) (1 unselected
+Selected
+<> av x@v errs)
+B® Partial selection
+> aA v xX C)
+Loading
+
+DOCUMENTACION
+
+ 
+
+Creamos una web para explicar el uso
+de componentes y compartir buenas
+practicas visuales entre los equipos
+
+Almagro v
+
+Almagro
+
+>, Palermo
+
+Villa Santa Rita
+
+lireccién
+
+AX ANDES UI
+
+Enrepoxo Label
+En reposo
+Estado neutral por defecto, Se mostacén helpers
+persstentes silos hublese
+Label
+Enrepoxo
+Libel to
+Hover
+Indica el érea clickeable al pasar el cursor y enfatiza
+la interaccién. Si existe un helper no persistente se ro Label ©
+mostearé en esta instancia =
+Focus
+Label
+Indica el campo active donde se eserbies Focus i
+informacion. 7
+Label
+Progress Input text
+Paleta —Aplicacién
+Acentos
+
+Primeros pasos
+
+Permiten hacer énfasis en determinados elementos relevantes de la UI como botones, links,
+
+ 
+
+ 
+
+Adidi
+New
+
+Trek
+New
+
+ 
+
+Goox
+New
+
+ 
+
+Hello
+
+This information
+
+ 
+
+Textbox
+
+Textbox
+
+Hello world
+
+Textbox
+
+Hello world
+
+ 
+
+Not good
+
+Textbox
+
+Aplicaciones
+
+Mobile
+
+El margen por defecto es de
+de requerir mucha densidad
+navegacién superior no debe
+medicién.
+
+‘Medium (default)"
+72037475 Andes UI	behance_72037475_03.gif	"SKETCH LIBRARIES
+
+Trabajar con simbolos compartidos
+nos permite trabajar con agilidad y
+también mantener a los equipos de
+disefo actualizados a las Ultimas
+definiciones de disefio."
+72037475 Andes UI	behance_72037475_05.gif	"Se adaptan tanto a diferentes casos de
+uso como al brand color de Mercado Libre
+y Mercado Pago.
+
+Mensaje
+
+ 
+
+ACCION
+
+Overrides
+
+ 
+
+~ Gessage
+
+__ [Mensaje
+
+Exit
+
+scion
+
+  
+
+ 
+
+color
+
+.-/Colors/&BSuccess"
+72037475 Andes UI	behance_72037475_04.png	COMPONENTES CUSTOMIZABLES
+72037475 Andes UI	behance_72037475_08.png	"Snackbar
+
+Spinner
+Tab
+
+Table Grises
+
+Tag Los grises se utiizan para texto, fondo y otros elementos de UL
+Text field
+
+ 
+
+El color de fondo utiliza algtin valor de gris sélide (e): #EDEDED) Texto y otros elementos
+
+ 
+
+<p class=“andes-list_title”>
+
+ 
+
+Row title
+
+WD | Rowdescription
+
+<p class=“andes-list_subtitle"">
+
+ 
+
+ 
+
+clientes escanean tu
+QR y te pagan
+
+le la app de Merc
+ado Pago.
+
+    
+
+Celular 32gb 3gb Ram
+Nuevo Libre
+
+3122 opiniones
+
+$ 10.499
+
+© _Pagé en hasta 12 cuotas
+
+@® _Envio gratis
+
+© Devolucién express gratis:
+
+Colaboradores Roles
+
+Juan Lépez
+
+Romina Perez
+
+   
+
+ 
+
+cae andes-modal-dialog__header-
+
+Petatciey tates
+
+ 
+
+Modal title
+
+MUbYUE PUSUETE PIaLeaL UUIUE HUN UTE, DUEL HEL CLUS
+sapien. Curabitur sit amet turpis imperdiet, cursus dolor at,
+lacinia massa. Cras gravida elit ipsum, varius aliquet risus
+varius sit amet. Sed sit amet massa fringilla, semper mi eget,
+pharetra lacus. Donec magna libero, congue ac porttitor sit
+amet, molestie auctor nisl. Morbi sagittis suscipit tortor a
+dapibus.
+
+Aenean ac luctus mauris. Mauris sit amet dapibus purus.
+Aenean lacinia rutrum massa, vitae finibus turpis lacinia eget.
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+
+<div class=“andes-butt
+
+ 
+
+ 
+
+fe
+
+a
+Taree
+
+Tu pago se realiz6
+con éxito
+
+Consegui beneficios
+
+do Mercado Pago pa
+y promocion
+
+   
+   
+
+  
+
+éEn cuantas cu
+
+ 
+   
+     
+
+x $9,999
+
+3x $3.333
+
+6x $1.666
+
+12x $833
+
+&
+
+‘Samsung Galaxy $9+ Plus 6.2"" 6gb
+
+! Cancelaste la invitacion
+
+ 
+
+éQuerés ver mas? Seguinos.
+
+No te olvides de apreciar, comentar y seguirnos para no perderte
+las Ultimas novedades del equipo de UX de Mercado Libre.
+
+Be @
+
+Dribbble
+
+ 
+
+Behance
+
+ 
+
+Instagram Twitter"
+72037475 Andes UI	behance_72037475_02.png	"Brindar una experiencia visual unificada
+
+en todo nuestro ecosistema
+
+a
+
+   
+     
+  
+ 
+  
+
+HASTA 40% OFF
+
+MARATON DE
+PRECIOS BAJC
+
+La escala y complejidad de nuestros productos y Ver productos
+
+equipos de trabajo nos ponen a prueba a diario.
+jCon esta com
+nivel y consigt
+gratis a partir ¢
+
+(oro oNe-lar= aCe) 12
+
+ 
+ 
+
+ 
+ 
+ 
+       
+     
+     
+   
+
+Ingresa
+
+puntos para el proximo nivel.
+
+Inactivas por tiempo
+Republicalas para volver a v
+Normal a domicilio $100
+
+Llega el martes 11 de abril
+Dejar de ver
+
+jExcelente decisi6n! Ya
+estas invirtiendo tu dinero
+
+alos con tus compras.
+Gratis
+
+ 
+  
+ 
+
+ 
+
+Retiro en sucursal de correo
+disponible. Llega entre el 10 y el 14 de diciembre en
+ja sucursal mas cercana a Villa Urquiza Invertir dinero
+
+ 
+ 
+ 
+ 
+ 
+   
+ 
+    
+   
+ 
+
+ 
+ 
+
+Capital Federal
+
+Seleccionar todos
+
+ 
+   
+
+© Recuerda que tienes cuotas de tu
+préstamo proximas a vencer. En los
+
+préximos dias debitaremos el dinero
+correspondientes para pagarlas.
+
+   
+   
+
+Administrar publicaciones
+
+Planteamos objetivos a completar
+
+ 
+
+ 
+
+ 
+
+ 
+
+& ® E ®
+
+Definicién Libreria UI Documentacion Implementacion
+Relevar y decidir como debe Dar herramientas para facilitar la Disponibilizar informacion que Garantizar la éptima
+
+verse y comportarse nuestra UI construccién de la Ul a nuestro ayude a entender y aplicar la UI construccién y aplicacién de
+de cara a los usuarios. equipo de disefio. de forma consistente. los componentes.
+
+DEFINICION
+
+Especificamos cémo debe
+funcionar y verse nuestra UI
+
+os
+
+COLOR
+
+Delimitamos una paleta cromatica que
+nos identifique, reforzando el estilo y tono
+
+a transmitir a los usuarios.
+Gray 70 Gray 250
+
+Gray 40 Gray 450
+
+  
+
+Aa
+
+SEMIBOLD
+
+TIPOGRAFIA
+
+e@ Redujimos el uso de variables manteniendo un
+PRIMARY
+sistema tipografico que garantiza contraste,
+
+Lorem ipsum legibilidad y flexibilidad de aplicacion.
+
+2orx Lorem ipsum
+
+Lorem ipsum
+
+64 48 40 32 24 20 16 2 8 4
+
+ 
+
+LAYOUT Y SPACING
+
+Nos permite manejar una
+escala comtn entre nuestros
+componentes de UI.
+
+ 
+
+Accent color
+andes-blue-ml
+
+border-radius 4 px
+
+COMPONENTES PIXEL-PERFECT
+
+i Somos detallistas en nuestros dibujos y
+nos enfocamos en cémo se ve y comporta
+cada componente.
+
+ 
+
+Label
+
+Body 18 B utton Stroke 1
+
+andes-blue-ml
+
+16 Label
+L4H _ Body 18/ andes-gray-800
+
+Button Option A le
+
+Row hover
+andes-gray-40
+
+2 Option B
+
+ 
+
+,, Option C
+
+Row selected
+
+border-left .
+andes-blue-ml Option D andes-gray-70
+
+Option disabled
+andes-gray-250
+
+border-radius 4 px
+
+box-shadow
+x 0 y: 8px blur: px rgba(0,0,0,0.25)
+
+@
+
+LIBRERIA UI
+
+Construimos un libreria para agilizar el
+trabajo de nuestro equipo de diseho"

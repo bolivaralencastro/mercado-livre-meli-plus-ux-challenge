@@ -1,0 +1,264 @@
+Project Name	Image Filename	Extracted Text
+121716009 One Tap: el check out de Mercado Pago	behance_121716009_18.jpg	"RESULTADOS
+
+Logramos que mas de 14 millones de
+personas paguen solo con su celular
+
+jMuchas gracias!
+
+ 
+
+Créditos
+
+Cc
+
+x
+
+  
+
+Federico Codino
+Leandro Di Pasquale
+Hernan Lucio
+
+Rocio Chiesa
+
+Matias Presta
+
+Laura Panic
+Maximiliano Passarelli
+Paulo Rubiano
+Leandro Sabater
+Martin Rodriguez Kedikian
+Carla Trovarelli
+
+Maria Eugenia Esteban
+Guido Guasqui
+
+Ana Silveira Silva
+Mercedes Lara
+Rodrigo Esch
+
+Nicolas Diez
+Producto
+
+Milton Brandes
+
+Dana Baravaglio
+
+éQuerés ver mas? Seguinos.
+
+Desarrollo
+
+Xavier Amarilla
+Daniel Goldberg
+Juan Sanzone
+Lucas Bais
+
+Jorge Gonzalez
+Agustin Mantuano
+Cristian Gaggino
+Maria de los Angeles Arlanti
+Valeria Serber
+Matias Romar
+Augusto Collerone
+Eden Torres
+Esteban Boffa
+Eric Ertl
+
+Demian Tejo
+Andrea Lata
+Gabriel Mileto
+Damian Tundis
+Nicolas Sarfati
+Samanta Loiza
+
+Carmen Villalta
+
+No te olvides de apreciar, comentar y seguirnos para no perderte las ultimas
+
+novedades del equipo de UX de Mercado Libre
+
+Be
+
+Behance
+
+v
+
+Twitter
+
+@
+
+Dribbble
+
+Instagram
+
+Medium"
+121716009 One Tap: el check out de Mercado Pago	behance_121716009_11.png	"o iT:
+
+COLORES TIPOGRAFIA
+Definimos 17 hexas para el pintado de las Utilizamos la tipografia Roboto Mono.
+tarjetas de crédito y débito. Por cada BIN de Una tipografia monoespaciada de codigo
+tarjeta asignamos uno de los colores jy listo! abierto, con buena legibilidad, y similar a
+Se ven igual que los plasticos. las de las tarjetas fisicas.
+
+Platinum A a
+
+#9DA2A4 #B89D5E #090909
+
+0123456789
+7 = ***K1 21
+
+#FFDFOA #D53838 #OO9SEES
+
+Orange
+
+#F79534"
+121716009 One Tap: el check out de Mercado Pago	behance_121716009_06.gif	
+121716009 One Tap: el check out de Mercado Pago	behance_121716009_09.png	"ei
+
+TAMANOS SEGUN DISPOSITIVOS
+
+Las tarjetas responden a las necesidades de la operacion,
+del sistema operativo y del tamano del teléfono."
+121716009 One Tap: el check out de Mercado Pago	behance_121716009_01.png	"Ry mercado
+
+OBJETIVO
+
+Crear una pantalla de pago para una
+experiencia apenas naciente en Latinoamérica:
+
+DESAFIOS
+
+Masivos Rapidos Familiares
+
+Para la creciente cantidad de Agiles y practicos, para ese Con todos los medios de pago dentro,
+negocios que aceptan QR. momento de la fila en la caja. como si fuera la billetera de siempre.
+
+DE DONDE PARTIMOS
+
+L, =
+ee - ~s
+
+AVEY.Y | cuota
+User flow del checkout de Mercado Libre
+
+    
+
+ 
+
+La pantalla de pagos de Mercado Libre es muy util para
+hacer una compra con tiempo y tranquilidad.
+
+ 
+
+QUE HICIMOS?
+
+para pagar con Mercado Pago
+en un comercio.
+
+ 
+
+VISA
+
+ 
+
+ 
+
+User flow del checkout de Mercado Pago"
+121716009 One Tap: el check out de Mercado Pago	behance_121716009_03.gif	"iol
+
+CUANTO Y COMO
+
+El selector de medios de
+pago, de cuotas y hasta la
+posibilidad de agregar un
+nuevo medio de pago, en
+segundo orden.
+
+Estas usando dinero en cuenta"
+121716009 One Tap: el check out de Mercado Pago	behance_121716009_14.png	"04.
+
+COMO QUEDO
+
+Buscabamos una solucion para los pagos
+presenciales, y terminamos brindando una
+experiencia de pago Unica para toda la app.
+jEn un solo toque!"
+121716009 One Tap: el check out de Mercado Pago	behance_121716009_10.gif	"Bandera VISA @® Santander Rio segue
+
+KKKK KKKK KKKK OOOO ~~ Nimewodeiaies
+Nombre del titular JORGE DANIEL GONZALEZ 12 /21 Fecha de vencimiento
+de la tarjeta de la tarjeta
+
+Beneficio. SOS Beneficio"
+121716009 One Tap: el check out de Mercado Pago	behance_121716009_12.png	"En el mismo espacio contamos descuentos y medios de
+pago sin interés. Mostramos a los usuarios las ventajas de
+cada medio, para que pueda elegir rapido y seguro.
+
+iAlgo que la billetera de cuero no hace!"
+121716009 One Tap: el check out de Mercado Pago	behance_121716009_04.png	"=
+
+Elegimos poner los
+medios de pago y el boton
+Pagar a la altura mas
+accesible del pulgar.
+
+Este ordenamiento nos permite ser
+amigables con los lectores de pantalla
+de los telefonos, y asi ser mas
+accesibles a las personas no videntes."
+121716009 One Tap: el check out de Mercado Pago	behance_121716009_05.gif	"SUMMARY ELASTICO
+
+Responde a las necesidades
+de diferentes tipos de pago
+y ayuda al usuario en los
+casos en que necesita mas
+informacion, sin perder
+flexibilidad ni sintesis."
+121716009 One Tap: el check out de Mercado Pago	behance_121716009_15.gif	
+121716009 One Tap: el check out de Mercado Pago	behance_121716009_13.gif	"Selecciona la cuota a
+
+VISA & Santander Rio 3x $233,33 Sin interés
+6x $ 116,66 Sin interés
+KKKK KKKK KKKK
+8000 | 9x $ 77,77 Sin interés
+JORGE DANIEL GONZALEZ APIA
+12x $ 158,33 ($ 100)"
+121716009 One Tap: el check out de Mercado Pago	behance_121716009_17.gif	
+121716009 One Tap: el check out de Mercado Pago	behance_121716009_16.gif	"Estas usando dinero en cuenta
+
+» mercado"
+121716009 One Tap: el check out de Mercado Pago	behance_121716009_07.png	"CUANTO Y COMO
+
+O03.
+
+Pintamos las tarjetas segun
+el banco y las categorias,
+para que las personas las
+identifiquen a primera vista.
+
+jComo en la billetera de cuero!"
+121716009 One Tap: el check out de Mercado Pago	behance_121716009_08.gif	"VISA @® Santander Rio
+
+Ce Se Se Se Se 120202)
+
+JORGE DANIEL GONZALEZ"
+121716009 One Tap: el check out de Mercado Pago	behance_121716009_02.png	"COMO LO HICIMOS?
+
+Resumimos la operacion
+en una sola pantalla.
+
+Starbucks
+
+ 
+
+ 
+
+A QUIEN Y QUE
+
+El comercio, el resumen
+
+de compra y el monto final,
+en la parte superior.
+
+Primero en orden de lectura."
