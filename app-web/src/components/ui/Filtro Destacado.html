@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+    /* --- ANDES TOKENS --- */
+    :root {
+        --andes-font-family: "Proxima Nova", -apple-system, Roboto, Arial, sans-serif;
+        --andes-gray-100: #f5f5f5;
+        --andes-gray-300: #ededed; /* Borda do card */
+        --andes-gray-400: #e2e2e2; /* Track do switch desligado */
+        --andes-gray-800: #333333;
+        --andes-white: #ffffff;
+        --andes-green-500: #00a650; /* Verde Frete Grátis */
+        --andes-blue-international: #1a478a; /* Azul escuro da marca Compra Internacional */
+        --andes-switch-track-width: 40px;
+        --andes-switch-track-height: 24px;
+    }
+
+    body {
+        font-family: var(--andes-font-family);
+        background-color: var(--andes-gray-100); /* Fundo cinza para contraste */
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* --- COMPONENTE CONTAINER --- */
+    .ui-search-filter-highlighted__container {
+        background-color: var(--andes-white);
+        border: 1px solid var(--andes-gray-300);
+        border-radius: 6px;
+        padding: 16px;
+        width: 300px; /* Largura fixa ou 100% */
+        box-sizing: border-box;
+    }
+
+    /* --- SWITCH LAYOUT --- */
+    /* O label age como o container flex para alinhar Texto (esq) e Toggle (dir) */
+    .andes-switch {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        margin: 0;
+        width: 100%;
+    }
+
+    /* Esconde o input nativo */
+    .andes-switch__input {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    /* --- CONTEÚDO DE TEXTO (ESQUERDA) --- */
+    .andes-switch__label {
+        display: flex;
+        flex-direction: column;
+        padding-right: 12px; /* Espaço entre texto e toggle */
+    }
+
+    /* Header: Compra Internacional */
+    .ui-search-filter-highlighted__title {
+        display: flex;
+        align-items: center;
+        font-style: italic;
+        font-weight: 800; /* Extra bold */
+        font-size: 12px;
+        color: var(--andes-blue-international);
+        margin-bottom: 6px;
+        letter-spacing: 0.5px;
+    }
+
+    .ui-search-icon--international {
+        width: 18px;
+        height: 18px;
+        fill: var(--andes-blue-international);
+        margin-right: 4px;
+    }
+
+    /* Texto Inferior */
+    .ui-label-builder span {
+        font-family: var(--andes-font-family);
+        line-height: 1.3;
+    }
+
+    .highlight-green {
+        color: var(--andes-green-500);
+        font-size: 12px;
+        font-weight: 600; /* Semibold */
+    }
+
+    .highlight-text {
+        color: var(--andes-gray-800);
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    /* --- VISUAL DO TOGGLE SWITCH (DIREITA) --- */
+    /* Criação do "trilho" do switch via CSS */
+    .andes-switch__slider {
+        position: relative;
+        width: var(--andes-switch-track-width);
+        height: var(--andes-switch-track-height);
+        background-color: var(--andes-gray-400);
+        border-radius: 12px; /* Metade da altura para ficar redondo */
+        transition: background-color 0.2s ease;
+        flex-shrink: 0; /* Impede que o switch encolha se o texto for grande */
+    }
+
+    /* Criação da "bolinha" (knob) */
+    .andes-switch__slider::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 20px;
+        height: 20px;
+        background-color: var(--andes-white);
+        border-radius: 50%;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        transition: transform 0.2s ease;
+    }
+
+    /* Estado Checked (Ativo) - Opcional, caso clique */
+    .andes-switch__input:checked + .andes-switch__slider {
+        background-color: #3483fa; /* Azul Andes */
+    }
+
+    .andes-switch__input:checked + .andes-switch__slider::before {
+        transform: translateX(16px);
+    }
+
+</style>
+</head>
+<body>
+
+    <!-- Componente -->
+    <div class="ui-search-filter-highlighted__container">
+        <label class="andes-switch ui-search-filter-highlighted__switch">
+            
+            <!-- Conteúdo de Texto (Lado Esquerdo) -->
+            <span class="andes-switch__label">
+                <!-- Título / Logo Simulado -->
+                <span class="ui-label-builder ui-search-filter-highlighted__title">
+                    <!-- Ícone Globe SVG -->
+                    <svg class="ui-search-icon--international" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                    COMPRA INTERNACIONAL
+                </span>
+                
+                <!-- Descrição -->
+                <span class="ui-label-builder">
+                    <span class="highlight-green">Frete grátis</span>
+                    <span class="highlight-text"> em carrinhos a partir de R$ 79</span>
+                </span>
+            </span>
+
+            <!-- Input Lógico (Escondido) -->
+            <input class="andes-switch__input" id="SHIPPING_ORIGIN_HIGHLIGHTED" type="checkbox" role="switch">
+            
+            <!-- Visual do Switch (Lado Direito) -->
+            <div class="andes-switch__slider"></div>
+            
+        </label>
+    </div>
+
+</body>
+</html>

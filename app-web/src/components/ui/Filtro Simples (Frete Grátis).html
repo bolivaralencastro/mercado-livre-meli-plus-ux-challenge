@@ -1,0 +1,101 @@
+<style>
+  /* --- ANDES DESIGN TOKENS --- */
+  .ui-search-filter-highlighted__container {
+    font-family: "Proxima Nova", -apple-system, Roboto, Arial, sans-serif;
+    background-color: #ffffff;
+    border: 1px solid #ededed; /* Borda cinza claro padrão */
+    border-radius: 6px;        /* Andes Border Radius Large */
+    padding: 16px;
+    width: 100%;
+    max-width: 300px;          /* Largura típica da sidebar */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Container Flexível (Label) */
+  .andes-switch {
+    display: flex;
+    justify-content: space-between; /* Texto na esq, Switch na dir */
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Texto "Frete grátis" */
+  .ui-search-filter-highlighted__title {
+    font-size: 16px;
+    font-weight: 600; /* Semibold para destaque */
+    color: #333333;   /* Andes Gray 800 */
+    line-height: 1.25;
+  }
+
+  /* --- LÓGICA DO SWITCH --- */
+  
+  /* Input original escondido (acessibilidade mantida) */
+  .andes-switch__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* O "Trilho" do switch */
+  .andes-switch__slider {
+    position: relative;
+    width: 40px;
+    height: 24px;
+    background-color: #e2e2e2; /* Cor "Desligado" (Gray 400) */
+    border-radius: 12px;       /* Arredondamento completo */
+    transition: background-color 0.2s ease-in-out;
+    flex-shrink: 0;            /* Garante que o switch não amasse */
+  }
+
+  /* A "Bolinha" (Knob) do switch */
+  .andes-switch__slider::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2); /* Sombra suave (Elevation 1) */
+    transition: transform 0.2s ease-in-out;
+  }
+
+  /* --- ESTADOS DE INTERAÇÃO (CHECKED) --- */
+  
+  /* Mudar cor do trilho quando ativo */
+  .andes-switch__input:checked + .andes-switch__slider {
+    background-color: #3483fa; /* Andes Blue 500 */
+  }
+
+  /* Mover a bolinha quando ativo */
+  .andes-switch__input:checked + .andes-switch__slider::before {
+    transform: translateX(16px);
+  }
+</style>
+
+<!-- Componente -->
+<div class="ui-search-filter-highlighted__container">
+  <label class="andes-switch">
+    
+    <!-- Texto -->
+    <span class="andes-switch__label">
+      <span class="ui-label-builder ui-search-filter-highlighted__title">
+        <span>Frete grátis</span>
+      </span>
+    </span>
+
+    <!-- Input Lógico -->
+    <input class="andes-switch__input" id="shipping_cost_highlighted_free" type="checkbox" role="switch">
+    
+    <!-- Visual do Switch (Slider) -->
+    <div class="andes-switch__slider"></div>
+    
+  </label>
+</div>

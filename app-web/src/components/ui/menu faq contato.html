@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Andes Help List Component</title>
+<style>
+    /* --- ANDES TOKENS --- */
+    :root {
+        --andes-font-family: "Proxima Nova", -apple-system, Roboto, Arial, sans-serif;
+        --andes-white: #ffffff;
+        --andes-gray-300: #ededed; /* Divisórias e Borda */
+        --andes-gray-400: #999999; /* Chevron inativo */
+        --andes-gray-800: #333333; /* Texto Principal */
+        --andes-blue-500: #3483fa; /* Azul (Seta Hover) */
+        --andes-border-radius: 6px;
+    }
+
+    body {
+        font-family: var(--andes-font-family);
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        padding: 40px;
+        margin: 0;
+    }
+
+    /* --- ESTRUTURA DO CARD --- */
+    .andes-card {
+        background-color: var(--andes-white);
+        border-radius: var(--andes-border-radius);
+        border: 1px solid var(--andes-gray-300); 
+        box-shadow: 0 1px 1px 0 rgba(0,0,0,0.05);
+        width: 100%;
+        max-width: 415px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    /* --- LISTA --- */
+    .andes-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* --- ITEM DA LISTA --- */
+    .andes-list__item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-height: 48px; /* Altura reduzida (Compact) */
+        text-decoration: none;
+        background-color: var(--andes-white);
+        cursor: pointer;
+        /* Sem transição de fundo, pois não há mudança de cor de fundo */
+    }
+
+    /* Link que cobre toda a área */
+    .andes-list__item-actionable {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        outline: none;
+    }
+
+    /* Linha divisória */
+    .andes-list__item:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 24px; 
+        right: 24px;
+        height: 1px;
+        background-color: var(--andes-gray-300);
+        z-index: 2;
+    }
+
+    /* --- INTERAÇÃO HOVER --- */
+    /* Apenas a seta muda de cor */
+    .andes-list__item:hover .andes-list__item-chevron {
+        color: var(--andes-blue-500);
+    }
+
+    /* --- CONTEÚDO INTERNO --- */
+    .andes-list__item-content-wrapper {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 16px 24px; /* Padding vertical reduzido para diminuir altura total */
+        box-sizing: border-box;
+        pointer-events: none;
+    }
+
+    /* Ícone (Esquerda) */
+    .andes-list__item-asset {
+        margin-right: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        flex-shrink: 0;
+        color: rgba(0, 0, 0, 0.9);
+    }
+
+    .andes-list__item-asset svg {
+        fill: currentColor;
+    }
+
+    /* Texto (Centro) */
+    .andes-list__item-text {
+        flex-grow: 1;
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--andes-gray-800);
+        line-height: 1.25;
+    }
+
+    /* Chevron (Direita) */
+    .andes-list__item-chevron {
+        color: var(--andes-gray-400);
+        display: flex;
+        align-items: center;
+        margin-left: 12px;
+        transition: color 0.2s ease-in-out; /* Transição suave para o azul */
+    }
+
+</style>
+</head>
+<body>
+
+    <div class="andes-card">
+        <ul class="andes-list">
+            
+            <!-- Item 1 -->
+            <li class="andes-list__item">
+                <a href="#" class="andes-list__item-actionable" aria-label="Ir para Fale Conosco"></a>
+                
+                <div class="andes-list__item-content-wrapper">
+                    <div class="andes-list__item-asset">
+                        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.8007 7.60114H14.2002V6.40114H5.8007V7.60114Z" fill="black" fill-opacity="0.9"/>
+                            <path d="M10.6022 10.0013L5.79908 10.0004L5.79931 8.80036L10.6024 8.80125L10.6022 10.0013Z" fill="black" fill-opacity="0.9"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.0002 14.9293H9.82065L14.9243 18.3314V14.9293H16.0044C16.9985 14.9293 17.8044 14.1234 17.8044 13.1293V4.00532C17.8044 3.01121 16.9985 2.20532 16.0044 2.20532H4.0002C3.00608 2.20532 2.2002 3.01121 2.2002 4.00532V13.1293C2.2002 14.1234 3.00608 14.9293 4.0002 14.9293ZM16.0044 13.7293H13.7243V16.0893L10.1839 13.7293H4.0002C3.66882 13.7293 3.4002 13.4607 3.4002 13.1293V4.00532C3.4002 3.67395 3.66882 3.40532 4.0002 3.40532H16.0044C16.3358 3.40532 16.6044 3.67395 16.6044 4.00532V13.1293C16.6044 13.4607 16.3358 13.7293 16.0044 13.7293Z" fill="black" fill-opacity="0.9"/>
+                        </svg>
+                    </div>
+                    <div class="andes-list__item-text">
+                        Fale conosco
+                    </div>
+                    <div class="andes-list__item-chevron">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M8.27686 4.34644L7.42834 5.19496L12.224 9.99059L7.42334 14.7912L8.27187 15.6397L13.921 9.99059L8.27686 4.34644Z"/>
+                        </svg>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Item 2 -->
+            <li class="andes-list__item">
+                <a href="#" class="andes-list__item-actionable" aria-label="Ir para Perguntas frequentes"></a>
+                
+                <div class="andes-list__item-content-wrapper">
+                    <div class="andes-list__item-asset">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.0827 8.67596C7.0827 7.81268 7.69569 7.37083 8.25083 6.97068L8.2657 6.95996L8.27263 6.95509C8.75081 6.61908 9.1757 6.32053 9.1757 5.81596C9.1757 5.30896 8.7857 4.87996 7.9407 4.87996C7.1477 4.87996 6.5757 5.24396 6.1337 5.78996L5.2627 4.81496C5.9257 4.00896 6.9267 3.52796 8.0967 3.52796C9.7347 3.52796 10.7357 4.39896 10.7357 5.56896C10.7357 6.64796 10.0077 7.16796 9.35769 7.62296L9.29678 7.66777C8.82693 8.01306 8.4087 8.32042 8.4087 8.81896C8.4087 9.02696 8.5257 9.26096 8.6947 9.40396L7.5507 9.78096C7.2387 9.48196 7.0827 9.10496 7.0827 8.67596Z" fill="black" fill-opacity="0.9"/>
+                            <path d="M7.1087 11.562C7.1087 11.068 7.5247 10.652 8.0187 10.652C8.5127 10.652 8.9287 11.068 8.9287 11.562C8.9287 12.056 8.5127 12.472 8.0187 12.472C7.5247 12.472 7.1087 12.056 7.1087 11.562Z" fill="black" fill-opacity="0.9"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.00026 15.8C12.3081 15.8 15.8003 12.3078 15.8003 7.9999C15.8003 3.69204 12.3081 0.199829 8.00026 0.199829C3.6924 0.199829 0.200195 3.69204 0.200195 7.9999C0.200195 12.3078 3.6924 15.8 8.00026 15.8ZM8.00026 14.6C4.35515 14.6 1.4002 11.645 1.4002 7.9999C1.4002 4.35478 4.35515 1.39983 8.00026 1.39983C11.6454 1.39983 14.6003 4.35478 14.6003 7.9999C14.6003 11.645 11.6454 14.6 8.00026 14.6Z" fill="black" fill-opacity="0.9"/>
+                        </svg>
+                    </div>
+                    <div class="andes-list__item-text">
+                        Perguntas frequentes
+                    </div>
+                    <div class="andes-list__item-chevron">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M8.27686 4.34644L7.42834 5.19496L12.224 9.99059L7.42334 14.7912L8.27187 15.6397L13.921 9.99059L8.27686 4.34644Z"/>
+                        </svg>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+</body>
+</html>

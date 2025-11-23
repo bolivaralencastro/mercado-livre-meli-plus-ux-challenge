@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Menu Corrigido - Altura Automática</title>
+<style>
+    /* --- TOKENS --- */
+    :root {
+        --andes-font-family: "Proxima Nova", -apple-system, Roboto, Arial, sans-serif;
+        --andes-gray-800: #333333;
+        --andes-gray-500: #666666;
+        --andes-gray-100: #f5f5f5;
+        --andes-gray-300: #ededed;
+        --andes-blue-500: #3483fa;
+        --andes-white: #ffffff;
+        --andes-shadow: 0 4px 16px 0 rgba(0,0,0,0.2);
+        --andes-border-radius: 6px;
+    }
+
+    body {
+        font-family: var(--andes-font-family);
+        margin: 0;
+        padding: 40px;
+        background-color: #e6e6e6;
+    }
+
+    ul { list-style: none; padding: 0; margin: 0; }
+    a { text-decoration: none; color: inherit; }
+
+    /* --- NAVBAR --- */
+    .nav-container {
+        background-color: var(--andes-white);
+        padding: 0 40px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: var(--andes-gray-500);
+        box-shadow: 0 1px 0 0 var(--andes-gray-300);
+        position: relative;
+    }
+
+    .nav-item {
+        margin-right: 24px;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 5px;
+        transition: color 0.2s;
+    }
+
+    .nav-item:hover {
+        color: var(--andes-blue-500);
+    }
+
+    .nav-separator {
+        width: 1px;
+        height: 16px;
+        background-color: var(--andes-gray-300);
+        margin: 0 14px 0 -4px;
+    }
+
+    .nav-arrow {
+        width: 10px;
+        height: 10px;
+        margin-left: 4px;
+        fill: currentColor;
+        transition: transform 0.2s;
+    }
+
+    .nav-item--has-menu:hover .nav-arrow {
+        transform: rotate(180deg);
+    }
+    
+    .nav-item--has-menu:hover .dropdown-menu {
+        display: block;
+    }
+
+    /* --- MENU NÍVEL 2 (Esquerda) --- */
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: -10px;
+        background-color: var(--andes-white);
+        min-width: 280px;
+        box-shadow: var(--andes-shadow);
+        border-radius: var(--andes-border-radius); /* Borda arredondada padrão */
+        z-index: 100;
+        padding: 10px 0;
+        margin-top: 8px;
+    }
+
+    /* Ponte invisível para o mouse não "escapar" entre o navbar e o menu */
+    .dropdown-menu::after {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: transparent;
+    }
+
+    /* Seta superior (Triângulo) */
+    .dropdown-menu::before {
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: 40px;
+        width: 12px;
+        height: 12px;
+        background-color: var(--andes-white);
+        transform: rotate(45deg);
+        box-shadow: -2px -2px 2px -1px rgba(0,0,0,0.05);
+        z-index: 101;
+    }
+
+    /* --- ITENS DO MENU --- */
+    .menu-item {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        color: var(--andes-gray-800);
+        font-size: 14px;
+        cursor: pointer;
+        position: relative; /* Referência para o submenu */
+    }
+
+    .menu-item:hover {
+        background-color: var(--andes-gray-100);
+        color: var(--andes-blue-500);
+        /* Quando hover, removemos o arredondamento da direita para conectar com o submenu */
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .menu-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+        object-fit: contain;
+    }
+
+    .menu-chevron {
+        margin-left: auto;
+        width: 12px;
+        height: 12px;
+        fill: #999;
+    }
+    
+    .menu-item:hover .menu-chevron {
+        fill: var(--andes-blue-500);
+    }
+
+    /* --- MENU NÍVEL 3 (Painel Lateral Direito) --- */
+    /* CORREÇÃO PRINCIPAL AQUI */
+    .submenu-panel {
+        display: none;
+        position: absolute;
+        
+        /* Posicionamento: Cola na direita do item pai */
+        left: 100%; 
+        
+        /* Sobe 10px para alinhar com o topo do container pai (que tem padding 10px) */
+        top: -10px; 
+        
+        width: 300px;
+        
+        /* FIX: Altura Mínima igual ao pai, mas AUTO para crescer se tiver muito texto */
+        min-height: calc(100% + 20px); 
+        height: auto; 
+        
+        background-color: var(--andes-white);
+        
+        /* Sombra igual ao pai para parecer um bloco só */
+        box-shadow: var(--andes-shadow);
+        
+        /* Arredonda só a direita */
+        border-radius: 0 var(--andes-border-radius) var(--andes-border-radius) 0;
+        
+        padding: 24px; /* Espaçamento interno */
+        box-sizing: border-box;
+        z-index: 99;
+        
+        /* Removemos margem para colar visualmente */
+        margin-left: 0; 
+    }
+
+    /* Ponte lateral invisível */
+    .submenu-panel::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -10px;
+        width: 10px;
+        height: 100%;
+        background: transparent;
+    }
+
+    .menu-item:hover .submenu-panel {
+        display: block;
+    }
+
+    /* Títulos e Links do Submenu */
+    .submenu-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--andes-gray-800);
+        margin-bottom: 4px;
+        display: block;
+        line-height: 1.25;
+    }
+
+    .submenu-link-all {
+        font-size: 14px;
+        color: var(--andes-blue-500);
+        text-decoration: none;
+        display: block;
+        margin-bottom: 16px;
+        font-weight: 600;
+    }
+    .submenu-link-all:hover { color: #2968c8; }
+
+    .submenu-divider {
+        height: 1px;
+        background-color: var(--andes-gray-300);
+        border: none;
+        margin: 0 0 16px 0;
+    }
+
+    .submenu-list li { margin-bottom: 14px; }
+    
+    .submenu-list a {
+        font-size: 14px;
+        color: var(--andes-gray-800);
+        font-weight: 400;
+        display: block; /* Garante área de clique */
+    }
+    .submenu-list a:hover { color: var(--andes-blue-500); }
+
+</style>
+</head>
+<body>
+
+    <nav class="nav-container">
+        <div class="nav-item">Início</div>
+        
+        <!-- CORREDORES (Hover aqui abre Nível 2) -->
+        <div class="nav-item nav-item--has-menu">
+            Corredores
+            <svg class="nav-arrow" viewBox="0 0 12 12">
+                <path d="M9.35229 3.70447L6.00004 7.05672L2.64779 3.70447L1.85229 4.49996L6.00004 8.64771L10.1478 4.49996L9.35229 3.70447Z"/>
+            </svg>
+
+            <div class="dropdown-menu">
+                
+                <!-- OFERTAS (Hover aqui abre Nível 3) -->
+                <div class="menu-item">
+                    <!-- Ícone SVG (Substituto caso a imagem quebre) -->
+                    <img src="https://http2.mlstatic.com/storage/splinter-admin/1583341146061-todas-las-ofertas@3x.png" alt="" class="menu-icon">
+                    <span>Ofertas</span>
+                    <svg class="menu-chevron" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+
+                    <!-- NÍVEL 3 -->
+                    <div class="submenu-panel">
+                        <span class="submenu-title">Ofertas</span>
+                        <a href="#" class="submenu-link-all">Ver todo o corredor</a>
+                        <hr class="submenu-divider">
+                        
+                        <ul class="submenu-list">
+                            <li><a href="#">Super ofertas</a></li>
+                            <li><a href="#">Destaques para aproveitar</a></li>
+                            <li><a href="#">Só por hoje</a></li>
+                            <li><a href="#">Mercearia</a></li>
+                            <li><a href="#">Higiene e Cuidados Pessoais</a></li>
+                            <li><a href="#">Limpeza</a></li>
+                            <!-- Itens extras para testar o crescimento da altura -->
+                            <li><a href="#">Bebidas</a></li>
+                            <li><a href="#">Mundo Pet</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- OUTROS ITENS -->
+                <div class="menu-item">
+                    <img src="https://http2.mlstatic.com/storage/splinter-admin/1583346038636-almacen@3x.png" alt="" class="menu-icon">
+                    <span>Mercearia</span>
+                    <svg class="menu-chevron" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://http2.mlstatic.com/storage/splinter-admin/1583346190360-higiene@3x.png" alt="" class="menu-icon">
+                    <span>Higiene e Cuidados Pessoais</span>
+                    <svg class="menu-chevron" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://http2.mlstatic.com/storage/splinter-admin/1583346261643-limpieza@3x.png" alt="" class="menu-icon">
+                    <span>Limpeza</span>
+                    <svg class="menu-chevron" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                </div>
+                
+                <div class="menu-item">
+                    <img src="https://http2.mlstatic.com/storage/splinter-admin/1583346095764-bebidas@3x.png" alt="" class="menu-icon">
+                    <span>Bebidas alcoólicas</span>
+                    <svg class="menu-chevron" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://http2.mlstatic.com/storage/splinter-admin/1583346302757-bebes@3x.png" alt="" class="menu-icon">
+                    <span>Bebês e Crianças</span>
+                    <svg class="menu-chevron" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://http2.mlstatic.com/storage/splinter-admin/1583346400809-hogar@3x.png" alt="" class="menu-icon">
+                    <span>Utilidades</span>
+                    <svg class="menu-chevron" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-item">Ofertas</div>
+        <div class="nav-separator"></div>
+        <div class="nav-item">Black Friday</div>
+    </nav>
+
+</body>
+</html>

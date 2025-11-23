@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Andes Dropdown Funcional</title>
+<style>
+    /* --- TOKENS ANDES --- */
+    :root {
+        --andes-font-family: "Proxima Nova", -apple-system, Roboto, Arial, sans-serif;
+        --andes-blue-500: #3483fa;
+        --andes-gray-800: #333333;
+        --andes-gray-100: #f5f5f5;
+        --andes-white: #ffffff;
+        --andes-shadow-dropdown: 0 4px 16px 0 rgba(0,0,0,0.2);
+        --andes-border-radius: 6px;
+    }
+
+    body {
+        font-family: var(--andes-font-family);
+        background-color: #f5f5f5;
+        padding: 60px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    /* --- CONTAINER PRINCIPAL --- */
+    .ui-search-sort-filter {
+        display: flex;
+        align-items: center;
+        position: relative;
+        font-size: 16px;
+        color: var(--andes-gray-800);
+    }
+
+    /* Texto "Ordenar por" */
+    .ui-search-view-options__title {
+        margin-right: 6px;
+        font-weight: 400;
+    }
+
+    /* --- COMPONENTE DETAILS (O Toggle) --- */
+    .andes-dropdown {
+        position: relative;
+    }
+
+    /* Remove a seta padrão do navegador */
+    .andes-dropdown__trigger {
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-weight: 400; /* Peso normal quando fechado */
+        transition: color 0.2s;
+    }
+    
+    .andes-dropdown__trigger::-webkit-details-marker {
+        display: none;
+    }
+
+    /* Texto do valor selecionado */
+    .andes-dropdown__display-values {
+        font-weight: 600; /* Semibold */
+        margin-right: 4px;
+    }
+
+    /* Seta SVG Customizada */
+    .andes-dropdown__arrow {
+        width: 12px;
+        height: 12px;
+        fill: var(--andes-blue-500); /* Seta é azul */
+        transition: transform 0.2s ease;
+    }
+
+    /* --- INTERAÇÃO DE ESTADOS (ABERTO/FECHADO) --- */
+
+    /* Hover no gatilho (Feedback visual antes do clique) */
+    .andes-dropdown__trigger:hover {
+        color: var(--andes-blue-500);
+    }
+
+    /* Estado ABERTO ([open]): Muda cor do texto */
+    details[open] .andes-dropdown__trigger {
+        color: var(--andes-blue-500);
+    }
+
+    /* Estado ABERTO ([open]): Gira a seta */
+    details[open] .andes-dropdown__arrow {
+        transform: rotate(180deg);
+    }
+
+    /* --- MENU FLUTUANTE --- */
+    .andes-floating-menu {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        background-color: var(--andes-white);
+        border-radius: var(--andes-border-radius);
+        box-shadow: var(--andes-shadow-dropdown);
+        min-width: 190px;
+        padding: 8px 0;
+        z-index: 100;
+        list-style: none;
+        margin: 0;
+        
+        /* Animação de entrada suave */
+        animation: scaleIn 0.1s ease-out forwards;
+        transform-origin: top right;
+    }
+
+    @keyframes scaleIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    /* --- ITENS DA LISTA --- */
+    .andes-list__item {
+        position: relative;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        padding: 0 24px;
+        cursor: pointer;
+        font-size: 14px;
+        color: var(--andes-gray-800);
+        text-decoration: none; /* Caso seja link */
+    }
+
+    /* 1. ITEM SELECIONADO (Mais relevantes) */
+    .andes-list__item--selected {
+        color: var(--andes-blue-500);
+        font-weight: 600;
+        background-color: var(--andes-white);
+    }
+
+    .andes-list__item--selected::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 6px;
+        bottom: 6px;
+        width: 4px;
+        background-color: var(--andes-blue-500);
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+    }
+
+    /* 2. ITEM HOVER (Interação do mouse em itens não selecionados) */
+    .andes-list__item:not(.andes-list__item--selected):hover {
+        background-color: var(--andes-gray-100);
+    }
+
+    /* Barra lateral de foco no hover (efeito da imagem enviada) */
+    .andes-list__item:not(.andes-list__item--selected):hover::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 6px; 
+        background-color: rgba(52, 131, 250, 0.3); /* Azul transparente */
+    }
+
+</style>
+</head>
+<body>
+
+    <div class="ui-search-sort-filter">
+        <!-- Label Estático -->
+        <span class="ui-search-view-options__title">Ordenar por</span>
+
+        <!-- Componente Interativo (Clique para abrir) -->
+        <details class="andes-dropdown">
+            
+            <!-- O Gatilho (Trigger) -->
+            <summary class="andes-dropdown__trigger">
+                <span class="andes-dropdown__display-values">Mais relevantes</span>
+                <svg class="andes-dropdown__arrow" viewBox="0 0 12 12">
+                    <path d="M6 8.5L2 4.5 2.7 3.8 6 7.1 9.3 3.8 10 4.5z" />
+                </svg>
+            </summary>
+
+            <!-- O Conteúdo do Menu -->
+            <ul class="andes-floating-menu">
+                
+                <!-- Opção 1 (Selecionada) -->
+                <li class="andes-list__item andes-list__item--selected">
+                    Mais relevantes
+                </li>
+
+                <!-- Opção 2 -->
+                <li class="andes-list__item">
+                    Menor preço
+                </li>
+
+                <!-- Opção 3 -->
+                <li class="andes-list__item">
+                    Maior preço
+                </li>
+            </ul>
+
+        </details>
+    </div>
+
+    <!-- Script opcional para fechar ao clicar fora (comportamento padrão de dropdowns) -->
+    <script>
+        // Fecha o dropdown se clicar em qualquer lugar fora dele
+        document.addEventListener('click', function(event) {
+            const dropdown = document.querySelector('.andes-dropdown');
+            if (!dropdown.contains(event.target)) {
+                dropdown.removeAttribute('open');
+            }
+        });
+    </script>
+
+</body>
+</html>

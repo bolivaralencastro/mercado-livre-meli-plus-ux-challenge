@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Oferta Relâmpago Badge</title>
+<style>
+    /* --- ANDES TOKENS & COMPONENT STYLES --- */
+    :root {
+        --andes-font-family: "Proxima Nova", -apple-system, Roboto, Arial, sans-serif;
+        --hc-gradient: linear-gradient(90deg, #f8af02 2.26%, #ffe601 99.95%);
+        --hc-bg-numbers: #FFF1CB; /* Fundo bege claro dos números */
+        --hc-color-text: #000000;
+        --hc-border-radius: 4px;
+        --hc-font-size: 12px;
+    }
+
+    body {
+        font-family: var(--andes-font-family);
+        background-color: #ffffff;
+        padding: 50px;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Container Principal */
+    .highlight-countdown {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--hc-gradient);
+        border-radius: var(--hc-border-radius);
+        padding: 3px 4px 3px 8px; /* Padding ajustado visualmente */
+        gap: 8px;
+        box-sizing: border-box;
+        height: 26px; /* Altura fixa para consistência */
+        user-select: none;
+    }
+
+    /* Texto "OFERTA RELÂMPAGO" */
+    .highlight-countdown__text {
+        font-size: var(--hc-font-size);
+        font-weight: 800; /* Extra Bold */
+        font-style: italic;
+        color: var(--hc-color-text);
+        line-height: 1;
+        letter-spacing: 0.2px;
+    }
+
+    /* Container do Relógio */
+    .highlight-countdown__timer {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+    }
+
+    /* Separador (:) */
+    .timer-separator {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--hc-color-text);
+        margin-bottom: 1px; /* Ajuste fino vertical */
+    }
+
+    /* Blocos de Números (Fundo Bege) */
+    .timer-block {
+        background-color: var(--hc-bg-numbers);
+        border-radius: 2px;
+        height: 20px;
+        min-width: 20px; /* Garante largura mínima para 2 dígitos */
+        padding: 0 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Essencial para a animação de rolagem */
+        position: relative;
+    }
+
+    /* Container que agrupa os dígitos */
+    .timer-digits {
+        display: flex;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--hc-color-text);
+        line-height: 20px; /* Igual à altura do container */
+    }
+
+    /* --- ANIMAÇÃO DE ROLAGEM (Simulação Visual) --- */
+    /* 
+       Abaixo simulamos a estrutura de "roller" vista no código original.
+       O dígito dos segundos se move para cima para simular a troca.
+    */
+    .roller-container {
+        display: flex;
+        flex-direction: column;
+        height: 20px;
+        animation: slideUp 1s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+    }
+
+    .digit {
+        display: block;
+        height: 20px;
+        text-align: center;
+    }
+
+    @keyframes slideUp {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(0); } /* Pausa no numero */
+        60% { transform: translateY(-20px); } /* Troca rápida */
+        100% { transform: translateY(-20px); }
+    }
+
+</style>
+</head>
+<body>
+
+    <!-- Componente -->
+    <div class="highlight-countdown" role="timer" aria-label="Oferta termina em breve">
+        
+        <span class="highlight-countdown__text">OFERTA RELÂMPAGO</span>
+        
+        <div class="highlight-countdown__timer">
+            
+            <!-- Horas -->
+            <div class="timer-block">
+                <div class="timer-digits">
+                    <span class="digit">00</span>
+                </div>
+            </div>
+            
+            <span class="timer-separator">:</span>
+            
+            <!-- Minutos -->
+            <div class="timer-block">
+                <div class="timer-digits">
+                    <span class="digit">09</span>
+                </div>
+            </div>
+            
+            <span class="timer-separator">:</span>
+            
+            <!-- Segundos (Com simulação de animação na unidade) -->
+            <div class="timer-block">
+                <div class="timer-digits">
+                    <!-- Dezena dos segundos -->
+                    <span class="digit">2</span>
+                    
+                    <!-- Unidade dos segundos (Rolagem) -->
+                    <div class="roller-container">
+                        <span class="digit">6</span> <!-- Atual -->
+                        <span class="digit">5</span> <!-- Próximo -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
