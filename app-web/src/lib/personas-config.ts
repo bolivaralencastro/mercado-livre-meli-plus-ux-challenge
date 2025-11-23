@@ -27,8 +27,19 @@ export const IMAGE_CONTENT_TYPES: Record<string, string> = {
   ".gif": "image/gif",
 };
 
+// Define types for the manifest to allow string indexing
+interface PersonasManifestType {
+  version: string;
+  updatedAt: string;
+  source: string;
+  personas: Record<string, {
+    slug: string;
+    images: Record<string, string>;
+  }>;
+}
+
 // Personas manifest with Vercel Blob Storage URLs
-export const PERSONAS_MANIFEST = personasManifest;
+export const PERSONAS_MANIFEST = personasManifest as unknown as PersonasManifestType;
 
 // Helper to get image URL from manifest
 export const getPersonaImageUrl = (personaSlug: string, imageName: string): string | null => {
