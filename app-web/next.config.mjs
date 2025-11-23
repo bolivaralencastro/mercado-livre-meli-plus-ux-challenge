@@ -8,6 +8,11 @@ const nextConfig = {
         pathname:
           "/frontend-assets/ml-web-navigation/ui-navigation/**",
       },
+      {
+        protocol: "https",
+        hostname: "meli-cases.example.com",
+        pathname: "/pesquisa/Mercado-Livre-Behance/**",
+      },
     ],
   },
   webpack(config) {

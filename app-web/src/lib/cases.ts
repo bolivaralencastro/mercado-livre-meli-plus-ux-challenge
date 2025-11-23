@@ -6,58 +6,58 @@ export interface CaseEntry {
   title: string;
 }
 
-const CASES_BASE_PATH = path.join(
+export interface CaseImage {
+  fileName: string;
+  url: string;
+}
+
+interface CaseManifestItem extends CaseEntry {
+  images: CaseImage[];
+}
+
+interface CasesManifest {
+  baseUrl: string;
+  generatedAt: string;
+  cases: CaseManifestItem[];
+}
+
+const LOCAL_MANIFEST_PATH = path.join(
   process.cwd(),
   "src",
-  "app",
-  "pesquisa",
-  "Mercado-Livre-Behance",
+  "lib",
+  "cases-manifest.json",
 );
 
-const ALLOWED_IMAGE_EXTENSIONS = new Set([
-  ".png",
-  ".jpg",
-  ".jpeg",
-  ".webp",
-  ".gif",
-]);
+const loadManifest = async (): Promise<CasesManifest> => {
+  if (process.env.CASES_MANIFEST_URL) {
+    const response = await fetch(process.env.CASES_MANIFEST_URL, {
+      next: { revalidate: 3600 },
+    });
 
-const normalizeTitle = (slug: string): string =>
-  slug
-    .split("-")
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(" ");
+    if (!response.ok) {
+      throw new Error("Não foi possível carregar o manifesto remoto de cases.");
+    }
 
-export const getCases = async (): Promise<CaseEntry[]> => {
-  const entries = await fs.readdir(CASES_BASE_PATH, { withFileTypes: true });
-
-  return entries
-    .filter((entry) => entry.isDirectory())
-    .map((entry) => ({
-      slug: entry.name,
-      title: normalizeTitle(entry.name),
-    }))
-    .sort((a, b) => a.title.localeCompare(b.title, "pt-BR"));
-};
-
-export const getCaseImages = async (caseSlug: string): Promise<string[]> => {
-  const casePath = path.join(CASES_BASE_PATH, caseSlug);
-  const normalizedCasePath = path.normalize(casePath);
-
-  if (!normalizedCasePath.startsWith(CASES_BASE_PATH)) {
-    throw new Error("Caminho de case inválido.");
+    return response.json() as Promise<CasesManifest>;
   }
 
-  const files = await fs.readdir(normalizedCasePath, { withFileTypes: true });
+  const file = await fs.readFile(LOCAL_MANIFEST_PATH, "utf8");
+  return JSON.parse(file) as CasesManifest;
+};
 
-  return files
-    .filter((file) => file.isFile())
-    .map((file) => file.name)
-    .filter((fileName) => ALLOWED_IMAGE_EXTENSIONS.has(path.extname(fileName).toLowerCase()))
-    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+export const getCases = async (): Promise<CaseEntry[]> => {
+  const manifest = await loadManifest();
+  return manifest.cases.map(({ slug, title }) => ({ slug, title }));
+};
+
+export const getCaseImages = async (caseSlug: string): Promise<CaseImage[]> => {
+  const manifest = await loadManifest();
+  const caseEntry = manifest.cases.find(({ slug }) => slug === caseSlug);
+  return caseEntry?.images ?? [];
 };
 
 export const getCaseBySlug = async (caseSlug: string): Promise<CaseEntry | null> => {
-  const cases = await getCases();
-  return cases.find((entry) => entry.slug === caseSlug) ?? null;
+  const manifest = await loadManifest();
+  const caseEntry = manifest.cases.find(({ slug }) => slug === caseSlug);
+  return caseEntry ? { slug: caseEntry.slug, title: caseEntry.title } : null;
 };

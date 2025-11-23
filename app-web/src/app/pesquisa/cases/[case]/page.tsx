@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { CaseEntry, getCaseBySlug, getCaseImages, getCases } from "@/lib/cases";
+import { CaseEntry, CaseImage, getCaseBySlug, getCaseImages, getCases } from "@/lib/cases";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -98,11 +98,11 @@ export default async function CaseDetailPage({ params }: CasePageProps) {
               Nenhuma imagem encontrada para este case.
             </p>
           ) : (
-            images.map((image) => (
+            images.map((image: CaseImage) => (
               <img
-                key={image}
-                src={`/pesquisa/cases/${currentCaseData.slug}/assets/${image}`}
-                alt={`${currentCaseData.title} - ${image}`}
+                key={image.fileName}
+                src={image.url}
+                alt={`${currentCaseData.title} - ${image.fileName}`}
                 className="h-auto w-full rounded-2xl border border-gray-100 bg-white shadow-sm"
                 loading="lazy"
               />
