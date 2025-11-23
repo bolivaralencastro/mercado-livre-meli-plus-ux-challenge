@@ -48,3 +48,9 @@ next-env.d.ts
 # OS
 .DS_Store
 Thumbs.db
+
+# Imagens migradas para Vercel Blob Storage
+app-web/src/app/pesquisa/Mercado-Livre-Behance/
+02-pesquisa/personas/**/*.webp
+02-pesquisa/personas/**/*.jpg
+02-pesquisa/personas/**/*.png

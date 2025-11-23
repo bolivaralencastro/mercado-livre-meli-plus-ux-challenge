@@ -1,0 +1,67 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2025-11-23T07:01:37.085Z",
+  "source": "vercel-blob-storage",
+  "personas": {
+    "ana_paula_santos": {
+      "slug": "ana_paula_santos",
+      "images": {
+        "ana-dor.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/ana_paula_santos/ana-dor.webp",
+        "ana-oportunidades.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/ana_paula_santos/ana-oportunidades.webp",
+        "ana-perfil.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/ana_paula_santos/ana-perfil.webp",
+        "ana-qualidades.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/ana_paula_santos/ana-qualidades.webp",
+        "ana_paula_santos.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/ana_paula_santos/ana_paula_santos.webp"
+      }
+    },
+    "camila_lima": {
+      "slug": "camila_lima",
+      "images": {
+        "camila-comportamento.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/camila_lima/camila-comportamento.webp",
+        "camila-dores.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/camila_lima/camila-dores.webp",
+        "camila-oportunidades.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/camila_lima/camila-oportunidades.webp",
+        "camila-perfil.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/camila_lima/camila-perfil.webp",
+        "camila_lima.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/camila_lima/camila_lima.webp"
+      }
+    },
+    "gabriel_ferreira": {
+      "slug": "gabriel_ferreira",
+      "images": {
+        "gabriel-comportamento.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/gabriel_ferreira/gabriel-comportamento.webp",
+        "gabriel-dores.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/gabriel_ferreira/gabriel-dores.webp",
+        "gabriel-oportunidades.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/gabriel_ferreira/gabriel-oportunidades.webp",
+        "gabriel-perfil.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/gabriel_ferreira/gabriel-perfil.webp",
+        "gabriel_ferreira.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/gabriel_ferreira/gabriel_ferreira.webp"
+      }
+    },
+    "maria_oliveira": {
+      "slug": "maria_oliveira",
+      "images": {
+        "maria-comportamento.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/maria_oliveira/maria-comportamento.webp",
+        "maria-dores.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/maria_oliveira/maria-dores.webp",
+        "maria-oportunidades.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/maria_oliveira/maria-oportunidades.webp",
+        "maria-perfil.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/maria_oliveira/maria-perfil.webp",
+        "maria_oliveira.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/maria_oliveira/maria_oliveira.webp"
+      }
+    },
+    "ricardo_almeida": {
+      "slug": "ricardo_almeida",
+      "images": {
+        "ricardo-comportamento.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/ricardo_almeida/ricardo-comportamento.webp",
+        "ricardo-dores.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/ricardo_almeida/ricardo-dores.webp",
+        "ricardo-oportunidades.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/ricardo_almeida/ricardo-oportunidades.webp",
+        "ricardo-perfil.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/ricardo_almeida/ricardo-perfil.webp",
+        "ricardo_almeida.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/ricardo_almeida/ricardo_almeida.webp"
+      }
+    },
+    "thiago_rocha": {
+      "slug": "thiago_rocha",
+      "images": {
+        "thiago-comportamento.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/thiago_rocha/thiago-comportamento.webp",
+        "thiago-dores.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/thiago_rocha/thiago-dores.webp",
+        "thiago-oportunidades.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/thiago_rocha/thiago-oportunidades.webp",
+        "thiago-perfil.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/thiago_rocha/thiago-perfil.webp",
+        "thiago_rocha.webp": "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/personas/thiago_rocha/thiago_rocha.webp"
+      }
+    }
+  }
+}

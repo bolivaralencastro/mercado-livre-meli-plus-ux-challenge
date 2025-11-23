@@ -10,8 +10,13 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "meli-cases.example.com",
-        pathname: "/pesquisa/Mercado-Livre-Behance/**",
+        hostname: "smolljrfjqknp6nm.public.blob.vercel-storage.com",
+        pathname: "/cases/**",
+      },
+      {
+        protocol: "https",
+        hostname: "smolljrfjqknp6nm.public.blob.vercel-storage.com",
+        pathname: "/personas/**",
       },
     ],
   },
