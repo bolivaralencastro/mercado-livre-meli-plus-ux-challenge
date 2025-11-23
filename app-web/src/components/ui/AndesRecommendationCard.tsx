@@ -30,10 +30,13 @@ const AndesRecommendationCard: React.FC<AndesRecommendationCardProps> = ({
 
   const formatPrice = (value: number | string): { integer: string; cents: string } => {
     if (typeof value === 'string') {
-      const parts = value.split(',');
+      // Support both comma and period as decimal separator
+      const parts = value.includes(',') ? value.split(',') : value.split('.');
       return { integer: parts[0], cents: parts[1] || '00' };
     }
-    const parts = value.toFixed(2).split('.');
+    // For numbers, use toLocaleString for proper Brazilian formatting
+    const formatted = value.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const parts = formatted.split(',');
     return { integer: parts[0], cents: parts[1] };
   };
 

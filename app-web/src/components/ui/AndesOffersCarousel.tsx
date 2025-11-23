@@ -46,7 +46,10 @@ const AndesOffersCarousel: React.FC<AndesOffersCarouselProps> = ({
     if (trackRef.current) {
       const scrollAmount = direction === 'prev' ? -300 : 300;
       trackRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-      setTimeout(updateScrollButtons, 300);
+      // Use requestAnimationFrame for smoother state update
+      requestAnimationFrame(() => {
+        setTimeout(updateScrollButtons, 350); // Wait for scroll animation to complete
+      });
     }
   };
 

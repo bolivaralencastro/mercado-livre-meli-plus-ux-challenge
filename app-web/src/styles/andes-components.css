@@ -1391,7 +1391,7 @@ details[open] .andes-dropdown__arrow {
 }
 
 .carousel-control--prev {
-  left: 0;
+  left: 10px;
 }
 
 .carousel-control--next {
