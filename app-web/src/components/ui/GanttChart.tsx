@@ -12,21 +12,7 @@ declare global {
 const GanttChart = () => {
   const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {
-    if (window.google && window.google.charts) {
-      // Se já estiver carregado (navegação client-side)
-      loadChart();
-    }
-  }, []);
-
-  const loadChart = () => {
-    if (!window.google) return;
-    
-    window.google.charts.load('current', { packages: ['gantt'] });
-    window.google.charts.setOnLoadCallback(drawChart);
-  };
-
-  const drawChart = () => {
+  const drawChart = React.useCallback(() => {
     const container = document.getElementById('gantt_chart');
     if (!container) return;
 
@@ -89,7 +75,21 @@ const GanttChart = () => {
     const chart = new window.google.visualization.Gantt(container);
     chart.draw(data, options);
     setLoaded(true);
-  };
+  }, []);
+
+  const loadChart = React.useCallback(() => {
+    if (!window.google) return;
+    
+    window.google.charts.load('current', { packages: ['gantt'] });
+    window.google.charts.setOnLoadCallback(drawChart);
+  }, [drawChart]);
+
+  useEffect(() => {
+    if (window.google && window.google.charts) {
+      // Se já estiver carregado (navegação client-side)
+      loadChart();
+    }
+  }, [loadChart]);
 
   return (
     <>

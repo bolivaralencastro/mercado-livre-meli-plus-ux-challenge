@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
+import Image from "next/image";
 import { CaseEntry, CaseImage } from "@/lib/cases";
 import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 
@@ -158,11 +159,14 @@ const CaseViewer = ({ cases, currentCaseSlug, images }: CaseViewerProps) => {
             ) : (
               images.map((image, idx) => (
                 <div key={idx} className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
-                  <img
+                  <Image
                     src={image.url}
                     alt={`${currentCase?.title} - Imagem ${idx + 1}`}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
                     className="w-full h-auto"
-                    loading="lazy"
+                    unoptimized
                   />
                 </div>
               ))

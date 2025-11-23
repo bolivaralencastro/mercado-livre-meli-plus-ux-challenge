@@ -36,7 +36,7 @@ const ValuesCard = ({ values, quotes }: { values: string[], quotes: string[] }) 
         
         <div className="slider-content">
           <div className="quote-display">
-            <p className="quote-text">"{quotes[currentQuote]}"</p>
+            <p className="quote-text">&quot;{quotes[currentQuote]}&quot;</p>
           </div>
         </div>
 
