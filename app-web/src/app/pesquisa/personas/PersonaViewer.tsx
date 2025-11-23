@@ -58,7 +58,7 @@ const PersonaViewer = ({ personas, currentPersonaSlug, htmlContent, images }: Pe
   const processedHtml = useMemo(() => {
     const html = htmlContent
       .replace(/src="([^"]+\.(webp|png|jpg|jpeg|gif))"/gi, (match, imagePath) => {
-        // If it's a relative path (not starting with http/https), prepend the persona assets path
+        // Only process paths that are relative and don't start with /, //, http, or https
         if (!imagePath.startsWith('http') && !imagePath.startsWith('/')) {
           return `src="/pesquisa/personas/${encodeURIComponent(currentPersonaSlug)}/assets/${encodeURIComponent(imagePath)}"`;
         }
@@ -71,6 +71,8 @@ const PersonaViewer = ({ personas, currentPersonaSlug, htmlContent, images }: Pe
     return DOMPurify.sanitize(html, {
       ALLOWED_TAGS: ['div', 'section', 'img', 'h1', 'h2', 'h3', 'h4', 'p', 'span', 'ul', 'li', 'blockquote', 'strong', 'em', 'br'],
       ALLOWED_ATTR: ['class', 'style', 'src', 'alt', 'id'],
+      ALLOW_DATA_ATTR: false,
+      ALLOW_UNKNOWN_PROTOCOLS: false,
     });
   }, [htmlContent, currentPersonaSlug]);
 

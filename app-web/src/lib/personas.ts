@@ -42,7 +42,7 @@ export const getPersonaImages = async (personaSlug: string): Promise<string[]> =
   const normalizedPersonaPath = path.normalize(personaPath);
 
   if (!normalizedPersonaPath.startsWith(PERSONAS_BASE_PATH)) {
-    throw new Error("Caminho de persona inválido.");
+    throw new Error("Invalid persona path");
   }
 
   const files = await fs.readdir(normalizedPersonaPath, { withFileTypes: true });
@@ -59,7 +59,7 @@ export const getPersonaHtmlContent = async (personaSlug: string): Promise<string
   const normalizedPersonaPath = path.normalize(personaPath);
 
   if (!normalizedPersonaPath.startsWith(PERSONAS_BASE_PATH)) {
-    throw new Error("Caminho de persona inválido.");
+    throw new Error("Invalid persona path");
   }
 
   const htmlPath = path.join(normalizedPersonaPath, `${personaSlug}.html`);
@@ -68,6 +68,6 @@ export const getPersonaHtmlContent = async (personaSlug: string): Promise<string
     const htmlContent = await fs.readFile(htmlPath, "utf-8");
     return htmlContent;
   } catch (error) {
-    throw new Error(`HTML file not found for persona: ${personaSlug}`);
+    throw new Error("Persona content not found");
   }
 };
