@@ -1210,3 +1210,349 @@ details[open] .andes-dropdown__arrow {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
+/* --- HELP MENU (FAQ/Contact) --- */
+.andes-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.andes-list__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  text-decoration: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.andes-list__item-actionable {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  outline: none;
+}
+
+.andes-list__item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 24px;
+  right: 24px;
+  height: 1px;
+  background-color: #ededed;
+  z-index: 2;
+}
+
+.andes-list__item:hover .andes-list__item-chevron {
+  color: #3483fa;
+}
+
+.andes-list__item-content-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.andes-list__item-asset {
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  flex-shrink: 0;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.andes-list__item-asset svg {
+  fill: currentColor;
+}
+
+.andes-list__item-text {
+  flex-grow: 1;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333333;
+  line-height: 1.25;
+}
+
+.andes-list__item-chevron {
+  color: #999999;
+  display: flex;
+  align-items: center;
+  margin-left: 12px;
+  transition: color 0.2s ease-in-out;
+}
+
+/* --- OFFERS CAROUSEL --- */
+.selectors-container {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 1200px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ebebeb;
+  position: relative;
+}
+
+.selectors-header {
+  min-width: 280px;
+  max-width: 280px;
+  padding: 0 24px 0 30px;
+  flex-shrink: 0;
+  border-right: 1px solid transparent;
+  z-index: 10;
+  background-color: #ffffff;
+}
+
+.selectors-header__title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #333333;
+  margin: 0 0 6px 0;
+  line-height: 1;
+}
+
+.selectors-header__subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: #666666;
+  line-height: 1.35;
+  display: block;
+}
+
+.selectors-carousel-wrapper {
+  flex-grow: 1;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-track {
+  display: flex;
+  height: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: center;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  cursor: pointer;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s, transform 0.1s;
+}
+
+.carousel-control:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.carousel-control:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-control svg {
+  width: 20px;
+  height: 20px;
+  fill: #3483fa;
+}
+
+.carousel-control--prev {
+  left: 0;
+}
+
+.carousel-control--next {
+  right: 10px;
+}
+
+.carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  height: 100%;
+  cursor: pointer;
+  text-align: center;
+  padding: 0 12px;
+  transition: color 0.2s;
+  color: #666666;
+}
+
+.carousel-item:hover {
+  color: #3483fa;
+}
+
+.carousel-item--selected {
+  color: #333333;
+  font-weight: 600;
+}
+
+.carousel-item__image {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-item__image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.carousel-item__icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-item__label {
+  font-size: 14px;
+  line-height: 1.2;
+  max-width: 100px;
+}
+
+/* --- DROPDOWN MENU (Navigation) --- */
+.nav-container {
+  background-color: #ffffff;
+  padding: 0 40px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #666666;
+  box-shadow: 0 1px 0 0 #ededed;
+  position: relative;
+}
+
+.nav-item {
+  margin-right: 24px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 5px;
+  transition: color 0.2s;
+}
+
+.nav-item:hover {
+  color: #3483fa;
+}
+
+.nav-separator {
+  width: 1px;
+  height: 16px;
+  background-color: #ededed;
+  margin: 0 14px 0 -4px;
+}
+
+.nav-arrow {
+  width: 10px;
+  height: 10px;
+  margin-left: 4px;
+  fill: currentColor;
+  transition: transform 0.2s;
+}
+
+.nav-item--has-menu:hover .nav-arrow {
+  transform: rotate(180deg);
+}
+
+.nav-item--has-menu:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -10px;
+  background-color: #ffffff;
+  min-width: 280px;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.2);
+  border-radius: 6px;
+  z-index: 100;
+  padding: 10px 0;
+  margin-top: 8px;
+}
+
+.dropdown-section {
+  padding: 8px 0;
+}
+
+.dropdown-section:not(:last-child) {
+  border-bottom: 1px solid #ededed;
+}
+
+.dropdown-section__title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #666666;
+  padding: 8px 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dropdown-section__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-section__list li {
+  margin: 0;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 10px 16px;
+  color: #333333;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+  color: #3483fa;
+}
