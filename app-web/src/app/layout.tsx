@@ -1,19 +1,9 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
+import "../styles/tokens.css";
 import "../styles/andes-components.css";
 import MainLayout from "@/components/layout/MainLayout";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import ProgressBarProvider from "@/components/providers/ProgressBarProvider";
 
 export const metadata: Metadata = {
   title: "Meli+ UX Challenge",
@@ -27,12 +17,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <MainLayout>
-          {children}
-        </MainLayout>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+      </head>
+      <body className="andes-body antialiased">
+        <ProgressBarProvider>
+          <MainLayout>
+            {children}
+          </MainLayout>
+        </ProgressBarProvider>
       </body>
     </html>
   );

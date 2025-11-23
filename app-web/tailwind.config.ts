@@ -27,7 +27,7 @@ const config: Config = {
         'ml-warning': '#F8B01C',
       },
       fontFamily: {
-        'proxima': ['Proxima Nova', 'system-ui', 'sans-serif'],
+        'andes': ['var(--andes-font-family)', 'sans-serif'],
       },
     },
   },

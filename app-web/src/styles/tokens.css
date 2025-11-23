@@ -1,0 +1,81 @@
+:root {
+  /* Brand – Mercado Libre */
+  --ml-color-primary:   #3483FA;
+  --ml-color-secondary: #2968C8;
+  --ml-color-tertiary:  #1F4E96;
+  --andes-primary:      #ffe600; /* Amarelo ML - Mantido para compatibilidade */
+
+  /* Brand – Mercado Pago */
+  --mp-color-primary:   #009EE3;
+  --mp-color-secondary: #007EB5;
+  --mp-color-tertiary:  #005E88;
+
+  /* Estados */
+  --andes-color-success: #00A650;
+  --andes-color-warning: #FF7733;
+  --andes-color-error:   #F23D4F;
+
+  /* Neutros */
+  --andes-gray-900: #333333;
+  --andes-gray-800: #4A4A4A; /* Added for completeness based on common usage */
+  --andes-gray-700: #666666;
+  --andes-gray-500: #999999;
+  --andes-gray-300: #DDDDDD;
+  --andes-gray-100: #F5F5F5;
+  --andes-white:    #FFFFFF;
+
+  /* Outros */
+  --andes-purple-meli: #8e24aa;
+  --andes-bg-page: #ededed;
+  --andes-bg-auth: #f5f5f5;
+
+  /* Tipografia */
+  --andes-font-family: 'Proxima Nova', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Tamanhos */
+  --andes-font-size-xs: 12px;  /* helper text, chips, labels pequenos */
+  --andes-font-size-sm: 14px;  /* texto de corpo padrão */
+  --andes-font-size-md: 16px;  /* títulos de cards, labels fortes */
+  --andes-font-size-lg: 20px;  /* subtítulos / seções */
+  --andes-font-size-xl: 24px;  /* headings principais */
+
+  /* Espaçamento */
+  --andes-space-1: 4px;
+  --andes-space-2: 8px;
+  --andes-space-3: 12px;
+  --andes-space-4: 16px;
+  --andes-space-5: 24px;
+  --andes-space-6: 32px;
+  --andes-space-7: 40px;
+  --andes-space-8: 48px;
+  --andes-space-9: 64px;
+
+  /* Raio de borda */
+  --andes-radius-sm: 4px;
+  --andes-radius-md: 8px;
+  --andes-radius-l:  12px; /* Added based on existing CSS usage */
+
+  /* Sombras */
+  --andes-shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+  --andes-shadow-md: 0 4px 8px rgba(0,0,0,0.16);
+}
+
+/* Classes Utilitárias de Tipografia */
+.andes-heading-1 {
+  font-size: var(--andes-font-size-xl);
+  font-weight: 600;
+  color: var(--andes-gray-900);
+}
+
+.andes-heading-2 {
+  font-size: var(--andes-font-size-lg);
+  font-weight: 600;
+  color: var(--andes-gray-900);
+}
+
+.andes-body {
+  font-family: var(--andes-font-family);
+  font-size: var(--andes-font-size-sm);
+  font-weight: 400;
+  color: var(--andes-gray-900);
+}

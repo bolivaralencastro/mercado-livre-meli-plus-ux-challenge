@@ -28,7 +28,7 @@
   --andes-bg-auth: #f5f5f5;           /* Fundo Auth/Checkout */
 
   /* --- TIPOGRAFIA --- */
-  --andes-font-family: 'Roboto', sans-serif;
+  --andes-font-family: 'Proxima Nova', -apple-system, 'Helvetica Neue', Arial, sans-serif;
   --andes-font-size-xs: 12px;
   --andes-font-size-s: 14px;
   --andes-font-size-m: 16px;

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { AndesDropdownMenu } from "@/components/ui";
+import type { MenuItem } from "@/components/ui/AndesDropdownMenu";
 
 interface PageTemplateProps {
   title: string;
@@ -12,76 +13,75 @@ interface PageTemplateProps {
   children?: ReactNode;
 }
 
-const navigationItems = [
-  { href: "/", label: "Home" },
-  { href: "/programacao", label: "Programação" },
-  { href: "/briefing", label: "Briefing" },
-  { href: "/pesquisa", label: "Pesquisa" },
-  { href: "/estrategia", label: "Estratégia" },
-  { href: "/ideacao", label: "Ideação" },
-  { href: "/ui-design", label: "UI Design" },
-  { href: "/prototipo", label: "Protótipo" },
-  { href: "/apresentacao", label: "Apresentação" },
-  { href: "/entrega", label: "Entrega" },
-];
-
 const PageTemplate = ({ title, subtitle, children }: PageTemplateProps) => {
-  const navigationSections = [
+  const menuClusters: { label: string; items: MenuItem[] }[] = [
     {
-      title: "Início e Planejamento",
-      groups: [
+      label: "O Desafio",
+      items: [
+        { id: "briefing", label: "Briefing", href: "/briefing" },
+        { id: "programacao", label: "Programação", href: "/programacao" },
+      ],
+    },
+    {
+      label: "Discovery",
+      items: [
+        { id: "pesquisa-overview", label: "Visão Geral", href: "/pesquisa" },
         {
-          title: "Visão geral",
-          items: ["/", "/programacao"].map((href) => ({
-            id: href,
-            label: navigationItems.find((item) => item.href === href)?.label ?? href,
-            href,
-          })),
+          id: "pesquisa-personas",
+          label: "Personas",
+          href: "/pesquisa/personas",
+          children: [
+            { id: "ana", label: "Ana Paula Santos", href: "/pesquisa/personas/ana_paula_santos" },
+            { id: "camila", label: "Camila Lima", href: "/pesquisa/personas/camila_lima" },
+            { id: "gabriel", label: "Gabriel Ferreira", href: "/pesquisa/personas/gabriel_ferreira" },
+            { id: "maria", label: "Maria Oliveira", href: "/pesquisa/personas/maria_oliveira" },
+            { id: "ricardo", label: "Ricardo Almeida", href: "/pesquisa/personas/ricardo_almeida" },
+            { id: "thiago", label: "Thiago Rocha", href: "/pesquisa/personas/thiago_rocha" },
+          ],
         },
         {
-          title: "Definições e pesquisa",
-          items: ["/briefing", "/pesquisa", "/estrategia"].map((href) => ({
-            id: href,
-            label: navigationItems.find((item) => item.href === href)?.label ?? href,
-            href,
-          })),
+          id: "pesquisa-cases",
+          label: "Cases",
+          href: "/pesquisa/cases",
+          children: [
+            { id: "case1", label: "Case 1", href: "/pesquisa/cases/case1" },
+            { id: "case2", label: "Case 2", href: "/pesquisa/cases/case2" },
+            { id: "case3", label: "Case 3", href: "/pesquisa/cases/case3" },
+            { id: "case4", label: "Case 4", href: "/pesquisa/cases/case4" },
+            { id: "case5", label: "Case 5", href: "/pesquisa/cases/case5" },
+            { id: "case6", label: "Case 6", href: "/pesquisa/cases/case6" },
+          ],
         },
       ],
     },
     {
-      title: "Criação",
-      groups: [
-        {
-          title: "Ideação e design",
-          items: ["/ideacao", "/ui-design"].map((href) => ({
-            id: href,
-            label: navigationItems.find((item) => item.href === href)?.label ?? href,
-            href,
-          })),
-        },
-        {
-          title: "Protótipos",
-          items: ["/prototipo"].map((href) => ({
-            id: href,
-            label: navigationItems.find((item) => item.href === href)?.label ?? href,
-            href,
-          })),
-        },
+      label: "Definição & Ideação",
+      items: [
+        { id: "estrategia", label: "Estratégia", href: "/estrategia" },
+        { id: "ideacao", label: "Ideação", href: "/ideacao" },
       ],
     },
     {
-      title: "Entrega",
-      groups: [
-        {
-          title: "Apresentação e resultados",
-          items: ["/apresentacao", "/entrega"].map((href) => ({
-            id: href,
-            label: navigationItems.find((item) => item.href === href)?.label ?? href,
-            href,
-          })),
-        },
+      label: "Design & Entrega",
+      items: [
+        { id: "ui-design", label: "UI Design", href: "/ui-design" },
+        { id: "prototipo", label: "Protótipo", href: "/prototipo" },
+        { id: "apresentacao", label: "Apresentação", href: "/apresentacao" },
+        { id: "entrega", label: "Entrega", href: "/entrega" },
       ],
     },
+  ];
+
+  // Configuração para o menu mobile (unificado)
+  const mobileItems: MenuItem[] = [
+    { id: "home", label: "Home", href: "/" },
+    ...menuClusters.flatMap((cluster) => [
+      {
+        id: `cluster-${cluster.label}`,
+        label: cluster.label,
+        children: cluster.items,
+      },
+    ]),
   ];
 
   return (
@@ -89,7 +89,8 @@ const PageTemplate = ({ title, subtitle, children }: PageTemplateProps) => {
       <header className="fixed top-0 z-50 w-full border-b border-black/5 bg-[#ffe600]">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <div className="flex items-center gap-4">
-            <div className="md:hidden">
+            {/* Mobile Menu */}
+            <div className="lg:hidden">
               <AndesDropdownMenu
                 label={
                   <span className="flex items-center gap-2 text-sm font-medium text-[#333333]">
@@ -102,15 +103,15 @@ const PageTemplate = ({ title, subtitle, children }: PageTemplateProps) => {
                     >
                       <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
                     </svg>
-                    Menu
                   </span>
                 }
                 ariaLabel="Abrir menu de navegação"
-                sections={navigationSections}
+                items={mobileItems}
               />
             </div>
 
-            <div className="flex items-center gap-4">
+            {/* Logo */}
+            <Link href="/" className="flex items-center gap-4">
               <Image
                 src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.152/mercadolibre/pt_logo_large_plus@2x.webp"
                 alt="Mercado Livre"
@@ -120,27 +121,39 @@ const PageTemplate = ({ title, subtitle, children }: PageTemplateProps) => {
                 priority
               />
               <span className="hidden h-6 w-px bg-black/30 sm:inline-block" aria-hidden />
-              <p className="text-sm font-normal leading-tight text-[#333333]">
+              <p className="hidden text-sm font-normal leading-tight text-[#333333] sm:block">
                 Product Design Research
               </p>
-            </div>
+            </Link>
           </div>
-          <nav className="hidden items-center gap-6 text-sm font-medium text-[#333333] md:flex">
-            {navigationItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="transition-colors duration-150 hover:text-[#3483fa]"
-              >
-                {item.label}
-              </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden items-center gap-1 lg:flex">
+            <Link
+              href="/"
+              className="flex items-center rounded-md px-3 py-2 text-sm font-medium text-[#333333] hover:bg-black/5"
+            >
+              Home
+            </Link>
+            
+            {menuClusters.map((cluster) => (
+              <AndesDropdownMenu
+                key={cluster.label}
+                label={
+                  <span className="text-sm font-medium text-[#333333]">
+                    {cluster.label}
+                  </span>
+                }
+                items={cluster.items}
+                className="rounded-md hover:bg-black/5 px-2"
+              />
             ))}
           </nav>
         </div>
       </header>
 
       <div className="bg-[linear-gradient(180deg,#ffea78_0%,#ffea78_85%,#ededed_100%)]">
-        <div className="mx-auto flex min-h-[66vh] max-w-6xl flex-col justify-center px-6 pb-12 pt-[140px]">
+        <div className="mx-auto flex min-h-[50vh] max-w-6xl flex-col justify-center px-6 pb-28 pt-[120px]">
           <h1 className="text-4xl font-semibold leading-tight text-[#333333] sm:text-5xl">
             {title}
           </h1>
@@ -151,7 +164,7 @@ const PageTemplate = ({ title, subtitle, children }: PageTemplateProps) => {
       </div>
 
       {children ? (
-        <div className="mx-auto max-w-6xl px-6 pb-16">{children}</div>
+        <div className="mx-auto max-w-6xl px-6 pb-16 -mt-20 relative z-10">{children}</div>
       ) : null}
     </div>
   );

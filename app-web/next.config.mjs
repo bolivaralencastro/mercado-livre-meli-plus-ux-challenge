@@ -5,8 +5,7 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "http2.mlstatic.com",
-        pathname:
-          "/frontend-assets/ml-web-navigation/ui-navigation/**",
+        pathname: "/**",
       },
       {
         protocol: "https",
@@ -17,6 +16,11 @@ const nextConfig = {
         protocol: "https",
         hostname: "smolljrfjqknp6nm.public.blob.vercel-storage.com",
         pathname: "/personas/**",
+      },
+      {
+        protocol: "https",
+        hostname: "placehold.co",
+        pathname: "/**",
       },
     ],
   },
