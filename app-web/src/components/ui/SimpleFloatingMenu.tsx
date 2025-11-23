@@ -15,9 +15,10 @@ interface Position {
 }
 
 const MENU_STORAGE_KEY = 'floatingMenuPosition';
-const MENU_WIDTH = 360;
+const MENU_WIDTH = 320;
+const MENU_WIDTH_CLASS = 'w-[320px]';
 const BAR_HEIGHT = 56;
-const DROPDOWN_WIDTH_CLASS = 'w-full min-w-[240px]';
+const DROPDOWN_WIDTH_CLASS = 'w-[320px]';
 const VERTICAL_MARGIN = 16;
 const BOTTOM_OFFSET = 32;
 const KEYBOARD_ITEMS = ['1','2','3','4','5','6','7','8','9','0'] as const;
@@ -31,6 +32,7 @@ const SimpleFloatingMenu = () => {
   const [selectedPage, setSelectedPage] = useState('Home');
   const [isClient, setIsClient] = useState(false);
   const [dropdownDirection, setDropdownDirection] = useState<DropdownDirection>('up');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const router = useRouter();
   const pathname = usePathname();
@@ -174,6 +176,7 @@ const SimpleFloatingMenu = () => {
     if (currentPage) {
       setSelectedPage(currentPage.label);
     }
+    setIsDropdownOpen(false);
   }, [menuItems, pathname]);
 
   const navigateToPage = useCallback((href: string) => {
@@ -222,6 +225,32 @@ const SimpleFloatingMenu = () => {
     return () => window.removeEventListener('keydown', handleNumberNavigation);
   }, [menuItems, navigateToPage]);
 
+  useEffect(() => {
+    if (!isDropdownOpen) {
+      return undefined;
+    }
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    window.addEventListener('keydown', handleEscape);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('keydown', handleEscape);
+    };
+  }, [isDropdownOpen]);
+
   if (!isClient) {
     return null;
   }
@@ -232,7 +261,7 @@ const SimpleFloatingMenu = () => {
   return (
     <div
       ref={menuRef}
-      className="fixed z-50 flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 shadow-lg w-[360px]"
+      className={`fixed z-50 flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 shadow-lg ${MENU_WIDTH_CLASS}`}
       style={{
         left: position.x,
         top: position.y,
@@ -275,14 +304,27 @@ const SimpleFloatingMenu = () => {
 
       <div className="h-10 w-px self-stretch bg-gray-200" aria-hidden="true" />
 
-      <div className="relative flex-1 min-w-[260px]">
-        <div className={`flex items-center justify-between rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-sm ${DROPDOWN_WIDTH_CLASS}`}>
+      <div className="relative flex-1 min-w-[280px]">
+        <button
+          type="button"
+          onClick={() => {
+            updateDropdownDirection();
+            setIsDropdownOpen(prev => !prev);
+          }}
+          className={`flex w-full items-center justify-between rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-left ${DROPDOWN_WIDTH_CLASS}`}
+          aria-expanded={isDropdownOpen}
+          aria-controls="floating-menu-dropdown"
+        >
           <span className="font-medium text-gray-900">{formatLabel(currentPageItem)}</span>
           <span className="text-xs text-gray-500">⌄</span>
-        </div>
+        </button>
         <div
+          id="floating-menu-dropdown"
           ref={dropdownRef}
-          className={`absolute ${dropdownPositionClass} ${DROPDOWN_WIDTH_CLASS} rounded-md border border-gray-200 bg-white shadow-lg max-h-64 overflow-y-auto`}
+          className={`absolute ${dropdownPositionClass} ${DROPDOWN_WIDTH_CLASS} rounded-md border border-gray-200 bg-white shadow-lg max-h-64 overflow-y-auto transition transform ${
+            isDropdownOpen ? 'visible opacity-100 translate-y-0 pointer-events-auto' : 'invisible opacity-0 translate-y-1 pointer-events-none'
+          }`}
+          aria-hidden={!isDropdownOpen}
         >
           <ul className="divide-y divide-gray-100">
             {menuItems.map(item => (
@@ -291,6 +333,7 @@ const SimpleFloatingMenu = () => {
                   onClick={() => {
                     setSelectedPage(item.label);
                     navigateToPage(item.href);
+                    setIsDropdownOpen(false);
                   }}
                   className={`flex w-full items-center gap-3 px-3 py-2 text-left text-sm hover:bg-blue-50 ${
                     item.label === selectedPage ? 'bg-blue-100 font-semibold' : ''
