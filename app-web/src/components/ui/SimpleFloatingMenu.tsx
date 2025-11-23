@@ -15,8 +15,7 @@ interface Position {
 }
 
 const MENU_STORAGE_KEY = 'floatingMenuPosition';
-const MENU_WIDTH = 320;
-const MENU_WIDTH_CLASS = 'w-[320px]';
+const DEFAULT_MENU_WIDTH = 320;
 const BAR_HEIGHT = 56;
 const VERTICAL_MARGIN = 16;
 const BOTTOM_OFFSET = 32;
@@ -29,6 +28,7 @@ const SimpleFloatingMenu = () => {
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState<{ x: number; y: number } | null>(null);
   const [selectedPage, setSelectedPage] = useState('Home');
+  const [menuWidth, setMenuWidth] = useState(DEFAULT_MENU_WIDTH);
   const [isClient, setIsClient] = useState(false);
   const [dropdownDirection, setDropdownDirection] = useState<DropdownDirection>('up');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -63,14 +63,14 @@ const SimpleFloatingMenu = () => {
       return nextPosition;
     }
 
-    const maxX = Math.max(window.innerWidth - MENU_WIDTH, VERTICAL_MARGIN);
+    const maxX = Math.max(window.innerWidth - menuWidth, VERTICAL_MARGIN);
     const maxY = Math.max(window.innerHeight - BAR_HEIGHT, VERTICAL_MARGIN);
 
     return {
       x: Math.min(Math.max(VERTICAL_MARGIN, nextPosition.x), maxX),
       y: Math.min(Math.max(VERTICAL_MARGIN, nextPosition.y), maxY),
     };
-  }, [isClient]);
+  }, [isClient, menuWidth]);
 
   const computeInitialPosition = useCallback((): Position => {
     const storedPosition = localStorage.getItem(MENU_STORAGE_KEY);
@@ -84,11 +84,11 @@ const SimpleFloatingMenu = () => {
       }
     }
 
-    const centeredX = Math.max((window.innerWidth - MENU_WIDTH) / 2, VERTICAL_MARGIN);
+    const centeredX = Math.max((window.innerWidth - menuWidth) / 2, VERTICAL_MARGIN);
     const verticalOffset = Math.max(window.innerHeight - BAR_HEIGHT - BOTTOM_OFFSET, VERTICAL_MARGIN);
 
     return { x: centeredX, y: verticalOffset };
-  }, [clampPosition]);
+  }, [clampPosition, menuWidth]);
 
   useEffect(() => {
     setIsClient(true);
@@ -101,6 +101,17 @@ const SimpleFloatingMenu = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [clampPosition, computeInitialPosition]);
+
+  useEffect(() => {
+    if (menuRef.current) {
+      const measuredWidth = menuRef.current.getBoundingClientRect().width;
+      setMenuWidth(measuredWidth || DEFAULT_MENU_WIDTH);
+    }
+  }, [isClient, selectedPage, isDropdownOpen]);
+
+  useEffect(() => {
+    setPosition(prev => clampPosition(prev));
+  }, [clampPosition]);
 
   useEffect(() => {
     if (isClient) {
@@ -260,7 +271,7 @@ const SimpleFloatingMenu = () => {
   return (
     <div
       ref={menuRef}
-      className={`fixed z-50 flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 shadow-lg ${MENU_WIDTH_CLASS}`}
+      className="fixed z-50 flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 shadow-lg"
       style={{
         left: position.x,
         top: position.y,
@@ -303,7 +314,7 @@ const SimpleFloatingMenu = () => {
 
       <div className="h-10 w-px self-stretch bg-gray-200" aria-hidden="true" />
 
-      <div className="relative flex-1 min-w-[280px]">
+      <div className="relative w-[112px]">
         <button
           type="button"
           onClick={() => {
