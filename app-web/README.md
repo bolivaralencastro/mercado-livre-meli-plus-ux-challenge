@@ -100,6 +100,10 @@ Para entender o contexto do projeto e as soluções de UX propostas, consulte:
 | `npm start` | Executa aplicação em modo produção |
 | `npm run lint` | Executa linter (ESLint) |
 
+## 📂 Assets dos cases
+
+As páginas de cases agora consomem o manifesto `src/lib/cases-manifest.json`, que aponta para URLs remotas (ou para um endpoint definido em `CASES_MANIFEST_URL`). Depois que todas as imagens estiverem hospedadas no bucket/Blob e você validar que o manifesto aponta para o storage correto, as pastas locais com as imagens brutas (`src/app/pesquisa/Mercado-Livre-Behance/**/*`) podem ser removidas do repositório para reduzir o tamanho do clone. O funcionamento das páginas depende apenas do manifesto e das URLs remotas configuradas.
+
 ## 🤝 Contribuindo
 
 Este é um projeto de estudo de UX. Páginas e componentes serão adicionados conforme o desenvolvimento das soluções propostas na documentação.
