@@ -5,60 +5,36 @@ import AndesButton from "@/components/ui/AndesButton";
 
 const researchItems = [
   {
-    id: "artigo",
-    category: "Base Teórica",
-    title: "Artigo de Referência",
+    id: "analise-aprofundada",
+    category: "Análise de Mercado",
+    title: "Análise Aprofundada",
     insight:
-      "A narrativa do onboarding precisa apresentar a oferta como uma história em capítulos para aumentar retenção cognitiva.",
-    href: "/pesquisa/artigo",
-  },
-  {
-    id: "cases",
-    category: "Referências",
-    title: "Cases Behance",
-    insight:
-      "Estudos visuais mostram que combos de benefícios convertidos em vouchers rápidos geram percepção de valor imediata.",
-    href: "/pesquisa/cases",
-  },
-  {
-    id: "personas",
-    category: "Personas",
-    title: "Personas",
-    insight:
-      "Dois arquétipos concentram a decisão: quem busca economia de tempo e quem monetiza cashback para a família.",
-    href: "/pesquisa/personas",
-  },
-  {
-    id: "reviews",
-    category: "Dados Quantitativos",
-    title: "Análise de Reviews",
-    insight:
-      "A expectativa central é suporte ágil quando o benefício falha; restituição automática reduz churn em até 18%.",
-    href: "/pesquisa/review",
+      "A análise aprofundada revela a estrutura de tiers do Meli+, o cálculo de ponto de equilíbrio para diferentes perfis de usuário e um comparativo detalhado com concorrentes diretos (Amazon Prime, Shopee) e indiretos (bancos digitais). A recomendação central é a simplificação dos planos e a personalização de benefícios.",
+    href: "/pesquisa/analise-aprofundada",
   },
   {
     id: "benchmarking",
     category: "Referências",
     title: "Benchmarking Fidelidade",
     insight:
-      "Programas líderes combinam progressão gamificada com tiers claros; clareza sobre upgrades multiplica o LTV.",
+      "O benchmark competitivo destaca as melhores práticas de onboarding, gestão de pagamentos e retenção de programas como Amazon Prime e iFood Pro. As principais oportunidades para o Meli+ são a criação de uma calculadora de economia em tempo real e a oferta de um período de teste gratuito para aumentar a confiança.",
     href: "/pesquisa/benchmarking",
   },
   {
-    id: "mapeamento",
-    category: "Auditoria UX",
-    title: "Mapeamento As-Is",
+    id: "reviews",
+    category: "Dados Qualitativos",
+    title: "Análise de Reviews",
     insight:
-      "Os fluxos atuais geram fricção ao esconder regras críticas; transparência no checkout evita reconsiderações.",
-    href: "/pesquisa/mapeamento",
+      "A análise de mais de 43.000 reviews de usuários revela que os principais pontos de atrito são a falta de confiança e segurança, problemas na gestão de pagamentos e a ineficácia do suporte ao cliente. A recomendação é focar na transparência da comunicação e na resolução proativa de problemas.",
+    href: "/pesquisa/review",
   },
   {
-    id: "termos",
-    category: "Documentação Legal",
-    title: "Termos e Regulamentos",
+    id: "personas",
+    category: "Personas",
+    title: "Personas",
     insight:
-      "Cláusulas de elegibilidade são gatilho de confiança: comunicar limites de cashback e requisitos regionais é vital.",
-    href: "/pesquisa/termos",
+      "Foram criadas seis personas detalhadas e validadas com dados, incluindo 'A Caçadora de Ofertas Frustrada', 'O Empreendedor Vítima de Taxas Ocultas' e 'A Vítima da Tecnologia que Exclui'. Cada persona possui dores, comportamentos e oportunidades estratégicas específicas, que vão além dos arquétipos simplificados.",
+    href: "/pesquisa/personas",
   },
 ];
 
