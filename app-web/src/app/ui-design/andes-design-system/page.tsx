@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import AndesButton from "@/components/ui/AndesButton";
 import AndesBadge from "@/components/ui/AndesBadge";
 import AndesCard from "@/components/ui/AndesCard";
@@ -38,7 +39,14 @@ const AndesDesignSystemPage = () => {
       <aside className="w-64 h-screen bg-[#f5f5f5] border-r border-black/[0.06] fixed top-0 left-0 flex flex-col overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] z-[100]">
         <nav className="pt-7 px-3 pb-5">
           <div className="mb-8 px-2">
-            <img src="/logos/ANDES-UI-PRETA.png" alt="Andes UI" className="h-8" />
+            <Image 
+              src="/logos/ANDES-UI-PRETA.png" 
+              alt="Andes UI" 
+              width={120} 
+              height={32} 
+              className="h-8 w-auto" 
+              unoptimized
+            />
           </div>
           <div className="mb-6 flex flex-col gap-0.5">
             <a href="/ui-design" className="flex items-center w-full h-[42px] px-3 no-underline text-black/90 text-sm font-normal rounded-md cursor-pointer transition-colors hover:bg-black/[0.04]">

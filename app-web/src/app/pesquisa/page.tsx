@@ -22,7 +22,7 @@ export default function PesquisaPage() {
           </p>
         </div>
         <Link href="/pesquisa/cases">
-          <AndesButton variant="primary" size="medium">
+          <AndesButton variant="primary">
             Abrir cases
           </AndesButton>
         </Link>
@@ -41,7 +41,7 @@ export default function PesquisaPage() {
           </p>
         </div>
         <Link href="/pesquisa/personas">
-          <AndesButton variant="primary" size="medium">
+          <AndesButton variant="primary">
             Abrir personas
           </AndesButton>
         </Link>
@@ -59,7 +59,7 @@ export default function PesquisaPage() {
           </p>
         </div>
         <Link href="/pesquisa/review">
-          <AndesButton variant="primary" size="medium">
+          <AndesButton variant="primary">
             Ver reviews
           </AndesButton>
         </Link>
@@ -77,7 +77,7 @@ export default function PesquisaPage() {
           </p>
         </div>
         <Link href="/pesquisa/benchmarking">
-          <AndesButton variant="primary" size="medium">
+          <AndesButton variant="primary">
             Abrir benchmarking
           </AndesButton>
         </Link>
@@ -95,7 +95,7 @@ export default function PesquisaPage() {
           </p>
         </div>
         <Link href="/pesquisa/mapeamento">
-          <AndesButton variant="primary" size="medium">
+          <AndesButton variant="primary">
             Ver mapeamento
           </AndesButton>
         </Link>
