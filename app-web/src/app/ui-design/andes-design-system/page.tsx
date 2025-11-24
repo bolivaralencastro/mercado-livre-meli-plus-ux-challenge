@@ -32,42 +32,14 @@ const AndesDesignSystemPage = () => {
 
   return (
     <div className="flex flex-col h-screen overflow-hidden bg-[#f5f5f5]">
-      {/* Header */}
-      <header className="h-16 bg-[#3483fa] flex items-center justify-between px-6 fixed top-0 left-0 w-full z-[120] shadow-[0_1px_0_0_rgba(0,0,0,0.1)]">
-        <div className="flex items-center">
-          <div className="andes-logo-container mr-6">
-        
-          </div>
-          <div className="w-px h-6 bg-white/20 mr-6"></div>
-          <h1 className="text-base font-semibold text-white m-0">Andes Design System</h1>
-        </div>
-        <div className="flex items-center gap-5">
-          <button className="bg-transparent border-none cursor-pointer p-1 flex text-white opacity-70 hover:opacity-100">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-            </svg>
-          </button>
-          <button className="bg-transparent border-none cursor-pointer p-1 flex text-white opacity-70 hover:opacity-100">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-              <line x1="12" y1="17" x2="12.01" y2="17"></line>
-            </svg>
-          </button>
-          <div className="flex items-center gap-3 cursor-pointer">
-            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-xs font-semibold text-[#3483fa]">BA</div>
-            <div className="flex flex-col leading-tight">
-              <span className="text-sm font-semibold text-white">Olá, Bolívar</span>
-              <span className="text-xs font-normal text-white/80 flex items-center">Seu perfil ›</span>
-            </div>
-          </div>
-        </div>
-      </header>
+
 
       {/* Sidebar */}
-      <aside className="w-64 h-[calc(100vh-4rem)] bg-[#f5f5f5] border-r border-black/[0.06] fixed top-16 left-0 flex flex-col overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] z-[100]">
+      <aside className="w-64 h-screen bg-[#f5f5f5] border-r border-black/[0.06] fixed top-0 left-0 flex flex-col overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] z-[100]">
         <nav className="pt-7 px-3 pb-5">
+          <div className="mb-8 px-2">
+            <img src="/logos/ANDES-UI-PRETA.png" alt="Andes UI" className="h-8" />
+          </div>
           <div className="mb-6 flex flex-col gap-0.5">
             <a href="/ui-design" className="flex items-center w-full h-[42px] px-3 no-underline text-black/90 text-sm font-normal rounded-md cursor-pointer transition-colors hover:bg-black/[0.04]">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 mr-3 ml-1 opacity-70 grayscale brightness-50">
@@ -268,7 +240,7 @@ const AndesDesignSystemPage = () => {
 
 
       {/* Main Content */}
-      <main className="ml-64 mt-16 p-0 w-[calc(100%-16rem)] h-[calc(100vh-4rem)] overflow-y-auto flex justify-center bg-[#ededed]">
+      <main className="ml-64 mt-0 p-0 w-[calc(100%-16rem)] h-screen overflow-y-auto flex justify-center bg-[#ededed]">
         <div className="w-full max-w-[800px] py-12 px-6 flex flex-col items-center">
           
           {/* ========== DESIGN TOKENS ========== */}

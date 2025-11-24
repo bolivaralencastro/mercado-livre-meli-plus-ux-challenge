@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import styles from './AndesMeliPlusPlans.module.css';
 
 interface Plan {
@@ -118,11 +119,14 @@ export const AndesMeliPlusPlans: React.FC<AndesMeliPlusPlansProps> = ({
                       index === 0 && (
                         <div className={styles.streamingIcons}>
                           {plan.streamingLogos.map((logo) => (
-                            <img
+                            <Image
                               key={logo}
                               className={styles.streamingIcon}
                               src={streamingServices[logo]}
                               alt={logo}
+                              width={24}
+                              height={24}
+                              style={{ width: 'auto', height: 'auto' }}
                             />
                           ))}
                         </div>

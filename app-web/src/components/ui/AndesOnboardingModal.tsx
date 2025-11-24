@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import AndesButton from "./AndesButton";
 
 export interface OnboardingSlide {
@@ -147,6 +148,7 @@ export default function AndesOnboardingModal({
               borderTopLeftRadius: "8px",
               borderTopRightRadius: "8px",
               overflow: "hidden",
+              position: "relative",
             }}
           >
             {currentSlideData.isFinal ? (
@@ -154,14 +156,14 @@ export default function AndesOnboardingModal({
                 Sucesso!
               </div>
             ) : (
-              <img
+              <Image
                 src={currentSlideData.imageUrl}
                 alt={currentSlideData.imageAlt}
+                fill
                 style={{
-                  maxWidth: "100%",
-                  maxHeight: "100%",
                   objectFit: "cover",
                 }}
+                unoptimized
               />
             )}
           </div>

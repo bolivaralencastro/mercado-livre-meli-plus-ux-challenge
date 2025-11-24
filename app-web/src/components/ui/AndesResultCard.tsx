@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface AndesResultCardProps {
   image: string;
@@ -35,7 +36,15 @@ const AndesResultCard: React.FC<AndesResultCardProps> = ({
   return (
     <article className={combinedClassName} onClick={onClick}>
       <div className="product-card__header">
-        <img src={image} alt={title} className="product-card__img" />
+        <Image 
+          src={image} 
+          alt={title} 
+          className="product-card__img" 
+          width={160} 
+          height={160} 
+          style={{ width: 'auto', height: 'auto' }}
+          unoptimized
+        />
       </div>
 
       <div className="product-card__content">

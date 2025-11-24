@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface LoyaltyBenefit {
   image: string;
@@ -39,10 +40,14 @@ const AndesLoyaltyWidget: React.FC<AndesLoyaltyWidgetProps> = ({
     <section className={combinedClassName}>
       <section className="loyalty-widget-v2__header">
         <div className="loyalty-widget-v2__header--left-section">
-          <img
+          <Image
             src={pillImage}
             className="loyalty-widget-v2__pill"
             alt="Logo Meli+"
+            width={60}
+            height={24}
+            style={{ width: 'auto', height: 'auto' }}
+            unoptimized
           />
           <div className="loyalty-widget-v2__header--title-container">
             <h2 className="loyalty-widget-v2__title">
@@ -65,10 +70,14 @@ const AndesLoyaltyWidget: React.FC<AndesLoyaltyWidgetProps> = ({
       <section className="loyalty-widget-v2__body">
         {benefits.map((benefit, index) => (
           <div key={index} className="loyalty-widget-v2__benefit">
-            <img
+            <Image
               src={benefit.image}
               className="loyalty-widget-v2__benefit--image"
               alt={benefit.alt}
+              width={48}
+              height={48}
+              style={{ width: 'auto', height: 'auto' }}
+              unoptimized
             />
             <p className="loyalty-widget-v2__benefit--text">
               <span aria-hidden="true">{benefit.text}</span>

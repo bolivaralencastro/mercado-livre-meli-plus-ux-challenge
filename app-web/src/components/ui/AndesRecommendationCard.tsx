@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface AndesRecommendationCardProps {
   image: string;
@@ -52,7 +53,15 @@ const AndesRecommendationCard: React.FC<AndesRecommendationCardProps> = ({
   return (
     <a href={href} className={combinedClassName} onClick={handleClick}>
       <div className="ui-recommendation-card__image-container">
-        <img src={image} alt={title} className="ui-recommendation-card__image" />
+        <Image 
+          src={image} 
+          alt={title} 
+          className="ui-recommendation-card__image" 
+          width={224} 
+          height={224} 
+          style={{ width: '100%', height: 'auto' }}
+          unoptimized
+        />
       </div>
 
       <div className="ui-recommendation-card__content">

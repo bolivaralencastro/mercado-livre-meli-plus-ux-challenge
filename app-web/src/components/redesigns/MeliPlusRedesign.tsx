@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { ChevronLeft, ChevronDown, Check, Plus } from 'lucide-react';
 
 export default function MeliPlusRedesign() {
@@ -143,12 +144,12 @@ export default function MeliPlusRedesign() {
                     {/* Cards 1:1 */}
                     <div className="flex gap-3 overflow-x-auto no-scrollbar">
                         <div className="flex-shrink-0 w-[48%] relative aspect-square rounded-lg overflow-hidden">
-                            <img src="https://lumiere-a.akamaihd.net/v1/images/p_lightyear_23180_05c06497.jpeg" className="w-full h-full object-cover" alt="Lightyear" />
+                            <Image src="https://lumiere-a.akamaihd.net/v1/images/p_lightyear_23180_05c06497.jpeg" className="w-full h-full object-cover" alt="Lightyear" width={200} height={200} unoptimized />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                             <span className="absolute bottom-3 left-3 text-white font-bold text-sm">Ligthyear</span>
                         </div>
                         <div className="flex-shrink-0 w-[48%] relative aspect-square rounded-lg overflow-hidden">
-                             <img src="https://lumiere-a.akamaihd.net/v1/images/p_thorloveandthunder_23194_a5a73e6e.jpeg" className="w-full h-full object-cover" alt="Thor" />
+                             <Image src="https://lumiere-a.akamaihd.net/v1/images/p_thorloveandthunder_23194_a5a73e6e.jpeg" className="w-full h-full object-cover" alt="Thor" width={200} height={200} unoptimized />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                             <span className="absolute bottom-3 left-3 text-white font-bold text-sm">Thor</span>
                         </div>
@@ -183,7 +184,7 @@ export default function MeliPlusRedesign() {
                              <span className="absolute bottom-3 left-3 text-white font-bold text-sm">Grupo Frontera</span>
                          </div>
                          <div className="flex-shrink-0 w-[48%] relative aspect-square rounded-lg overflow-hidden">
-                             <img src="https://upload.wikimedia.org/wikipedia/en/2/27/Julieta_Venegas_-_Tu_Historia.png" className="w-full h-full object-cover" alt="Julieta Venegas" />
+                             <Image src="https://upload.wikimedia.org/wikipedia/en/2/27/Julieta_Venegas_-_Tu_Historia.png" className="w-full h-full object-cover" alt="Julieta Venegas" width={200} height={200} unoptimized />
                              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                              <span className="absolute bottom-3 left-3 text-white font-bold text-sm">Julieta Venegas</span>
                          </div>
@@ -267,7 +268,7 @@ export default function MeliPlusRedesign() {
 
             <div className="text-xs text-gray-400 space-y-2 leading-relaxed">
                 <p>Os benefícios do Meli+ são válidos para usuários maiores de idade.</p>
-                <p>(1) Frete grátis para produtos do Full selecionados na modalidade de entrega "Seu dia de entregas".</p>
+                <p>(1) Frete grátis para produtos do Full selecionados na modalidade de entrega &quot;Seu dia de entregas&quot;.</p>
             </div>
         </div>
 

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 
 interface CarouselItem {
   id: string;
@@ -99,7 +100,14 @@ const AndesOffersCarousel: React.FC<AndesOffersCarouselProps> = ({
             >
               {item.image ? (
                 <div className="carousel-item__image">
-                  <img src={item.image} alt={item.label} />
+                  <Image 
+                    src={item.image} 
+                    alt={item.label} 
+                    width={64} 
+                    height={64} 
+                    style={{ width: 'auto', height: 'auto' }}
+                    unoptimized
+                  />
                 </div>
               ) : item.icon ? (
                 <div className="carousel-item__icon">{item.icon}</div>

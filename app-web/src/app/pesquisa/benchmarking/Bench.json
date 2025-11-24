@@ -1,0 +1,142 @@
+[
+  {
+    "company": "Apple",
+    "program": "Apple One",
+    "bundlingDescription": "3 Tiers: Individual (Music, TV+, Arcade, iCloud 50GB); Family (Compartilhado, 200GB); Premier (Fitness+, News+, 2TB).",
+    "mechanics": "Lock-in: Custo de saída alto (perder fotos/dados). Value: Simplificação cognitiva (uma fatura) e arbitragem de preço.",
+    "landingPage": "https://www.apple.com/apple-one/"
+  },
+  {
+    "company": "Microsoft",
+    "program": "Microsoft 365",
+    "bundlingDescription": "3 Tiers: Personal (1 pessoa, 1TB); Family (6 pessoas, 6TB); Business. Bundle de produtividade + AI.",
+    "mechanics": "Hábito: Uso diário cria dependência. Sunk Cost: Arquivos na nuvem dificultam migração.",
+    "landingPage": "https://www.microsoft.com/en-us/microsoft-365/buy/compare-all-microsoft-365-products"
+  },
+  {
+    "company": "Amazon",
+    "program": "Prime",
+    "bundlingDescription": "Tier Único: Frete Grátis + Prime Video + Music + Gaming. Add-ons: Canais extras (Max, Paramount, Premiere).",
+    "mechanics": "Pain of Paying: Elimina a dor de pagar frete. Cross-selling: O vídeo atrai, o frete retém.",
+    "landingPage": "https://www.amazon.com/amazonprime"
+  },
+  {
+    "company": "Rappi",
+    "program": "Rappi Pro",
+    "bundlingDescription": "2 Tiers: Pro (Entregas grátis, descontos); Pro Black (Prioridade, presentes, suporte VIP, HBO Max incluso).",
+    "mechanics": "Status & Ego: Diferencia \"economia\" de \"tratamento VIP\". Garantia de Savings: Reduz o risco percebido (Loss Aversion).",
+    "landingPage": "https://pro.rappi.com/brasil"
+  },
+  {
+    "company": "Nubank",
+    "program": "Nubank+",
+    "bundlingDescription": "Tier Único: R$ 29/mês. Bundle: Assinatura Max (HBO) inclusa + Cashback 0,5% + Saques grátis.",
+    "mechanics": "Dinheiro de Volta: O cashback faz a assinatura \"se pagar\". Competidor direto do Meli+ em Fintech + Streaming.",
+    "landingPage": "https://nubank.com.br/nubank-mais/"
+  },
+  {
+    "company": "Walmart",
+    "program": "Walmart Pass (MX)",
+    "bundlingDescription": "2 Tiers (Tempo): Mensal ou Anual. Bundle: Envios ilimitados de mercado + Cupons mensais fixos.",
+    "mechanics": "Hábito: Rotina de compras de mercado. Sunk Cost: Pagamento anual força concentração de compras para recuperar valor.",
+    "landingPage": "https://www.walmart.com/plus"
+  },
+  {
+    "company": "Uber",
+    "program": "Uber One",
+    "bundlingDescription": "Tier Único: R$ 19,90/mês. Bundle: Taxa R$ 0 + Cashback em créditos Uber para corridas/pedidos.",
+    "mechanics": "Ecossistema Fechado: Mobilidade + Delivery. Loss Aversion: \"Calculadora de economia\" mostra prejuízo de não assinar.",
+    "landingPage": "https://www.uber.com/br/pt-br/u/uber-one/"
+  },
+  {
+    "company": "Netflix",
+    "program": "Netflix Plans",
+    "bundlingDescription": "3 Tiers: Padrão c/ ads; Padrão (HD); Premium (4K). Bundle de conteúdo + Games.",
+    "mechanics": "Ancoragem: O plano com ads torna o Padrão mais atrativo. Aversão à Perda: Medo de perder qualidade 4K.",
+    "landingPage": "https://www.netflix.com/"
+  },
+  {
+    "company": "Spotify",
+    "program": "Premium",
+    "bundlingDescription": "4 Tiers: Individual, Duo, Family, Student. Bundle de música sem ads + offline.",
+    "mechanics": "Personalização (Lock-in): Algoritmo aprende gosto; sair é perder identidade musical. Social: Plano Family cria barreira de saída.",
+    "landingPage": "https://www.spotify.com/us/premium/"
+  },
+  {
+    "company": "Best Buy",
+    "program": "My Best Buy",
+    "bundlingDescription": "2 Tiers Pagos: Plus (Envios, Descontos); Total (Suporte Tech 24/7, Proteção AppleCare+).",
+    "mechanics": "Peace of Mind: Vende tranquilidade tecnológica. Value: Proteção inclusa justifica o custo alto anualmente.",
+    "landingPage": "https://www.bestbuy.com/site/electronics/best-buy-membership/pcmcat1679668833285.c?id=pcmcat1679668833285"
+  },
+  {
+    "company": "Adobe",
+    "program": "Creative Cloud",
+    "bundlingDescription": "Tiers por App ou All Apps: Bundle de 20+ ferramentas + Cloud + Fonts.",
+    "mechanics": "Padrão de Indústria: Formatos proprietários trancam o usuário. Upsell: Preço do pacote força migração do avulso.",
+    "landingPage": "https://www.adobe.com/creativecloud/plans.html"
+  },
+  {
+    "company": "PlayStation",
+    "program": "PS Plus",
+    "bundlingDescription": "3 Tiers: Essential, Extra, Deluxe. Bundle de Multiplayer Online + Catálogo de Jogos.",
+    "mechanics": "Escada de Valor: Níveis claros de benefício. FOMO: Acesso antecipado a jogos e clássicos no tier mais alto.",
+    "landingPage": "https://www.playstation.com/pt-br/ps-plus/"
+  },
+  {
+    "company": "Globoplay",
+    "program": "Globoplay +",
+    "bundlingDescription": "Hub de Tiers: Base; +Canais; +Premiere; +Disney; +Telecine.",
+    "mechanics": "Empilhamento: O preço do combo é menor que a soma das partes. Vende novela (hábito) com filme (evento).",
+    "landingPage": "https://globoplay.globo.com/assine/planos/"
+  },
+  {
+    "company": "Revolut",
+    "program": "Metal/Ultra",
+    "bundlingDescription": "5 Tiers: De Grátis a Ultra. Bundle financeiro + Lifestyle (Tinder, NordVPN, FT).",
+    "mechanics": "Super App: Banco vira hub de estilo de vida. Custo de Oportunidade: Assinar parceiros fora custa 3x mais.",
+    "landingPage": "https://www.revolut.com/en-BR/our-pricing-plans/"
+  },
+  {
+    "company": "Disney",
+    "program": "Disney Bundle",
+    "bundlingDescription": "Tiers Modulares: Disney+; Duo (c/ Hulu); Trio (c/ ESPN).",
+    "mechanics": "Arbitragem: O Duo custa quase o mesmo que o solo. Segmentação: Captura fãs de esporte e cinema no mesmo pacote.",
+    "landingPage": "https://www.disneyplus.com/welcome/disney-hulu-espn-bundle"
+  },
+  {
+    "company": "Magazine Luiza",
+    "program": "Clube da Lu",
+    "bundlingDescription": "Programa Gratuito com Níveis Implícitos: Benefícios como frete grátis a partir de certos valores, ofertas personalizadas e descontos exclusivos baseados em frequência de compras (ex.: Cliente Ouro para ≥4 compras/ano). Bundling de e-commerce com serviços financeiros (Magalu Pagamentos). Sem assinatura paga, mas similar em lock-in por hábitos de compra.",
+    "mechanics": "Hábito: Compras recorrentes desbloqueiam benefícios, criando dependência. Sunk Cost: Investimento em histórico de compras dificulta migração. Value: Predictibilidade de descontos sem custo extra.",
+    "landingPage": "https://especiais.magazineluiza.com.br/clube-da-lu/"
+  },
+  {
+    "company": "iFood",
+    "program": "Clube iFood",
+    "bundlingDescription": "Tier Único (Mensal): R$ 9,90/mês (aprox.), bundle de cupons de até 25% off (limitado a R$ 10), descontos na entrega, entrega grátis em categorias selecionadas (farmácias, mercados) e parcerias como Spotify Premium grátis por 3 meses ou YouTube.",
+    "mechanics": "Loss Aversion: Cupons e descontos reduzem medo de perda financeira; promoções com streaming criam hábito. Sunk Cost: Assinatura \"se paga\" com savings, incentivando renovação. Value: Predictibilidade em pedidos frequentes e economia em delivery.",
+    "landingPage": "https://www.ifood.com.br/clube"
+  },
+  {
+    "company": "Pão de Açúcar",
+    "program": "Cliente Mais",
+    "bundlingDescription": "Níveis Gratuitos (Black, etc.): Frete grátis a partir de R$ 99 para Black, descontos exclusivos, pontos Stix trocáveis por prêmios. Bundling de supermercado online com delivery rápido e ofertas personalizadas. Sem assinatura paga, mas progressão por gastos.",
+    "mechanics": "Hábito: Rotina de compras semanais com frete grátis. Sunk Cost: Acúmulo de pontos Stix tranca o usuário. Value: Simplificação de compras de mercado com economia previsível.",
+    "landingPage": "https://www.paodeacucar.com/mais/"
+  },
+  {
+    "company": "Carrefour",
+    "program": "Meu Carrefour",
+    "bundlingDescription": "Programa Gratuito: Ofertas especiais, cupons de desconto, frete grátis em certas compras via app. Bundling de supermercado com recompensas e integração com Cartão Carrefour para +10% off em produtos sinalizados.",
+    "mechanics": "Ancoragem: Descontos ancoram o cliente ao app. Loss Aversion: Medo de perder ofertas exclusivas. Value: Predictibilidade em economia diária de supermercado.",
+    "landingPage": "https://www.carrefour.com.br/meucarrefour"
+  },
+  {
+    "company": "Extra",
+    "program": "Clube Extra",
+    "bundlingDescription": "Programa Gratuito via App: +10% de desconto em produtos, frete grátis ou reduzido, anuidade de cartão zerada com compras mínimas. Bundling de varejo supermercadista com benefícios financeiros.",
+    "mechanics": "Peace of Mind: Tranquilidade com descontos fixos. Sunk Cost: Compras regulares para manter benefícios. Value: Hábito de compras online com economia integrada.",
+    "landingPage": "https://www.extramercado.com.br/beneficios"
+  }
+]
