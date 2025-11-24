@@ -36,7 +36,7 @@ const AndesDesignSystemPage = () => {
 
 
       {/* Sidebar */}
-      <aside className="w-64 h-screen bg-[#f5f5f5] border-r border-black/[0.06] fixed top-0 left-0 flex flex-col overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] z-[100]">
+      <aside className="w-64 h-screen bg-[#f5f5f5] border-r border-black/[0.06] border-l-[4px] border-l-[#3483fa] fixed top-0 left-0 flex flex-col overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] z-[100]">
         <nav className="pt-7 px-3 pb-5">
           <div className="mb-8 px-2">
             <Image 
@@ -50,12 +50,16 @@ const AndesDesignSystemPage = () => {
           </div>
           <div className="mb-6 flex flex-col gap-0.5">
             <a href="/ui-design" className="flex items-center w-full h-[42px] px-3 no-underline text-black/90 text-sm font-normal rounded-md cursor-pointer transition-colors hover:bg-black/[0.04]">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 mr-3 ml-1 opacity-70 grayscale brightness-50">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-              </svg>
-              <span className="flex-grow">Início</span>
+              <span className="flex-grow ml-4">Início</span>
             </a>
+          </div>
+          
+          {/* BRANDING / LOGOS */}
+          <div className="mb-6 flex flex-col gap-0.5">
+            <p className="text-black/55 text-xs font-semibold ml-8 mb-1 uppercase">Branding</p>
+            <button onClick={() => setSelectedSection("branding-logos")} className={`flex items-center w-full h-[42px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "branding-logos" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>
+              <span className="flex-grow text-left ml-4">Logos</span>
+            </button>
           </div>
           
           {/* FOUNDATION - Design Tokens */}
@@ -73,12 +77,7 @@ const AndesDesignSystemPage = () => {
                   : 'text-black/90 hover:bg-black/[0.04]'
               }`}
             >
-              <svg viewBox="0 0 24 24" fill="currentColor" className={`w-4 h-4 mr-3 ml-1 ${openFoundationMenu ? 'opacity-100 [filter:none]' : 'opacity-70 grayscale brightness-50'}`}>
-                <circle cx="12" cy="12" r="10"></circle>
-                <circle cx="12" cy="12" r="6"></circle>
-                <circle cx="12" cy="12" r="2"></circle>
-              </svg>
-              <span className="flex-grow text-left">Design Tokens</span>
+              <span className="flex-grow text-left ml-4">Design Tokens</span>
               <svg 
                 className={`w-3 h-3 transition-all ${openFoundationMenu ? 'opacity-100 stroke-[#333] rotate-90' : 'opacity-50 stroke-[#333]'}`}
                 viewBox="0 0 24 24" 
@@ -110,12 +109,7 @@ const AndesDesignSystemPage = () => {
               onClick={() => setOpenAtomsMenu(!openAtomsMenu)}
               className="flex items-center w-full h-[42px] px-3 text-black/90 text-sm font-normal rounded-md cursor-pointer transition-colors border-none hover:bg-black/[0.04]"
             >
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 mr-3 ml-1 opacity-70 grayscale brightness-50">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                <line x1="12" y1="22.08" x2="12" y2="12"></line>
-              </svg>
-              <span className="flex-grow text-left">Componentes Básicos</span>
+              <span className="flex-grow text-left ml-4">Componentes Básicos</span>
               <svg 
                 className={`w-3 h-3 transition-all ${openAtomsMenu ? 'opacity-100 stroke-[#333] rotate-90' : 'opacity-50 stroke-[#333]'}`}
                 viewBox="0 0 24 24" 
@@ -149,11 +143,7 @@ const AndesDesignSystemPage = () => {
               onClick={() => setOpenMoleculesMenu(!openMoleculesMenu)}
               className="flex items-center w-full h-[42px] px-3 text-black/90 text-sm font-normal rounded-md cursor-pointer transition-colors border-none hover:bg-black/[0.04]"
             >
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 mr-3 ml-1 opacity-70 grayscale brightness-50">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="9" y1="3" x2="9" y2="21"></line>
-              </svg>
-              <span className="flex-grow text-left">Componentes Compostos</span>
+              <span className="flex-grow text-left ml-4">Componentes Compostos</span>
               <svg 
                 className={`w-3 h-3 transition-all ${openMoleculesMenu ? 'opacity-100 stroke-[#333] rotate-90' : 'opacity-50 stroke-[#333]'}`}
                 viewBox="0 0 24 24" 
@@ -186,10 +176,7 @@ const AndesDesignSystemPage = () => {
               onClick={() => setOpenOrganismsMenu(!openOrganismsMenu)}
               className="flex items-center w-full h-[42px] px-3 text-black/90 text-sm font-normal rounded-md cursor-pointer transition-colors border-none hover:bg-black/[0.04]"
             >
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 mr-3 ml-1 opacity-70 grayscale brightness-50">
-                <path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM15 15h6v6h-6z"></path>
-              </svg>
-              <span className="flex-grow text-left">Componentes Complexos</span>
+              <span className="flex-grow text-left ml-4">Componentes Complexos</span>
               <svg 
                 className={`w-3 h-3 transition-all ${openOrganismsMenu ? 'opacity-100 stroke-[#333] rotate-90' : 'opacity-50 stroke-[#333]'}`}
                 viewBox="0 0 24 24" 
@@ -215,31 +202,18 @@ const AndesDesignSystemPage = () => {
           <div className="mb-6 flex flex-col gap-0.5">
             <p className="text-black/55 text-xs font-semibold ml-8 mb-1 uppercase">Recursos</p>
             <a href="#" className="flex items-center w-full h-[42px] px-3 no-underline text-black/90 text-sm font-normal rounded-md cursor-pointer transition-colors hover:bg-black/[0.04]">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 mr-3 ml-1 opacity-70 grayscale brightness-50">
-                <circle cx="12" cy="12" r="10"></circle>
-                <circle cx="12" cy="12" r="6"></circle>
-                <circle cx="12" cy="12" r="2"></circle>
-              </svg>
-              <span className="flex-grow">Tokens</span>
+              <span className="flex-grow ml-4">Tokens</span>
             </a>
-            
+
             <a href="#" className="flex items-center w-full h-[42px] px-3 no-underline text-black/90 text-sm font-normal rounded-md cursor-pointer transition-colors hover:bg-black/[0.04]">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 mr-3 ml-1 opacity-70 grayscale brightness-50">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="9" y1="3" x2="9" y2="21"></line>
-              </svg>
-              <span className="flex-grow">Layout</span>
+              <span className="flex-grow ml-4">Layout</span>
             </a>
           </div>
 
           <div className="mb-6 flex flex-col gap-0.5">
             <p className="text-black/55 text-xs font-semibold ml-8 mb-1 uppercase">RECURSOS</p>
             <a href="#" className="flex items-center w-full h-[42px] px-3 no-underline text-black/90 text-sm font-normal rounded-md cursor-pointer transition-colors hover:bg-black/[0.04]">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 mr-3 ml-1 opacity-70 grayscale brightness-50">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-              </svg>
-              <span className="flex-grow">Documentação</span>
+              <span className="flex-grow ml-4">Documentação</span>
             </a>
           </div>
         </nav>
@@ -249,7 +223,7 @@ const AndesDesignSystemPage = () => {
 
       {/* Main Content */}
       <main className="ml-64 mt-0 p-0 w-[calc(100%-16rem)] h-screen overflow-y-auto flex justify-center bg-[#ededed]">
-        <div className="w-full max-w-[800px] py-12 px-6 flex flex-col items-center">
+        <div className="w-full max-w-[800px] pt-12 pb-32 px-6 flex flex-col items-center">
           
           {/* ========== DESIGN TOKENS ========== */}
           
@@ -1062,6 +1036,33 @@ const AndesDesignSystemPage = () => {
                   priceCents="90"
                   shippingText="Envio normal"
                 />
+              </div>
+            </div>
+          )}
+
+          {selectedSection === "branding-logos" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Branding / Logos</h2>
+              <p className="text-sm text-black/55 mb-8">Logos e elementos de identidade visual do Mercado Livre</p>
+
+              <div className="space-y-8">
+                <div className="bg-white rounded-xl p-6 border border-gray-200">
+                  <h3 className="text-sm font-semibold text-black/90 mb-4">Logos Principais</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="bg-[#f5f5f5] rounded-lg p-4 flex flex-col items-center">
+                      <Image src="/logos/avatar-mercado-livre.jpg" alt="Mercado Livre" width={120} height={40} className="h-10 w-auto mb-3" unoptimized />
+                      <div className="text-xs text-black/55">Mercado Livre</div>
+                    </div>
+                    <div className="bg-[#f5f5f5] rounded-lg p-4 flex flex-col items-center">
+                      <Image src="/logos/mercado-pago.png" alt="Mercado Pago" width={120} height={40} className="h-10 w-auto mb-3" unoptimized />
+                      <div className="text-xs text-black/55">Mercado Pago</div>
+                    </div>
+                    <div className="bg-[#f5f5f5] rounded-lg p-4 flex flex-col items-center">
+                      <Image src="/logos/meli-mais.png" alt="Meli+" width={120} height={40} className="h-10 w-auto mb-3" unoptimized />
+                      <div className="text-xs text-black/55">Meli+</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           )}
