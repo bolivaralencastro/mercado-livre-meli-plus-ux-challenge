@@ -386,7 +386,7 @@ const PersonaViewer = ({ personas, currentPersonaSlug, htmlContent, images }: Pe
       </header>
 
       {/* Content area com grid de 12 colunas - abaixo do header */}
-      <div className="flex-1 grid grid-cols-12 pt-[73px] overflow-hidden">
+      <div className="flex-1 grid grid-cols-12 pt-[73px] overflow-hidden min-h-0">
         {/* Fotografia - 4 colunas, fixa, não scrolla, sem padding, com zoom */}
         <div className="col-span-4 h-full overflow-hidden">
           <div
@@ -400,7 +400,7 @@ const PersonaViewer = ({ personas, currentPersonaSlug, htmlContent, images }: Pe
         </div>
         
         {/* Área de texto - 8 colunas, scrollável */}
-        <div className="col-span-8 h-full overflow-y-auto bg-gray-100 persona-content-scroll">
+        <div className="col-span-8 h-full overflow-y-auto no-scrollbar bg-gray-100 persona-content-scroll">
           <div
             className="persona-content-area"
             dangerouslySetInnerHTML={{ __html: processedHtml }}

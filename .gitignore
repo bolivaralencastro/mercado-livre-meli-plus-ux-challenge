@@ -54,3 +54,6 @@ app-web/src/app/pesquisa/Mercado-Livre-Behance/
 02-pesquisa/personas/**/*.webp
 02-pesquisa/personas/**/*.jpg
 02-pesquisa/personas/**/*.png
+
+# Snyk Security Extension - AI Rules (auto-generated)
+.github\instructions\snyk_rules.instructions.md

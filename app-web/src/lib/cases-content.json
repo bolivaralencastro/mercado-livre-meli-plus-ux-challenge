@@ -1,0 +1,683 @@
+{
+  "cases": {
+    "a-evolucao-da-central-de-pagamentos-do-mercado-pago": {
+      "title": "A Evolucao Da Central De Pagamentos Do Mercado Pago",
+      "slug": "a-evolucao-da-central-de-pagamentos-do-mercado-pago",
+      "summary": "Reformulação completa da seção 'Contas e serviços' para organizar compromissos financeiros, simplificar o cadastro de contas, melhorar o fluxo de pagamento e aumentar o engajamento de pessoas pagantes dentro do app.",
+      "description": "O projeto reestruturou a experiência de gestão de contas no Mercado Pago, transformando a antiga área de pagamentos em uma central mais inteligente, modular e orientada a ações. O foco foi criar um ambiente simples, eficiente e competitivo, com visão consolidada de compromissos financeiros, sugestões personalizadas, cadastro otimizado e acesso rápido ao pagamento. A solução introduz um novo modelo mental que incentiva o cadastro de contas com funcionalidades como lembrete e débito automático. O redesenho também aprimorou o fluxo visual e reorganizou módulos em Centralizador, Sugestões, Configurador e Pagamentos. O processo contou com equipe multidisciplinar, iteração contínua, testes externos e validação interna. Os resultados demonstraram aumento expressivo no engajamento, melhoria no churn e crescimento do MAPs.",
+      "insights": [
+        "O antigo fluxo não comunicava bem as opções de organização e pagamento, gerando atritos na navegação.",
+        "Agrupar contas em módulos com funções claras facilita o entendimento e reduz a carga cognitiva.",
+        "Sugestões personalizadas aumentam a adoção de funcionalidades de alto valor, como débito automático.",
+        "O botão flutuante de pagamento reduz o tempo de execução e melhora a conversão de ações recorrentes.",
+        "Usuários valorizam visão consolidada: passado, presente e futuro dos compromissos.",
+        "O novo modelo mental incentiva usuários a cadastrar todas as contas dentro do app, aumentando retenção."
+      ],
+      "tags": [
+        "UX",
+        "UI Design",
+        "Product Design",
+        "Fintech",
+        "Mobile App",
+        "Pagamentos",
+        "Experiência do Usuário"
+      ],
+      "impact": "A solução gerou +6 p.p de NPS, +7,5 p.p de melhoria no churn e +7% no MAPs (pessoas que pagam contas mensalmente). Houve aumento geral do engajamento e percepção positiva de simplicidade e eficiência."
+    },
+    "a-nova-experiencia-de-pagamento-combinado": {
+      "title": "A Nova Experiencia De Pagamento Combinado",
+      "slug": "a-nova-experiencia-de-pagamento-combinado",
+      "summary": "Redesign da experiência de Pagamento Combinado no Mercado Pago, aumentando drasticamente o reconhecimento da funcionalidade e seu uso no checkout mobile.",
+  
+  "description": "O projeto teve como objetivo tornar a funcionalidade de pagamento combinado — que permite dividir uma transação entre dois meios de pagamento — mais clara, visível e fácil de usar. A versão anterior apresentava baixa descoberta (apenas 7,5% das sessões utilizavam a função) e feedback constante de que as pessoas usuárias sequer percebiam a existência dessa possibilidade. O trabalho envolveu pesquisas qualitativas e quantitativas, exploração de múltiplas propostas visuais, priorização via MoSCoW e testes de usabilidade. A solução final adotou um componente horizontal com dois cartões empilhados, trazendo clareza na leitura dos valores e melhor reconhecimento dos meios de pagamento.",
+
+  "insights": [
+    "44% das pessoas afirmaram nunca ter visto a opção de pagamento combinado na interface anterior.",
+    "A leitura diagonal e layouts não convencionais geram maior carga cognitiva em cenários funcionais como pagamentos.",
+    "Padrões de leitura vertical (cima → baixo) funcionam melhor para representar partes de um todo em mobile.",
+    "A descoberta da funcionalidade era o principal gargalo, não a compreensão do recurso.",
+    "Elementos visuais precisam reforçar o modelo mental da divisão de pagamento para diminuir fricção e abandono."
+  ],
+
+  "tags": [
+    "UX Design",
+    "UI Design",
+    "Product Design",
+    "Mobile Checkout",
+    "Research Driven Design",
+    "Usabilidade",
+    "Design System",
+    "Fintech",
+    "Pagamento Combinado",
+    "Experiência do Usuário"
+  ],
+
+  "impact": "A nova experiência gerou um aumento de 424% na utilização da funcionalidade, reduziu em 57% o abandono durante o checkout e alcançou 5,7 milhões de transações nos 6 primeiros meses. Além disso, 33% das pessoas que veem a funcionalidade agora passam a utilizá-la, validando a melhoria significativa na visibilidade, compreensão e eficiência da solução."
+
+    },
+    "andes-ui": {
+      "title": "Andes Ui",
+      "slug": "andes-ui",
+  "summary": "Análise aprofundada das diretrizes visuais e estruturais do Andes UI, sistematizando padrões de cor, tipografia, espaçamento, interação e nomenclatura para construir interfaces consistentes com o ecossistema Mercado Livre.",
+  "description": "Compilação das diretrizes visuais e comportamentais identificadas no case oficial do Andes UI (Mercado Livre): tokens de cor, tipografia, espaçamento, grid, estrutura de componentes, convenção de nomenclatura, estados e princípios de implementação. O conteúdo foi traduzido, organizado e padronizado para orientar desenvolvimento front-end e manter consistência com o sistema visual original.",
+  "insights": [
+    "O Andes UI é estruturado completamente sobre tokens reutilizáveis (cor, tipografia, spacing, radius, shadow).",
+    "Toda a interface respeita uma escala modular baseada em múltiplos de 4px, garantindo alinhamento e ritmo visual.",
+    "O sistema utiliza classes com prefixo `andes-`, seguindo uma lógica próxima ao padrão BEM.",
+    "Cores são divididas entre marcas (Mercado Libre e Mercado Pago) e estados semânticos (success, warning, error).",
+    "A tipografia adota pesos consistentes: títulos semibold/bold, corpo regular, labels menores e neutros.",
+    "Inputs seguem padrão de linha inferior com estados claros: default, focus (primário), error (vermelho).",
+    "Botões têm altura mínima consistente (~44px), radius pequeno e variações primária/outline/disabled.",
+    "Componentes como cards, modais, dropdowns e mensagens têm padrões repetitivos de spacing (24–32px) e sombra leve.",
+    "Interações incluem foco visível, hover sutil e disabled com baixo contraste.",
+    "A documentação original do Andes UI enfatiza colaboração entre UX + Front-End para garantir fidelidade de implementação."
+  ],
+  "tags": [
+    "design-system",
+    "andes-ui",
+    "tokens",
+    "ux",
+    "ui",
+    "front-end",
+    "consistência-visual",
+    "mercado-livre",
+    "guidelines"
+  ],
+  "impact": "Essas regras permitem implementar interfaces consistentes com o padrão visual do Mercado Livre, reduzindo divergências, acelerando o desenvolvimento e facilitando a criação de componentes reutilizáveis. Elas fortalecem a coesão entre design e engenharia, diminuem retrabalho e estabelecem uma base sólida para um sistema de design modular e escalável."
+
+    },
+    "aproximou-pagou-um-jeito-pratico-de-pagar-com-celular": {
+  "title": "Aproximou Pagou Um Jeito Pratico De Pagar Com Celular",
+  "slug": "aproximou-pagou-um-jeito-pratico-de-pagar-com-celular",
+  "summary": "Lançamos o pagamento por aproximação no app do Mercado Pago, criando uma experiência simples, segura e educativa para incentivar o uso do NFC direto no celular. Identificamos dúvidas sobre segurança, aceitação e funcionamento e reduzimos essas barreiras com proteção reforçada e instruções visuais claras.",
+  "description": "Desenvolvemos a experiência de pagamento por aproximação no app do Mercado Pago, permitindo que pessoas usuárias paguem via NFC diretamente pelo celular, sem precisar de cartão físico ou aplicativos intermediários. A pesquisa revelou três barreiras principais: medo de insegurança, incerteza sobre onde o NFC funciona e desconhecimento sobre como realizar o pagamento. Criamos um onboarding educativo com passo a passo visual, reforço de segurança, demonstrações com máquinas reais e comunicação clara em cada etapa. Essa abordagem facilitou a adoção da tecnologia, reduziu dúvidas e consolidou o Mercado Pago como pioneiro no uso de pagamentos por aproximação em contas digitais.",
+  "insights": [
+    "Insegurança sobre pagamentos ocorrerem sem intenção",
+    "Pouca clareza sobre onde o NFC é aceito",
+    "Dúvidas sobre como aproximar e validar o pagamento",
+    "Educação visual reduz a percepção de risco",
+    "Onboarding guiado aumenta a confiança e adoção"
+  ],
+  "tags": [
+    "NFC",
+    "Pagamentos Digitais",
+    "Experiência Educativa",
+    "Segurança",
+    "Onboarding"
+  ],
+  "impact": "Mais de R$ 500 milhões em pagamentos por aproximação realizados via celular até 2022."
+    },
+    "brand-book-mercado-pago": {
+      "title": "Brand Book Mercado Pago",
+      "slug": "brand-book-mercado-pago",
+      "summary": "Case de identidade visual e comunicação do Mercado Pago, com foco em criar uma marca consistente, moderna e acessível. O projeto apresenta diretrizes visuais, paleta, tipografia, composição para campanhas, exemplos práticos de uso e aplicações reais em fotos, vitrines, telas e materiais impressos.",
+  "description": "O case apresenta a renovação da identidade do Mercado Pago, reforçando o propósito da marca e consolidando um ecossistema visual coerente entre on e offline. A narrativa começa destacando a busca por uma marca com personalidade, sólida e reconhecível. O projeto define pilares de comunicação, constrói uma paleta simples e forte, cria componentes visuais modulares e demonstra sua aplicação em interfaces, campanhas e materiais físicos. Cada bloco da apresentação reforça consistência, clareza e acessibilidade, mostrando como unir o universo digital com a experiência visual do mundo real.",
+  "insights": [
+    "A marca foi reconstruída a partir de uma lógica de simplicidade: poucos elementos, alto contraste e consistência entre ambientes digitais e físicos.",
+    "Há uma forte conexão com pessoas reais: o case usa fotografias documentais e cenários cotidianos para reforçar proximidade e confiança.",
+    "A paleta cromática é reduzida, com predominância do azul Mercado Pago e cores de apoio neutras.",
+    "A identidade se apoia em espaços amplos (white space), blocos fortes e tipografia sólida para transmitir clareza.",
+    "Os layouts seguem lógica modular, facilitando adaptação entre mídias (outdoor, cards de app, vitrines, banners, UI, impresso).",
+    "As interfaces aplicam a mesma linguagem: cards com espaçamento limpo, hierarquia clara e tipografia editorial.",
+    "Fotografia é um componente central, sempre com luz natural, cenas reais e pessoas trabalhando, criando narrativa de progresso.",
+    "O case enfatiza consistência: 'Nos mostramos de uma maneira mais coerente e consistente'."
+  ],
+  "tags": [
+    "Identidade Visual",
+    "Branding",
+    "UI Design",
+    "Communication System",
+    "Design System",
+    "Mercado Pago",
+    "Fotografia Documental",
+    "Direção de Arte"
+  ],
+  "impact": "A nova identidade cria uma presença muito mais forte e unificada do Mercado Pago em LATAM. A comunicação reforça credibilidade, facilita reconhecimento e melhora a clareza nas campanhas e interfaces. Ao integrar linguagem visual entre digital e físico, a marca aumenta sua memorabilidade e consolida seu posicionamento como líder em soluções de pagamento e inclusão financeira."
+
+    },
+    "central-de-promociones-un-lugar-para-gestionar-ofertas": {
+      "title": "Central De Promociones Un Lugar Para Gestionar Ofertas",
+      "slug": "central-de-promociones-un-lugar-para-gestionar-ofertas",
+      "summary": "Criação de uma Central de Promoções dentro do ecossistema do Mercado Livre para que vendedores possam configurar, acompanhar e otimizar suas ofertas em um só lugar. O projeto organiza tipos de promoções, simplifica o gerenciamento individual e em massa e garante mais visibilidade para descontos relevantes, beneficiando tanto vendedores quanto compradores.",
+  "description": "Este case apresenta o desenho da **Central de Promoções** do Mercado Livre, uma solução pensada para ajudar vendedores a atingir mais compradores, impulsionar suas vendas e oferecer preços competitivos dentro e fora do ecossistema Meli.\n\nO ponto de partida foi o desafio de:\n- Acompanhar vendedores em seu objetivo de vender mais e melhor.\n- Tornar mais simples a gestão de grandes estoques e múltiplas campanhas.\n- Destacar as melhores ofertas para que compradores as reconheçam rapidamente.\n\nPara isso, foi criado um **ecossistema de três frentes**:\n- **Administrador de promoções** – onde o time comercial configura os tipos de ofertas disponíveis na plataforma.\n- **Central de Promoções** – onde os vendedores veem, criam e gerenciam todas as suas ofertas ativas, programadas e elegíveis.\n- **Seção de ofertas** – onde os compradores acessam todas as promoções com informações claras de desconto e benefício.\n\nTambém foram definidos objetivos de produto ligados ao **propor, resolver e destacar ofertas**:\n- **Propor** valores atrativos que estimulem a participação dos vendedores nas campanhas.\n- **Resolver** a dor de quem tem estoque muito alto e precisa liquidar produtos com agilidade.\n- **Destacar ofertas** de forma clara, para que o comprador entenda o benefício e converta com mais confiança.\n\n### Tipos de promoções\nA experiência foi desenhada para que o vendedor escolha o tipo de oferta com base no benefício desejado:\n- **Oferta do dia** – máxima exposição na seção de Ofertas por 24 horas.\n- **Oferta relâmpago** – alta exposição em janelas menores (por exemplo, 6 horas).\n- **Oferta por quantidade** – descontos progressivos conforme a quantidade vendida.\n- **Oferta tradicional** – desconto mais flexível por até 7 dias.\n- **Oferta compartilhada** – Mercado Livre adiciona um percentual extra ao desconto oferecido pelo vendedor.\n- **Eventos comerciais** – datas especiais como Hot Sale e Dia das Mães, que concentram grandes campanhas.\n\n### Fluxo da experiência para vendedores\n1. **Filtrar por tipo de promoção**  \n   A tela inicial agrupa campanhas em **cards por tipo de promoção** (Black Friday, celulares, verão etc.), facilitando o entendimento do contexto e o acesso às ofertas elegíveis. Vendedores filtram suas publicações pelo tipo de promoção que querem usar, simplificando o gerenciamento.\n\n2. **Encontrar o que importa no primeiro olhar**  \n   As listas priorizam:\n   - **Percentual de desconto** (grande, em destaque).\n   - **Nome da oferta** e **proposta de valor**.\n   - **Estado da promoção** (ativa, programada, elegível), que define a ordem das publicações.\n   Primeiro aparecem as promoções ativas, depois as programadas e, por fim, as elegíveis — garantindo que o vendedor tenha sempre a visão mais atualizada das campanhas e de indicadores como quantidade de vendas.\n\n3. **Gestão rápida em cada publicação**  \n   Em cada linha de produto, o vendedor pode **participar, modificar ou parar de participar** de forma direta. Ao acionar a participação, um **modal de confirmação da oferta** exibe:\n   - Benefícios da campanha (exposição, envio de notificações, resultados em busca etc.).\n   - Campo para configurar o **percentual de desconto** e a **data de vigência**.\n   - Opção de **desconto exclusivo para níveis específicos de Mercado Pontos**.\n   - Uma **pré-visualização de como o comprador verá a oferta**, com preço original, preço com desconto e selo da promoção.\n\n4. **Gestão massiva de produtos**  \n   Para volumes altos de SKUs, foi desenhada uma **barra de seleção massiva** na listagem. Após selecionar vários produtos, o usuário pode:\n   - Revisar informações principais em um **editor em massa**.\n   - Definir um mesmo percentual de desconto para vários itens.\n   - Ajustar configurações específicas (como benefícios de Mercado Pontos) por linha.\n   As ações da barra (participar, modificar, deixar de participar, gerir desde o Excel) são habilitadas conforme o estado das publicações selecionadas.\n\n5. **Gestão via Excel**  \n   Para workflows fora do site, os vendedores podem **baixar um arquivo Excel**, preencher os campos de desconto, preço final e regras da promoção e depois subir o arquivo novamente. Isso permite operar promoções em larga escala usando ferramentas que já fazem parte do dia a dia de muitos lojistas.\n\nEm conjunto, esses elementos criam uma experiência completa de **criação, edição, priorização e monitoramento de promoções**, integrada ao restante do ecossistema de vendas do Mercado Livre.",
+  "insights": [
+    "Agrupar promoções em cards por tipo (Black Friday, oferta relâmpago, evento comercial) ajuda o vendedor a entender rapidamente o contexto de cada campanha e reduz a sensação de complexidade.",
+    "Priorizar visualmente o percentual de desconto e o estado da promoção (ativa, programada, elegível) melhora o escaneamento da lista e orienta o foco dos vendedores para o que está gerando resultados agora.",
+    "Centralizar toda a configuração de desconto em um modal com resumo de benefícios e pré-visualização para o comprador aumenta a confiança na hora de confirmar a oferta e reduz erros de configuração.",
+    "Oferecer gestão individual e massiva em uma mesma interface responde a dois modos de uso reais: o vendedor que testa ofertas pontuais e o que precisa operar grandes catálogos em pouco tempo.",
+    "Integrar uma opção de gestão via Excel reconhece hábitos já consolidados dos vendedores e reduz a barreira de adoção para quem prefere manipular dados em planilhas.",
+    "Estados claros de promoção e ordenação baseada neles criam uma narrativa temporal da campanha (o que está ativo agora, o que está por vir e o que ainda pode ser ativado), facilitando o planejamento de vendas."
+  ],
+  "tags": [
+    "UX",
+    "Product Design",
+    "E-commerce",
+    "Mercado Livre",
+    "Gestão de promoções",
+    "Design de interface",
+    "Fluxos de vendedores",
+    "Experiência do vendedor",
+    "Campanhas e descontos"
+  ],
+  "impact": "O projeto consolida em uma única Central de Promoções tudo o que o vendedor precisa para criar, ativar, acompanhar e otimizar ofertas no Mercado Livre. A solução reduz esforço operacional ao permitir gestão individual e em massa, melhora a visibilidade das campanhas ao destacar o desconto e o estado de cada promoção e aumenta o alinhamento entre o que vendedores precisam (liquidar estoque, ganhar exposição) e o que compradores percebem (benefícios claros e preços competitivos). Embora o case não apresente números de negócio, o impacto é observado na simplificação da jornada de configuração de promoções e na criação de um ecossistema coerente entre administrador interno, painel do vendedor e vitrine de ofertas para o comprador."
+
+    },
+    "como-redisenamos-el-administrador-de-mercado-credito": {
+      "title": "Como Redisenamos El Administrador De Mercado Credito",
+      "slug": "como-redisenamos-el-administrador-de-mercado-credito",
+      "summary": "Redesign completo do Administrador de Mercado Crédito, tornando-o modular, escalável e alinhado às diferentes etapas do journey de crédito (aquisição, ativação, engajamento e cobrança), reduzindo carga cognitiva e aumentando clareza e previsibilidade.",
+  
+  "description": "O projeto consistiu em reorganizar a arquitetura da informação do Administrador de Mercado Crédito, que havia se tornado inconsistente devido ao acúmulo de produtos, regras e necessidades de diversas áreas. O trabalho incluiu pesquisa, definição de princípios de design, mapeamento de estágios do usuário, criação de storytelling para guiar o fluxo, desenvolvimento de wireframes modulares e refinamento visual completo. Também validamos o novo fluxo com usuários em dois países, garantindo entendimento intuitivo das ofertas, cobranças e produtos ativos.",
+  
+  "insights": [
+    "Interfaces financeiras precisam equilibrar clareza, previsibilidade e ação.",
+    "Contextualização reduz drasticamente dúvidas básicas e contato com suporte.",
+    "Sistemas modulados por estados (como videogames) ajudam o usuário a entender progressão.",
+    "Ajuda contextual e informações progressivas diminuem carga cognitiva.",
+    "Elementos consistentes de UI reforçam confiança em produtos financeiros."
+  ],
+  
+  "tags": [
+    "UX Design",
+    "UI Design",
+    "Product Design",
+    "User Research",
+    "Design System",
+    "Arquitetura da Informação",
+    "Fintech",
+    "Mercado Pago",
+    "Credit Experience",
+    "Modular Design"
+  ],
+  
+  "impact": "11 de 12 pessoas usuárias compreenderam corretamente o que é Mercado Crédito e como utilizar o administrador. 12 de 12 entenderam a lógica de cobrança e conseguiram navegar até detalhes de pagamento e cancelamento. O redesign reduziu carga cognitiva, organizou componentes por afinidade, tornou a navegação previsível e diminuiu o contact rate de dúvidas recorrentes para o time de CX."
+
+    },
+    "como-um-redesign-aumentou-a-conversao-em-7": {
+      "title": "Como Um Redesign Aumentou A Conversao Em 7",
+      "slug": "como-um-redesign-aumentou-a-conversao-em-7",
+     "summary": "Redesign do fluxo de Wallet Connect do Mercado Pago para melhorar clareza sobre meios de pagamento, reduzir ruídos cognitivos e aumentar a conversão. O projeto resultou em um crescimento comprovado de 7% na conversão.",
+  "description": "O case apresenta o processo completo de redesign da experiência de vinculação de meios de pagamento entre Mercado Pago e serviços digitais como Globoplay, Disney+, Uber e outros. Pesquisas mostraram que 17% dos usuários não entendiam como funcionava o pagamento, especialmente a relação entre saldo em conta e cartão de reserva. O projeto reorganizou informações, redesenhou telas críticas, revisou conteúdos, criou novos fluxos e validou hipóteses por meio de testes de usabilidade. O resultado foi um fluxo mais simples, educativo, com menos carga cognitiva e mais confiança na etapa de confirmação, refletindo em um aumento de 7% na conversão final.",
+  "insights": [
+    "17% dos usuários não entendiam como funcionava o produto.",
+    "Havia confusão entre saldo principal e cartão reserva.",
+    "Usuários tinham medo de confirmar sem entender qual meio seria usado.",
+    "Dividir o fluxo em duas telas aumentou clareza e reduziu dúvidas.",
+    "Conteúdo educativo no momento certo reduz atrito.",
+    "Modal reduz carga cognitiva melhor do que novas telas completas.",
+    "Feedback imediato sobre cobrança melhora percepção de segurança.",
+    "Separar meios de pagamento aumenta compreensão do fluxo.",
+    "Testes mostraram que 9 de 10 pessoas entenderam imediatamente qual meio seria cobrado.",
+    "A reorganização visual e textual aumentou a conversão em 7%."
+  ],
+  "tags": [
+    "UX",
+    "UI",
+    "Redesign",
+    "Wallet Connect",
+    "Pagamentos",
+    "Fluxo de Vinculação",
+    "Pesquisa com Usuários",
+    "Teste de Usabilidade",
+    "Design de Produto",
+    "Storytelling",
+    "Mercado Pago",
+    "Fintech",
+    "Design System"
+  ],
+  "impact": "A iniciativa gerou um aumento direto de 7% na conversão do produto Wallet Connect. O entendimento dos usuários sobre o fluxo foi significativamente maior: 9 de 10 compreenderam o funcionamento sem esforço após o redesign, e 10 de 10 conseguiram concluir a jornada. O redesign reduziu ruído cognitivo, melhorou clareza sobre meios de pagamento, diminuiu inseguranças na etapa de confirmação e tornou a jornada mais fluida, aumentando segurança e confiança."
+
+    },
+    "cuenta-digital-proceso-de-construccion-de-landings": {
+      "title": "Cuenta Digital Proceso De Construccion De Landings",
+      "slug": "cuenta-digital-proceso-de-construccion-de-landings",
+     "summary": "Reestruturamos o processo de criação das landings da Conta Digital Mercado Pago, passando de páginas isoladas para um sistema modular, escalável e regionalizado que reposiciona o produto em toda a América Latina e triplica o impacto no mesmo tempo de produção.",
+  "description": "O projeto nasce da necessidade de reposicionar o Mercado Pago de uma \"billetera virtual\" para uma verdadeira conta digital, capaz de administrar dinheiro e operações financeiras de forma segura, rápida e simples. Os usuários ainda percebiam o produto como uma carteira para pagar e receber, mas o negócio precisava comunicar uma proposta de valor muito mais ampla.\n\nO desafio ficou ainda maior porque era preciso criar rapidamente uma landing específica para o Brasil, em plena pandemia, com tempo muito curto e equipes distribuídas. O fluxo tradicional em cascata (definir conceito, criar design em baixa, depois alta e só então implementar) não dava conta da urgência. A solução foi otimizar o processo, sobrepondo etapas e trabalhando de forma mais ágil entre conteúdo, UX e desenvolvimento.\n\nOrganizamos a construção das landings em três eixos conceituais principais: **História**, **Landing modular** e **Regionalização**. Primeiro, mapeamos produtos e atributos da Conta Digital em cada país, entendendo seu papel na jornada e priorizando o que seria protagonista em cada página. Depois, agrupamos os produtos em seções coerentes, alinhadas tanto ao valor de negócio quanto ao valor percebido pelos usuários. Por fim, hierarquizamos os módulos, trazendo para o topo os produtos mais relevantes e as ferramentas mais usadas no início da relação com a conta.\n\nNa frente de interface, criamos uma landing modular, estruturada em blocos intercambiáveis e submódulos que podem ser rearranjados conforme a estratégia de cada região. Isso garante escalabilidade técnica e de conteúdo: a mesma base de layout serve para vários países, mudando apenas a ordem e a combinação de módulos.\n\nO conteúdo também foi profundamente regionalizado. Em vez de simplesmente traduzir textos, adaptamos linguagem, expressões e pronomes (tú, vos, você) ao contexto local. Cada país ganhou uma narrativa própria, com exemplos, metáforas e benefícios que conversam com a realidade dos usuários, além de assets visuais específicos para ilustrar melhor cada história.\n\nA pandemia trouxe um desafio técnico adicional: não era possível realizar sessões de fotos presenciais. Para manter a qualidade visual, construímos as imagens de forma composta: escolhemos locações relevantes com apoio dos times regionais, combinamos diferentes fotos para ajustar cenário, modelo e ambientação, e unificamos luz, contraste e equilíbrio de cor para garantir um clima consistente entre todos os países.\n\nO resultado é um ecossistema de landings que reposiciona a Conta Digital Mercado Pago em toda a região, mantendo unidade de marca e, ao mesmo tempo, respeitando as particularidades de cada mercado. O processo inicialmente pensado para Argentina, Brasil e México se tornou um roadmap replicável, que permitiu escalar a produção para Colômbia, Chile, Uruguai e Peru com muito mais eficiência.",
+  "insights": [
+    "Quando o produto evolui (de carteira virtual para conta digital), a narrativa de marketing e UX precisa ser atualizada para refletir a nova proposta de valor, não apenas o visual.",
+    "Substituir um fluxo waterfall rígido por um processo mais ágil e sobreposto entre conteúdo, design e desenvolvimento reduz drasticamente o tempo de entrega sem perder qualidade.",
+    "Organizar as landings em eixos conceituais (história, módulos, regionalização) ajuda a alinhar negócio, UX e tecnologia em um mesmo modelo mental.",
+    "Um sistema de módulos e submódulos intercambiáveis torna as landings escaláveis: é possível reaproveitar layout e código enquanto se customiza ordem e ênfase para cada país.",
+    "Mapear todos os produtos e atributos antes de desenhar a página permite priorizar melhor o que vai para o topo e o que entra como apoio na narrativa.",
+    "Regionalização de conteúdo vai além da tradução literal: envolve adaptar expressões, pronomes, exemplos e promessas aos códigos culturais e de linguagem de cada país.",
+    "Manter um guia visual consistente (luz, contraste, paleta e composição) é essencial quando se constroem imagens compostas em vez de shootings presenciais, especialmente em projetos regionais.",
+    "Documentar o processo em um roadmap visual facilita a colaboração entre times multidisciplinares e serve de base para replicar o modelo em novos mercados.",
+    "Trabalhar UX de conteúdo, UX de interface e desenvolvimento em sincronia desde o início aumenta a coerência entre o que é prometido na narrativa e o que é entregue na experiência."
+  ],
+  "tags": [
+    "UX",
+    "UI",
+    "Landing pages",
+    "Design de sistemas",
+    "Conteúdo e UX writing",
+    "Regionalização",
+    "Design responsivo",
+    "Design system",
+    "Fintech",
+    "Mercado Pago"
+  ],
+  "impact": "A otimização do fluxo de trabalho permitiu criar uma landing complexa para o Brasil em um terço do tempo originalmente estimado, além de triplicar o impacto no mesmo período de produção. O modelo modular viabilizou a construção e adaptação de landings para Argentina, Brasil e México e, posteriormente, sua expansão rápida para Colômbia, Chile, Uruguai e Peru, garantindo consistência de marca, eficiência de desenvolvimento e maior clareza na comunicação da Conta Digital Mercado Pago em toda a região."
+
+    },
+    "cupones-mas-descuentos-mas-ventas": {
+      "title": "Cupones Mas Descuentos Mas Ventas",
+      "slug": "cupones-mas-descuentos-mas-ventas",
+     "summary": "Criação de uma Central de Promoções dentro do ecossistema do Mercado Livre para que vendedores possam configurar, acompanhar e otimizar suas ofertas em um só lugar. O projeto organiza tipos de promoções, simplifica o gerenciamento individual e em massa e garante mais visibilidade para descontos relevantes, beneficiando tanto vendedores quanto compradores.",
+  "description": "Este case apresenta o desenho da **Central de Promoções** do Mercado Livre, uma solução pensada para ajudar vendedores a atingir mais compradores, impulsionar suas vendas e oferecer preços competitivos dentro e fora do ecossistema Meli.\n\nO ponto de partida foi o desafio de:\n- Acompanhar vendedores em seu objetivo de vender mais e melhor.\n- Tornar mais simples a gestão de grandes estoques e múltiplas campanhas.\n- Destacar as melhores ofertas para que compradores as reconheçam rapidamente.\n\nPara isso, foi criado um **ecossistema de três frentes**:\n- **Administrador de promoções** – onde o time comercial configura os tipos de ofertas disponíveis na plataforma.\n- **Central de Promoções** – onde os vendedores veem, criam e gerenciam todas as suas ofertas ativas, programadas e elegíveis.\n- **Seção de ofertas** – onde os compradores acessam todas as promoções com informações claras de desconto e benefício.\n\nTambém foram definidos objetivos de produto ligados ao **propor, resolver e destacar ofertas**:\n- **Propor** valores atrativos que estimulem a participação dos vendedores nas campanhas.\n- **Resolver** a dor de quem tem estoque muito alto e precisa liquidar produtos com agilidade.\n- **Destacar ofertas** de forma clara, para que o comprador entenda o benefício e converta com mais confiança.\n\n### Tipos de promoções\nA experiência foi desenhada para que o vendedor escolha o tipo de oferta com base no benefício desejado:\n- **Oferta do dia** – máxima exposição na seção de Ofertas por 24 horas.\n- **Oferta relâmpago** – alta exposição em janelas menores (por exemplo, 6 horas).\n- **Oferta por quantidade** – descontos progressivos conforme a quantidade vendida.\n- **Oferta tradicional** – desconto mais flexível por até 7 dias.\n- **Oferta compartilhada** – Mercado Livre adiciona um percentual extra ao desconto oferecido pelo vendedor.\n- **Eventos comerciais** – datas especiais como Hot Sale e Dia das Mães, que concentram grandes campanhas.\n\n### Fluxo da experiência para vendedores\n1. **Filtrar por tipo de promoção**  \n   A tela inicial agrupa campanhas em **cards por tipo de promoção** (Black Friday, celulares, verão etc.), facilitando o entendimento do contexto e o acesso às ofertas elegíveis. Vendedores filtram suas publicações pelo tipo de promoção que querem usar, simplificando o gerenciamento.\n\n2. **Encontrar o que importa no primeiro olhar**  \n   As listas priorizam:\n   - **Percentual de desconto** (grande, em destaque).\n   - **Nome da oferta** e **proposta de valor**.\n   - **Estado da promoção** (ativa, programada, elegível), que define a ordem das publicações.\n   Primeiro aparecem as promoções ativas, depois as programadas e, por fim, as elegíveis — garantindo que o vendedor tenha sempre a visão mais atualizada das campanhas e de indicadores como quantidade de vendas.\n\n3. **Gestão rápida em cada publicação**  \n   Em cada linha de produto, o vendedor pode **participar, modificar ou parar de participar** de forma direta. Ao acionar a participação, um **modal de confirmação da oferta** exibe:\n   - Benefícios da campanha (exposição, envio de notificações, resultados em busca etc.).\n   - Campo para configurar o **percentual de desconto** e a **data de vigência**.\n   - Opção de **desconto exclusivo para níveis específicos de Mercado Pontos**.\n   - Uma **pré-visualização de como o comprador verá a oferta**, com preço original, preço com desconto e selo da promoção.\n\n4. **Gestão massiva de produtos**  \n   Para volumes altos de SKUs, foi desenhada uma **barra de seleção massiva** na listagem. Após selecionar vários produtos, o usuário pode:\n   - Revisar informações principais em um **editor em massa**.\n   - Definir um mesmo percentual de desconto para vários itens.\n   - Ajustar configurações específicas (como benefícios de Mercado Pontos) por linha.\n   As ações da barra (participar, modificar, deixar de participar, gerir desde o Excel) são habilitadas conforme o estado das publicações selecionadas.\n\n5. **Gestão via Excel**  \n   Para workflows fora do site, os vendedores podem **baixar um arquivo Excel**, preencher os campos de desconto, preço final e regras da promoção e depois subir o arquivo novamente. Isso permite operar promoções em larga escala usando ferramentas que já fazem parte do dia a dia de muitos lojistas.\n\nEm conjunto, esses elementos criam uma experiência completa de **criação, edição, priorização e monitoramento de promoções**, integrada ao restante do ecossistema de vendas do Mercado Livre.",
+  "insights": [
+    "Agrupar promoções em cards por tipo (Black Friday, oferta relâmpago, evento comercial) ajuda o vendedor a entender rapidamente o contexto de cada campanha e reduz a sensação de complexidade.",
+    "Priorizar visualmente o percentual de desconto e o estado da promoção (ativa, programada, elegível) melhora o escaneamento da lista e orienta o foco dos vendedores para o que está gerando resultados agora.",
+    "Centralizar toda a configuração de desconto em um modal com resumo de benefícios e pré-visualização para o comprador aumenta a confiança na hora de confirmar a oferta e reduz erros de configuração.",
+    "Oferecer gestão individual e massiva em uma mesma interface responde a dois modos de uso reais: o vendedor que testa ofertas pontuais e o que precisa operar grandes catálogos em pouco tempo.",
+    "Integrar uma opção de gestão via Excel reconhece hábitos já consolidados dos vendedores e reduz a barreira de adoção para quem prefere manipular dados em planilhas.",
+    "Estados claros de promoção e ordenação baseada neles criam uma narrativa temporal da campanha (o que está ativo agora, o que está por vir e o que ainda pode ser ativado), facilitando o planejamento de vendas."
+  ],
+  "tags": [
+    "UX",
+    "Product Design",
+    "E-commerce",
+    "Mercado Livre",
+    "Gestão de promoções",
+    "Design de interface",
+    "Fluxos de vendedores",
+    "Experiência do vendedor",
+    "Campanhas e descontos"
+  ],
+  "impact": "O projeto consolida em uma única Central de Promoções tudo o que o vendedor precisa para criar, ativar, acompanhar e otimizar ofertas no Mercado Livre. A solução reduz esforço operacional ao permitir gestão individual e em massa, melhora a visibilidade das campanhas ao destacar o desconto e o estado de cada promoção e aumenta o alinhamento entre o que vendedores precisam (liquidar estoque, ganhar exposição) e o que compradores percebem (benefícios claros e preços competitivos). Embora o case não apresente números de negócio, o impacto é observado na simplificação da jornada de configuração de promoções e na criação de um ecossistema coerente entre administrador interno, painel do vendedor e vitrine de ofertas para o comprador."
+
+    },
+    "dashboard-mercado-pago": {
+      "title": "Dashboard Mercado Pago",
+      "slug": "dashboard-mercado-pago",
+    "summary": "Desenvolvimento de um novo painel de 'Métricas do Negócio' para o Mercado Pago, focado em transformar dados brutos e desorganizados em insights visuais claros para auxiliar vendedores na gestão e tomada de decisões.",
+  "description": "O case soluciona a problemática de vendedores que possuíam muitas informações de vendas, mas nenhum lugar centralizado e organizado para analisá-las, recorrendo frequentemente a controles manuais. A equipe de UX estruturou a solução em três níveis de compreensão: 1) Leitura Rápida (Resumo geral com hierarquia visual clara de ingressos e evolução); 2) Profundidade e Análise (Detalhamento de métricas como ticket médio, cobranças e aprovação, com gráficos interativos); e 3) Comparação (Ferramenta para confrontar métricas entre períodos distintos). O sistema inclui filtros avançados por tempo, filiais (locais) e colaboradores, e foi desenhado com foco em acessibilidade visual.",
+  "insights": [
+    "Hierarquia de Informação em Camadas: A decisão de dividir a navegação em 'Resumo', 'Detalhe' e 'Comparação' evita a sobrecarga cognitiva, permitindo que o usuário consuma a informação conforme sua necessidade de profundidade no momento.",
+    "Acessibilidade em Visualização de Dados: O case destaca uma preocupação explícita com a leitura cromática para daltônicos (Protanopia, Deuteranopia, Tritanopia). As paletas de cores dos gráficos foram testadas para garantir que as linhas de evolução e 'fatias' dos gráficos de pizza fossem distinguíveis por qualquer usuário.",
+    "Educação Contextual: A inclusão de uma seção de 'Definições' (tooltips ou áreas explicativas) ajuda a democratizar o acesso a termos financeiros mais complexos (como 'contracargos' ou taxas de aprovação), empoderando vendedores menores.",
+    "Comparação como Ferramenta de Crescimento: A funcionalidade de comparar períodos (ex: 'este mês vs. mês passado') transforma o painel de um simples visualizador passivo em uma ferramenta ativa de medição de crescimento e performance."
+  ],
+  "tags": [
+    "UX Design",
+    "Data Visualization",
+    "Fintech",
+    "Mercado Pago",
+    "Dashboard Design",
+    "B2B",
+    "Acessibilidade"
+  ],
+  "impact": "A nova ferramenta impactou positivamente a rotina dos vendedores ao reduzir drasticamente o tempo gasto com contabilidade manual e organização de planilhas. Os feedbacks qualitativos indicam que a visualização centralizada permitiu aos usuários 'tomar melhores decisões de negócio' e monitorar transações em tempo real. A ferramenta evoluiu a percepção de valor do aplicativo do Mercado Pago, posicionando-o não apenas como um meio de receber pagamentos, mas como um parceiro de gestão empresarial."
+    },
+    "diseno-de-buybox": {
+      "title": "Diseno De Buybox",
+      "slug": "diseno-de-buybox",
+      "summary": "Implementação da experiência de 'Catálogo' no Mercado Livre, transicionando de um modelo de múltiplas listagens para uma página única de produto (Product Detail Page), onde vendedores competem para oferecer a melhor oferta em destaque.",
+  "description": "O case aborda uma mudança estrutural fundamental no marketplace: simplificar o processo de compra ao agrupar todas as ofertas de um mesmo produto em uma única página padronizada. A equipe de UX focou em três pilares: 1) Catalogar (criar uma base de dados única com fotos e descrições curadas); 2) Hierarquizar (destacar as informações mais relevantes como especificações técnicas e comparativos); e 3) Expor (agrupar vendedores sob o mesmo produto). Para os vendedores, foi criada uma interface de 'Competição Transparente', onde o sistema sugere o preço exato e as condições necessárias (parcelamento, frete) para que a oferta dele 'ganhe' a posição principal (Buy Box) na página do produto.",
+  "insights": [
+    "Gamificação da Competitividade: A interface transforma a gestão de preços em uma competição clara, utilizando feedbacks visuais como 'Ganhando' ou 'Perdendo'. Ao mostrar explicitamente 'Ofereça seu produto a $X para ganhar', o sistema incentiva a redução de preços de forma autônoma e transparente.",
+    "Padronização Gera Confiança: Ao substituir fotos amadoras e títulos confusos dos vendedores por 'Informação Curada' (imagens de estúdio e fichas técnicas oficiais), a plataforma reduz a ansiedade cognitiva do comprador, garantindo que ele está comprando o produto correto.",
+    "Comparação Contextual: A funcionalidade de comparar produtos similares lado a lado, ordenando características por nível de relevância (ex: câmera e tela no topo), empodera o usuário a tomar decisões técnicas sem precisar sair da página.",
+    "Democratização da Oferta: Embora haja um 'vencedor' principal, a inclusão de um acesso claro para 'Outras opções de compra' garante que vendedores menores ou com estratégias diferentes ainda tenham visibilidade em uma lista secundária."
+  ],
+  "tags": [
+    "UX Design",
+    "E-commerce",
+    "Marketplace",
+    "Product Design",
+    "Buy Box",
+    "Information Architecture",
+    "Catalog Management"
+  ],
+  "impact": "A mudança para o modelo de catálogo transforma radicalmente a experiência do usuário, reduzindo o tempo de busca e comparação, pois elimina a necessidade de navegar por dezenas de anúncios duplicados. Para o negócio, isso estimula uma guerra de preços saudável que beneficia o consumidor final e aumenta a conversão. Além disso, estruturar os dados em catálogo melhora significativamente o SEO da plataforma e a qualidade visual geral do site."
+    },
+    "el-codigo-qr-de-mercado-pago": {
+      "title": "El Codigo Qr De Mercado Pago",
+      "slug": "el-codigo-qr-de-mercado-pago",
+  "summary": "Implementação massiva do sistema de pagamentos via código QR do Mercado Pago, focado em criar um novo hábito cultural na América Latina: realizar transações no mundo físico utilizando apenas o celular, dispensando dinheiro e cartões.",
+  "description": "O case detalha o desafio de levar a experiência de pagamento digital para o varejo físico (offline). A equipe de UX focou em construir uma alternativa ao dinheiro que fosse 100% inovadora e mais rápida. A solução envolveu simplificar o checkout para apenas 3 passos (escanear, selecionar meio de pagamento, confirmar), resultando em um tempo médio de 28 segundos por transação. A estratégia de design abrangeu desde a criação de alianças com grandes marcas (como Shell e Burger King) até a penetração em pequenos comércios de bairro, adaptando a ergonomia do QR code para diferentes contextos de uso e integrando programas de fidelidade.",
+  "insights": [
+    "Design Contextual (Ergonomia Visual): Ao analisar o contexto de postos de gasolina, a equipe percebeu que o tamanho padrão do QR Code não funcionava. O insight foi redimensionar o código para 30x30 cm, permitindo que o motorista escaneasse de dentro do carro com segurança e conforto.",
+    "Gamificação para Adoção (Onboarding): Para ensinar os usuários a usarem uma tecnologia nova, utilizou-se a gamificação e viralização. A funcionalidade de 'agitar o telefone' para ganhar descontos educou o mercado sobre o uso do app de forma lúdica, quebrando a barreira de entrada.",
+    "Velocidade como Proposta de Valor: O redesenho da experiência de checkout focou obsessivamente no tempo, atingindo a marca de 28 segundos para pagar. Isso posicionou o QR Code não apenas como 'moderno', mas como uma alternativa funcionalmente superior às filas e ao troco em dinheiro.",
+    "Integração de Benefícios: O pagamento foi desenhado para somar pontos automaticamente no 'Mercado Pontos' e programas de parceiros, entregando recompensa imediata ao usuário."
+  ],
+  "tags": [
+    "UX Design",
+    "Fintech",
+    "Mobile Payment",
+    "QR Code",
+    "O2O (Online to Offline)",
+    "Gamification",
+    "Service Design",
+    "Mercado Pago"
+  ],
+  "impact": "A iniciativa transformou o cenário de pagamentos na América Latina, alcançando 14 milhões de pagantes únicos via celular. Os dados apresentados mostram um volume de mais de 25 milhões de transações (apenas entre agosto e setembro de 2020) e a adesão de 1.2 milhões de vendedores que passaram a cobrar com a ferramenta. O projeto expandiu-se com sucesso para Argentina, Brasil, México, Chile, Colômbia, Uruguai e Peru."
+    },
+    "experiencia-mapas": {
+      "title": "Experiencia Mapas",
+      "slug": "experiencia-mapas",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "fotos-de-estudio-en-un-clic-con-inteligencia-artificial": {
+      "title": "Fotos De Estudio En Un Clic Con Inteligencia Artificial",
+      "slug": "fotos-de-estudio-en-un-clic-con-inteligencia-artificial",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "identidad-y-landings-de-mercado-pago": {
+      "title": "Identidad Y Landings De Mercado Pago",
+      "slug": "identidad-y-landings-de-mercado-pago",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "lanzamiento-de-point-smart-en-brasil": {
+      "title": "Lanzamiento De Point Smart En Brasil",
+      "slug": "lanzamiento-de-point-smart-en-brasil",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "lanzamiento-point-plus-en-argentina": {
+      "title": "Lanzamiento Point Plus En Argentina",
+      "slug": "lanzamiento-point-plus-en-argentina",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "mas-seguridad-en-los-pagos-con-tarjeta-mercado-pago": {
+      "title": "Mas Seguridad En Los Pagos Con Tarjeta Mercado Pago",
+      "slug": "mas-seguridad-en-los-pagos-con-tarjeta-mercado-pago",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "mercado-envios-flex": {
+      "title": "Mercado Envios Flex",
+      "slug": "mercado-envios-flex",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "mercado-pago-2022-redisenho-home-nativa": {
+      "title": "Mercado Pago 2022 Redisenho Home Nativa",
+      "slug": "mercado-pago-2022-redisenho-home-nativa",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "mercado-pago-point": {
+      "title": "Mercado Pago Point",
+      "slug": "mercado-pago-point",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "mercado-puntos": {
+      "title": "Mercado Puntos",
+      "slug": "mercado-puntos",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "nueva-funcionalidad-para-traer-dinero-a-mercado-pago": {
+      "title": "Nueva Funcionalidad Para Traer Dinero A Mercado Pago",
+      "slug": "nueva-funcionalidad-para-traer-dinero-a-mercado-pago",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "nueva-seccion-de-tus-gastos-en-mercado-pago": {
+      "title": "Nueva Seccion De Tus Gastos En Mercado Pago",
+      "slug": "nueva-seccion-de-tus-gastos-en-mercado-pago",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "nunca-dejes-de-buscar": {
+      "title": "Nunca Dejes De Buscar",
+      "slug": "nunca-dejes-de-buscar",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "one-tap-el-check-out-de-mercado-pago": {
+      "title": "One Tap El Check Out De Mercado Pago",
+      "slug": "one-tap-el-check-out-de-mercado-pago",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "redisenho-de-detalle-de-actividad": {
+      "title": "Redisenho De Detalle De Actividad",
+      "slug": "redisenho-de-detalle-de-actividad",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "redisenho-de-la-app-de-mercado-pago": {
+      "title": "Redisenho De La App De Mercado Pago",
+      "slug": "redisenho-de-la-app-de-mercado-pago",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "redisenho-de-pagina-de-producto": {
+      "title": "Redisenho De Pagina De Producto",
+      "slug": "redisenho-de-pagina-de-producto",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "redisenho-del-panel-de-mercado-pago": {
+      "title": "Redisenho Del Panel De Mercado Pago",
+      "slug": "redisenho-del-panel-de-mercado-pago",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "redisenho-del-proceso-de-checkout-en-apps-nativas": {
+      "title": "Redisenho Del Proceso De Checkout En Apps Nativas",
+      "slug": "redisenho-del-proceso-de-checkout-en-apps-nativas",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "redisenho-home": {
+      "title": "Redisenho Home",
+      "slug": "redisenho-home",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "redisenho-home-en-app": {
+      "title": "Redisenho Home En App",
+      "slug": "redisenho-home-en-app",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "redisenho-home-nativa-mercado-pago": {
+      "title": "Redisenho Home Nativa Mercado Pago",
+      "slug": "redisenho-home-nativa-mercado-pago",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "reservas-de-dinheiro-poupar-nunca-foi-tao-facil": {
+      "title": "Reservas De Dinheiro Poupar Nunca Foi Tao Facil",
+      "slug": "reservas-de-dinheiro-poupar-nunca-foi-tao-facil",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "seccion-amigos-en-mercado-pago": {
+      "title": "Seccion Amigos En Mercado Pago",
+      "slug": "seccion-amigos-en-mercado-pago",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "seccion-preguntas-y-respuestas": {
+      "title": "Seccion Preguntas Y Respuestas",
+      "slug": "seccion-preguntas-y-respuestas",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "seccion-publicaciones-mas-que-un-redisenho": {
+      "title": "Seccion Publicaciones Mas Que Un Redisenho",
+      "slug": "seccion-publicaciones-mas-que-un-redisenho",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "seguros-pessoais-ux-escalavel-e-sem-letras-miudas": {
+      "title": "Seguros Pessoais Ux Escalavel E Sem Letras Miudas",
+      "slug": "seguros-pessoais-ux-escalavel-e-sem-letras-miudas",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "seu-negocio-a-caixa-de-ferramentas-para-quem-vende": {
+      "title": "Seu Negocio A Caixa De Ferramentas Para Quem Vende",
+      "slug": "seu-negocio-a-caixa-de-ferramentas-para-quem-vende",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "sistema-de-iconos": {
+      "title": "Sistema De Iconos",
+      "slug": "sistema-de-iconos",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "suscripciones-de-contenido-un-journey-a-la-lealtad": {
+      "title": "Suscripciones De Contenido Un Journey A La Lealtad",
+      "slug": "suscripciones-de-contenido-un-journey-a-la-lealtad",
+      "summary": "Criação de uma experiência completa de assinatura, gestão e fidelização de plataformas de conteúdo dentro do Mercado Livre, integrando benefícios personalizados de Mercado Pontos e ampliando o uso do ecossistema.",
+  
+  "description": "Desenvolvi (com base no case apresentado) o fluxo completo de descoberta, decisão, assinatura e uso de plataformas de streaming dentro do Mercado Livre. O projeto inclui: visibilidade via widgets multipartner, seção dedicada no perfil, integração com busca, telas de oferta com benefícios por nível, fluxo de pagamento simplificado, componentes de preço aspiracional, galerias de conteúdo, pós-compra com vinculação da conta, painel de administração e cancelamento transparente. A solução foi implementada em 5 países, fortalecendo o programa de lealdade Mercado Pontos e democratizando o acesso a serviços digitais, inclusive para pessoas não bancarizadas.",
+  
+  "insights": [
+    "Usuários valorizam clareza de preço + economia real por nível de Mercado Pontos.",
+    "A visibilidade na Home e no Perfil aumenta significativamente a descoberta das assinaturas.",
+    "Testes grátis e descontos progressivos são fortes gatilhos de conversão.",
+    "É essencial simplificar o fluxo: dois cliques aumentam conversão.",
+    "Pessoas não bancarizadas também desejam serviços digitais — oferecer meios offline amplia alcance.",
+    "Boa parte do engajamento pós-assinatura depende de um painel de administração simples.",
+    "Cancelamento transparente gera confiança e reduz resistência ao onboarding.",
+    "Galerias personalizadas de conteúdo aumentam interesse antes da assinatura."
+  ],
+  
+  "tags": [
+    "UX Design",
+    "Product Design",
+    "User Experience",
+    "Loyalty",
+    "Mercado Pontos",
+    "E-commerce",
+    "Streaming",
+    "Marketplace",
+    "Pagamento Digital",
+    "Design de Interfaces",
+    "Journey Mapping",
+    "Design System",
+    "Conversão",
+    "Assinaturas Digitais"
+  ],
+  
+  "impact": "A experiência aumentou o uso do ecossistema do Mercado Livre e Mercado Pago entre assinantes, expandiu o produto para 5 países, fortaleceu o programa de loyalty, aumentou a conversão com um fluxo simplificado de dois cliques e democratizou o acesso a plataformas de conteúdo. O catálogo cresceu para 6 serviços de música e vídeo, e a satisfação aumentou com benefícios personalizados e gestão transparente."
+
+    },
+    "tarjeta-prepaga-mercado-pago": {
+      "title": "Tarjeta Prepaga Mercado Pago",
+      "slug": "tarjeta-prepaga-mercado-pago",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "tiendas-express": {
+      "title": "Tiendas Express",
+      "slug": "tiendas-express",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    },
+    "wrap-up-anual-do-mercado-pago": {
+      "title": "Wrap Up Anual Do Mercado Pago",
+      "slug": "wrap-up-anual-do-mercado-pago",
+      "summary": "",
+      "description": "",
+      "insights": [],
+      "tags": [],
+      "impact": ""
+    }
+  }
+}

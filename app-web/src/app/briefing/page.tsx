@@ -1,4 +1,5 @@
 import PageTemplate from "@/components/layout/PageTemplate";
+import AndesMeliPlusPlans from "@/components/ui/AndesMeliPlusPlans";
 import { 
   Target, 
   Users, 
@@ -57,56 +58,69 @@ export default function BriefingPage() {
         </div>
 
         {/* Seção 2: O Produto Meli+ */}
-        <div className="andes-card">
-          <div className="mb-6 border-b border-gray-100 pb-4">
-            <h2 className="text-xl font-semibold text-[#333333]">O Produto: Meli+</h2>
-            <p className="text-sm text-[#666666]">Novo programa de benefícios (assinatura mensal) do Mercado Livre e Mercado Pago.</p>
-          </div>
-          
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Plano Básico */}
-            <div className="rounded-lg border border-gray-200 p-4">
-              <div className="mb-3 flex items-center justify-between">
-                <h3 className="font-semibold text-[#333333]">Plano Básico</h3>
-              </div>
-              <ul className="space-y-2 text-sm text-[#666666]">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="mt-0.5 text-green-500 shrink-0" />
-                  <span>Frete grátis/vantajoso em todas as compras</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="mt-0.5 text-green-500 shrink-0" />
-                  <span>Parcelas extras sem juros</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="mt-0.5 text-green-500 shrink-0" />
-                  <span>Cashback em criptomoedas</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Plano Premium */}
-            <div className="rounded-lg border border-blue-100 bg-blue-50/30 p-4">
-              <div className="mb-3 flex items-center justify-between">
-                <h3 className="font-semibold text-[#3483fa]">Plano Premium</h3>
-                <span className="rounded-full bg-[#3483fa] px-2 py-0.5 text-[10px] font-bold text-white">RECOMENDADO</span>
-              </div>
-              <ul className="space-y-2 text-sm text-[#666666]">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="mt-0.5 text-[#3483fa] shrink-0" />
-                  <span>Todos os benefícios do plano básico</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="mt-0.5 text-[#3483fa] shrink-0" />
-                  <span>Acesso a conteúdos de streaming (Disney+, Star+, etc)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="mt-0.5 text-[#3483fa] shrink-0" />
-                  <span>Grandes descontos promocionais exclusivos</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+        <div className="rounded-lg bg-gray-100 p-6">
+          <h2 className="mb-2 text-xl font-semibold text-[#333333]">O Produto: Meli+</h2>
+          <p className="mb-6 text-sm text-[#666666]">Novo programa de benefícios (assinatura mensal) do Mercado Livre e Mercado Pago.</p>
+          <AndesMeliPlusPlans
+            plans={[
+              {
+                id: "essencial",
+                name: "ESSENCIAL",
+                price: 9.9,
+                period: "mês",
+                badge: {
+                  type: "current",
+                  label: "PLANO ATUAL"
+                },
+                features: [
+                  "Frete grátis rápido em milhões de produtos a partir de R$ 19.",
+                  "Até 3% de cashback no Mercado Livre e até 10% em outras lojas e sites com o Cartão de Crédito Mercado Pago.",
+                  "Seu dinheiro rende 120% do CDI em Cofrinhos.",
+                ],
+                buttonLabel: "Mudar para Meli+ Essencial",
+                buttonDisabled: true,
+              },
+              {
+                id: "total",
+                name: "TOTAL",
+                price: 24.9,
+                period: "mês",
+                features: [
+                  "Entretenimento incluído",
+                  "Frete grátis rápido em milhões de produtos a partir de R$ 19.",
+                  "Até 3% de cashback no Mercado Livre e até 10% em outras lojas e sites com o Cartão de Crédito Mercado Pago.",
+                  "Seu dinheiro rende 120% do CDI em Cofrinhos.",
+                  "70% OFF na HBO Max Padrão por 6 meses e 30% OFF no Universal+, Paramount+ e Globoplay Premium.",
+                ],
+                streamingLogos: ["disney"],
+                buttonLabel: "Mudar para Meli+ Total",
+                buttonHref: "#upgrade-total"
+              },
+              {
+                id: "mega",
+                name: "MEGA",
+                price: 39.9,
+                oldPrice: 74.9,
+                discount: "46% OFF",
+                period: "mês",
+                periodNote: "por 2 meses",
+                badge: {
+                  type: "offer",
+                  label: "OFERTA ESPECIAL"
+                },
+                features: [
+                  "Entretenimento incluído",
+                  "Frete grátis rápido em milhões de produtos a partir de R$ 19.",
+                  "Até 3% de cashback no Mercado Livre e até 10% em outras lojas e sites com o Cartão de Crédito Mercado Pago.",
+                  "Seu dinheiro rende 120% do CDI em Cofrinhos.",
+                  "30% OFF no Universal+, Paramount+ e Globoplay Premium.",
+                ],
+                streamingLogos: ["disney", "netflix", "hbomax", "appletv"],
+                buttonLabel: "Mudar para Meli+ Mega",
+                buttonHref: "#upgrade-mega"
+              },
+            ]}
+          />
         </div>
 
         {/* Seção 3: Objetivos Estratégicos */}

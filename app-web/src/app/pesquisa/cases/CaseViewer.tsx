@@ -4,15 +4,17 @@ import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { CaseEntry, CaseImage } from "@/lib/cases";
+import { CaseContent } from "@/lib/cases-content";
 import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 
 interface CaseViewerProps {
   cases: CaseEntry[];
   currentCaseSlug: string;
   images: CaseImage[];
+  caseContent?: CaseContent | null;
 }
 
-const CaseViewer = ({ cases, currentCaseSlug, images }: CaseViewerProps) => {
+const CaseViewer = ({ cases, currentCaseSlug, images, caseContent }: CaseViewerProps) => {
   const router = useRouter();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -125,32 +127,70 @@ const CaseViewer = ({ cases, currentCaseSlug, images }: CaseViewerProps) => {
       </header>
 
       {/* Content area com grid de 2 colunas - abaixo do header */}
-      <div className="flex-1 grid grid-cols-12 pt-[73px] overflow-hidden">
+      <div className="flex-1 grid grid-cols-12 pt-[73px] overflow-hidden min-h-0">
         {/* Coluna Esquerda - Resumo (Placeholder) - 4 colunas */}
-        <div className="col-span-4 h-full overflow-y-auto bg-white border-r border-gray-200 p-8">
+        <div className="col-span-4 h-full overflow-y-auto no-scrollbar bg-white border-r border-gray-200 p-8">
           <div className="prose max-w-none">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Resumo do Case</h2>
-            <div className="p-6 bg-gray-50 rounded-lg border border-dashed border-gray-300 text-gray-500 text-center">
-              <p>Conteúdo do resumo será inserido aqui.</p>
-              <p className="text-sm mt-2">(Marcação placeholder)</p>
-            </div>
-            
-            {/* Exemplo de estrutura que poderia vir do MD depois */}
-            <div className="mt-8 space-y-6 opacity-50 pointer-events-none filter blur-[1px]">
-              <div>
-                <h3 className="text-lg font-semibold text-gray-800">O Desafio</h3>
-                <p className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            {caseContent ? (
+              <>
+                <h2 className="text-xl font-bold text-gray-900 mb-4">{caseContent.title}</h2>
+                
+                <div className="mb-8">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-3">Resumo</h3>
+                  <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                    {caseContent.summary}
+                  </p>
+                </div>
+
+                {caseContent.insights && caseContent.insights.length > 0 && (
+                  <div className="mb-8">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-3">Principais Insights</h3>
+                    <ul className="space-y-2">
+                      {caseContent.insights.map((insight, idx) => (
+                        <li key={idx} className="flex gap-2 text-gray-700">
+                          <span className="text-blue-600 font-semibold">•</span>
+                          <span>{insight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {caseContent.impact && (
+                  <div className="mb-8">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-3">Impacto</h3>
+                    <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                      {caseContent.impact}
+                    </p>
+                  </div>
+                )}
+
+                {caseContent.tags && caseContent.tags.length > 0 && (
+                  <div className="mb-8">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-3">Tags</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {caseContent.tags.map((tag, idx) => (
+                        <span
+                          key={idx}
+                          className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </>
+            ) : (
+              <div className="p-6 bg-gray-50 rounded-lg border border-dashed border-gray-300 text-gray-500 text-center">
+                <p>Conteúdo do resumo não disponível.</p>
               </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-800">Solução</h3>
-                <p className="text-gray-600">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              </div>
-            </div>
+            )}
           </div>
         </div>
         
         {/* Coluna Direita - Imagens - 8 colunas */}
-        <div className="col-span-8 h-full overflow-y-auto bg-gray-100 p-8">
+        <div className="col-span-8 h-full overflow-y-auto no-scrollbar bg-gray-100 p-8">
           <div className="flex flex-col gap-6 max-w-4xl mx-auto">
             {images.length === 0 ? (
               <p className="rounded-2xl border border-dashed border-gray-300 bg-white px-6 py-12 text-center text-gray-500">

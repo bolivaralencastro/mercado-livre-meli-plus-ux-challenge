@@ -4,6 +4,7 @@ import "../styles/tokens.css";
 import "../styles/andes-components.css";
 import MainLayout from "@/components/layout/MainLayout";
 import ProgressBarProvider from "@/components/providers/ProgressBarProvider";
+import FullScreenProvider from "@/components/providers/FullScreenProvider";
 
 export const metadata: Metadata = {
   title: "Meli+ UX Challenge",
@@ -24,9 +25,11 @@ export default function RootLayout({
       </head>
       <body className="andes-body antialiased">
         <ProgressBarProvider>
-          <MainLayout>
-            {children}
-          </MainLayout>
+          <FullScreenProvider>
+            <MainLayout>
+              {children}
+            </MainLayout>
+          </FullScreenProvider>
         </ProgressBarProvider>
       </body>
     </html>

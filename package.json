@@ -1,4 +1,10 @@
 {
+  "scripts": {
+    "dev": "cd app-web && npm run dev",
+    "build": "cd app-web && npm run build",
+    "start": "cd app-web && npm run start",
+    "lint": "cd app-web && npm run lint"
+  },
   "dependencies": {
     "@vercel/blob": "^2.0.0",
     "dotenv": "^17.2.3"

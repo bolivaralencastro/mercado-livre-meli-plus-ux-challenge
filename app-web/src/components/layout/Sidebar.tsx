@@ -4,6 +4,8 @@ const sections = [
   { name: 'Programação', path: '/programacao' },
   { name: 'Briefing', path: '/briefing' },
   { name: 'Pesquisa', path: '/pesquisa' },
+  { name: 'Reviews', path: '/pesquisa/review' },
+  { name: 'Mapeamento As-Is', path: '/pesquisa/mapeamento' },
   { name: 'Estratégia', path: '/estrategia' },
   { name: 'Ideação', path: '/ideacao' },
   { name: 'UI Design', path: '/ui-design' },

@@ -1,548 +1,1094 @@
 "use client";
 
-import React, { useState } from "react";
-import "./andes-design-tokens.css";
-
-// Importando componentes existentes
+import { useState } from "react";
 import AndesButton from "@/components/ui/AndesButton";
 import AndesBadge from "@/components/ui/AndesBadge";
-import AndesInput from "@/components/ui/AndesInput";
 import AndesCard from "@/components/ui/AndesCard";
-import AndesGridCard from "@/components/ui/AndesGridCard";
-import AndesPdpCard from "@/components/ui/AndesPdpCard";
-import AndesAuthList from "@/components/ui/AndesAuthList";
-import AndesAuthItem from "@/components/ui/AndesAuthItem";
-import AndesUserPill from "@/components/ui/AndesUserPill";
-import AndesPayRow from "@/components/ui/AndesPayRow";
-import AndesSummaryCard from "@/components/ui/AndesSummaryCard";
-import AndesMeliCard from "@/components/ui/AndesMeliCard";
-import AndesThematicCard from "@/components/ui/AndesThematicCard";
-import AndesCategoriesMosaic from "@/components/ui/AndesCategoriesMosaic";
-import AndesCategoryCard from "@/components/ui/AndesCategoryCard";
-import AndesMoney from "@/components/ui/AndesMoney";
-import AndesLoadingContainer from "@/components/ui/AndesLoadingContainer";
-import AndesSpinner from "@/components/ui/AndesSpinner";
-import AndesModal from "@/components/ui/AndesModal";
-import AndesOnboardingModal from "@/components/ui/AndesOnboardingModal";
+import AndesInput from "@/components/ui/AndesInput";
 import AndesCarousel from "@/components/ui/AndesCarousel";
+import AndesDropdownMenu from "@/components/ui/AndesDropdownMenu";
+import AndesFilterTag from "@/components/ui/AndesFilterTag";
+import AndesEmptyState from "@/components/ui/AndesEmptyState";
+import AndesCategoryCard from "@/components/ui/AndesCategoryCard";
+import AndesGridCard from "@/components/ui/AndesGridCard";
+import AndesMoney from "@/components/ui/AndesMoney";
+import AndesModal from "@/components/ui/AndesModal";
+import AndesSpinner from "@/components/ui/AndesSpinner";
+import AndesSwitch from "@/components/ui/AndesSwitch";
+import AndesLabel from "@/components/ui/AndesLabel";
+import AndesFormGroup from "@/components/ui/AndesFormGroup";
 
-// SVG Placeholder
-const PlaceholderSVG = () => (
-  <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-    <rect width="400" height="300" fill="#d3d3d3" />
-    <circle cx="200" cy="150" r="50" fill="#999999" />
-    <path d="M 120 200 L 280 200 L 280 220 L 120 220 Z" fill="#999999" />
-    <text x="200" y="260" textAnchor="middle" fill="#666666" fontSize="16" fontFamily="Arial">Imagem</text>
-  </svg>
-);
-
-export default function AndesDesignSystemPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isOnboardingOpen, setIsOnboardingOpen] = useState(false);
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+const AndesDesignSystemPage = () => {
+  const [openFoundationMenu, setOpenFoundationMenu] = useState(true);
+  const [openAtomsMenu, setOpenAtomsMenu] = useState(false);
+  const [openMoleculesMenu, setOpenMoleculesMenu] = useState(false);
+  const [openOrganismsMenu, setOpenOrganismsMenu] = useState(false);
+  const [selectedSection, setSelectedSection] = useState("tokens-colors");
+  const [showModal, setShowModal] = useState(false);
+  const [showMeliPlusModal, setShowMeliPlusModal] = useState(false);
+  const [showOnboardingModal, setShowOnboardingModal] = useState(false);
+  const [onboardingSlide, setOnboardingSlide] = useState(0);
+  const [switchState, setSwitchState] = useState(false);
 
   return (
-    <div className="andes-ds-container" style={{ display: "flex", minHeight: "100vh", backgroundColor: "var(--andes-bg-page)", fontFamily: "var(--andes-font-family)" }}>
-      {/* SIDEBAR DE NAVEGAÇÃO */}
-      <nav className="docs-sidebar" style={{ width: "250px", background: "var(--andes-neutral-800)", color: "var(--andes-neutral-0)", padding: "var(--andes-spacing-xl)", position: "fixed", height: "100%", overflowY: "auto" }}>
-        <div className="docs-logo" style={{ fontSize: "var(--andes-font-size-l)", fontWeight: 700, marginBottom: "var(--andes-spacing-xxxl)", color: "var(--andes-primary)", display: "flex", alignItems: "center", gap: "var(--andes-spacing-s)" }}>
-          <svg width="30" height="20" viewBox="0 0 50 34" fill="currentColor">
-            <path d="M32.6 22.4C32.6 26.7 30.5 28.3 27.7 28.3C25.5 28.3 24.3 27 23.7 25.9L23.6 25.9V28H19.5V13.3H23.6V15.6L23.7 15.6C24.5 14.2 25.8 13 28 13C31.2 13 32.6 15.2 32.6 19V22.4ZM28.5 19.2C28.5 17.3 27.8 16.1 26 16.1C24.4 16.1 23.6 17.3 23.6 19.3V22.1C23.6 23.9 24.3 25.2 26 25.2C27.7 25.2 28.5 24 28.5 22.2V19.2Z" />
-          </svg>
-          Andes UI
-        </div>
-        <div className="docs-nav">
-          <strong style={{ display: "block", marginTop: "var(--andes-spacing-xl)", marginBottom: "var(--andes-spacing-s)", fontSize: "var(--andes-font-size-xs)", textTransform: "uppercase", letterSpacing: "1px", color: "var(--andes-primary)" }}>Foundation</strong>
-          <a onClick={() => scrollToSection("tokens-colors")} style={{ display: "block", padding: "var(--andes-spacing-s)", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderRadius: "var(--andes-radius-s)", marginBottom: "var(--andes-spacing-xs)", cursor: "pointer", transition: "var(--andes-transition)" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}>Cores</a>
-          <a onClick={() => scrollToSection("tokens-typography")} style={{ display: "block", padding: "var(--andes-spacing-s)", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderRadius: "var(--andes-radius-s)", marginBottom: "var(--andes-spacing-xs)", cursor: "pointer", transition: "var(--andes-transition)" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}>Tipografia</a>
-          <a onClick={() => scrollToSection("tokens-spacing")} style={{ display: "block", padding: "var(--andes-spacing-s)", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderRadius: "var(--andes-radius-s)", marginBottom: "var(--andes-spacing-xs)", cursor: "pointer", transition: "var(--andes-transition)" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}>Espaçamento</a>
-          <a onClick={() => scrollToSection("tokens-radius")} style={{ display: "block", padding: "var(--andes-spacing-s)", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderRadius: "var(--andes-radius-s)", marginBottom: "var(--andes-spacing-xs)", cursor: "pointer", transition: "var(--andes-transition)" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}>Bordas</a>
-          <a onClick={() => scrollToSection("tokens-shadows")} style={{ display: "block", padding: "var(--andes-spacing-s)", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderRadius: "var(--andes-radius-s)", marginBottom: "var(--andes-spacing-xs)", cursor: "pointer", transition: "var(--andes-transition)" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}>Sombras</a>
-
-          <strong style={{ display: "block", marginTop: "var(--andes-spacing-xl)", marginBottom: "var(--andes-spacing-s)", fontSize: "var(--andes-font-size-xs)", textTransform: "uppercase", letterSpacing: "1px", color: "var(--andes-primary)" }}>Atoms</strong>
-          <a onClick={() => scrollToSection("buttons")} style={{ display: "block", padding: "var(--andes-spacing-s)", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderRadius: "var(--andes-radius-s)", marginBottom: "var(--andes-spacing-xs)", cursor: "pointer", transition: "var(--andes-transition)" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}>Botões</a>
-          <a onClick={() => scrollToSection("badges")} style={{ display: "block", padding: "var(--andes-spacing-s)", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderRadius: "var(--andes-radius-s)", marginBottom: "var(--andes-spacing-xs)", cursor: "pointer", transition: "var(--andes-transition)" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}>Badges & Status</a>
-          <a onClick={() => scrollToSection("inputs")} style={{ display: "block", padding: "var(--andes-spacing-s)", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderRadius: "var(--andes-radius-s)", marginBottom: "var(--andes-spacing-xs)", cursor: "pointer", transition: "var(--andes-transition)" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}>Formulários</a>
-          <a onClick={() => scrollToSection("feedback")} style={{ display: "block", padding: "var(--andes-spacing-s)", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderRadius: "var(--andes-radius-s)", marginBottom: "var(--andes-spacing-xs)", cursor: "pointer", transition: "var(--andes-transition)" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}>Loaders</a>
-
-          <strong style={{ display: "block", marginTop: "var(--andes-spacing-xl)", marginBottom: "var(--andes-spacing-s)", fontSize: "var(--andes-font-size-xs)", textTransform: "uppercase", letterSpacing: "1px", color: "var(--andes-primary)" }}>Molecules</strong>
-          <a onClick={() => scrollToSection("product-cards")} style={{ display: "block", padding: "var(--andes-spacing-s)", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderRadius: "var(--andes-radius-s)", marginBottom: "var(--andes-spacing-xs)", cursor: "pointer", transition: "var(--andes-transition)" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}>Cards de Produto</a>
-          <a onClick={() => scrollToSection("thematic-cards")} style={{ display: "block", padding: "var(--andes-spacing-s)", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderRadius: "var(--andes-radius-s)", marginBottom: "var(--andes-spacing-xs)", cursor: "pointer", transition: "var(--andes-transition)" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}>Cards Temáticos</a>
-          <a onClick={() => scrollToSection("pricing")} style={{ display: "block", padding: "var(--andes-spacing-s)", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderRadius: "var(--andes-radius-s)", marginBottom: "var(--andes-spacing-xs)", cursor: "pointer", transition: "var(--andes-transition)" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}>Preços e Descontos</a>
-          <a onClick={() => scrollToSection("auth")} style={{ display: "block", padding: "var(--andes-spacing-s)", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderRadius: "var(--andes-radius-s)", marginBottom: "var(--andes-spacing-xs)", cursor: "pointer", transition: "var(--andes-transition)" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}>Autenticação</a>
-          <a onClick={() => scrollToSection("checkout")} style={{ display: "block", padding: "var(--andes-spacing-s)", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderRadius: "var(--andes-radius-s)", marginBottom: "var(--andes-spacing-xs)", cursor: "pointer", transition: "var(--andes-transition)" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}>Checkout & Pagamento</a>
-
-          <strong style={{ display: "block", marginTop: "var(--andes-spacing-xl)", marginBottom: "var(--andes-spacing-s)", fontSize: "var(--andes-font-size-xs)", textTransform: "uppercase", letterSpacing: "1px", color: "var(--andes-primary)" }}>Organisms</strong>
-          <a onClick={() => scrollToSection("meli-plus")} style={{ display: "block", padding: "var(--andes-spacing-s)", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderRadius: "var(--andes-radius-s)", marginBottom: "var(--andes-spacing-xs)", cursor: "pointer", transition: "var(--andes-transition)" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}>Planos Meli+</a>
-          <a onClick={() => scrollToSection("categories")} style={{ display: "block", padding: "var(--andes-spacing-s)", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderRadius: "var(--andes-radius-s)", marginBottom: "var(--andes-spacing-xs)", cursor: "pointer", transition: "var(--andes-transition)" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}>Categorias</a>
-          <a onClick={() => scrollToSection("modals")} style={{ display: "block", padding: "var(--andes-spacing-s)", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderRadius: "var(--andes-radius-s)", marginBottom: "var(--andes-spacing-xs)", cursor: "pointer", transition: "var(--andes-transition)" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}>Modais</a>
-          <a onClick={() => scrollToSection("onboarding")} style={{ display: "block", padding: "var(--andes-spacing-s)", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderRadius: "var(--andes-radius-s)", marginBottom: "var(--andes-spacing-xs)", cursor: "pointer", transition: "var(--andes-transition)" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}>Onboarding</a>
-          <a onClick={() => scrollToSection("carousel")} style={{ display: "block", padding: "var(--andes-spacing-s)", color: "rgba(255,255,255,0.7)", textDecoration: "none", borderRadius: "var(--andes-radius-s)", marginBottom: "var(--andes-spacing-xs)", cursor: "pointer", transition: "var(--andes-transition)" }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}>Carrossel</a>
-        </div>
-      </nav>
-
-      {/* CONTEÚDO PRINCIPAL */}
-      <main className="docs-main" style={{ marginLeft: "250px", padding: "var(--andes-spacing-xxxl) var(--andes-spacing-xl)", width: "100%" }}>
-
-        {/* SEÇÃO: TOKENS - CORES */}
-        <div id="tokens-colors" className="docs-section" style={{ marginBottom: "var(--andes-spacing-xxxl)", borderBottom: "1px solid var(--andes-neutral-200)", paddingBottom: "var(--andes-spacing-xxxl)" }}>
-          <h2 className="docs-section-title" style={{ fontSize: "var(--andes-font-size-xxl)", marginBottom: "var(--andes-spacing-xl)", fontWeight: 300, color: "var(--andes-neutral-600)" }}>Paleta de Cores</h2>
-
-          <h3 style={{ fontSize: "var(--andes-font-size-m)", marginBottom: "var(--andes-spacing-l)", marginTop: "var(--andes-spacing-xxl)", fontWeight: 600, color: "var(--andes-neutral-800)" }}>Cores Institucionais</h3>
-          <div className="token-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))", gap: "16px" }}>
-            {[
-              { name: "Primary", value: "#ffe600", var: "--andes-primary" },
-              { name: "Primary Dark", value: "#e6cf00", var: "--andes-primary-dark" },
-              { name: "Secondary", value: "#3483fa", var: "--andes-secondary" },
-              { name: "Secondary Dark", value: "#2968c8", var: "--andes-secondary-dark" },
-              { name: "Success", value: "#00a650", var: "--andes-success" },
-              { name: "Warning", value: "#ff7733", var: "--andes-warning" },
-              { name: "Error", value: "#f23d4f", var: "--andes-error" },
-              { name: "Meli+", value: "#8e24aa", var: "--andes-purple-meli" },
-            ].map((color) => (
-              <div key={color.name} className="token-color" style={{ borderRadius: "var(--andes-radius-l)", border: "1px solid #ddd", overflow: "hidden", textAlign: "center", background: "white" }}>
-                <div className="token-color__swatch" style={{ height: "80px", width: "100%", borderBottom: "1px solid #eee", background: color.value }}></div>
-                <div className="token-color__label" style={{ padding: "8px", fontSize: "11px", fontWeight: 600, color: "#666" }}>{color.name}</div>
-                <div className="token-color__value" style={{ padding: "4px 8px", fontSize: "10px", color: "#999", fontFamily: "monospace", background: "#f9f9f9" }}>{color.value}</div>
-              </div>
-            ))}
+    <div className="flex flex-col h-screen overflow-hidden bg-[#f5f5f5]">
+      {/* Header */}
+      <header className="h-16 bg-[#3483fa] flex items-center justify-between px-6 fixed top-0 left-0 w-full z-[120] shadow-[0_1px_0_0_rgba(0,0,0,0.1)]">
+        <div className="flex items-center">
+          <div className="andes-logo-container mr-6">
+        
           </div>
-
-          <h3 style={{ fontSize: "16px", marginBottom: "16px", marginTop: "24px", fontWeight: 600 }}>Cores Neutras</h3>
-          <div className="token-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))", gap: "16px" }}>
-            {[
-              { name: "Neutro 0", value: "#ffffff", var: "--andes-neutral-0" },
-              { name: "Neutro 100", value: "#f5f5f0", var: "--andes-neutral-100" },
-              { name: "Neutro 200", value: "#ebebeb", var: "--andes-neutral-200" },
-              { name: "Neutro 300", value: "#e6e6e6", var: "--andes-neutral-300" },
-              { name: "Neutro 600", value: "#999999", var: "--andes-neutral-600" },
-              { name: "Neutro 800", value: "#333333", var: "--andes-neutral-800" },
-              { name: "Neutro 900", value: "#000000", var: "--andes-neutral-900" },
-            ].map((color) => (
-              <div key={color.name} className="token-color" style={{ borderRadius: "var(--andes-radius-l)", border: "1px solid #ddd", overflow: "hidden", textAlign: "center", background: "white" }}>
-                <div className="token-color__swatch" style={{ height: "80px", width: "100%", borderBottom: "1px solid #eee", background: color.value, border: color.value === "#ffffff" ? "1px solid #ccc" : "none" }}></div>
-                <div className="token-color__label" style={{ padding: "8px", fontSize: "11px", fontWeight: 600, color: "#666" }}>{color.name}</div>
-                <div className="token-color__value" style={{ padding: "4px 8px", fontSize: "10px", color: "#999", fontFamily: "monospace", background: "#f9f9f9" }}>{color.value}</div>
-              </div>
-            ))}
-          </div>
+          <div className="w-px h-6 bg-white/20 mr-6"></div>
+          <h1 className="text-base font-semibold text-white m-0">Andes Design System</h1>
         </div>
-
-        {/* SEÇÃO: TOKENS - TIPOGRAFIA */}
-        <div id="tokens-typography" className="docs-section" style={{ marginBottom: "60px", borderBottom: "1px solid #ddd", paddingBottom: "40px" }}>
-          <h2 className="docs-section-title" style={{ fontSize: "28px", marginBottom: "20px", fontWeight: 300, color: "#666" }}>Tipografia</h2>
-          <div style={{ background: "white", borderRadius: "var(--andes-radius-l)", border: "1px solid #ddd", overflow: "hidden" }}>
-            <div className="token-typography" style={{ display: "flex", alignItems: "center", gap: "16px", padding: "16px" }}>
-              <div className="token-typography__label" style={{ minWidth: "120px", fontSize: "12px", fontWeight: 600, color: "#666", fontFamily: "monospace" }}>font-family</div>
-              <div className="token-typography__sample" style={{ flex: 1, fontFamily: "'Proxima Nova', -apple-system, 'Helvetica Neue', Arial, sans-serif" }}>Proxima Nova, -apple-system, Helvetica Neue, Arial, sans-serif</div>
-              <div className="token-typography__info" style={{ fontSize: "11px", color: "#999" }}>Fonte principal</div>
-            </div>
-          </div>
-          <h3 style={{ fontSize: "16px", marginBottom: "16px", marginTop: "24px", fontWeight: 600 }}>Tamanhos</h3>
-          <ul className="token-list" style={{ listStyle: "none", margin: 0, padding: 0 }}>
-            {[
-              { name: "--andes-font-size-xs", value: "12px" },
-              { name: "--andes-font-size-s", value: "14px" },
-              { name: "--andes-font-size-m", value: "16px" },
-              { name: "--andes-font-size-l", value: "18px" },
-              { name: "--andes-font-size-xl", value: "24px" },
-              { name: "--andes-font-size-xxl", value: "32px" },
-            ].map((item) => (
-              <li key={item.name} style={{ display: "flex", justifyContent: "space-between", padding: "12px", borderBottom: "1px solid #eee", fontSize: "13px", alignItems: "center" }}>
-                <span className="token-list__name" style={{ fontWeight: 500, color: "#333", fontFamily: "monospace" }}>{item.name}</span>
-                <span className="token-list__value" style={{ color: "#999", fontSize: "12px" }}>{item.value}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* SEÇÃO: TOKENS - ESPAÇAMENTO */}
-        <div id="tokens-spacing" className="docs-section" style={{ marginBottom: "60px", borderBottom: "1px solid #ddd", paddingBottom: "40px" }}>
-          <h2 className="docs-section-title" style={{ fontSize: "28px", marginBottom: "20px", fontWeight: 300, color: "#666" }}>Espaçamento</h2>
-          <p style={{ color: "#666", marginBottom: "16px" }}>Use espaçamento consistente para criar harmonia visual. A base é <strong>4px</strong>.</p>
-          <ul className="token-list" style={{ listStyle: "none", margin: 0, padding: 0 }}>
-            {[
-              { name: "4px", value: "base" },
-              { name: "8px", value: "xs" },
-              { name: "12px", value: "s" },
-              { name: "16px", value: "m (gap, padding)" },
-              { name: "20px", value: "l" },
-              { name: "24px", value: "xl" },
-              { name: "32px", value: "xxl" },
-            ].map((item) => (
-              <li key={item.name} style={{ display: "flex", justifyContent: "space-between", padding: "12px", borderBottom: "1px solid #eee", fontSize: "13px", alignItems: "center" }}>
-                <span className="token-list__name" style={{ fontWeight: 500, color: "#333", fontFamily: "monospace" }}>{item.name}</span>
-                <span className="token-list__value" style={{ color: "#999", fontSize: "12px" }}>{item.value}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* SEÇÃO: TOKENS - BORDAS */}
-        <div id="tokens-radius" className="docs-section" style={{ marginBottom: "60px", borderBottom: "1px solid #ddd", paddingBottom: "40px" }}>
-          <h2 className="docs-section-title" style={{ fontSize: "28px", marginBottom: "20px", fontWeight: 300, color: "#666" }}>Bordas Arredondadas</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "16px" }}>
-            {[
-              { name: "--andes-radius-s", value: "4px", radius: "4px" },
-              { name: "--andes-radius-m", value: "6px", radius: "6px" },
-              { name: "--andes-radius-l", value: "8px", radius: "8px" },
-              { name: "--andes-radius-pill", value: "2rem", radius: "2rem" },
-            ].map((item) => (
-              <div key={item.name} style={{ background: "white", border: "1px solid #ddd", borderRadius: item.radius, padding: "24px", textAlign: "center" }}>
-                <div style={{ width: "40px", height: "40px", background: "#3483fa", borderRadius: item.radius, margin: "0 auto 12px" }}></div>
-                <div style={{ fontSize: "12px", fontWeight: 600, color: "#666", marginBottom: "4px" }}>{item.name}</div>
-                <div style={{ fontSize: "11px", color: "#999" }}>{item.value}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* SEÇÃO: TOKENS - SOMBRAS */}
-        <div id="tokens-shadows" className="docs-section" style={{ marginBottom: "60px", borderBottom: "1px solid #ddd", paddingBottom: "40px" }}>
-          <h2 className="docs-section-title" style={{ fontSize: "28px", marginBottom: "20px", fontWeight: 300, color: "#666" }}>Sombras & Efeitos</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "16px", marginBottom: "24px" }}>
-            <div style={{ background: "white", padding: "24px", borderRadius: "var(--andes-radius-l)", boxShadow: "0 1px 2px 0 rgba(0,0,0,.1)", textAlign: "center" }}>
-              <div style={{ fontSize: "12px", fontWeight: 600, color: "#666", marginBottom: "8px" }}>--andes-shadow-sm</div>
-              <div style={{ fontSize: "11px", color: "#999", fontFamily: "monospace" }}>0 1px 2px</div>
-            </div>
-            <div style={{ background: "white", padding: "24px", borderRadius: "var(--andes-radius-l)", boxShadow: "0 4px 8px 0 rgba(0,0,0,.12)", textAlign: "center" }}>
-              <div style={{ fontSize: "12px", fontWeight: 600, color: "#666", marginBottom: "8px" }}>--andes-shadow-md</div>
-              <div style={{ fontSize: "11px", color: "#999", fontFamily: "monospace" }}>0 4px 8px</div>
-            </div>
-          </div>
-          <h3 style={{ fontSize: "16px", marginBottom: "16px", marginTop: "24px", fontWeight: 600 }}>Transição</h3>
-          <ul className="token-list" style={{ listStyle: "none", margin: 0, padding: 0 }}>
-            <li style={{ display: "flex", justifyContent: "space-between", padding: "12px", borderBottom: "1px solid #eee", fontSize: "13px", alignItems: "center" }}>
-              <span className="token-list__name" style={{ fontWeight: 500, color: "#333", fontFamily: "monospace" }}>--andes-transition</span>
-              <span className="token-list__value" style={{ color: "#999", fontSize: "12px" }}>all 0.2s ease</span>
-            </li>
-          </ul>
-        </div>
-
-        {/* SEÇÃO: BOTÕES */}
-        <div id="buttons" className="docs-section" style={{ marginBottom: "60px", borderBottom: "1px solid #ddd", paddingBottom: "40px" }}>
-          <h2 className="docs-section-title" style={{ fontSize: "28px", marginBottom: "20px", fontWeight: 300, color: "#666" }}>Botões</h2>
-          <div className="docs-grid" style={{ display: "flex", gap: "20px", flexWrap: "wrap", alignItems: "flex-start" }}>
-            <AndesButton variant="action">Comprar agora</AndesButton>
-            <AndesButton variant="primary">Assinar Meli+</AndesButton>
-            <AndesButton variant="transparent">Adicionar ao carrinho</AndesButton>
-            <AndesButton variant="primary" disabled>Desabilitado</AndesButton>
-            <AndesButton variant="link">Link simples</AndesButton>
-          </div>
-        </div>
-
-        {/* SEÇÃO: BADGES */}
-        <div id="badges" className="docs-section" style={{ marginBottom: "60px", borderBottom: "1px solid #ddd", paddingBottom: "40px" }}>
-          <h2 className="docs-section-title" style={{ fontSize: "28px", marginBottom: "20px", fontWeight: 300, color: "#666" }}>Badges & Preços</h2>
-          <div className="docs-grid" style={{ display: "flex", gap: "20px", flexWrap: "wrap", alignItems: "flex-start" }}>
-            <div className="demo-box white" style={{ background: "white", padding: "20px", borderRadius: "var(--andes-radius-l)", border: "1px solid #ddd", width: "auto" }}>
-              <div style={{ marginBottom: "10px" }}><AndesBadge variant="promo">15% OFF</AndesBadge></div>
-              <div style={{ marginBottom: "10px" }}><AndesBadge variant="full">⚡ FULL</AndesBadge></div>
-              <div style={{ marginBottom: "10px" }}><AndesBadge variant="bestseller">1º MAIS VENDIDO</AndesBadge></div>
-              <div style={{ marginBottom: "10px" }}><AndesBadge variant="new">NOVO</AndesBadge></div>
-            </div>
-
-            <div className="demo-box white" style={{ background: "white", padding: "20px", borderRadius: "var(--andes-radius-l)", border: "1px solid #ddd", width: "auto" }}>
-              <AndesMoney amount={1149} cents={90} discount="12% OFF" strikeThrough={true} />
+        <div className="flex items-center gap-5">
+          <button className="bg-transparent border-none cursor-pointer p-1 flex text-white opacity-70 hover:opacity-100">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+          </button>
+          <button className="bg-transparent border-none cursor-pointer p-1 flex text-white opacity-70 hover:opacity-100">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </button>
+          <div className="flex items-center gap-3 cursor-pointer">
+            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-xs font-semibold text-[#3483fa]">BA</div>
+            <div className="flex flex-col leading-tight">
+              <span className="text-sm font-semibold text-white">Olá, Bolívar</span>
+              <span className="text-xs font-normal text-white/80 flex items-center">Seu perfil ›</span>
             </div>
           </div>
         </div>
+      </header>
 
-        {/* SEÇÃO: INPUTS */}
-        <div id="inputs" className="docs-section" style={{ marginBottom: "60px", borderBottom: "1px solid #ddd", paddingBottom: "40px" }}>
-          <h2 className="docs-section-title" style={{ fontSize: "28px", marginBottom: "20px", fontWeight: 300, color: "#666" }}>Inputs de Formulário</h2>
-          <div className="docs-grid" style={{ display: "flex", gap: "20px", flexWrap: "wrap", alignItems: "flex-start" }}>
-            <div className="demo-box white" style={{ background: "white", padding: "20px", borderRadius: "var(--andes-radius-l)", border: "1px solid #ddd", maxWidth: "400px", width: "100%" }}>
-              <div className="andes-form-group" style={{ marginBottom: "16px" }}>
-                <label className="andes-label" style={{ fontSize: "14px", color: "#333", marginBottom: "6px", display: "block" }}>E-mail ou telefone</label>
-                <AndesInput />
-              </div>
-
-              <div className="andes-form-group" style={{ marginBottom: "16px", position: "relative" }}>
-                <label className="andes-label" style={{ fontSize: "14px", color: "#333", marginBottom: "6px", display: "block" }}>Código de segurança (CVV)</label>
-                <AndesInput placeholder="Ex: 123" maxLength={3} />
-                <div className="andes-input-icon" style={{ position: "absolute", right: "12px", top: "38px", color: "#3483fa", cursor: "pointer" }}>?</div>
-              </div>
-            </div>
+      {/* Sidebar */}
+      <aside className="w-64 h-[calc(100vh-4rem)] bg-[#f5f5f5] border-r border-black/[0.06] fixed top-16 left-0 flex flex-col overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] z-[100]">
+        <nav className="pt-7 px-3 pb-5">
+          <div className="mb-6 flex flex-col gap-0.5">
+            <a href="/ui-design" className="flex items-center w-full h-[42px] px-3 no-underline text-black/90 text-sm font-normal rounded-md cursor-pointer transition-colors hover:bg-black/[0.04]">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 mr-3 ml-1 opacity-70 grayscale brightness-50">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              <span className="flex-grow">Início</span>
+            </a>
           </div>
-        </div>
-
-        {/* SEÇÃO: PRODUCT CARDS */}
-        <div id="product-cards" className="docs-section" style={{ marginBottom: "60px", borderBottom: "1px solid #ddd", paddingBottom: "40px" }}>
-          <h2 className="docs-section-title" style={{ fontSize: "28px", marginBottom: "20px", fontWeight: 300, color: "#666" }}>Cards de Produto</h2>
-          <div className="docs-grid" style={{ display: "flex", gap: "20px", flexWrap: "wrap", alignItems: "flex-start" }}>
+          
+          {/* FOUNDATION - Design Tokens */}
+          <div className="mb-6 flex flex-col gap-0.5">
+            <p className="text-black/55 text-xs font-semibold ml-8 mb-1 uppercase">Foundation</p>
             
-            {/* Grid View */}
-            <div>
-              <p>Grid View</p>
-              <AndesGridCard
-                title="Capa Silicone Aveludada Galaxy A55"
-                imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23d3d3d3'/%3E%3Ccircle cx='150' cy='100' r='40' fill='%23999999'/%3E%3Cpath d='M 80 140 L 220 140 L 220 155 L 80 155 Z' fill='%23999999'/%3E%3C/svg%3E"
-                price={28.40}
-                discount="5% OFF"
-                shippingText="Chegará grátis amanhã"
-                badgeText="MAIS VENDIDO"
-              />
-            </div>
-
-            {/* PDP Buy Box */}
-            <div>
-              <p>PDP Buy Box</p>
-              <AndesPdpCard
-                title="Samsung Galaxy A55 5G 128GB Dual SIM"
-                price={1799}
-                statusText="Novo | +1000 vendidos"
-                benefitText={<><b>Chegará grátis amanhã</b></>}
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* SEÇÃO: AUTENTICAÇÃO */}
-        <div id="auth" className="docs-section" style={{ marginBottom: "60px", borderBottom: "1px solid #ddd", paddingBottom: "40px" }}>
-          <h2 className="docs-section-title" style={{ fontSize: "28px", marginBottom: "20px", fontWeight: 300, color: "#666" }}>Componentes de Autenticação</h2>
-          <div className="docs-grid" style={{ display: "flex", gap: "20px", flexWrap: "wrap", alignItems: "flex-start" }}>
+            <button
+              onClick={() => {
+                setOpenFoundationMenu(!openFoundationMenu);
+                if (!openFoundationMenu) setSelectedSection("tokens-colors");
+              }}
+              className={`flex items-center w-full h-[42px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${
+                openFoundationMenu 
+                  ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' 
+                  : 'text-black/90 hover:bg-black/[0.04]'
+              }`}
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" className={`w-4 h-4 mr-3 ml-1 ${openFoundationMenu ? 'opacity-100 [filter:none]' : 'opacity-70 grayscale brightness-50'}`}>
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="6"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+              <span className="flex-grow text-left">Design Tokens</span>
+              <svg 
+                className={`w-3 h-3 transition-all ${openFoundationMenu ? 'opacity-100 stroke-[#333] rotate-90' : 'opacity-50 stroke-[#333]'}`}
+                viewBox="0 0 24 24" 
+                fill="none" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
             
-            <AndesUserPill 
-              primaryText="usuario@email.com" 
-              secondaryAction={<a href="#" style={{ fontSize: "12px", color: "#3483fa", textDecoration: "none" }}>Trocar conta</a>}
-              avatar={<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>}
-            />
-
-            <AndesAuthList>
-              <AndesAuthItem
-                icon={<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM15 15h6v6h-6z"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>}
-                title="Código QR"
-                description="Escaneie com o app do Mercado Livre"
-              />
-              <AndesAuthItem
-                icon={<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M8 3a4 4 0 1 0 8 0"/><path d="M3 21v-2a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v2"/></svg>}
-                title="Reconhecimento Facial"
-                description="Usar a câmera do seu dispositivo"
-              />
-            </AndesAuthList>
-
+            {openFoundationMenu && (
+              <div className="ml-6 mt-1 flex flex-col gap-0.5">
+                <button onClick={() => setSelectedSection("tokens-colors")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "tokens-colors" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Cores</button>
+                <button onClick={() => setSelectedSection("tokens-typography")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "tokens-typography" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Tipografia</button>
+                <button onClick={() => setSelectedSection("tokens-spacing")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "tokens-spacing" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Espaçamento</button>
+                <button onClick={() => setSelectedSection("tokens-radius")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "tokens-radius" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Bordas</button>
+                <button onClick={() => setSelectedSection("tokens-shadows")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "tokens-shadows" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Sombras</button>
+              </div>
+            )}
           </div>
-        </div>
 
-        {/* SEÇÃO: CHECKOUT */}
-        <div id="checkout" className="docs-section" style={{ marginBottom: "60px", borderBottom: "1px solid #ddd", paddingBottom: "40px" }}>
-          <h2 className="docs-section-title" style={{ fontSize: "28px", marginBottom: "20px", fontWeight: 300, color: "#666" }}>Checkout</h2>
-          <div className="docs-grid" style={{ display: "flex", gap: "20px", flexWrap: "wrap", alignItems: "flex-start" }}>
+          {/* ATOMS - Componentes Básicos */}
+          <div className="mb-6 flex flex-col gap-0.5">
+            <p className="text-black/55 text-xs font-semibold ml-8 mb-1 uppercase">Atoms</p>
             
-            <div className="demo-box" style={{ maxWidth: "400px", width: "100%" }}>
-              <AndesCard style={{ padding: "20px", boxShadow: "none" }}>
-                <AndesPayRow
-                  icon="VISA"
-                  primaryText="Visa **** 4748"
-                  secondaryText="Crédito"
-                  action={<a href="#" style={{ fontSize: "13px", color: "#3483fa", textDecoration: "none" }}>Alterar</a>}
-                />
-              </AndesCard>
-            </div>
+            <button
+              onClick={() => setOpenAtomsMenu(!openAtomsMenu)}
+              className="flex items-center w-full h-[42px] px-3 text-black/90 text-sm font-normal rounded-md cursor-pointer transition-colors border-none hover:bg-black/[0.04]"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 mr-3 ml-1 opacity-70 grayscale brightness-50">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
+              <span className="flex-grow text-left">Componentes Básicos</span>
+              <svg 
+                className={`w-3 h-3 transition-all ${openAtomsMenu ? 'opacity-100 stroke-[#333] rotate-90' : 'opacity-50 stroke-[#333]'}`}
+                viewBox="0 0 24 24" 
+                fill="none" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
 
-            <AndesSummaryCard
-              title="Resumo da assinatura"
-              rows={[{ label: "Meli+ Essencial", value: "R$ 9,90" }]}
-              totalLabel="Total"
-              totalValue="R$ 9,90"
-              buttonText="Pagar assinatura"
-            />
-
+            {openAtomsMenu && (
+              <div className="ml-6 mt-1 flex flex-col gap-0.5">
+                <button onClick={() => setSelectedSection("buttons")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "buttons" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Botões</button>
+                <button onClick={() => setSelectedSection("badges")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "badges" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Badges</button>
+                <button onClick={() => setSelectedSection("inputs")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "inputs" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Inputs</button>
+                <button onClick={() => setSelectedSection("label")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "label" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Label</button>
+                <button onClick={() => setSelectedSection("switch")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "switch" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Switch</button>
+                <button onClick={() => setSelectedSection("spinner")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "spinner" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Spinner</button>
+                <button onClick={() => setSelectedSection("money")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "money" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Money</button>
+              </div>
+            )}
           </div>
-        </div>
 
-        {/* SEÇÃO: MELI+ PRICING */}
-        <div id="meli-plus" className="docs-section" style={{ marginBottom: "60px", borderBottom: "1px solid #ddd", paddingBottom: "40px" }}>
-          <h2 className="docs-section-title" style={{ fontSize: "28px", marginBottom: "20px", fontWeight: 300, color: "#666" }}>Planos Meli+</h2>
-          <div className="docs-grid" style={{ display: "flex", gap: "20px", flexWrap: "wrap", alignItems: "flex-start" }}>
+          {/* MOLECULES - Componentes Compostos */}
+          <div className="mb-6 flex flex-col gap-0.5">
+            <p className="text-black/55 text-xs font-semibold ml-8 mb-1 uppercase">Molecules</p>
             
-            <AndesMeliCard
-              tag="meli+"
-              title="MEGA"
-              price={39.90}
-              priceCents="90"
-              originalPrice={74.90}
-              discount="46% OFF"
-              periodText="/mês por 2 meses"
-              listItems={[
-                <span key="1">Entretenimento incluído: <div className="meli-logos" style={{ display: "flex", gap: "5px", marginTop: "5px" }}><div className="meli-logo" style={{ width: "24px", height: "24px", background: "#000", color: "white", fontSize: "6px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "var(--andes-radius-s)" }}>D+</div><div className="meli-logo" style={{ width: "24px", height: "24px", background: "#e50914", color: "white", fontSize: "6px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "var(--andes-radius-s)" }}>N</div><div className="meli-logo" style={{ width: "24px", height: "24px", background: "#000", color: "white", fontSize: "6px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "var(--andes-radius-s)" }}>MAX</div></div></span>,
-                "Frete Grátis em milhões de produtos",
-                "Deezer Premium grátis por 12 meses"
-              ]}
-              buttonText="Assinar Mega"
-              offerText="OFERTA"
-            />
+            <button
+              onClick={() => setOpenMoleculesMenu(!openMoleculesMenu)}
+              className="flex items-center w-full h-[42px] px-3 text-black/90 text-sm font-normal rounded-md cursor-pointer transition-colors border-none hover:bg-black/[0.04]"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 mr-3 ml-1 opacity-70 grayscale brightness-50">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="9" y1="3" x2="9" y2="21"></line>
+              </svg>
+              <span className="flex-grow text-left">Componentes Compostos</span>
+              <svg 
+                className={`w-3 h-3 transition-all ${openMoleculesMenu ? 'opacity-100 stroke-[#333] rotate-90' : 'opacity-50 stroke-[#333]'}`}
+                viewBox="0 0 24 24" 
+                fill="none" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
 
+            {openMoleculesMenu && (
+              <div className="ml-6 mt-1 flex flex-col gap-0.5">
+                <button onClick={() => setSelectedSection("formgroup")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "formgroup" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Form Group</button>
+                <button onClick={() => setSelectedSection("filtertag")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "filtertag" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Filter Tag</button>
+                <button onClick={() => setSelectedSection("cards")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "cards" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Cards</button>
+                <button onClick={() => setSelectedSection("gridcard")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "gridcard" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Grid Card</button>
+                <button onClick={() => setSelectedSection("categorycard")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "categorycard" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Category Card</button>
+                <button onClick={() => setSelectedSection("emptystate")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "emptystate" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Empty State</button>
+              </div>
+            )}
           </div>
-        </div>
 
-        {/* SEÇÃO: CARDS TEMÁTICOS */}
-        <div id="thematic-cards" className="docs-section" style={{ marginBottom: "60px", borderBottom: "1px solid #ddd", paddingBottom: "40px" }}>
-          <h2 className="docs-section-title" style={{ fontSize: "28px", marginBottom: "20px", fontWeight: 300, color: "#666" }}>Cards Temáticos (Seu Interesse)</h2>
-          <div className="docs-grid" style={{ display: "flex", gap: "20px", flexWrap: "wrap", alignItems: "flex-start", maxWidth: "900px" }}>
-            <AndesThematicCard title="Produtos" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23d3d3d3'/%3E%3Ccircle cx='50' cy='50' r='25' fill='%23999999'/%3E%3C/svg%3E" />
-            <AndesThematicCard title="Ofertas do Dia" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23d3d3d3'/%3E%3Ccircle cx='50' cy='50' r='25' fill='%23999999'/%3E%3C/svg%3E" />
-            <AndesThematicCard title="Supermercado" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23d3d3d3'/%3E%3Ccircle cx='50' cy='50' r='25' fill='%23999999'/%3E%3C/svg%3E" />
-            <AndesThematicCard title="Eletrônicos" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23d3d3d3'/%3E%3Ccircle cx='50' cy='50' r='25' fill='%23999999'/%3E%3C/svg%3E" />
-            <AndesThematicCard title="Moda & Acessórios" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23d3d3d3'/%3E%3Ccircle cx='50' cy='50' r='25' fill='%23999999'/%3E%3C/svg%3E" />
-            <AndesThematicCard title="Casa & Decoração" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23d3d3d3'/%3E%3Ccircle cx='50' cy='50' r='25' fill='%23999999'/%3E%3C/svg%3E" />
-          </div>
-        </div>
-
-        {/* SEÇÃO: PREÇOS COM DESCONTO */}
-        <div id="pricing" className="docs-section" style={{ marginBottom: "60px", borderBottom: "1px solid #ddd", paddingBottom: "40px" }}>
-          <h2 className="docs-section-title" style={{ fontSize: "28px", marginBottom: "20px", fontWeight: 300, color: "#666" }}>Preços com Desconto & Rebates</h2>
-          <div className="docs-grid" style={{ display: "flex", gap: "20px", flexWrap: "wrap", alignItems: "flex-start" }}>
+          {/* ORGANISMS - Componentes Complexos */}
+          <div className="mb-6 flex flex-col gap-0.5">
+            <p className="text-black/55 text-xs font-semibold ml-8 mb-1 uppercase">Organisms</p>
             
-            <div className="demo-box white" style={{ background: "white", padding: "20px", borderRadius: "var(--andes-radius-l)", border: "1px solid #ddd", maxWidth: "320px" }}>
-              <div style={{ fontSize: "12px", color: "#666", marginBottom: "8px" }}>Preço com Desconto</div>
-              <div className="andes-money-amount-combo">
-                <s className="andes-money-amount andes-money-amount--previous" style={{ textDecoration: "line-through", color: "#999", fontSize: "14px", marginRight: "8px" }}>
-                  <span className="andes-money-amount__currency-symbol">R$</span>
-                  <span className="andes-money-amount__fraction">59,90</span>
-                </s>
-                <div className="andes-money-amount-combo__main-container" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <span className="andes-money-amount-combo__main" style={{ display: "flex", alignItems: "flex-start", fontSize: "24px", fontWeight: 600, color: "#333" }}>
-                    <span className="andes-money-amount__currency-symbol" style={{ fontSize: "0.6em", marginTop: "2px", marginRight: "2px" }}>R$</span>
-                    <span className="andes-money-amount__fraction">37</span>
-                    <span className="andes-money-amount__cents" style={{ fontSize: "0.5em", marginTop: "2px", marginLeft: "1px" }}>,91</span>
-                  </span>
-                  <span className="andes-money-amount__discount" style={{ background: "#00a650", color: "white", padding: "2px 6px", borderRadius: "3px", fontSize: "11px", fontWeight: 700, textTransform: "uppercase" }}>36% OFF</span>
+            <button
+              onClick={() => setOpenOrganismsMenu(!openOrganismsMenu)}
+              className="flex items-center w-full h-[42px] px-3 text-black/90 text-sm font-normal rounded-md cursor-pointer transition-colors border-none hover:bg-black/[0.04]"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 mr-3 ml-1 opacity-70 grayscale brightness-50">
+                <path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM15 15h6v6h-6z"></path>
+              </svg>
+              <span className="flex-grow text-left">Componentes Complexos</span>
+              <svg 
+                className={`w-3 h-3 transition-all ${openOrganismsMenu ? 'opacity-100 stroke-[#333] rotate-90' : 'opacity-50 stroke-[#333]'}`}
+                viewBox="0 0 24 24" 
+                fill="none" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+
+            {openOrganismsMenu && (
+              <div className="ml-6 mt-1 flex flex-col gap-0.5">
+                <button onClick={() => setSelectedSection("dropdown")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "dropdown" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Dropdown Menu</button>
+                <button onClick={() => setSelectedSection("carousel")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "carousel" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Carousel</button>
+                <button onClick={() => setSelectedSection("modal")} className={`flex items-center h-[38px] px-3 text-sm font-normal rounded-md cursor-pointer transition-colors border-none ${selectedSection === "modal" ? 'bg-[#e9f5fa] text-[#009ee3] font-semibold' : 'text-black/90 hover:bg-black/[0.04]'}`}>Modal</button>
+              </div>
+            )}
+          </div>
+
+          {/* RECURSOS */}
+          <div className="mb-6 flex flex-col gap-0.5">
+            <p className="text-black/55 text-xs font-semibold ml-8 mb-1 uppercase">Recursos</p>
+            <a href="#" className="flex items-center w-full h-[42px] px-3 no-underline text-black/90 text-sm font-normal rounded-md cursor-pointer transition-colors hover:bg-black/[0.04]">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 mr-3 ml-1 opacity-70 grayscale brightness-50">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="6"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+              <span className="flex-grow">Tokens</span>
+            </a>
+            
+            <a href="#" className="flex items-center w-full h-[42px] px-3 no-underline text-black/90 text-sm font-normal rounded-md cursor-pointer transition-colors hover:bg-black/[0.04]">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 mr-3 ml-1 opacity-70 grayscale brightness-50">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="9" y1="3" x2="9" y2="21"></line>
+              </svg>
+              <span className="flex-grow">Layout</span>
+            </a>
+          </div>
+
+          <div className="mb-6 flex flex-col gap-0.5">
+            <p className="text-black/55 text-xs font-semibold ml-8 mb-1 uppercase">RECURSOS</p>
+            <a href="#" className="flex items-center w-full h-[42px] px-3 no-underline text-black/90 text-sm font-normal rounded-md cursor-pointer transition-colors hover:bg-black/[0.04]">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 mr-3 ml-1 opacity-70 grayscale brightness-50">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span className="flex-grow">Documentação</span>
+            </a>
+          </div>
+        </nav>
+      </aside>
+
+
+
+      {/* Main Content */}
+      <main className="ml-64 mt-16 p-0 w-[calc(100%-16rem)] h-[calc(100vh-4rem)] overflow-y-auto flex justify-center bg-[#ededed]">
+        <div className="w-full max-w-[800px] py-12 px-6 flex flex-col items-center">
+          
+          {/* ========== DESIGN TOKENS ========== */}
+          
+          {selectedSection === "tokens-colors" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Cores</h2>
+              <p className="text-sm text-black/55 mb-8">Paleta de cores do sistema Andes Design System</p>
+              
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-lg font-semibold text-black/90 mb-4">Cores Primárias</h3>
+                  
+                  {/* Primary Yellow */}
+                  <div className="mb-6">
+                    <div className="text-sm font-semibold text-black/90 mb-3">Primary (Yellow)</div>
+                    <div className="flex gap-2">
+                      {[
+                        { name: '900', hex: '#665900', var: '--andes-primary-900' },
+                        { name: '800', hex: '#997a00', var: '--andes-primary-800' },
+                        { name: '700', hex: '#b38f00', var: '--andes-primary-700' },
+                        { name: '600', hex: '#cca300', var: '--andes-primary-600' },
+                        { name: '500', hex: '#e6b800', var: '--andes-primary-500' },
+                        { name: '400', hex: '#ffe600', var: '--andes-primary' },
+                        { name: '300', hex: '#ffeb33', var: '--andes-primary-300' },
+                        { name: '200', hex: '#fff066', var: '--andes-primary-200' },
+                        { name: '100', hex: '#fff599', var: '--andes-primary-100' },
+                        { name: '50', hex: '#fffacc', var: '--andes-primary-50' },
+                      ].map((color) => (
+                        <div key={color.hex} className="flex-1">
+                          <div style={{ 
+                            width: '100%', 
+                            height: '80px', 
+                            backgroundColor: color.hex, 
+                            borderRadius: '6px', 
+                            border: color.name === '400' ? '3px solid #000' : '1px solid rgba(0,0,0,0.1)',
+                            boxShadow: color.name === '400' ? '0 0 0 2px #ffe600' : 'none'
+                          }}></div>
+                          <div className="mt-2 text-center">
+                            <div className="text-xs font-semibold text-black/90">
+                              {color.name}
+                              {color.name === '400' && <span className="ml-1 text-[10px] bg-black text-white px-1 py-0.5 rounded">MAIN</span>}
+                            </div>
+                            <div className="text-xs text-black/55">{color.hex}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Secondary Blue */}
+                  <div className="mb-6">
+                    <div className="text-sm font-semibold text-black/90 mb-3">Secondary (Blue)</div>
+                    <div className="flex gap-2">
+                      {[
+                        { name: '900', hex: '#1a3464', var: '--andes-secondary-900' },
+                        { name: '800', hex: '#284d96', var: '--andes-secondary-800' },
+                        { name: '700', hex: '#2e60b4', var: '--andes-secondary-700' },
+                        { name: '600', hex: '#3173d2', var: '--andes-secondary-600' },
+                        { name: '500', hex: '#3483fa', var: '--andes-secondary' },
+                        { name: '400', hex: '#5d9bfb', var: '--andes-secondary-400' },
+                        { name: '300', hex: '#86b3fc', var: '--andes-secondary-300' },
+                        { name: '200', hex: '#afcbfd', var: '--andes-secondary-200' },
+                        { name: '100', hex: '#d7e3fe', var: '--andes-secondary-100' },
+                        { name: '50', hex: '#ebf1ff', var: '--andes-secondary-50' },
+                      ].map((color) => (
+                        <div key={color.hex} className="flex-1">
+                          <div style={{ 
+                            width: '100%', 
+                            height: '80px', 
+                            backgroundColor: color.hex, 
+                            borderRadius: '6px', 
+                            border: color.name === '500' ? '3px solid #000' : '1px solid rgba(0,0,0,0.1)',
+                            boxShadow: color.name === '500' ? '0 0 0 2px #3483fa' : 'none'
+                          }}></div>
+                          <div className="mt-2 text-center">
+                            <div className="text-xs font-semibold text-black/90">
+                              {color.name}
+                              {color.name === '500' && <span className="ml-1 text-[10px] bg-black text-white px-1 py-0.5 rounded">MAIN</span>}
+                            </div>
+                            <div className="text-xs text-black/55">{color.hex}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Meli+ Purple */}
+                  <div className="mb-6">
+                    <div className="text-sm font-semibold text-black/90 mb-3">Meli+ (Purple)</div>
+                    <div className="flex gap-2">
+                      {[
+                        { name: '900', hex: '#3a0e44', var: '--andes-meliplus-900' },
+                        { name: '800', hex: '#571566', var: '--andes-meliplus-800' },
+                        { name: '700', hex: '#6e1b88', var: '--andes-meliplus-700' },
+                        { name: '600', hex: '#7b1f99', var: '--andes-meliplus-600' },
+                        { name: '500', hex: '#8e24aa', var: '--andes-meliplus' },
+                        { name: '400', hex: '#a550bb', var: '--andes-meliplus-400' },
+                        { name: '300', hex: '#bc7ccc', var: '--andes-meliplus-300' },
+                        { name: '200', hex: '#d3a8dd', var: '--andes-meliplus-200' },
+                        { name: '100', hex: '#ead4ee', var: '--andes-meliplus-100' },
+                        { name: '50', hex: '#f5e9f6', var: '--andes-meliplus-50' },
+                      ].map((color) => (
+                        <div key={color.hex} className="flex-1">
+                          <div style={{ 
+                            width: '100%', 
+                            height: '80px', 
+                            backgroundColor: color.hex, 
+                            borderRadius: '6px', 
+                            border: color.name === '500' ? '3px solid #000' : '1px solid rgba(0,0,0,0.1)',
+                            boxShadow: color.name === '500' ? '0 0 0 2px #8e24aa' : 'none'
+                          }}></div>
+                          <div className="mt-2 text-center">
+                            <div className="text-xs font-semibold text-black/90">
+                              {color.name}
+                              {color.name === '500' && <span className="ml-1 text-[10px] bg-black text-white px-1 py-0.5 rounded">MAIN</span>}
+                            </div>
+                            <div className="text-xs text-black/55">{color.hex}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold text-black/90 mb-4">Cores de Estado</h3>
+                  
+                  {/* Success Green */}
+                  <div className="mb-6">
+                    <div className="text-sm font-semibold text-black/90 mb-3">Success (Green)</div>
+                    <div className="flex gap-2">
+                      {[
+                        { name: '900', hex: '#004220', var: '--andes-success-900' },
+                        { name: '800', hex: '#006330', var: '--andes-success-800' },
+                        { name: '700', hex: '#008440', var: '--andes-success-700' },
+                        { name: '600', hex: '#009548', var: '--andes-success-600' },
+                        { name: '500', hex: '#00a650', var: '--andes-success' },
+                        { name: '400', hex: '#33b873', var: '--andes-success-400' },
+                        { name: '300', hex: '#66ca96', var: '--andes-success-300' },
+                        { name: '200', hex: '#99dcb9', var: '--andes-success-200' },
+                        { name: '100', hex: '#cceedc', var: '--andes-success-100' },
+                        { name: '50', hex: '#e5f6ed', var: '--andes-success-50' },
+                      ].map((color) => (
+                        <div key={color.hex} className="flex-1">
+                          <div style={{ width: '100%', height: '80px', backgroundColor: color.hex, borderRadius: '6px', border: '1px solid rgba(0,0,0,0.1)' }}></div>
+                          <div className="mt-2 text-center">
+                            <div className="text-xs font-semibold text-black/90">{color.name}</div>
+                            <div className="text-xs text-black/55">{color.hex}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Warning Orange */}
+                  <div className="mb-6">
+                    <div className="text-sm font-semibold text-black/90 mb-3">Warning (Orange)</div>
+                    <div className="flex gap-2">
+                      {[
+                        { name: '900', hex: '#663014', var: '--andes-warning-900' },
+                        { name: '800', hex: '#99481e', var: '--andes-warning-800' },
+                        { name: '700', hex: '#cc6028', var: '--andes-warning-700' },
+                        { name: '600', hex: '#e66a2d', var: '--andes-warning-600' },
+                        { name: '500', hex: '#ff7733', var: '--andes-warning' },
+                        { name: '400', hex: '#ff925c', var: '--andes-warning-400' },
+                        { name: '300', hex: '#ffad85', var: '--andes-warning-300' },
+                        { name: '200', hex: '#ffc8ad', var: '--andes-warning-200' },
+                        { name: '100', hex: '#ffe3d6', var: '--andes-warning-100' },
+                        { name: '50', hex: '#fff1ea', var: '--andes-warning-50' },
+                      ].map((color) => (
+                        <div key={color.hex} className="flex-1">
+                          <div style={{ width: '100%', height: '80px', backgroundColor: color.hex, borderRadius: '6px', border: '1px solid rgba(0,0,0,0.1)' }}></div>
+                          <div className="mt-2 text-center">
+                            <div className="text-xs font-semibold text-black/90">{color.name}</div>
+                            <div className="text-xs text-black/55">{color.hex}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Error Red */}
+                  <div className="mb-6">
+                    <div className="text-sm font-semibold text-black/90 mb-3">Error (Red)</div>
+                    <div className="flex gap-2">
+                      {[
+                        { name: '900', hex: '#611820', var: '--andes-error-900' },
+                        { name: '800', hex: '#912430', var: '--andes-error-800' },
+                        { name: '700', hex: '#c13040', var: '--andes-error-700' },
+                        { name: '600', hex: '#da3747', var: '--andes-error-600' },
+                        { name: '500', hex: '#f23d4f', var: '--andes-error' },
+                        { name: '400', hex: '#f56472', var: '--andes-error-400' },
+                        { name: '300', hex: '#f78b95', var: '--andes-error-300' },
+                        { name: '200', hex: '#fab2b9', var: '--andes-error-200' },
+                        { name: '100', hex: '#fcd9dc', var: '--andes-error-100' },
+                        { name: '50', hex: '#feeced', var: '--andes-error-50' },
+                      ].map((color) => (
+                        <div key={color.hex} className="flex-1">
+                          <div style={{ width: '100%', height: '80px', backgroundColor: color.hex, borderRadius: '6px', border: '1px solid rgba(0,0,0,0.1)' }}></div>
+                          <div className="mt-2 text-center">
+                            <div className="text-xs font-semibold text-black/90">{color.name}</div>
+                            <div className="text-xs text-black/55">{color.hex}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold text-black/90 mb-4">Escala de Cinzas</h3>
+                  <div className="flex gap-2">
+                    {[
+                      { name: '0', hex: '#ffffff', var: '--andes-gray-0' },
+                      { name: '100', hex: '#f5f5f5', var: '--andes-gray-100' },
+                      { name: '200', hex: '#ededed', var: '--andes-gray-200' },
+                      { name: '300', hex: '#e5e5e5', var: '--andes-gray-300' },
+                      { name: '400', hex: '#cccccc', var: '--andes-gray-400' },
+                      { name: '500', hex: '#999999', var: '--andes-gray-500' },
+                      { name: '600', hex: '#666666', var: '--andes-gray-600' },
+                      { name: '700', hex: '#484848', var: '--andes-gray-700' },
+                      { name: '800', hex: '#333333', var: '--andes-gray-800' },
+                      { name: '900', hex: '#000000', var: '--andes-gray-900' },
+                    ].map((color) => (
+                      <div key={color.hex} className="flex-1">
+                        <div style={{ width: '100%', height: '80px', backgroundColor: color.hex, borderRadius: '6px', border: '1px solid rgba(0,0,0,0.1)' }}></div>
+                        <div className="mt-2 text-center">
+                          <div className="text-xs font-semibold text-black/90">{color.name}</div>
+                          <div className="text-xs text-black/55">{color.hex}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
+          )}
 
-          </div>
-        </div>
+          {selectedSection === "tokens-typography" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Tipografia</h2>
+              <p className="text-sm text-black/55 mb-8">Escala tipográfica e fontes do sistema</p>
+              
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-lg font-semibold text-black/90 mb-4">Família de Fonte</h3>
+                  <div className="bg-white rounded-xl p-6 border border-gray-200">
+                    <p className="text-3xl" style={{ fontFamily: 'Proxima Nova, -apple-system, Roboto, Arial, sans-serif' }}>
+                      Proxima Nova
+                    </p>
+                    <p className="text-sm text-black/55 mt-2">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</p>
+                    <p className="text-xs text-black/40 mt-3">--andes-font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif</p>
+                  </div>
+                </div>
 
-        {/* SEÇÃO: FEEDBACK */}
-        <div id="feedback" className="docs-section" style={{ marginBottom: "60px", borderBottom: "1px solid #ddd", paddingBottom: "40px" }}>
-          <h2 className="docs-section-title" style={{ fontSize: "28px", marginBottom: "20px", fontWeight: 300, color: "#666" }}>Feedback & Loading</h2>
-          <div className="docs-grid" style={{ display: "flex", gap: "20px", flexWrap: "wrap", alignItems: "flex-start" }}>
-            <div className="demo-box white" style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", padding: "50px", background: "white", borderRadius: "var(--andes-radius-l)", border: "1px solid #ddd", width: "100%" }}>
-              <AndesLoadingContainer text="Mais alguns segundos..." />
+                <div>
+                  <h3 className="text-lg font-semibold text-black/90 mb-4">Tamanhos</h3>
+                  <div className="space-y-4">
+                    <div className="bg-white rounded-xl p-4 border border-gray-200 flex items-center justify-between">
+                      <span style={{ fontSize: '12px' }}>Extra Small (12px)</span>
+                      <span className="text-xs text-black/40">--andes-font-size-xs</span>
+                    </div>
+                    <div className="bg-white rounded-xl p-4 border border-gray-200 flex items-center justify-between">
+                      <span style={{ fontSize: '14px' }}>Small (14px)</span>
+                      <span className="text-xs text-black/40">--andes-font-size-s</span>
+                    </div>
+                    <div className="bg-white rounded-xl p-4 border border-gray-200 flex items-center justify-between">
+                      <span style={{ fontSize: '16px' }}>Medium (16px)</span>
+                      <span className="text-xs text-black/40">--andes-font-size-m</span>
+                    </div>
+                    <div className="bg-white rounded-xl p-4 border border-gray-200 flex items-center justify-between">
+                      <span style={{ fontSize: '18px' }}>Large (18px)</span>
+                      <span className="text-xs text-black/40">--andes-font-size-l</span>
+                    </div>
+                    <div className="bg-white rounded-xl p-4 border border-gray-200 flex items-center justify-between">
+                      <span style={{ fontSize: '24px' }}>Extra Large (24px)</span>
+                      <span className="text-xs text-black/40">--andes-font-size-xl</span>
+                    </div>
+                    <div className="bg-white rounded-xl p-4 border border-gray-200 flex items-center justify-between">
+                      <span style={{ fontSize: '32px' }}>XXL (32px)</span>
+                      <span className="text-xs text-black/40">--andes-font-size-xxl</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          )}
 
-        {/* SEÇÃO: CATEGORIAS */}
-        <div id="categories" className="docs-section" style={{ marginBottom: "60px", borderBottom: "1px solid #ddd", paddingBottom: "40px" }}>
-          <h2 className="docs-section-title" style={{ fontSize: "28px", marginBottom: "20px", fontWeight: 300, color: "#666" }}>Categorias (Mosaico)</h2>
-          <AndesCategoriesMosaic title="Categorias" viewAllLinkText="Mostrar todas as categorias">
-            <AndesCategoryCard text="Carros, Motos e Outros" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d3d3d3'/%3E%3Ccircle cx='30' cy='30' r='15' fill='%23999999'/%3E%3C/svg%3E" />
-            <AndesCategoryCard text="Celulares e Telefones" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d3d3d3'/%3E%3Ccircle cx='30' cy='30' r='15' fill='%23999999'/%3E%3C/svg%3E" />
-            <AndesCategoryCard text="Eletrodomésticos" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d3d3d3'/%3E%3Ccircle cx='30' cy='30' r='15' fill='%23999999'/%3E%3C/svg%3E" />
-            <AndesCategoryCard text="Ferramentas" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d3d3d3'/%3E%3Ccircle cx='30' cy='30' r='15' fill='%23999999'/%3E%3C/svg%3E" />
-            <AndesCategoryCard text="Acessórios para Veículos" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d3d3d3'/%3E%3Ccircle cx='30' cy='30' r='15' fill='%23999999'/%3E%3C/svg%3E" />
-            <AndesCategoryCard text="Calçados, Roupas e Bolsas" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d3d3d3'/%3E%3Ccircle cx='30' cy='30' r='15' fill='%23999999'/%3E%3C/svg%3E" />
-            <AndesCategoryCard text="Esportes e Fitness" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d3d3d3'/%3E%3Ccircle cx='30' cy='30' r='15' fill='%23999999'/%3E%3C/svg%3E" />
-            <AndesCategoryCard text="Beleza e Cuidado Pessoal" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d3d3d3'/%3E%3Ccircle cx='30' cy='30' r='15' fill='%23999999'/%3E%3C/svg%3E" />
-            <AndesCategoryCard text="Casa, Móveis e Decoração" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d3d3d3'/%3E%3Ccircle cx='30' cy='30' r='15' fill='%23999999'/%3E%3C/svg%3E" />
-            <AndesCategoryCard text="Informática" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d3d3d3'/%3E%3Ccircle cx='30' cy='30' r='15' fill='%23999999'/%3E%3C/svg%3E" />
-            <AndesCategoryCard text="Imóveis" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d3d3d3'/%3E%3Ccircle cx='30' cy='30' r='15' fill='%23999999'/%3E%3C/svg%3E" />
-            <AndesCategoryCard text="Eletrônicos, Áudio e Vídeo" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d3d3d3'/%3E%3Ccircle cx='30' cy='30' r='15' fill='%23999999'/%3E%3C/svg%3E" />
-          </AndesCategoriesMosaic>
-        </div>
+          {selectedSection === "tokens-spacing" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Espaçamento</h2>
+              <p className="text-sm text-black/55 mb-8">Sistema de espaçamento consistente baseado em múltiplos de 4px</p>
+              
+              <div className="space-y-4">
+                {[
+                  { value: '4px', var: '--andes-spacing-4' },
+                  { value: '8px', var: '--andes-spacing-8' },
+                  { value: '12px', var: '--andes-spacing-12' },
+                  { value: '16px', var: '--andes-spacing-16' },
+                  { value: '20px', var: '--andes-spacing-20' },
+                  { value: '24px', var: '--andes-spacing-24' },
+                  { value: '32px', var: '--andes-spacing-32' },
+                  { value: '40px', var: '--andes-spacing-40' },
+                  { value: '48px', var: '--andes-spacing-48' },
+                ].map((spacing) => (
+                  <div key={spacing.value} className="bg-white rounded-xl p-4 border border-gray-200">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="text-sm font-semibold text-black/90">{spacing.value}</div>
+                      <div className="text-xs text-black/40">{spacing.var}</div>
+                    </div>
+                    <div style={{ width: spacing.value, height: '24px', backgroundColor: '#3483fa', borderRadius: '4px' }}></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
-        {/* SEÇÃO: MODAIS */}
-        <div id="modals" className="docs-section" style={{ marginBottom: "60px", borderBottom: "1px solid #ddd", paddingBottom: "40px" }}>
-          <h2 className="docs-section-title" style={{ fontSize: "28px", marginBottom: "20px", fontWeight: 300, color: "#666" }}>Modais (Promoção)</h2>
+          {selectedSection === "tokens-radius" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Raio das Bordas</h2>
+              <p className="text-sm text-black/55 mb-8">Valores de border-radius para diferentes elementos</p>
+              
+              <div className="grid grid-cols-2 gap-6">
+                <div className="bg-white rounded-xl p-6 border border-gray-200 text-center">
+                  <div style={{ width: '100px', height: '100px', backgroundColor: '#3483fa', borderRadius: '4px', margin: '0 auto 12px' }}></div>
+                  <div className="text-sm font-semibold text-black/90">Small</div>
+                  <div className="text-xs text-black/55">4px</div>
+                  <div className="text-xs text-black/40">--andes-radius-sm</div>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6 border border-gray-200 text-center">
+                  <div style={{ width: '100px', height: '100px', backgroundColor: '#3483fa', borderRadius: '6px', margin: '0 auto 12px' }}></div>
+                  <div className="text-sm font-semibold text-black/90">Medium</div>
+                  <div className="text-xs text-black/55">6px</div>
+                  <div className="text-xs text-black/40">--andes-radius-md</div>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6 border border-gray-200 text-center">
+                  <div style={{ width: '100px', height: '100px', backgroundColor: '#3483fa', borderRadius: '8px', margin: '0 auto 12px' }}></div>
+                  <div className="text-sm font-semibold text-black/90">Large</div>
+                  <div className="text-xs text-black/55">8px</div>
+                  <div className="text-xs text-black/40">--andes-radius-lg</div>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6 border border-gray-200 text-center">
+                  <div style={{ width: '100px', height: '50px', backgroundColor: '#3483fa', borderRadius: '2rem', margin: '25px auto 12px' }}></div>
+                  <div className="text-sm font-semibold text-black/90">Pill</div>
+                  <div className="text-xs text-black/55">2rem</div>
+                  <div className="text-xs text-black/40">--andes-radius-pill</div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {selectedSection === "tokens-shadows" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Sombras</h2>
+              <p className="text-sm text-black/55 mb-8">Níveis de elevação para criar hierarquia visual</p>
+              
+              <div className="space-y-6">
+                <div className="bg-[#f5f5f5] rounded-xl p-8 flex items-center justify-center">
+                  <div style={{ 
+                    width: '200px', 
+                    height: '120px', 
+                    backgroundColor: '#ffffff', 
+                    borderRadius: '8px',
+                    boxShadow: '0 1px 2px 0 rgba(0, 0, 0, .08)'
+                  }} className="flex items-center justify-center flex-col">
+                    <div className="text-sm font-semibold text-black/90">Shadow Small</div>
+                    <div className="text-xs text-black/40 mt-1">--andes-shadow-sm</div>
+                    <div className="text-xs text-black/55 mt-2">0 1px 2px rgba(0,0,0,.08)</div>
+                  </div>
+                </div>
+
+                <div className="bg-[#f5f5f5] rounded-xl p-8 flex items-center justify-center">
+                  <div style={{ 
+                    width: '200px', 
+                    height: '120px', 
+                    backgroundColor: '#ffffff', 
+                    borderRadius: '8px',
+                    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, .12), 0 2px 4px 0 rgba(0, 0, 0, .08)'
+                  }} className="flex items-center justify-center flex-col">
+                    <div className="text-sm font-semibold text-black/90">Shadow Medium</div>
+                    <div className="text-xs text-black/40 mt-1">--andes-shadow-md</div>
+                    <div className="text-xs text-black/55 mt-2 px-4 text-center">0 4px 8px rgba(0,0,0,.12)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ========== COMPONENTS ========== */}
           
-          <AndesButton onClick={() => setIsModalOpen(true)}>Abrir Modal Meli+</AndesButton>
-
-          <AndesModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-            <div className="andes-modal__content--dark" style={{ backgroundColor: "#222", color: "white", padding: "40px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
-              <div className="meli-tag meli-tag--large" style={{ fontSize: "14px", padding: "6px 12px", borderRadius: "20px", background: "linear-gradient(90deg, #a90f90, #0c1a51)", color: "white", fontWeight: 800 }}>
-                meli+ <span style={{ fontWeight: 900, marginLeft: "4px" }}>MEGA</span>
+          {selectedSection === "overview" && (
+            <div className="text-center mt-20">
+              <div className="mb-6">
+                <svg className="w-[120px] h-auto mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+                  <g fill="none" fillRule="evenodd">
+                    <g transform="translate(-620 -241) translate(620 241)">
+                      <path fill="#EEE" stroke="#FFF" strokeWidth="3" d="M105.864 13.25c6.213 0 11.838 2.519 15.91 6.59 4.071 4.072 6.59 9.697 6.59 15.91h0v80.858l11.355.001c1.518 0 2.893-.615 3.889-1.61.995-.996 1.61-2.371 1.61-3.89h0V81.75c0-2.07.84-3.946 2.197-5.303 1.357-1.357 3.232-2.197 5.304-2.197h1.145c2.07 0 3.946.84 5.303 2.197 1.357 1.357 2.197 3.232 2.197 5.303h0v38c0 2.9-1.175 5.525-3.076 7.425-1.9 1.9-4.525 3.075-7.424 3.075h0-22.5v33h-45v-60h-28.5c-2.851 0-5.437-1.136-7.33-2.98-1.892-1.846-3.091-4.4-3.166-7.234h0l-.004-52.286c0-2.03.807-3.873 2.118-5.224 1.311-1.35 3.126-2.209 5.141-2.272h0l1.3-.004c2.03 0 3.873.807 5.223 2.119 1.35 1.31 2.209 3.124 2.273 5.139h0l.003 43.513c0 1.47.576 2.804 1.515 3.79.952 1.001 2.277 1.643 3.752 1.705h0l17.675.005V35.75c0-6.214 2.518-11.839 6.59-15.91 4.072-4.072 9.697-6.59 15.91-6.59z" transform="translate(47.136 15.25)"></path>
+                    </g>
+                  </g>
+                </svg>
               </div>
-
-              <h2 className="modal-promo-title" style={{ fontSize: "24px", fontWeight: 900, textTransform: "uppercase", margin: "24px 0", letterSpacing: "0.5px" }}>4 Streamings, 1 Assinatura</h2>
-
-              <div className="streaming-grid" style={{ display: "flex", gap: "16px", justifyContent: "center", marginBottom: "30px", flexWrap: "wrap" }}>
-                <div className="streaming-box" style={{ width: "100px", height: "70px", background: "white", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center", color: "#000", fontWeight: 800, fontSize: "12px" }}>Disney+</div>
-                <div className="streaming-box" style={{ width: "100px", height: "70px", background: "white", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center", color: "#e50914", fontWeight: 800, fontSize: "12px" }}>NETFLIX</div>
-                <div className="streaming-box" style={{ width: "100px", height: "70px", background: "#000", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontWeight: 800, fontSize: "12px" }}>HBO max</div>
-                <div className="streaming-box" style={{ width: "100px", height: "70px", background: "white", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center", color: "#000", fontWeight: 800, fontSize: "12px" }}> tv</div>
-              </div>
-
-              <div className="price-hero" style={{ display: "flex", alignItems: "flex-start", lineHeight: 1, justifyContent: "center" }}>
-                <span className="price-hero__symbol" style={{ fontSize: "24px", marginTop: "8px", marginRight: "4px", fontWeight: 500 }}>R$</span>
-                <span className="price-hero__value" style={{ fontSize: "80px", fontWeight: 600, letterSpacing: "-2px" }}>39</span>
-                <span className="price-hero__cents" style={{ fontSize: "24px", marginTop: "8px" }}>,90</span>
-                <span className="price-hero__period" style={{ fontSize: "24px", alignSelf: "center", marginLeft: "8px", fontWeight: 300 }}>/mês*</span>
-              </div>
-
-              <p className="modal-disclaimer" style={{ fontSize: "14px", color: "#aaa", marginTop: "16px" }}>*Depois de 2 meses, você pagará R$ 74,90/mês.</p>
+              <h3 className="text-xl font-semibold text-black/90 m-0 mb-2">Andes Design System</h3>
+              <p className="text-base font-normal text-black/55 m-0">
+                Sistema de design completo com componentes, tokens e padrões de interface do Mercado Livre.
+              </p>
             </div>
+          )}
 
-            <div className="andes-modal__footer" style={{ background: "white", padding: "24px", display: "flex", alignItems: "center", justifyContent: "center", gap: "24px", borderTop: "1px solid #eee" }}>
-              <AndesButton style={{ padding: "16px 32px", fontSize: "16px" }}>Assinar Meli+ Mega</AndesButton>
-              <AndesButton variant="link" onClick={() => setIsModalOpen(false)}>Em outro momento</AndesButton>
+          {selectedSection === "buttons" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Botões</h2>
+              <p className="text-sm text-black/55 mb-8">Componentes de ação primária e secundária usando AndesButton</p>
+              
+              <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+                <AndesButton variant="action">Comprar agora</AndesButton>
+                <AndesButton variant="primary">Assinar Meli+</AndesButton>
+                <AndesButton variant="transparent">Adicionar ao carrinho</AndesButton>
+                <AndesButton variant="primary" disabled>Desabilitado</AndesButton>
+                <AndesButton variant="link">Link simples</AndesButton>
+              </div>
             </div>
-          </AndesModal>
+          )}
+
+          {selectedSection === "label" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Label</h2>
+              <p className="text-sm text-black/55 mb-8">Rótulos para campos de formulário usando AndesLabel</p>
+              
+              <div className="space-y-8">
+                <div className="bg-white rounded-xl p-6 border border-gray-200">
+                  <h3 className="text-sm font-semibold text-black/90 mb-4">Exemplo Básico</h3>
+                  <div className="space-y-4">
+                    <AndesLabel htmlFor="example1">Nome completo</AndesLabel>
+                    <AndesInput id="example1" type="text" placeholder="Digite seu nome" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {selectedSection === "formgroup" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Form Group</h2>
+              <p className="text-sm text-black/55 mb-8">Agrupamento de label e input usando AndesFormGroup</p>
+              
+              <div className="space-y-8">
+                <div className="bg-white rounded-xl p-6 border border-gray-200">
+                  <h3 className="text-sm font-semibold text-black/90 mb-4">Exemplo</h3>
+                  <div className="space-y-4">
+                    <AndesFormGroup label="Email" htmlFor="email">
+                      <AndesInput id="email" type="email" placeholder="seu@email.com" />
+                    </AndesFormGroup>
+                    <AndesFormGroup label="Senha" htmlFor="password">
+                      <AndesInput id="password" type="password" placeholder="••••••••" />
+                    </AndesFormGroup>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {selectedSection === "switch" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Switch</h2>
+              <p className="text-sm text-black/55 mb-8">Toggle switch para opções on/off usando AndesSwitch</p>
+              
+              <div className="space-y-8">
+                <div className="bg-white rounded-xl p-6 border border-gray-200">
+                  <h3 className="text-sm font-semibold text-black/90 mb-4">Interativo</h3>
+                  <div className="space-y-4">
+                    <AndesSwitch
+                      id="switch1"
+                      label="Receber notificações por email"
+                      checked={switchState}
+                      onChange={setSwitchState}
+                    />
+                    <AndesSwitch
+                      id="switch2"
+                      label="Ativar modo escuro"
+                      checked={false}
+                    />
+                    <AndesSwitch
+                      id="switch3"
+                      label="Opção habilitada"
+                      checked={true}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {selectedSection === "inputs" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Inputs</h2>
+              <p className="text-sm text-black/55 mb-8">Campos de entrada de dados usando AndesInput</p>
+              
+              <div className="space-y-8">
+                <div className="bg-white rounded-xl p-6 border border-gray-200">
+                  <h3 className="text-sm font-semibold text-black/90 mb-4">Text Input</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium text-black/70 mb-2">Label</label>
+                      <AndesInput type="text" placeholder="Digite algo..." />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-black/70 mb-2">Email</label>
+                      <AndesInput type="email" placeholder="seu@email.com" />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-black/70 mb-2">Password</label>
+                      <AndesInput type="password" placeholder="••••••••" />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl p-6 border border-gray-200">
+                  <h3 className="text-sm font-semibold text-black/90 mb-4">Estados</h3>
+                  <div className="space-y-4">
+                    <AndesInput type="text" placeholder="Normal" />
+                    <AndesInput type="text" placeholder="Desabilitado" disabled />
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {selectedSection === "cards" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Cards</h2>
+              <p className="text-sm text-black/55 mb-8">Containers para conteúdo usando AndesCard</p>
+              
+              <div className="space-y-8">
+                <div className="bg-[#f5f5f5] rounded-xl p-6">
+                  <h3 className="text-sm font-semibold text-black/90 mb-4">Card Padrão</h3>
+                  <AndesCard className="p-6">
+                    <h3 className="text-lg font-semibold text-black/90 mb-2">Título do Card</h3>
+                    <p className="text-sm text-black/55 mb-4">
+                      Este é um card padrão com título, descrição e bordas arredondadas.
+                    </p>
+                    <AndesButton variant="primary">Ação</AndesButton>
+                  </AndesCard>
+                </div>
+
+                <div className="bg-[#f5f5f5] rounded-xl p-6">
+                  <h3 className="text-sm font-semibold text-black/90 mb-4">Card com Imagem</h3>
+                  <AndesCard className="overflow-hidden">
+                    <div className="h-32 bg-gradient-to-r from-blue-500 to-purple-500"></div>
+                    <div className="p-6">
+                      <h3 className="text-lg font-semibold text-black/90 mb-2">Card Visual</h3>
+                      <p className="text-sm text-black/55">Card com área de destaque visual no topo.</p>
+                    </div>
+                  </AndesCard>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {selectedSection === "badges" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Badges</h2>
+              <p className="text-sm text-black/55 mb-8">Indicadores de status e categorias usando AndesBadge</p>
+              
+              <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '20px' }}>
+                <AndesBadge variant="promo">15% OFF</AndesBadge>
+                <AndesBadge variant="full">⚡ FULL</AndesBadge>
+                <AndesBadge variant="bestseller">1º MAIS VENDIDO</AndesBadge>
+                <AndesBadge variant="new">NOVO</AndesBadge>
+              </div>
+            </div>
+          )}
+
+          {selectedSection === "carousel" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Carousel</h2>
+              <p className="text-sm text-black/55 mb-8">Componente de carrossel horizontal usando AndesCarousel</p>
+              
+              <div className="space-y-8">
+                <div className="bg-white rounded-xl p-6 border border-gray-200">
+                  <h3 className="text-sm font-semibold text-black/90 mb-4">Exemplo</h3>
+                  <AndesCarousel>
+                    {[1, 2, 3, 4, 5, 6].map((item) => (
+                      <div key={item} className="min-w-[200px] h-[200px] bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center text-white text-2xl font-bold mr-4">
+                        Item {item}
+                      </div>
+                    ))}
+                  </AndesCarousel>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {selectedSection === "dropdown" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Dropdown Menu</h2>
+              <p className="text-sm text-black/55 mb-8">Menu suspenso com múltiplos níveis usando AndesDropdownMenu</p>
+              
+              <div className="space-y-8">
+                <div className="bg-white rounded-xl p-6 border border-gray-200">
+                  <h3 className="text-sm font-semibold text-black/90 mb-4">Exemplo Básico</h3>
+                  <div className="flex gap-4">
+                    <AndesDropdownMenu
+                      label="Categorias"
+                      items={[
+                        { id: "1", label: "Eletrônicos", href: "#" },
+                        { id: "2", label: "Moda", href: "#" },
+                        { id: "3", label: "Casa", href: "#" },
+                      ]}
+                    />
+                    <AndesDropdownMenu
+                      label="Ofertas"
+                      items={[
+                        { id: "1", label: "Ofertas do Dia", href: "#" },
+                        { id: "2", label: "Cupons", href: "#" },
+                      ]}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {selectedSection === "filtertag" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Filter Tag</h2>
+              <p className="text-sm text-black/55 mb-8">Tags de filtro removíveis usando AndesFilterTag</p>
+              
+              <div className="space-y-8">
+                <div className="bg-white rounded-xl p-6 border border-gray-200">
+                  <h3 className="text-sm font-semibold text-black/90 mb-4">Com Botão de Remoção</h3>
+                  <div className="flex gap-2 flex-wrap">
+                    <AndesFilterTag label="Eletrônicos" onRemove={() => alert("Removido!")} />
+                    <AndesFilterTag label="Acima de R$ 100" onRemove={() => alert("Removido!")} />
+                    <AndesFilterTag label="Frete Grátis" onRemove={() => alert("Removido!")} />
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl p-6 border border-gray-200">
+                  <h3 className="text-sm font-semibold text-black/90 mb-4">Sem Remoção</h3>
+                  <div className="flex gap-2 flex-wrap">
+                    <AndesFilterTag label="Categoria Principal" />
+                    <AndesFilterTag label="Região" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {selectedSection === "emptystate" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Empty State</h2>
+              <p className="text-sm text-black/55 mb-8">Estados vazios para feedback visual usando AndesEmptyState</p>
+              
+              <div className="space-y-8">
+                <div className="bg-white rounded-xl p-6 border border-gray-200">
+                  <h3 className="text-sm font-semibold text-black/90 mb-4">Com Descrição</h3>
+                  <AndesEmptyState
+                    icon={
+                      <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+                      </svg>
+                    }
+                    title="Nenhum resultado encontrado"
+                    description="Tente ajustar os filtros ou fazer uma nova busca."
+                  />
+                </div>
+
+                <div className="bg-white rounded-xl p-6 border border-gray-200">
+                  <h3 className="text-sm font-semibold text-black/90 mb-4">Apenas Título</h3>
+                  <AndesEmptyState
+                    title="Sua sacola está vazia"
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+
+          {selectedSection === "categorycard" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Category Card</h2>
+              <p className="text-sm text-black/55 mb-8">Cards de categorias com imagem usando AndesCategoryCard</p>
+              
+              <div className="space-y-8">
+                <div className="bg-white rounded-xl p-6 border border-gray-200">
+                  <h3 className="text-sm font-semibold text-black/90 mb-4">Exemplos</h3>
+                  <div className="flex gap-4 flex-wrap">
+                    <AndesCategoryCard
+                      imageUrl="https://http2.mlstatic.com/D_NQ_NP_2X_825305-MLA53279943458_012023-F.webp"
+                      text="Eletrônicos"
+                      href="#"
+                    />
+                    <AndesCategoryCard
+                      imageUrl="https://http2.mlstatic.com/D_NQ_NP_2X_825305-MLA53279943458_012023-F.webp"
+                      text="Moda"
+                      href="#"
+                    />
+                    <AndesCategoryCard
+                      imageUrl="https://http2.mlstatic.com/D_NQ_NP_2X_825305-MLA53279943458_012023-F.webp"
+                      text="Casa e Jardim"
+                      href="#"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {selectedSection === "money" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Money</h2>
+              <p className="text-sm text-black/55 mb-8">Componente para exibir valores monetários usando AndesMoney</p>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                <div>
+                  <p style={{ fontSize: '12px', color: '#666', marginBottom: '8px' }}>Preço completo com centavos</p>
+                  <AndesMoney amount={1899} cents="90" />
+                </div>
+                <div>
+                  <p style={{ fontSize: '12px', color: '#666', marginBottom: '8px' }}>Com desconto</p>
+                  <AndesMoney amount={2499} cents="00" discount="15% OFF" />
+                </div>
+                <div>
+                  <p style={{ fontSize: '12px', color: '#666', marginBottom: '8px' }}>Com preço riscado</p>
+                  <AndesMoney amount={1999} cents="90" strikeThrough />
+                  <AndesMoney amount={1699} cents="90" discount="15% OFF" />
+                </div>
+                <div>
+                  <p style={{ fontSize: '12px', color: '#666', marginBottom: '8px' }}>Tamanho grande</p>
+                  <AndesMoney amount={3499} cents="00" size="large" />
+                </div>
+              </div>
+            </div>
+          )}
+
+          {selectedSection === "modal" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Modal</h2>
+              <p className="text-sm text-black/55 mb-8">Diálogo modal usando AndesModal</p>
+              
+              <div className="space-y-8">
+                <div className="bg-white rounded-xl p-6 border border-gray-200">
+                  <h3 className="text-sm font-semibold text-black/90 mb-4">Exemplo</h3>
+                  <AndesButton variant="primary" onClick={() => setShowModal(true)}>
+                    Abrir Modal
+                  </AndesButton>
+                  
+                  <AndesModal isOpen={showModal} onClose={() => setShowModal(false)}>
+                    <div className="p-8">
+                      <h3 className="text-xl font-semibold text-black/90 mb-4">Título do Modal</h3>
+                      <p className="text-sm text-black/70 mb-6">
+                        Este é um exemplo de modal usando o componente AndesModal. Você pode clicar fora ou pressionar ESC para fechar.
+                      </p>
+                      <div className="flex gap-3">
+                        <AndesButton variant="primary" onClick={() => setShowModal(false)}>
+                          Confirmar
+                        </AndesButton>
+                        <AndesButton variant="transparent" onClick={() => setShowModal(false)}>
+                          Cancelar
+                        </AndesButton>
+                      </div>
+                    </div>
+                  </AndesModal>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {selectedSection === "spinner" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Spinner</h2>
+              <p className="text-sm text-black/55 mb-8">Indicador de carregamento usando AndesSpinner</p>
+              
+              <div className="andes-loading-container">
+                <AndesSpinner />
+                <div className="andes-loading-text">Mais alguns segundos...</div>
+              </div>
+            </div>
+          )}
+
+          {selectedSection === "gridcard" && (
+            <div className="w-full">
+              <h2 className="text-2xl font-semibold text-black/90 mb-2">Grid Card</h2>
+              <p className="text-sm text-black/55 mb-8">Cards de produto para listagens usando AndesGridCard</p>
+              
+              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+                <AndesGridCard
+                  imageUrl="https://http2.mlstatic.com/D_Q_NP_2X_803645-MLA95971342776_102025-E.webp"
+                  badgeText="MAIS VENDIDO"
+                  title="Smartphone Samsung Galaxy A54 5G"
+                  price={1899}
+                  priceCents="90"
+                  discount="15% OFF"
+                  shippingText="Frete grátis"
+                />
+                <AndesGridCard
+                  imageUrl="https://http2.mlstatic.com/D_Q_NP_2X_825305-MLA53279943458_012023-F.webp"
+                  title="Notebook Lenovo IdeaPad"
+                  price={2499}
+                  priceCents="00"
+                  shippingText="Frete grátis"
+                />
+                <AndesGridCard
+                  imageUrl="https://http2.mlstatic.com/D_Q_NP_2X_600898-MLA93500836737_092025-E.webp"
+                  badgeText="NOVO"
+                  title="Fone de Ouvido JBL Tune 520BT"
+                  price={299}
+                  priceCents="90"
+                  shippingText="Envio normal"
+                />
+              </div>
+            </div>
+          )}
         </div>
-
-        {/* SEÇÃO: ONBOARDING */}
-        <div id="onboarding" className="docs-section" style={{ marginBottom: "60px", borderBottom: "1px solid #ddd", paddingBottom: "40px" }}>
-          <h2 className="docs-section-title" style={{ fontSize: "28px", marginBottom: "20px", fontWeight: 300, color: "#666" }}>Onboarding Tour</h2>
-          
-          <AndesButton variant="action" onClick={() => setIsOnboardingOpen(true)}>Iniciar Tour de Vendas</AndesButton>
-
-          <AndesOnboardingModal 
-            isOpen={isOnboardingOpen} 
-            onClose={() => setIsOnboardingOpen(false)}
-            slides={[
-              {
-                imageUrl: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 320'%3E%3Crect width='600' height='320' fill='%23f5f5f5'/%3E%3Ccircle cx='300' cy='160' r='60' fill='%23d3d3d3'/%3E%3C/svg%3E",
-                title: "Comece a criar seu primeiro anúncio",
-                text: "Na seção \"Anúncios\", você poderá começar a anunciar. Já deixe preparadas as informações do seu produto."
-              },
-              {
-                imageUrl: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 320'%3E%3Crect width='600' height='320' fill='%23f5f5f5'/%3E%3Ccircle cx='300' cy='160' r='60' fill='%23d3d3d3'/%3E%3C/svg%3E",
-                title: "Se você receber perguntas, responda-as rapidamente",
-                text: "Na seção \"Perguntas\", você encontra as dúvidas dos compradores. Responda para aumentar suas chances."
-              },
-              {
-                imageUrl: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 320'%3E%3Crect width='600' height='320' fill='%23f5f5f5'/%3E%3Ccircle cx='300' cy='160' r='60' fill='%23d3d3d3'/%3E%3C/svg%3E",
-                title: "Ao concretizar a venda, gerencie seu envio de um só lugar",
-                text: "Em \"Vendas\", é possível identificar em qual etapa do processo cada venda está."
-              },
-              {
-                imageUrl: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 320'%3E%3Crect width='600' height='320' fill='%23f5f5f5'/%3E%3Ccircle cx='300' cy='160' r='60' fill='%23d3d3d3'/%3E%3C/svg%3E",
-                title: "O dinheiro da sua venda estará disponível no Mercado Pago",
-                text: "Na seção \"Resumo\", é possível revisar o status da sua receita e identificar pendências."
-              },
-              {
-                imageUrl: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 320'%3E%3Crect width='600' height='320' fill='%23ffe600'/%3E%3Ctext x='300' y='160' textAnchor='middle' fontSize='32' fill='%23333' fontWeight='bold'%3ESucesso!%3C/text%3E%3C/svg%3E",
-                title: "Continue vendendo e crescendo como vendedor",
-                text: "Em \"Resumo\", você também encontrará recomendações para entender seu desempenho.",
-                isFinal: true,
-                finalButtonText: "Entendi"
-              }
-            ]}
-          />
-        </div>
-
-        {/* SEÇÃO: CAROUSEL */}
-        <div id="carousel" className="docs-section" style={{ border: "none" }}>
-          <h2 className="docs-section-title" style={{ fontSize: "28px", marginBottom: "20px", fontWeight: 300, color: "#666" }}>Carrossel</h2>
-                    <AndesCarousel>
-            <AndesGridCard title="Item 1" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23d3d3d3'/%3E%3Ccircle cx='150' cy='100' r='40' fill='%23999999'/%3E%3C/svg%3E" price={100} shippingText="Frete Grátis" />
-            <AndesGridCard title="Item 2" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23d3d3d3'/%3E%3Ccircle cx='150' cy='100' r='40' fill='%23999999'/%3E%3C/svg%3E" price={200} shippingText="Frete Grátis" />
-            <AndesGridCard title="Item 3" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23d3d3d3'/%3E%3Ccircle cx='150' cy='100' r='40' fill='%23999999'/%3E%3C/svg%3E" price={300} shippingText="Frete Grátis" />
-            <AndesGridCard title="Item 4" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23d3d3d3'/%3E%3Ccircle cx='150' cy='100' r='40' fill='%23999999'/%3E%3C/svg%3E" price={400} shippingText="Frete Grátis" />
-            <AndesGridCard title="Item 5" imageUrl="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23d3d3d3'/%3E%3Ccircle cx='150' cy='100' r='40' fill='%23999999'/%3E%3C/svg%3E" price={500} shippingText="Frete Grátis" />
-          </AndesCarousel>
-        </div>
-
       </main>
     </div>
   );
-}
+};
+
+export default AndesDesignSystemPage;

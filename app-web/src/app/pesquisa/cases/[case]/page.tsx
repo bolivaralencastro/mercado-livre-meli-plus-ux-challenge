@@ -1,4 +1,5 @@
 import { getCaseBySlug, getCaseImages, getCases } from "@/lib/cases";
+import { getCaseContent } from "@/lib/cases-content";
 import { notFound } from "next/navigation";
 import CaseViewer from "../CaseViewer";
 
@@ -9,9 +10,10 @@ interface CasePageProps {
 }
 
 export default async function CaseDetailPage({ params }: CasePageProps) {
-  const [cases, currentCase] = await Promise.all([
+  const [cases, currentCase, caseContent] = await Promise.all([
     getCases(),
     getCaseBySlug(params.case),
+    getCaseContent(params.case),
   ]);
 
   const currentCaseData = currentCase ?? notFound();
@@ -22,6 +24,7 @@ export default async function CaseDetailPage({ params }: CasePageProps) {
       cases={cases}
       currentCaseSlug={currentCaseData.slug}
       images={images}
+      caseContent={caseContent}
     />
   );
 }

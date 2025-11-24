@@ -27,6 +27,7 @@ export { default as AndesInput } from './AndesInput';
 export { default as AndesLabel } from './AndesLabel';
 export { default as AndesLoadingContainer } from './AndesLoadingContainer';
 export { default as AndesMeliCard } from './AndesMeliCard';
+export { default as AndesMeliPricingComparison } from './AndesMeliPricingComparison';
 export { default as AndesModal } from './AndesModal';
 export { default as AndesMoney } from './AndesMoney';
 export { default as AndesOnboardingModal } from './AndesOnboardingModal';

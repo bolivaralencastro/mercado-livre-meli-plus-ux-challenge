@@ -24,4 +24,86 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+/* Andes Logo Animation */
+.andes-logo-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.andes-logo {
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.andes-logo-container:hover .andes-logo {
+  animation: andesLogoHover 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes andesLogoHover {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.15) rotate(-5deg);
+  }
+  50% {
+    transform: scale(0.95) rotate(5deg);
+  }
+  75% {
+    transform: scale(1.05) rotate(-2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.andes-logo-container:hover .andes-logo path:nth-child(1) {
+  animation: pathPulse1 1.2s ease-in-out;
+}
+
+.andes-logo-container:hover .andes-logo path:nth-child(2) {
+  animation: pathPulse2 1.2s ease-in-out 0.15s;
+}
+
+.andes-logo-container:hover .andes-logo path:nth-child(3) {
+  animation: pathPulse3 1.2s ease-in-out 0.3s;
+}
+
+@keyframes pathPulse1 {
+  0%, 100% {
+    fill: #348EFE;
+  }
+  50% {
+    fill: #3483fa;
+  }
+}
+
+@keyframes pathPulse2 {
+  0%, 100% {
+    fill: #FCFDFE;
+  }
+  50% {
+    fill: #ffe600;
+  }
+}
+
+@keyframes pathPulse3 {
+  0%, 100% {
+    fill: #FDFEFE;
+  }
+  50% {
+    fill: #8e24aa;
+  }
 }
