@@ -6,11 +6,19 @@ import AndesButton from "@/components/ui/AndesButton";
 const researchItems = [
   {
     id: "analise-aprofundada",
-    category: "Análise de Mercado",
+    category: "Visão Integrada",
     title: "Análise Aprofundada",
     insight:
-      "A análise aprofundada revela a estrutura de tiers do Meli+, o cálculo de ponto de equilíbrio para diferentes perfis de usuário e um comparativo detalhado com concorrentes diretos (Amazon Prime, Shopee) e indiretos (bancos digitais). A recomendação central é a simplificação dos planos e a personalização de benefícios.",
+      "Cruza qualitativo, dados operacionais e benchmarking para priorizar riscos estratégicos do Meli+ e orientar decisões de produto.",
     href: "/pesquisa/analise-aprofundada",
+  },
+  {
+    id: "artigos",
+    category: "Base Teórica",
+    title: "Artigos",
+    insight:
+      "Coleção de artigos sobre UX, pagamentos e fidelização com insights aplicáveis ao Meli+. Navegue por tags e categorias.",
+    href: "/pesquisa/artigos",
   },
   {
     id: "benchmarking",
@@ -35,6 +43,30 @@ const researchItems = [
     insight:
       "Foram criadas seis personas detalhadas e validadas com dados, incluindo 'A Caçadora de Ofertas Frustrada', 'O Empreendedor Vítima de Taxas Ocultas' e 'A Vítima da Tecnologia que Exclui'. Cada persona possui dores, comportamentos e oportunidades estratégicas específicas, que vão além dos arquétipos simplificados.",
     href: "/pesquisa/personas",
+  },
+  {
+    id: "cases",
+    category: "Referências",
+    title: "Cases Behance",
+    insight:
+      "Coleção curada de projetos do Mercado Livre no Behance, organizada para inspirar combinações de UI e narrativa.",
+    href: "/pesquisa/cases",
+  },
+  {
+    id: "mapeamento",
+    category: "Auditoria UX",
+    title: "Mapeamento As-Is",
+    insight:
+      "Reconstrói a landing atual e fluxos de pagamento para expor fricções e oportunidades imediatas de melhoria.",
+    href: "/pesquisa/mapeamento",
+  },
+  {
+    id: "termos",
+    category: "Documentação Legal",
+    title: "Termos e Regulamentos",
+    insight:
+      "Navegação comentada pelos documentos oficiais com destaques automáticos de cláusulas críticas para o Meli+.",
+    href: "/pesquisa/termos",
   },
 ];
 

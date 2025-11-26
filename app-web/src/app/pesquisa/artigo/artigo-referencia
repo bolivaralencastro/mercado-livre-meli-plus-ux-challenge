@@ -1,10 +1,14 @@
 {
   "article_metadata": {
+    "id": "ux-narrativa",
+    "slug": "ux-narrativa",
     "title": "Senhoras, crianças e conteúdo em primeiro lugar",
     "subtitle": "Por que o design de experiência do usuário começa com a narrativa.",
     "author": "Emiliano Cosenza",
     "publication_date": "2016-10-06",
     "read_time": "11 minutos",
+    "categoria": "UX & Narrativa",
+    "tags": ["storytelling", "content-first", "experiência do usuário", "jornada", "persona"],
     "platform_stats": {
       "claps": 879,
       "comments": 14
@@ -112,5 +116,42 @@
       "final_argument": "Se somos uma máquina biológica de contar histórias, por que não colocar seus mecanismos a serviço da experiência de nossos produtos digitais? Sem dúvida, precisamos começar pela história. Porque se criarmos uma boa história, criaremos uma boa experiência.",
       "call_to_action": "Se você gostou do que leu, dê um aplauso 👏 e recomende."
     }
-  }
+  },
+  "insights": [
+    {
+      "id": "story-first",
+      "title": "Experiências são Lineares",
+      "description": "Tudo o que vivenciamos está ordenado segundo uma linha do tempo. Por que não pensar no design de UX como uma história?",
+      "application": "Aplicar no Meli+: Mapear a jornada do usuário desde o primeiro contato até se tornar assinante fidelizado.",
+      "highlightId": "highlight-story-first"
+    },
+    {
+      "id": "content-first",
+      "title": "Conteúdo em Primeiro Lugar",
+      "description": "Definir qual história vamos contar antes de projetar as telas ou escolher componentes.",
+      "application": "Para o Meli+: Definir primeiro o valor percebido e benefícios antes de desenhar interfaces.",
+      "highlightId": "highlight-content-first"
+    },
+    {
+      "id": "user-feelings",
+      "title": "Sentimentos dos Usuários",
+      "description": "Compreender pontos problemáticos (pain points) e humor (mood) para adaptar a mensagem.",
+      "application": "Meli+: Identificar fricções na decisão de assinar e estados emocionais durante a jornada.",
+      "highlightId": "highlight-user-feelings"
+    },
+    {
+      "id": "story-prototype",
+      "title": "Protótipo da História",
+      "description": "Simular a interação do início ao fim usando texto, focando na estrutura antes da interface.",
+      "application": "Criar roteiros de conversação para diferentes personas do Meli+ antes de wireframes.",
+      "highlightId": "highlight-story-prototype"
+    },
+    {
+      "id": "immersion",
+      "title": "Buscar Imersão",
+      "description": "Como literatura e videogames, UX deve criar imersão: atenção total, naturalidade e fluxo sem atritos.",
+      "application": "Meli+: Reduzir atritos no onboarding e criar engajamento através de benefícios tangíveis.",
+      "highlightId": "highlight-immersion"
+    }
+  ]
 }

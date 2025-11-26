@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Meli+ Hero Refined</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+<style>
+/* =========================================
+   SETUP & TOKENS
+   ========================================= */
+:root {
+    --meli-purple: #800080;
+    --meli-orange: #E84A2E;
+    --meli-green: #00a650;
+    --dark-bg: #0E0B18;
+    --panel-bg: #18142A;
+    --text-main: #F6F4F1;
+    --text-muted: #9CA3AF;
+    --glass-bg: rgba(34, 26, 48, 0.78);
+    --glass-border: rgba(255, 255, 255, 0.16);
+    --silver-haze: #E2E4E7;
+    --font-primary: 'Inter', sans-serif;
+}
+
+/* Widget Card Styles from simuladores.html */
+.widget-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 28px 26px 32px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.widget-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 520px;
+}
+
+.widget-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.widget-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px dashed rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.08);
+    font-size: 0.7rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.widget-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+}
+
+.widget-instruction {
+    margin-top: 6px;
+    color: var(--silver-haze);
+    opacity: 0.8;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.widget-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.main-value {
+    font-size: 2.3rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    font-variant-numeric: tabular-nums;
+}
+
+.invest-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.invest-item {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+}
+
+.invest-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.06rem;
+    text-transform: uppercase;
+}
+
+.invest-val {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.highlight-card {
+    background: rgba(128, 0, 128, 0.16);
+    border-color: rgba(128, 0, 128, 0.35);
+}
+
+.highlight-card .invest-val { color: #EAD4FF; }
+
+.slider-wrapper { width: 100%; margin-bottom: 18px; }
+
+input[type=range] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    background: #2A2A2A;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+    margin-top: -10px;
+    transition: transform 0.15s ease, border-color 0.2s ease;
+}
+
+input[type=range]:hover::-webkit-slider-thumb {
+    border-color: rgba(255, 255, 255, 0.65);
+}
+
+.result-box {
+    width: 100%;
+    min-height: 72px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.result-box strong { display: block; font-weight: 700; margin-bottom: 2px; }
+.result-box.neutral { color: #9CA3AF; border-style: dashed; }
+.result-box.success { background: rgba(0, 166, 80, 0.16); border-color: rgba(0, 166, 80, 0.4); color: #D3FFE8; border-style: solid; }
+.result-box.alert { background: rgba(255, 90, 90, 0.16); border-color: rgba(255, 90, 90, 0.4); color: #FFE0E0; border-style: solid; }
+
+.result-detail { margin-top: 6px; color: inherit; line-height: 1.35; }
+.result-copy { display: none; }
+.result-copy.is-active { display: inline; }
+
+.rolling-number { display: inline-block; min-width: 0.6ch; position: relative; }
+.rolling-wrapper {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    min-height: 1em;
+    line-height: 1.2;
+}
+.rolling-value {
+    display: block;
+    transition: transform 0.45s ease, opacity 0.45s ease;
+}
+.rolling-value.rolling-new {
+    position: absolute;
+    inset: 0;
+    transform: translateY(100%);
+}
+.rolling-wrapper.animate .rolling-value.rolling-old { transform: translateY(-100%); opacity: 0; }
+.rolling-wrapper.animate .rolling-value.rolling-new { transform: translateY(0); }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-main);
+    font-family: var(--font-primary);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(128, 0, 128, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(232, 74, 46, 0.08) 0%, transparent 40%),
+        linear-gradient(120deg, rgba(5, 5, 5, 0.55), rgba(5, 5, 5, 0.35)),
+        linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.85)),
+        url('background-3.jpg');
+    background-size: auto, auto, cover, cover, cover;
+    background-position: 10% 20%, 90% 80%, center, center, center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   HERO LAYOUT
+   ========================================= */
+.hero-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    padding: 40px 24px;
+    margin: 0 auto;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Responsividade */
+@media (max-width: 960px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+    .hero-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* =========================================
+   LEFT COLUMN (TEXT)
+   ========================================= */
+.logo-lockup {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 100px;
+    padding: 6px 14px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+}
+
+.logo-part {
+    font-weight: 900;
+    font-size: 1rem;
+    background: linear-gradient(90deg, var(--meli-purple), var(--meli-orange));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: -0.5px;
+}
+
+.plan-part {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-main);
+    padding-left: 8px;
+    margin-left: 8px;
+    border-left: 1px solid rgba(255,255,255,0.2);
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.highlight-negative {
+    color: #ff5a5a; /* Vermelho suave para "Perdendo" */
+    position: relative;
+    display: inline-block;
+}
+/* Sublinhado ondulado sutil */
+.highlight-negative::after {
+    content: ''; position: absolute; bottom: 2px; left: 0; width: 100%; height: 4px;
+    background: url("data:image/svg+xml,%3Csvg width='20' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 3 Q 5 6 10 3 T 20 3' stroke='%23ff5a5a' stroke-width='2' fill='none'/%3E%3C/svg%3E") repeat-x;
+    opacity: 0.6;
+}
+
+.sub-h {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 480px;
+}
+
+.sub-h strong { color: var(--text-main); font-weight: 600; }
+
+/* 3D Button Refined */
+.cta-btn-3d {
+    background: linear-gradient(180deg, var(--meli-purple) 0%, #4a004a 100%);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(128, 0, 128, 0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+    transition: all 0.2s ease;
+    margin-bottom: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.cta-btn-3d:hover { transform: translateY(-2px); filter: brightness(1.1); }
+.cta-btn-3d:active { transform: translateY(1px); }
+
+/* Bonus Block - Minimalist */
+.bonus-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+    border: 1px dashed var(--glass-border);
+    max-width: fit-content;
+}
+.bonus-icon { color: var(--meli-green); font-size: 1.2rem; }
+.bonus-text strong { display: block; color: var(--text-main); margin-bottom: 2px; }
+
+/* =========================================
+   SIMULATOR CARD STYLES
+   ========================================= */
+.sim-card {
+    background: var(--glass-bg);
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    height: 520px;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.card-top { z-index: 1; position: relative; flex: 1; display:flex; flex-direction:column;}
+
+.title-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; margin-top: 8px; }
+.title { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em;}
+
+/* Tooltip */
+.tooltip-trigger { color: var(--text-muted); cursor: help; opacity: 0.6; transition: opacity 0.2s; position: relative; }
+.tooltip-trigger:hover { opacity: 1; }
+.tooltip-box {
+    visibility: hidden; opacity: 0;
+    position: absolute; bottom: 100%; right: 0;
+    background: rgba(0,0,0,0.95); border: 1px solid var(--glass-border);
+    padding: 12px; border-radius: 8px; width: 240px;
+    font-size: 0.75rem; color: #fff; line-height: 1.4;
+    transition: all 0.2s ease; pointer-events: none; z-index: 20;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+.tooltip-trigger:hover .tooltip-box { visibility: visible; opacity: 1; bottom: 120%; }
+
+.subtitle { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5; min-height: 3em; }
+
+/* --- DISPLAY AREA --- */
+.display-area { 
+    text-align: center; margin-top: auto; margin-bottom: auto; 
+    background: rgba(255,255,255,0.03); border-radius: 16px; padding: 20px;
+    border: 1px dashed rgba(255,255,255,0.1);
+}
+
+.status-badge {
+    display: inline-block; padding: 4px 10px; border-radius: 6px;
+    font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;
+}
+.status-badge.bad { background: rgba(255, 77, 77, 0.2); color: #ff5a5a; }
+.status-badge.neutral { background: rgba(255, 255, 255, 0.1); color: var(--text-muted); }
+
+.price-value { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.05em; color: var(--text-main); font-variant-numeric: tabular-nums; line-height: 1.1;}
+.price-value.danger { color: #ff5a5a; }
+.price-value.neutral { color: var(--text-muted); opacity: 0.5; }
+
+/* --- SLIDER AREA --- */
+.slider-area { margin-top: auto; margin-bottom: 24px; position: relative; z-index: 2;}
+.slider-area input[type=range] { appearance: none; -webkit-appearance: none; width: 100%; background: transparent; cursor: pointer; }
+.slider-area input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 99px; }
+.slider-area input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; height: 28px; width: 28px; border-radius: 50%;
+    background: var(--text-main); margin-top: -10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.1s; border: 2px solid var(--glass-bg);
+}
+.slider-area input[type=range]:active::-webkit-slider-thumb { transform: scale(1.2); background: var(--meli-purple); }
+
+/* --- CTA BUTTON --- */
+.cta-btn {
+    width: 100%; padding: 16px; border-radius: 12px; border: none;
+    background: var(--text-main); color: var(--dark-bg);
+    font-weight: 700; font-size: 1rem; cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    position: relative; z-index: 2;
+}
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+.cta-btn:active { transform: scale(0.98); }
+.cta-btn:disabled { opacity: 0.3; cursor: not-allowed; transform: none; box-shadow: none; background: rgba(255,255,255,0.1); color: var(--text-muted); }
+
+/* --- REVEAL OVERLAY --- */
+.reveal-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(145deg, #581C96 0%, #2A004F 100%);
+    z-index: 10; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 32px; text-align: center;
+    transform: translateY(100%); transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    color: white;
+}
+.card-revealed .reveal-overlay { transform: translateY(0); }
+
+.reveal-tag { background: #F5D415; color: #333; padding: 4px 12px; border-radius: 99px; font-weight: 800; font-size: 0.75rem; margin-bottom: 16px; text-transform: uppercase; }
+.reveal-price { font-size: 3.5rem; font-weight: 800; letter-spacing: -0.05em; line-height: 1; margin-bottom: 8px; white-space: nowrap; }
+.reveal-sub { opacity: 0.8; font-size: 0.9rem; margin-bottom: 24px; }
+
+.savings-badge-sim {
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+    padding: 12px 20px; border-radius: 12px; width: 100%;
+}
+.savings-label { display: block; font-size: 0.75rem; text-transform: uppercase; opacity: 0.7; margin-bottom: 4px; }
+.savings-value-sim { font-size: 1.5rem; font-weight: 700; color: var(--meli-green); }
+
+.close-reveal {
+    position: absolute; top: 20px; right: 20px;
+    background: none; border: none; color: white; opacity: 0.5; cursor: pointer;
+}
+.close-reveal:hover { opacity: 1; }
+
+/* =========================================
+   RIGHT COLUMN (WIDGET)
+   ========================================= */
+.interactive-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 30px;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.4),
+        0 0 0 1px rgba(255,255,255,0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Halo Effect Top */
+.interactive-card::before {
+    content: ''; position: absolute; top: -50px; left: 50%; transform: translateX(-50%);
+    width: 120px; height: 80px;
+    background: var(--meli-orange);
+    filter: blur(60px); opacity: 0.4; pointer-events: none;
+}
+
+.interactive-title {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Custom Range Slider */
+input[type=range] {
+    appearance: none; -webkit-appearance: none; width: 100%; background: transparent; margin: 10px 0 25px;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; height: 24px; width: 24px; border-radius: 50%;
+    background: #fff; cursor: pointer; margin-top: -10px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    border: 2px solid var(--meli-purple);
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%; height: 4px; cursor: pointer;
+    background: linear-gradient(90deg, var(--meli-purple), var(--meli-orange));
+    border-radius: 2px;
+}
+
+/* Values */
+.big-value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 25px;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -1px;
+}
+
+/* Grid Comparison */
+.comparison-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px;
+}
+
+.comparison-card {
+    background: rgba(0,0,0,0.3);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+}
+
+.comparison-card.highlight {
+    background: rgba(128, 0, 128, 0.15);
+    border-color: rgba(128, 0, 128, 0.4);
+    position: relative;
+}
+
+.comparison-label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 6px; }
+.comparison-value { font-size: 1.1rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.comparison-card.highlight .comparison-value { color: #d48add; }
+
+/* Dynamic Badge */
+#free-badge {
+    background: linear-gradient(135deg, var(--meli-green), #008f45);
+    color: white;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    margin-top: 10px;
+    transform-origin: center;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    opacity: 0; transform: scale(0.9) translateY(10px);
+    display: none; /* Controlled by JS */
+}
+#free-badge.visible {
+    opacity: 1; transform: scale(1) translateY(0); display: block;
+}
+
+#free-badge-title {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    font-weight: 700; font-size: 0.95rem; margin-bottom: 4px;
+}
+
+#frase-final {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.4;
+    text-align: center;
+}
+.default-msg {
+    margin-top: 15px; font-size: 0.8rem; color: var(--text-muted); text-align: center; line-height: 1.5;
+}
+.default-msg strong { color: var(--meli-orange); }
+
+</style>
+</head>
+<body>
+
+    <section class="hero-wrapper">
+        <div class="hero-grid">
+            
+            <!-- Left Content -->
+            <div class="hero-left">
+                <div class="logo-lockup">
+                    <span class="logo-part">meli+</span>
+                    <span class="plan-part">TOTAL</span>
+                </div>
+                
+                <h1>
+                    Seu dinheiro parado está <br>
+                    <span class="highlight-negative">perdendo</span> para o Meli+.
+                </h1>
+                
+                <p class="sub-h">
+                    Rendimento automático de até <strong>120% do CDI</strong> nos cofrinhos e 105% no saldo da conta.
+                </p>
+                
+                <button class="cta-btn-3d">
+                    Potencializar meus ganhos 
+                    <span class="material-icons-round" style="font-size: 1.1rem;">arrow_forward</span>
+                </button>
+                
+                <div class="bonus-block">
+                    <span class="material-icons-round bonus-icon">local_shipping</span>
+                    <div class="bonus-text">
+                        <strong>Precisa de estoque?</strong>
+                        <span>Frete Grátis em milhões de produtos.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Content: ROI Simulator -->
+            <div class="hero-right">
+                <div class="sim-card" id="card-roi">
+                    <div class="card-top">
+                        <div class="title-row">
+                            <h3 class="title">Rendimento</h3>
+                            <div class="tooltip-trigger">
+                                <span class="material-icons-round" style="font-size:18px">info</span>
+                                <div class="tooltip-box">
+                                    <strong>Cálculo projetado para 1 ano (12 meses):</strong><br>
+                                    • Poupança: ~6,17% a.a.<br>
+                                    • Meli+ (120% CDI): ~13,5% a.a.<br>
+                                    *Considerando taxa CDI atual. Limite de simulação: R$ 10.000.
+                                </div>
+                            </div>
+                        </div>
+                        <p class="subtitle">Quanto dinheiro fica parado na sua conta rendendo pouco?</p>
+
+                        <div class="display-area">
+                            <span class="status-badge neutral" id="roi-badge">SEM MELI+</span>
+                            <div class="price-value neutral" id="roi-poup">+ R$ 0,00</div>
+                            <div style="font-size:0.9rem; color:var(--text-muted); margin-top:8px;">
+                                Saldo: <span id="roi-balance" style="color:white; font-weight:700;">R$ 0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider-area">
+                        <input type="range" id="roi-slider" min="0" max="10000" step="100" value="0">
+                    </div>
+
+                    <button class="cta-btn" id="roi-btn" onclick="reveal('roi')" disabled>
+                        <span class="material-icons-round">trending_up</span>
+                        Ver ganho com Meli+
+                    </button>
+
+                    <div class="reveal-overlay">
+                        <button class="close-reveal" onclick="reset('roi')"><span class="material-icons-round">close</span></button>
+                        <span class="reveal-tag">COM MELI+ (120% CDI)</span>
+                        <div class="reveal-price" id="roi-meli">R$ 0,00</div>
+                        <p class="reveal-sub">+ Mais lucro em 1 ano</p>
+                        <div class="savings-badge-sim">
+                            <span class="savings-label">Ganho Extra</span>
+                            <span class="savings-value-sim" id="roi-gain">+ R$ 0,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const fmtMoney = (v) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+        /* --- ROI LOGIC --- */
+        const roiSlider = document.getElementById('roi-slider');
+        const roiPoup = document.getElementById('roi-poup');
+        const roiBalance = document.getElementById('roi-balance');
+        const roiBtn = document.getElementById('roi-btn');
+        const roiMeliDisplay = document.getElementById('roi-meli');
+        const roiGain = document.getElementById('roi-gain');
+        const roiBadge = document.getElementById('roi-badge');
+
+        roiSlider.addEventListener('input', () => {
+            reset('roi');
+            const P = parseInt(roiSlider.value);
+            
+            if (P === 0) {
+                roiPoup.textContent = "+ R$ 0,00";
+                roiPoup.className = "price-value neutral";
+                roiBadge.className = "status-badge neutral";
+                roiBalance.textContent = "R$ 0";
+                roiBtn.disabled = true;
+                return;
+            }
+
+            roiBalance.textContent = fmtMoney(P);
+            roiBtn.disabled = false;
+            roiPoup.className = "price-value"; 
+            roiBadge.className = "status-badge neutral";
+
+            const ratePoupYear = 0.0617; 
+            const rateMeliYear = 0.135; 
+
+            const fvPoup = P * (1 + ratePoupYear);
+            const fvMeli = P * (1 + rateMeliYear);
+
+            const gainP = fvPoup - P;
+            const gainM = fvMeli - P;
+            const extra = gainM - gainP;
+
+            roiPoup.textContent = "+ " + fmtMoney(gainP);
+            roiMeliDisplay.textContent = fmtMoney(gainM);
+            roiGain.textContent = "+ " + fmtMoney(extra);
+        });
+
+        /* --- REVEAL SYSTEM --- */
+        function reveal(id) {
+            document.getElementById(`card-${id}`).classList.add('card-revealed');
+        }
+
+        function reset(id) {
+            document.getElementById(`card-${id}`).classList.remove('card-revealed');
+        }
+    </script>
+</body>
+</html>

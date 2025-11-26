@@ -312,7 +312,7 @@ export default function TermosPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [conteudo, setConteudo] = useState("");
   const [selectedInsight, setSelectedInsight] = useState(insights[0]?.id ?? "");
-  const [pendingHighlight, setPendingHighlight] = useState<string | null>(insights[0]?.highlightId ?? null);
+  const [pendingHighlight, setPendingHighlight] = useState<string | null>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const currentDoc = documentos[currentIndex];
@@ -358,8 +358,9 @@ export default function TermosPage() {
   }, [currentDoc.arquivo]);
 
   useEffect(() => {
+    if (!pendingHighlight) return;
+
     const timedHighlight = window.setTimeout(() => {
-      if (!pendingHighlight) return;
       const element = document.getElementById(pendingHighlight);
       if (element) {
         element.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -368,7 +369,7 @@ export default function TermosPage() {
     }, 160);
 
     return () => window.clearTimeout(timedHighlight);
-  }, [conteudo, pendingHighlight]);
+  }, [pendingHighlight]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -396,12 +397,10 @@ export default function TermosPage() {
       const fallback = insightsByDoc[docId]?.[0];
       if (fallback) {
         setSelectedInsight(fallback.id);
-        setPendingHighlight(fallback.highlightId);
+        // Não define pendingHighlight automaticamente - deixa o usuário rolar livremente
       }
-    } else if (!pendingHighlight) {
-      setPendingHighlight(insightAtual.highlightId);
     }
-  }, [currentDoc.id, insightsByDoc, pendingHighlight, selectedInsight]);
+  }, [currentDoc.id, insightsByDoc, selectedInsight]);
 
   const navigateToInsight = (insight: Insight) => {
     setSelectedInsight(insight.id);

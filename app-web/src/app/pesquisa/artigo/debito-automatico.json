@@ -1,0 +1,237 @@
+{
+  "article_metadata": {
+    "id": "debito-automatico",
+    "slug": "debito-automatico",
+    "title": "Pesquisa Completa sobre Débito Automático no Brasil",
+    "subtitle": "Funcionamento, regulamentação, integrações e custos do débito automático e Pix Automático.",
+    "author": "Pesquisa Interna",
+    "publication_date": "2025-11",
+    "read_time": "15 minutos",
+    "categoria": "Pagamentos",
+    "tags": ["débito automático", "pix", "recorrência", "assinaturas", "integração", "wallets", "regulamentação", "meli+"]
+  },
+  "content": {
+    "introduction": {
+      "heading": "Visão Geral",
+      "text_body": [
+        "O débito automático é uma modalidade de pagamento recorrente amplamente utilizada no Brasil para quitar contas fixas, como faturas de energia, água, telefone, tributos e mensalidades, diretamente da conta bancária do usuário, sem necessidade de emissão de boletos ou transferências manuais.",
+        "Ele é regulado pelo Banco Central do Brasil (BC) e tem evoluído com a introdução do Pix Automático, que complementa ou substitui o débito tradicional em alguns cenários."
+      ]
+    },
+    "section_funcionamento": {
+      "heading": "1. Funcionamento e Regulamentação",
+      "text_body": [
+        "O débito automático opera por meio de uma autorização prévia do titular da conta (por escrito ou eletrônico), que permite à empresa credora debitar valores diretamente da conta em data específica."
+      ],
+      "processo": [
+        {
+          "etapa": "Autorização",
+          "descricao": "O usuário cadastra o débito no app ou site do banco ou da empresa, informando dados da conta (agência, conta, CPF/CNPJ)."
+        },
+        {
+          "etapa": "Execução",
+          "descricao": "O banco do recebedor envia instrução ao banco do pagador via Sistema de Pagamentos Brasileiro (SPB). O débito ocorre em D+1 (próximo dia útil) ao vencimento."
+        },
+        {
+          "etapa": "Cancelamento",
+          "descricao": "Pode ser feito a qualquer momento pelo titular, sem custos, via app do banco ou central de atendimento."
+        }
+      ],
+      "novidades_2025": [
+        "Bancos devem notificar clientes com até 5 dias de antecedência antes de qualquer débito automático de terceiros. Isso aumenta a transparência e permite cancelamento prévio.",
+        "Pix Automático (lançado em 2024 e obrigatório para PJs e entidades não reguladas pelo BC a partir de outubro de 2025) permite débitos programados via Pix, com limite máximo definido pelo usuário (ex.: R$ 1.000/mês) e notificações prévias.",
+        "Lei 15.252/2025 assegura direitos como débito automático entre instituições para quitação de empréstimos.",
+        "Empresas devem manter convênio formal com o banco do cliente e obter autorização explícita."
+      ]
+    },
+    "section_bancos": {
+      "heading": "2. Bancos que Permitem Débito Automático",
+      "text_body": [
+        "Quase todos os bancos brasileiros suportam o débito automático, especialmente para contas de concessionárias e tributos."
+      ],
+      "bancos": [
+        { "codigo": "001", "nome": "Banco do Brasil S/A", "observacoes": "Suporte amplo; API para integrações." },
+        { "codigo": "003", "nome": "Banco da Amazônia S/A", "observacoes": "Foco em regiões Norte." },
+        { "codigo": "004", "nome": "Banco do Nordeste S/A", "observacoes": "Convênios regionais." },
+        { "codigo": "021", "nome": "Banco Banestes S/A", "observacoes": "ES e região Sudeste." },
+        { "codigo": "033", "nome": "Santander Brasil S/A", "observacoes": "Débito para seguros e contas." },
+        { "codigo": "077", "nome": "Banco Inter S/A", "observacoes": "Digital; integra com Pix Automático." },
+        { "codigo": "104", "nome": "Caixa Econômica Federal", "observacoes": "Principal para tributos federais." },
+        { "codigo": "105", "nome": "Banco do Estado do Piauí S/A", "observacoes": "Regional." },
+        { "codigo": "136", "nome": "Banco Bandepe S/A", "observacoes": "PE." },
+        { "codigo": "237", "nome": "Bradesco S/A", "observacoes": "Débito para cartões e contas." },
+        { "codigo": "260", "nome": "Nubank (Nu Pagamentos S/A)", "observacoes": "Suporte via app para recorrentes." },
+        { "codigo": "341", "nome": "Itaú Unibanco S/A", "observacoes": "Integração com wallets." },
+        { "codigo": "389", "nome": "Banco Mercantil do Brasil S/A", "observacoes": "Convênios para energia/saneamento." },
+        { "codigo": "637", "nome": "Banco Sicoob S/A", "observacoes": "Cooperativas." },
+        { "codigo": "748", "nome": "Banco Cooperativo Sicredi S/A", "observacoes": "Cooperativas." }
+      ],
+      "fonte": "Listas de convênios da Receita Federal e prefeituras (ex.: Salvador, SP, Curitiba). Outros como BTG Pactual, C6 Bank e PagBank também suportam via apps digitais."
+    },
+    "section_wallets": {
+      "heading": "3. Carteiras Digitais (Wallets) que Permitem Débito Automático",
+      "text_body": [
+        "As wallets digitais no Brasil estão migrando para o Pix Automático, mas várias suportam débito automático tradicional ou híbrido (via cartão de débito vinculado). Elas facilitam pagamentos recorrentes com notificações e limites personalizados."
+      ],
+      "wallets": [
+        {
+          "nome": "PicPay",
+          "descricao": "Suporta débito automático para contas recorrentes, com rendimento automático (102% do CDI) e cashback. Integra com Pix Automático para assinaturas."
+        },
+        {
+          "nome": "Itaú Pagamentos Digitais",
+          "descricao": "Wallet com cartão virtual de débito; permite agendamento automático de débitos em contas Itaú."
+        },
+        {
+          "nome": "Mercado Pago",
+          "descricao": "Débito via saldo ou conta vinculada; suporta Pix Automático para recorrentes, com notificações."
+        },
+        {
+          "nome": "PagBank (PagSeguro)",
+          "descricao": "Carteira com débito automático para boletos e faturas; API para integrações."
+        },
+        {
+          "nome": "Nubank",
+          "descricao": "Via app, suporta débitos automáticos e Pix Automático; cartão de débito em wallets como Apple Pay."
+        },
+        {
+          "nome": "Banco Inter",
+          "descricao": "Integra com Apple Pay, Google Pay e Samsung Pay para débitos por aproximação; Pix Automático nativo."
+        },
+        {
+          "nome": "C6 Bank",
+          "descricao": "Conta digital com débito automático; suporta recorrentes via app."
+        },
+        {
+          "nome": "BTG Pactual Banking",
+          "descricao": "Carteira com cartão de débito para pagamentos automáticos."
+        },
+        {
+          "nome": "Unicred Visa",
+          "descricao": "Função débito em wallets digitais para transações recorrentes."
+        }
+      ],
+      "destaque": "O Pix Automático é o destaque nas wallets, permitindo débitos programados sem saldo prévio (usa limite do Pix). Ex.: No PicPay, o usuário define o valor máximo mensal para evitar surpresas."
+    },
+    "section_integracoes": {
+      "heading": "4. Como Funcionam as Integrações",
+      "text_body": [
+        "As integrações para débito automático são feitas via APIs de bancos ou provedores de pagamento, permitindo que empresas (ex.: e-commerces, SaaS) configurem cobranças recorrentes de forma automatizada."
+      ],
+      "fluxo": [
+        {
+          "etapa": "Autorização Inicial",
+          "descricao": "Usuário aprova via consentimento (OAuth ou token) no app da empresa, gerando um 'mandato' de débito."
+        },
+        {
+          "etapa": "Geração de Instrução",
+          "descricao": "A empresa envia requisição via API para o banco do pagador, com dados do débito (valor, data, conta)."
+        },
+        {
+          "etapa": "Processamento",
+          "descricao": "O banco processa via SPB ou Pix (para Automático), com confirmação em tempo real ou batch (D+1)."
+        },
+        {
+          "etapa": "Notificações",
+          "descricao": "Webhooks para atualizações (sucesso/falha)."
+        }
+      ],
+      "apis": [
+        {
+          "nome": "Banco do Brasil API Débito Automático",
+          "descricao": "Permite recebimento de faturas recorrentes por débito direto em CC/CP. Integração via portal Developers BB; suporta OAuth 2.0 e JSON."
+        },
+        {
+          "nome": "PagBrasil API Pix Automático",
+          "descricao": "Guia para devs; integra pagamentos recorrentes com chaves Pix. Fluxo: Criação de mandato → Agendamento → Execução automática."
+        },
+        {
+          "nome": "Stripe Direct Debit",
+          "descricao": "Suporta ACH-like para Brasil; integra com e-commerces para débitos automáticos, com retries."
+        },
+        {
+          "nome": "MakeValue API Pagamentos",
+          "descricao": "Conecta ERPs a bancos para TED/Pix/débitos; suporta convênios."
+        },
+        {
+          "nome": "Efí Bank API Pix Automático",
+          "descricao": "Manual completo para escalar cobranças; inclui SDKs para linguagens como Python/Node.js."
+        }
+      ],
+      "observacao": "Integrações exigem homologação com o BC para conformidade (ex.: LGPD para dados). Tempo médio: 2-4 semanas para setup."
+    },
+    "section_custos": {
+      "heading": "5. Custos Envolvidos",
+      "para_consumidor": "O débito automático é gratuito para o consumidor final, sem taxas extras por uso, desde que haja saldo suficiente (evita multas de atraso).",
+      "para_empresas": [
+        {
+          "tipo": "Taxas de Transação",
+          "valor": "0,5% a 2% por débito (ex.: Stripe cobra ~1,5% + R$ 0,39; PagBrasil ~1% para Pix Automático)."
+        },
+        {
+          "tipo": "Taxas de Setup/Integração",
+          "valor": "Gratuitas na maioria (ex.: BB API sem custo inicial), mas provedores como MakeValue cobram assinatura mensal (R$ 99+)."
+        },
+        {
+          "tipo": "Manutenção",
+          "valor": "Custos por falha/retry (~R$ 0,50 por tentativa) ou convênios (~R$ 0,20 por transação em bancos como Bradesco)."
+        },
+        {
+          "tipo": "Pix Automático",
+          "valor": "Zero custo para usuários e recebedores (via BC), mas wallets podem cobrar por features premium (ex.: PicPay 1% em cashback reverso)."
+        },
+        {
+          "tipo": "Exceções",
+          "valor": "Em casos de erro (falta de saldo), bancos podem cobrar taxa de rejeição (R$ 5-10), mas isso é raro com notificações."
+        }
+      ],
+      "resumo": "É uma solução de baixo custo para reduzir inadimplência em até 30-50%, especialmente com Pix Automático."
+    },
+    "conclusion": {
+      "heading": "Conclusão e Recomendações",
+      "text_body": [
+        "O débito automático no Brasil é maduro e em transição para o Pix Automático, impulsionado por regulamentações que priorizam segurança e transparência.",
+        "Bancos tradicionais dominam, mas wallets como PicPay e Nubank oferecem mais agilidade para usuários digitais.",
+        "Para integrações, comece com APIs de BB ou PagBrasil se for recorrente. Custos são mínimos, focando em eficiência."
+      ],
+      "fontes": "Sites do BC, Febraban e portais de desenvolvedores."
+    }
+  },
+  "insights": [
+    {
+      "id": "pix-automatico",
+      "title": "Pix Automático como Alternativa",
+      "description": "Lançado em 2024 e obrigatório a partir de outubro de 2025, o Pix Automático é gratuito e mais ágil que o débito tradicional.",
+      "application": "Meli+: Oferecer Pix Automático como opção preferencial de pagamento recorrente, destacando zero custo e agilidade.",
+      "highlightId": "highlight-pix-automatico"
+    },
+    {
+      "id": "notificacao-previa",
+      "title": "Notificação 5 Dias Antes",
+      "description": "Bancos devem notificar clientes com até 5 dias de antecedência antes de qualquer débito automático de terceiros.",
+      "application": "Meli+: Implementar notificações proativas antes da cobrança, aumentando transparência e reduzindo cancelamentos.",
+      "highlightId": "highlight-notificacao"
+    },
+    {
+      "id": "wallets-digitais",
+      "title": "Wallets como Canal Emergente",
+      "description": "PicPay, Mercado Pago, Nubank e Inter suportam débito automático e Pix Automático com notificações e limites personalizados.",
+      "application": "Meli+: Integrar fluxo de assinatura diretamente no Mercado Pago, aproveitando base instalada e trust.",
+      "highlightId": "highlight-wallets"
+    },
+    {
+      "id": "custo-zero-usuario",
+      "title": "Custo Zero para Usuário Final",
+      "description": "O débito automático é gratuito para o consumidor final, sem taxas extras por uso.",
+      "application": "Meli+: Comunicar claramente que não há taxas extras para pagamento recorrente.",
+      "highlightId": "highlight-custo"
+    },
+    {
+      "id": "reducao-inadimplencia",
+      "title": "Redução de Inadimplência",
+      "description": "Débito automático reduz inadimplência em 30-50%, especialmente com Pix Automático.",
+      "application": "Meli+: Incentivar adesão ao débito automático com benefícios extras (desconto, cashback adicional).",
+      "highlightId": "highlight-inadimplencia"
+    }
+  ]
+}

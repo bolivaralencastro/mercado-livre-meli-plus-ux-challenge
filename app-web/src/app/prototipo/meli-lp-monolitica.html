@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meli+ | Assine e aproveite benefícios exclusivos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           1. DESIGN TOKENS
+           ========================================= */
+        :root {
+            /* Brand Colors */
+            --meli-purple: #800080;
+            --deep-purple: #4A004A;
+            --meli-orange: #E84A2E;
+            --sunset-orange: #FF7F50;
+            --meli-green: #00a650;
+            --meli-blue: #3483fa;
+            
+            /* Neutrals */
+            --white-chalk: #F6F4F1;
+            --silver-haze: #E2E4E7;
+            --bg-dark: #0E0B18;
+            --bg-panel: #18142A;
+            
+            /* Glass Effects */
+            --glass-bg: rgba(34, 26, 48, 0.78);
+            --glass-border: rgba(255, 255, 255, 0.16);
+            --glass-highlight: rgba(255, 255, 255, 0.3);
+            
+            --font-primary: 'Inter', sans-serif;
+        }
+
+        /* =========================================
+           2. GLOBAL RESET & BASE
+           ========================================= */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--bg-dark);
+            color: var(--white-chalk);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Noise Texture Overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url("https://assets.iceable.com/img/noise-transparent.png");
+            opacity: 0.04;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* =========================================
+           3. LAYOUT UTILITIES
+           ========================================= */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 5;
+        }
+
+        section {
+            position: relative;
+            padding: 80px 0;
+        }
+
+        /* =========================================
+           4. TYPOGRAPHY SYSTEM
+           ========================================= */
+        h1, h2, h3, h4 {
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+
+        .text-gradient {
+            background: linear-gradient(90deg, var(--meli-purple), var(--meli-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* =========================================
+           5. BUTTON COMPONENT (3D CTA)
+           ========================================= */
+        .cta-btn-3d {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px 32px;
+            background: linear-gradient(180deg, var(--sunset-orange) 0%, var(--meli-orange) 100%);
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 4px 15px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease-out;
+            text-decoration: none;
+        }
+
+        .cta-btn-3d::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: skewX(-20deg);
+            transition: 0.5s;
+            pointer-events: none;
+        }
+
+        .cta-btn-3d:hover::after {
+            left: 150%;
+            transition: 0.7s ease-in-out;
+        }
+
+        .cta-btn-3d:hover {
+            filter: brightness(1.15);
+            transform: translateY(-3px);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 8px 30px rgba(232, 74, 46, 0.6);
+        }
+
+        .cta-btn-3d:active {
+            transform: translateY(1px);
+            box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        /* =========================================
+           6. BRAND LOCKUP PILL
+           ========================================= */
+        .brand-lockup {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 8px 16px;
+            gap: 8px;
+        }
+
+        .logo-part {
+            font-weight: 800;
+            font-size: 1.1rem;
+            background: linear-gradient(90deg, var(--meli-purple), var(--meli-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .plan-part {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--white-chalk);
+            padding-left: 8px;
+            border-left: 1px solid rgba(255,255,255,0.15);
+            padding-top: 2px;
+        }
+
+        /* =========================================
+           7. HEADER/NAVIGATION
+           ========================================= */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: transparent;
+            border-bottom: none;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--white-chalk);
+        }
+
+        .nav-logo img {
+            height: 94px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--silver-haze);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--white-chalk);
+        }
+
+        /* =========================================
+           8. HERO SECTION
+           ========================================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: left;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: -10%;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background-image: linear-gradient(120deg, rgba(5, 5, 5, 0.45), rgba(5, 5, 5, 0.25)), 
+                              linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.8) 100%), 
+                              url('background-3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 0;
+            will-change: transform, filter;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(128, 0, 128, 0.15), transparent 55%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            margin: 0;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--silver-haze);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        /* =========================================
+           9. FEATURES SECTION
+           ========================================= */
+        .features {
+            background-image: radial-gradient(circle at 10% 50%, rgba(74, 0, 74, 0.15) 0%, transparent 50%);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            color: var(--silver-haze);
+            font-size: 1.1rem;
+            margin-top: 15px;
+            opacity: 0.8;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--glass-highlight);
+            box-shadow: 0 10px 30px rgba(128, 0, 128, 0.3);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--meli-purple), var(--meli-orange));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(128, 0, 128, 0.4);
+        }
+
+        .feature-icon .material-icons-round {
+            font-size: 32px;
+            color: white;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: var(--silver-haze);
+            opacity: 0.8;
+        }
+
+        /* =========================================
+           10. PRICING SECTION (TOGGLE + CARDS)
+           ========================================= */
+        .pricing {
+            background-image: radial-gradient(circle at 90% 50%, rgba(128, 0, 128, 0.15) 0%, transparent 50%);
+        }
+
+        .pricing-wrapper {
+            background: var(--bg-dark);
+            padding: 60px 20px;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            background-image: radial-gradient(circle at 50% 50%, rgba(74, 0, 74, 0.2) 0%, transparent 60%);
+        }
+
+        /* Toggle Switcher */
+        .toggle-container {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 30px;
+            padding: 4px;
+            margin: 0 auto 60px;
+            border: 1px solid var(--glass-border);
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .toggle-bg {
+            position: absolute;
+            top: 4px;
+            bottom: 4px;
+            width: calc(33.33% - 4px);
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            transition: transform 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+            z-index: 1;
+        }
+
+        .toggle-container[data-state="monthly"] .toggle-bg { transform: translateX(2px); }
+        .toggle-container[data-state="quarterly"] .toggle-bg { transform: translateX(100%); left: 4px; }
+        .toggle-container[data-state="yearly"] .toggle-bg { transform: translateX(200%); left: 6px; }
+
+        .toggle-btn {
+            background: transparent;
+            border: none;
+            color: var(--silver-haze);
+            padding: 10px 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            z-index: 2;
+            transition: color 0.3s;
+        }
+
+        .toggle-btn.active {
+            color: white;
+            font-weight: 700;
+        }
+
+        /* Pricing Cards Grid */
+        .pricing-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        /* Card Structure */
+        .card {
+            position: relative;
+            width: 100%;
+            max-width: 320px;
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            background: rgba(20, 20, 20, 0.2);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            transition: transform 0.4s, border-color 0.4s;
+        }
+
+        /* Liquid Effect on Hover */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 50% 50%, var(--meli-purple), var(--deep-purple), transparent 60%);
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.5s, transform 0.5s;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .card:hover::before {
+            opacity: 0.4;
+            transform: scale(1) rotate(20deg);
+            animation: liquidMove 6s infinite alternate;
+        }
+
+        @keyframes liquidMove {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-10%, -10%) rotate(10deg); }
+        }
+
+        .card-content-wrapper {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Card Header & Price */
+        .card-header {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .price-container {
+            margin-bottom: 15px;
+            min-height: 90px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .old-price {
+            font-size: 0.85rem;
+            color: var(--silver-haze);
+            text-decoration: line-through;
+            margin-bottom: 4px;
+            opacity: 0.7;
+        }
+
+        .discount-tag {
+            color: var(--sunset-orange);
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-left: 6px;
+            display: inline-block;
+        }
+
+        .price-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 2px;
+            letter-spacing: -1px;
+        }
+
+        .price-suffix {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--silver-haze);
+        }
+
+        .special-offer {
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            background: var(--meli-orange);
+            color: white;
+            padding: 5px 10px;
+            border-bottom-left-radius: 10px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            z-index: 10;
+        }
+
+        /* Benefits List */
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .benefits-list li {
+            position: relative;
+            padding: 10px 0;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            color: var(--silver-haze);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .benefits-list li:last-child {
+            border-bottom: none;
+        }
+
+        .benefits-list li.included .icon {
+            color: #00a650;
+            font-size: 1rem;
+        }
+
+        .benefits-list li.excluded {
+            opacity: 0.4;
+            text-decoration: line-through;
+        }
+
+        .benefits-list li.excluded .icon {
+            color: #ff4444;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .card .cta-btn-3d {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        /* =========================================
+           11. TESTIMONIALS SECTION
+           ========================================= */
+        .testimonials {
+            background-image: radial-gradient(circle at 50% 80%, rgba(74, 0, 74, 0.1) 0%, transparent 50%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--glass-highlight);
+            transform: translateY(-5px);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--meli-purple), var(--meli-orange));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .testimonial-info .role {
+            font-size: 0.85rem;
+            color: var(--silver-haze);
+            opacity: 0.7;
+        }
+
+        .testimonial-text {
+            color: var(--silver-haze);
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .stars {
+            color: var(--sunset-orange);
+            margin-bottom: 15px;
+        }
+
+        /* =========================================
+           12. FOOTER
+           ========================================= */
+        footer {
+            background: var(--bg-panel);
+            border-top: 1px solid var(--glass-border);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section ul li a {
+            color: var(--silver-haze);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--white-chalk);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--glass-border);
+            color: var(--silver-haze);
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        /* =========================================
+           13. SCROLL ANIMATIONS
+           ========================================= */
+        .reveal-up, .reveal-scale {
+            opacity: 0;
+            transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-up {
+            transform: translateY(40px);
+        }
+
+        .reveal-scale {
+            transform: scale(0.8);
+        }
+
+        .in-view {
+            opacity: 1;
+            transform: translate(0) scale(1);
+        }
+
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+
+        /* =========================================
+           14. RESPONSIVE
+           ========================================= */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pricing-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .toggle-container {
+                max-width: 100%;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="nav-logo">
+                    <img src="https://smolljrfjqknp6nm.public.blob.vercel-storage.com/assets/logo-meli-mais-3d-normal.webp" alt="Meli+" />
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#beneficios">Benefícios</a></li>
+                    <li><a href="#planos">Planos</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#planos" class="cta-btn-3d" style="padding: 8px 20px; font-size: 0.9rem;">Assinar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content reveal-scale">
+                <h1>Muitos <span class="text-gradient">benefícios</span> <br>para você</h1>
+                <p>Frete grátis, cashback, streamings e muito mais. Assine Meli+ e aproveite vantagens exclusivas em todas as suas compras.</p>
+                <div class="hero-cta-group">
+                    <a href="#planos" class="cta-btn-3d">Ver Planos</a>
+                    <a href="#beneficios" class="cta-btn-3d" style="background: transparent; border: 2px solid var(--meli-purple); box-shadow: none;">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES/BENEFITS SECTION -->
+    <section class="features" id="beneficios">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h2>Benefícios que fazem a diferença</h2>
+                <p class="section-subtitle">Descubra tudo que você ganha ao assinar Meli+</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal-up delay-100">
+                    <div class="feature-icon">
+                        <span class="material-icons-round">local_shipping</span>
+                    </div>
+                    <h3>Frete Grátis</h3>
+                    <p>Entrega rápida e sem custos em milhões de produtos. Economize em todas as compras.</p>
+                </div>
+                <div class="feature-card reveal-up delay-200">
+                    <div class="feature-icon">
+                        <span class="material-icons-round">account_balance_wallet</span>
+                    </div>
+                    <h3>Cashback ML</h3>
+                    <p>Receba parte do valor de volta em créditos para usar em novas compras no Mercado Livre.</p>
+                </div>
+                <div class="feature-card reveal-up delay-300">
+                    <div class="feature-icon">
+                        <span class="material-icons-round">movie</span>
+                    </div>
+                    <h3>Streaming</h3>
+                    <p>Disney+, Deezer, HBO Max e outros inclusos nos planos. Entretenimento garantido.</p>
+                </div>
+                <div class="feature-card reveal-up delay-100">
+                    <div class="feature-icon">
+                        <span class="material-icons-round">verified_user</span>
+                    </div>
+                    <h3>Segurança</h3>
+                    <p>Compre com total segurança e proteção garantida em todas as transações.</p>
+                </div>
+                <div class="feature-card reveal-up delay-200">
+                    <div class="feature-icon">
+                        <span class="material-icons-round">star</span>
+                    </div>
+                    <h3>Ofertas Exclusivas</h3>
+                    <p>Acesso antecipado a ofertas especiais e descontos exclusivos para assinantes.</p>
+                </div>
+                <div class="feature-card reveal-up delay-300">
+                    <div class="feature-icon">
+                        <span class="material-icons-round">support_agent</span>
+                    </div>
+                    <h3>Suporte Premium</h3>
+                    <p>Atendimento prioritário e suporte especializado sempre que precisar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing" id="planos">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h2>Escolha o plano ideal para você</h2>
+                <p class="section-subtitle">Economia garantida em todos os períodos</p>
+            </div>
+
+            <div class="pricing-wrapper reveal-up delay-100">
+                <!-- Toggle Switcher -->
+                <div class="toggle-container" id="toggleContainer" data-state="monthly">
+                    <div class="toggle-bg"></div>
+                    <button class="toggle-btn active" onclick="switchPlan('monthly', this)">Mensal</button>
+                    <button class="toggle-btn" onclick="switchPlan('quarterly', this)">Trimestral</button>
+                    <button class="toggle-btn" onclick="switchPlan('yearly', this)">Anual</button>
+                </div>
+
+                <!-- Pricing Cards Grid -->
+                <div class="pricing-container">
+                    
+                    <!-- Card 1: Essencial -->
+                    <article class="card reveal-up delay-100">
+                        <div class="card-content-wrapper">
+                            <div class="card-header">
+                                <div class="brand-lockup">
+                                    <span class="logo-part">meli+</span>
+                                    <span class="plan-part">ESSENCIAL</span>
+                                </div>
+                            </div>
+                            <div class="price-container" id="price-essential">
+                                <div class="price-wrapper">
+                                    <span class="price-value">R$ 9,90</span>
+                                    <span class="price-suffix">/mês</span>
+                                </div>
+                            </div>
+                            <ul class="benefits-list">
+                                <li class="included">
+                                    <span class="material-icons-round icon">check</span>
+                                    Frete Grátis Rápido
+                                </li>
+                                <li class="included">
+                                    <span class="material-icons-round icon">check</span>
+                                    Cashback ML
+                                </li>
+                                <li class="excluded">
+                                    <span class="material-icons-round icon">close</span>
+                                    Disney+ e Deezer
+                                </li>
+                                <li class="excluded">
+                                    <span class="material-icons-round icon">close</span>
+                                    HBO Max
+                                </li>
+                            </ul>
+                            <button class="cta-btn-3d">Assinar</button>
+                        </div>
+                    </article>
+
+                    <!-- Card 2: Total -->
+                    <article class="card reveal-up delay-200">
+                        <div class="card-content-wrapper">
+                            <div class="card-header">
+                                <div class="brand-lockup">
+                                    <span class="logo-part">meli+</span>
+                                    <span class="plan-part">TOTAL</span>
+                                </div>
+                            </div>
+                            <div class="price-container" id="price-total">
+                                <div class="price-wrapper">
+                                    <span class="price-value">R$ 24,90</span>
+                                    <span class="price-suffix">/mês</span>
+                                </div>
+                            </div>
+                            <ul class="benefits-list">
+                                <li class="included">
+                                    <span class="material-icons-round icon">check</span>
+                                    Frete Grátis Rápido
+                                </li>
+                                <li class="included">
+                                    <span class="material-icons-round icon">check</span>
+                                    Cashback ML
+                                </li>
+                                <li class="included">
+                                    <span class="material-icons-round icon">check</span>
+                                    Disney+ e Deezer
+                                </li>
+                                <li class="excluded">
+                                    <span class="material-icons-round icon">close</span>
+                                    HBO Max
+                                </li>
+                            </ul>
+                            <button class="cta-btn-3d">Assinar</button>
+                        </div>
+                    </article>
+
+                    <!-- Card 3: Mega -->
+                    <article class="card reveal-up delay-300" style="border-color: rgba(255, 255, 255, 0.3);">
+                        <div class="special-offer">OFERTA</div>
+                        <div class="card-content-wrapper">
+                            <div class="card-header">
+                                <div class="brand-lockup">
+                                    <span class="logo-part">meli+</span>
+                                    <span class="plan-part">MEGA</span>
+                                </div>
+                            </div>
+                            <div class="price-container" id="price-mega">
+                                <div class="old-price">R$ 74,90 <span class="discount-tag">46% OFF</span></div>
+                                <div class="price-wrapper">
+                                    <span class="price-value">R$ 39,90</span>
+                                    <span class="price-suffix">/mês</span>
+                                </div>
+                            </div>
+                            <ul class="benefits-list">
+                                <li class="included">
+                                    <span class="material-icons-round icon">check</span>
+                                    Frete Grátis Rápido
+                                </li>
+                                <li class="included">
+                                    <span class="material-icons-round icon">check</span>
+                                    Cashback ML
+                                </li>
+                                <li class="included">
+                                    <span class="material-icons-round icon">check</span>
+                                    Disney+ e Deezer
+                                </li>
+                                <li class="included">
+                                    <span class="material-icons-round icon">check</span>
+                                    HBO Max
+                                </li>
+                            </ul>
+                            <button class="cta-btn-3d">Assinar</button>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials" id="depoimentos">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h2>O que dizem nossos assinantes</h2>
+                <p class="section-subtitle">Milhares de pessoas já aproveitam os benefícios</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal-up delay-100">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">MC</div>
+                        <div class="testimonial-info">
+                            <h4>Maria Clara</h4>
+                            <span class="role">Cliente desde 2023</span>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"O frete grátis já vale muito a pena. Além disso, ainda ganho cashback e tenho acesso ao Disney+. Simplesmente perfeito!"</p>
+                </div>
+                <div class="testimonial-card reveal-up delay-200">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">JS</div>
+                        <div class="testimonial-info">
+                            <h4>João Silva</h4>
+                            <span class="role">Cliente desde 2022</span>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Economia real em todas as compras. O plano Mega com HBO Max foi a melhor decisão que tomei este ano."</p>
+                </div>
+                <div class="testimonial-card reveal-up delay-300">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">AP</div>
+                        <div class="testimonial-info">
+                            <h4>Ana Paula</h4>
+                            <span class="role">Cliente desde 2024</span>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Adoro a rapidez da entrega e os benefícios exclusivos. O suporte é excelente e sempre me ajuda quando preciso."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Meli+</h4>
+                    <ul>
+                        <li><a href="#planos">Planos e Preços</a></li>
+                        <li><a href="#beneficios">Benefícios</a></li>
+                        <li><a href="#">Como Funciona</a></li>
+                        <li><a href="#">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Ajuda</h4>
+                    <ul>
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Carreiras</a></li>
+                        <li><a href="#">Imprensa</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Meli+. Todos os direitos reservados. | Mercado Livre</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // 0. Parallax Hero Background Effect
+        function initParallaxHero() {
+            const heroBackground = document.querySelector('.hero-background');
+            if (!heroBackground) return;
+
+            function updateHeroTransform() {
+                const scrollY = window.pageYOffset;
+                const heroHeight = document.querySelector('.hero').offsetHeight;
+                const scrollProgress = Math.min(scrollY / heroHeight, 1);
+                
+                // Calculate transforms based on scroll progress
+                const scale = 1 + (scrollProgress * 0.15); // Zoom in effect (15% max)
+                const translateY = -(scrollProgress * 50); // Move up 50px max
+                const blur = scrollProgress * 8; // Blur up to 8px
+                
+                // Apply transforms only to background
+                heroBackground.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+                heroBackground.style.filter = `blur(${blur}px)`;
+                heroBackground.style.transformOrigin = 'center center';
+            }
+
+            // Throttle scroll events for performance
+            let ticking = false;
+            function handleScroll() {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        updateHeroTransform();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            
+            // Initial call
+            updateHeroTransform();
+        }
+
+        // Initialize parallax on load
+        document.addEventListener('DOMContentLoaded', initParallaxHero);
+
+        // 1. Toggle Logic with Pricing Data
+        const prices = {
+            monthly: {
+                essential: { val: "R$ 9,90", old: null, tag: null, suffix: "/mês" },
+                total: { val: "R$ 24,90", old: null, tag: null, suffix: "/mês" },
+                mega: { val: "R$ 39,90", old: "R$ 74,90", tag: "46% OFF", suffix: "/mês" }
+            },
+            quarterly: {
+                essential: { val: "R$ 27,90", old: "R$ 29,70", tag: "6% OFF", suffix: "/tri" },
+                total: { val: "R$ 69,90", old: "R$ 74,70", tag: "7% OFF", suffix: "/tri" },
+                mega: { val: "R$ 109,90", old: "R$ 224,70", tag: "51% OFF", suffix: "/tri" }
+            },
+            yearly: {
+                essential: { val: "R$ 99,90", old: "R$ 118,80", tag: "16% OFF", suffix: "/ano" },
+                total: { val: "R$ 249,00", old: "R$ 298,80", tag: "17% OFF", suffix: "/ano" },
+                mega: { val: "R$ 399,00", old: "R$ 898,80", tag: "55% OFF", suffix: "/ano" }
+            }
+        };
+
+        function updateCard(id, data) {
+            const container = document.getElementById(id);
+            let html = '';
+            if (data.old) {
+                html += `<div class="old-price">${data.old} <span class="discount-tag">${data.tag}</span></div>`;
+            }
+            html += `<div class="price-wrapper"><span class="price-value">${data.val}</span><span class="price-suffix">${data.suffix}</span></div>`;
+            container.innerHTML = html;
+        }
+
+        function switchPlan(period, btnElement) {
+            const container = document.getElementById('toggleContainer');
+            container.setAttribute('data-state', period);
+            document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+            const p = prices[period];
+            updateCard('price-essential', p.essential);
+            updateCard('price-total', p.total);
+            updateCard('price-mega', p.mega);
+        }
+
+        // 2. Scroll Animations Observer
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up, .reveal-scale').forEach((el) => observer.observe(el));
+
+        // 3. Smooth Scroll for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

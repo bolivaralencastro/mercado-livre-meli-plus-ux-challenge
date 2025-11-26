@@ -13,6 +13,10 @@ import {
   Zap,
   Link as LinkIcon,
   Info,
+  BarChart2,
+  Target,
+  Trophy,
+  Sparkles,
 } from "lucide-react";
 import type { BenchmarkEntry } from "@/lib/benchmarking";
 
@@ -168,102 +172,60 @@ const BenchmarkingViewer = ({ entries, currentSlug }: BenchmarkingViewerProps) =
           {currentEntry ? (
             <div className="flex h-full flex-col">
               {/* Header da Coluna */}
-              <div className="border-b border-gray-100 px-8 py-8">
-                <div className="mb-4 flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-xl font-bold text-blue-600 shadow-sm">
-                    {currentEntry.company.charAt(0)}
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-bold leading-tight text-gray-900">
-                      {currentEntry.program}
-                    </h2>
-                    <p className="text-sm font-medium text-gray-500">{currentEntry.company}</p>
-                  </div>
-                </div>
-                <p className="text-sm leading-relaxed text-gray-600">
-                  Análise detalhada da estrutura de fidelização e mecânicas de engajamento.
-                </p>
-              </div>
-
               {/* Conteúdo Scrollável */}
-              <div className="flex-1 space-y-8 overflow-y-auto px-8 py-8">
+              <div className="flex-1 space-y-6 overflow-y-auto px-8 py-8">
                 {/* Bundling */}
                 <section>
-                  <div className="mb-3 flex items-center gap-2 text-blue-700">
-                    <Layers size={20} />
-                    <h3 className="text-sm font-bold uppercase tracking-wider">
+                  <div className="mb-4 flex items-center gap-2.5 text-blue-700">
+                    <div className="rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 p-2 text-white shadow-sm">
+                      <Layers size={18} />
+                    </div>
+                    <h3 className="text-base font-bold uppercase tracking-wide">
                       Estrutura de Bundling
                     </h3>
                   </div>
-                  <div className="whitespace-pre-line rounded-xl border border-gray-100 bg-gray-50 p-5 text-sm leading-relaxed text-gray-700 shadow-sm">
+                  <div className="whitespace-pre-line rounded-2xl border border-blue-200 bg-gradient-to-br from-blue-50 to-blue-100/50 p-6 text-sm leading-relaxed text-gray-800 shadow-md">
                     {currentEntry.bundlingDescription}
                   </div>
                 </section>
 
                 {/* Mecânicas */}
                 <section>
-                  <div className="mb-3 flex items-center gap-2 text-amber-600">
-                    <Zap size={20} />
-                    <h3 className="text-sm font-bold uppercase tracking-wider">
+                  <div className="mb-4 flex items-center gap-2.5 text-amber-700">
+                    <div className="rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 p-2 text-white shadow-sm">
+                      <Zap size={18} />
+                    </div>
+                    <h3 className="text-base font-bold uppercase tracking-wide">
                       Mecânicas & Gamificação
                     </h3>
                   </div>
-                  <div className="whitespace-pre-line rounded-xl border border-amber-100 bg-amber-50 p-5 text-sm leading-relaxed text-gray-800 shadow-sm">
+                  <div className="whitespace-pre-line rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-amber-100/50 p-6 text-sm leading-relaxed text-gray-800 shadow-md">
                     {currentEntry.mechanics}
                   </div>
                 </section>
 
-                {/* Links e Recursos */}
-                <section className="border-t border-gray-100 pt-6">
-                  <h3 className="mb-4 text-xs font-semibold uppercase tracking-wide text-gray-400">
-                    Recursos Adicionais
-                  </h3>
-
-                  <div className="space-y-3">
-                    {landingPageUrl ? (
-                      <a
-                        href={landingPageUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group flex w-full items-center justify-between rounded-lg border border-gray-200 p-3 transition-all hover:border-blue-300 hover:bg-blue-50"
-                      >
-                        <div className="flex items-center gap-3">
-                          <div className="rounded-md bg-gray-100 p-2 text-gray-600 transition-colors group-hover:bg-white group-hover:text-blue-600">
-                            <LinkIcon size={18} />
-                          </div>
-                          <div className="text-left">
-                            <p className="text-sm font-semibold text-gray-900 group-hover:text-blue-700">
-                              Landing Page Oficial
-                            </p>
-                            <p className="max-w-[200px] truncate text-xs text-gray-500">
-                              {landingPageUrl}
-                            </p>
-                          </div>
-                        </div>
-                        <ExternalLink
-                          size={16}
-                          className="text-gray-400 group-hover:text-blue-500"
-                        />
-                      </a>
-                    ) : (
-                      <div className="flex items-center gap-3 rounded-lg border border-dashed border-gray-300 bg-gray-50 p-3">
-                        <Info size={18} className="text-gray-400" />
-                        <p className="text-xs text-gray-500">Link oficial não disponível</p>
-                      </div>
-                    )}
-
-                    <div className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-3">
-                      <div className="rounded-md bg-gray-100 p-2 text-gray-600">
-                        <Globe size={18} />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-gray-900">Capturas de Tela</p>
-                        <p className="text-xs text-gray-500">
-                          {hasScreenshots
-                            ? `${currentEntry.screenshots.length} imagens capturadas`
-                            : "Nenhuma captura automática"}
-                        </p>
-                      </div>
+                {/* Indicadores chave */}
+                <section>
+                  <div className="mb-4 flex items-center gap-2.5 text-purple-700">
+                    <div className="rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 p-2 text-white shadow-sm">
+                      <Trophy size={18} />
+                    </div>
+                    <h3 className="text-base font-bold uppercase tracking-wide">
+                      Indicadores chave
+                    </h3>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="rounded-2xl border border-purple-200 bg-gradient-to-br from-purple-50 to-purple-100/50 p-5 shadow-md">
+                      <p className="mb-2 text-xs font-bold uppercase tracking-wider text-purple-700">Motivadores de adesão</p>
+                      <p className="text-sm leading-relaxed text-gray-800">
+                        {currentEntry.motivators ?? "Principais gatilhos que levam novos usuários à assinatura."}
+                      </p>
+                    </div>
+                    <div className="rounded-2xl border border-purple-200 bg-gradient-to-br from-purple-50 to-purple-100/50 p-5 shadow-md">
+                      <p className="mb-2 text-xs font-bold uppercase tracking-wider text-purple-700">Riscos de churn</p>
+                      <p className="text-sm leading-relaxed text-gray-800">
+                        {currentEntry.churnRisks ?? "Pontos de atenção observados nos canais de suporte e reviews."}
+                      </p>
                     </div>
                   </div>
                 </section>
@@ -287,13 +249,25 @@ const BenchmarkingViewer = ({ entries, currentSlug }: BenchmarkingViewerProps) =
                   className={
                     index === 0
                       ? index === currentEntry.screenshots.length - 1
-                        ? "overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
-                        : "overflow-hidden rounded-t-2xl border border-gray-200 bg-white shadow-sm border-b-0"
+                        ? "relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
+                        : "relative overflow-hidden rounded-t-2xl border border-gray-200 bg-white shadow-sm border-b-0"
                       : index === currentEntry.screenshots.length - 1
                         ? "overflow-hidden rounded-b-2xl border border-gray-200 bg-white shadow-sm"
                         : "overflow-hidden border border-gray-200 bg-white shadow-sm border-t-0"
                   }
                 >
+                  {index === 0 && landingPageUrl && (
+                    <a
+                      href={landingPageUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-4 right-4 z-10 flex items-center gap-2 rounded-lg border border-gray-300 bg-white/95 px-4 py-2 text-sm font-semibold text-gray-700 shadow-lg backdrop-blur-sm transition-all hover:border-blue-400 hover:bg-blue-50 hover:text-blue-700"
+                    >
+                      <LinkIcon size={16} />
+                      Ver Landing Page
+                      <ExternalLink size={14} />
+                    </a>
+                  )}
                   <Image
                     src={src}
                     alt={`${currentEntry.company} - captura ${index + 1}`}

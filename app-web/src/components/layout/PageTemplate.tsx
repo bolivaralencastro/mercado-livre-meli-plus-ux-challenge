@@ -26,10 +26,11 @@ const PageTemplate = ({ title, subtitle, children }: PageTemplateProps) => {
       label: "Discovery",
       items: [
         { id: "pesquisa-overview", label: "Visão Geral", href: "/pesquisa" },
-        { id: "pesquisa-artigo", label: "Artigo de Referência", href: "/pesquisa/artigo" },
+        { id: "pesquisa-artigos", label: "Artigos", href: "/pesquisa/artigos" },
         { id: "pesquisa-personas", label: "Personas", href: "/pesquisa/personas" },
         { id: "pesquisa-cases", label: "Cases", href: "/pesquisa/cases" },
         { id: "pesquisa-reviews", label: "Análise de Reviews", href: "/pesquisa/review" },
+        { id: "pesquisa-analise", label: "Análise Aprofundada", href: "/pesquisa/analise-aprofundada" },
         { id: "pesquisa-benchmarking", label: "Benchmarking", href: "/pesquisa/benchmarking" },
         { id: "pesquisa-mapeamento", label: "Mapeamento As-Is", href: "/pesquisa/mapeamento" },
         { id: "pesquisa-termos", label: "Termos e Regulamentos", href: "/pesquisa/termos" },
@@ -47,6 +48,7 @@ const PageTemplate = ({ title, subtitle, children }: PageTemplateProps) => {
       items: [
         { id: "ui-design", label: "UI Design", href: "/ui-design" },
         { id: "prototipo", label: "Protótipo", href: "/prototipo" },
+        { id: "prototipo-landing", label: "Landing Pages", href: "/prototipo/landing-pages" },
         { id: "apresentacao", label: "Apresentação", href: "/apresentacao" },
         { id: "entrega", label: "Entrega", href: "/entrega" },
       ],

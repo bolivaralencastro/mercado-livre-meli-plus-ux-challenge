@@ -1,0 +1,301 @@
+{
+  "landing-page": {
+    "titulo": "Análise Hard Critique: LP Desktop",
+    "subtitulo": "Análise crítica da Landing Page desktop do Meli+",
+    "secoes": [
+      {
+        "titulo": "Crítica de UX",
+        "icone": "Eye",
+        "corIcone": "text-red-500",
+        "problemasPrincipais": "Carga Cognitiva e Ambiguidade da Oferta",
+        "pontos": [
+          {
+            "titulo": "Zona Cinzenta do Grátis vs. Desconto",
+            "critica": "A distinção visual insuficiente entre benefício incluso (ex: Disney+ Padrão) e benefício de desconto (ex: Max 30% OFF). O usuário assume que tudo faz parte do pacote, gerando frustração e churn.",
+            "melhoria": "Criar seções visualmente isoladas: Background Roxo para 'Inclusos' e Background Cinza para 'Descontos'. Usar badges agressivas: 'INCLUSO' vs '-30% OFF'."
+          },
+          {
+            "titulo": "Fricção na Compreensão do Plano Disney+",
+            "critica": "O plano 'Padrão com Anúncios' está escondido em textos de apoio ou tooltips. Para quem odeia anúncios, descobrir depois de assinar é uma experiência terrível.",
+            "melhoria": "Comparativo simples mostrando: 'Disney+ Avulso (R$ X) vs. Disney+ no Meli+ (Grátis*)' com explicação clara do asterisco."
+          },
+          {
+            "titulo": "Hierarquia Confusa no Mobile",
+            "critica": "A página vira um 'scroll infinito'. Os benefícios financeiros (Cashback, CDB) ficam enterrados no final - usuários que buscam vantagens do banco podem desistir antes.",
+            "melhoria": "Implementar navegação por abas ou âncoras no topo (Sticky Menu): 'Entretenimento', 'Frete', 'Finanças'."
+          }
+        ]
+      },
+      {
+        "titulo": "Crítica de UI",
+        "icone": "Layout",
+        "corIcone": "text-orange-500",
+        "problemasPrincipais": "Inconsistência e Poluição Visual",
+        "pontos": [
+          {
+            "titulo": "Desconexão com a Marca Mãe",
+            "critica": "A estética 'Dark Premium' rompe com o ecossistema Mercado Livre (Amarelo/Branco). Ao clicar em 'Assinar', a quebra visual abrupta pode gerar desconfiança.",
+            "melhoria": "Suavizar a transição. Manter header ou elementos do ML visíveis, ou usar acentos amarelos mais fortes na LP escura."
+          },
+          {
+            "titulo": "Legibilidade e Acessibilidade",
+            "critica": "Textos brancos finos sobre degradês ou imagens de filmes são um pesadelo de acessibilidade. Em telas com brilho baixo, o contraste é insuficiente.",
+            "melhoria": "Aumentar peso das fontes e usar cards com fundos sólidos para garantir contraste WCAG AA."
+          },
+          {
+            "titulo": "Banner Blindness",
+            "critica": "A seção de produtos com frete grátis parece publicidade genérica - design idêntico ao de anúncios de remarketing. O usuário tende a ignorar.",
+            "melhoria": "Curadoria visual: mostrar categorias estilizadas ('Setup Gamer com Frete Grátis') em vez de produtos aleatórios."
+          }
+        ]
+      },
+      {
+        "titulo": "Crítica de Product Design",
+        "icone": "CreditCard",
+        "corIcone": "text-purple-500",
+        "problemasPrincipais": "Falta de Tangibilidade do Valor",
+        "pontos": [
+          {
+            "titulo": "Ausência de Quantificação de Economia",
+            "critica": "O produto vende 'economia', mas obriga o usuário a fazer a matemática. Dizer 'Frete Grátis' é vago.",
+            "melhoria": "Personalização: 'Olá, [Nome]. Ano passado você gastou R$ 450 em fretes. Com Meli+, seria R$ 0.' Ou calculadora interativa para não logados."
+          },
+          {
+            "titulo": "Proposta de Valor Financeira Fraca",
+            "critica": "O benefício de 'CDB 110%' ou 'Meli Dólar' é abstrato para a massa. A LP trata como notas de rodapé.",
+            "melhoria": "Tangibilizar: 'Deixe R$ 1.000 na conta e sua assinatura se paga sozinha com o rendimento'."
+          }
+        ]
+      }
+    ],
+    "acoesPrioritarias": [
+      {
+        "prioridade": "Alta",
+        "area": "UX/UI",
+        "acao": "Segregação Visual: Criar seções distintas para 'Inclusos' vs 'Descontos'"
+      },
+      {
+        "prioridade": "Alta",
+        "area": "Produto",
+        "acao": "Calculadora de ROI: Widget interativo 'Veja quanto você economiza'"
+      },
+      {
+        "prioridade": "Média",
+        "area": "UI",
+        "acao": "Acessibilidade: Revisar contraste e aumentar peso das fontes mobile"
+      },
+      {
+        "prioridade": "Média",
+        "area": "UX",
+        "acao": "Navegação Ancorada: Menu sticky para navegar entre pilares"
+      }
+    ],
+    "veredito": "A LP é visualmente impactante ('eye candy'), mas peca na clareza funcional. Vende o sonho do entretenimento muito bem, mas é opaca nas regras de negócio e preguiçosa na demonstração matemática da economia."
+  },
+  "redesign-meli-plus": {
+    "titulo": "Análise Hard Critique: LP Mobile",
+    "subtitulo": "Análise crítica da experiência Mobile com estrutura Essencial vs Total",
+    "secoes": [
+      {
+        "titulo": "Crítica de UX Mobile",
+        "icone": "Eye",
+        "corIcone": "text-red-500",
+        "problemasPrincipais": "Comparabilidade Linear e Memória de Curto Prazo",
+        "pontos": [
+          {
+            "titulo": "Falha do 'Scroll Infinito'",
+            "critica": "A LP apresenta planos sequencialmente (primeiro Essencial, depois Total). O usuário esquece os detalhes do primeiro plano quando chega no segundo. Movimento de 'yoyo' (subir e descer) gera fricção e cansaço.",
+            "melhoria": "Implementar Toggle Switch fixo no topo: [ Ver Essencial | Ver Total ]. Permite comparação imediata sem scroll longo."
+          },
+          {
+            "titulo": "Ambiguidade no Deezer",
+            "critica": "O card diz 'Música sem anúncios por 12 meses'. O que acontece no 13º mês? Essa incerteza é um bloqueio de conversão ('Fear of Commitment').",
+            "melhoria": "Transparência radical: 'Após 12 meses, R$ X/mês' ou 'Renovação automática inclusa enquanto for Meli+'."
+          },
+          {
+            "titulo": "CTA Genérico",
+            "critica": "O botão 'Escolher plano' é genérico. Após scroll longo, o usuário não sabe qual plano está 'selecionado'.",
+            "melhoria": "CTA contextual: Se na seção roxa, botão deve dizer 'Quero o Meli+ Total por R$ 17,99'."
+          }
+        ]
+      },
+      {
+        "titulo": "Crítica de UI",
+        "icone": "Layout",
+        "corIcone": "text-orange-500",
+        "problemasPrincipais": "Hierarquia Visual e Distinção de Valor",
+        "pontos": [
+          {
+            "titulo": "Codificação Cromática",
+            "critica": "Amarelo (Basic) vs Roxo (Premium) é inteligente. Porém, a transição (onda degradê) ocupa muito espaço vertical sem informação relevante. No mobile, espaço em branco sem função é desperdício.",
+            "melhoria": "Reduzir espaço da transição e usar o espaço para informação útil."
+          },
+          {
+            "titulo": "A Armadilha Visual dos Parceiros",
+            "critica": "Cards de HBO Max/Paramount vs Disney+ têm mesmo peso visual. Usuário escaneia e assume que Max está incluso. Só lendo '30% OFF' pequeno percebe a diferença. Dark Pattern não intencional.",
+            "melhoria": "Cards de desconto devem ser visualmente 'inferiores': fundo cinza, tamanho menor, ou etiqueta 'Benefício Extra'."
+          },
+          {
+            "titulo": "Iconografia Genérica",
+            "critica": "Ícones 3D flutuantes (bola, controle, fone) parecem assets de banco de imagem gratuitos. Não comunicam exclusividade.",
+            "melhoria": "Usar imagens reais ou composições que misturem produtos físicos com digitais de forma mais integrada."
+          }
+        ]
+      },
+      {
+        "titulo": "Crítica de Product Design",
+        "icone": "CreditCard",
+        "corIcone": "text-purple-500",
+        "problemasPrincipais": "Canibalização e Proposta de Valor",
+        "pontos": [
+          {
+            "titulo": "Empilhamento de Valor Preguiçoso",
+            "critica": "No plano Total, existe texto: 'Todos os benefícios do Meli+ Essencial'. Texto não vende. Ao esconder Frete e Cashback em uma frase, o produto parece 'menor'.",
+            "melhoria": "Repetir ícones principais (Caminhão, % Cashback) no plano Total em versão mini para reforçar que Total é tudo E MAIS entretenimento."
+          },
+          {
+            "titulo": "Precificação Psicológica",
+            "critica": "Gap de R$ 8,00 entre planos. Estratégia clara é fazer 'Essencial' parecer insuficiente. Risco: se Disney+ com anúncios for visto como 'ruim', usuário pode descer para Essencial.",
+            "melhoria": "LP deve garantir que Disney+ (mesmo com anúncios) pareça benefício premium. O uso de Thor/Lightyear ajuda, mas texto 'com anúncios' deve ser tratado com cuidado."
+          }
+        ]
+      }
+    ],
+    "acoesPrioritarias": [
+      {
+        "prioridade": "Crítica",
+        "area": "UX",
+        "acao": "Sticky CTA ou Toggle: Evitar 'scroll yoyo'. Seletor de planos no topo ou sticky footer indicando qual plano está comprando."
+      },
+      {
+        "prioridade": "Alta",
+        "area": "UI",
+        "acao": "Hierarquia de Cards: Diferenciar drasticamente 'INCLUSO' (Disney+) dos 'DESCONTO' (Max/Paramount)."
+      },
+      {
+        "prioridade": "Alta",
+        "area": "Produto",
+        "acao": "Clareza no Deezer: Explicar explicitamente o que acontece após 12 meses."
+      },
+      {
+        "prioridade": "Média",
+        "area": "UI",
+        "acao": "Visualizar o Acúmulo: Substituir frase por linha visual de ícones no plano Total."
+      }
+    ],
+    "veredito": "A versão mobile sofre de linearidade excessiva. Falha em permitir comparação rápida. O design é limpo, mas a arquitetura da informação favorece o erro de interpretação. A UI precisa trabalhar mais duro para guiar a decisão, não apenas apresentar opções."
+  },
+  "configuracao-pagamento": {
+    "titulo": "Análise Hard Critique: Fluxo de Retenção Preventiva",
+    "subtitulo": "Análise crítica do fluxo de anti-churn involuntário com meio de pagamento alternativo",
+    "secoes": [
+      {
+        "titulo": "Crítica de UX",
+        "icone": "Eye",
+        "corIcone": "text-red-500",
+        "problemasPrincipais": "Carga Cognitiva e Hierarquia de Ações",
+        "pontos": [
+          {
+            "titulo": "Notificações com Linguagem Alarmista",
+            "critica": "O e-mail usa 'Evite problemas com sua assinatura' gerando ansiedade desnecessária. O remetente é 'Mercado Libre' (mistura de idioma) enquanto o corpo está em português. A inconsistência afeta confiança (Trust) e sugere um e-mail automático mal traduzido.",
+            "melhoria": "Trocar tom para 'Mantenha sua assinatura ativa' focado em benefício. Padronizar idioma e remetente para 'Mercado Livre Brasil'. Aumentar a profissionalidade visual."
+          },
+          {
+            "titulo": "Parede de Texto na Tela Intermediária",
+            "critica": "A imagem 2 apresenta 3 parágrafos explicando que o Meli+ não cobrará duas vezes. Exige carga cognitiva alta para informação simples. O usuário em pânico não vai ler tudo isso.",
+            "melhoria": "Substituir por visual gráfico: [Cartão Principal (Falhou)] ➡️ [Cartão Reserva (Ativado)] = ✅ Assinatura Mantida. Pessoas escaneiam, não leem."
+          },
+          {
+            "titulo": "Ambiguidade do Cartão Reserva como Componente",
+            "critica": "A forma como o cartão reserva é exibido ('Usar meu {cartão...} como meio de pagamento alternativo') é textual demais. Parece uma frase solta no layout, não um componente robusto de UI.",
+            "melhoria": "Criar card visual dedicado para o meio de pagamento alternativo com ícone da bandeira (Mastercard/Visa) igual ao card do método principal."
+          }
+        ]
+      },
+      {
+        "titulo": "Crítica de UI",
+        "icone": "Layout",
+        "corIcone": "text-orange-500",
+        "problemasPrincipais": "Hierarquia Visual e Affordances Confusas",
+        "pontos": [
+          {
+            "titulo": "Botão de Adição Invisível (Erro Crítico)",
+            "critica": "O botão '+ Adicionar meio de pagamento' é apenas um link azul Ghost. Compete visualmente com o card gigante do Disney+ e botão 'Ir a Star+'. Se o objetivo é garantir pagamento, esse botão deve ter peso primário. Entretenimento está ganhando da gestão financeira.",
+            "melhoria": "Transformar em botão Secondary com borda ou fundo leve. Considerar 'Adicionar cartão de backup' como CTA primário quando meio de pagamento principal falhou."
+          },
+          {
+            "titulo": "Proximity Problems: Ícone de Ajuda e Kebab Menu",
+            "critica": "Na imagem 5, o ícone de ajuda (?) e o menu de três pontos estão muito próximos. Em mobile, gera 'Fat Finger Error' (cliques acidentais em ação errada).",
+            "melhoria": "Aumentar espaçamento entre elementos interativos (Fitt's Law). Considerar mover menu para swipe ou ação long-press."
+          },
+          {
+            "titulo": "Inconsistência de Dados nos Mockups",
+            "critica": "Preço salta de R$ 19,90 para R$ 99,90 entre telas. Falta de atenção aos detalhes gera pânico no usuário. Ver preço errado é bloqueio de conversão imediato.",
+            "melhoria": "QA Visual rigoroso. Padronizar preço e valores em todos os mockups de teste."
+          }
+        ]
+      },
+      {
+        "titulo": "Crítica de Product Design",
+        "icone": "CreditCard",
+        "corIcone": "text-purple-500",
+        "problemasPrincipais": "Fluxo Fragmentado e Falta de Feedback",
+        "pontos": [
+          {
+            "titulo": "Seleção sem Indicador de Estado",
+            "critica": "Na imagem 4 (seleção de cartão), não há indicação de qual é o principal. O usuário pode selecionar o mesmo cartão sem querer? O sistema previne? A UI não deixa claro o estado atual.",
+            "melhoria": "Marcar cartão principal com badge 'Principal' ou ícone de estrela. Desabilitar seleção do mesmo método como reserva."
+          },
+          {
+            "titulo": "Toast de Feedback com Copy Errado",
+            "critica": "A imagem final mostra Toast verde 'Você EXCLUIU seu meio de pagamento' quando o fluxo era de ADIÇÃO. Se for final do fluxo de adição, a mensagem está errada (Bug de Copy). Se for apenas ilustração do componente, a cor verde para 'exclusão' é discutível.",
+            "melhoria": "Toast de sucesso deve dizer 'Seu meio de pagamento foi adicionado como backup' com ícone de checkmark. Exclusão usa tom neutral ou aviso."
+          },
+          {
+            "titulo": "One-Click Add Não Explorável",
+            "critica": "Se o usuário tem outros cartões salvos na carteira do Mercado Pago, a tela de seleção deveria sugerir o mais recente automaticamente ('Usar Mastercard final 0908 como reserva?') com um único botão 'Sim'.",
+            "melhoria": "Implementar sugestão automática baseada em recência ou histórico. Reduzir fricção para usuários repeat."
+          }
+        ]
+      }
+    ],
+    "acoesPrioritarias": [
+      {
+        "prioridade": "Crítica",
+        "area": "UX/UI",
+        "acao": "Hierarquia do Botão: Transformar link '+ Adicionar meio de pagamento' em botão com borda ou fundo para visibilidade primária"
+      },
+      {
+        "prioridade": "Alta",
+        "area": "Copy",
+        "acao": "Redução de Ruído: Simplificar tela intermediária com visual gráfico em vez de 3 parágrafos de texto"
+      },
+      {
+        "prioridade": "Alta",
+        "area": "UI",
+        "acao": "Componentização: Criar card visual para 'Meio de Pagamento Alternativo' igual ao formato do método principal"
+      },
+      {
+        "prioridade": "Média",
+        "area": "Flow",
+        "acao": "One-Click Add: Sugerir cartão mais recente automaticamente com confirmação rápida se houver múltiplos salvos"
+      },
+      {
+        "prioridade": "Média",
+        "area": "UI",
+        "acao": "Indicador de Estado: Marcar cartão principal com badge 'Principal' na seleção"
+      },
+      {
+        "prioridade": "Média",
+        "area": "Interaction",
+        "acao": "Spacing: Aumentar distância entre ícone de ajuda e kebab menu para evitar Fat Finger Errors no mobile"
+      },
+      {
+        "prioridade": "Baixa",
+        "area": "Visual",
+        "acao": "QA de Dados: Padronizar valores de preço (R$ 19,90) em todos os mockups para consistência"
+      }
+    ],
+    "veredito": "O fluxo é funcional mas não otimizado. Parece um 'remendo' técnico para resolver churn involuntário, em vez de experiência desenhada para dar paz de espírito. O 'Meio de Pagamento Alternativo' é tratado como cidadão de segunda classe quando na verdade é o 'seguro de vida' da receita recorrente. Nota: 6/10. Product Designer deveria elevar o status visual dessa funcionalidade para 'Blindagem da Conta'."
+  }
+}

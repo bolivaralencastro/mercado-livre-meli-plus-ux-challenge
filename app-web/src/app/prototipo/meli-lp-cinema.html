@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Meli+ Comparison Hero</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+<style>
+/* =========================================
+   TOKENS & RESET
+   ========================================= */
+:root {
+    --meli-purple: #800080;
+    --deep-purple: #4A004A;
+    --meli-orange: #E84A2E;
+    --meli-yellow: #F5D415; /* Amarelo ML para detalhes */
+    --meli-green: #00a650;
+    --dark-bg: #0E0B18;
+    --glass-bg: rgba(34, 26, 48, 0.78);
+    --glass-border: rgba(255, 255, 255, 0.16);
+    --text-main: #F6F4F1;
+    --text-muted: #9CA3AF;
+    --font-primary: 'Inter', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-main);
+    font-family: var(--font-primary);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image:
+        radial-gradient(circle at 80% 10%, rgba(128, 0, 128, 0.2) 0%, transparent 50%),
+        linear-gradient(120deg, rgba(5, 5, 5, 0.55), rgba(5, 5, 5, 0.35)),
+        linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.85)),
+        url('background-3.jpg');
+    background-size: auto, cover, cover, cover;
+    background-position: 80% 10%, center, center, center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   LAYOUT
+   ========================================= */
+.hero-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    padding: 40px 24px;
+    margin: 0 auto;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+    .hero-left { display: flex; flex-direction: column; align-items: center; }
+    .bonus-block { margin: 0 auto; }
+}
+
+/* =========================================
+   TEXT CONTENT (LEFT)
+   ========================================= */
+.logo-lockup {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    padding: 6px 16px;
+    margin-bottom: 24px;
+}
+.logo-text {
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--meli-purple), var(--meli-orange));
+    -webkit-background-clip: text; color: transparent;
+    letter-spacing: -0.5px;
+}
+.plan-badge {
+    font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    padding-left: 8px; border-left: 1px solid rgba(255,255,255,0.2);
+}
+
+h1 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #d48add, #ff7f50);
+    -webkit-background-clip: text; color: transparent;
+}
+
+.sub-h {
+    font-size: 1.1rem; color: var(--text-muted); margin-bottom: 32px; max-width: 450px; line-height: 1.6;
+}
+
+/* CTA Button */
+.cta-btn-3d {
+    background: linear-gradient(180deg, var(--meli-purple) 0%, var(--deep-purple) 100%);
+    color: white; font-weight: 600; font-size: 1rem;
+    padding: 14px 32px; border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 4px 20px rgba(128, 0, 128, 0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+    cursor: pointer; transition: transform 0.2s;
+    margin-bottom: 30px;
+}
+.cta-btn-3d:hover { transform: translateY(-2px) scale(1.02); filter: brightness(1.1); }
+.cta-btn-3d:active { transform: translateY(1px); }
+
+/* Bonus Item */
+.bonus-block {
+    display: flex; gap: 12px; align-items: center;
+    background: rgba(255,255,255,0.03); border: 1px dashed var(--glass-border);
+    padding: 12px 16px; border-radius: 12px; max-width: fit-content;
+    text-align: left;
+}
+.bonus-icon { color: var(--meli-green); }
+.bonus-text { font-size: 0.85rem; color: var(--text-muted); }
+.bonus-text strong { color: var(--text-main); display: block; }
+
+/* =========================================
+   SIMULATOR CARD STYLES
+   ========================================= */
+.sim-card {
+    background: var(--glass-bg);
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    height: 520px;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.card-top { z-index: 1; position: relative; flex: 1; display:flex; flex-direction:column;}
+
+.title-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; margin-top: 8px; }
+.title { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em;}
+
+/* Tooltip */
+.tooltip-trigger { color: var(--text-muted); cursor: help; opacity: 0.6; transition: opacity 0.2s; position: relative; }
+.tooltip-trigger:hover { opacity: 1; }
+.tooltip-box {
+    visibility: hidden; opacity: 0;
+    position: absolute; bottom: 100%; right: 0;
+    background: rgba(0,0,0,0.95); border: 1px solid var(--glass-border);
+    padding: 12px; border-radius: 8px; width: 240px;
+    font-size: 0.75rem; color: #fff; line-height: 1.4;
+    transition: all 0.2s ease; pointer-events: none; z-index: 20;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+.tooltip-trigger:hover .tooltip-box { visibility: visible; opacity: 1; bottom: 120%; }
+
+.subtitle { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5; min-height: 3em; }
+
+/* --- DISPLAY AREA --- */
+.display-area { 
+    text-align: center; margin-top: auto; margin-bottom: auto; 
+    background: rgba(255,255,255,0.03); border-radius: 16px; padding: 20px;
+    border: 1px dashed rgba(255,255,255,0.1);
+}
+
+.status-badge {
+    display: inline-block; padding: 4px 10px; border-radius: 6px;
+    font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;
+}
+.status-badge.bad { background: rgba(255, 77, 77, 0.2); color: #ff5a5a; }
+.status-badge.neutral { background: rgba(255, 255, 255, 0.1); color: var(--text-muted); }
+
+.price-value { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.05em; color: var(--text-main); font-variant-numeric: tabular-nums; line-height: 1.1;}
+.price-value.danger { color: #ff5a5a; }
+.price-value.neutral { color: var(--text-muted); opacity: 0.5; }
+
+/* --- SLIDER AREA --- */
+.slider-area { margin-top: auto; margin-bottom: 24px; position: relative; z-index: 2;}
+.slider-area input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; cursor: pointer; }
+.slider-area input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 99px; }
+.slider-area input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; height: 28px; width: 28px; border-radius: 50%;
+    background: var(--text-main); margin-top: -10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.1s; border: 2px solid var(--glass-bg);
+}
+.slider-area input[type=range]:active::-webkit-slider-thumb { transform: scale(1.2); background: var(--meli-purple); }
+
+/* --- ICONS --- */
+.icons-row { display: flex; justify-content: center; gap: 12px; margin-top: 12px; height: 32px; }
+.svc-icon {
+    width: 32px; height: 32px; border-radius: 6px; background: rgba(255,255,255,0.1); 
+    display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.6rem;
+    color: var(--text-muted); opacity: 0.1; transition: all 0.3s ease;
+}
+.svc-icon.active { opacity: 1; color: white; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+.svc-icon.active[data-brand="net"] { background: #E50914; }
+.svc-icon.active[data-brand="dis"] { background: #113CCF; }
+.svc-icon.active[data-brand="max"] { background: #002BE7; }
+.svc-icon.active[data-brand="app"] { background: #222; }
+
+/* --- CTA BUTTON --- */
+.cta-btn {
+    width: 100%; padding: 16px; border-radius: 12px; border: none;
+    background: var(--text-main); color: var(--dark-bg);
+    font-weight: 700; font-size: 1rem; cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    position: relative; z-index: 2;
+}
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+.cta-btn:active { transform: scale(0.98); }
+.cta-btn:disabled { opacity: 0.3; cursor: not-allowed; transform: none; box-shadow: none; background: rgba(255,255,255,0.1); color: var(--text-muted); }
+
+/* --- REVEAL OVERLAY --- */
+.reveal-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(145deg, #581C96 0%, #2A004F 100%);
+    z-index: 10; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 32px; text-align: center;
+    transform: translateY(100%); transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    color: white;
+}
+.card-revealed .reveal-overlay { transform: translateY(0); }
+
+.reveal-tag { background: #F5D415; color: #333; padding: 4px 12px; border-radius: 99px; font-weight: 800; font-size: 0.75rem; margin-bottom: 16px; text-transform: uppercase; }
+.reveal-price { font-size: 3.5rem; font-weight: 800; letter-spacing: -0.05em; line-height: 1; margin-bottom: 8px; white-space: nowrap; }
+.reveal-sub { opacity: 0.8; font-size: 0.9rem; margin-bottom: 24px; }
+
+.savings-badge-sim {
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+    padding: 12px 20px; border-radius: 12px; width: 100%;
+}
+.savings-label { display: block; font-size: 0.75rem; text-transform: uppercase; opacity: 0.7; margin-bottom: 4px; }
+.savings-value-sim { font-size: 1.5rem; font-weight: 700; color: var(--meli-green); }
+
+.close-reveal {
+    position: absolute; top: 20px; right: 20px;
+    background: none; border: none; color: white; opacity: 0.5; cursor: pointer;
+}
+.close-reveal:hover { opacity: 1; }
+
+/* =========================================
+   COMPARISON SLIDER (RIGHT)
+   ========================================= */
+.comparison-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 380px; /* Fixed height for consistency */
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border: 1px solid var(--glass-border);
+    user-select: none;
+    touch-action: none; /* Crucial for mobile drag */
+    margin: 0 auto;
+}
+
+/* Instruction Overlay (Fades out) */
+.instruction-overlay {
+    position: absolute; bottom: 20px; left: 0; width: 100%;
+    text-align: center; pointer-events: none; z-index: 10;
+    opacity: 0.8; transition: opacity 0.5s;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    font-size: 0.85rem; font-weight: 500;
+}
+.comparison-wrapper:active .instruction-overlay { opacity: 0; }
+
+/* The Two Layers */
+.layer {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 30px;
+}
+
+/* Layer 1: Expensive (Bottom/Background) */
+.layer-expensive {
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+}
+.layer-expensive .price-tag { color: #ff5a5a; text-decoration: line-through; opacity: 0.7; font-size: 1.5rem; }
+.layer-expensive .price-total { font-size: 2.5rem; font-weight: 800; color: var(--text-muted); margin: 10px 0; }
+.layer-expensive .label { color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+
+/* Service Logos (Visual Representation) */
+.services-row { display: flex; gap: 15px; margin-bottom: 20px; opacity: 0.6; filter: grayscale(1); }
+.service-pill { 
+    background: rgba(255,255,255,0.1); padding: 8px 12px; border-radius: 8px; 
+    font-size: 0.8rem; font-weight: 600; display: flex; align-items: center; gap: 6px;
+}
+
+/* Layer 2: Meli+ (Top/Clipped) */
+.layer-cheap {
+    background: radial-gradient(circle at 50% 30%, #5a005a 0%, #2a002a 100%);
+    /* This clip-path is manipulated by JS */
+    clip-path: inset(0 50% 0 0); 
+    z-index: 2;
+}
+.layer-cheap::before {
+    content: ''; position: absolute; inset: 0;
+    background: url("https://www.transparenttextures.com/patterns/cubes.png"); opacity: 0.05;
+}
+
+.layer-cheap .services-row { opacity: 1; filter: none; }
+.layer-cheap .service-pill { background: rgba(255,255,255,0.2); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+
+.layer-cheap .price-total { 
+    font-size: 3.5rem; font-weight: 900; margin: 10px 0;
+    background: linear-gradient(to bottom, #fff, #ddd); -webkit-background-clip: text; color: transparent;
+    filter: drop-shadow(0 4px 10px rgba(128,0,128,0.5));
+}
+.layer-cheap .label { color: var(--meli-orange); font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; }
+
+/* The Slider Handle */
+.slider-handle {
+    position: absolute; top: 0; bottom: 0; left: 50%;
+    width: 2px; background: rgba(255,255,255,0.5);
+    z-index: 5; cursor: ew-resize;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.handle-knob {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 44px; height: 44px;
+    background: var(--text-main);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--meli-purple);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+}
+.comparison-wrapper:hover .handle-knob { transform: translate(-50%, -50%) scale(1.1); }
+
+/* Confetti & Badges */
+.savings-badge {
+    position: absolute; top: 20px; right: 20px;
+    background: var(--meli-green); color: white;
+    padding: 8px 16px; border-radius: 30px;
+    font-weight: 700; font-size: 0.85rem;
+    box-shadow: 0 5px 15px rgba(0,166,80,0.4);
+    transform: translateY(-20px); opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 6;
+}
+.savings-badge.show { transform: translateY(0); opacity: 1; }
+
+/* Confetti Animation */
+.confetti {
+    position: absolute; width: 8px; height: 8px;
+    pointer-events: none; z-index: 4;
+}
+@keyframes fall {
+    0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(300px) rotate(720deg); opacity: 0; }
+}
+
+/* Additional Result Box Styles */
+.result-dynamic {
+    margin-top: 20px; padding: 16px; 
+    background: rgba(0,0,0,0.3); border-radius: 12px; 
+    border: 1px solid var(--glass-border); text-align: center;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.result-dynamic.success {
+    background: rgba(0, 166, 80, 0.16);
+    border-color: rgba(0, 166, 80, 0.4);
+}
+
+.result-dynamic.alert {
+    background: rgba(255, 90, 90, 0.16);
+    border-color: rgba(255, 90, 90, 0.4);
+}
+
+/* Widget Card Styles from simuladores.html */
+.widget-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 28px 26px 32px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.widget-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 520px;
+}
+
+.widget-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.widget-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px dashed rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.08);
+    font-size: 0.7rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.widget-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+}
+
+.widget-instruction {
+    margin-top: 6px;
+    color: var(--silver-haze);
+    opacity: 0.8;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.widget-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.reveal-window {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    border-radius: 18px;
+    border: 1px solid var(--glass-border);
+    overflow: hidden;
+}
+
+.layer {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.layer-bg { background: #0f0f0f; }
+
+.layer-fg {
+    background: linear-gradient(140deg, rgba(128, 0, 128, 0.85), rgba(4, 0, 21, 0.95));
+    clip-path: inset(0 100% 0 0);
+    z-index: 2;
+}
+
+.price-big { font-size: 2.6rem; font-weight: 800; letter-spacing: -1px; }
+.price-old { font-size: 1.2rem; text-decoration: line-through; color: #ff5a5a; opacity: 0.75; }
+.label-sm { font-size: 0.75rem; letter-spacing: 0.12rem; text-transform: uppercase; opacity: 0.75; }
+
+.reveal-line {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 5;
+    pointer-events: none;
+}
+
+.slider-wrapper { width: 100%; margin-bottom: 18px; }
+
+input[type=range] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    background: #2A2A2A;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+    margin-top: -10px;
+    transition: transform 0.15s ease, border-color 0.2s ease;
+}
+
+input[type=range]:hover::-webkit-slider-thumb {
+    border-color: rgba(255, 255, 255, 0.65);
+}
+
+.result-box {
+    width: 100%;
+    min-height: 72px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.result-box strong { display: block; font-weight: 700; margin-bottom: 2px; }
+.result-box.neutral { color: #9CA3AF; border-style: dashed; }
+.result-box.success { background: rgba(0, 166, 80, 0.16); border-color: rgba(0, 166, 80, 0.4); color: #D3FFE8; border-style: solid; }
+.result-box.alert { background: rgba(255, 90, 90, 0.16); border-color: rgba(255, 90, 90, 0.4); color: #FFE0E0; border-style: solid; }
+
+.result-detail { margin-top: 6px; color: inherit; line-height: 1.35; }
+.result-copy { display: none; }
+.result-copy.is-active { display: inline; }
+
+.rolling-number { display: inline-block; min-width: 0.6ch; position: relative; }
+.rolling-wrapper {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    min-height: 1em;
+    line-height: 1.2;
+}
+.rolling-value {
+    display: block;
+    transition: transform 0.45s ease, opacity 0.45s ease;
+}
+.rolling-value.rolling-new {
+    position: absolute;
+    inset: 0;
+    transform: translateY(100%);
+}
+.rolling-wrapper.animate .rolling-value.rolling-old { transform: translateY(-100%); opacity: 0; }
+.rolling-wrapper.animate .rolling-value.rolling-new { transform: translateY(0); }
+
+</style>
+</head>
+<body>
+
+    <div class="hero-wrapper">
+        <div class="hero-grid">
+            <!-- Left Side -->
+            <div class="hero-left">
+                <div class="logo-lockup">
+                    <span class="logo-text">meli+</span>
+                    <span class="plan-badge">TOTAL</span>
+                </div>
+                
+                <h1>
+                    Disney+ e Deezer inclusos.<br>
+                    <span class="gradient-text">Pare de pagar separado.</span>
+                </h1>
+                
+                <p class="sub-h">
+                    Assinando individualmente você gasta quase R$ 70. 
+                    No Meli+ você leva tudo por apenas R$ 17,90/mês fixos.
+                </p>
+                
+                <button class="cta-btn-3d">
+                    Quero assistir agora 
+                    <span class="material-icons-round" style="font-size: 1rem; vertical-align: middle; margin-left: 5px;">play_arrow</span>
+                </button>
+                
+                <div class="bonus-block">
+                    <span class="material-icons-round bonus-icon">redeem</span>
+                    <div class="bonus-text">
+                        <strong>Bônus incluso:</strong> Frete Grátis em milhões de produtos no Mercado Livre.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Streaming Simulator -->
+            <div class="hero-right">
+                <div class="sim-card" id="card-mega">
+                    <div class="card-top">
+                        <div class="title-row">
+                            <h3 class="title">Streaming</h3>
+                            <div class="tooltip-trigger">
+                                <span class="material-icons-round" style="font-size:18px">info</span>
+                                <div class="tooltip-box">
+                                    <strong>Preços Avulsos:</strong><br>
+                                    • Netflix Padrão: R$ 44,90<br>
+                                    • Disney+ Padrão: R$ 43,90<br>
+                                    • Max Mensal: R$ 39,90<br>
+                                    • Apple TV+: R$ 21,90
+                                </div>
+                            </div>
+                        </div>
+                        <p class="subtitle">Quanto você gasta todo mês pagando assinaturas separadas?</p>
+
+                        <div class="display-area">
+                            <span class="status-badge neutral" id="mega-badge">SEM MELI+</span>
+                            <div class="price-value neutral" id="mega-display">R$ 0,00</div>
+                            <div class="icons-row">
+                                <div class="svc-icon" data-brand="net">N</div>
+                                <div class="svc-icon" data-brand="dis">D+</div>
+                                <div class="svc-icon" data-brand="max">M</div>
+                                <div class="svc-icon" data-brand="app">tv+</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider-area">
+                        <input type="range" id="mega-slider" min="0" max="4" step="1" value="0">
+                    </div>
+
+                    <button class="cta-btn" id="mega-btn" onclick="reveal('mega')" disabled>
+                        <span class="material-icons-round">bolt</span>
+                        Ver preço com Meli+
+                    </button>
+
+                    <div class="reveal-overlay">
+                        <button class="close-reveal" onclick="reset('mega')"><span class="material-icons-round">close</span></button>
+                        <span class="reveal-tag">COM MELI+ MEGA</span>
+                        <div class="reveal-price">R$ 39,90</div>
+                        <p class="reveal-sub">4 Streamings + Frete</p>
+                        <div class="savings-badge-sim">
+                            <span class="savings-label">Sua Economia Mensal</span>
+                            <span class="savings-value-sim" id="mega-saving">R$ 0,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const fmtMoney = (v) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+        /* --- MEGA LOGIC --- */
+        const megaPrices = [44.90, 43.90, 39.90, 21.90]; 
+        const megaPromoPrice = 39.90;
+        const megaSlider = document.getElementById('mega-slider');
+        const megaDisplay = document.getElementById('mega-display');
+        const megaIcons = document.querySelectorAll('.svc-icon');
+        const megaBtn = document.getElementById('mega-btn');
+        const megaSaving = document.getElementById('mega-saving');
+        const megaBadge = document.getElementById('mega-badge');
+
+        megaSlider.addEventListener('input', () => {
+            reset('mega');
+            const count = parseInt(megaSlider.value);
+            
+            if (count === 0) {
+                megaDisplay.textContent = "R$ 0,00";
+                megaDisplay.className = "price-value neutral";
+                megaBadge.className = "status-badge neutral";
+                megaIcons.forEach(icon => icon.classList.remove('active'));
+                megaBtn.disabled = true;
+                return;
+            }
+
+            let total = 0;
+            for(let i=0; i<count; i++) total += megaPrices[i];
+            
+            megaDisplay.textContent = fmtMoney(total);
+            megaDisplay.className = "price-value danger";
+            megaBadge.className = "status-badge bad";
+            megaBtn.disabled = false;
+            
+            megaIcons.forEach((icon, idx) => {
+                icon.classList.toggle('active', idx < count);
+            });
+
+            const saving = total - megaPromoPrice;
+            if (saving > 0) {
+                megaSaving.textContent = fmtMoney(saving);
+                megaSaving.style.color = "var(--meli-green)";
+            } else {
+                megaSaving.textContent = "Mais vantagens";
+                megaSaving.style.color = "white";
+            }
+        });
+
+        /* --- REVEAL SYSTEM --- */
+        function reveal(id) {
+            document.getElementById(`card-${id}`).classList.add('card-revealed');
+        }
+
+        function reset(id) {
+            document.getElementById(`card-${id}`).classList.remove('card-revealed');
+        }
+    </script>
+</body>
+</html>
