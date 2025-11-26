@@ -215,16 +215,10 @@ const BenchmarkingViewer = ({ entries, currentSlug }: BenchmarkingViewerProps) =
                     </h3>
                   </div>
                   <div className="space-y-4">
-                    <div className="rounded-2xl border border-purple-200 bg-gradient-to-br from-purple-50 to-purple-100/50 p-5 shadow-md">
-                      <p className="mb-2 text-xs font-bold uppercase tracking-wider text-purple-700">Motivadores de adesão</p>
+                    <div className="rounded-2xl border border-blue-200 bg-gradient-to-br from-blue-50 to-blue-100/50 p-5 shadow-md">
+                      <p className="mb-2 text-xs font-bold uppercase tracking-wider text-blue-700">Descrição do Bundle</p>
                       <p className="text-sm leading-relaxed text-gray-800">
-                        {currentEntry.motivators ?? "Principais gatilhos que levam novos usuários à assinatura."}
-                      </p>
-                    </div>
-                    <div className="rounded-2xl border border-purple-200 bg-gradient-to-br from-purple-50 to-purple-100/50 p-5 shadow-md">
-                      <p className="mb-2 text-xs font-bold uppercase tracking-wider text-purple-700">Riscos de churn</p>
-                      <p className="text-sm leading-relaxed text-gray-800">
-                        {currentEntry.churnRisks ?? "Pontos de atenção observados nos canais de suporte e reviews."}
+                        {currentEntry.bundlingDescription || "Informações sobre o bundle não disponíveis."}
                       </p>
                     </div>
                   </div>
