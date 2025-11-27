@@ -534,9 +534,9 @@ function StreamingCard({
           {/* Additional Logos Grid */}
           <div className="grid grid-cols-3 gap-2">
             {[
-              { src: "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/logos/paramount-logo.png", alt: "Paramount+" },
-              { src: "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/logos/globoplay-logo.png", alt: "Globoplay" },
-              { src: "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/logos/universal-logo.png", alt: "Universal+" },
+              { src: "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/logos/paramount.png", alt: "Paramount+" },
+              { src: "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/logos/globoplay.png", alt: "Globoplay" },
+              { src: "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/logos/universal.png", alt: "Universal+" },
             ].map((logo) => (
               <div 
                 key={logo.alt}
