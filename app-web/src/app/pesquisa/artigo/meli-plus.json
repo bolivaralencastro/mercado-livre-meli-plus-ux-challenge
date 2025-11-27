@@ -1,0 +1,110 @@
+{
+  "article_metadata": {
+    "id": "meli-plus-programa",
+    "slug": "meli-plus-programa",
+    "title": "Meli+: conheça o programa de assinaturas do Mercado Pago e Mercado Livre",
+    "subtitle": "Meli+: conheça o programa de benefícios do Mercado Pago e Mercado Livre",
+    "author": "Equipe Mercado Pago",
+    "publication_date": "2025-11-01",
+    "read_time": "12 min",
+    "categoria": "Fidelização",
+    "tags": [
+      "meli+",
+      "assinaturas",
+      "recorrência",
+      "experiência do usuário"
+    ],
+    "summary": "Visão completa do Meli+, assinatura conjunta do Mercado Pago e Mercado Livre com planos Essencial e Total, benefícios de frete, cashback, streaming e regras para ativação e cancelamento.",
+    "publication_display": "Novembro de 2025"
+  },
+  "content": {
+    "overview": {
+      "heading": "Por que assinar o Meli+",
+      "text_body": [
+        "O Meli+ une Mercado Pago e Mercado Livre em uma assinatura única que simplifica a saúde financeira enquanto entrega benefícios de compra e entretenimento.",
+        "Frete grátis ou devoluções ágeis, streaming incluído e cashback transformam o programa em uma proposta completa para organizar, investir, ganhar segurança e se divertir."
+      ]
+    },
+    "como_funciona": {
+      "heading": "Como funciona o Meli+",
+      "text_body": [
+        "A assinatura é mensal e oferece dois níveis: Essencial e Total. Ambos conectam benefícios de pagamento e marketplace, com renovação automática e cancelamento simples."
+      ]
+    },
+    "planos": {
+      "essencial": {
+        "mensalidade": "R$ 9,90",
+        "beneficios": [
+          "Frete grátis a partir de R$ 29 nas compras elegíveis.",
+          "Até 5,6% de cashback no Mercado Livre e no Mercado Pago.",
+          "Até três parcelas extras sem juros em produtos elegíveis.",
+          "Rendimento de 105% do CDI no saldo da Conta Mercado Pago.",
+          "Pagamento via crédito, débito ou saldo disponível."
+        ]
+      },
+      "total": {
+        "mensalidade": "R$ 27,99",
+        "beneficios": [
+          "Inclui todos os benefícios do Essencial.",
+          "Assinatura Disney+ padrão com anúncios.",
+          "12 meses grátis de Deezer Premium.",
+          "Descontos extras em Max e Paramount+ para complementar o streaming."
+        ]
+      }
+    },
+    "condicoes": {
+      "heading": "Condições gerais e regras",
+      "pontos": [
+        "Elegível para maiores de 18 anos com conta ativa no Mercado Pago ou Mercado Livre.",
+        "Assinaturas renovam automaticamente; cancelamento pode ser feito a qualquer momento.",
+        "Nova tentativa de cobrança em caso de recusa; cancelamento automático se persistir.",
+        "Reembolso em até 7 dias após a contratação em caso de arrependimento.",
+        "Benefícios e limites seguem os Termos e Condições do programa."
+      ]
+    },
+    "passos_assinatura": {
+      "heading": "Assine o Meli+ em 6 passos",
+      "steps": [
+        "Visite a página oficial do Meli+.",
+        "Escolha \"Assinar o Meli+\".",
+        "Faça login na sua conta Mercado Pago ou Mercado Livre.",
+        "Selecione o meio de pagamento.",
+        "Confirme o pagamento da assinatura.",
+        "Aproveite frete, cashback, streaming e devoluções ágeis."
+      ]
+    },
+    "beneficios": {
+      "heading": "Benefícios em destaque",
+      "itens": [
+        "Frete grátis em milhões de produtos a partir de R$ 29 e devoluções agilizadas (ilimitadas em moda).",
+        "Parcelas extras sem juros em compras elegíveis (até 3x adicionais).",
+        "Cashback em Meli Dólar com limites mensais comunicados de forma transparente.",
+        "Rendimento automático de 105% do CDI para saldo até R$ 50 mil.",
+        "Disney+, Deezer Premium e descontos em parceiros como Max e Paramount+."
+      ]
+    }
+  },
+  "insights": [
+    {
+      "id": "ecosistema-integrado",
+      "title": "Benefícios integrados Mercado Pago + Mercado Livre",
+      "description": "A assinatura combina frete, cashback e streaming em uma única proposta de valor.",
+      "application": "Destacar a união de marketplace e serviços financeiros nas mensagens de aquisição e onboarding.",
+      "highlightId": "highlight-ecosistema"
+    },
+    {
+      "id": "planos-complementares",
+      "title": "Planos Essencial e Total para perfis distintos",
+      "description": "O Essencial prioriza economia, enquanto o Total adiciona entretenimento sem perder benefícios financeiros.",
+      "application": "Oferecer recomendações personalizadas para direcionar o usuário ao plano mais aderente ao seu consumo.",
+      "highlightId": "highlight-planos"
+    },
+    {
+      "id": "ativacao-cancelamento-facil",
+      "title": "Ativação e cancelamento sem fricção",
+      "description": "Assinatura rápida, múltiplos meios de pagamento e cancelamento imediato com acesso até o fim do ciclo.",
+      "application": "Reforçar transparência nas cobranças e política de reembolso de 7 dias para reduzir churn e dúvidas.",
+      "highlightId": "highlight-cancelamento"
+    }
+  ]
+}
