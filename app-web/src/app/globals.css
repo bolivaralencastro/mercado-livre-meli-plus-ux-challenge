@@ -36,6 +36,24 @@ body {
   }
 }
 
+/* Fullscreen mode - hide header by default */
+:fullscreen .fullscreen-hide-header {
+  transform: translateY(-100%) !important;
+}
+
+:fullscreen .fullscreen-hide-header.fullscreen-show {
+  transform: translateY(0) !important;
+}
+
+:fullscreen .fullscreen-content {
+  padding-top: 0 !important;
+  height: 100vh !important;
+}
+
+:fullscreen .fullscreen-content.fullscreen-with-header {
+  padding-top: 73px !important;
+}
+
 /* Andes Logo Animation */
 .andes-logo-container {
   position: relative;
@@ -107,3 +125,78 @@ body {
     fill: #8e24aa;
   }
 }
+
+/* Payment Prototype Animations */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.25s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.15s ease-out forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+

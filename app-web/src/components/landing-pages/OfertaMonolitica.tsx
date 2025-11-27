@@ -34,21 +34,21 @@ const moviesData = {
   netflix: [
     "https://image.tmdb.org/t/p/w300/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
     "https://image.tmdb.org/t/p/w300/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg",
-    "https://image.tmdb.org/t/p/w300/zU0htwkhNvBQdVSIKB9s6vgH84N.jpg",
+    "https://image.tmdb.org/t/p/w300/dDlEmu3EZ0Pgg93K2SVNLCjCSvE.jpg",
     "https://image.tmdb.org/t/p/w300/jLLtx3nTRSLGPAKl4RoIv1FbEBr.jpg",
     "https://image.tmdb.org/t/p/w300/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg",
     "https://image.tmdb.org/t/p/w300/hKHZhUbIyUAjcSrqJThFGYIR6kI.jpg",
   ],
   max: [
-    "https://image.tmdb.org/t/p/w300/1E5baAaEse26fej7uHcJ4ZEPZ6F.jpg",
-    "https://image.tmdb.org/t/p/w300/u3bZgnGQ9T0P9gEvSl0Oq0k2xRK.jpg",
+    "https://image.tmdb.org/t/p/w300/1XS1oqL89opfnbLl8WnZY1O1uJx.jpg",
+    "https://image.tmdb.org/t/p/w300/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg",
     "https://image.tmdb.org/t/p/w300/rktDFPbfHfUbArZ6OOOKsXcv0Bm.jpg",
     "https://image.tmdb.org/t/p/w300/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
-    "https://image.tmdb.org/t/p/w300/hr0L2aueqlP2BYUblTTjmtn0SOv.jpg",
+    "https://image.tmdb.org/t/p/w300/fm6KqXpk3M2HVveHwCrBSSBaO0V.jpg",
     "https://image.tmdb.org/t/p/w300/fiVW06jE7z9YnO4trhaMEdclSiC.jpg",
   ],
   apple: [
-    "https://image.tmdb.org/t/p/w300/vISbjOoy1nwjlb3ioFj2bMZhKnW.jpg",
+    "https://image.tmdb.org/t/p/w300/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
     "https://image.tmdb.org/t/p/w300/sRLC052ieEzkQs9dEtPMfFxYkej.jpg",
     "https://image.tmdb.org/t/p/w300/fxYazFVeOCHpHwuqGuiqcCTw162.jpg",
     "https://image.tmdb.org/t/p/w300/6KErczPBROQty7QoIsaa6wJYXZi.jpg",
@@ -253,30 +253,38 @@ const footerColumns = [
 
 // ============ COMPONENTS ============
 
+// Animated reveal on scroll component
 function RevealOnScroll({ 
   children, 
   className = "", 
   direction = "up",
   delay = 0,
-  style
+  style,
+  disabled = false
 }: { 
   children: React.ReactNode; 
   className?: string;
   direction?: "up" | "left" | "right";
   delay?: number;
   style?: React.CSSProperties;
+  disabled?: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(disabled);
 
   useEffect(() => {
+    if (disabled) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
+      { threshold: 0.1, rootMargin: "20px" }
     );
 
     if (ref.current) {
@@ -284,14 +292,14 @@ function RevealOnScroll({
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [disabled]);
 
   const getTransform = () => {
     if (isVisible) return "translate(0, 0)";
     switch (direction) {
-      case "left": return "translateX(-50px)";
-      case "right": return "translateX(50px)";
-      default: return "translateY(50px)";
+      case "left": return "translateX(-40px)";
+      case "right": return "translateX(40px)";
+      default: return "translateY(40px)";
     }
   };
 
@@ -302,10 +310,29 @@ function RevealOnScroll({
       style={{
         opacity: isVisible ? 1 : 0,
         transform: getTransform(),
-        transition: `all 0.8s cubic-bezier(0.5, 0, 0, 1) ${delay}s`,
+        transition: `opacity 0.5s ease-out ${delay}s, transform 0.5s ease-out ${delay}s`,
         ...style
       }}
     >
+      {children}
+    </div>
+  );
+}
+
+// Simple wrapper without animation for sections that shouldn't animate
+function NoAnimationWrapper({ 
+  children, 
+  className = "", 
+  style
+}: { 
+  children: React.ReactNode; 
+  className?: string;
+  direction?: "up" | "left" | "right";
+  delay?: number;
+  style?: React.CSSProperties;
+}) {
+  return (
+    <div className={className} style={style}>
       {children}
     </div>
   );
@@ -346,6 +373,7 @@ function StreamingGridBackground({
   const animationRef = useRef<number | null>(null);
   const posRef = useRef({ x: -1000, y: -1000 });
   const currentVelocityRef = useRef({ x: 0, y: 0 });
+  const [imagesLoaded, setImagesLoaded] = useState(false);
   
   const CELL_W = 110;
   const CELL_H = 160;
@@ -353,13 +381,35 @@ function StreamingGridBackground({
   const PATTERN_ROWS = 4;
   const BLOCK_W = PATTERN_COLS * CELL_W;
   const BLOCK_H = PATTERN_ROWS * CELL_H;
-  const DAMPING = 0.85; // Fator de amortecimento para efeito "mola"
+  const DAMPING = 0.85;
+
+  // Preload images
+  useEffect(() => {
+    let loadedCount = 0;
+    const totalImages = allMovies.length;
+    
+    allMovies.forEach((src) => {
+      const img = document.createElement('img');
+      img.onload = () => {
+        loadedCount++;
+        if (loadedCount >= totalImages) {
+          setImagesLoaded(true);
+        }
+      };
+      img.onerror = () => {
+        loadedCount++;
+        if (loadedCount >= totalImages) {
+          setImagesLoaded(true);
+        }
+      };
+      img.src = src;
+    });
+  }, []);
 
   useEffect(() => {
     if (!isActive) return;
 
     const tick = () => {
-      // Aplicar interpolação suave (damping) para criar efeito de mola
       const targetVx = velocityRef.current.x;
       const targetVy = velocityRef.current.y;
       
@@ -369,7 +419,6 @@ function StreamingGridBackground({
       posRef.current.x += currentVelocityRef.current.x;
       posRef.current.y += currentVelocityRef.current.y;
 
-      // Infinite scroll wrapping
       if (posRef.current.x > 0) posRef.current.x -= BLOCK_W;
       if (posRef.current.x < -BLOCK_W) posRef.current.x += BLOCK_W;
       if (posRef.current.y > 0) posRef.current.y -= BLOCK_H;
@@ -393,9 +442,6 @@ function StreamingGridBackground({
 
   // Generate movie grid
   const movieGrid = [];
-  // Generate a larger grid to cover the whole section (e.g., 1920x1080+)
-  // 20 cols * 110px = 2200px width
-  // 10 rows * 160px = 1600px height
   for (let row = -5; row < 15; row++) {
     for (let col = -10; col < 20; col++) {
       const r = ((row % PATTERN_ROWS) + PATTERN_ROWS) % PATTERN_ROWS;
@@ -413,30 +459,35 @@ function StreamingGridBackground({
 
   return (
     <div 
-      className="absolute inset-0 bg-[#0d0d0d] overflow-hidden transition-opacity duration-500 pointer-events-none"
+      className="absolute inset-0 bg-[#0d0d0d] overflow-hidden pointer-events-none"
       style={{ 
         opacity: isActive ? 1 : 0, 
-        zIndex: 20 
+        zIndex: 20,
+        transition: 'opacity 0.15s ease-out'
       }}
     >
       <div ref={trackRef} className="absolute will-change-transform left-1/2 top-1/2">
         {movieGrid.map((movie) => (
           <div
             key={movie.id}
-            className="absolute w-[100px] h-[150px] rounded-md bg-[#252525] overflow-hidden"
+            className="absolute w-[100px] h-[150px] rounded-md overflow-hidden"
             style={{ left: movie.left, top: movie.top }}
           >
-            <Image
-              src={movie.src}
-              alt=""
-              fill
-              className="object-cover"
-              sizes="100px"
-            />
+            {imagesLoaded ? (
+              <Image
+                src={movie.src}
+                alt=""
+                fill
+                className="object-cover"
+                sizes="100px"
+                loading="eager"
+              />
+            ) : (
+              <div className="w-full h-full bg-gray-700" />
+            )}
           </div>
         ))}
       </div>
-      {/* Gradient Overlay to fade edges if needed, or just let it fill */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0d0d0d]/80 via-transparent to-[#0d0d0d]/80 pointer-events-none" />
     </div>
   );
@@ -491,8 +542,7 @@ function StreamingCard({
   };
 
   return (
-    <RevealOnScroll 
-      delay={delay} 
+    <NoAnimationWrapper 
       className="row-span-2" 
       style={{ zIndex: isHovered ? 50 : "auto", position: "relative" }}
     >
@@ -536,6 +586,7 @@ function StreamingCard({
                   width={60} 
                   height={60} 
                   className="w-[65%] h-[65%] object-contain"
+                  loading="eager"
                 />
               </div>
             ))}
@@ -561,6 +612,7 @@ function StreamingCard({
                   width={40} 
                   height={40} 
                   className="w-[60%] h-[60%] object-contain"
+                  loading="eager"
                 />
               </div>
             ))}
@@ -579,7 +631,7 @@ function StreamingCard({
           </a>
         </div>
       </div>
-    </RevealOnScroll>
+    </NoAnimationWrapper>
   );
 }
 
@@ -618,7 +670,7 @@ function PlanCard({ plan, isAnnual, index }: { plan: Plan; isAnnual: boolean; in
   const direction = index === 0 ? "left" : index === 2 ? "right" : "up";
 
   return (
-    <RevealOnScroll direction={direction} delay={index * 0.1}>
+    <NoAnimationWrapper>
       <div
         ref={cardRef}
         className={`
@@ -691,7 +743,7 @@ function PlanCard({ plan, isAnnual, index }: { plan: Plan; isAnnual: boolean; in
           Assinar Meli+ {plan.name.charAt(0) + plan.name.slice(1).toLowerCase()}
         </a>
       </div>
-    </RevealOnScroll>
+    </NoAnimationWrapper>
   );
 }
 
@@ -724,7 +776,7 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
   };
 
   return (
-    <RevealOnScroll delay={index * 0.1}>
+    <RevealOnScroll delay={index * 0.05}>
       <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:-translate-y-1 transition-transform duration-300">
         {/* Video */}
         <div className="relative aspect-video bg-black">
@@ -806,10 +858,22 @@ export default function OfertaMonoliticaPage() {
   const ctaVideoRef = useRef<HTMLVideoElement>(null);
   const ctaSectionRef = useRef<HTMLElement>(null);
   const [scrollY, setScrollY] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
   
   // Streaming Card State
   const [isStreamingHovered, setIsStreamingHovered] = useState(false);
   const velocityRef = useRef({ x: 0, y: 0 });
+
+  // Preload critical images on mount
+  useEffect(() => {
+    setIsLoaded(true);
+    
+    // Preload movie posters
+    allMovies.forEach((src) => {
+      const img = document.createElement('img');
+      img.src = src;
+    });
+  }, []);
 
   // Parallax effect - works both in standalone and in viewer container
   useEffect(() => {
@@ -960,7 +1024,7 @@ export default function OfertaMonoliticaPage() {
       <section 
         className="pt-4 pb-16 text-center relative overflow-visible"
         style={{
-          backgroundImage: "url('/assets/images/meli-mais-fotografia-streaming.jpeg')",
+          backgroundImage: "url('/assets/images/familia.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
@@ -987,39 +1051,29 @@ export default function OfertaMonoliticaPage() {
 
       {/* Benefits Section 2 */}
       <section className="py-16 text-center relative overflow-visible">
-        {/* Piggy Bank Decoration */}
-        <div 
-          className="absolute left-[-20px] w-[400px] h-[400px] bg-contain bg-center bg-no-repeat z-[100] pointer-events-none opacity-100 md:opacity-100 max-md:opacity-20 max-md:scale-50 max-md:left-[-150px]"
-          style={{ 
-            backgroundImage: "url('https://smolljrfjqknp6nm.public.blob.vercel-storage.com/assets/piggy-bank-image.webp')",
-            bottom: '-249px',
-            transform: `translateY(${scrollY * 0.1}px) scaleX(-1)`,
-          }}
-        />
-        
         <div className="max-w-[1200px] mx-auto px-5 relative">
           <RevealOnScroll>
-            <h2 className="text-4xl font-semibold text-gray-900 mb-3">Mais benefícios para você</h2>
-            <p className="text-gray-600 mb-12">Descubra todas as vantagens do Meli+</p>
+            <h2 className="text-4xl font-semibold text-gray-900 mb-3">Mais benefícios. Mais economia.</h2>
+            <p className="text-gray-600 mb-12">Tranforme suas compras no melhor negócio</p>
           </RevealOnScroll>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
             <BenefitCard
               icon={Truck}
-              title="Frete Grátis Rápido"
-              description={<>Em milhões de produtos <strong>a partir de R$ 19</strong>. Economize no frete em todas as suas compras.</>}
-              delay={0.1}
+              title="Frete grátis rápido"
+              description="Em milhões de produtos a partir de R$ 19."
+              delay={0}
             />
             <BenefitCard
               icon={Coins}
-              title="Cashback ML"
-              description="Receba parte do valor de volta em créditos (Meli Dólar) para usar em novas compras."
-              delay={0.2}
+              title="Cashback que volta para você"
+              description="Até 3% no ML, 0,5% em qualquer compra e até 10% em parceiros."
+              delay={0.05}
             />
             <BenefitCard
               icon={Shield}
-              title="Segurança"
-              description="Compra Garantida: receba o produto que está esperando ou devolvemos o dinheiro."
+              title="Seu dinheiro rende mais"
+              description="120% do CDI nas Caixinhas do Mercado Pago."
               delay={0.1}
             />
           </div>
@@ -1028,10 +1082,20 @@ export default function OfertaMonoliticaPage() {
 
       {/* Pricing Section */}
       <section id="planos" className="py-20 relative overflow-visible">
+        {/* Piggy Bank Decoration - Aligned with title */}
+        <div 
+          className="absolute left-[-20px] w-[400px] h-[400px] bg-contain bg-center bg-no-repeat z-[100] pointer-events-none opacity-100 md:opacity-100 max-md:opacity-20 max-md:scale-50 max-md:left-[-150px]"
+          style={{ 
+            backgroundImage: "url('https://smolljrfjqknp6nm.public.blob.vercel-storage.com/assets/piggy-bank-image.webp')",
+            top: '-50px',
+            transform: 'scaleX(-1)',
+          }}
+        />
+        
         {/* Delivery Man Decoration */}
         <div 
           className="absolute right-[-72px] w-[400px] h-[500px] z-[100] pointer-events-none opacity-100 md:opacity-100 max-md:opacity-20 max-md:scale-50 max-md:right-[-150px]"
-          style={{ bottom: '-200px', transform: `translateY(${scrollY * 0.08}px)` }}
+          style={{ bottom: '-200px' }}
         >
           <div 
             className="w-full h-full bg-contain bg-center bg-no-repeat"
@@ -1040,7 +1104,7 @@ export default function OfertaMonoliticaPage() {
         </div>
         
         <div className="max-w-[1200px] mx-auto px-5 relative z-[2] text-center">
-          <RevealOnScroll>
+          <div>
             <h2 className="text-4xl font-semibold text-gray-900 mb-3">Escolha o plano ideal para você</h2>
             <p className="text-gray-600 mb-8">Economia garantida em todos os períodos</p>
 
@@ -1069,7 +1133,7 @@ export default function OfertaMonoliticaPage() {
                 </button>
               </div>
             </div>
-          </RevealOnScroll>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1100px] mx-auto">
             {plans.map((plan, i) => (
@@ -1111,7 +1175,13 @@ export default function OfertaMonoliticaPage() {
           <source src="https://smolljrfjqknp6nm.public.blob.vercel-storage.com/videos/logo-meli-animacao.webm" type="video/webm" />
           <source src="https://smolljrfjqknp6nm.public.blob.vercel-storage.com/videos/logo-meli-animacao.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/60 z-[2] pointer-events-none" />
+        {/* Vinheta sutil nas bordas */}
+        <div 
+          className="absolute inset-0 z-[2] pointer-events-none" 
+          style={{
+            boxShadow: 'inset 0 0 150px 50px rgba(0,0,0,0.5)'
+          }}
+        />
 
         <RevealOnScroll className="relative z-10 pt-16 text-center">
           <h2 className="text-5xl font-extrabold text-white mb-4 drop-shadow-2xl">Tenha seu Meli+</h2>

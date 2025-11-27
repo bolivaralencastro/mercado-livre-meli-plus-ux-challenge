@@ -13,6 +13,7 @@ export default function PaymentFlowViewerPage() {
   
   const [isInfoPanelOpen, setIsInfoPanelOpen] = useState(false);
   const [currentPaymentFlow, setCurrentPaymentFlow] = useState<PaymentFlowEntry | null>(null);
+  const [hideHeader, setHideHeader] = useState(false);
 
   useEffect(() => {
     const pf = getPaymentFlowBySlug(slug);
@@ -29,11 +30,16 @@ export default function PaymentFlowViewerPage() {
         setIsInfoPanelOpen(false);
       } else if (e.key === "i" || e.key === "I") {
         setIsInfoPanelOpen((prev) => !prev);
+      } else if (e.key === "h" || e.key === "H") {
+        setHideHeader((prev) => !prev);
       }
     };
     
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   if (!currentPaymentFlow) {
@@ -59,9 +65,11 @@ export default function PaymentFlowViewerPage() {
   };
 
   return (
-    <div className="h-screen bg-[#2D3277] flex flex-col relative overflow-hidden">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+    <div className="bg-[#2D3277] min-h-screen relative overflow-hidden">
+      {/* Header - Press H to toggle visibility */}
+      <header 
+        className={`bg-white/95 backdrop-blur-sm border-b border-gray-200 ${hideHeader ? 'hidden' : ''}`}
+      >
         <div className="flex items-center justify-between px-6 py-4">
           {/* Left: Back button and title */}
           <div className="flex items-center gap-4">
@@ -87,6 +95,17 @@ export default function PaymentFlowViewerPage() {
 
           {/* Right: Info button */}
           <div className="flex items-center gap-3">
+            {/* Keyboard shortcuts info */}
+            <div className="hidden md:flex items-center gap-2 text-xs text-gray-500 mr-2">
+              <kbd className="px-2 py-1 bg-gray-100 rounded border border-gray-300 font-mono">H</kbd>
+              <span>Esconder</span>
+              <span className="text-gray-300">|</span>
+              <kbd className="px-2 py-1 bg-gray-100 rounded border border-gray-300 font-mono">I</kbd>
+              <span>Info</span>
+            </div>
+
+            <div className="h-6 w-px bg-gray-200 hidden md:block" />
+
             <button
               onClick={() => setIsInfoPanelOpen(!isInfoPanelOpen)}
               className={`
@@ -106,21 +125,23 @@ export default function PaymentFlowViewerPage() {
       </header>
 
       {/* Main content area */}
-      <main className="flex-1 relative">
+      <main className="w-full bg-white overflow-y-auto min-h-screen">
         {/* Prototype display area - Full width */}
-        <div className="w-full h-[calc(100vh-73px)] bg-white overflow-y-auto">
+        <div className="w-full">
           <PaymentConfigPrototype />
         </div>
+      </main>
 
-        {/* Floating Info Panel - Overlays on the right */}
-        <div
-          className={`
-            fixed top-[73px] right-0 h-[calc(100vh-73px)] w-[400px] max-w-[90vw]
-            bg-white/95 backdrop-blur-md border-l border-gray-200
-            transform transition-transform duration-300 ease-out z-[2000]
-            ${isInfoPanelOpen ? "translate-x-0" : "translate-x-full"}
-          `}
-        >
+      {/* Floating Info Panel - Overlays on the right */}
+      <div
+        className={`
+          fixed right-0 w-[400px] max-w-[90vw]
+          bg-white/95 backdrop-blur-md border-l border-gray-200
+          transform transition-all duration-300 ease-out z-[2000]
+          ${isInfoPanelOpen ? "translate-x-0" : "translate-x-full"}
+          top-0 h-screen
+        `}
+      >
           {/* Panel Header */}
           <div className="flex items-center justify-between p-4 border-b border-gray-200">
             <h2 className="text-[#2D3277] font-semibold">Informações</h2>
@@ -154,18 +175,17 @@ export default function PaymentFlowViewerPage() {
             <p className="text-gray-600 text-sm leading-relaxed mb-6">
               {currentPaymentFlow.description}
             </p>
-          </div>
         </div>
+      </div>
 
-        {/* Overlay backdrop when panel is open (mobile) */}
-        {isInfoPanelOpen && (
-          <div
-            className="fixed inset-0 top-[73px] bg-black/30 z-30 lg:hidden"
-            onClick={() => setIsInfoPanelOpen(false)}
-            aria-hidden="true"
-          />
-        )}
-      </main>
+      {/* Overlay backdrop when panel is open (mobile) */}
+      {isInfoPanelOpen && (
+        <div
+          className="fixed inset-0 bg-black/30 z-30 lg:hidden"
+          onClick={() => setIsInfoPanelOpen(false)}
+          aria-hidden="true"
+        />
+      )}
     </div>
   );
 }

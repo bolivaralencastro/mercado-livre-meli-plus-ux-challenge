@@ -17,8 +17,7 @@ export default function LandingPageViewerPage() {
   const [isInfoPanelOpen, setIsInfoPanelOpen] = useState(false);
   const [currentLandingPage, setCurrentLandingPage] = useState<LandingPageEntry | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isFullscreen, setIsFullscreen] = useState(false);
-  const [showHeader, setShowHeader] = useState(true);
+  const [hideHeader, setHideHeader] = useState(false);
 
   useEffect(() => {
     const lp = getLandingPageBySlug(slug);
@@ -39,40 +38,6 @@ export default function LandingPageViewerPage() {
     router.push(`/prototipo/landing-pages/${landingPages[newIndex].slug}`);
   }, [currentIndex, router]);
 
-  const toggleFullscreen = useCallback(() => {
-    if (!isFullscreen) {
-      const elem = document.documentElement;
-      if (elem.requestFullscreen) {
-        elem.requestFullscreen().then(() => {
-          setIsFullscreen(true);
-          setShowHeader(false);
-        }).catch((err) => {
-          console.error('Fullscreen error:', err);
-        });
-      }
-    } else {
-      if (document.exitFullscreen) {
-        document.exitFullscreen().then(() => {
-          setIsFullscreen(false);
-          setShowHeader(true);
-        }).catch((err) => {
-          console.error('Exit fullscreen error:', err);
-        });
-      }
-    }
-  }, [isFullscreen]);
-
-  const handleMouseMove = useCallback((e: MouseEvent) => {
-    if (isFullscreen) {
-      // Show header if mouse is at the top 50px of the screen
-      if (e.clientY < 50) {
-        setShowHeader(true);
-      } else if (e.clientY > 150) {
-        setShowHeader(false);
-      }
-    }
-  }, [isFullscreen]);
-
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === "Escape") {
       setIsInfoPanelOpen(false);
@@ -82,30 +47,17 @@ export default function LandingPageViewerPage() {
       navigateTo("next");
     } else if (e.key === "i" || e.key === "I") {
       setIsInfoPanelOpen((prev) => !prev);
-    } else if (e.key === "f" || e.key === "F") {
-      toggleFullscreen();
+    } else if (e.key === "h" || e.key === "H") {
+      setHideHeader((prev) => !prev);
     }
-  }, [navigateTo, toggleFullscreen]);
+  }, [navigateTo]);
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
-    window.addEventListener("mousemove", handleMouseMove);
-    
-    const handleFullscreenChange = () => {
-      if (!document.fullscreenElement) {
-        setIsFullscreen(false);
-        setShowHeader(true);
-      }
-    };
-    
-    document.addEventListener("fullscreenchange", handleFullscreenChange);
-    
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      window.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("fullscreenchange", handleFullscreenChange);
     };
-  }, [handleKeyDown, handleMouseMove]);
+  }, [handleKeyDown]);
 
   if (!currentLandingPage) {
     return null;
@@ -139,12 +91,10 @@ export default function LandingPageViewerPage() {
   };
 
   return (
-    <div className={`bg-[#2D3277] flex flex-col relative overflow-hidden ${isFullscreen ? 'h-screen' : 'h-screen'}`}>
-      {/* Header */}
+    <div className="bg-[#2D3277] min-h-screen relative overflow-hidden">
+      {/* Header - Press H to toggle visibility */}
       <header 
-        className={`${isFullscreen ? 'fixed' : 'sticky'} top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 transition-transform duration-300 w-full ${
-          showHeader ? 'translate-y-0' : '-translate-y-full'
-        }`}
+        className={`bg-white/95 backdrop-blur-sm border-b border-gray-200 ${hideHeader ? 'hidden' : ''}`}
       >
         <div className="flex items-center justify-between px-6 py-4">
           {/* Left: Back button and title */}
@@ -173,8 +123,8 @@ export default function LandingPageViewerPage() {
           <div className="flex items-center gap-3">
             {/* Keyboard shortcuts info */}
             <div className="hidden md:flex items-center gap-2 text-xs text-gray-500 mr-2">
-              <kbd className="px-2 py-1 bg-gray-100 rounded border border-gray-300 font-mono">F</kbd>
-              <span>Tela cheia</span>
+              <kbd className="px-2 py-1 bg-gray-100 rounded border border-gray-300 font-mono">H</kbd>
+              <span>Esconder</span>
               <span className="text-gray-300">|</span>
               <kbd className="px-2 py-1 bg-gray-100 rounded border border-gray-300 font-mono">I</kbd>
               <span>Info</span>
@@ -233,24 +183,26 @@ export default function LandingPageViewerPage() {
       </header>
 
       {/* Main content area */}
-      <main className="flex-1 relative">
+      <main className="w-full bg-white overflow-y-auto min-h-screen">
         {/* Prototype display area - Full width */}
-        <div className={`w-full bg-white overflow-y-auto ${isFullscreen ? 'h-screen' : 'h-[calc(100vh-73px)]'}`}>
+        <div className="w-full">
           {currentLandingPage.slug === 'oferta-monolitica' && <OfertaMonoliticaPage />}
           {currentLandingPage.slug === 'cinema' && <CinemaPage />}
           {currentLandingPage.slug === 'financas' && <FinancasPage />}
           {currentLandingPage.slug === 'logistica' && <LogisticaPage />}
         </div>
+      </main>
 
-        {/* Floating Info Panel - Overlays on the right */}
-        <div
-          className={`
-            fixed top-[73px] right-0 h-[calc(100vh-73px)] w-[400px] max-w-[90vw]
-            bg-white/95 backdrop-blur-md border-l border-gray-200
-            transform transition-transform duration-300 ease-out z-[2000]
-            ${isInfoPanelOpen ? "translate-x-0" : "translate-x-full"}
-          `}
-        >
+      {/* Floating Info Panel - Overlays on the right */}
+      <div
+        className={`
+          fixed right-0 w-[400px] max-w-[90vw]
+          bg-white/95 backdrop-blur-md border-l border-gray-200
+          transform transition-all duration-300 ease-out z-[2000]
+          ${isInfoPanelOpen ? "translate-x-0" : "translate-x-full"}
+          top-0 h-screen
+        `}
+      >
           {/* Panel Header */}
           <div className="flex items-center justify-between p-4 border-b border-gray-200">
             <h2 className="text-[#2D3277] font-semibold">Informações</h2>
@@ -287,15 +239,14 @@ export default function LandingPageViewerPage() {
           </div>
         </div>
 
-        {/* Overlay backdrop when panel is open (mobile) */}
-        {isInfoPanelOpen && (
-          <div
-            className="fixed inset-0 top-[73px] bg-black/30 z-30 lg:hidden"
-            onClick={() => setIsInfoPanelOpen(false)}
-            aria-hidden="true"
-          />
-        )}
-      </main>
+      {/* Overlay backdrop when panel is open (mobile) */}
+      {isInfoPanelOpen && (
+        <div
+          className="fixed inset-0 bg-black/30 z-30 lg:hidden"
+          onClick={() => setIsInfoPanelOpen(false)}
+          aria-hidden="true"
+        />
+      )}
     </div>
   );
 }

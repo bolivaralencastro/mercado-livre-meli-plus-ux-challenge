@@ -1,173 +1,313 @@
 "use client";
 
-import { useState } from "react";
-import { CreditCard, Calendar, Lock, ChevronRight, Plus } from "lucide-react";
+import React, { useState } from 'react';
+import { ViewState, PaymentMethod } from './types';
+import { PaymentDetails } from './components/PaymentDetails';
+import { AddCardForm } from './components/AddCardForm';
+import { PaymentManagement } from './components/PaymentManagement';
+import { MethodInfo } from './components/MethodInfo';
+import { AddBalance } from './components/AddBalance';
+import { AddMethodSelection } from './components/AddMethodSelection';
+import { EntryFlow } from './components/EntryFlow';
+import { Toast } from './components/ui/Toast';
+
+// Mock Initial Data - Replicating Uber Wallet Variety
+const INITIAL_METHODS: PaymentMethod[] = [
+    {
+      id: 'account-balance',
+      type: 'account',
+      title: 'Saldo Mercado Pago',
+      subtitle: 'Disponível'
+    },
+    {
+      id: 'apple-pay',
+      type: 'apple_pay',
+      title: 'Apple Pay',
+    },
+    {
+      id: 'visa-0169',
+      type: 'visa',
+      title: 'Visa **** 0169',
+      last4: '0169'
+    },
+    {
+      id: 'pix-rec',
+      type: 'pix_recurring',
+      title: 'Pix Recorrente',
+      subtitle: 'Cobrança automática'
+    },
+    {
+      id: 'debit-bradesco',
+      type: 'debit_account',
+      title: 'Débito em conta',
+      subtitle: 'Banco Bradesco'
+    },
+    {
+      id: 'pix',
+      type: 'pix',
+      title: 'Pix',
+      subtitle: 'Pagamento instantâneo'
+    },
+    {
+      id: 'boleto',
+      type: 'boleto',
+      title: 'Boleto Bancário',
+      subtitle: 'Recarga de saldo'
+    }
+];
+
+// Mock Potential Methods (Available but not active)
+const POTENTIAL_METHODS: PaymentMethod[] = [
+    {
+        id: 'paypal',
+        type: 'paypal',
+        title: 'PayPal',
+        subtitle: 'Conectar conta'
+    },
+    {
+        id: 'ticket-restaurant',
+        type: 'ticket',
+        title: 'Ticket Restaurante',
+        subtitle: 'Adicionar vale'
+    }
+];
 
 export default function PaymentConfigPrototype() {
-  const [selectedCard, setSelectedCard] = useState<string | null>("visa-1234");
+  // Navigation State
+  const [currentView, setCurrentView] = useState<ViewState>(ViewState.ENTRY);
+  const [addCardOrigin, setAddCardOrigin] = useState<'MANAGEMENT' | 'BACKUP_FLOW'>('MANAGEMENT');
+  const [selectedMethodForInfo, setSelectedMethodForInfo] = useState<PaymentMethod | null>(null);
 
-  const savedCards = [
-    { id: "visa-1234", brand: "Visa", last4: "1234", expiry: "12/28", color: "#1a1f71" },
-    { id: "master-5678", brand: "Mastercard", last4: "5678", expiry: "05/26", color: "#eb001b" },
-  ];
+  // Data State
+  const [allMethods, setAllMethods] = useState<PaymentMethod[]>(INITIAL_METHODS);
+  const [availableMethods, setAvailableMethods] = useState<PaymentMethod[]>(POTENTIAL_METHODS);
+  const [primaryId, setPrimaryId] = useState<string>('visa-0169');
+  const [secondaryId, setSecondaryId] = useState<string | null>(null);
+  
+  // Toast State
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+
+  // --- Actions ---
+
+  const handleSetSecondary = (id: string) => {
+    setSecondaryId(id);
+    setToastMessage('Backup definido com sucesso!');
+    setShowToast(true);
+  };
+
+  const handleRemoveSecondary = () => {
+    setSecondaryId(null);
+    setToastMessage('Backup removido.');
+    setShowToast(true);
+  };
+
+  const handleSetPrimary = (id: string) => {
+    // If the new primary was the secondary, clear secondary
+    if (id === secondaryId) {
+        setSecondaryId(null);
+    }
+    setPrimaryId(id);
+    setToastMessage('Forma de pagamento principal atualizada!');
+    setShowToast(true);
+  };
+
+  const handleDeleteMethod = (id: string) => {
+    if (id === primaryId) {
+        setToastMessage('Não é possível excluir o cartão principal.');
+        setShowToast(true);
+        return;
+    }
+    if (id === secondaryId) {
+        setSecondaryId(null);
+    }
+    
+    // Find the method being removed
+    const methodToRemove = allMethods.find(m => m.id === id);
+    
+    // Remove from active list
+    setAllMethods(prev => prev.filter(m => m.id !== id));
+
+    // Add to available list (so it appears in "Add Payment Method" screen)
+    if (methodToRemove) {
+        setAvailableMethods(prev => [...prev, methodToRemove]);
+    }
+
+    setToastMessage('Forma de pagamento removida da carteira.');
+    setShowToast(true);
+  };
+
+  const handleSaveNewCard = (newCard: PaymentMethod) => {
+    setAllMethods(prev => [...prev, newCard]);
+    
+    if (addCardOrigin === 'BACKUP_FLOW') {
+        // If added via Backup flow, automatically set as secondary
+        setSecondaryId(newCard.id);
+        setToastMessage('Novo cartão salvo e definido como backup!');
+        setCurrentView(ViewState.DETAILS);
+    } else {
+        // If added via Management, just go back to list
+        setToastMessage('Cartão adicionado à carteira.');
+        setCurrentView(ViewState.MANAGEMENT);
+    }
+    setShowToast(true);
+  };
+
+  const handleRestoreMethod = (method: PaymentMethod) => {
+      // Remove from available
+      setAvailableMethods(prev => prev.filter(m => m.id !== method.id));
+      // Add to active
+      setAllMethods(prev => [...prev, method]);
+      
+      setToastMessage('Forma de pagamento readicionada!');
+      setShowToast(true);
+      setCurrentView(ViewState.MANAGEMENT);
+  };
+
+  // --- Navigation Handlers ---
+
+  const goToAddCardFromBackup = () => {
+      setAddCardOrigin('BACKUP_FLOW');
+      setCurrentView(ViewState.ADD_CARD);
+  };
+
+  const goToAddCardFromManagement = () => {
+      // New flow: Go to Selection first, not directly to Form
+      setAddCardOrigin('MANAGEMENT');
+      setCurrentView(ViewState.ADD_METHOD_SELECTION);
+  };
+
+  const handleMethodSelect = (method: PaymentMethod) => {
+      setSelectedMethodForInfo(method);
+      setCurrentView(ViewState.METHOD_INFO);
+  };
+
+  const goToAddBalance = () => {
+      setCurrentView(ViewState.ADD_BALANCE);
+  };
+
+  const handleCloseAddBalance = () => {
+      // Simulate success and go back to wallet
+      setToastMessage('Solicitação de saldo criada com sucesso!');
+      setShowToast(true);
+      setCurrentView(ViewState.MANAGEMENT);
+  };
+
+  const renderView = () => {
+      switch (currentView) {
+          case ViewState.ENTRY:
+              return <EntryFlow onEnter={() => setCurrentView(ViewState.DETAILS)} />;
+          
+          case ViewState.DETAILS:
+              return (
+                <PaymentDetails 
+                    allMethods={allMethods}
+                    primaryId={primaryId}
+                    secondaryId={secondaryId}
+                    onNavigateToManagement={() => setCurrentView(ViewState.MANAGEMENT)}
+                    onSetSecondary={handleSetSecondary}
+                    onRemoveSecondary={handleRemoveSecondary}
+                    onAddNewForBackup={goToAddCardFromBackup}
+                />
+              );
+          
+          case ViewState.MANAGEMENT:
+              return (
+                  <PaymentManagement 
+                      methods={allMethods}
+                      primaryId={primaryId}
+                      secondaryId={secondaryId}
+                      onBack={() => setCurrentView(ViewState.DETAILS)}
+                      onAddCard={goToAddCardFromManagement}
+                      onSetPrimary={handleSetPrimary}
+                      onDelete={handleDeleteMethod}
+                      onAddBalance={() => {
+                         // Find Pix or Boleto for direct balance addition
+                         const topUpMethod = allMethods.find(m => m.type === 'pix') || allMethods.find(m => m.type === 'boleto');
+                         if (topUpMethod) {
+                            setSelectedMethodForInfo(topUpMethod);
+                            setCurrentView(ViewState.ADD_BALANCE);
+                         } else {
+                            setToastMessage('Método de recarga indisponível');
+                            setShowToast(true);
+                         }
+                      }}
+                      onMethodSelect={handleMethodSelect}
+                      onSetSecondary={handleSetSecondary}
+                  />
+              );
+          
+          case ViewState.ADD_METHOD_SELECTION:
+              return (
+                  <AddMethodSelection 
+                      availableMethods={availableMethods}
+                      onBack={() => setCurrentView(ViewState.MANAGEMENT)}
+                      onSelectMethod={handleRestoreMethod}
+                      onAddNewCard={() => setCurrentView(ViewState.ADD_CARD)}
+                  />
+              );
+
+          case ViewState.METHOD_INFO:
+              if (!selectedMethodForInfo) return null;
+              return (
+                  <MethodInfo 
+                    method={selectedMethodForInfo}
+                    onBack={() => setCurrentView(ViewState.MANAGEMENT)}
+                    onAddBalance={goToAddBalance}
+                    onRemove={() => {
+                        handleDeleteMethod(selectedMethodForInfo.id);
+                        setCurrentView(ViewState.MANAGEMENT);
+                    }}
+                  />
+              );
+
+          case ViewState.ADD_BALANCE:
+               if (!selectedMethodForInfo) return null;
+               return (
+                  <AddBalance 
+                    method={selectedMethodForInfo}
+                    onClose={handleCloseAddBalance}
+                  />
+               );
+
+          case ViewState.ADD_CARD:
+              return (
+                <AddCardForm 
+                    onBack={() => {
+                        // Return to selection if we came from management, or details if from backup
+                        if (addCardOrigin === 'MANAGEMENT') {
+                             setCurrentView(ViewState.ADD_METHOD_SELECTION);
+                        } else {
+                             setCurrentView(ViewState.DETAILS);
+                        }
+                    }}
+                    onSave={handleSaveNewCard}
+                />
+              );
+              
+          // Legacy support (though currently unused in this new flow structure)
+          case ViewState.SELECTION:
+              return null; 
+
+          default:
+              return null;
+      }
+  };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Mobile Container */}
-      <div className="max-w-md mx-auto bg-white min-h-screen shadow-lg">
-        {/* Header */}
-        <div className="bg-[#fff159] p-4 sticky top-0 z-10 shadow-sm">
-          <h1 className="text-[#2d3277] font-semibold text-lg">Configuração de Pagamento</h1>
-          <p className="text-[#2d3277]/70 text-sm">Gerencie seus métodos de pagamento</p>
-        </div>
+    <div className="min-h-screen w-full bg-[#eee] flex justify-center font-sans">
+      {/* Mobile Container Simulation */}
+      <div className="w-full max-w-[420px] bg-[#f5f5f5] min-h-screen shadow-2xl relative overflow-x-hidden">
+        
+        {renderView()}
 
-        {/* Content */}
-        <div className="p-4 space-y-6">
-          {/* Current Subscription */}
-          <section>
-            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
-              Assinatura Atual
-            </h2>
-            <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
-              <div className="flex items-start justify-between mb-3">
-                <div>
-                  <span className="inline-block bg-[#8e24aa] text-white px-3 py-1 rounded-full text-xs font-bold italic mb-2">
-                    meli+
-                  </span>
-                  <h3 className="font-bold text-lg text-gray-900">Plano Mega</h3>
-                  <p className="text-gray-600 text-sm">R$ 39,90/mês</p>
-                </div>
-                <div className="text-right">
-                  <span className="inline-block px-2 py-1 bg-green-100 text-green-700 text-xs font-medium rounded">
-                    Ativa
-                  </span>
-                </div>
-              </div>
-              <div className="pt-3 border-t border-gray-100 text-sm text-gray-600">
-                <p>Próxima cobrança: <span className="font-medium text-gray-900">15/12/2025</span></p>
-              </div>
-            </div>
-          </section>
-
-          {/* Saved Cards */}
-          <section>
-            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
-              Cartões Salvos
-            </h2>
-            <div className="space-y-2">
-              {savedCards.map((card) => (
-                <div
-                  key={card.id}
-                  className={`
-                    border rounded-xl p-4 cursor-pointer transition-all duration-200
-                    ${selectedCard === card.id 
-                      ? "border-[#3483fa] bg-blue-50/50 shadow-sm" 
-                      : "border-gray-200 bg-white hover:border-gray-300"
-                    }
-                  `}
-                  onClick={() => setSelectedCard(card.id)}
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div 
-                        className="w-12 h-8 rounded flex items-center justify-center text-white text-[8px] font-bold tracking-widest shadow-sm"
-                        style={{ backgroundColor: card.color }}
-                      >
-                        {card.brand.toUpperCase().slice(0, 6)}
-                      </div>
-                      <div>
-                        <p className="font-medium text-gray-900 text-sm">
-                          {card.brand} •••• {card.last4}
-                        </p>
-                        <p className="text-gray-500 text-xs flex items-center gap-1">
-                          <Calendar className="w-3 h-3" />
-                          {card.expiry}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      {selectedCard === card.id && (
-                        <span className="text-xs font-medium text-[#3483fa] px-2 py-1 bg-blue-100 rounded">
-                          Principal
-                        </span>
-                      )}
-                      <ChevronRight className="w-5 h-5 text-gray-400" />
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Add New Card */}
-          <section>
-            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
-              Adicionar Meio de Pagamento
-            </h2>
-            <button className="w-full bg-white border border-gray-200 rounded-xl p-4 hover:border-[#3483fa] hover:bg-blue-50/50 transition-all duration-200 group">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center group-hover:bg-[#3483fa] transition-colors">
-                    <Plus className="w-6 h-6 text-[#3483fa] group-hover:text-white transition-colors" />
-                  </div>
-                  <div className="text-left">
-                    <p className="font-medium text-gray-900 text-sm">Novo Cartão</p>
-                    <p className="text-gray-500 text-xs">Adicionar cartão de crédito</p>
-                  </div>
-                </div>
-                <ChevronRight className="w-5 h-5 text-gray-400" />
-              </div>
-            </button>
-          </section>
-
-          {/* Payment History */}
-          <section>
-            <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
-              Histórico de Pagamentos
-            </h2>
-            <div className="bg-white border border-gray-200 rounded-xl divide-y divide-gray-100 shadow-sm">
-              {[
-                { date: "15/11/2025", amount: "R$ 39,90", status: "Aprovado", method: "Visa •••• 1234" },
-                { date: "15/10/2025", amount: "R$ 39,90", status: "Aprovado", method: "Visa •••• 1234" },
-                { date: "15/09/2025", amount: "R$ 39,90", status: "Aprovado", method: "Mastercard •••• 5678" },
-              ].map((payment, idx) => (
-                <div key={idx} className="p-4 hover:bg-gray-50 transition-colors cursor-pointer">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="font-medium text-gray-900 text-sm">{payment.amount}</p>
-                      <p className="text-gray-500 text-xs">{payment.date} • {payment.method}</p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs font-medium text-green-700 px-2 py-1 bg-green-100 rounded">
-                        {payment.status}
-                      </span>
-                      <ChevronRight className="w-4 h-4 text-gray-400" />
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Security Info */}
-          <div className="bg-blue-50 border border-blue-100 rounded-xl p-4">
-            <div className="flex items-start gap-3">
-              <Lock className="w-5 h-5 text-[#3483fa] flex-shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-semibold text-gray-900 text-sm mb-1">
-                  Seus dados estão seguros
-                </h3>
-                <p className="text-gray-600 text-xs leading-relaxed">
-                  Utilizamos criptografia de ponta a ponta para proteger suas informações de pagamento. 
-                  Nenhum dado sensível é armazenado em nossos servidores.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Spacing */}
-        <div className="h-8" />
+        {/* Global Toast */}
+        <Toast 
+          message={toastMessage} 
+          isVisible={showToast} 
+          onClose={() => setShowToast(false)} 
+        />
+        
       </div>
     </div>
   );
