@@ -191,12 +191,13 @@
 
 .revealOverlay {
     position: absolute; inset: 0;
-    background: linear-gradient(145deg, #581C96 0%, #2A004F 100%);
+    background: linear-gradient(145deg, #2C3E50 0%, #1A252F 100%);
     z-index: 10; display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     padding: 32px; text-align: center;
     transform: translateY(100%); transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     color: white;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .cardRevealed .revealOverlay { transform: translateY(0); }

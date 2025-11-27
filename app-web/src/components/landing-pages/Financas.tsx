@@ -1,19 +1,21 @@
 'use client';
 
 import React, { useState } from 'react';
-import styles from './styles.module.css';
+import styles from './Financas.module.css';
 
-export default function LogisticaPage() {
+export default function FinancasPage() {
   const [sliderValue, setSliderValue] = useState(0);
   const [isRevealed, setIsRevealed] = useState(false);
 
-  const avgFreight = 20.00;
-  const meliTotalCost = 17.90;
+  const ratePoupYear = 0.0617;
+  const rateMeliYear = 0.135;
 
-  const count = sliderValue;
-  const totalFreightCost = count * avgFreight;
-  const netSaving = totalFreightCost - meliTotalCost;
-  const hasSaving = netSaving > 0;
+  const P = sliderValue;
+  const fvPoup = P * (1 + ratePoupYear);
+  const fvMeli = P * (1 + rateMeliYear);
+  const gainP = fvPoup - P;
+  const gainM = fvMeli - P;
+  const extra = gainM - gainP;
 
   const fmtMoney = (v: number) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
@@ -26,59 +28,64 @@ export default function LogisticaPage() {
     <div className={styles.container}>
       <div className={styles.heroWrapper}>
         <div className={styles.heroGrid}>
-          {/* Left Side */}
+          
+          {/* Left Content */}
           <div className={styles.heroLeft}>
             <div className={styles.logoLockup}>
-              <span className={styles.logoText}>meli+</span>
-              <span className={styles.planBadge}>FRETE GRÁTIS</span>
+              <span className={styles.logoPart}>meli+</span>
+              <span className={styles.planPart}>TOTAL</span>
             </div>
             
             <h1 className={styles.heroTitle}>
-              Sua última compra com frete pago deveria ter sido a última.
+              Seu dinheiro parado está <br />
+              <span className={styles.highlightNegative}>rendendo menos</span> do que deveria.
             </h1>
             
             <p className={styles.subH}>
-              Quem faz mais de 1 compra por mês já economiza assinando.
-              No Meli+ Mega você tem frete grátis ilimitado e muito mais, por um único preço mensal.
+              Com o Meli+, ele rende até <strong>120% do CDI</strong> em cofres e 105% no saldo da conta.
             </p>
             
             <button className={styles.ctaBtn3d}>
-              Ativar Frete Grátis
+              Potencializar meus ganhos
+              <span className="material-icons-round" style={{ fontSize: '1.1rem', marginLeft: '8px' }}>arrow_forward</span>
             </button>
             
             <div className={styles.bonusBlock}>
-              <span className={`material-icons-round ${styles.bonusIcon}`}>redeem</span>
+              <span className={`material-icons-round ${styles.bonusIcon}`}>local_shipping</span>
               <div className={styles.bonusText}>
                 <strong>Bônus incluso:</strong>
-                Streamings, rendimento maior e cashback — tudo no mesmo plano Meli+ Mega.
+                <span>Frete Grátis em milhões de produtos.</span>
               </div>
             </div>
           </div>
 
-          {/* Right Side: Freight Simulator */}
+          {/* Right Content: ROI Simulator */}
           <div className={styles.heroRight}>
-            <div className={`${styles.simCard} ${isRevealed ? styles.cardRevealed : ''}`} id="card-ship">
+            <div className={`${styles.simCard} ${isRevealed ? styles.cardRevealed : ''}`} id="card-roi">
               <div className={styles.cardTop}>
                 <div className={styles.titleRow}>
-                  <h3 className={styles.title}>Frete</h3>
+                  <h3 className={styles.title}>Rendimento</h3>
                   <div className={styles.tooltipTrigger}>
                     <span className="material-icons-round" style={{ fontSize: '18px' }}>info</span>
                     <div className={styles.tooltipBox}>
-                      R$ 20,00 é o custo médio estimado de envio para compras abaixo de R$ 79 sem assinatura.
+                      <strong>Cálculo projetado para 1 ano (12 meses):</strong><br />
+                      • Poupança: ~6,17% a.a.<br />
+                      • Meli+ (120% CDI): ~13,5% a.a.<br />
+                      *Considerando taxa CDI atual. Limite de simulação: R$ 10.000.
                     </div>
                   </div>
                 </div>
-                <p className={styles.subtitle}>Quanto dinheiro você joga fora pagando frete em compras pequenas?</p>
+                <p className={styles.subtitle}>Quanto dinheiro fica parado na sua conta rendendo pouco?</p>
 
                 <div className={styles.displayArea}>
-                  <span className={`${styles.statusBadge} ${sliderValue === 0 ? styles.statusBadgeNeutral : styles.statusBadgeBad}`}>
+                  <span className={`${styles.statusBadge} ${sliderValue === 0 ? styles.statusBadgeNeutral : styles.statusBadgeNeutral}`}>
                     {sliderValue === 0 ? 'SEM MELI+' : 'SEM MELI+'}
                   </span>
-                  <div className={`${styles.priceValue} ${sliderValue === 0 ? styles.priceValueNeutral : styles.priceValueDanger}`}>
-                    {fmtMoney(totalFreightCost)}
+                  <div className={`${styles.priceValue} ${sliderValue === 0 ? styles.priceValueNeutral : ''}`}>
+                    {sliderValue === 0 ? '+ R$ 0,00' : `+ ${fmtMoney(gainP)}`}
                   </div>
                   <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '8px' }}>
-                    <span style={{ fontWeight: 700 }}>{count}</span> envios
+                    Saldo: <span style={{ color: 'var(--text-primary)', fontWeight: 700 }}>{fmtMoney(sliderValue)}</span>
                   </div>
                 </div>
               </div>
@@ -87,8 +94,8 @@ export default function LogisticaPage() {
                 <input 
                   type="range" 
                   min="0" 
-                  max="10" 
-                  step="1" 
+                  max="10000" 
+                  step="100" 
                   value={sliderValue} 
                   onChange={handleSliderChange}
                 />
@@ -99,22 +106,20 @@ export default function LogisticaPage() {
                 onClick={() => setIsRevealed(true)} 
                 disabled={sliderValue === 0}
               >
-                <span className="material-icons-round" style={{ marginRight: '8px' }}>local_shipping</span>
-                Ver frete com Meli+
+                <span className="material-icons-round" style={{ marginRight: '8px' }}>trending_up</span>
+                Ver ganho com Meli+
               </button>
 
               <div className={styles.revealOverlay}>
                 <button className={styles.closeReveal} onClick={() => setIsRevealed(false)}>
                   <span className="material-icons-round">close</span>
                 </button>
-                <span className={styles.revealTag}>COM MELI+ TOTAL</span>
-                <div className={styles.revealPrice}>R$ 17,90</div>
-                <p className={styles.revealSub}>Frete Grátis Ilimitado</p>
+                <span className={styles.revealTag}>COM MELI+ (120% CDI)</span>
+                <div className={styles.revealPrice}>{fmtMoney(gainM)}</div>
+                <p className={styles.revealSub}>Rendimento total em 1 ano</p>
                 <div className={styles.savingsBadgeSim}>
-                  <span className={styles.savingsLabel}>{hasSaving ? 'Economia Real' : 'Vantagem'}</span>
-                  <span className={styles.savingsValueSim} style={{ color: hasSaving ? 'var(--meli-green)' : 'white' }}>
-                    {hasSaving ? fmtMoney(netSaving) : 'Frete Grátis'}
-                  </span>
+                  <span className={styles.savingsLabel}>Ganho extra com Meli+</span>
+                  <span className={styles.savingsValueSim}>+ {fmtMoney(extra)}</span>
                 </div>
               </div>
             </div>

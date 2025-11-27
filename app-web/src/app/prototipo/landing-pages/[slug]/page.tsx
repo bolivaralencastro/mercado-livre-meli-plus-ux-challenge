@@ -5,6 +5,9 @@ import { useCallback, useEffect, useState } from "react";
 import { ArrowLeft, ChevronLeft, ChevronRight, Info, X } from "lucide-react";
 import { landingPages, getLandingPageBySlug, LandingPageEntry } from "@/lib/landing-pages";
 import OfertaMonoliticaPage from "@/components/landing-pages/OfertaMonolitica";
+import CinemaPage from "@/components/landing-pages/Cinema";
+import FinancasPage from "@/components/landing-pages/Financas";
+import LogisticaPage from "@/components/landing-pages/Logistica";
 
 export default function LandingPageViewerPage() {
   const router = useRouter();
@@ -165,16 +168,10 @@ export default function LandingPageViewerPage() {
       <main className="flex-1 relative">
         {/* Prototype display area - Full width */}
         <div className="w-full h-[calc(100vh-73px)] bg-white overflow-y-auto">
-          {currentLandingPage.isNative && currentLandingPage.slug === 'oferta-monolitica' ? (
-            <OfertaMonoliticaPage />
-          ) : (
-            <iframe
-              src={currentLandingPage.htmlFile}
-              className="w-full h-full border-0"
-              title={currentLandingPage.title}
-              loading="lazy"
-            />
-          )}
+          {currentLandingPage.slug === 'oferta-monolitica' && <OfertaMonoliticaPage />}
+          {currentLandingPage.slug === 'cinema' && <CinemaPage />}
+          {currentLandingPage.slug === 'financas' && <FinancasPage />}
+          {currentLandingPage.slug === 'logistica' && <LogisticaPage />}
         </div>
 
         {/* Floating Info Panel - Overlays on the right */}
