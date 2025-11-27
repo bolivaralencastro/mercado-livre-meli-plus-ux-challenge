@@ -356,263 +356,587 @@
     "experiencia-mapas": {
       "title": "Experiencia Mapas",
       "slug": "experiencia-mapas",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Redesenho da experiência de mapas no Mercado Livre para unificar a busca por pontos de retirada e locais que aceitam pagamento com QR code, melhorando a conexão entre online e offline.",
+      "description": "O projeto reestruturou a funcionalidade de mapas no app do Mercado Livre, criando uma experiência centralizada para que usuários encontrem tanto agências de retirada de pacotes (Mercado Envios) quanto estabelecimentos que aceitam pagamento via QR Code (Mercado Pago). A iniciativa visou eliminar a navegação fragmentada e oferecer uma ferramenta mais intuitiva e útil, com filtros inteligentes, informações contextuais como horários de funcionamento e serviços disponíveis, e integração com aplicativos de navegação para traçar rotas. O objetivo foi fortalecer a rede logística e de pagamentos do ecossistema, tornando a transição do online para o offline mais fluida.",
+      "insights": [
+        "A unificação de diferentes tipos de pontos de interesse (logística, pagamentos) em um único mapa reduz a carga cognitiva do usuário.",
+        "Informações contextuais e em tempo real, como 'aberto agora', são cruciais para a tomada de decisão em um contexto de mobilidade.",
+        "A clareza na categorização e nos filtros (agências, lojas, postos de gasolina) melhora drasticamente a usabilidade da funcionalidade.",
+        "A integração com serviços de rota como Waze e Google Maps é uma expectativa básica do usuário para qualquer funcionalidade de mapa."
+      ],
+      "tags": [
+        "UX Design",
+        "Mapas",
+        "Geolocalização",
+        "O2O",
+        "Mercado Envios",
+        "QR Code"
+      ],
+      "impact": "O novo design da experiência de mapas resultou em um aumento na taxa de sucesso de localização de pontos de interesse, maior adoção da retirada de pacotes em agências e um crescimento no uso de pagamentos com QR Code, ao tornar os locais parceiros mais visíveis e acessíveis."
     },
     "fotos-de-estudio-en-un-clic-con-inteligencia-artificial": {
       "title": "Fotos De Estudio En Un Clic Con Inteligencia Artificial",
       "slug": "fotos-de-estudio-en-un-clic-con-inteligencia-artificial",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Lançamento de uma ferramenta de IA que remove o fundo de fotos de produtos, criando imagens com padrão de estúdio para vendedores do Mercado Livre e melhorando a qualidade visual do catálogo.",
+      "description": "Com o objetivo de democratizar o acesso a anúncios de alta qualidade, o Mercado Livre implementou uma ferramenta baseada em Inteligência Artificial que remove o fundo de fotos de produtos e o substitui por um fundo branco padronizado. Integrada diretamente ao fluxo de criação de anúncios, a funcionalidade elimina a necessidade de softwares de edição caros e complexos, permitindo que qualquer vendedor possa criar imagens com apelo profissional. O resultado é um catálogo mais consistente e visualmente atraente, que gera mais confiança nos compradores e, consequentemente, aumenta as taxas de conversão.",
+      "insights": [
+        "A qualidade das fotos é um dos principais fatores na decisão de compra online.",
+        "Vendedores com menos recursos têm dificuldade em produzir imagens de alta qualidade, criando uma desvantagem competitiva.",
+        "A padronização visual do catálogo (fundos brancos) aumenta a percepção de profissionalismo e a confiança na plataforma.",
+        "Ferramentas de IA integradas ao fluxo de trabalho podem remover barreiras técnicas e financeiras, democratizando o acesso a recursos profissionais."
+      ],
+      "tags": [
+        "Inteligência Artificial",
+        "UX Design",
+        "E-commerce",
+        "Visão Computacional",
+        "Ferramentas de Vendedor"
+      ],
+      "impact": "A ferramenta foi amplamente adotada pela base de vendedores, resultando em milhões de anúncios com qualidade visual aprimorada. Vendedores que utilizaram a funcionalidade registraram um aumento significativo na taxa de cliques e na conversão de vendas, validando o impacto positivo de imagens de alta qualidade no desempenho do e-commerce."
     },
     "identidad-y-landings-de-mercado-pago": {
       "title": "Identidad Y Landings De Mercado Pago",
       "slug": "identidad-y-landings-de-mercado-pago",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Reestruturação da identidade visual e das landing pages do Mercado Pago para comunicar de forma clara e consistente a proposta de valor da conta digital, utilizando um sistema de design modular e regionalizado.",
+      "description": "Este projeto abordou o desafio de reposicionar o Mercado Pago, de uma simples carteira virtual para uma conta digital completa. O trabalho envolveu a criação de uma nova identidade visual e um sistema de landings modulares e escaláveis, que pudessem ser adaptadas para diferentes países da América Latina. A equipe focou em regionalizar o conteúdo, não apenas traduzindo, mas adaptando a linguagem e os exemplos à cultura local, e em criar um processo de desenvolvimento ágil que permitiu lançar as novas páginas em tempo recorde.",
+      "insights": [
+        "A percepção da marca precisa evoluir junto com o produto; a comunicação deve refletir a nova proposta de valor.",
+        "Um sistema de design modular permite escalar a produção de landings para múltiplos mercados com eficiência e consistência.",
+        "A regionalização do conteúdo vai além da tradução e exige uma adaptação cultural para gerar conexão com o usuário.",
+        "Processos de trabalho ágeis, com colaboração entre UX, conteúdo e desenvolvimento, são essenciais para projetos com prazos curtos."
+      ],
+      "tags": [
+        "Branding",
+        "UX Design",
+        "Landing Pages",
+        "Design System",
+        "Regionalização",
+        "Fintech"
+      ],
+      "impact": "O novo sistema de landings permitiu ao Mercado Pago comunicar sua proposta de valor de forma mais eficaz em toda a América Latina, triplicando o impacto no mesmo período de produção. O processo ágil viabilizou o lançamento rápido em mercados-chave como Brasil, México e Argentina, com posterior expansão para outros países da região."
     },
     "lanzamiento-de-point-smart-en-brasil": {
       "title": "Lanzamiento De Point Smart En Brasil",
       "slug": "lanzamiento-de-point-smart-en-brasil",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Lançamento da maquininha de pagamentos Point Smart no Brasil, com foco em uma experiência de usuário simples e um ecossistema de serviços integrados para pequenos e médios empreendedores.",
+      "description": "O projeto de lançamento da Point Smart no Brasil foi desenhado para oferecer mais do que uma simples maquininha de pagamentos. A equipe de UX focou em criar uma solução completa para o vendedor, com um sistema operacional próprio, acesso a um catálogo de produtos, gestão de vendas e integração com o ecossistema do Mercado Pago. O design do produto e da interface foi pensado para ser intuitivo e fácil de usar, mesmo para quem não tem familiaridade com tecnologia, ajudando a digitalizar o negócio de milhares de empreendedores no país.",
+      "insights": [
+        "Vendedores precisam de mais do que apenas uma forma de receber pagamentos; eles precisam de ferramentas para gerenciar seu negócio.",
+        "A simplicidade e a facilidade de uso são fatores-chave para a adoção de novas tecnologias por pequenos empreendedores.",
+        "Um ecossistema de serviços integrados (pagamentos, catálogo, gestão) agrega mais valor do que soluções isoladas.",
+        "O design do hardware e do software deve ser pensado de forma conjunta para criar uma experiência de usuário coesa."
+      ],
+      "tags": [
+        "UX Design",
+        "Hardware",
+        "Fintech",
+        "Pagamentos",
+        "Ponto de Venda (POS)",
+        "B2B"
+      ],
+      "impact": "O lançamento da Point Smart no Brasil foi um sucesso, com alta adesão de pequenos e médios vendedores. A solução ajudou a aumentar a base de usuários do Mercado Pago e a fortalecer a presença da empresa no mercado de pagamentos físicos, consolidando o ecossistema de serviços para vendedores."
     },
     "lanzamiento-point-plus-en-argentina": {
       "title": "Lanzamiento Point Plus En Argentina",
       "slug": "lanzamiento-point-plus-en-argentina",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Introdução da maquininha Point Plus na Argentina, oferecendo uma solução de pagamento móvel, acessível e com conexão própria para autônomos e pequenos comerciantes.",
+      "description": "O lançamento da Point Plus na Argentina teve como objetivo democratizar o acesso a pagamentos com cartão para um público de vendedores que, tradicionalmente, dependia de dinheiro em espécie. O produto foi desenhado para ser portátil, com bateria de longa duração e plano de dados incluso, eliminando a necessidade de um smartphone ou conexão Wi-Fi. A experiência de onboarding e uso foi simplificada ao máximo, permitindo que qualquer pessoa pudesse começar a vender em poucos minutos. O projeto focou em remover barreiras de custo e complexidade, impulsionando a inclusão financeira no país.",
+      "insights": [
+        "A dependência de um smartphone para processar pagamentos é uma barreira para muitos vendedores.",
+        "Soluções 'tudo em um', com hardware e conectividade inclusos, simplificam a adoção da tecnologia.",
+        "Um processo de onboarding rápido e sem atritos é fundamental para o público autônomo e de pequenos comerciantes.",
+        "Acessibilidade de custo, tanto do dispositivo quanto das taxas, é o principal fator de decisão para este segmento."
+      ],
+      "tags": [
+        "UX Design",
+        "Inclusão Financeira",
+        "Fintech",
+        "Pagamentos",
+        "Ponto de Venda (POS)"
+      ],
+      "impact": "A Point Plus se tornou uma das maquininhas de pagamento mais populares na Argentina, impulsionando um crescimento significativo no volume de transações processadas pelo Mercado Pago e trazendo milhares de novos vendedores para o sistema financeiro digital."
     },
     "mas-seguridad-en-los-pagos-con-tarjeta-mercado-pago": {
       "title": "Mas Seguridad En Los Pagos Con Tarjeta Mercado Pago",
       "slug": "mas-seguridad-en-los-pagos-con-tarjeta-mercado-pago",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Implementação de novas camadas de segurança no processo de pagamento com cartão no Mercado Pago, focando em educar o usuário e aumentar a confiança sem adicionar fricção desnecessária.",
+      "description": "Para combater fraudes e aumentar a percepção de segurança, o Mercado Pago redesenhou partes do fluxo de pagamento com cartão. O projeto introduziu validações de identidade mais robustas e comunicação mais clara sobre as medidas de segurança em vigor. A equipe de UX teve o desafio de adicionar essas novas etapas sem prejudicar a experiência do usuário, utilizando design de interação e conteúdo para explicar o 'porquê' de cada passo e garantir que o processo fosse percebido como um benefício, e não um obstáculo. O foco foi em construir confiança e educar o usuário sobre as boas práticas de segurança.",
+      "insights": [
+        "A comunicação transparente sobre medidas de segurança aumenta a confiança do usuário, mesmo que adicione um passo extra ao fluxo.",
+        "Educar o usuário sobre como se proteger de fraudes é tão importante quanto implementar as barreiras tecnológicas.",
+        "O design de interação pode transformar uma etapa de segurança, potencialmente frustrante, em um momento de reforço positivo da marca.",
+        "É preciso equilibrar o nível de segurança com a fluidez da experiência do usuário, aplicando validações mais rigorosas apenas quando o risco é maior."
+      ],
+      "tags": [
+        "UX Design",
+        "Segurança",
+        "Fintech",
+        "Pagamentos",
+        "Confiança do Usuário"
+      ],
+      "impact": "As novas medidas de segurança reduziram significativamente a taxa de fraude nas transações com cartão. Além disso, pesquisas de satisfação mostraram um aumento na percepção de segurança e confiança dos usuários em relação ao Mercado Pago, consolidando a imagem da plataforma como um ambiente seguro para transações financeiras."
     },
     "mercado-envios-flex": {
       "title": "Mercado Envios Flex",
       "slug": "mercado-envios-flex",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Criação do serviço Mercado Envios Flex, permitindo que vendedores do Mercado Livre realizem entregas no mesmo dia utilizando seus próprios veículos ou serviços de entrega locais.",
+      "description": "O Mercado Envios Flex foi desenvolvido para atender à crescente demanda por entregas rápidas no e-commerce. A solução permite que vendedores ofereçam a opção de entrega no mesmo dia, gerenciando a logística por conta própria através de um aplicativo dedicado. O projeto de UX focou em criar uma ferramenta simples para o vendedor gerenciar rotas, confirmar entregas e se comunicar com os compradores. Para os compradores, a experiência foi aprimorada com a visibilidade da opção de entrega 'super expressa' e o acompanhamento do pedido em tempo real.",
+      "insights": [
+        "A velocidade da entrega é um dos principais fatores de decisão de compra no e-commerce.",
+        "Empoderar os vendedores com ferramentas para que eles mesmos realizem a logística pode criar uma vantagem competitiva para a plataforma.",
+        "A comunicação em tempo real (status do pedido, mapa de acompanhamento) é essencial para a experiência do comprador em entregas rápidas.",
+        "A simplicidade da interface do aplicativo do entregador é crucial para garantir a eficiência da operação logística."
+      ],
+      "tags": [
+        "UX Design",
+        "Logística",
+        "E-commerce",
+        "Last Mile Delivery",
+        "Mercado Envios"
+      ],
+      "impact": "O Mercado Envios Flex se tornou um grande diferencial competitivo para o Mercado Livre, aumentando a conversão de vendas nas grandes cidades. A solução permitiu que milhares de vendedores oferecessem um serviço de entrega premium, melhorando a satisfação e a fidelidade dos compradores."
     },
     "mercado-pago-2022-redisenho-home-nativa": {
       "title": "Mercado Pago 2022 Redisenho Home Nativa",
       "slug": "mercado-pago-2022-redisenho-home-nativa",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Redesenho completo da home do aplicativo Mercado Pago, com foco em personalização, acesso rápido às funcionalidades mais usadas e uma arquitetura de informação mais clara e escalável.",
+      "description": "Com o crescimento do número de funcionalidades no aplicativo do Mercado Pago, a home se tornou complexa e pouco intuitiva. Este projeto de redesenho teve como objetivo reorganizar a arquitetura da informação, criando uma experiência mais personalizada e relevante para cada usuário. A nova home passou a destacar as funcionalidades mais utilizadas por cada perfil de usuário, além de oferecer atalhos contextuais e uma navegação mais limpa e organizada. O design foi pensado para ser modular e escalável, permitindo a inclusão de novos serviços no futuro sem comprometer a usabilidade.",
+      "insights": [
+        "À medida que um produto cresce, a arquitetura da informação precisa ser revisitada para evitar sobrecarga cognitiva.",
+        "A personalização da experiência, baseada no comportamento do usuário, aumenta o engajamento e a satisfação.",
+        "O acesso rápido às funcionalidades do dia a dia deve ser a prioridade da tela inicial de um aplicativo transacional.",
+        "Uma arquitetura modular permite que a interface evolua de forma sustentável, acompanhando o crescimento do produto."
+      ],
+      "tags": [
+        "UX Design",
+        "Arquitetura da Informação",
+        "Personalização",
+        "Mobile App",
+        "Fintech"
+      ],
+      "impact": "O redesenho da home do Mercado Pago resultou em um aumento significativo no engajamento dos usuários, com maior utilização das funcionalidades-chave do aplicativo. Testes de usabilidade e pesquisas de satisfação comprovaram que a nova interface foi percebida como mais simples, organizada e relevante."
     },
     "mercado-pago-point": {
       "title": "Mercado Pago Point",
       "slug": "mercado-pago-point",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Design e lançamento da primeira geração de leitores de cartão móveis (mPOS) do Mercado Pago, democratizando o acesso a pagamentos com cartão para milhões de pequenos vendedores na América Latina.",
+      "description": "O projeto Mercado Pago Point foi um marco na inclusão financeira na América Latina, ao oferecer um leitor de cartões de baixo custo que se conectava a um smartphone. A equipe de UX trabalhou na criação de uma experiência completa, desde o design do hardware e da embalagem até o fluxo de ativação e uso no aplicativo. O foco foi na simplicidade e na remoção de todas as barreiras tradicionais de acesso às maquininhas de cartão, como aluguel, taxas de adesão e burocracia. O resultado foi uma solução acessível e fácil de usar, que transformou a maneira como autônomos e pequenos comerciantes recebem pagamentos.",
+      "insights": [
+        "A barreira de custo e a complexidade dos sistemas de pagamento tradicionais excluem milhões de pequenos vendedores.",
+        "Uma experiência de onboarding simples e sem burocracia é fundamental para conquistar o público de autônomos.",
+        "O design do hardware, por mais simples que seja, impacta diretamente a percepção de qualidade e confiança no produto.",
+        "A integração transparente entre o hardware (leitor) e o software (aplicativo) é a chave para uma experiência de usuário fluida."
+      ],
+      "tags": [
+        "UX Design",
+        "Inclusão Financeira",
+        "Hardware",
+        "Fintech",
+        "Pagamentos",
+        "mPOS"
+      ],
+      "impact": "O Mercado Pago Point se tornou o líder de mercado em leitores de cartão móveis na América Latina, trazendo milhões de novos vendedores para o ecossistema de pagamentos digitais. O produto teve um impacto social e econômico profundo, ao permitir que pequenos negócios pudessem aumentar suas vendas e competir em pé de igualdade com empresas maiores."
     },
     "mercado-puntos": {
       "title": "Mercado Puntos",
       "slug": "mercado-puntos",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Criação e evolução do Mercado Pontos, o programa de fidelidade do Mercado Livre e Mercado Pago, que recompensa os usuários com benefícios como frete grátis e descontos em assinaturas.",
+      "description": "O Mercado Pontos foi desenhado para ser mais do que um simples programa de recompensas. O objetivo foi criar um sistema de fidelidade que estivesse totalmente integrado à experiência de compra e pagamento, incentivando o engajamento e a preferência pelo ecossistema do Mercado Livre. O projeto de UX envolveu a criação de uma identidade visual para os diferentes níveis do programa, uma comunicação clara sobre os benefícios e uma experiência de progressão que motiva o usuário a continuar usando os serviços. O programa se tornou um pilar estratégico da empresa, com benefícios que vão desde frete grátis até ofertas exclusivas em assinaturas de streaming.",
+      "insights": [
+        "Programas de fidelidade são mais eficazes quando os benefícios são tangíveis e fáceis de entender (ex: frete grátis).",
+        "A gamificação da experiência, com níveis e barras de progresso, é um poderoso motivador para o engajamento do usuário.",
+        "A integração dos benefícios do programa de fidelidade em momentos-chave da jornada do usuário (checkout, busca de produtos) aumenta a percepção de valor.",
+        "A parceria com outras marcas para oferecer benefícios (ex: assinaturas de streaming) pode enriquecer a proposta de valor do programa."
+      ],
+      "tags": [
+        "UX Design",
+        "Programa de Fidelidade",
+        "Gamificação",
+        "E-commerce",
+        "Mercado Pontos"
+      ],
+      "impact": "O Mercado Pontos se tornou um dos principais motores de fidelização do Mercado Livre, com milhões de usuários engajados nos diferentes níveis. O programa é um fator decisivo na preferência dos usuários pela plataforma, contribuindo para o aumento da frequência de compra e do lifetime value dos clientes."
     },
     "nueva-funcionalidad-para-traer-dinero-a-mercado-pago": {
       "title": "Nueva Funcionalidad Para Traer Dinero A Mercado Pago",
       "slug": "nueva-funcionalidad-para-traer-dinero-a-mercado-pago",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Desenvolvimento de novas funcionalidades para facilitar a adição de dinheiro na conta Mercado Pago, incluindo transferências de outros bancos e depósitos em lotéricas, com foco em reduzir a fricção e aumentar a adoção da conta digital.",
+      "description": "Para consolidar o Mercado Pago como a principal conta digital dos usuários, era crucial simplificar o processo de 'abastecer' a carteira. Este projeto focou em criar fluxos mais simples e diversificados para trazer dinheiro para a conta, como a integração com o Open Finance para transferências de outros bancos e a opção de depósito em dinheiro em casas lotéricas. A equipe de UX mapeou as dores dos usuários no processo de adição de dinheiro e desenhou soluções que reduzissem o número de passos e a carga cognitiva, tornando a experiência mais rápida e intuitiva.",
+      "insights": [
+        "A facilidade de adicionar dinheiro é um dos principais fatores para a adoção e o uso recorrente de uma conta digital.",
+        "Oferecer múltiplos métodos de depósito (digitais e físicos) atende a diferentes perfis de usuários e aumenta o alcance do produto.",
+        "A redução do número de passos em um fluxo financeiro tem um impacto direto e significativo na taxa de conversão.",
+        "A comunicação clara sobre prazos e taxas (ou a ausência delas) é fundamental para construir confiança no processo."
+      ],
+      "tags": [
+        "UX Design",
+        "Fintech",
+        "Conta Digital",
+        "Open Finance",
+        "Inclusão Financeira"
+      ],
+      "impact": "As novas funcionalidades de adição de dinheiro levaram a um aumento expressivo no volume de depósitos na conta Mercado Pago. A simplificação do fluxo e a diversificação dos métodos contribuíram para aumentar a base de usuários ativos e o saldo médio em conta, fortalecendo a posição do Mercado Pago como uma das principais contas digitais da América Latina."
     },
     "nueva-seccion-de-tus-gastos-en-mercado-pago": {
       "title": "Nueva Seccion De Tus Gastos En Mercado Pago",
       "slug": "nueva-seccion-de-tus-gastos-en-mercado-pago",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Criação de uma nova seção de 'Seus Gastos' no aplicativo Mercado Pago, oferecendo aos usuários uma ferramenta de gestão financeira pessoal com categorização automática de despesas e insights visuais.",
+      "description": "Para agregar mais valor à conta digital, o Mercado Pago desenvolveu uma ferramenta de gestão financeira pessoal (PFM - Personal Financial Management) integrada ao aplicativo. A nova seção 'Seus Gastos' categoriza automaticamente as transações do usuário (compras, pagamentos, transferências) e apresenta os dados em gráficos e relatórios visuais. O projeto de UX teve como objetivo criar uma experiência que fosse não apenas informativa, mas também educativa, ajudando os usuários a entenderem seus hábitos de consumo e a tomarem decisões financeiras mais inteligentes. A interface foi desenhada para ser simples, visual e fácil de interpretar, sem a complexidade de planilhas ou aplicativos de finanças tradicionais.",
+      "insights": [
+        "Usuários de contas digitais valorizam ferramentas que os ajudem a ter um maior controle sobre suas finanças.",
+        "A categorização automática de despesas é a funcionalidade-chave que remove a principal barreira de uso de ferramentas de PFM (a necessidade de inserção manual de dados).",
+        "A visualização de dados através de gráficos simples é mais eficaz para a compreensão dos hábitos de consumo do que tabelas de números.",
+        "A linguagem utilizada na interface deve ser simples e acessível, evitando jargões financeiros."
+      ],
+      "tags": [
+        "UX Design",
+        "Fintech",
+        "Gestão Financeira Pessoal (PFM)",
+        "Visualização de Dados",
+        "Conta Digital"
+      ],
+      "impact": "A seção 'Seus Gastos' se tornou uma das funcionalidades mais bem avaliadas do aplicativo Mercado Pago, aumentando o engajamento e a retenção de usuários. A ferramenta ajudou a posicionar o Mercado Pago não apenas como uma forma de pagar e receber dinheiro, mas como um parceiro inteligente na gestão da vida financeira dos seus usuários."
     },
     "nunca-dejes-de-buscar": {
       "title": "Nunca Dejes De Buscar",
       "slug": "nunca-dejes-de-buscar",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Campanha institucional do Mercado Livre durante a pandemia, com foco em reforçar os valores da marca e a conexão emocional com os usuários em um momento de incerteza.",
+      "description": "A campanha 'Nunca Dejes de Buscar' (Nunca Deixe de Buscar) foi uma iniciativa de branding do Mercado Livre criada em resposta à pandemia de COVID-19. Mais do que uma campanha de vendas, foi uma mensagem de otimismo e resiliência, que buscava inspirar as pessoas a continuarem buscando seus sonhos e objetivos, mesmo em um cenário adverso. O projeto envolveu a criação de um filme manifesto, peças para redes sociais e uma narrativa coesa que reforçava o papel do Mercado Livre como uma plataforma que conecta pessoas e possibilita a realização de projetos. A campanha teve um forte apelo emocional e ajudou a fortalecer a imagem da marca em toda a América Latina.",
+      "insights": [
+        "Em momentos de crise, as marcas têm a oportunidade de se conectar com os consumidores em um nível mais profundo, através de mensagens de apoio e otimismo.",
+        "Campanhas de branding que focam em valores e propósito podem gerar um impacto mais duradouro do que campanhas focadas apenas em produtos.",
+        "A consistência da mensagem em todos os pontos de contato (filme, redes sociais, site) é fundamental para o sucesso de uma campanha institucional.",
+        "A autenticidade da mensagem é crucial; a campanha precisa refletir os valores genuínos da empresa."
+      ],
+      "tags": [
+        "Branding",
+        "Marketing",
+        "Campanha Institucional",
+        "Storytelling",
+        "Mercado Livre"
+      ],
+      "impact": "A campanha 'Nunca Dejes de Buscar' teve uma repercussão extremamente positiva, gerando milhões de visualizações e um alto engajamento nas redes sociais. A iniciativa fortaleceu a imagem do Mercado Livre como uma marca humana e próxima dos seus usuários, resultando em um aumento significativo nos indicadores de brand equity e consideração da marca."
     },
     "one-tap-el-check-out-de-mercado-pago": {
       "title": "One Tap El Check Out De Mercado Pago",
       "slug": "one-tap-el-check-out-de-mercado-pago",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Redesenho do fluxo de checkout do Mercado Pago para um modelo 'One-Tap', simplificando radicalmente o processo de pagamento e aumentando a conversão.",
+      "description": "O projeto 'One-Tap Checkout' foi uma iniciativa para reduzir ao máximo a fricção no momento do pagamento. A equipe de UX redesenhou completamente a experiência de checkout, eliminando a necessidade de múltiplos passos e telas. Com o novo fluxo, usuários logados e com meios de pagamento salvos podem finalizar uma compra com apenas um toque. O projeto envolveu um profundo trabalho de pesquisa, testes de usabilidade e design de interação para garantir que a experiência fosse não apenas rápida, mas também segura e transparente. O resultado foi um dos checkouts mais eficientes do mercado, que se tornou um padrão para a indústria de pagamentos.",
+      "insights": [
+        "Cada passo adicional no fluxo de checkout representa uma queda na taxa de conversão.",
+        "A confiança do usuário é a base para um checkout simplificado; é preciso garantir que ele se sinta seguro mesmo com menos etapas.",
+        "O design de 'padrões inteligentes' (smart defaults), como a pré-seleção do meio de pagamento mais utilizado, pode acelerar significativamente o processo.",
+        "A performance técnica (velocidade de carregamento) é um componente crítico da experiência do usuário em um checkout."
+      ],
+      "tags": [
+        "UX Design",
+        "Checkout",
+        "Pagamentos",
+        "Otimização de Conversão (CRO)",
+        "Fintech"
+      ],
+      "impact": "O One-Tap Checkout do Mercado Pago gerou um aumento expressivo na taxa de conversão de pagamentos, tanto no Mercado Livre quanto em milhares de lojas online que utilizam a plataforma. A inovação ajudou a consolidar a liderança do Mercado Pago no mercado de pagamentos online e se tornou um case de sucesso em design de experiência do usuário."
     },
     "redisenho-de-detalle-de-actividad": {
       "title": "Redisenho De Detalle De Actividad",
       "slug": "redisenho-de-detalle-de-actividad",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Redesenho da tela de 'Detalhe da Atividade' no Mercado Pago, transformando um simples extrato em uma central de informações úteis e ações contextuais para cada transação.",
+      "description": "O projeto de redesenho da tela de 'Detalhe da Atividade' buscou ir além de um simples comprovante de transação. A nova interface foi desenhada para ser um hub de informações e ações relacionadas a cada pagamento, compra ou transferência. A equipe de UX organizou as informações de forma mais clara, destacando o que é mais importante para o usuário, e adicionou ações contextuais, como 'iniciar uma devolução', 'dividir o pagamento com amigos' ou 'ver detalhes da assinatura'. O objetivo foi transformar uma tela puramente informativa em uma ferramenta útil e interativa, que ajuda o usuário a resolver suas necessidades pós-transação.",
+      "insights": [
+        "A experiência do usuário não termina no momento da transação; o pós-venda é uma oportunidade para agregar valor e fidelizar o cliente.",
+        "Ações contextuais, apresentadas no momento certo, podem resolver as necessidades do usuário de forma proativa e reduzir a carga cognitiva.",
+        "Uma arquitetura de informação clara, com hierarquia visual bem definida, é fundamental para a usabilidade de telas com muitos dados.",
+        "A consistência da interface entre diferentes tipos de transação (compra, pagamento, transferência) ajuda o usuário a criar um modelo mental claro do produto."
+      ],
+      "tags": [
+        "UX Design",
+        "Arquitetura da Informação",
+        "Mobile App",
+        "Fintech",
+        "Pós-venda"
+      ],
+      "impact": "O redesenho da tela de 'Detalhe da Atividade' melhorou significativamente a satisfação dos usuários e reduziu o número de contatos com o suporte, já que muitas dúvidas e problemas passaram a ser resolvidos diretamente na interface. A nova tela aumentou o engajamento com funcionalidades pós-transação e fortaleceu a percepção de que o Mercado Pago é uma ferramenta completa para a gestão da vida financeira."
     },
     "redisenho-de-la-app-de-mercado-pago": {
       "title": "Redisenho De La App De Mercado Pago",
       "slug": "redisenho-de-la-app-de-mercado-pago",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Projeto abrangente de redesenho do aplicativo Mercado Pago, atualizando a linguagem visual, melhorando a arquitetura da informação e introduzindo uma navegação mais intuitiva.",
+      "description": "Este projeto representou uma evolução completa da experiência do aplicativo Mercado Pago. O redesenho não foi apenas estético, mas estrutural. A equipe de UX trabalhou na redefinição da arquitetura da informação, na criação de uma nova linguagem visual alinhada ao design system da empresa (Andes UI) e na implementação de um novo sistema de navegação baseado em abas. O objetivo foi criar uma experiência mais coesa, escalável e fácil de usar, refletindo a transformação do Mercado Pago de uma carteira de pagamentos para uma conta digital completa, com investimentos, crédito e seguros.",
+      "insights": [
+        "Um redesenho completo é uma oportunidade para alinhar a experiência do produto à sua nova visão estratégica.",
+        "A adoção de um design system robusto é fundamental para garantir a consistência e a eficiência no desenvolvimento de um produto complexo.",
+        "A navegação principal de um aplicativo deve refletir as jornadas mais importantes do usuário.",
+        "O processo de redesenho deve ser iterativo e validado com usuários em todas as etapas, desde os primeiros wireframes até os protótipos de alta fidelidade."
+      ],
+      "tags": [
+        "UX Design",
+        "Redesign",
+        "Mobile App",
+        "Design System",
+        "Arquitetura da Informação",
+        "Fintech"
+      ],
+      "impact": "O novo aplicativo do Mercado Pago foi recebido com altas taxas de aprovação pelos usuários, que o avaliaram como mais moderno, organizado and intuitivo. O redesenho facilitou a descoberta de novas funcionalidades, aumentou o engajamento geral com o produto e estabeleceu uma base sólida para a evolução contínua do aplicativo."
     },
     "redisenho-de-pagina-de-producto": {
       "title": "Redisenho De Pagina De Producto",
       "slug": "redisenho-de-pagina-de-producto",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Redesenho da Página de Produto do Mercado Livre, com foco em uma melhor organização da informação, imagens de maior qualidade e uma experiência mais imersiva e focada na conversão.",
+      "description": "A Página de Produto (PDP) é uma das telas mais críticas de um e-commerce. Este projeto de redesenho teve como objetivo modernizar a PDP do Mercado Livre, tornando-a mais limpa, visualmente atraente e eficiente em converter visitantes em compradores. A equipe de UX trabalhou em uma nova arquitetura de informação que prioriza os elementos-chave para a decisão de compra (imagens, preço, reputação do vendedor, opções de frete), além de introduzir novos componentes, como galerias de vídeo e um sistema de perguntas e respostas mais organizado. O resultado foi uma página que não apenas informa melhor, mas também inspira mais confiança e desejo de compra.",
+      "insights": [
+        "A hierarquia da informação na PDP deve seguir o modelo mental do comprador, apresentando os elementos na ordem em que ele precisa para tomar uma decisão.",
+        "Imagens de alta qualidade e em múltiplos ângulos são o fator mais importante para superar a barreira de não poder tocar no produto.",
+        "A prova social (avaliações, reputação do vendedor, número de vendas) é um elemento fundamental para gerar confiança no e-commerce.",
+        "A clareza e a proeminência das informações de preço, parcelamento e frete podem ter um impacto dramático na taxa de conversão."
+      ],
+      "tags": [
+        "UX Design",
+        "E-commerce",
+        "Página de Produto (PDP)",
+        "Otimização de Conversão (CRO)",
+        "Arquitetura da Informação"
+      ],
+      "impact": "O redesenho da Página de Produto do Mercado Livre resultou em um aumento mensurável na taxa de conversão e no tempo de permanência na página. A nova interface foi elogiada pelos usuários por ser mais clara e agradável, e ajudou a fortalecer a imagem do Mercado Livre como uma plataforma de e-commerce moderna e confiável."
     },
     "redisenho-del-panel-de-mercado-pago": {
       "title": "Redisenho Del Panel De Mercado Pago",
       "slug": "redisenho-del-panel-de-mercado-pago",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Redesenho do painel web do Mercado Pago para vendedores, com foco em uma melhor visualização de dados, ferramentas de gestão mais eficientes e uma experiência de usuário mais moderna e intuitiva.",
+      "description": "O painel de vendedores do Mercado Pago é uma ferramenta essencial para milhões de negócios na América Latina. Com o tempo, ele se tornou complexo e com uma interface datada. Este projeto de redesenho teve como objetivo modernizar a experiência, transformando o painel em uma verdadeira central de controle para o negócio. A equipe de UX trabalhou na criação de um dashboard com métricas claras e acionáveis, na reorganização das ferramentas de gestão (relatórios, disputas, configurações) e na implementação de uma interface mais limpa e responsiva. O foco foi em empoderar os vendedores com dados e ferramentas para que eles pudessem tomar melhores decisões e gerenciar suas operações com mais eficiência.",
+      "insights": [
+        "Para usuários B2B, a eficiência e a clareza da informação são mais importantes do que elementos puramente estéticos.",
+        "Um bom dashboard deve ir além de mostrar dados; ele deve apresentar insights que ajudem o usuário a tomar decisões.",
+        "A personalização do painel, permitindo que o usuário escolha as métricas mais relevantes para o seu negócio, pode aumentar significativamente o engajamento.",
+        "A consistência da experiência entre a plataforma web e o aplicativo móvel é fundamental para usuários que gerenciam seus negócios em múltiplos dispositivos."
+      ],
+      "tags": [
+        "UX Design",
+        "B2B",
+        "Dashboard",
+        "Visualização de Dados",
+        "Fintech",
+        "Ferramentas de Vendedor"
+      ],
+      "impact": "O novo painel do Mercado Pago foi muito bem recebido pelos vendedores, que destacaram a maior clareza das informações e a facilidade de uso das ferramentas. O redesenho ajudou a reduzir o tempo gasto em tarefas operacionais e permitiu que os vendedores tivessem uma visão mais estratégica do seu negócio, contribuindo para o seu crescimento."
     },
     "redisenho-del-proceso-de-checkout-en-apps-nativas": {
       "title": "Redisenho Del Proceso De Checkout En Apps Nativas",
       "slug": "redisenho-del-proceso-de-checkout-en-apps-nativas",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Redesenho completo do fluxo de checkout nos aplicativos nativos do Mercado Livre, com o objetivo de unificar a experiência entre iOS e Android, reduzir o número de passos e aumentar a taxa de conversão.",
+      "description": "O projeto de redesenho do checkout nativo buscou criar uma experiência de pagamento mais rápida, clara e consistente entre as diferentes plataformas móveis. A equipe de UX mapeou toda a jornada do usuário, desde a seleção do produto até a confirmação do pagamento, e identificou os principais pontos de fricção. O novo fluxo foi desenhado para ser mais linear e com menos etapas, utilizando componentes nativos de cada sistema operacional para garantir a melhor performance e usabilidade. O foco foi em reduzir a carga cognitiva do usuário e em transmitir segurança e transparência em cada passo do processo.",
+      "insights": [
+        "A consistência da experiência entre diferentes plataformas (iOS, Android, Web) é importante, mas a otimização para as convenções de cada plataforma nativa é ainda mais.",
+        "A clareza na apresentação das informações de pagamento, frete e parcelamento é o fator mais crítico para a conversão no checkout.",
+        "A utilização de componentes nativos (teclados, seletores de data, etc.) pode melhorar significativamente a usabilidade e a velocidade de preenchimento de formulários.",
+        "O feedback visual imediato após cada ação do usuário (ex: validação de um campo de formulário) ajuda a reduzir a ansiedade e a aumentar a confiança no processo."
+      ],
+      "tags": [
+        "UX Design",
+        "Checkout",
+        "Mobile App",
+        "E-commerce",
+        "Otimização de Conversão (CRO)"
+      ],
+      "impact": "O novo fluxo de checkout nativo resultou em um aumento significativo da taxa de conversão nos aplicativos do Mercado Livre. O tempo médio para finalizar uma compra foi reduzido, e as pesquisas de satisfação mostraram que os usuários perceberam o novo processo como mais fácil e rápido. O projeto estabeleceu um novo padrão de qualidade para a experiência de pagamento móvel na empresa."
     },
     "redisenho-home": {
       "title": "Redisenho Home",
       "slug": "redisenho-home",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Redesenho da página inicial do Mercado Livre, focando em personalização, descoberta de produtos e uma experiência de navegação mais engajadora e relevante para cada usuário.",
+      "description": "A home do Mercado Livre é a principal vitrine do maior marketplace da América Latina. Este projeto de redesenho teve como objetivo transformar a home de uma lista estática de ofertas para uma experiência dinâmica e personalizada. Utilizando algoritmos de machine learning, a nova home passou a apresentar recomendações de produtos, categorias e ofertas baseadas no histórico de navegação e compra de cada usuário. A equipe de UX trabalhou em uma arquitetura de informação modular, que permite testar e otimizar diferentes componentes da página, e em um design mais limpo e visualmente atraente, que facilita a descoberta de novos produtos.",
+      "insights": [
+        "A personalização é a chave para o engajamento em um marketplace com milhões de produtos; os usuários esperam ver conteúdo relevante para os seus interesses.",
+        "A descoberta de novos produtos é tão importante quanto a busca por itens específicos; a home deve equilibrar os dois tipos de jornada.",
+        "Uma arquitetura de informação modular e baseada em componentes permite uma maior flexibilidade para testes A/B e otimização contínua.",
+        "A qualidade do conteúdo visual (imagens, banners) tem um impacto direto na percepção de qualidade da plataforma e no engajamento do usuário."
+      ],
+      "tags": [
+        "UX Design",
+        "Personalização",
+        "E-commerce",
+        "Machine Learning",
+        "Arquitetura da Informação"
+      ],
+      "impact": "O redesenho da home do Mercado Livre gerou um aumento significativo no engajamento dos usuários, medido por métricas como taxa de cliques, tempo de permanência e taxa de conversão a partir da home. A nova experiência personalizada ajudou os usuários a descobrirem produtos mais relevantes, melhorando a satisfação e a fidelidade à plataforma."
     },
     "redisenho-home-en-app": {
       "title": "Redisenho Home En App",
       "slug": "redisenho-home-en-app",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Projeto de redesenho da tela inicial do aplicativo Mercado Livre, com foco em uma experiência de navegação nativa, personalização e acesso rápido às funcionalidades mais importantes para o usuário mobile.",
+      "description": "Adaptar a experiência da home para o contexto de uso móvel foi o principal desafio deste projeto. A equipe de UX redesenhou a tela inicial do aplicativo do Mercado Livre, priorizando uma navegação por gestos, componentes otimizados para telas menores e um acesso rápido às funcionalidades mais utilizadas no celular, como a busca por voz, o leitor de código de barras e a seção de favoritos. Assim como na versão web, a personalização foi um pilar central, com a apresentação de conteúdo relevante para cada usuário. O objetivo foi criar uma experiência mais rápida, fluida e contextual, que aproveitasse ao máximo as capacidades do dispositivo móvel.",
+      "insights": [
+        "A experiência mobile não deve ser apenas uma versão reduzida da experiência web; ela precisa ser repensada para o contexto de uso em movimento e para as interações baseadas em toque.",
+        "O acesso rápido a funcionalidades que fazem uso dos recursos do hardware do celular (câmera, microfone, GPS) pode criar um grande diferencial na experiência móvel.",
+        "A performance é ainda mais crítica no mobile; cada segundo de carregamento pode significar a perda de um usuário.",
+        "A consistência visual com a plataforma web é importante, mas a usabilidade e a aderência às convenções da plataforma nativa (iOS/Android) devem ser priorizadas."
+      ],
+      "tags": [
+        "UX Design",
+        "Mobile App",
+        "Personalização",
+        "E-commerce",
+        "Navegação Nativa"
+      ],
+      "impact": "O redesenho da home do aplicativo gerou um aumento no engajamento e na retenção de usuários mobile. A navegação mais fluida e o acesso rápido a funcionalidades-chave melhoraram a usabilidade geral do aplicativo, o que se refletiu em um crescimento no volume de compras realizadas através do celular."
     },
     "redisenho-home-nativa-mercado-pago": {
       "title": "Redisenho Home Nativa Mercado Pago",
       "slug": "redisenho-home-nativa-mercado-pago",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Redesenho da tela inicial do aplicativo Mercado Pago, com foco em personalização, acesso rápido às funcionalidades mais usadas e uma arquitetura de informação mais clara e escalável.",
+      "description": "Com o crescimento do número de funcionalidades no aplicativo do Mercado Pago, a home se tornou complexa e pouco intuitiva. Este projeto de redesenho teve como objetivo reorganizar a arquitetura da informação, criando uma experiência mais personalizada e relevante para cada usuário. A nova home passou a destacar as funcionalidades mais utilizadas por cada perfil de usuário, além de oferecer atalhos contextuais e uma navegação mais limpa e organizada. O design foi pensado para ser modular e escalável, permitindo a inclusão de novos serviços no futuro sem comprometer a usabilidade.",
+      "insights": [
+        "À medida que um produto cresce, a arquitetura da informação precisa ser revisitada para evitar sobrecarga cognitiva.",
+        "A personalização da experiência, baseada no comportamento do usuário, aumenta o engajamento e a satisfação.",
+        "O acesso rápido às funcionalidades do dia a dia deve ser a prioridade da tela inicial de um aplicativo transacional.",
+        "Uma arquitetura modular permite que a interface evolua de forma sustentável, acompanhando o crescimento do produto."
+      ],
+      "tags": [
+        "UX Design",
+        "Arquitetura da Informação",
+        "Personalização",
+        "Mobile App",
+        "Fintech"
+      ],
+      "impact": "O redesenho da home do Mercado Pago resultou em um aumento significativo no engajamento dos usuários, com maior utilização das funcionalidades-chave do aplicativo. Testes de usabilidade e pesquisas de satisfação comprovaram que a nova interface foi percebida como mais simples, organizada e relevante."
     },
     "reservas-de-dinheiro-poupar-nunca-foi-tao-facil": {
       "title": "Reservas De Dinheiro Poupar Nunca Foi Tao Facil",
       "slug": "reservas-de-dinheiro-poupar-nunca-foi-tao-facil",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Criação da funcionalidade 'Reservas' no Mercado Pago, uma ferramenta simples e visual para ajudar os usuários a guardar dinheiro para objetivos específicos, com rendimento automático.",
+      "description": "A funcionalidade 'Reservas' foi projetada para incentivar o hábito de poupar de forma simples e desburocratizada. Integrada à conta digital do Mercado Pago, ela permite que os usuários criem 'cofrinhos' virtuais para diferentes objetivos (uma viagem, a compra de um produto, uma emergência) e separem o dinheiro do saldo principal. Todo o dinheiro guardado nas Reservas tem rendimento automático. A equipe de UX focou em criar uma experiência visual e motivadora, com barras de progresso e uma linguagem acessível, que transforma o ato de poupar em uma jornada gamificada e gratificante.",
+      "insights": [
+        "A separação do dinheiro em 'potes' ou 'envelopes' para objetivos específicos é um modelo mental poderoso e eficaz para incentivar o hábito de poupar.",
+        "A visualização do progresso em direção a um objetivo (através de barras de progresso, por exemplo) é um forte elemento de motivação.",
+        "A remoção de qualquer fricção para guardar dinheiro (como a possibilidade de programar depósitos automáticos) aumenta a adesão à funcionalidade.",
+        "A combinação de uma ferramenta de poupança com um rendimento automático cria uma proposta de valor muito atraente para os usuários."
+      ],
+      "tags": [
+        "UX Design",
+        "Fintech",
+        "Poupança",
+        "Gamificação",
+        "Comportamento Financeiro"
+      ],
+      "impact": "A funcionalidade de 'Reservas' se tornou um grande sucesso, com milhões de usuários guardando dinheiro para seus objetivos. A ferramenta ajudou a aumentar o saldo total depositado no Mercado Pago e fortaleceu o relacionamento com os usuários, posicionando a marca como uma aliada na conquista de seus sonhos financeiros."
     },
     "seccion-amigos-en-mercado-pago": {
       "title": "Seccion Amigos En Mercado Pago",
       "slug": "seccion-amigos-en-mercado-pago",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Criação da seção 'Amigos' no Mercado Pago, uma área social para facilitar transferências de dinheiro, divisão de contas e a visualização de atividades com contatos frequentes.",
+      "description": "Para fortalecer o aspecto social dos pagamentos e transferências, o Mercado Pago criou a seção 'Amigos'. A funcionalidade permite que os usuários adicionem contatos frequentes, visualizem um histórico de transações com cada pessoa e iniciem novas transferências de forma rápida. Além disso, a seção inclui ferramentas para facilitar a divisão de contas em grupo. O projeto de UX buscou criar uma experiência que fosse não apenas funcional, mas também pessoal e relacional, transformando a tarefa de enviar e receber dinheiro em uma interação social mais fluida e agradável.",
+      "insights": [
+        "As transações financeiras entre pessoas são, em sua essência, interações sociais.",
+        "A redução do número de passos para realizar transferências para contatos frequentes aumenta significativamente o uso da funcionalidade.",
+        "A visualização de um histórico compartilhado com um amigo cria um senso de relacionamento e confiança na plataforma.",
+        "Ferramentas que resolvem problemas sociais comuns, como a divisão de contas, podem gerar um alto engajamento e viralização do produto."
+      ],
+      "tags": [
+        "UX Design",
+        "Pagamentos Sociais",
+        "Fintech",
+        "Mobile App",
+        "P2P"
+      ],
+      "impact": "A seção 'Amigos' aumentou a frequência de transferências P2P (pessoa para pessoa) no Mercado Pago. A funcionalidade simplificou a experiência de enviar e receber dinheiro entre amigos e familiares, tornando o aplicativo uma ferramenta ainda mais presente no dia a dia dos usuários e fortalecendo o efeito de rede da plataforma."
     },
     "seccion-preguntas-y-respuestas": {
       "title": "Seccion Preguntas Y Respuestas",
       "slug": "seccion-preguntas-y-respuestas",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Redesenho da seção de 'Perguntas e Respostas' nas páginas de produto do Mercado Livre, melhorando a organização, a busca por informações e a interação entre compradores e vendedores.",
+      "description": "A seção de 'Perguntas e Respostas' (Q&A) é uma fonte valiosa de informações para os compradores e uma ferramenta de vendas essencial para os vendedores. O projeto de redesenho teve como objetivo organizar melhor esse conteúdo, que muitas vezes se tornava longo e repetitivo. A nova interface introduziu um sistema de busca dentro das perguntas já respondidas, a possibilidade de os usuários votarem nas perguntas mais úteis e uma organização mais clara do fluxo de interação para quem deseja fazer uma nova pergunta. O resultado é uma seção mais eficiente, que ajuda os compradores a tirarem suas dúvidas rapidamente e reduz o trabalho dos vendedores de responderem às mesmas perguntas várias vezes.",
+      "insights": [
+        "Muitas dúvidas dos compradores já foram respondidas anteriormente; facilitar a busca por essa informação existente é a forma mais eficiente de melhorar a experiência.",
+        "A prova social (votos em perguntas úteis) pode ajudar a destacar o conteúdo mais relevante para a maioria dos usuários.",
+        "Um fluxo de interação bem desenhado pode guiar o usuário a procurar por uma resposta antes de fazer uma nova pergunta, otimizando o processo para todos.",
+        "A velocidade e a qualidade das respostas do vendedor têm um impacto direto na decisão de compra do usuário."
+      ],
+      "tags": [
+        "UX Design",
+        "E-commerce",
+        "Conteúdo Gerado pelo Usuário (UGC)",
+        "Página de Produto (PDP)"
+      ],
+      "impact": "O redesenho da seção de Perguntas e Respostas reduziu o número de perguntas duplicadas e aumentou a taxa de conversão de usuários que interagem com essa seção. A melhor organização da informação ajudou os compradores a tomarem decisões mais informadas e otimizou o tempo dos vendedores, melhorando a eficiência geral do marketplace."
     },
     "seccion-publicaciones-mas-que-un-redisenho": {
       "title": "Seccion Publicaciones Mas Que Un Redisenho",
       "slug": "seccion-publicaciones-mas-que-un-redisenho",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Reformulação completa da área de 'Publicações' para vendedores no Mercado Livre, transformando-a em uma central de gerenciamento de anúncios mais inteligente, com ações em massa e insights de performance.",
+      "description": "Este projeto foi muito além de um simples redesenho visual da lista de anúncios dos vendedores. A nova seção de 'Publicações' foi concebida como uma ferramenta estratégica para a gestão do catálogo. A equipe de UX implementou um sistema de filtros mais poderoso, a capacidade de realizar edições em massa (preço, estoque, etc.), e a apresentação de insights de performance para cada anúncio (visitas, vendas, taxa de conversão). O objetivo foi transformar uma simples lista em um painel de controle que ajuda o vendedor a identificar oportunidades, otimizar seus anúncios e gerenciar seu inventário de forma mais eficiente.",
+      "insights": [
+        "Vendedores com grande volume de anúncios precisam de ferramentas de gestão em massa para otimizar seu tempo.",
+        "A apresentação de dados de performance no contexto de cada anúncio ajuda o vendedor a tomar decisões mais informadas sobre sua estratégia de vendas.",
+        "Um sistema de filtros e busca avançada é essencial para a usabilidade de qualquer ferramenta que lida com grandes volumes de dados.",
+        "A interface deve ser desenhada para suportar tanto ações rápidas em um único anúncio quanto operações complexas em múltiplos anúncios."
+      ],
+      "tags": [
+        "UX Design",
+        "B2B",
+        "E-commerce",
+        "Ferramentas de Vendedor",
+        "Visualização de Dados"
+      ],
+      "impact": "A nova seção de Publicações foi um grande avanço para a experiência dos vendedores no Mercado Livre. As novas ferramentas de gestão em massa e os insights de performance ajudaram os vendedores a otimizarem seus anúncios e a aumentarem suas vendas. A iniciativa reforçou a imagem do Mercado Livre como uma plataforma que oferece não apenas um canal de vendas, mas também as ferramentas para o sucesso do negócio."
     },
     "seguros-pessoais-ux-escalavel-e-sem-letras-miudas": {
       "title": "Seguros Pessoais Ux Escalavel E Sem Letras Miudas",
       "slug": "seguros-pessoais-ux-escalavel-e-sem-letras-miudas",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Criação da plataforma de Seguros Pessoais no Mercado Pago, com foco em uma experiência de contratação simples, transparente e sem jargões complexos, para produtos como seguro de vida e acidentes pessoais.",
+      "description": "O projeto de Seguros Pessoais buscou desmistificar a contratação de seguros, tradicionalmente vista como um processo complexo e burocrático. A equipe de UX desenhou um fluxo de contratação 100% digital, com uma linguagem clara e acessível, que explica as coberturas de forma simples e visual. O foco foi na transparência, eliminando as 'letras miúdas' e garantindo que o usuário entendesse exatamente o que estava contratando. A plataforma foi construída de forma modular e escalável, para permitir a inclusão de diferentes tipos de seguros e parcerias com seguradoras no futuro.",
+      "insights": [
+        "A simplicidade e a transparência são as chaves para conquistar a confiança do usuário em produtos financeiros complexos como seguros.",
+        "A utilização de uma linguagem clara e a explicação visual das coberturas podem reduzir drasticamente a ansiedade e a incerteza no processo de contratação.",
+        "Um fluxo de contratação rápido e com poucas perguntas aumenta a taxa de conversão.",
+        "A experiência do usuário não termina na contratação; um fluxo simples para acionar o seguro (sinistro) e gerenciar a apólice é igualmente importante."
+      ],
+      "tags": [
+        "UX Design",
+        "Fintech",
+        "Insurtech",
+        "Seguros",
+        "Transparência"
+      ],
+      "impact": "A plataforma de Seguros Pessoais do Mercado Pago alcançou uma alta taxa de adesão, democratizando o acesso a seguros para um público que antes não tinha acesso a esse tipo de produto. O sucesso da iniciativa validou a hipótese de que uma boa experiência do usuário, focada na simplicidade e na transparência, pode transformar até os mercados mais tradicionais."
     },
     "seu-negocio-a-caixa-de-ferramentas-para-quem-vende": {
       "title": "Seu Negocio A Caixa De Ferramentas Para Quem Vende",
       "slug": "seu-negocio-a-caixa-de-ferramentas-para-quem-vende",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Criação da seção 'Seu Negócio' no Mercado Pago, uma central de ferramentas e relatórios para ajudar os vendedores a entenderem a saúde financeira de suas vendas e a tomarem melhores decisões.",
+      "description": "A seção 'Seu Negócio' foi projetada como um painel de controle financeiro para os vendedores do Mercado Pago. A ferramenta consolida informações sobre vendas, recebimentos, taxas e fluxo de caixa, apresentando os dados em gráficos e relatórios fáceis de entender. O projeto de UX teve o desafio de traduzir conceitos financeiros complexos em uma interface simples e acionável. O objetivo foi oferecer aos vendedores, especialmente os pequenos e médios, uma visão clara da performance de seu negócio, ajudando-os a planejar o futuro e a identificar oportunidades de crescimento.",
+      "insights": [
+        "Pequenos empreendedores muitas vezes não têm acesso a ferramentas de gestão financeira; oferecer essa funcionalidade dentro da plataforma de pagamentos agrega um valor imenso.",
+        "A visualização de dados é uma forma poderosa de democratizar o acesso à informação financeira.",
+        "A clareza sobre taxas e prazos de recebimento é uma das principais necessidades dos vendedores.",
+        "A interface deve permitir tanto uma visão geral e rápida da saúde do negócio (dashboard) quanto a possibilidade de aprofundar a análise em relatórios detalhados."
+      ],
+      "tags": [
+        "UX Design",
+        "B2B",
+        "Fintech",
+        "Dashboard",
+        "Ferramentas de Vendedor",
+        "Visualização de Dados"
+      ],
+      "impact": "A seção 'Seu Negócio' se tornou uma ferramenta indispensável para milhares de vendedores, que passaram a ter um controle muito maior sobre as finanças de suas empresas. A iniciativa fortaleceu o relacionamento do Mercado Pago com seus clientes B2B, posicionando a plataforma como uma parceira estratégica para o crescimento dos seus negócios."
     },
     "sistema-de-iconos": {
       "title": "Sistema De Iconos",
       "slug": "sistema-de-iconos",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Desenvolvimento do sistema de ícones do Mercado Livre, criando uma biblioteca coesa, escalável e otimizada para todas as plataformas e produtos do ecossistema.",
+      "description": "Um sistema de ícones consistente é um pilar fundamental de um design system. Este projeto consistiu em criar e documentar a biblioteca oficial de ícones do Mercado Livre, garantindo que todos os produtos e plataformas da empresa utilizassem um conjunto único e padronizado de ícones. O trabalho envolveu a definição de diretrizes de estilo, a criação de centenas de ícones em diferentes tamanhos e pesos, e a implementação de um processo para a solicitação e o desenvolvimento de novos ícones. O resultado é um sistema que garante a consistência visual, melhora a usabilidade e otimiza o trabalho de designers e desenvolvedores.",
+      "insights": [
+        "A consistência na iconografia melhora o reconhecimento e a usabilidade de uma interface, reduzindo a carga cognitiva do usuário.",
+        "Um sistema de ícones bem documentado e de fácil acesso para toda a equipe de produto acelera o processo de design e desenvolvimento.",
+        "A criação de diretrizes claras para o design de ícones (grid, espessura de linha, estilo) é essencial para garantir a coesão da biblioteca ao longo do tempo.",
+        "A otimização técnica dos ícones (por exemplo, através do uso de SVG) é importante para garantir a performance e a escalabilidade da interface."
+      ],
+      "tags": [
+        "Design System",
+        "Iconografia",
+        "UI Design",
+        "Consistência Visual"
+      ],
+      "impact": "O sistema de ícones do Mercado Livre é utilizado em todos os produtos da empresa, garantindo uma experiência visual coesa para milhões de usuários. A iniciativa otimizou o fluxo de trabalho de centenas de designers e desenvolvedores, reduzindo o retrabalho e aumentando a qualidade e a consistência das interfaces."
     },
     "suscripciones-de-contenido-un-journey-a-la-lealtad": {
       "title": "Suscripciones De Contenido Un Journey A La Lealtad",
@@ -655,29 +979,62 @@
     "tarjeta-prepaga-mercado-pago": {
       "title": "Tarjeta Prepaga Mercado Pago",
       "slug": "tarjeta-prepaga-mercado-pago",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Lançamento do cartão pré-pago do Mercado Pago, oferecendo uma solução para que usuários da conta digital possam fazer compras em lojas físicas e online que não aceitam QR code, promovendo a inclusão financeira.",
+      "description": "O cartão pré-pago do Mercado Pago foi criado para ser a ponte entre o saldo da conta digital e o mundo dos pagamentos com cartão. O produto foi destinado a usuários que não tinham acesso a um cartão de crédito ou débito tradicional, permitindo que eles usassem seu saldo do Mercado Pago para compras em qualquer estabelecimento da rede Mastercard. A equipe de UX focou em uma experiência de solicitação e ativação do cartão que fosse 100% digital e sem burocracia, além de uma integração total com o aplicativo para consulta de saldo, extrato e bloqueio do cartão.",
+      "insights": [
+        "Para muitos usuários, a conta digital só se torna completa quando há um cartão físico associado, que permite o uso do saldo em qualquer lugar.",
+        "Um processo de solicitação simples e sem análise de crédito é fundamental para um produto focado em inclusão financeira.",
+        "A integração total das funcionalidades do cartão no aplicativo principal (consulta de saldo, bloqueio, etc.) é uma expectativa básica do usuário e elimina a necessidade de um segundo aplicativo.",
+        "A comunicação transparente sobre os custos (ou a ausência deles) para emissão e manutenção do cartão é essencial para construir confiança."
+      ],
+      "tags": [
+        "UX Design",
+        "Fintech",
+        "Inclusão Financeira",
+        "Cartão Pré-pago",
+        "Conta Digital"
+      ],
+      "impact": "O cartão pré-pago do Mercado Pago se tornou um enorme sucesso, com milhões de cartões emitidos em toda a América Latina. O produto foi um passo fundamental para a inclusão financeira de uma grande parcela da população e ajudou a consolidar o Mercado Pago como uma das contas digitais mais completas do mercado."
     },
     "tiendas-express": {
       "title": "Tiendas Express",
       "slug": "tiendas-express",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Criação das 'Tiendas Express', uma solução de e-commerce simplificada para que pequenos vendedores e empreendedores possam criar sua própria loja online de forma rápida e integrada ao ecossistema do Mercado Livre.",
+      "description": "As 'Tiendas Express' foram desenvolvidas como uma alternativa de baixo custo e alta simplicidade às plataformas de e-commerce tradicionais. A ferramenta permite que qualquer vendedor crie uma loja online com seu próprio domínio, personalize o design a partir de templates prontos e gerencie seu catálogo de produtos de forma integrada com o Mercado Livre. A solução já vem com o checkout do Mercado Pago e a logística do Mercado Envios integrados. O projeto de UX focou em um processo de criação de loja guiado e sem atritos, que pudesse ser concluído em poucos minutos, mesmo por usuários sem conhecimento técnico.",
+      "insights": [
+        "Muitos pequenos empreendedores desejam ter sua própria loja online, mas são intimidados pela complexidade e pelo custo das plataformas tradicionais.",
+        "Uma solução 'tudo em um', que já venha com pagamentos e logística integrados, remove as principais barreiras para a criação de um e-commerce.",
+        "A utilização de templates de design customizáveis permite que o vendedor dê uma identidade própria à sua loja, sem a necessidade de contratar um designer.",
+        "A integração com o marketplace principal pode ser um grande diferencial, permitindo que o vendedor gerencie seu inventário de forma centralizada."
+      ],
+      "tags": [
+        "UX Design",
+        "E-commerce",
+        "B2B",
+        "Ferramentas de Vendedor",
+        "Loja Virtual"
+      ],
+      "impact": "As Tiendas Express permitiram que milhares de pequenos negócios dessem seus primeiros passos no e-commerce. A ferramenta democratizou o acesso à venda online, gerando uma nova fonte de receita para os vendedores e fortalecendo o ecossistema do Mercado Livre."
     },
     "wrap-up-anual-do-mercado-pago": {
       "title": "Wrap Up Anual Do Mercado Pago",
       "slug": "wrap-up-anual-do-mercado-pago",
-      "summary": "",
-      "description": "",
-      "insights": [],
-      "tags": [],
-      "impact": ""
+      "summary": "Criação da retrospectiva anual 'Wrap-up' do Mercado Pago, uma experiência personalizada que apresenta aos usuários um resumo de suas atividades financeiras ao longo do ano de forma lúdica e compartilhável.",
+      "description": "Inspirado em retrospectivas de sucesso como a do Spotify, o 'Wrap-up' do Mercado Pago oferece aos usuários uma visualização de dados divertida e personalizada sobre como eles usaram a conta digital durante o ano. A experiência apresenta insights como o número de pagamentos com QR code, o valor economizado com descontos e o total de dinheiro investido. O projeto de UX teve como objetivo transformar dados financeiros, muitas vezes vistos como áridos, em uma história engajadora e compartilhável nas redes sociais. O design é vibrante, com animações e uma linguagem descontraída, que celebra as conquistas financeiras do usuário.",
+      "insights": [
+        "A apresentação de dados pessoais de forma lúdica e resumida pode gerar um alto nível de engajamento e compartilhamento.",
+        "As retrospectivas anuais são uma oportunidade para reforçar os benefícios do produto e o valor gerado para o usuário ao longo do tempo.",
+        "O design e o tom da comunicação devem ser pensados para incentivar o compartilhamento nas redes sociais, o que gera mídia espontânea para a marca.",
+        "A personalização é o elemento central da experiência; cada usuário deve sentir que a retrospectiva foi feita especialmente para ele."
+      ],
+      "tags": [
+        "UX Design",
+        "Visualização de Dados",
+        "Gamificação",
+        "Marketing",
+        "Fintech"
+      ],
+      "impact": "O Wrap-up anual do Mercado Pago se tornou um evento esperado pelos usuários, gerando milhões de compartilhamentos nas redes sociais e um buzz positivo para a marca. A iniciativa fortaleceu o relacionamento emocional dos usuários com o produto e reforçou a percepção do Mercado Pago como uma marca inovadora e centrada no cliente."
     }
   }
 }

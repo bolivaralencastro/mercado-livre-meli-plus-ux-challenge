@@ -10,7 +10,7 @@ export const paymentFlows: PaymentFlowEntry[] = [
   {
     slug: "visao-geral",
     title: "Configuração de Pagamento",
-    description: "Protótipo interativo de configuração e gerenciamento de pagamento da assinatura Meli+, incluindo alteração de método de pagamento, visualização de histórico e gestão do plano.",
+    description: "Este protótipo aborda o desafio de reduzir o churn involuntário, permitindo que os usuários gerenciem seus métodos de pagamento de forma proativa. A interface oferece uma visão clara da assinatura, com opções para adicionar um método de pagamento de backup, garantindo a continuidade do serviço mesmo em caso de falha no pagamento principal. O fluxo foi desenhado para ser intuitivo e seguro, transmitindo confiança ao usuário e fortalecendo o relacionamento com a plataforma.",
     component: "PaymentConfigPrototype",
     status: "ready",
   },
