@@ -345,6 +345,7 @@ function StreamingGridBackground({
   const trackRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number | null>(null);
   const posRef = useRef({ x: -1000, y: -1000 });
+  const currentVelocityRef = useRef({ x: 0, y: 0 });
   
   const CELL_W = 110;
   const CELL_H = 160;
@@ -352,13 +353,21 @@ function StreamingGridBackground({
   const PATTERN_ROWS = 4;
   const BLOCK_W = PATTERN_COLS * CELL_W;
   const BLOCK_H = PATTERN_ROWS * CELL_H;
+  const DAMPING = 0.85; // Fator de amortecimento para efeito "mola"
 
   useEffect(() => {
     if (!isActive) return;
 
     const tick = () => {
-      posRef.current.x += velocityRef.current.x;
-      posRef.current.y += velocityRef.current.y;
+      // Aplicar interpolação suave (damping) para criar efeito de mola
+      const targetVx = velocityRef.current.x;
+      const targetVy = velocityRef.current.y;
+      
+      currentVelocityRef.current.x += (targetVx - currentVelocityRef.current.x) * (1 - DAMPING);
+      currentVelocityRef.current.y += (targetVy - currentVelocityRef.current.y) * (1 - DAMPING);
+      
+      posRef.current.x += currentVelocityRef.current.x;
+      posRef.current.y += currentVelocityRef.current.y;
 
       // Infinite scroll wrapping
       if (posRef.current.x > 0) posRef.current.x -= BLOCK_W;
@@ -443,6 +452,7 @@ function StreamingCard({
   velocityRef: React.MutableRefObject<{x: number, y: number}>;
 }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isCtaHovered, setIsCtaHovered] = useState(false);
   
   const EDGE = 0.25;
   const SPEED = 4;
@@ -460,6 +470,10 @@ function StreamingCard({
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (typeof window !== "undefined" && window.innerWidth < 900) return;
+    if (isCtaHovered) {
+      velocityRef.current = { x: 0, y: 0 }; // Zerar velocidade quando CTA estiver em hover
+      return;
+    }
     
     const rect = e.currentTarget.getBoundingClientRect();
     const mx = (e.clientX - rect.left) / rect.width;
@@ -497,7 +511,6 @@ function StreamingCard({
           className="relative p-8 h-full flex flex-col bg-white rounded-xl transition-all duration-500"
           style={{
             zIndex: 10,
-            backgroundColor: isHovered ? "rgba(255, 255, 255, 0.95)" : "white",
           }}
         >
           <h3 className="text-xl font-semibold mb-2 text-gray-900">Streaming</h3>
@@ -515,7 +528,7 @@ function StreamingCard({
             ].map((logo) => (
               <div 
                 key={logo.alt}
-                className="aspect-square rounded-lg border border-gray-200 flex items-center justify-center bg-white shadow-sm"
+                className="aspect-[3/2] rounded-lg border border-gray-200 flex items-center justify-center bg-white shadow-sm"
               >
                 <Image 
                   src={logo.src} 
@@ -532,7 +545,7 @@ function StreamingCard({
           <p className="text-center text-sm font-semibold text-gray-500 mb-3">até 30% OFF</p>
 
           {/* Additional Logos Grid */}
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-3 gap-2 mb-4">
             {[
               { src: "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/logos/paramount.png", alt: "Paramount+" },
               { src: "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/logos/globoplay.png", alt: "Globoplay" },
@@ -552,6 +565,18 @@ function StreamingCard({
               </div>
             ))}
           </div>
+
+          {/* CTA Button */}
+          <a 
+            href="https://www.mercadolivre.com.br/assinaturas/melimais/planos?plan_selected=MEGA#origin=redirect-vdp-meliplus"
+            target="_blank"
+            rel="noopener noreferrer"
+            onMouseEnter={() => setIsCtaHovered(true)}
+            onMouseLeave={() => setIsCtaHovered(false)}
+            className="block w-full py-3 px-4 bg-gradient-to-b from-[#65a5ff] to-[#3483fa] text-white rounded-lg font-semibold text-sm shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200 text-center"
+          >
+            Ver planos de streaming
+          </a>
         </div>
       </div>
     </RevealOnScroll>
@@ -657,9 +682,14 @@ function PlanCard({ plan, isAnnual, index }: { plan: Plan; isAnnual: boolean; in
         </div>
 
         {/* CTA Button */}
-        <button className="w-full py-3.5 bg-gradient-to-b from-[#65a5ff] to-[#3483fa] text-white font-semibold rounded-md shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:scale-[1.02] active:translate-y-0 active:scale-[0.98] transition-all duration-300">
+        <a
+          href="https://www.mercadolivre.com.br/assinaturas/melimais/planos?plan_selected=MEGA#origin=redirect-vdp-meliplus"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full py-3.5 bg-gradient-to-b from-[#65a5ff] to-[#3483fa] text-white font-semibold rounded-md shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:scale-[1.02] active:translate-y-0 active:scale-[0.98] transition-all duration-300 text-center"
+        >
           Assinar Meli+ {plan.name.charAt(0) + plan.name.slice(1).toLowerCase()}
-        </button>
+        </a>
       </div>
     </RevealOnScroll>
   );
@@ -881,7 +911,7 @@ export default function OfertaMonoliticaPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-12 md:py-20 pb-12 relative overflow-hidden">
+      <section className="py-12 md:py-20 relative overflow-hidden" style={{ paddingBottom: '2rem' }}>
         <div className="max-w-[1200px] mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-8">
           <RevealOnScroll direction="left" className="flex-1 max-w-full md:max-w-[500px] z-[2] flex-shrink-0 text-center md:text-left">
             <div className="bg-[#8e24aa] text-white px-3 py-1 rounded-full font-black italic inline-block mb-5 text-xl shadow-lg animate-[float_3s_ease-in-out_infinite]">
@@ -895,12 +925,14 @@ export default function OfertaMonoliticaPage() {
             <p className="text-base md:text-lg text-gray-700 mb-8">
               Frete grátis, cashback e os melhores streamings reunidos.
             </p>
-            <Link
-              href="#planos"
+            <a
+              href="https://www.mercadolivre.com.br/assinaturas/melimais/planos?plan_selected=MEGA#origin=redirect-vdp-meliplus"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-gradient-to-b from-[#65a5ff] to-[#3483fa] text-white px-8 py-4 rounded-md font-semibold shadow-lg hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl transition-all duration-300 w-full md:w-auto"
             >
               Assinar com até 46% OFF
-            </Link>
+            </a>
           </RevealOnScroll>
 
           <RevealOnScroll direction="right" className="flex-shrink-0 w-full md:w-auto flex justify-center">
@@ -914,28 +946,61 @@ export default function OfertaMonoliticaPage() {
              </div>
           </RevealOnScroll>
         </div>
+        
+        {/* Bottom Section Title */}
+        <div className="max-w-[1200px] mx-auto px-5 mt-16 text-center">
+          <RevealOnScroll>
+            <h2 className="text-4xl font-semibold text-gray-900 mb-3">São muitos benefícios para você</h2>
+            <p className="text-gray-600 mb-4">Descubra tudo que você ganha ao assinar Meli+</p>
+          </RevealOnScroll>
+        </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 text-center relative overflow-visible">
-        <div className="hidden md:block">
+      <section 
+        className="pt-4 pb-16 text-center relative overflow-visible"
+        style={{
+          backgroundImage: "url('/assets/images/meli-mais-fotografia-streaming.jpeg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-l from-black/60 via-black/20 to-transparent z-[1]" />
+        
+        <div className="hidden md:block absolute inset-0 z-[2]">
           <StreamingGridBackground isActive={isStreamingHovered} velocityRef={velocityRef} />
         </div>
         
+        <div className="max-w-[1200px] mx-auto px-5 relative z-[150]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left min-h-[600px] items-center">
+            <div></div>
+            <div></div>
+            <StreamingCard 
+              delay={0} 
+              onHoverChange={setIsStreamingHovered}
+              velocityRef={velocityRef}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section 2 */}
+      <section className="py-16 text-center relative overflow-visible">
         {/* Piggy Bank Decoration */}
         <div 
           className="absolute left-[-20px] w-[400px] h-[400px] bg-contain bg-center bg-no-repeat z-[100] pointer-events-none opacity-100 md:opacity-100 max-md:opacity-20 max-md:scale-50 max-md:left-[-150px]"
           style={{ 
             backgroundImage: "url('https://smolljrfjqknp6nm.public.blob.vercel-storage.com/assets/piggy-bank-image.webp')",
-            bottom: '-184px',
+            bottom: '-249px',
             transform: `translateY(${scrollY * 0.1}px) scaleX(-1)`,
           }}
         />
         
         <div className="max-w-[1200px] mx-auto px-5 relative">
           <RevealOnScroll>
-            <h2 className="text-4xl font-semibold text-gray-900 mb-3">São muitos benefícios para você</h2>
-            <p className="text-gray-600 mb-12">Descubra tudo que você ganha ao assinar Meli+</p>
+            <h2 className="text-4xl font-semibold text-gray-900 mb-3">Mais benefícios para você</h2>
+            <p className="text-gray-600 mb-12">Descubra todas as vantagens do Meli+</p>
           </RevealOnScroll>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
@@ -951,22 +1016,11 @@ export default function OfertaMonoliticaPage() {
               description="Receba parte do valor de volta em créditos (Meli Dólar) para usar em novas compras."
               delay={0.2}
             />
-            <StreamingCard 
-              delay={0.3} 
-              onHoverChange={setIsStreamingHovered}
-              velocityRef={velocityRef}
-            />
             <BenefitCard
               icon={Shield}
               title="Segurança"
               description="Compra Garantida: receba o produto que está esperando ou devolvemos o dinheiro."
               delay={0.1}
-            />
-            <BenefitCard
-              icon={Star}
-              title="Ofertas VIP"
-              description="Acesso antecipado a ofertas relâmpago e descontos exclusivos em datas especiais."
-              delay={0.2}
             />
           </div>
         </div>
@@ -1067,9 +1121,14 @@ export default function OfertaMonoliticaPage() {
         <div className="flex-1" />
 
         <RevealOnScroll className="relative z-10 pb-16">
-          <button className="bg-gradient-to-b from-[#65a5ff] to-[#3483fa] text-white px-16 py-5 text-lg rounded-md font-semibold shadow-lg hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl transition-all duration-300">
+          <a
+            href="https://www.mercadolivre.com.br/assinaturas/melimais/planos?plan_selected=MEGA#origin=redirect-vdp-meliplus"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-gradient-to-b from-[#65a5ff] to-[#3483fa] text-white px-16 py-5 text-lg rounded-md font-semibold shadow-lg hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl transition-all duration-300"
+          >
             Quero ser Meli+
-          </button>
+          </a>
         </RevealOnScroll>
       </section>
 

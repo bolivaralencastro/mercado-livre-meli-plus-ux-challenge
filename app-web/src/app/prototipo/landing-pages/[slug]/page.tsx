@@ -17,6 +17,8 @@ export default function LandingPageViewerPage() {
   const [isInfoPanelOpen, setIsInfoPanelOpen] = useState(false);
   const [currentLandingPage, setCurrentLandingPage] = useState<LandingPageEntry | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
 
   useEffect(() => {
     const lp = getLandingPageBySlug(slug);
@@ -37,6 +39,40 @@ export default function LandingPageViewerPage() {
     router.push(`/prototipo/landing-pages/${landingPages[newIndex].slug}`);
   }, [currentIndex, router]);
 
+  const toggleFullscreen = useCallback(() => {
+    if (!isFullscreen) {
+      const elem = document.documentElement;
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen().then(() => {
+          setIsFullscreen(true);
+          setShowHeader(false);
+        }).catch((err) => {
+          console.error('Fullscreen error:', err);
+        });
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen().then(() => {
+          setIsFullscreen(false);
+          setShowHeader(true);
+        }).catch((err) => {
+          console.error('Exit fullscreen error:', err);
+        });
+      }
+    }
+  }, [isFullscreen]);
+
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    if (isFullscreen) {
+      // Show header if mouse is at the top 50px of the screen
+      if (e.clientY < 50) {
+        setShowHeader(true);
+      } else if (e.clientY > 150) {
+        setShowHeader(false);
+      }
+    }
+  }, [isFullscreen]);
+
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === "Escape") {
       setIsInfoPanelOpen(false);
@@ -46,13 +82,30 @@ export default function LandingPageViewerPage() {
       navigateTo("next");
     } else if (e.key === "i" || e.key === "I") {
       setIsInfoPanelOpen((prev) => !prev);
+    } else if (e.key === "f" || e.key === "F") {
+      toggleFullscreen();
     }
-  }, [navigateTo]);
+  }, [navigateTo, toggleFullscreen]);
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [handleKeyDown]);
+    window.addEventListener("mousemove", handleMouseMove);
+    
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement) {
+        setIsFullscreen(false);
+        setShowHeader(true);
+      }
+    };
+    
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+    };
+  }, [handleKeyDown, handleMouseMove]);
 
   if (!currentLandingPage) {
     return null;
@@ -86,9 +139,13 @@ export default function LandingPageViewerPage() {
   };
 
   return (
-    <div className="h-screen bg-[#2D3277] flex flex-col relative overflow-hidden">
+    <div className={`bg-[#2D3277] flex flex-col relative overflow-hidden ${isFullscreen ? 'h-screen' : 'h-screen'}`}>
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+      <header 
+        className={`${isFullscreen ? 'fixed' : 'sticky'} top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 transition-transform duration-300 w-full ${
+          showHeader ? 'translate-y-0' : '-translate-y-full'
+        }`}
+      >
         <div className="flex items-center justify-between px-6 py-4">
           {/* Left: Back button and title */}
           <div className="flex items-center gap-4">
@@ -114,6 +171,21 @@ export default function LandingPageViewerPage() {
 
           {/* Right: Info button, pagination, and navigation */}
           <div className="flex items-center gap-3">
+            {/* Keyboard shortcuts info */}
+            <div className="hidden md:flex items-center gap-2 text-xs text-gray-500 mr-2">
+              <kbd className="px-2 py-1 bg-gray-100 rounded border border-gray-300 font-mono">F</kbd>
+              <span>Tela cheia</span>
+              <span className="text-gray-300">|</span>
+              <kbd className="px-2 py-1 bg-gray-100 rounded border border-gray-300 font-mono">I</kbd>
+              <span>Info</span>
+              <span className="text-gray-300">|</span>
+              <kbd className="px-2 py-1 bg-gray-100 rounded border border-gray-300 font-mono">←</kbd>
+              <kbd className="px-2 py-1 bg-gray-100 rounded border border-gray-300 font-mono">→</kbd>
+              <span>Navegar</span>
+            </div>
+
+            <div className="h-6 w-px bg-gray-200 hidden md:block" />
+
             {/* Info button */}
             <button
               onClick={() => setIsInfoPanelOpen(!isInfoPanelOpen)}
@@ -163,7 +235,7 @@ export default function LandingPageViewerPage() {
       {/* Main content area */}
       <main className="flex-1 relative">
         {/* Prototype display area - Full width */}
-        <div className="w-full h-[calc(100vh-73px)] bg-white overflow-y-auto">
+        <div className={`w-full bg-white overflow-y-auto ${isFullscreen ? 'h-screen' : 'h-[calc(100vh-73px)]'}`}>
           {currentLandingPage.slug === 'oferta-monolitica' && <OfertaMonoliticaPage />}
           {currentLandingPage.slug === 'cinema' && <CinemaPage />}
           {currentLandingPage.slug === 'financas' && <FinancasPage />}
