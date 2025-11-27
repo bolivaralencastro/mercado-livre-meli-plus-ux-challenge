@@ -1,6 +1,3 @@
-import React from 'react';
-import PresentationNav from './components/PresentationNav';
-
 export default function PresentationLayout({
   children,
 }: {
@@ -8,7 +5,6 @@ export default function PresentationLayout({
 }) {
   return (
     <div>
-      <PresentationNav />
       {children}
     </div>
   );
