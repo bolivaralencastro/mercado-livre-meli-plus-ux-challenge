@@ -48,10 +48,6 @@ export default function CinemaPage() {
               No Meli+ você leva tudo em um único plano por muito menos.
             </p>
 
-            <button className={styles.ctaBtn3d}>
-              Quero assistir agora
-            </button>
-
             <div className={styles.bonusBlock}>
               <span className={`material-icons-round ${styles.bonusIcon}`}>redeem</span>
               <div className={styles.bonusText}>

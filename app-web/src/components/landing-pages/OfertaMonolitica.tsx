@@ -500,16 +500,13 @@ function StreamingCard({
             backgroundColor: isHovered ? "rgba(255, 255, 255, 0.95)" : "white",
           }}
         >
-          <div className={`text-3xl mb-4 transition-all duration-300 ${isHovered ? "text-[#8e24aa] scale-110" : "text-[#2968c8]"}`}>
-            <PlayCircle size={32} />
-          </div>
           <h3 className="text-xl font-semibold mb-2 text-gray-900">Streaming</h3>
           <p className="text-sm text-gray-600 leading-relaxed mb-4">
             Disney+, Deezer e outros inclusos. Descontos exclusivos em Max e Paramount+.
           </p>
           
           {/* Streaming Logos */}
-          <div className="mt-auto grid grid-cols-2 gap-3">
+          <div className="mt-auto grid grid-cols-2 gap-3 mb-3">
             {[
               { src: "https://http2.mlstatic.com/resources/frontend/statics/loyal/partners/new_vdp/partner-disney.png", alt: "Disney+" },
               { src: "https://http2.mlstatic.com/resources/frontend/statics/loyal/partners/new_vdp/partner-hbo.png", alt: "HBO Max" },
@@ -526,6 +523,31 @@ function StreamingCard({
                   width={60} 
                   height={60} 
                   className="w-[65%] h-[65%] object-contain"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Discount Text */}
+          <p className="text-center text-sm font-semibold text-gray-500 mb-3">até 30% OFF</p>
+
+          {/* Additional Logos Grid */}
+          <div className="grid grid-cols-3 gap-2">
+            {[
+              { src: "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/logos/paramount-logo.png", alt: "Paramount+" },
+              { src: "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/logos/globoplay-logo.png", alt: "Globoplay" },
+              { src: "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/logos/universal-logo.png", alt: "Universal+" },
+            ].map((logo) => (
+              <div 
+                key={logo.alt}
+                className="aspect-square rounded-lg border border-gray-200 flex items-center justify-center bg-white shadow-sm"
+              >
+                <Image 
+                  src={logo.src} 
+                  alt={logo.alt} 
+                  width={40} 
+                  height={40} 
+                  className="w-[60%] h-[60%] object-contain"
                 />
               </div>
             ))}
@@ -905,7 +927,7 @@ export default function OfertaMonoliticaPage() {
           className="absolute left-[-20px] w-[400px] h-[400px] bg-contain bg-center bg-no-repeat z-[100] pointer-events-none opacity-100 md:opacity-100 max-md:opacity-20 max-md:scale-50 max-md:left-[-150px]"
           style={{ 
             backgroundImage: "url('https://smolljrfjqknp6nm.public.blob.vercel-storage.com/assets/piggy-bank-image.webp')",
-            bottom: '-120px',
+            bottom: '-184px',
             transform: `translateY(${scrollY * 0.1}px) scaleX(-1)`,
           }}
         />

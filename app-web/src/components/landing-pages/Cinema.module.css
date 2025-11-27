@@ -209,11 +209,27 @@
 .revealSub { opacity: 0.8; font-size: 0.9rem; margin-bottom: 24px; }
 
 .savingsBadgeSim {
-    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
-    padding: 12px 20px; border-radius: 12px; width: 100%;
+    background: linear-gradient(135deg, rgba(0, 166, 80, 0.25) 0%, rgba(0, 166, 80, 0.15) 100%);
+    border: 1px solid rgba(0, 255, 128, 0.4);
+    padding: 16px 24px; border-radius: 16px; width: 100%;
+    box-shadow: 0 4px 16px rgba(0, 166, 80, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
-.savingsLabel { display: block; font-size: 0.75rem; text-transform: uppercase; opacity: 0.7; margin-bottom: 4px; }
-.savingsValueSim { font-size: 1.5rem; font-weight: 700; color: var(--meli-green); }
+.savingsLabel { 
+    display: block; 
+    font-size: 0.7rem; 
+    text-transform: uppercase; 
+    color: rgba(255, 255, 255, 0.8); 
+    margin-bottom: 6px; 
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+.savingsValueSim { 
+    font-size: 2rem; 
+    font-weight: 800; 
+    color: #00ff80;
+    text-shadow: 0 2px 8px rgba(0, 255, 128, 0.4);
+    letter-spacing: -0.02em;
+}
 
 .closeReveal {
     position: absolute; top: 20px; right: 20px;

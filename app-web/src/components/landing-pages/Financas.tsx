@@ -45,11 +45,6 @@ export default function FinancasPage() {
               Com o Meli+, ele rende até <strong>120% do CDI</strong> em cofres e 105% no saldo da conta.
             </p>
             
-            <button className={styles.ctaBtn3d}>
-              Potencializar meus ganhos
-              <span className="material-icons-round" style={{ fontSize: '1.1rem', marginLeft: '8px' }}>arrow_forward</span>
-            </button>
-            
             <div className={styles.bonusBlock}>
               <span className={`material-icons-round ${styles.bonusIcon}`}>local_shipping</span>
               <div className={styles.bonusText}>
@@ -122,7 +117,7 @@ export default function FinancasPage() {
                   <span className={styles.savingsValueSim}>+ {fmtMoney(extra)}</span>
                 </div>
                 <button className={styles.revealCta}>
-                  Quero Meli+ agora
+                  Potencializar meus ganhos
                 </button>
               </div>
             </div>

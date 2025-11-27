@@ -42,10 +42,6 @@ export default function LogisticaPage() {
               No Meli+ Mega você tem frete grátis ilimitado e muito mais, por um único preço mensal.
             </p>
             
-            <button className={styles.ctaBtn3d}>
-              Ativar Frete Grátis
-            </button>
-            
             <div className={styles.bonusBlock}>
               <span className={`material-icons-round ${styles.bonusIcon}`}>redeem</span>
               <div className={styles.bonusText}>
@@ -117,7 +113,7 @@ export default function LogisticaPage() {
                   </span>
                 </div>
                 <button className={styles.revealCta}>
-                  Quero economizar agora
+                  Ativar Frete Grátis
                 </button>
               </div>
             </div>
