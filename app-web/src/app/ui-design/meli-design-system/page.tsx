@@ -602,8 +602,8 @@ export default function MeliDesignSystemPage() {
 
               {/* Pricing Cards */}
               <div className="flex gap-5 flex-wrap justify-center w-full z-10">
-                {['essential', 'total', 'mega'].map((plan) => {
-                  const priceData = prices[pricingPeriod][plan];
+                {(['essential', 'total', 'mega'] as const).map((plan) => {
+                  const priceData = prices[pricingPeriod as keyof typeof prices][plan];
                   const isMega = plan === 'mega';
                   const delayClass = plan === 'essential' ? 'delay-100' : plan === 'total' ? 'delay-200' : 'delay-300';
                   
