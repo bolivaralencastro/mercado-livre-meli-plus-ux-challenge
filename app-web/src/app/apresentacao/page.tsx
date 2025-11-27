@@ -3,7 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronDown, ChevronUp, Target, Users, Lightbulb, Layers, ArrowRight, ExternalLink, Sparkles, Zap, TrendingUp, Check, Play, Pause } from "lucide-react";
+import { ChevronDown, ChevronUp, Target, Users, Lightbulb, Layers, ArrowRight, ExternalLink, Sparkles, Zap, TrendingUp, Check, Play } from "lucide-react";
+
+// Animation delay constant for staggered animations
+const STAGGER_DELAY_MS = 100;
 
 // Section navigation data
 const sections = [
@@ -44,7 +47,6 @@ export default function ApresentacaoPage() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isNavVisible, setIsNavVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const containerRef = useRef<HTMLDivElement>(null);
   const sectionsRef = useRef<{ [key: string]: HTMLElement | null }>({});
 
   // Track scroll position and active section
@@ -56,15 +58,17 @@ export default function ApresentacaoPage() {
       setScrollProgress(progress);
       setIsNavVisible(scrollTop > 300);
 
-      // Determine active section
-      Object.entries(sectionsRef.current).forEach(([id, element]) => {
+      // Determine active section - find the first section in the viewport center
+      const sectionEntries = Object.entries(sectionsRef.current);
+      for (const [id, element] of sectionEntries) {
         if (element) {
           const rect = element.getBoundingClientRect();
           if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
             setActiveSection(id);
+            break;
           }
         }
-      });
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -89,7 +93,7 @@ export default function ApresentacaoPage() {
   };
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-[#ededed] overflow-x-hidden">
+    <div className="min-h-screen bg-[#ededed] overflow-x-hidden">
       {/* Progress bar */}
       <div 
         className="fixed top-0 left-0 h-1 bg-gradient-to-r from-[#ffe600] via-[#3483fa] to-[#00a650] z-50 transition-all duration-150"
@@ -240,7 +244,7 @@ export default function ApresentacaoPage() {
                 <div 
                   key={card.title}
                   className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-500"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  style={{ animationDelay: `${index * STAGGER_DELAY_MS}ms` }}
                 >
                   <div className="w-12 h-12 bg-gradient-to-br from-[#ffe600] to-[#ffd000] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                     <Icon className="w-6 h-6 text-[#333333]" />
