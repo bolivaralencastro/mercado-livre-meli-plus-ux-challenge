@@ -121,6 +121,9 @@ export default function FinancasPage() {
                   <span className={styles.savingsLabel}>Ganho extra com Meli+</span>
                   <span className={styles.savingsValueSim}>+ {fmtMoney(extra)}</span>
                 </div>
+                <button className={styles.revealCta}>
+                  Quero Meli+ agora
+                </button>
               </div>
             </div>
           </div>

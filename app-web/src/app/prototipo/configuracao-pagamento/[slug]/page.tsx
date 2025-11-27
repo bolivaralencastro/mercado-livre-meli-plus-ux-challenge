@@ -37,11 +37,7 @@ export default function PaymentFlowViewerPage() {
   }, []);
 
   if (!currentPaymentFlow) {
-    return (
-      <div className="min-h-screen bg-[#2D3277] flex items-center justify-center">
-        <div className="text-white">Carregando...</div>
-      </div>
-    );
+    return null;
   }
 
   const getStatusStyles = (status: PaymentFlowEntry["status"]) => {
@@ -158,60 +154,6 @@ export default function PaymentFlowViewerPage() {
             <p className="text-gray-600 text-sm leading-relaxed mb-6">
               {currentPaymentFlow.description}
             </p>
-
-            {/* Divider */}
-            <div className="border-t border-gray-200 my-6" />
-
-            {/* Additional info section */}
-            <div className="space-y-4">
-              <h4 className="text-gray-400 text-xs font-semibold uppercase tracking-wider">
-                Detalhes Técnicos
-              </h4>
-              
-              <div className="space-y-3">
-                <div>
-                  <span className="text-gray-500 text-xs block mb-1">Tipo</span>
-                  <code className="text-[#2D3277] text-sm bg-gray-100 px-2 py-1 rounded block">
-                    Componente TSX Interativo
-                  </code>
-                </div>
-                
-                <div>
-                  <span className="text-gray-500 text-xs block mb-1">Componente</span>
-                  <code className="text-gray-700 text-sm bg-gray-100 px-2 py-1 rounded block">
-                    {currentPaymentFlow.component}
-                  </code>
-                </div>
-                
-                <div>
-                  <span className="text-gray-500 text-xs block mb-1">Slug</span>
-                  <code className="text-gray-700 text-sm bg-gray-100 px-2 py-1 rounded block">
-                    {currentPaymentFlow.slug}
-                  </code>
-                </div>
-              </div>
-            </div>
-
-            {/* Divider */}
-            <div className="border-t border-gray-200 my-6" />
-
-            {/* Keyboard shortcuts */}
-            <div className="space-y-3">
-              <h4 className="text-gray-400 text-xs font-semibold uppercase tracking-wider">
-                Atalhos de Teclado
-              </h4>
-              
-              <div className="grid grid-cols-2 gap-2 text-sm">
-                <div className="flex items-center gap-2">
-                  <kbd className="px-2 py-1 bg-gray-100 rounded text-gray-500 text-xs font-mono">I</kbd>
-                  <span className="text-gray-600">Info</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <kbd className="px-2 py-1 bg-gray-100 rounded text-gray-500 text-xs font-mono">Esc</kbd>
-                  <span className="text-gray-600">Fechar</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 

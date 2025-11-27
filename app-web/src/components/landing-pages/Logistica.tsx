@@ -116,6 +116,9 @@ export default function LogisticaPage() {
                     {hasSaving ? fmtMoney(netSaving) : 'Frete Grátis'}
                   </span>
                 </div>
+                <button className={styles.revealCta}>
+                  Quero economizar agora
+                </button>
               </div>
             </div>
           </div>

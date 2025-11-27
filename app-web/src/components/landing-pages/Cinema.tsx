@@ -124,6 +124,9 @@ export default function CinemaPage() {
                     {hasSaving ? fmtMoney(saving) : 'Mais vantagens'}
                   </span>
                 </div>
+                <button className={styles.revealCta}>
+                  Quero assistir agora
+                </button>
               </div>
             </div>
           </div>
