@@ -15,12 +15,14 @@
     --meli-purple: #800080;
     --meli-orange: #E84A2E;
     --meli-green: #00a650;
-    --dark-bg: #0E0B18;
-    --panel-bg: #18142A;
-    --text-main: #F6F4F1;
-    --text-muted: #9CA3AF;
-    --glass-bg: rgba(34, 26, 48, 0.78);
-    --glass-border: rgba(255, 255, 255, 0.16);
+    --bg-body: #F9F9F9;
+    --bg-card: #FFFFFF;
+    --bg-surface: #F0F0F0;
+    --text-primary: #111111;
+    --text-secondary: #6B7280;
+    --text-muted: #4B5563;
+    --glass-bg: #FFFFFF;
+    --glass-border: rgba(0, 0, 0, 0.1);
     --silver-haze: #E2E4E7;
     --font-primary: 'Inter', sans-serif;
 }
@@ -33,7 +35,7 @@
     padding: 28px 26px 32px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
     width: 100%;
     max-width: 420px;
     margin: 0 auto;
@@ -143,7 +145,7 @@ input[type=range] {
 input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     height: 4px;
-    background: rgba(255, 255, 255, 0.18);
+    background: var(--bg-surface);
     border-radius: 999px;
 }
 
@@ -153,23 +155,23 @@ input[type=range]::-webkit-slider-thumb {
     height: 24px;
     width: 24px;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.25);
-    background: #2A2A2A;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+    border: 2px solid var(--bg-card);
+    background: var(--text-primary);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
     margin-top: -10px;
     transition: transform 0.15s ease, border-color 0.2s ease;
 }
 
 input[type=range]:hover::-webkit-slider-thumb {
-    border-color: rgba(255, 255, 255, 0.65);
+    border-color: var(--bg-surface);
 }
 
 .result-box {
     width: 100%;
     min-height: 72px;
     border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    background: var(--bg-surface);
     text-align: center;
     padding: 14px 16px;
     font-size: 0.9rem;
@@ -181,9 +183,9 @@ input[type=range]:hover::-webkit-slider-thumb {
 }
 
 .result-box strong { display: block; font-weight: 700; margin-bottom: 2px; }
-.result-box.neutral { color: #9CA3AF; border-style: dashed; }
-.result-box.success { background: rgba(0, 166, 80, 0.16); border-color: rgba(0, 166, 80, 0.4); color: #D3FFE8; border-style: solid; }
-.result-box.alert { background: rgba(255, 90, 90, 0.16); border-color: rgba(255, 90, 90, 0.4); color: #FFE0E0; border-style: solid; }
+.result-box.neutral { color: var(--text-muted); border-style: dashed; }
+.result-box.success { background: rgba(0, 166, 80, 0.15); border-color: var(--meli-green); color: var(--text-primary); border-style: solid; }
+.result-box.alert { background: rgba(255, 90, 90, 0.15); border-color: #ff5a5a; color: #ff5a5a; border-style: solid; }
 
 .result-detail { margin-top: 6px; color: inherit; line-height: 1.35; }
 .result-copy { display: none; }
@@ -212,21 +214,20 @@ input[type=range]:hover::-webkit-slider-thumb {
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    background-color: var(--dark-bg);
-    color: var(--text-main);
+    background-color: var(--bg-body);
+    color: var(--text-primary);
     font-family: var(--font-primary);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-image: 
-        radial-gradient(circle at 10% 20%, rgba(128, 0, 128, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(232, 74, 46, 0.08) 0%, transparent 40%),
-        linear-gradient(120deg, rgba(5, 5, 5, 0.55), rgba(5, 5, 5, 0.35)),
-        linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.85)),
+        radial-gradient(circle at 10% 20%, rgba(128, 0, 128, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(232, 74, 46, 0.05) 0%, transparent 40%),
+        linear-gradient(120deg, rgba(255, 255, 255, 0.8), rgba(249, 249, 249, 0.6)),
         url('background-3.jpg');
-    background-size: auto, auto, cover, cover, cover;
-    background-position: 10% 20%, 90% 80%, center, center, center;
+    background-size: auto, auto, cover, cover;
+    background-position: 10% 20%, 90% 80%, center, center;
     background-repeat: no-repeat;
     overflow-x: hidden;
 }
@@ -268,12 +269,12 @@ body {
 .logo-lockup {
     display: inline-flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.3);
     border: 1px solid var(--glass-border);
     border-radius: 100px;
     padding: 6px 14px;
     margin-bottom: 24px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
 }
 
 .logo-part {
@@ -324,7 +325,7 @@ h1 {
     max-width: 480px;
 }
 
-.sub-h strong { color: var(--text-main); font-weight: 600; }
+.sub-h strong { color: var(--text-primary); font-weight: 600; }
 
 /* 3D Button Refined */
 .cta-btn-3d {
@@ -334,9 +335,9 @@ h1 {
     font-weight: 600;
     padding: 14px 28px;
     border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(0,0,0,0.1);
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(128, 0, 128, 0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+    box-shadow: 0 4px 15px rgba(128, 0, 128, 0.3), inset 0 1px 0 rgba(255,255,255,0.2);
     transition: all 0.2s ease;
     margin-bottom: 30px;
     display: inline-flex;
@@ -354,13 +355,13 @@ h1 {
     font-size: 0.85rem;
     color: var(--text-muted);
     padding: 12px 16px;
-    background: rgba(255,255,255,0.03);
+    background: rgba(0,0,0,0.03);
     border-radius: 10px;
     border: 1px dashed var(--glass-border);
     max-width: fit-content;
 }
 .bonus-icon { color: var(--meli-green); font-size: 1.2rem; }
-.bonus-text strong { display: block; color: var(--text-main); margin-bottom: 2px; }
+.bonus-text strong { display: block; color: var(--text-primary); margin-bottom: 2px; }
 
 /* =========================================
    SIMULATOR CARD STYLES
@@ -372,7 +373,7 @@ h1 {
     padding: 28px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     height: 520px;
@@ -392,11 +393,11 @@ h1 {
 .tooltip-box {
     visibility: hidden; opacity: 0;
     position: absolute; bottom: 100%; right: 0;
-    background: rgba(0,0,0,0.95); border: 1px solid var(--glass-border);
+    background: var(--bg-card); border: 1px solid var(--glass-border);
     padding: 12px; border-radius: 8px; width: 240px;
-    font-size: 0.75rem; color: #fff; line-height: 1.4;
+    font-size: 0.75rem; color: var(--text-primary); line-height: 1.4;
     transition: all 0.2s ease; pointer-events: none; z-index: 20;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 .tooltip-trigger:hover .tooltip-box { visibility: visible; opacity: 1; bottom: 120%; }
 
@@ -405,8 +406,8 @@ h1 {
 /* --- DISPLAY AREA --- */
 .display-area { 
     text-align: center; margin-top: auto; margin-bottom: auto; 
-    background: rgba(255,255,255,0.03); border-radius: 16px; padding: 20px;
-    border: 1px dashed rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.03); border-radius: 16px; padding: 20px;
+    border: 1px dashed var(--glass-border);
 }
 
 .status-badge {
@@ -414,27 +415,27 @@ h1 {
     font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;
 }
 .status-badge.bad { background: rgba(255, 77, 77, 0.2); color: #ff5a5a; }
-.status-badge.neutral { background: rgba(255, 255, 255, 0.1); color: var(--text-muted); }
+.status-badge.neutral { background: var(--bg-surface); color: var(--text-muted); }
 
-.price-value { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.05em; color: var(--text-main); font-variant-numeric: tabular-nums; line-height: 1.1;}
+.price-value { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.05em; color: var(--text-primary); font-variant-numeric: tabular-nums; line-height: 1.1;}
 .price-value.danger { color: #ff5a5a; }
 .price-value.neutral { color: var(--text-muted); opacity: 0.5; }
 
 /* --- SLIDER AREA --- */
 .slider-area { margin-top: auto; margin-bottom: 24px; position: relative; z-index: 2;}
 .slider-area input[type=range] { appearance: none; -webkit-appearance: none; width: 100%; background: transparent; cursor: pointer; }
-.slider-area input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 99px; }
+.slider-area input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 8px; background: var(--bg-surface); border-radius: 99px; }
 .slider-area input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none; height: 28px; width: 28px; border-radius: 50%;
-    background: var(--text-main); margin-top: -10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.1s; border: 2px solid var(--glass-bg);
+    background: var(--text-primary); margin-top: -10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: transform 0.1s; border: 2px solid var(--bg-card);
 }
 .slider-area input[type=range]:active::-webkit-slider-thumb { transform: scale(1.2); background: var(--meli-purple); }
 
 /* --- CTA BUTTON --- */
 .cta-btn {
     width: 100%; padding: 16px; border-radius: 12px; border: none;
-    background: var(--text-main); color: var(--dark-bg);
+    background: var(--text-primary); color: var(--bg-body);
     font-weight: 700; font-size: 1rem; cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     display: flex; align-items: center; justify-content: center; gap: 8px;
@@ -442,7 +443,7 @@ h1 {
 }
 .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
 .cta-btn:active { transform: scale(0.98); }
-.cta-btn:disabled { opacity: 0.3; cursor: not-allowed; transform: none; box-shadow: none; background: rgba(255,255,255,0.1); color: var(--text-muted); }
+.cta-btn:disabled { opacity: 0.3; cursor: not-allowed; transform: none; box-shadow: none; background: var(--bg-surface); color: var(--text-muted); }
 
 /* --- REVEAL OVERLAY --- */
 .reveal-overlay {
@@ -610,22 +611,22 @@ input[type=range]::-webkit-slider-runnable-track {
                 
                 <h1>
                     Seu dinheiro parado está <br>
-                    <span class="highlight-negative">perdendo</span> para o Meli+.
+                    <span class="highlight-negative">rendendo menos</span> do que deveria.
                 </h1>
                 
                 <p class="sub-h">
-                    Rendimento automático de até <strong>120% do CDI</strong> nos cofrinhos e 105% no saldo da conta.
+                    Com o Meli+, ele rende até <strong>120% do CDI</strong> em cofres e 105% no saldo da conta.
                 </p>
                 
                 <button class="cta-btn-3d">
-                    Potencializar meus ganhos 
+                    Potencializar meus ganhos
                     <span class="material-icons-round" style="font-size: 1.1rem;">arrow_forward</span>
                 </button>
                 
                 <div class="bonus-block">
                     <span class="material-icons-round bonus-icon">local_shipping</span>
                     <div class="bonus-text">
-                        <strong>Precisa de estoque?</strong>
+                        <strong>Bônus incluso:</strong>
                         <span>Frete Grátis em milhões de produtos.</span>
                     </div>
                 </div>
@@ -651,9 +652,9 @@ input[type=range]::-webkit-slider-runnable-track {
 
                         <div class="display-area">
                             <span class="status-badge neutral" id="roi-badge">SEM MELI+</span>
-                            <div class="price-value neutral" id="roi-poup">+ R$ 0,00</div>
+                            <div class="price-value neutral" id="roi-poup">R$ 0,00</div>
                             <div style="font-size:0.9rem; color:var(--text-muted); margin-top:8px;">
-                                Saldo: <span id="roi-balance" style="color:white; font-weight:700;">R$ 0</span>
+                                Saldo: <span id="roi-balance" style="color:var(--text-primary); font-weight:700;">R$ 0</span>
                             </div>
                         </div>
                     </div>
@@ -671,10 +672,10 @@ input[type=range]::-webkit-slider-runnable-track {
                         <button class="close-reveal" onclick="reset('roi')"><span class="material-icons-round">close</span></button>
                         <span class="reveal-tag">COM MELI+ (120% CDI)</span>
                         <div class="reveal-price" id="roi-meli">R$ 0,00</div>
-                        <p class="reveal-sub">+ Mais lucro em 1 ano</p>
+                        <p class="reveal-sub">Rendimento total em 1 ano</p>
                         <div class="savings-badge-sim">
-                            <span class="savings-label">Ganho Extra</span>
-                            <span class="savings-value-sim" id="roi-gain">+ R$ 0,00</span>
+                            <span class="savings-label">Ganho extra com Meli+</span>
+                            <span class="savings-value-sim" id="roi-gain">R$ 0,00</span>
                         </div>
                     </div>
                 </div>

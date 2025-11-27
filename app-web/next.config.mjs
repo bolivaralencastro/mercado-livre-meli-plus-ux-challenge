@@ -19,6 +19,11 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "smolljrfjqknp6nm.public.blob.vercel-storage.com",
+        pathname: "/assets/**",
+      },
+      {
+        protocol: "https",
         hostname: "placehold.co",
         pathname: "/**",
       },

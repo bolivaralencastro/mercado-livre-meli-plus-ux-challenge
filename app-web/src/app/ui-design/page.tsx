@@ -23,7 +23,7 @@ export default function UiDesignPage() {
       subtitle="Explorações visuais, componentes e telas alinhadas ao Andes Design System para o ecossistema Meli+."
     >
       <div className="space-y-6">
-        {/* Design System */}
+        {/* Andes Design System */}
         <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
           <h2 className="text-xl font-semibold text-[#333333] mb-4">Andes Design System</h2>
           <p className="text-sm text-[#4a4a4a] mb-4">
@@ -32,6 +32,23 @@ export default function UiDesignPage() {
           <Link
             href="/ui-design/andes-design-system"
             className="inline-flex items-center gap-2 rounded-lg bg-[#3483fa] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#2968c8]"
+          >
+            Acessar Design System
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </Link>
+        </div>
+
+        {/* Meli Design System */}
+        <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+          <h2 className="text-xl font-semibold text-[#333333] mb-4">Meli Design System</h2>
+          <p className="text-sm text-[#4a4a4a] mb-4">
+            Documentação completa do sistema de design Meli com guidelines, componentes e recursos visuais.
+          </p>
+          <Link
+            href="/ui-design/meli-design-system"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#8e24aa] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#7b1f99]"
           >
             Acessar Design System
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

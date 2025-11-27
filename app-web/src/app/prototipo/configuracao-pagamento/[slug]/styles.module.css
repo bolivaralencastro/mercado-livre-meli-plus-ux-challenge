@@ -1,0 +1,400 @@
+.appContainer {
+  width: 100%;
+  max-width: 420px;
+  background-color: #fff;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #ffe600;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.headerBlue {
+  background-color: #3483fa;
+  color: white;
+}
+
+.headerIcon {
+  font-size: 24px;
+  margin-right: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.headerTitle {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.view {
+  display: none;
+  padding-bottom: 40px;
+}
+
+.viewActive {
+  display: block;
+}
+
+.sectionHeaderCard {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.meliLogo {
+  background: linear-gradient(90deg, #2b1e62 0%, #681e62 100%);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-style: italic;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.logoContainer {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.statusBadge {
+  background-color: #e3edfb;
+  color: #3483fa;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.contentPadding {
+  padding: 20px;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.labelBold {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.labelSub {
+  color: #999999;
+  font-size: 14px;
+}
+
+.priceTag {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.paymentMethodItem {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.cardRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.linkBlue {
+  color: #3483fa;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.addPaymentBtn {
+  display: flex;
+  align-items: center;
+  color: #3483fa;
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.addPaymentBtn span {
+  font-size: 20px;
+  margin-right: 8px;
+  line-height: 1;
+}
+
+.promoCard {
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.promoContent {
+  padding: 16px;
+}
+
+.promoText {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333333;
+}
+
+.promoAction {
+  border-top: 1px solid #e6e6e6;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.serviceCodeBox {
+  background-color: #f5f5f5;
+  margin: 0 20px 20px 20px;
+  padding: 16px;
+  border-radius: 6px;
+}
+
+.codeTitle {
+  color: #999999;
+  font-size: 14px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.codeTitle svg {
+  margin-left: 5px;
+  width: 14px;
+  height: 14px;
+}
+
+.codeNumber {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.footerLinks {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.footerLink {
+  display: block;
+  color: #3483fa;
+  font-size: 13px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.selectionList {
+  background-color: #f5f5f5;
+  min-height: calc(100vh - 56px);
+}
+
+.paymentOptionCard {
+  background: white;
+  padding: 20px;
+  margin-bottom: 1px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.paymentOptionCard:first-child {
+  margin-top: 20px;
+}
+
+.cardIconCircle {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.optionText {
+  flex-grow: 1;
+}
+
+.optionTitle {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.optionSubtitle {
+  font-size: 12px;
+  color: #999999;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  width: 90%;
+  max-width: 320px;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+}
+
+.modalTitle {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.modalText {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.btnPrimary {
+  background-color: #3483fa;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.btnSecondary {
+  background: none;
+  border: none;
+  color: #3483fa;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contextMenu {
+  position: absolute;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  right: 0;
+  top: 25px;
+  z-index: 20;
+  width: 140px;
+}
+
+.contextItem {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #333333;
+  cursor: pointer;
+}
+
+.contextItem:hover {
+  background-color: #f5f5f5;
+}
+
+.toast {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #00a650;
+  color: white;
+  padding: 16px;
+  font-size: 14px;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: 200;
+}
+
+.toastActive {
+  transform: translateY(0);
+}
+
+.tooltipDark {
+  background-color: #333;
+  color: white;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  position: absolute;
+  right: 20px;
+  top: 220px;
+  width: 250px;
+  z-index: 50;
+}
+
+.tooltipClose {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.secondaryPaymentContainer {
+  margin-top: 15px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  position: relative;
+}
+
+.secondaryPaymentLabel {
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.secondaryPaymentMenuIcon {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  cursor: pointer;
+}
+
+.addPaymentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

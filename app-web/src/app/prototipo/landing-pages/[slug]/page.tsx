@@ -1,0 +1,300 @@
+"use client";
+
+import { useRouter, useParams } from "next/navigation";
+import { useCallback, useEffect, useState } from "react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Info, X } from "lucide-react";
+import { landingPages, getLandingPageBySlug, LandingPageEntry } from "@/lib/landing-pages";
+import OfertaMonoliticaPage from "@/components/landing-pages/OfertaMonolitica";
+
+export default function LandingPageViewerPage() {
+  const router = useRouter();
+  const params = useParams();
+  const slug = params.slug as string;
+  
+  const [isInfoPanelOpen, setIsInfoPanelOpen] = useState(false);
+  const [currentLandingPage, setCurrentLandingPage] = useState<LandingPageEntry | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const lp = getLandingPageBySlug(slug);
+    if (lp) {
+      setCurrentLandingPage(lp);
+      const index = landingPages.findIndex((p) => p.slug === slug);
+      setCurrentIndex(index >= 0 ? index : 0);
+    } else {
+      router.push("/prototipo");
+    }
+  }, [slug, router]);
+
+  const navigateTo = useCallback((direction: "prev" | "next") => {
+    const newIndex = direction === "prev" 
+      ? (currentIndex - 1 + landingPages.length) % landingPages.length
+      : (currentIndex + 1) % landingPages.length;
+    
+    router.push(`/prototipo/landing-pages/${landingPages[newIndex].slug}`);
+  }, [currentIndex, router]);
+
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === "Escape") {
+      setIsInfoPanelOpen(false);
+    } else if (e.key === "ArrowLeft") {
+      navigateTo("prev");
+    } else if (e.key === "ArrowRight") {
+      navigateTo("next");
+    } else if (e.key === "i" || e.key === "I") {
+      setIsInfoPanelOpen((prev) => !prev);
+    }
+  }, [navigateTo]);
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [handleKeyDown]);
+
+  if (!currentLandingPage) {
+    return (
+      <div className="min-h-screen bg-[#2D3277] flex items-center justify-center">
+        <div className="text-white">Carregando...</div>
+      </div>
+    );
+  }
+
+  const getCategoryLabel = (category: LandingPageEntry["category"]) => {
+    const labels = {
+      aquisicao: "Aquisição",
+      retencao: "Retenção",
+      upgrade: "Upgrade",
+    };
+    return labels[category];
+  };
+
+  const getStatusStyles = (status: LandingPageEntry["status"]) => {
+    const styles = {
+      draft: "bg-gray-500/20 text-gray-300",
+      ready: "bg-green-500/20 text-green-400",
+      testing: "bg-yellow-500/20 text-yellow-400",
+    };
+    return styles[status];
+  };
+
+  const getStatusLabel = (status: LandingPageEntry["status"]) => {
+    const labels = {
+      draft: "Rascunho",
+      ready: "Pronto",
+      testing: "Em teste",
+    };
+    return labels[status];
+  };
+
+  return (
+    <div className="h-screen bg-[#2D3277] flex flex-col relative overflow-hidden">
+      {/* Header */}
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+        <div className="flex items-center justify-between px-6 py-4">
+          {/* Left: Back button and title */}
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => router.push("/prototipo")}
+              className="inline-flex items-center justify-center rounded-lg border border-gray-300 w-10 h-10 text-gray-700 transition hover:bg-gray-50"
+              aria-label="Voltar para protótipos"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            
+            <div className="h-6 w-px bg-gray-200" />
+            
+            <div>
+              <h1 className="text-[#2D3277] font-semibold text-lg leading-tight">
+                {currentLandingPage.title}
+              </h1>
+              <p className="text-gray-500 text-sm">
+                Landing Page • {getCategoryLabel(currentLandingPage.category)}
+              </p>
+            </div>
+          </div>
+
+          {/* Right: Info button, pagination, and navigation */}
+          <div className="flex items-center gap-3">
+            {/* Info button */}
+            <button
+              onClick={() => setIsInfoPanelOpen(!isInfoPanelOpen)}
+              className={`
+                p-2 rounded-lg transition-all duration-200
+                ${isInfoPanelOpen 
+                  ? "bg-[#FFE600] text-[#2D3277]" 
+                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                }
+              `}
+              aria-label={isInfoPanelOpen ? "Fechar informações" : "Abrir informações"}
+              title="Pressione 'I' para alternar"
+            >
+              <Info className="w-5 h-5" />
+            </button>
+
+            <div className="h-6 w-px bg-gray-200" />
+
+            {/* Pagination */}
+            <span className="text-gray-500 text-sm tabular-nums">
+              {currentIndex + 1} / {landingPages.length}
+            </span>
+
+            {/* Navigation arrows */}
+            <div className="flex items-center gap-1">
+              <button
+                onClick={() => navigateTo("prev")}
+                className="p-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
+                aria-label="Anterior"
+                title="Seta esquerda"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={() => navigateTo("next")}
+                className="p-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
+                aria-label="Próxima"
+                title="Seta direita"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Main content area */}
+      <main className="flex-1 relative">
+        {/* Prototype display area - Full width */}
+        <div className="w-full h-[calc(100vh-73px)] bg-white overflow-y-auto">
+          {currentLandingPage.isNative && currentLandingPage.slug === 'oferta-monolitica' ? (
+            <OfertaMonoliticaPage />
+          ) : (
+            <iframe
+              src={currentLandingPage.htmlFile}
+              className="w-full h-full border-0"
+              title={currentLandingPage.title}
+              loading="lazy"
+            />
+          )}
+        </div>
+
+        {/* Floating Info Panel - Overlays on the right */}
+        <div
+          className={`
+            fixed top-[73px] right-0 h-[calc(100vh-73px)] w-[400px] max-w-[90vw]
+            bg-white/95 backdrop-blur-md border-l border-gray-200
+            transform transition-transform duration-300 ease-out z-[2000]
+            ${isInfoPanelOpen ? "translate-x-0" : "translate-x-full"}
+          `}
+        >
+          {/* Panel Header */}
+          <div className="flex items-center justify-between p-4 border-b border-gray-200">
+            <h2 className="text-[#2D3277] font-semibold">Informações</h2>
+            <button
+              onClick={() => setIsInfoPanelOpen(false)}
+              className="p-1.5 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-[#2D3277] transition-colors"
+              aria-label="Fechar painel"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Panel Content */}
+          <div className="p-6 overflow-y-auto h-[calc(100%-57px)] no-scrollbar">
+            {/* Status badge */}
+            <div className="flex items-center gap-2 mb-4">
+              <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusStyles(currentLandingPage.status)}`}>
+                {getStatusLabel(currentLandingPage.status)}
+              </span>
+              <span className="px-3 py-1 rounded-full text-xs font-medium bg-blue-500/20 text-blue-600">
+                {getCategoryLabel(currentLandingPage.category)}
+              </span>
+            </div>
+
+            {/* Title */}
+            <h3 className="text-[#2D3277] text-xl font-bold mb-3">
+              {currentLandingPage.title}
+            </h3>
+
+            {/* Description */}
+            <p className="text-gray-600 text-sm leading-relaxed mb-6">
+              {currentLandingPage.description}
+            </p>
+
+            {/* Divider */}
+            <div className="border-t border-gray-200 my-6" />
+
+            {/* Additional info section */}
+            <div className="space-y-4">
+              <h4 className="text-gray-400 text-xs font-semibold uppercase tracking-wider">
+                Detalhes Técnicos
+              </h4>
+              
+              <div className="space-y-3">
+                <div>
+                  <span className="text-gray-500 text-xs block mb-1">Tipo</span>
+                  <code className="text-[#2D3277] text-sm bg-gray-100 px-2 py-1 rounded block">
+                    {currentLandingPage.isNative ? "Componente TSX Nativo" : "HTML via iframe"}
+                  </code>
+                </div>
+
+                {currentLandingPage.htmlFile && (
+                  <div>
+                    <span className="text-gray-500 text-xs block mb-1">Arquivo</span>
+                    <code className="text-[#2D3277] text-sm bg-gray-100 px-2 py-1 rounded block">
+                      {currentLandingPage.htmlFile}
+                    </code>
+                  </div>
+                )}
+                
+                <div>
+                  <span className="text-gray-500 text-xs block mb-1">Slug</span>
+                  <code className="text-gray-700 text-sm bg-gray-100 px-2 py-1 rounded block">
+                    {currentLandingPage.slug}
+                  </code>
+                </div>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="border-t border-gray-200 my-6" />
+
+            {/* Keyboard shortcuts */}
+            <div className="space-y-3">
+              <h4 className="text-gray-400 text-xs font-semibold uppercase tracking-wider">
+                Atalhos de Teclado
+              </h4>
+              
+              <div className="grid grid-cols-2 gap-2 text-sm">
+                <div className="flex items-center gap-2">
+                  <kbd className="px-2 py-1 bg-gray-100 rounded text-gray-500 text-xs font-mono">←</kbd>
+                  <span className="text-gray-600">Anterior</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <kbd className="px-2 py-1 bg-gray-100 rounded text-gray-500 text-xs font-mono">→</kbd>
+                  <span className="text-gray-600">Próxima</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <kbd className="px-2 py-1 bg-gray-100 rounded text-gray-500 text-xs font-mono">I</kbd>
+                  <span className="text-gray-600">Info</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <kbd className="px-2 py-1 bg-gray-100 rounded text-gray-500 text-xs font-mono">Esc</kbd>
+                  <span className="text-gray-600">Fechar</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Overlay backdrop when panel is open (mobile) */}
+        {isInfoPanelOpen && (
+          <div
+            className="fixed inset-0 top-[73px] bg-black/30 z-30 lg:hidden"
+            onClick={() => setIsInfoPanelOpen(false)}
+            aria-hidden="true"
+          />
+        )}
+      </main>
+    </div>
+  );
+}

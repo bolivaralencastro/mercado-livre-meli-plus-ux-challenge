@@ -48,7 +48,6 @@ const PageTemplate = ({ title, subtitle, children }: PageTemplateProps) => {
       items: [
         { id: "ui-design", label: "UI Design", href: "/ui-design" },
         { id: "prototipo", label: "Protótipo", href: "/prototipo" },
-        { id: "prototipo-landing", label: "Landing Pages", href: "/prototipo/landing-pages" },
         { id: "apresentacao", label: "Apresentação", href: "/apresentacao" },
         { id: "entrega", label: "Entrega", href: "/entrega" },
       ],

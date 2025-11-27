@@ -17,31 +17,34 @@
     --meli-orange: #E84A2E;
     --meli-yellow: #F5D415; /* Amarelo ML para detalhes */
     --meli-green: #00a650;
-    --dark-bg: #0E0B18;
-    --glass-bg: rgba(34, 26, 48, 0.78);
-    --glass-border: rgba(255, 255, 255, 0.16);
-    --text-main: #F6F4F1;
-    --text-muted: #9CA3AF;
+    --bg-body: #F9F9F9;
+    --bg-card: #FFFFFF;
+    --bg-surface: #F0F0F0;
+    --text-primary: #111111;
+    --text-secondary: #6B7280;
+    --text-muted: #4B5563;
+    --glass-bg: #FFFFFF;
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --border: rgba(0, 0, 0, 0.1);
     --font-primary: 'Inter', sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    background-color: var(--dark-bg);
-    color: var(--text-main);
+    background-color: var(--bg-body);
+    color: var(--text-primary);
     font-family: var(--font-primary);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image:
-        radial-gradient(circle at 80% 10%, rgba(128, 0, 128, 0.2) 0%, transparent 50%),
-        linear-gradient(120deg, rgba(5, 5, 5, 0.55), rgba(5, 5, 5, 0.35)),
-        linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.85)),
+    background-image: 
+        radial-gradient(circle at 80% 10%, rgba(128, 0, 128, 0.08) 0%, transparent 50%),
+        linear-gradient(120deg, rgba(255, 255, 255, 0.8), rgba(249, 249, 249, 0.6)),
         url('background-3.jpg');
-    background-size: auto, cover, cover, cover;
-    background-position: 80% 10%, center, center, center;
+    background-size: auto, cover, cover;
+    background-position: 80% 10%, center, center;
     background-repeat: no-repeat;
     overflow-x: hidden;
 }
@@ -76,11 +79,12 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.3);
     border: 1px solid var(--glass-border);
     border-radius: 50px;
     padding: 6px 16px;
     margin-bottom: 24px;
+    backdrop-filter: blur(5px);
 }
 .logo-text {
     font-weight: 800;
@@ -114,8 +118,8 @@ h1 {
     background: linear-gradient(180deg, var(--meli-purple) 0%, var(--deep-purple) 100%);
     color: white; font-weight: 600; font-size: 1rem;
     padding: 14px 32px; border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.15);
-    box-shadow: 0 4px 20px rgba(128, 0, 128, 0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(128, 0, 128, 0.3), inset 0 1px 0 rgba(255,255,255,0.2);
     cursor: pointer; transition: transform 0.2s;
     margin-bottom: 30px;
 }
@@ -125,13 +129,13 @@ h1 {
 /* Bonus Item */
 .bonus-block {
     display: flex; gap: 12px; align-items: center;
-    background: rgba(255,255,255,0.03); border: 1px dashed var(--glass-border);
+    background: rgba(0,0,0,0.03); border: 1px dashed var(--glass-border);
     padding: 12px 16px; border-radius: 12px; max-width: fit-content;
     text-align: left;
 }
 .bonus-icon { color: var(--meli-green); }
 .bonus-text { font-size: 0.85rem; color: var(--text-muted); }
-.bonus-text strong { color: var(--text-main); display: block; }
+.bonus-text strong { color: var(--text-primary); display: block; }
 
 /* =========================================
    SIMULATOR CARD STYLES
@@ -143,7 +147,7 @@ h1 {
     padding: 28px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     height: 520px;
@@ -163,11 +167,11 @@ h1 {
 .tooltip-box {
     visibility: hidden; opacity: 0;
     position: absolute; bottom: 100%; right: 0;
-    background: rgba(0,0,0,0.95); border: 1px solid var(--glass-border);
+    background: var(--bg-card); border: 1px solid var(--glass-border);
     padding: 12px; border-radius: 8px; width: 240px;
-    font-size: 0.75rem; color: #fff; line-height: 1.4;
+    font-size: 0.75rem; color: var(--text-primary); line-height: 1.4;
     transition: all 0.2s ease; pointer-events: none; z-index: 20;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 .tooltip-trigger:hover .tooltip-box { visibility: visible; opacity: 1; bottom: 120%; }
 
@@ -176,8 +180,8 @@ h1 {
 /* --- DISPLAY AREA --- */
 .display-area { 
     text-align: center; margin-top: auto; margin-bottom: auto; 
-    background: rgba(255,255,255,0.03); border-radius: 16px; padding: 20px;
-    border: 1px dashed rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.03); border-radius: 16px; padding: 20px;
+    border: 1px dashed var(--glass-border);
 }
 
 .status-badge {
@@ -185,31 +189,31 @@ h1 {
     font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;
 }
 .status-badge.bad { background: rgba(255, 77, 77, 0.2); color: #ff5a5a; }
-.status-badge.neutral { background: rgba(255, 255, 255, 0.1); color: var(--text-muted); }
+.status-badge.neutral { background: var(--bg-surface); color: var(--text-muted); }
 
-.price-value { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.05em; color: var(--text-main); font-variant-numeric: tabular-nums; line-height: 1.1;}
+.price-value { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.05em; color: var(--text-primary); font-variant-numeric: tabular-nums; line-height: 1.1;}
 .price-value.danger { color: #ff5a5a; }
 .price-value.neutral { color: var(--text-muted); opacity: 0.5; }
 
 /* --- SLIDER AREA --- */
 .slider-area { margin-top: auto; margin-bottom: 24px; position: relative; z-index: 2;}
 .slider-area input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; cursor: pointer; }
-.slider-area input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 99px; }
+.slider-area input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 8px; background: var(--bg-surface); border-radius: 99px; }
 .slider-area input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none; height: 28px; width: 28px; border-radius: 50%;
-    background: var(--text-main); margin-top: -10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.1s; border: 2px solid var(--glass-bg);
+    background: var(--text-primary); margin-top: -10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: transform 0.1s; border: 2px solid var(--bg-surface);
 }
 .slider-area input[type=range]:active::-webkit-slider-thumb { transform: scale(1.2); background: var(--meli-purple); }
 
 /* --- ICONS --- */
 .icons-row { display: flex; justify-content: center; gap: 12px; margin-top: 12px; height: 32px; }
 .svc-icon {
-    width: 32px; height: 32px; border-radius: 6px; background: rgba(255,255,255,0.1); 
+    width: 32px; height: 32px; border-radius: 6px; background: var(--bg-surface); 
     display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.6rem;
     color: var(--text-muted); opacity: 0.1; transition: all 0.3s ease;
 }
-.svc-icon.active { opacity: 1; color: white; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+.svc-icon.active { opacity: 1; color: white; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
 .svc-icon.active[data-brand="net"] { background: #E50914; }
 .svc-icon.active[data-brand="dis"] { background: #113CCF; }
 .svc-icon.active[data-brand="max"] { background: #002BE7; }
@@ -218,7 +222,7 @@ h1 {
 /* --- CTA BUTTON --- */
 .cta-btn {
     width: 100%; padding: 16px; border-radius: 12px; border: none;
-    background: var(--text-main); color: var(--dark-bg);
+    background: var(--text-primary); color: var(--bg-body);
     font-weight: 700; font-size: 1rem; cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     display: flex; align-items: center; justify-content: center; gap: 8px;
@@ -226,7 +230,7 @@ h1 {
 }
 .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
 .cta-btn:active { transform: scale(0.98); }
-.cta-btn:disabled { opacity: 0.3; cursor: not-allowed; transform: none; box-shadow: none; background: rgba(255,255,255,0.1); color: var(--text-muted); }
+.cta-btn:disabled { opacity: 0.3; cursor: not-allowed; transform: none; box-shadow: none; background: var(--bg-surface); color: var(--text-muted); }
 
 /* --- REVEAL OVERLAY --- */
 .reveal-overlay {
@@ -267,7 +271,7 @@ h1 {
     height: 380px; /* Fixed height for consistency */
     border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
     border: 1px solid var(--glass-border);
     user-select: none;
     touch-action: none; /* Crucial for mobile drag */
@@ -338,7 +342,7 @@ h1 {
 .handle-knob {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
     width: 44px; height: 44px;
-    background: var(--text-main);
+    background: var(--text-primary);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     color: var(--meli-purple);
@@ -396,7 +400,7 @@ h1 {
     padding: 28px 26px 32px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
     width: 100%;
     max-width: 420px;
     margin: 0 auto;
@@ -506,7 +510,7 @@ input[type=range] {
 input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     height: 4px;
-    background: rgba(255, 255, 255, 0.18);
+    background: var(--bg-surface);
     border-radius: 999px;
 }
 
@@ -516,23 +520,23 @@ input[type=range]::-webkit-slider-thumb {
     height: 24px;
     width: 24px;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.25);
-    background: #2A2A2A;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+    border: 2px solid var(--bg-card);
+    background: var(--text-primary);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
     margin-top: -10px;
     transition: transform 0.15s ease, border-color 0.2s ease;
 }
 
 input[type=range]:hover::-webkit-slider-thumb {
-    border-color: rgba(255, 255, 255, 0.65);
+    border-color: var(--bg-surface);
 }
 
 .result-box {
     width: 100%;
     min-height: 72px;
     border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    background: var(--bg-surface);
     text-align: center;
     padding: 14px 16px;
     font-size: 0.9rem;
@@ -544,9 +548,9 @@ input[type=range]:hover::-webkit-slider-thumb {
 }
 
 .result-box strong { display: block; font-weight: 700; margin-bottom: 2px; }
-.result-box.neutral { color: #9CA3AF; border-style: dashed; }
-.result-box.success { background: rgba(0, 166, 80, 0.16); border-color: rgba(0, 166, 80, 0.4); color: #D3FFE8; border-style: solid; }
-.result-box.alert { background: rgba(255, 90, 90, 0.16); border-color: rgba(255, 90, 90, 0.4); color: #FFE0E0; border-style: solid; }
+.result-box.neutral { color: var(--text-muted); border-style: dashed; }
+.result-box.success { background: rgba(0, 166, 80, 0.15); border-color: var(--meli-green); color: var(--text-primary); border-style: solid; }
+.result-box.alert { background: rgba(255, 90, 90, 0.15); border-color: #ff5a5a; color: #ff5a5a; border-style: solid; }
 
 .result-detail { margin-top: 6px; color: inherit; line-height: 1.35; }
 .result-copy { display: none; }
@@ -586,18 +590,17 @@ input[type=range]:hover::-webkit-slider-thumb {
                 </div>
                 
                 <h1>
-                    Disney+ e Deezer inclusos.<br>
+                    Seus streamings inclusos.<br>
                     <span class="gradient-text">Pare de pagar separado.</span>
                 </h1>
                 
                 <p class="sub-h">
-                    Assinando individualmente você gasta quase R$ 70. 
-                    No Meli+ você leva tudo por apenas R$ 17,90/mês fixos.
+                    Assinando individualmente, os preços só aumentam.
+                    No Meli+ você leva tudo em um único plano por muito menos.
                 </p>
                 
                 <button class="cta-btn-3d">
-                    Quero assistir agora 
-                    <span class="material-icons-round" style="font-size: 1rem; vertical-align: middle; margin-left: 5px;">play_arrow</span>
+                    Quero assistir agora
                 </button>
                 
                 <div class="bonus-block">
@@ -630,11 +633,8 @@ input[type=range]:hover::-webkit-slider-thumb {
                         <div class="display-area">
                             <span class="status-badge neutral" id="mega-badge">SEM MELI+</span>
                             <div class="price-value neutral" id="mega-display">R$ 0,00</div>
-                            <div class="icons-row">
-                                <div class="svc-icon" data-brand="net">N</div>
-                                <div class="svc-icon" data-brand="dis">D+</div>
-                                <div class="svc-icon" data-brand="max">M</div>
-                                <div class="svc-icon" data-brand="app">tv+</div>
+                            <div style="font-size:0.9rem; color:var(--text-muted); margin-top:8px;">
+                                (Netflix + Disney+ + Max + Apple TV+)
                             </div>
                         </div>
                     </div>
@@ -644,17 +644,16 @@ input[type=range]:hover::-webkit-slider-thumb {
                     </div>
 
                     <button class="cta-btn" id="mega-btn" onclick="reveal('mega')" disabled>
-                        <span class="material-icons-round">bolt</span>
-                        Ver preço com Meli+
+                        → Ver preço com Meli+
                     </button>
 
                     <div class="reveal-overlay">
                         <button class="close-reveal" onclick="reset('mega')"><span class="material-icons-round">close</span></button>
                         <span class="reveal-tag">COM MELI+ MEGA</span>
                         <div class="reveal-price">R$ 39,90</div>
-                        <p class="reveal-sub">4 Streamings + Frete</p>
+                        <p class="reveal-sub">4 streamings + Frete</p>
                         <div class="savings-badge-sim">
-                            <span class="savings-label">Sua Economia Mensal</span>
+                            <span class="savings-label">Sua economia mensal</span>
                             <span class="savings-value-sim" id="mega-saving">R$ 0,00</span>
                         </div>
                     </div>

@@ -3,12 +3,12 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-export default function LandingPagesPage() {
+export default function ConfiguracaoPagamentoPage() {
   const router = useRouter();
 
   useEffect(() => {
-    // Redirect to the first landing page (oferta-monolitica)
-    router.replace("/prototipo/landing-pages/oferta-monolitica");
+    // Redirect to the first payment flow (visao-geral)
+    router.replace("/prototipo/configuracao-pagamento/visao-geral");
   }, [router]);
 
   return (

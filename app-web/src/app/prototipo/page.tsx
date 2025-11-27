@@ -45,8 +45,20 @@ export default function PrototipoPage() {
               consistência com o Andes Design System.
             </p>
           </div>
-          <Link href="/prototipo/landing-pages" aria-label="Abrir landing pages">
+          <Link href="/prototipo/landing-pages/oferta-monolitica" aria-label="Abrir landing pages">
             <AndesButton variant="primary">Abrir landing pages</AndesButton>
+          </Link>
+        </div>
+
+        <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+          <div>
+            <h3 className="text-xl font-semibold text-[#333333]">Configuração de pagamento</h3>
+            <p className="mt-2 max-w-2xl text-sm text-[#4a4a4a]">
+              Fluxo de gestão de pagamento recorrente, permitindo ao usuário visualizar, alterar ou cancelar a forma de pagamento da assinatura Meli+.
+            </p>
+          </div>
+          <Link href="/prototipo/configuracao-pagamento/visao-geral" aria-label="Abrir configuração de pagamento">
+            <AndesButton variant="primary">Abrir configuração</AndesButton>
           </Link>
         </div>
       </div>
