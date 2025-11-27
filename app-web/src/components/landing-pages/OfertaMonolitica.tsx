@@ -15,7 +15,8 @@ import {
   Check, 
   X, 
   ChevronDown,
-  Play
+  Play,
+  Menu
 } from "lucide-react";
 
 // ============ MOVIE DATA ============
@@ -421,7 +422,7 @@ function StreamingGridBackground({
               alt=""
               fill
               className="object-cover"
-              unoptimized
+              sizes="100px"
             />
           </div>
         ))}
@@ -525,7 +526,6 @@ function StreamingCard({
                   width={60} 
                   height={60} 
                   className="w-[65%] h-[65%] object-contain"
-                  unoptimized
                 />
               </div>
             ))}
@@ -821,13 +821,13 @@ export default function OfertaMonoliticaPage() {
     <div className="min-h-screen bg-white text-gray-800 overflow-x-hidden">
       {/* Header */}
       <header className="bg-[#fff159] py-2.5 sticky top-0 z-[1000] shadow-sm">
-        <div className="max-w-[1200px] mx-auto px-5 flex items-center justify-between gap-5">
-          <div className="flex items-center gap-1.5 text-[#2d3277] font-extrabold text-[22px] lowercase tracking-tight cursor-pointer hover:scale-105 transition-transform">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-5 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-1.5 text-[#2d3277] font-extrabold text-[22px] lowercase tracking-tight cursor-pointer hover:scale-105 transition-transform shrink-0">
             <Handshake className="w-6 h-6" />
-            <span>mercado<br />livre</span>
+            <span className="leading-none">mercado<br />livre</span>
           </div>
           
-          <div className="flex-1 max-w-[600px]">
+          <div className="hidden md:block flex-1 max-w-[600px]">
             <input
               type="text"
               placeholder="Buscar produtos, marcas e muito mais..."
@@ -835,56 +835,70 @@ export default function OfertaMonoliticaPage() {
             />
           </div>
 
-          <nav className="flex items-center gap-5 text-sm text-gray-800">
-            {["Categorias", "Ofertas", "Vender", "Contato"].map((item) => (
-              <span key={item} className="cursor-pointer relative after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-px after:bg-gray-800 after:transition-all hover:after:w-full">
-                {item}
-              </span>
-            ))}
+          <nav className="flex items-center gap-4 md:gap-5 text-sm text-gray-800">
+            <div className="hidden md:flex items-center gap-5">
+              {["Categorias", "Ofertas", "Vender", "Contato"].map((item) => (
+                <span key={item} className="cursor-pointer relative after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-px after:bg-gray-800 after:transition-all hover:after:w-full">
+                  {item}
+                </span>
+              ))}
+            </div>
             <Bell className="w-5 h-5 cursor-pointer hover:text-[#2968c8] hover:scale-110 transition-all" />
             <ShoppingCart className="w-5 h-5 cursor-pointer hover:text-[#2968c8] hover:scale-110 transition-all" />
+            <Menu className="w-6 h-6 md:hidden cursor-pointer text-gray-700" />
           </nav>
+        </div>
+        {/* Mobile Search */}
+        <div className="md:hidden px-4 pb-2 pt-1">
+          <input
+            type="text"
+            placeholder="Buscar produtos, marcas e muito mais..."
+            className="w-full py-2 px-4 border-none rounded-sm shadow-sm text-sm outline-none"
+          />
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 pb-12 relative overflow-hidden">
-        <div className="max-w-[1200px] mx-auto px-5 flex items-center justify-between gap-8">
-          <RevealOnScroll direction="left" className="flex-1 max-w-[500px] z-[2] flex-shrink-0">
+      <section className="py-12 md:py-20 pb-12 relative overflow-hidden">
+        <div className="max-w-[1200px] mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-8">
+          <RevealOnScroll direction="left" className="flex-1 max-w-full md:max-w-[500px] z-[2] flex-shrink-0 text-center md:text-left">
             <div className="bg-[#8e24aa] text-white px-3 py-1 rounded-full font-black italic inline-block mb-5 text-xl shadow-lg animate-[float_3s_ease-in-out_infinite]">
               meli+
             </div>
-            <h3 className="text-2xl font-normal text-gray-600 mb-1">Assine Meli+</h3>
-            <h1 className="text-[62px] leading-none mb-4 font-black text-gray-900">
+            <h3 className="text-xl md:text-2xl font-normal text-gray-600 mb-1">Assine Meli+</h3>
+            <h1 className="text-4xl md:text-[62px] leading-tight md:leading-none mb-4 font-black text-gray-900">
               Gaste menos<br />
               <span className="text-[#8e24aa]">e receba muito+</span>
             </h1>
-            <p className="text-lg text-gray-700 mb-8">
+            <p className="text-base md:text-lg text-gray-700 mb-8">
               Frete grátis, cashback e os melhores streamings reunidos.
             </p>
             <Link
               href="#planos"
-              className="inline-block bg-gradient-to-b from-[#65a5ff] to-[#3483fa] text-white px-8 py-4 rounded-md font-semibold shadow-lg hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl transition-all duration-300"
+              className="inline-block bg-gradient-to-b from-[#65a5ff] to-[#3483fa] text-white px-8 py-4 rounded-md font-semibold shadow-lg hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl transition-all duration-300 w-full md:w-auto"
             >
               Assinar com até 46% OFF
             </Link>
           </RevealOnScroll>
 
-          <RevealOnScroll direction="right" className="flex-shrink-0">
-            <div 
-              className="w-[700px] h-[600px] bg-contain bg-center bg-no-repeat -rotate-[5deg] pointer-events-none"
-              style={{ 
-                backgroundImage: "url('https://smolljrfjqknp6nm.public.blob.vercel-storage.com/assets/product-image.webp')",
-                transform: `rotate(-5deg) translateY(${-scrollY * 0.05}px)`,
-              }}
-            />
+          <RevealOnScroll direction="right" className="flex-shrink-0 w-full md:w-auto flex justify-center">
+             <div className="md:-rotate-[5deg] transition-transform duration-75" style={{ transform: `translateY(${-scrollY * 0.05}px)` }}>
+                <div 
+                  className="w-[280px] h-[280px] md:w-[700px] md:h-[600px] bg-contain bg-center bg-no-repeat pointer-events-none"
+                  style={{ 
+                    backgroundImage: "url('https://smolljrfjqknp6nm.public.blob.vercel-storage.com/assets/product-image.webp')",
+                  }}
+                />
+             </div>
           </RevealOnScroll>
         </div>
       </section>
 
       {/* Benefits Section */}
       <section className="py-16 text-center relative overflow-visible">
-        <StreamingGridBackground isActive={isStreamingHovered} velocityRef={velocityRef} />
+        <div className="hidden md:block">
+          <StreamingGridBackground isActive={isStreamingHovered} velocityRef={velocityRef} />
+        </div>
         
         {/* Piggy Bank Decoration */}
         <div 

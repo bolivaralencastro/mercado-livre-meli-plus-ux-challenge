@@ -104,7 +104,7 @@ const PageTemplate = ({ title, subtitle, children }: PageTemplateProps) => {
               />
               <span className="hidden h-6 w-px bg-black/30 sm:inline-block" aria-hidden />
               <p className="hidden text-sm font-normal leading-tight text-[#333333] sm:block">
-                Product Design Research
+                Bolívar Alencastro
               </p>
             </Link>
           </div>
