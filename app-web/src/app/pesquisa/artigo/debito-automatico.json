@@ -8,7 +8,16 @@
     "publication_date": "2025-11",
     "read_time": "15 minutos",
     "categoria": "Pagamentos",
-    "tags": ["débito automático", "pix", "recorrência", "assinaturas", "integração", "wallets", "regulamentação", "meli+"]
+    "tags": [
+      "débito automático",
+      "pix",
+      "recorrência",
+      "assinaturas",
+      "integração",
+      "wallets",
+      "regulamentação",
+      "meli+"
+    ]
   },
   "content": {
     "introduction": {
@@ -50,21 +59,81 @@
         "Quase todos os bancos brasileiros suportam o débito automático, especialmente para contas de concessionárias e tributos."
       ],
       "bancos": [
-        { "codigo": "001", "nome": "Banco do Brasil S/A", "observacoes": "Suporte amplo; API para integrações." },
-        { "codigo": "003", "nome": "Banco da Amazônia S/A", "observacoes": "Foco em regiões Norte." },
-        { "codigo": "004", "nome": "Banco do Nordeste S/A", "observacoes": "Convênios regionais." },
-        { "codigo": "021", "nome": "Banco Banestes S/A", "observacoes": "ES e região Sudeste." },
-        { "codigo": "033", "nome": "Santander Brasil S/A", "observacoes": "Débito para seguros e contas." },
-        { "codigo": "077", "nome": "Banco Inter S/A", "observacoes": "Digital; integra com Pix Automático." },
-        { "codigo": "104", "nome": "Caixa Econômica Federal", "observacoes": "Principal para tributos federais." },
-        { "codigo": "105", "nome": "Banco do Estado do Piauí S/A", "observacoes": "Regional." },
-        { "codigo": "136", "nome": "Banco Bandepe S/A", "observacoes": "PE." },
-        { "codigo": "237", "nome": "Bradesco S/A", "observacoes": "Débito para cartões e contas." },
-        { "codigo": "260", "nome": "Nubank (Nu Pagamentos S/A)", "observacoes": "Suporte via app para recorrentes." },
-        { "codigo": "341", "nome": "Itaú Unibanco S/A", "observacoes": "Integração com wallets." },
-        { "codigo": "389", "nome": "Banco Mercantil do Brasil S/A", "observacoes": "Convênios para energia/saneamento." },
-        { "codigo": "637", "nome": "Banco Sicoob S/A", "observacoes": "Cooperativas." },
-        { "codigo": "748", "nome": "Banco Cooperativo Sicredi S/A", "observacoes": "Cooperativas." }
+        {
+          "codigo": "001",
+          "nome": "Banco do Brasil S/A",
+          "observacoes": "Suporte amplo; API para integrações."
+        },
+        {
+          "codigo": "003",
+          "nome": "Banco da Amazônia S/A",
+          "observacoes": "Foco em regiões Norte."
+        },
+        {
+          "codigo": "004",
+          "nome": "Banco do Nordeste S/A",
+          "observacoes": "Convênios regionais."
+        },
+        {
+          "codigo": "021",
+          "nome": "Banco Banestes S/A",
+          "observacoes": "ES e região Sudeste."
+        },
+        {
+          "codigo": "033",
+          "nome": "Santander Brasil S/A",
+          "observacoes": "Débito para seguros e contas."
+        },
+        {
+          "codigo": "077",
+          "nome": "Banco Inter S/A",
+          "observacoes": "Digital; integra com Pix Automático."
+        },
+        {
+          "codigo": "104",
+          "nome": "Caixa Econômica Federal",
+          "observacoes": "Principal para tributos federais."
+        },
+        {
+          "codigo": "105",
+          "nome": "Banco do Estado do Piauí S/A",
+          "observacoes": "Regional."
+        },
+        {
+          "codigo": "136",
+          "nome": "Banco Bandepe S/A",
+          "observacoes": "PE."
+        },
+        {
+          "codigo": "237",
+          "nome": "Bradesco S/A",
+          "observacoes": "Débito para cartões e contas."
+        },
+        {
+          "codigo": "260",
+          "nome": "Nubank (Nu Pagamentos S/A)",
+          "observacoes": "Suporte via app para recorrentes."
+        },
+        {
+          "codigo": "341",
+          "nome": "Itaú Unibanco S/A",
+          "observacoes": "Integração com wallets."
+        },
+        {
+          "codigo": "389",
+          "nome": "Banco Mercantil do Brasil S/A",
+          "observacoes": "Convênios para energia/saneamento."
+        },
+        {
+          "codigo": "637",
+          "nome": "Banco Sicoob S/A",
+          "observacoes": "Cooperativas."
+        },
+        {
+          "codigo": "748",
+          "nome": "Banco Cooperativo Sicredi S/A",
+          "observacoes": "Cooperativas."
+        }
       ],
       "fonte": "Listas de convênios da Receita Federal e prefeituras (ex.: Salvador, SP, Curitiba). Outros como BTG Pactual, C6 Bank e PagBank também suportam via apps digitais."
     },

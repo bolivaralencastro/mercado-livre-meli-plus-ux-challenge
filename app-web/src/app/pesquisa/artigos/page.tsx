@@ -422,10 +422,9 @@ function ArtigosContent() {
                 </button>
 
                 {/* Article content */}
-                <div
-                  className="prose max-w-none"
-                  dangerouslySetInnerHTML={{ __html: selectedArtigo.conteudo }}
-                />
+                <div className="prose max-w-none">
+                  <selectedArtigo.RenderConteudo />
+                </div>
               </div>
             </div>
           ) : (
