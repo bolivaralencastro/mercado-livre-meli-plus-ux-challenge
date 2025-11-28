@@ -269,15 +269,11 @@ export default function LandingPageViewerPage() {
                   minHeight: "600px",
                 }}
               >
-                {/* Content wrapper with scroll */}
-                <div className="w-full h-full overflow-y-auto overflow-x-hidden">
-                  <div style={{ width: "375px" }}>
-                    {currentLandingPage.slug === 'oferta-monolitica' && <OfertaMonoliticaPage />}
-                    {currentLandingPage.slug === 'cinema' && <CinemaPage />}
-                    {currentLandingPage.slug === 'financas' && <FinancasPage />}
-                    {currentLandingPage.slug === 'logistica' && <LogisticaPage />}
-                  </div>
-                </div>
+                <iframe 
+                  src={`/prototipo/landing-pages/${currentLandingPage.slug}/standalone`}
+                  className="w-full h-full border-none"
+                  title="Mobile Preview"
+                />
               </div>
               
               {/* Home Indicator */}

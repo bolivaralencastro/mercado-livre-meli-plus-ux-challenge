@@ -182,11 +182,11 @@ export default function MobilePriceTable() {
   return (
     <div 
       ref={containerRef}
-      className="bg-[#EFEFEF] pb-12"
+      className="bg-white pb-12"
     >
       {/* Pricing Toggle - Sticky at top */}
       <div 
-        className="sticky top-0 z-[100] bg-[#EFEFEF] py-3 flex justify-center"
+        className="sticky top-0 z-[100] bg-white py-3 flex justify-center"
         style={{ height: `${styles.toggleHeight}px` }}
       >
         <div className="flex bg-[#dcdcdc] p-1 rounded-full">
