@@ -935,7 +935,7 @@ export default function OfertaMonoliticaPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-gray-800 overflow-x-hidden">
+    <div className="min-h-screen bg-white text-gray-800">
       {/* Header */}
       <header className="bg-[#fff159] py-2.5 sticky top-0 z-[1000] shadow-sm">
         <div className="max-w-[1200px] mx-auto px-4 md:px-5 flex items-center justify-between gap-4">
@@ -1119,7 +1119,7 @@ export default function OfertaMonoliticaPage() {
         <div className="hidden md:block max-w-[1200px] mx-auto px-5 relative z-[2] text-center">
           {/* Toggle */}
           <div className="inline-block mb-12">
-            <div className="bg-gray-300 rounded-full p-1 flex shadow-inner">
+            <div className="rounded-full p-1 flex">
               <button
                 onClick={() => setBillingCycle("monthly")}
                 className={`px-8 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${
@@ -1196,10 +1196,10 @@ export default function OfertaMonoliticaPage() {
 
         {/* Mobile Layout: Text Top, Video Bottom */}
         <div className="md:hidden w-full flex flex-col h-full min-h-screen">
-          <div className="bg-black pt-16 pb-8 px-5 text-center z-10">
+          <div className="pt-16 px-5 text-center z-10">
             <RevealOnScroll>
-              <h2 className="text-3xl font-extrabold text-white mb-4 drop-shadow-2xl">Tenha seu Meli+</h2>
-              <p className="text-white/90 mb-8">E comece a aproveitar todos os benefícios agora mesmo</p>
+              <h2 className="text-3xl font-extrabold text-gray-900 mb-4">Tenha seu Meli+</h2>
+              <p className="text-gray-600 mb-8">E comece a aproveitar todos os benefícios agora mesmo</p>
               <a
                 href="https://www.mercadolivre.com.br/assinaturas/melimais/planos?plan_selected=MEGA#origin=redirect-vdp-meliplus"
                 target="_blank"
@@ -1211,7 +1211,7 @@ export default function OfertaMonoliticaPage() {
             </RevealOnScroll>
           </div>
           
-          <div className="flex-1 relative w-full bg-black flex items-center justify-center overflow-hidden">
+          <div className="flex-1 relative w-full flex items-center justify-center overflow-hidden">
              <video
               className="w-full h-auto object-contain"
               muted

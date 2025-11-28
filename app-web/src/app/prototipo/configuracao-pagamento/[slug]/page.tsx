@@ -2,9 +2,95 @@
 
 import { useRouter, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ArrowLeft, Info, X } from "lucide-react";
+import { ArrowLeft, Info, X, Monitor, Smartphone, Workflow, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
 import { getPaymentFlowBySlug, PaymentFlowEntry } from "@/lib/payment-flows";
 import PaymentConfigPrototype from "./PaymentConfigPrototype";
+
+type ViewMode = "desktop" | "mobile" | "flowchart";
+
+// Simple Zoom/Pan component for Flowchart
+function FlowchartViewer({ url }: { url: string }) {
+  const [scale, setScale] = useState(1);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setDragStart({ x: e.clientX - position.x, y: e.clientY - position.y });
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging) {
+      setPosition({
+        x: e.clientX - dragStart.x,
+        y: e.clientY - dragStart.y
+      });
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  return (
+    <div 
+      className="w-full h-full overflow-hidden bg-[#f0f2f5] cursor-move relative flex items-center justify-center"
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}
+    >
+      <div className="absolute top-8 right-8 flex flex-col gap-2 z-10">
+        <div className="bg-white rounded-lg shadow-lg p-1 flex flex-col gap-1">
+          <button 
+            onClick={() => setScale(s => Math.min(s + 0.1, 5))} 
+            className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded text-gray-600"
+            title="Zoom In"
+          >
+            <ZoomIn className="w-4 h-4" />
+          </button>
+          <div className="h-px bg-gray-200 mx-1" />
+          <button 
+            onClick={() => setScale(s => Math.max(0.1, s - 0.1))} 
+            className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded text-gray-600"
+            title="Zoom Out"
+          >
+            <ZoomOut className="w-4 h-4" />
+          </button>
+          <div className="h-px bg-gray-200 mx-1" />
+          <button 
+            onClick={() => { setScale(1); setPosition({x:0,y:0}); }} 
+            className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded text-gray-600"
+            title="Reset View"
+          >
+            <RotateCcw className="w-4 h-4" />
+          </button>
+        </div>
+        <div className="bg-white/80 backdrop-blur px-2 py-1 rounded text-xs font-medium text-center shadow-sm">
+          {Math.round(scale * 100)}%
+        </div>
+      </div>
+      
+      <div 
+        style={{ 
+          transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
+          transformOrigin: 'center center',
+          transition: isDragging ? 'none' : 'transform 0.1s ease-out'
+        }}
+        className="flex items-center justify-center min-w-full min-h-full p-20"
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img 
+          src={url} 
+          alt="Flowchart" 
+          className="max-w-none pointer-events-none shadow-2xl bg-white rounded-lg"
+          draggable={false}
+        />
+      </div>
+    </div>
+  );
+}
 
 export default function PaymentFlowViewerPage() {
   const router = useRouter();
@@ -13,7 +99,7 @@ export default function PaymentFlowViewerPage() {
   
   const [isInfoPanelOpen, setIsInfoPanelOpen] = useState(false);
   const [currentPaymentFlow, setCurrentPaymentFlow] = useState<PaymentFlowEntry | null>(null);
-  const [hideHeader, setHideHeader] = useState(false);
+  const [viewMode, setViewMode] = useState<ViewMode>("desktop");
 
   useEffect(() => {
     const pf = getPaymentFlowBySlug(slug);
@@ -24,22 +110,17 @@ export default function PaymentFlowViewerPage() {
     }
   }, [slug, router]);
 
+  // Keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setIsInfoPanelOpen(false);
-      } else if (e.key === "i" || e.key === "I") {
-        setIsInfoPanelOpen((prev) => !prev);
-      } else if (e.key === "h" || e.key === "H") {
-        setHideHeader((prev) => !prev);
-      }
+      if (e.key === '1') setViewMode('desktop');
+      if (e.key === '2') setViewMode('mobile');
+      if (e.key === '3') setViewMode('flowchart');
+      if (e.key === "Escape") setIsInfoPanelOpen(false);
+      if (e.key === "i" || e.key === "I") setIsInfoPanelOpen((prev) => !prev);
     };
-    
-    window.addEventListener("keydown", handleKeyDown);
-    
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   if (!currentPaymentFlow) {
@@ -65,71 +146,125 @@ export default function PaymentFlowViewerPage() {
   };
 
   return (
-    <div className="bg-[#2D3277] min-h-screen relative overflow-hidden">
-      {/* Header - Press H to toggle visibility */}
-      <header 
-        className={`bg-white/95 backdrop-blur-sm border-b border-gray-200 ${hideHeader ? 'hidden' : ''}`}
-      >
-        <div className="flex items-center justify-between px-6 py-4">
-          {/* Left: Back button and title */}
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => router.push("/prototipo")}
-              className="inline-flex items-center justify-center rounded-lg border border-gray-300 w-10 h-10 text-gray-700 transition hover:bg-gray-50"
-              aria-label="Voltar para protótipos"
-            >
-              <ArrowLeft className="w-5 h-5" />
-            </button>
-            
-            <div className="h-6 w-px bg-gray-200" />
-            
-            <div>
-              <h1 className="text-[#2D3277] font-semibold text-lg leading-tight">
-                {currentPaymentFlow.title}
-              </h1>
-              <p className="text-gray-500 text-sm">
-                Protótipo • Configuração de Pagamento
-              </p>
-            </div>
-          </div>
-
-          {/* Right: Info button */}
-          <div className="flex items-center gap-3">
-            {/* Keyboard shortcuts info */}
-            <div className="hidden md:flex items-center gap-2 text-xs text-gray-500 mr-2">
-              <kbd className="px-2 py-1 bg-gray-100 rounded border border-gray-300 font-mono">H</kbd>
-              <span>Esconder</span>
-              <span className="text-gray-300">|</span>
-              <kbd className="px-2 py-1 bg-gray-100 rounded border border-gray-300 font-mono">I</kbd>
-              <span>Info</span>
-            </div>
-
-            <div className="h-6 w-px bg-gray-200 hidden md:block" />
-
-            <button
-              onClick={() => setIsInfoPanelOpen(!isInfoPanelOpen)}
-              className={`
-                p-2 rounded-lg transition-all duration-200
-                ${isInfoPanelOpen 
-                  ? "bg-[#FFE600] text-[#2D3277]" 
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }
-              `}
-              aria-label={isInfoPanelOpen ? "Fechar informações" : "Abrir informações"}
-              title="Pressione 'I' para alternar"
-            >
-              <Info className="w-5 h-5" />
-            </button>
+    <div className="min-h-screen bg-gray-100 flex flex-col relative overflow-hidden">
+      {/* Header */}
+      <header className="bg-[#fff059] px-6 py-3 shadow-sm flex items-center justify-between sticky top-0 z-50">
+        <div className="flex items-center gap-4">
+          <button 
+            onClick={() => router.push("/prototipo")}
+            className="p-2 hover:bg-black/5 rounded-full transition-colors"
+            title="Voltar para lista"
+          >
+            <ArrowLeft className="w-5 h-5 text-gray-800" />
+          </button>
+          <div>
+            <h1 className="font-semibold text-gray-900">{currentPaymentFlow.title}</h1>
+            <p className="text-xs text-gray-700">Protótipo de Configuração de Pagamento</p>
           </div>
         </div>
+
+        {/* View Mode Toggles */}
+        <div className="flex bg-white/50 p-1 rounded-lg gap-1">
+          <button
+            onClick={() => setViewMode("desktop")}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
+              viewMode === "desktop" 
+                ? "bg-white text-blue-600 shadow-sm" 
+                : "text-gray-600 hover:bg-white/50"
+            }`}
+            title="Visualização Desktop (1)"
+          >
+            <Monitor className="w-4 h-4" />
+            <span className="hidden sm:inline">Web</span>
+          </button>
+          <button
+            onClick={() => setViewMode("mobile")}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
+              viewMode === "mobile" 
+                ? "bg-white text-blue-600 shadow-sm" 
+                : "text-gray-600 hover:bg-white/50"
+            }`}
+            title="Visualização Mobile (2)"
+          >
+            <Smartphone className="w-4 h-4" />
+            <span className="hidden sm:inline">Mobile</span>
+          </button>
+          <button
+            onClick={() => setViewMode("flowchart")}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
+              viewMode === "flowchart" 
+                ? "bg-white text-blue-600 shadow-sm" 
+                : "text-gray-600 hover:bg-white/50"
+            }`}
+            title="Visualizar Fluxograma (3)"
+          >
+            <Workflow className="w-4 h-4" />
+            <span className="hidden sm:inline">Fluxo</span>
+          </button>
+        </div>
+
+        <button 
+          onClick={() => setIsInfoPanelOpen(!isInfoPanelOpen)}
+          className={`p-2 rounded-full transition-colors ${isInfoPanelOpen ? 'bg-black/10' : 'hover:bg-black/5'}`}
+          title="Informações do fluxo"
+        >
+          <Info className="w-5 h-5 text-gray-800" />
+        </button>
       </header>
 
-      {/* Main content area */}
-      <main className="w-full bg-white overflow-y-auto min-h-screen">
-        {/* Prototype display area - Full width */}
-        <div className="w-full">
-          <PaymentConfigPrototype />
-        </div>
+      {/* Main Content Area */}
+      <main className="flex-1 relative overflow-hidden flex flex-col">
+        {viewMode === "desktop" && (
+          <div className="flex-1 overflow-auto bg-gray-100">
+            <div className="min-h-full">
+              <PaymentConfigPrototype />
+            </div>
+          </div>
+        )}
+
+        {viewMode === "mobile" && (
+          <div className="flex-1 bg-gray-900 flex items-center justify-center p-4 sm:p-8">
+            <div className="relative w-full max-w-[375px] h-[812px] bg-white rounded-[3rem] shadow-2xl overflow-hidden border-[8px] border-gray-800">
+              {/* Notch */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-gray-800 rounded-b-2xl z-20"></div>
+              
+              {/* Status Bar Simulation */}
+              <div className="h-12 bg-white w-full absolute top-0 left-0 z-10 flex justify-between items-center px-6 pt-2 text-xs font-medium text-gray-900">
+                <span>9:41</span>
+                <div className="flex gap-1.5">
+                  <div className="w-4 h-2.5 bg-gray-900 rounded-[1px]"></div>
+                  <div className="w-4 h-2.5 bg-gray-900 rounded-[1px]"></div>
+                  <div className="w-5 h-2.5 border border-gray-900 rounded-[2px] relative">
+                    <div className="absolute inset-0.5 bg-gray-900"></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Iframe Content */}
+              <iframe
+                src={`/prototipo/configuracao-pagamento/${slug}/standalone`}
+                className="w-full h-full pt-8 bg-gray-50"
+                title="Mobile Preview"
+              />
+              
+              {/* Home Indicator */}
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-gray-900 rounded-full z-20"></div>
+            </div>
+          </div>
+        )}
+
+        {viewMode === "flowchart" && (
+          <div className="flex-1 bg-white relative">
+            {currentPaymentFlow.flowchartUrl ? (
+              <FlowchartViewer url={currentPaymentFlow.flowchartUrl} />
+            ) : (
+              <div className="flex flex-col items-center justify-center h-full text-gray-400 gap-4">
+                <Workflow className="w-16 h-16 opacity-20" />
+                <p>Fluxograma não disponível para este protótipo</p>
+              </div>
+            )}
+          </div>
+        )}
       </main>
 
       {/* Floating Info Panel - Overlays on the right */}
@@ -139,7 +274,7 @@ export default function PaymentFlowViewerPage() {
           bg-white/95 backdrop-blur-md border-l border-gray-200
           transform transition-all duration-300 ease-out z-[2000]
           ${isInfoPanelOpen ? "translate-x-0" : "translate-x-full"}
-          top-0 h-screen
+          top-0 h-screen shadow-2xl
         `}
       >
           {/* Panel Header */}
@@ -175,6 +310,17 @@ export default function PaymentFlowViewerPage() {
             <p className="text-gray-600 text-sm leading-relaxed mb-6">
               {currentPaymentFlow.description}
             </p>
+
+            <div className="grid grid-cols-1 gap-4 text-sm">
+              <div className="bg-gray-50 p-3 rounded-lg">
+                <span className="font-medium text-gray-900 block mb-1">Cenário</span>
+                <span className="text-gray-600">{currentPaymentFlow.scenario}</span>
+              </div>
+              <div className="bg-gray-50 p-3 rounded-lg">
+                <span className="font-medium text-gray-900 block mb-1">Objetivo</span>
+                <span className="text-gray-600">{currentPaymentFlow.objective}</span>
+              </div>
+            </div>
         </div>
       </div>
 
