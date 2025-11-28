@@ -2,12 +2,14 @@
 
 import { useRouter, useParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import { ArrowLeft, ChevronLeft, ChevronRight, Info, X } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Info, X, Monitor, Smartphone } from "lucide-react";
 import { landingPages, getLandingPageBySlug, LandingPageEntry } from "@/lib/landing-pages";
 import OfertaMonoliticaPage from "@/components/landing-pages/OfertaMonolitica";
 import CinemaPage from "@/components/landing-pages/Cinema";
 import FinancasPage from "@/components/landing-pages/Financas";
 import LogisticaPage from "@/components/landing-pages/Logistica";
+
+type ViewMode = "desktop" | "mobile";
 
 export default function LandingPageViewerPage() {
   const router = useRouter();
@@ -18,6 +20,7 @@ export default function LandingPageViewerPage() {
   const [currentLandingPage, setCurrentLandingPage] = useState<LandingPageEntry | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hideHeader, setHideHeader] = useState(false);
+  const [viewMode, setViewMode] = useState<ViewMode>("desktop");
 
   useEffect(() => {
     const lp = getLandingPageBySlug(slug);
@@ -49,6 +52,8 @@ export default function LandingPageViewerPage() {
       setIsInfoPanelOpen((prev) => !prev);
     } else if (e.key === "h" || e.key === "H") {
       setHideHeader((prev) => !prev);
+    } else if (e.key === "m" || e.key === "M") {
+      setViewMode((prev) => prev === "desktop" ? "mobile" : "desktop");
     }
   }, [navigateTo]);
 
@@ -119,12 +124,51 @@ export default function LandingPageViewerPage() {
             </div>
           </div>
 
-          {/* Right: Info button, pagination, and navigation */}
+          {/* Right: View mode toggle, Info button, pagination, and navigation */}
           <div className="flex items-center gap-3">
+            {/* View Mode Toggle */}
+            <div className="flex items-center bg-gray-100 rounded-lg p-1">
+              <button
+                onClick={() => setViewMode("desktop")}
+                className={`
+                  p-2 rounded-md transition-all duration-200 flex items-center gap-1.5
+                  ${viewMode === "desktop" 
+                    ? "bg-white text-[#2D3277] shadow-sm" 
+                    : "text-gray-500 hover:text-gray-700"
+                  }
+                `}
+                aria-label="Visualizar em desktop"
+                title="Desktop (M para alternar)"
+              >
+                <Monitor className="w-4 h-4" />
+                <span className="text-xs font-medium hidden sm:inline">Desktop</span>
+              </button>
+              <button
+                onClick={() => setViewMode("mobile")}
+                className={`
+                  p-2 rounded-md transition-all duration-200 flex items-center gap-1.5
+                  ${viewMode === "mobile" 
+                    ? "bg-white text-[#2D3277] shadow-sm" 
+                    : "text-gray-500 hover:text-gray-700"
+                  }
+                `}
+                aria-label="Visualizar em mobile"
+                title="Mobile (M para alternar)"
+              >
+                <Smartphone className="w-4 h-4" />
+                <span className="text-xs font-medium hidden sm:inline">Mobile</span>
+              </button>
+            </div>
+
+            <div className="h-6 w-px bg-gray-200" />
+
             {/* Keyboard shortcuts info */}
-            <div className="hidden md:flex items-center gap-2 text-xs text-gray-500 mr-2">
+            <div className="hidden lg:flex items-center gap-2 text-xs text-gray-500 mr-2">
               <kbd className="px-2 py-1 bg-gray-100 rounded border border-gray-300 font-mono">H</kbd>
               <span>Esconder</span>
+              <span className="text-gray-300">|</span>
+              <kbd className="px-2 py-1 bg-gray-100 rounded border border-gray-300 font-mono">M</kbd>
+              <span>Mobile</span>
               <span className="text-gray-300">|</span>
               <kbd className="px-2 py-1 bg-gray-100 rounded border border-gray-300 font-mono">I</kbd>
               <span>Info</span>
@@ -134,7 +178,7 @@ export default function LandingPageViewerPage() {
               <span>Navegar</span>
             </div>
 
-            <div className="h-6 w-px bg-gray-200 hidden md:block" />
+            <div className="h-6 w-px bg-gray-200 hidden lg:block" />
 
             {/* Info button */}
             <button
@@ -183,14 +227,69 @@ export default function LandingPageViewerPage() {
       </header>
 
       {/* Main content area */}
-      <main className="w-full bg-white overflow-y-auto min-h-screen">
-        {/* Prototype display area - Full width */}
-        <div className="w-full">
-          {currentLandingPage.slug === 'oferta-monolitica' && <OfertaMonoliticaPage />}
-          {currentLandingPage.slug === 'cinema' && <CinemaPage />}
-          {currentLandingPage.slug === 'financas' && <FinancasPage />}
-          {currentLandingPage.slug === 'logistica' && <LogisticaPage />}
-        </div>
+      <main 
+        className={`
+          w-full min-h-screen transition-all duration-300
+          ${viewMode === "mobile" 
+            ? "bg-[#1a1a2e] flex items-start justify-center py-8 px-4" 
+            : "bg-white overflow-y-auto"
+          }
+        `}
+      >
+        {viewMode === "desktop" ? (
+          /* Desktop view - Full width */
+          <div className="w-full">
+            {currentLandingPage.slug === 'oferta-monolitica' && <OfertaMonoliticaPage />}
+            {currentLandingPage.slug === 'cinema' && <CinemaPage />}
+            {currentLandingPage.slug === 'financas' && <FinancasPage />}
+            {currentLandingPage.slug === 'logistica' && <LogisticaPage />}
+          </div>
+        ) : (
+          /* Mobile view - Phone frame */
+          <div className="flex flex-col items-center">
+            {/* Phone Frame */}
+            <div 
+              className="relative bg-[#1c1c1e] rounded-[50px] p-3 shadow-2xl"
+              style={{
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.1)",
+              }}
+            >
+              {/* Notch / Dynamic Island */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120px] h-[35px] bg-[#1c1c1e] rounded-b-3xl z-10 flex items-center justify-center">
+                <div className="w-[80px] h-[25px] bg-black rounded-full" />
+              </div>
+              
+              {/* Screen */}
+              <div 
+                className="bg-white rounded-[38px] overflow-hidden relative"
+                style={{
+                  width: "375px",
+                  height: "calc(100vh - 180px)",
+                  maxHeight: "812px",
+                  minHeight: "600px",
+                }}
+              >
+                {/* Content wrapper with scroll */}
+                <div className="w-full h-full overflow-y-auto overflow-x-hidden">
+                  <div style={{ width: "375px" }}>
+                    {currentLandingPage.slug === 'oferta-monolitica' && <OfertaMonoliticaPage />}
+                    {currentLandingPage.slug === 'cinema' && <CinemaPage />}
+                    {currentLandingPage.slug === 'financas' && <FinancasPage />}
+                    {currentLandingPage.slug === 'logistica' && <LogisticaPage />}
+                  </div>
+                </div>
+              </div>
+              
+              {/* Home Indicator */}
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-[134px] h-[5px] bg-white/30 rounded-full" />
+            </div>
+            
+            {/* Device label */}
+            <p className="mt-4 text-gray-400 text-sm">
+              iPhone 14 Pro • 375 × 812
+            </p>
+          </div>
+        )}
       </main>
 
       {/* Floating Info Panel - Overlays on the right */}
