@@ -1202,7 +1202,7 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
 
         {/* Mobile Layout: Title Top, Video Middle, Button Bottom */}
         <div className="md:hidden w-full flex flex-col h-full min-h-[auto]">
-          <div className="pt-12 px-5 text-center z-10">
+          <div className="pt-12 px-5 pb-8 text-center z-10">
             <RevealOnScroll>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Tenha seu Meli+</h2>
               <p className="text-gray-600 mb-8">E comece a aproveitar<br />todos os benefícios agora mesmo</p>
