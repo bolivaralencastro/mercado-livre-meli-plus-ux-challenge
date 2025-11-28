@@ -5,6 +5,8 @@ export interface PaymentFlowEntry {
   component: string;
   status: "draft" | "ready" | "testing";
   flowchartUrl?: string;
+  scenario?: string;
+  objective?: string;
 }
 
 export const paymentFlows: PaymentFlowEntry[] = [
@@ -15,6 +17,8 @@ export const paymentFlows: PaymentFlowEntry[] = [
     component: "PaymentConfigPrototype",
     status: "ready",
     flowchartUrl: "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/fluxogramas/fluxo-assinaturas-meli-mais.svg",
+    scenario: "Usuário precisa atualizar ou adicionar um método de pagamento para evitar o cancelamento da assinatura.",
+    objective: "Facilitar a gestão de métodos de pagamento e reduzir o churn involuntário.",
   },
 ];
 
