@@ -596,8 +596,8 @@ function StreamingCard({
           {/* Discount Text */}
           <p className="text-center text-sm font-semibold text-gray-500 mb-3">até 30% OFF</p>
 
-          {/* Additional Logos Grid */}
-          <div className="grid grid-cols-3 gap-2 mb-4">
+          {/* Additional Logos Grid - Match the size of main logos */}
+          <div className="grid grid-cols-3 gap-2 md:gap-3 mb-4">
             {[
               { src: "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/logos/paramount.png", alt: "Paramount+" },
               { src: "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/logos/globoplay.png", alt: "Globoplay" },
@@ -605,14 +605,14 @@ function StreamingCard({
             ].map((logo) => (
               <div 
                 key={logo.alt}
-                className="aspect-square rounded-lg border border-gray-200 flex items-center justify-center bg-white shadow-sm"
+                className="aspect-square md:aspect-[3/2] rounded-lg border border-gray-200 flex items-center justify-center bg-white shadow-sm"
               >
                 <Image 
                   src={logo.src} 
                   alt={logo.alt} 
-                  width={40} 
-                  height={40} 
-                  className="w-[60%] h-[60%] object-contain"
+                  width={60} 
+                  height={60} 
+                  className="w-[70%] md:w-[65%] h-[70%] md:h-[65%] object-contain"
                   loading="eager"
                 />
               </div>
@@ -1063,8 +1063,8 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
           </RevealOnScroll>
 
           {/* Mobile: Horizontal scroll, Desktop: Grid */}
-          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 text-left overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x snap-mandatory md:snap-none scrollbar-hide">
-            <div className="min-w-[280px] md:min-w-0 snap-start pl-0 first:pl-0">
+          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 text-left overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x snap-mandatory md:snap-none scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0">
+            <div className="min-w-[280px] md:min-w-0 snap-start shrink-0">
               <BenefitCard
                 icon={Truck}
                 title={<>Frete grátis<br className="md:hidden" /><span className="hidden md:inline"> </span>rápido</>}
@@ -1072,7 +1072,7 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
                 delay={0}
               />
             </div>
-            <div className="min-w-[280px] md:min-w-0 snap-start">
+            <div className="min-w-[280px] md:min-w-0 snap-start shrink-0">
               <BenefitCard
                 icon={Coins}
                 title="Cashback que volta para você"
@@ -1080,7 +1080,7 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
                 delay={0.05}
               />
             </div>
-            <div className="min-w-[280px] md:min-w-0 snap-start pr-5 md:pr-0">
+            <div className="min-w-[280px] md:min-w-0 snap-start shrink-0 mr-5 md:mr-0">
               <BenefitCard
                 icon={Shield}
                 title="Seu dinheiro rende muito mais"
@@ -1093,7 +1093,7 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
       </section>
 
       {/* Pricing Section */}
-      <section id="planos" className="py-12 md:py-20 relative overflow-hidden md:overflow-visible">
+      <section id="planos" className="py-8 md:py-20 relative overflow-hidden md:overflow-visible">
         {/* Piggy Bank Decoration - Hidden on mobile */}
         <div 
           className="absolute left-[-20px] w-[400px] h-[400px] bg-contain bg-center bg-no-repeat z-[100] pointer-events-none hidden md:block"
@@ -1163,7 +1163,7 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-12 md:py-20 relative overflow-hidden md:overflow-visible">
+      <section className="py-8 md:py-20 relative overflow-hidden md:overflow-visible">
         <div className="max-w-[1200px] mx-auto px-5 relative z-[2]">
           <RevealOnScroll>
             <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-3 text-center">O que dizem nossos assinantes</h2>
@@ -1171,9 +1171,9 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
           </RevealOnScroll>
 
           {/* Mobile: Horizontal scroll, Desktop: Grid */}
-          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x snap-mandatory md:snap-none scrollbar-hide">
+          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x snap-mandatory md:snap-none scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0">
             {testimonials.map((testimonial, i) => (
-              <div key={testimonial.name} className="min-w-[300px] md:min-w-0 snap-start last:pr-5 md:last:pr-0">
+              <div key={testimonial.name} className={`min-w-[300px] md:min-w-0 snap-start shrink-0 ${i === testimonials.length - 1 ? 'mr-5 md:mr-0' : ''}`}>
                 <TestimonialCard testimonial={testimonial} index={i} />
               </div>
             ))}
@@ -1208,24 +1208,16 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
           />
         </div>
 
-        {/* Mobile Layout: Text Top, Video Bottom */}
+        {/* Mobile Layout: Title Top, Video Middle, Button Bottom */}
         <div className="md:hidden w-full flex flex-col h-full min-h-[auto]">
           <div className="pt-12 px-5 text-center z-10">
             <RevealOnScroll>
               <h2 className="text-3xl font-extrabold text-gray-900 mb-4">Tenha seu Meli+</h2>
-              <p className="text-gray-600 mb-8">E comece a aproveitar todos os benefícios agora mesmo</p>
-              <a
-                href="https://www.mercadolivre.com.br/assinaturas/melimais/planos?plan_selected=MEGA#origin=redirect-vdp-meliplus"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-gradient-to-b from-[#65a5ff] to-[#3483fa] text-white px-12 py-4 text-lg rounded-md font-semibold shadow-lg"
-              >
-                Quero ser Meli+
-              </a>
+              <p className="text-gray-600">E comece a aproveitar todos os benefícios agora mesmo</p>
             </RevealOnScroll>
           </div>
           
-          <div className="relative w-full flex items-center justify-center overflow-hidden pb-0">
+          <div className="relative w-full flex items-center justify-center overflow-hidden">
              <video
               className="w-full h-auto object-contain"
               muted
@@ -1237,6 +1229,19 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
               <source src="https://smolljrfjqknp6nm.public.blob.vercel-storage.com/videos/logo-meli-animacao.webm" type="video/webm" />
               <source src="https://smolljrfjqknp6nm.public.blob.vercel-storage.com/videos/logo-meli-animacao.mp4" type="video/mp4" />
             </video>
+          </div>
+          
+          <div className="px-5 pb-8 text-center z-10">
+            <RevealOnScroll>
+              <a
+                href="https://www.mercadolivre.com.br/assinaturas/melimais/planos?plan_selected=MEGA#origin=redirect-vdp-meliplus"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-gradient-to-b from-[#65a5ff] to-[#3483fa] text-white px-12 py-4 text-lg rounded-md font-semibold shadow-lg w-full"
+              >
+                Quero ser Meli+
+              </a>
+            </RevealOnScroll>
           </div>
         </div>
 
@@ -1263,10 +1268,10 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-200">
+      <section className="py-12 md:py-20 bg-gray-200">
         <div className="max-w-[1200px] mx-auto px-5">
           <RevealOnScroll>
-            <h2 className="text-2xl font-extrabold text-gray-700 text-center mb-12 uppercase tracking-wider">
+            <h2 className="text-lg md:text-2xl font-extrabold text-gray-700 text-center mb-8 md:mb-12 uppercase tracking-wider">
               Perguntas Frequentes
             </h2>
 

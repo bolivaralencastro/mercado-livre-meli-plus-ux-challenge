@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { Info } from "lucide-react";
 
 // ============ TYPES ============
 interface PlanPricing {
@@ -87,7 +88,7 @@ const styles = {
   white: "#FFFFFF",
   cardRadius: "24px",
   headerHeight: 56, // Altura do header de cada card
-  toggleHeight: 60, // Altura do toggle sticky
+  toggleHeight: 48, // Altura do toggle sticky (reduced)
   
   // Stuck offsets para empilhamento mais compacto
   stuckOffset1: 0,
@@ -103,14 +104,17 @@ export default function MobilePriceTable() {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLElement | Window | null>(null);
 
-  // Find the scrollable parent container
+  // Find the scrollable parent container - improved detection
   const findScrollContainer = useCallback((element: HTMLElement | null): HTMLElement | Window => {
     if (!element) return window;
     
     let current: HTMLElement | null = element.parentElement;
-    while (current && current !== document.body) {
+    while (current && current !== document.body && current !== document.documentElement) {
       const style = window.getComputedStyle(current);
-      if (style.overflowY === 'auto' || style.overflowY === 'scroll') {
+      const overflowY = style.overflowY;
+      const hasScroll = current.scrollHeight > current.clientHeight;
+      
+      if ((overflowY === 'auto' || overflowY === 'scroll') && hasScroll) {
         return current;
       }
       current = current.parentElement;
@@ -118,7 +122,7 @@ export default function MobilePriceTable() {
     return window;
   }, []);
 
-  // Check which cards are stuck
+  // Check which cards are stuck - improved detection
   const checkSticky = useCallback(() => {
     const cards = document.querySelectorAll('[data-mobile-plan-card]');
     const newStuckCards = new Set<string>();
@@ -129,9 +133,9 @@ export default function MobilePriceTable() {
       const computedStyle = window.getComputedStyle(card);
       const topValue = parseFloat(computedStyle.top);
       
-      // Card is stuck when its top position matches the sticky top value
-      // Adding a small tolerance of 5px for better detection
-      if (rect.top <= topValue + 5) {
+      // Card is stuck when its top position is at or near the sticky top value
+      // Adding a tolerance of 10px for better detection in different scroll contexts
+      if (rect.top <= topValue + 10) {
         const id = card.getAttribute('data-mobile-plan-card');
         if (id) {
           newStuckCards.add(id);
@@ -174,8 +178,8 @@ export default function MobilePriceTable() {
   // Calculate top position for each card
   // Cards stack below the toggle (which is at top: 0)
   const getCardTop = (index: number) => {
-    // Base offset for the first card (toggle height + some spacing)
-    const baseOffset = styles.toggleHeight + 20;
+    // Base offset for the first card (toggle height + smaller spacing)
+    const baseOffset = styles.toggleHeight + 12;
     // Each subsequent card is offset by the header height of the previous cards
     return baseOffset + (styles.headerHeight * index);
   };
@@ -192,11 +196,11 @@ export default function MobilePriceTable() {
   return (
     <div 
       ref={containerRef}
-      className="pb-8"
+      className="pb-4"
     >
       {/* Pricing Toggle - Sticky at top */}
       <div 
-        className={`sticky top-0 z-[100] py-3 flex justify-center transition-colors duration-200 ${allStuck ? 'bg-white' : 'bg-transparent'}`}
+        className={`sticky top-0 z-[100] py-2 flex justify-center transition-colors duration-200 ${allStuck ? 'bg-white' : 'bg-transparent'}`}
         style={{ height: `${styles.toggleHeight}px` }}
       >
         <div className="flex bg-white border border-gray-200 p-1 rounded-full shadow-sm">
@@ -244,12 +248,12 @@ export default function MobilePriceTable() {
                 sticky bg-white rounded-3xl shadow-lg overflow-hidden
                 flex flex-col transition-transform duration-200
                 ${plan.highlighted ? "border-2 border-[#A90F90]" : "border border-gray-200"}
-                ${isLast ? "mb-10" : "mb-4"}
+                ${isLast ? "mb-6" : "mb-3"}
               `}
               style={{
                 top: `${cardTop}px`,
                 zIndex: (index + 1) * 10,
-                minHeight: isLast ? 'auto' : `calc(${styles.headerHeight}px + 220px)`,
+                minHeight: isLast ? 'auto' : `calc(${styles.headerHeight}px + 200px)`,
                 transform: isStuck ? `translateY(${getStuckOffset(index)}px)` : 'translateY(0)',
                 boxShadow: isStuck 
                   ? '0 10px 40px rgba(0,0,0,0.15)' 
@@ -338,20 +342,23 @@ export default function MobilePriceTable() {
                   {plan.description}
                 </p>
 
-                {/* CTA Button */}
-                <a
-                  href={`https://www.mercadolivre.com.br/assinaturas/melimais/planos?plan_selected=${plan.slug.toUpperCase()}#origin=redirect-vdp-meliplus`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full bg-[#3483FA] text-white py-4 rounded-xl font-semibold text-base text-center block hover:bg-[#2968c8] transition-colors"
-                >
-                  Assinar {plan.name}
-                </a>
-
-                {/* Details Button */}
-                <button className="w-full text-center mt-4 text-[#3483FA] font-semibold bg-transparent border-none cursor-pointer">
-                  Ver detalhes
-                </button>
+                {/* CTA Button and Details */}
+                <div className="flex items-center gap-3">
+                  <button 
+                    className="w-12 h-12 rounded-xl border-2 border-[#3483FA] text-[#3483FA] flex items-center justify-center shrink-0 hover:bg-[#3483FA]/5 transition-colors"
+                    title="Ver detalhes"
+                  >
+                    <Info className="w-5 h-5" />
+                  </button>
+                  <a
+                    href={`https://www.mercadolivre.com.br/assinaturas/melimais/planos?plan_selected=${plan.slug.toUpperCase()}#origin=redirect-vdp-meliplus`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-[#3483FA] text-white py-4 rounded-xl font-semibold text-base text-center block hover:bg-[#2968c8] transition-colors"
+                  >
+                    Assinar {plan.name}
+                  </a>
+                </div>
               </div>
             </div>
           );
