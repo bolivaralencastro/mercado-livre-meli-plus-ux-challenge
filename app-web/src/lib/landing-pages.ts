@@ -6,6 +6,7 @@ export interface LandingPageEntry {
   isNative?: boolean;
   category: "aquisicao" | "retencao" | "upgrade";
   status: "draft" | "ready" | "testing";
+  flowchartUrl?: string;
 }
 
 export const landingPages: LandingPageEntry[] = [
@@ -16,6 +17,7 @@ export const landingPages: LandingPageEntry[] = [
     isNative: true,
     category: "aquisicao",
     status: "ready",
+    flowchartUrl: "https://smolljrfjqknp6nm.public.blob.vercel-storage.com/fluxogramas/fluxo-assinaturas-meli-mais.svg",
   },
   {
     slug: "cinema",

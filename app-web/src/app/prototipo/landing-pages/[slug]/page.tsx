@@ -2,14 +2,106 @@
 
 import { useRouter, useParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import { ArrowLeft, ChevronLeft, ChevronRight, Info, X, Monitor, Smartphone } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Info, X, Monitor, Smartphone, Workflow } from "lucide-react";
 import { landingPages, getLandingPageBySlug, LandingPageEntry } from "@/lib/landing-pages";
 import OfertaMonoliticaPage from "@/components/landing-pages/OfertaMonolitica";
 import CinemaPage from "@/components/landing-pages/Cinema";
 import FinancasPage from "@/components/landing-pages/Financas";
 import LogisticaPage from "@/components/landing-pages/Logistica";
 
-type ViewMode = "desktop" | "mobile";
+type ViewMode = "desktop" | "mobile" | "flowchart";
+
+// Simple Zoom/Pan component for Flowchart
+function FlowchartViewer({ url }: { url: string }) {
+  const [scale, setScale] = useState(1);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+
+  const handleWheel = (e: React.WheelEvent) => {
+    if (e.ctrlKey || e.metaKey) {
+      e.preventDefault();
+      const delta = e.deltaY > 0 ? 0.9 : 1.1;
+      setScale(s => Math.min(Math.max(0.1, s * delta), 5));
+    } else {
+       setPosition(p => ({ x: p.x - e.deltaX, y: p.y - e.deltaY }));
+    }
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setDragStart({ x: e.clientX - position.x, y: e.clientY - position.y });
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging) {
+      setPosition({
+        x: e.clientX - dragStart.x,
+        y: e.clientY - dragStart.y
+      });
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  return (
+    <div 
+      className="w-full h-full overflow-hidden bg-[#f0f2f5] cursor-move relative flex items-center justify-center"
+      onWheel={handleWheel}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}
+    >
+      <div className="absolute bottom-8 right-8 flex gap-2 z-10">
+        <div className="bg-white rounded-lg shadow-lg p-1 flex gap-1">
+          <button 
+            onClick={() => setScale(s => Math.max(0.1, s - 0.1))} 
+            className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded text-gray-600 font-bold"
+            title="Zoom Out"
+          >
+            -
+          </button>
+          <div className="w-px bg-gray-200 my-1" />
+          <button 
+            onClick={() => { setScale(1); setPosition({x:0,y:0}); }} 
+            className="px-3 h-8 flex items-center justify-center hover:bg-gray-100 rounded text-gray-600 text-xs font-medium"
+            title="Reset View"
+          >
+            {Math.round(scale * 100)}%
+          </button>
+          <div className="w-px bg-gray-200 my-1" />
+          <button 
+            onClick={() => setScale(s => Math.min(s + 0.1, 5))} 
+            className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded text-gray-600 font-bold"
+            title="Zoom In"
+          >
+            +
+          </button>
+        </div>
+      </div>
+      
+      <div 
+        style={{ 
+          transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
+          transformOrigin: 'center center',
+          transition: isDragging ? 'none' : 'transform 0.1s ease-out'
+        }}
+        className="flex items-center justify-center min-w-full min-h-full p-20"
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img 
+          src={url} 
+          alt="Flowchart" 
+          className="max-w-none pointer-events-none shadow-2xl bg-white rounded-lg"
+          draggable={false}
+        />
+      </div>
+    </div>
+  );
+}
 
 export default function LandingPageViewerPage() {
   const router = useRouter();
@@ -158,6 +250,24 @@ export default function LandingPageViewerPage() {
                 <Smartphone className="w-4 h-4" />
                 <span className="text-xs font-medium hidden sm:inline">Mobile</span>
               </button>
+              
+              {currentLandingPage.flowchartUrl && (
+                <button
+                  onClick={() => setViewMode("flowchart")}
+                  className={`
+                    p-2 rounded-md transition-all duration-200 flex items-center gap-1.5
+                    ${viewMode === "flowchart" 
+                      ? "bg-white text-[#2D3277] shadow-sm" 
+                      : "text-gray-500 hover:text-gray-700"
+                    }
+                  `}
+                  aria-label="Visualizar fluxograma"
+                  title="Fluxograma"
+                >
+                  <Workflow className="w-4 h-4" />
+                  <span className="text-xs font-medium hidden sm:inline">Fluxo</span>
+                </button>
+              )}
             </div>
 
             <div className="h-6 w-px bg-gray-200" />
@@ -232,7 +342,9 @@ export default function LandingPageViewerPage() {
           w-full min-h-screen transition-all duration-300
           ${viewMode === "mobile" 
             ? "bg-[#1a1a2e] flex items-start justify-center py-8 px-4" 
-            : "bg-white overflow-y-auto"
+            : viewMode === "flowchart"
+              ? "bg-[#f0f2f5] h-[calc(100vh-73px)] overflow-hidden"
+              : "bg-white overflow-y-auto"
           }
         `}
       >
@@ -244,6 +356,9 @@ export default function LandingPageViewerPage() {
             {currentLandingPage.slug === 'financas' && <FinancasPage />}
             {currentLandingPage.slug === 'logistica' && <LogisticaPage />}
           </div>
+        ) : viewMode === "flowchart" && currentLandingPage.flowchartUrl ? (
+          /* Flowchart view */
+          <FlowchartViewer url={currentLandingPage.flowchartUrl} />
         ) : (
           /* Mobile view - Phone frame */
           <div className="flex flex-col items-center">
