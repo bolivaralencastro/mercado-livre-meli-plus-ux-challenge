@@ -331,7 +331,7 @@ export default function LandingPageViewerPage() {
         className={`
           w-full min-h-screen transition-all duration-300
           ${viewMode === "mobile" 
-            ? "bg-[#1a1a2e] flex items-start justify-center py-8 px-4" 
+            ? "bg-[#EFEFEF] flex items-start justify-center py-8 px-4" 
             : viewMode === "flowchart"
               ? "bg-[#f0f2f5] h-[calc(100vh-73px)] overflow-hidden"
               : "bg-white overflow-y-auto"
