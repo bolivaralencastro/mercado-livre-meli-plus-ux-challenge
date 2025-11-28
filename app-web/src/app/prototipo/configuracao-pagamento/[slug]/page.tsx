@@ -106,6 +106,10 @@ export default function PaymentFlowViewerPage() {
     const pf = getPaymentFlowBySlug(slug);
     if (pf) {
       setCurrentPaymentFlow(pf);
+      // Default to mobile if desktop is not supported
+      if (pf.supportedModes && !pf.supportedModes.includes("desktop")) {
+        setViewMode("mobile");
+      }
     } else {
       router.push("/prototipo");
     }
@@ -114,10 +118,18 @@ export default function PaymentFlowViewerPage() {
   // Keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === '1') setViewMode('desktop');
-      if (e.key === '2') setViewMode('mobile');
-      if (e.key === '3') setViewMode('flowchart');
-      if (e.key === 'm' || e.key === 'M') setViewMode((prev) => prev === "desktop" ? "mobile" : "desktop");
+      if (e.key === '1' && (!currentPaymentFlow?.supportedModes || currentPaymentFlow.supportedModes.includes('desktop'))) setViewMode('desktop');
+      if (e.key === '2' && (!currentPaymentFlow?.supportedModes || currentPaymentFlow.supportedModes.includes('mobile'))) setViewMode('mobile');
+      if (e.key === '3' && (!currentPaymentFlow?.supportedModes || currentPaymentFlow.supportedModes.includes('flowchart'))) setViewMode('flowchart');
+      
+      if (e.key === 'm' || e.key === 'M') {
+         // Toggle logic needs to be smarter if desktop is disabled
+         if (currentPaymentFlow?.supportedModes && !currentPaymentFlow.supportedModes.includes('desktop')) {
+            // If desktop is disabled, maybe toggle between mobile and flowchart? Or just do nothing for 'm' (which usually toggles desktop/mobile)
+         } else {
+            setViewMode((prev) => prev === "desktop" ? "mobile" : "desktop");
+         }
+      }
       if (e.key === "Escape") setIsInfoPanelOpen(false);
       if (e.key === "i" || e.key === "I") setIsInfoPanelOpen((prev) => !prev);
       if (e.key === "h" || e.key === "H") setHideHeader((prev) => !prev);
@@ -151,30 +163,31 @@ export default function PaymentFlowViewerPage() {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col relative overflow-hidden">
       {/* Header */}
-      <header className={`bg-[#fff059] px-6 py-3 shadow-sm flex items-center justify-between sticky top-0 z-50 ${hideHeader ? 'hidden' : ''}`}>
+      <header className={`bg-white px-6 py-3 border-b border-gray-200 flex items-center justify-between sticky top-0 z-50 ${hideHeader ? 'hidden' : ''}`}>
         <div className="flex items-center gap-4">
           <button 
             onClick={() => router.push("/prototipo")}
-            className="p-2 hover:bg-black/5 rounded-full transition-colors"
+            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
             title="Voltar para lista"
           >
-            <ArrowLeft className="w-5 h-5 text-gray-800" />
+            <ArrowLeft className="w-5 h-5 text-gray-600" />
           </button>
           <div>
             <h1 className="font-semibold text-gray-900">{currentPaymentFlow.title}</h1>
-            <p className="text-xs text-gray-700">Protótipo de Configuração de Pagamento</p>
+            <p className="text-xs text-gray-500">Protótipo de Configuração de Pagamento</p>
           </div>
         </div>
 
         {/* View Mode Toggles */}
-        <div className="flex bg-white/50 p-1 rounded-lg gap-1">
+        <div className="flex bg-gray-100 p-1 rounded-lg gap-1">
           <button
             onClick={() => setViewMode("desktop")}
+            disabled={currentPaymentFlow.supportedModes?.includes("desktop") === false}
             className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
               viewMode === "desktop" 
                 ? "bg-white text-blue-600 shadow-sm" 
-                : "text-gray-600 hover:bg-white/50"
-            }`}
+                : "text-gray-500 hover:text-gray-700 hover:bg-gray-200/50"
+            } ${currentPaymentFlow.supportedModes?.includes("desktop") === false ? "opacity-50 cursor-not-allowed hover:bg-transparent hover:text-gray-500" : ""}`}
             title="Visualização Desktop (1)"
           >
             <Monitor className="w-4 h-4" />
@@ -182,11 +195,12 @@ export default function PaymentFlowViewerPage() {
           </button>
           <button
             onClick={() => setViewMode("mobile")}
+            disabled={currentPaymentFlow.supportedModes?.includes("mobile") === false}
             className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
               viewMode === "mobile" 
                 ? "bg-white text-blue-600 shadow-sm" 
-                : "text-gray-600 hover:bg-white/50"
-            }`}
+                : "text-gray-500 hover:text-gray-700 hover:bg-gray-200/50"
+            } ${currentPaymentFlow.supportedModes?.includes("mobile") === false ? "opacity-50 cursor-not-allowed hover:bg-transparent hover:text-gray-500" : ""}`}
             title="Visualização Mobile (2)"
           >
             <Smartphone className="w-4 h-4" />
@@ -194,11 +208,12 @@ export default function PaymentFlowViewerPage() {
           </button>
           <button
             onClick={() => setViewMode("flowchart")}
+            disabled={currentPaymentFlow.supportedModes?.includes("flowchart") === false}
             className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
               viewMode === "flowchart" 
                 ? "bg-white text-blue-600 shadow-sm" 
-                : "text-gray-600 hover:bg-white/50"
-            }`}
+                : "text-gray-500 hover:text-gray-700 hover:bg-gray-200/50"
+            } ${currentPaymentFlow.supportedModes?.includes("flowchart") === false ? "opacity-50 cursor-not-allowed hover:bg-transparent hover:text-gray-500" : ""}`}
             title="Visualizar Fluxograma (3)"
           >
             <Workflow className="w-4 h-4" />
@@ -208,10 +223,10 @@ export default function PaymentFlowViewerPage() {
 
         <button 
           onClick={() => setIsInfoPanelOpen(!isInfoPanelOpen)}
-          className={`p-2 rounded-full transition-colors ${isInfoPanelOpen ? 'bg-black/10' : 'hover:bg-black/5'}`}
+          className={`p-2 rounded-full transition-colors ${isInfoPanelOpen ? 'bg-gray-100 text-gray-900' : 'hover:bg-gray-100 text-gray-500'}`}
           title="Informações do fluxo"
         >
-          <Info className="w-5 h-5 text-gray-800" />
+          <Info className="w-5 h-5" />
         </button>
       </header>
 

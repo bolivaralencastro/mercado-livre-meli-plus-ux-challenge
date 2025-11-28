@@ -68,7 +68,7 @@ const PageTemplate = ({ title, subtitle, children }: PageTemplateProps) => {
 
   return (
     <div className="min-h-screen bg-[#ededed] text-[#333333]">
-      <header className="fixed top-0 z-50 w-full border-b border-black/5 bg-[#ffe600]">
+      <header className="fixed top-0 z-50 w-full border-b border-gray-200 bg-white">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <div className="flex items-center gap-4">
             {/* Mobile Menu */}
