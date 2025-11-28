@@ -386,10 +386,15 @@ export default function LandingPageViewerPage() {
                   minHeight: "600px",
                 }}
               >
+                <style>{`
+                  .mobile-iframe-container::-webkit-scrollbar { display: none; }
+                  .mobile-iframe-container { -ms-overflow-style: none; scrollbar-width: none; }
+                `}</style>
                 <iframe 
-                  src={`/prototipo/landing-pages/${currentLandingPage.slug}/standalone`}
-                  className="w-full h-full border-none"
+                  src={`/prototipo/landing-pages/${currentLandingPage.slug}/standalone?mobile=true`}
+                  className="w-full h-full border-none mobile-iframe-container"
                   title="Mobile Preview"
+                  style={{ overflow: 'auto' }}
                 />
               </div>
               

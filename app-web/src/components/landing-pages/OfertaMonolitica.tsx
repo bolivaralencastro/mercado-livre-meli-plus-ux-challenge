@@ -853,7 +853,11 @@ function AccordionItem({ item, isOpen, onToggle }: { item: FaqItem; isOpen: bool
 }
 
 // ============ MAIN COMPONENT ============
-export default function OfertaMonoliticaPage() {
+interface OfertaMonoliticaPageProps {
+  isMobileViewer?: boolean;
+}
+
+export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaMonoliticaPageProps) {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly");
   const [openFaq, setOpenFaq] = useState<number>(0);
   const ctaVideoRef = useRef<HTMLVideoElement>(null);
@@ -937,7 +941,7 @@ export default function OfertaMonoliticaPage() {
   return (
     <div className="min-h-screen bg-white text-gray-800">
       {/* Header */}
-      <header className="bg-[#fff159] py-2.5 sticky top-0 z-[1000] shadow-sm">
+      <header className={`bg-[#fff159] py-2.5 ${isMobileViewer ? '' : 'sticky top-0'} z-[1000] shadow-sm`}>
         <div className="max-w-[1200px] mx-auto px-4 md:px-5 flex items-center justify-between gap-4">
           <div className="flex items-center gap-1.5 text-[#2d3277] font-extrabold text-[22px] lowercase tracking-tight cursor-pointer hover:scale-105 transition-transform shrink-0">
             <Handshake className="w-6 h-6" />
