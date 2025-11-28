@@ -100,6 +100,7 @@ export default function PaymentFlowViewerPage() {
   const [isInfoPanelOpen, setIsInfoPanelOpen] = useState(false);
   const [currentPaymentFlow, setCurrentPaymentFlow] = useState<PaymentFlowEntry | null>(null);
   const [viewMode, setViewMode] = useState<ViewMode>("desktop");
+  const [hideHeader, setHideHeader] = useState(false);
 
   useEffect(() => {
     const pf = getPaymentFlowBySlug(slug);
@@ -150,7 +151,7 @@ export default function PaymentFlowViewerPage() {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col relative overflow-hidden">
       {/* Header */}
-      <header className="bg-[#fff059] px-6 py-3 shadow-sm flex items-center justify-between sticky top-0 z-50">
+      <header className={`bg-[#fff059] px-6 py-3 shadow-sm flex items-center justify-between sticky top-0 z-50 ${hideHeader ? 'hidden' : ''}`}>
         <div className="flex items-center gap-4">
           <button 
             onClick={() => router.push("/prototipo")}
