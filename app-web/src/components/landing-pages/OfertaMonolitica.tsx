@@ -1289,6 +1289,26 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
         </div>
       </section>
 
+      {/* Flowchart Section */}
+      <section className="py-12 md:py-20 bg-white">
+        <div className="max-w-[1200px] mx-auto px-5">
+          <RevealOnScroll>
+            <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-3 text-center">Como funciona</h2>
+            <p className="text-gray-600 mb-8 md:mb-12 text-center">Veja o fluxo de compra do Meli+</p>
+            
+            <div className="max-w-[900px] mx-auto overflow-x-auto pb-4 scrollbar-hide">
+              <Image
+                src="https://smolljrfjqknp6nm.public.blob.vercel-storage.com/fluxogramas/fluxograma-de-compra-meli-mais.svg"
+                alt="Fluxograma de compra Meli+"
+                width={900}
+                height={600}
+                className="w-full h-auto min-w-[600px]"
+              />
+            </div>
+          </RevealOnScroll>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-white py-12 text-sm text-gray-500 border-t border-gray-200">
         <div className="max-w-[1200px] mx-auto px-5">

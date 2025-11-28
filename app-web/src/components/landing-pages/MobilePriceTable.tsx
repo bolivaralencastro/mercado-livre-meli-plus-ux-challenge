@@ -203,13 +203,13 @@ export default function MobilePriceTable() {
         className={`sticky top-0 z-[100] py-2 flex justify-center transition-colors duration-200 ${allStuck ? 'bg-white' : 'bg-transparent'}`}
         style={{ height: `${styles.toggleHeight}px` }}
       >
-        <div className="flex bg-white border border-gray-200 p-1 rounded-full shadow-sm">
+        <div className="flex bg-white border border-gray-200 p-1 rounded-full shadow-sm items-center">
           <button
             onClick={() => setBillingCycle("monthly")}
             className={`
-              px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300
+              px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 flex items-center justify-center
               ${billingCycle === "monthly" 
-                ? "bg-[#EFEFEF] text-[#A90F90]" 
+                ? "bg-[#EFEFEF] text-gray-900" 
                 : "bg-transparent text-gray-500"
               }
             `}
@@ -219,9 +219,9 @@ export default function MobilePriceTable() {
           <button
             onClick={() => setBillingCycle("annual")}
             className={`
-              px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 flex items-center gap-1.5
+              px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-1.5
               ${billingCycle === "annual" 
-                ? "bg-[#EFEFEF] text-[#A90F90]" 
+                ? "bg-[#EFEFEF] text-gray-900" 
                 : "bg-transparent text-gray-500"
               }
             `}
