@@ -86,12 +86,12 @@ const styles = {
   bgGray: "#EFEFEF",
   white: "#FFFFFF",
   cardRadius: "24px",
-  headerHeight: 70,
-  topOffsetBase: 82,
+  headerHeight: 56, // Altura do header de cada card
+  toggleHeight: 60, // Altura do toggle sticky
   
-  // Stuck offsets
+  // Stuck offsets para empilhamento mais compacto
   stuckOffset1: 0,
-  stuckOffset2: -14,
+  stuckOffset2: -8,
   stuckOffset3: -16,
 };
 
@@ -100,6 +100,22 @@ export default function MobilePriceTable() {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly");
   const [stuckCards, setStuckCards] = useState<Set<string>>(new Set());
   const containerRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLElement | Window | null>(null);
+
+  // Find the scrollable parent container
+  const findScrollContainer = useCallback((element: HTMLElement | null): HTMLElement | Window => {
+    if (!element) return window;
+    
+    let current: HTMLElement | null = element.parentElement;
+    while (current && current !== document.body) {
+      const style = window.getComputedStyle(current);
+      if (style.overflowY === 'auto' || style.overflowY === 'scroll') {
+        return current;
+      }
+      current = current.parentElement;
+    }
+    return window;
+  }, []);
 
   // Check which cards are stuck
   const checkSticky = useCallback(() => {
@@ -109,9 +125,11 @@ export default function MobilePriceTable() {
     cards.forEach((card) => {
       const rect = card.getBoundingClientRect();
       const computedStyle = window.getComputedStyle(card);
-      const top = parseFloat(computedStyle.top);
+      const topValue = parseFloat(computedStyle.top);
       
-      if (rect.top <= top + 2) {
+      // Card is stuck when its top position matches the sticky top value
+      // Adding a small tolerance of 5px for better detection
+      if (rect.top <= topValue + 5) {
         const id = card.getAttribute('data-mobile-plan-card');
         if (id) newStuckCards.add(id);
       }
@@ -121,14 +139,35 @@ export default function MobilePriceTable() {
   }, []);
 
   useEffect(() => {
-    window.addEventListener('scroll', checkSticky, { passive: true });
+    // Find and store scroll container
+    scrollContainerRef.current = findScrollContainer(containerRef.current);
+    
+    const scrollTarget = scrollContainerRef.current;
+    
+    // Add scroll listener to the correct container
+    if (scrollTarget === window) {
+      window.addEventListener('scroll', checkSticky, { passive: true });
+    } else if (scrollTarget instanceof HTMLElement) {
+      scrollTarget.addEventListener('scroll', checkSticky, { passive: true });
+    }
+    
+    // Initial check
     checkSticky();
     
-    return () => window.removeEventListener('scroll', checkSticky);
-  }, [checkSticky]);
+    // Cleanup
+    return () => {
+      if (scrollTarget === window) {
+        window.removeEventListener('scroll', checkSticky);
+      } else if (scrollTarget instanceof HTMLElement) {
+        scrollTarget.removeEventListener('scroll', checkSticky);
+      }
+    };
+  }, [checkSticky, findScrollContainer]);
 
+  // Calculate top position for each card
+  // Cards stack below the toggle (which is at top: 0)
   const getCardTop = (index: number) => {
-    return styles.topOffsetBase + (styles.headerHeight * index);
+    return styles.toggleHeight + (styles.headerHeight * index);
   };
 
   const getStuckOffset = (index: number) => {
@@ -145,8 +184,11 @@ export default function MobilePriceTable() {
       ref={containerRef}
       className="bg-[#EFEFEF] pb-12"
     >
-      {/* Pricing Toggle */}
-      <div className="sticky top-0 z-[100] bg-[#EFEFEF] py-5 flex justify-center">
+      {/* Pricing Toggle - Sticky at top */}
+      <div 
+        className="sticky top-0 z-[100] bg-[#EFEFEF] py-3 flex justify-center"
+        style={{ height: `${styles.toggleHeight}px` }}
+      >
         <div className="flex bg-[#dcdcdc] p-1 rounded-full">
           <button
             onClick={() => setBillingCycle("monthly")}
@@ -182,31 +224,36 @@ export default function MobilePriceTable() {
           const isStuck = stuckCards.has(plan.id);
           const isLast = index === mobilePlans.length - 1;
           const pricing = billingCycle === "monthly" ? plan.monthly : plan.annual;
+          const cardTop = getCardTop(index);
           
           return (
             <div
               key={plan.id}
               data-mobile-plan-card={plan.id}
               className={`
-                sticky bg-white rounded-3xl shadow-md overflow-hidden
+                sticky bg-white rounded-3xl shadow-lg overflow-hidden
                 flex flex-col transition-transform duration-200
-                ${plan.highlighted ? "border border-[#A90F90]" : "border border-gray-100"}
+                ${plan.highlighted ? "border-2 border-[#A90F90]" : "border border-gray-200"}
                 ${isLast ? "mb-10" : "mb-4"}
               `}
               style={{
-                top: getCardTop(index),
+                top: `${cardTop}px`,
                 zIndex: (index + 1) * 10,
-                minHeight: isLast ? 'auto' : `calc(${styles.headerHeight}px + 260px)`,
+                minHeight: isLast ? 'auto' : `calc(${styles.headerHeight}px + 220px)`,
                 transform: isStuck ? `translateY(${getStuckOffset(index)}px)` : 'translateY(0)',
+                boxShadow: isStuck 
+                  ? '0 10px 40px rgba(0,0,0,0.15)' 
+                  : '0 4px 12px rgba(0,0,0,0.08)',
               }}
             >
               {/* Card Header */}
               <div 
                 className={`
-                  h-[70px] px-5 flex items-center justify-between border-b border-gray-100
-                  cursor-pointer transition-colors duration-300
+                  px-5 flex items-center justify-between border-b border-gray-100
+                  cursor-pointer transition-all duration-300
                   ${isStuck ? "bg-gray-100" : "bg-gray-50"}
                 `}
+                style={{ height: `${styles.headerHeight}px` }}
               >
                 <div className="flex items-center gap-2">
                   <span className="font-extrabold italic text-[#A90F90]">meli+</span>
