@@ -23,7 +23,14 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Proxima Nova', -apple-system, sans-serif; }
 
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
         body {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
             background-color: var(--bg-gray);
             padding-bottom: 50px;
             min-height: 100vh;
