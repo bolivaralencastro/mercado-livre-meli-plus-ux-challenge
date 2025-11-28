@@ -1015,7 +1015,7 @@ export default function OfertaMonoliticaPage() {
         {/* Bottom Section Title */}
         <div className="max-w-[1200px] mx-auto px-5 mt-16 text-center">
           <RevealOnScroll>
-            <h2 className="text-4xl font-semibold text-gray-900 mb-3">São muitos benefícios para você</h2>
+            <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-3">São muitos benefícios para você</h2>
             <p className="text-gray-600 mb-4">Descubra tudo que você ganha ao assinar Meli+</p>
           </RevealOnScroll>
         </div>
@@ -1054,7 +1054,7 @@ export default function OfertaMonoliticaPage() {
       <section className="py-16 text-center relative overflow-visible">
         <div className="max-w-[1200px] mx-auto px-5 relative">
           <RevealOnScroll>
-            <h2 className="text-4xl font-semibold text-gray-900 mb-3">Mais benefícios. Mais economia.</h2>
+            <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-3">Mais benefícios. Mais economia.</h2>
             <p className="text-gray-600 mb-12">Tranforme suas compras no melhor negócio</p>
           </RevealOnScroll>
 
@@ -1106,7 +1106,7 @@ export default function OfertaMonoliticaPage() {
         
         {/* Section Title */}
         <div className="max-w-[1200px] mx-auto px-5 relative z-[2] text-center mb-8">
-          <h2 className="text-4xl font-semibold text-gray-900 mb-3">Escolha o plano ideal para você</h2>
+          <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-3">Escolha o plano ideal para você</h2>
           <p className="text-gray-600">Economia garantida em todos os períodos</p>
         </div>
 
@@ -1155,7 +1155,7 @@ export default function OfertaMonoliticaPage() {
       <section className="py-20 relative overflow-visible">
         <div className="max-w-[1200px] mx-auto px-5 relative z-[2]">
           <RevealOnScroll>
-            <h2 className="text-4xl font-semibold text-gray-900 mb-3 text-center">O que dizem nossos assinantes</h2>
+            <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-3 text-center">O que dizem nossos assinantes</h2>
             <p className="text-gray-600 mb-12 text-center">Milhares de pessoas já aproveitam os benefícios</p>
           </RevealOnScroll>
 
@@ -1170,44 +1170,82 @@ export default function OfertaMonoliticaPage() {
       {/* CTA Section */}
       <section 
         ref={ctaSectionRef}
-        className="relative min-h-screen flex flex-col items-center justify-between bg-black overflow-hidden"
+        className="relative min-h-screen md:min-h-screen flex flex-col items-center justify-between bg-black overflow-hidden"
       >
-        <video
-          ref={ctaVideoRef}
-          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover z-[1]"
-          muted
-          loop
-          playsInline
-          preload="auto"
-        >
-          <source src="https://smolljrfjqknp6nm.public.blob.vercel-storage.com/videos/logo-meli-animacao.webm" type="video/webm" />
-          <source src="https://smolljrfjqknp6nm.public.blob.vercel-storage.com/videos/logo-meli-animacao.mp4" type="video/mp4" />
-        </video>
-        {/* Vinheta sutil nas bordas */}
-        <div 
-          className="absolute inset-0 z-[2] pointer-events-none" 
-          style={{
-            boxShadow: 'inset 0 0 150px 50px rgba(0,0,0,0.5)'
-          }}
-        />
-
-        <RevealOnScroll className="relative z-10 pt-16 text-center">
-          <h2 className="text-5xl font-extrabold text-white mb-4 drop-shadow-2xl">Tenha seu Meli+</h2>
-          <p className="text-white/90">E comece a aproveitar todos os benefícios agora mesmo</p>
-        </RevealOnScroll>
-
-        <div className="flex-1" />
-
-        <RevealOnScroll className="relative z-10 pb-16">
-          <a
-            href="https://www.mercadolivre.com.br/assinaturas/melimais/planos?plan_selected=MEGA#origin=redirect-vdp-meliplus"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-gradient-to-b from-[#65a5ff] to-[#3483fa] text-white px-16 py-5 text-lg rounded-md font-semibold shadow-lg hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl transition-all duration-300"
+        {/* Video Background for Desktop / Video Block for Mobile */}
+        <div className="absolute inset-0 md:block hidden">
+          <video
+            ref={ctaVideoRef}
+            className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover z-[1]"
+            muted
+            loop
+            playsInline
+            preload="auto"
           >
-            Quero ser Meli+
-          </a>
-        </RevealOnScroll>
+            <source src="https://smolljrfjqknp6nm.public.blob.vercel-storage.com/videos/logo-meli-animacao.webm" type="video/webm" />
+            <source src="https://smolljrfjqknp6nm.public.blob.vercel-storage.com/videos/logo-meli-animacao.mp4" type="video/mp4" />
+          </video>
+          {/* Vinheta sutil nas bordas */}
+          <div 
+            className="absolute inset-0 z-[2] pointer-events-none" 
+            style={{
+              boxShadow: 'inset 0 0 150px 50px rgba(0,0,0,0.5)'
+            }}
+          />
+        </div>
+
+        {/* Mobile Layout: Text Top, Video Bottom */}
+        <div className="md:hidden w-full flex flex-col h-full min-h-screen">
+          <div className="bg-black pt-16 pb-8 px-5 text-center z-10">
+            <RevealOnScroll>
+              <h2 className="text-3xl font-extrabold text-white mb-4 drop-shadow-2xl">Tenha seu Meli+</h2>
+              <p className="text-white/90 mb-8">E comece a aproveitar todos os benefícios agora mesmo</p>
+              <a
+                href="https://www.mercadolivre.com.br/assinaturas/melimais/planos?plan_selected=MEGA#origin=redirect-vdp-meliplus"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-gradient-to-b from-[#65a5ff] to-[#3483fa] text-white px-12 py-4 text-lg rounded-md font-semibold shadow-lg"
+              >
+                Quero ser Meli+
+              </a>
+            </RevealOnScroll>
+          </div>
+          
+          <div className="flex-1 relative w-full bg-black flex items-center justify-center overflow-hidden">
+             <video
+              className="w-full h-auto object-contain"
+              muted
+              loop
+              playsInline
+              autoPlay
+              preload="auto"
+            >
+              <source src="https://smolljrfjqknp6nm.public.blob.vercel-storage.com/videos/logo-meli-animacao.webm" type="video/webm" />
+              <source src="https://smolljrfjqknp6nm.public.blob.vercel-storage.com/videos/logo-meli-animacao.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        {/* Desktop Content Overlay */}
+        <div className="hidden md:flex flex-col items-center justify-between w-full h-full min-h-screen absolute inset-0 z-10 py-16">
+          <RevealOnScroll className="text-center">
+            <h2 className="text-5xl font-extrabold text-white mb-4 drop-shadow-2xl">Tenha seu Meli+</h2>
+            <p className="text-white/90">E comece a aproveitar todos os benefícios agora mesmo</p>
+          </RevealOnScroll>
+
+          <div className="flex-1" />
+
+          <RevealOnScroll>
+            <a
+              href="https://www.mercadolivre.com.br/assinaturas/melimais/planos?plan_selected=MEGA#origin=redirect-vdp-meliplus"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gradient-to-b from-[#65a5ff] to-[#3483fa] text-white px-16 py-5 text-lg rounded-md font-semibold shadow-lg hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl transition-all duration-300"
+            >
+              Quero ser Meli+
+            </a>
+          </RevealOnScroll>
+        </div>
       </section>
 
       {/* FAQ Section */}
