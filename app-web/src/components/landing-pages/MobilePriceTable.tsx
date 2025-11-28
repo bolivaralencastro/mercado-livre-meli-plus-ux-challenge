@@ -99,6 +99,7 @@ const styles = {
 export default function MobilePriceTable() {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly");
   const [stuckCards, setStuckCards] = useState<Set<string>>(new Set());
+  const [allStuck, setAllStuck] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLElement | Window | null>(null);
 
@@ -121,6 +122,7 @@ export default function MobilePriceTable() {
   const checkSticky = useCallback(() => {
     const cards = document.querySelectorAll('[data-mobile-plan-card]');
     const newStuckCards = new Set<string>();
+    let stuckCount = 0;
     
     cards.forEach((card) => {
       const rect = card.getBoundingClientRect();
@@ -131,11 +133,16 @@ export default function MobilePriceTable() {
       // Adding a small tolerance of 5px for better detection
       if (rect.top <= topValue + 5) {
         const id = card.getAttribute('data-mobile-plan-card');
-        if (id) newStuckCards.add(id);
+        if (id) {
+          newStuckCards.add(id);
+          stuckCount++;
+        }
       }
     });
     
     setStuckCards(newStuckCards);
+    // When all 3 cards are stuck, they should move together
+    setAllStuck(stuckCount === 3);
   }, []);
 
   useEffect(() => {
@@ -185,11 +192,11 @@ export default function MobilePriceTable() {
   return (
     <div 
       ref={containerRef}
-      className="bg-white pb-12"
+      className="pb-8"
     >
       {/* Pricing Toggle - Sticky at top */}
       <div 
-        className="sticky top-0 z-[100] bg-transparent py-3 flex justify-center"
+        className={`sticky top-0 z-[100] py-3 flex justify-center transition-colors duration-200 ${allStuck ? 'bg-white' : 'bg-transparent'}`}
         style={{ height: `${styles.toggleHeight}px` }}
       >
         <div className="flex bg-white border border-gray-200 p-1 rounded-full shadow-sm">

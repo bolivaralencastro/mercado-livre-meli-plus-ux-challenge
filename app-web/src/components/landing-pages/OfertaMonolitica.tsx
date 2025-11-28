@@ -346,17 +346,17 @@ function BenefitCard({
   delay = 0
 }: { 
   icon: React.ElementType; 
-  title: string; 
+  title: React.ReactNode; 
   description: React.ReactNode;
   delay?: number;
 }) {
   return (
     <RevealOnScroll delay={delay}>
-      <div className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-transparent transition-all duration-300 h-full">
+      <div className="bg-white p-6 md:p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-transparent transition-all duration-300 h-full">
         <div className="text-[#2968c8] text-3xl mb-4 transition-transform duration-300 group-hover:scale-110">
           <Icon size={32} />
         </div>
-        <h3 className="text-xl font-semibold mb-2 text-gray-900">{title}</h3>
+        <h3 className="text-lg md:text-xl font-semibold mb-2 text-gray-900">{title}</h3>
         <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
       </div>
     </RevealOnScroll>
@@ -569,8 +569,8 @@ function StreamingCard({
             Disney+, Deezer e outros inclusos. Descontos exclusivos em Max e Paramount+.
           </p>
           
-          {/* Streaming Logos */}
-          <div className="mt-auto grid grid-cols-2 gap-3 mb-3">
+          {/* Streaming Logos - 4 columns on mobile, 2 on desktop */}
+          <div className="mt-auto grid grid-cols-4 md:grid-cols-2 gap-2 md:gap-3 mb-3">
             {[
               { src: "https://http2.mlstatic.com/resources/frontend/statics/loyal/partners/new_vdp/partner-disney.png", alt: "Disney+" },
               { src: "https://http2.mlstatic.com/resources/frontend/statics/loyal/partners/new_vdp/partner-hbo.png", alt: "HBO Max" },
@@ -579,14 +579,14 @@ function StreamingCard({
             ].map((logo) => (
               <div 
                 key={logo.alt}
-                className="aspect-[3/2] rounded-lg border border-gray-200 flex items-center justify-center bg-white shadow-sm"
+                className="aspect-square md:aspect-[3/2] rounded-lg border border-gray-200 flex items-center justify-center bg-white shadow-sm"
               >
                 <Image 
                   src={logo.src} 
                   alt={logo.alt} 
                   width={60} 
                   height={60} 
-                  className="w-[65%] h-[65%] object-contain"
+                  className="w-[70%] md:w-[65%] h-[70%] md:h-[65%] object-contain"
                   loading="eager"
                 />
               </div>
@@ -1058,16 +1058,16 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
       <section className="py-16 text-center relative overflow-visible">
         <div className="max-w-[1200px] mx-auto px-5 relative">
           <RevealOnScroll>
-            <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-3">Mais benefícios. Mais economia.</h2>
+            <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-3">Mais benefícios.<br className="md:hidden" /><span className="hidden md:inline"> </span>Mais economia.</h2>
             <p className="text-gray-600 mb-12">Tranforme suas compras no melhor negócio</p>
           </RevealOnScroll>
 
           {/* Mobile: Horizontal scroll, Desktop: Grid */}
-          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 text-left overflow-x-auto md:overflow-visible pb-4 md:pb-0 -mx-5 px-5 md:mx-0 md:px-0 snap-x snap-mandatory md:snap-none scrollbar-hide">
-            <div className="min-w-[280px] md:min-w-0 snap-start">
+          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 text-left overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x snap-mandatory md:snap-none scrollbar-hide">
+            <div className="min-w-[280px] md:min-w-0 snap-start pl-0 first:pl-0">
               <BenefitCard
                 icon={Truck}
-                title="Frete grátis rápido"
+                title={<>Frete grátis<br className="md:hidden" /><span className="hidden md:inline"> </span>rápido</>}
                 description="Em milhões de produtos a partir de R$ 19."
                 delay={0}
               />
@@ -1080,10 +1080,10 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
                 delay={0.05}
               />
             </div>
-            <div className="min-w-[280px] md:min-w-0 snap-start">
+            <div className="min-w-[280px] md:min-w-0 snap-start pr-5 md:pr-0">
               <BenefitCard
                 icon={Shield}
-                title="Seu dinheiro rende mais"
+                title="Seu dinheiro rende muito mais"
                 description="120% do CDI nas Caixinhas do Mercado Pago."
                 delay={0.1}
               />
@@ -1093,7 +1093,7 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
       </section>
 
       {/* Pricing Section */}
-      <section id="planos" className="py-20 relative overflow-visible">
+      <section id="planos" className="py-12 md:py-20 relative overflow-hidden md:overflow-visible">
         {/* Piggy Bank Decoration - Hidden on mobile */}
         <div 
           className="absolute left-[-20px] w-[400px] h-[400px] bg-contain bg-center bg-no-repeat z-[100] pointer-events-none hidden md:block"
@@ -1163,16 +1163,19 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 relative overflow-visible">
+      <section className="py-12 md:py-20 relative overflow-hidden md:overflow-visible">
         <div className="max-w-[1200px] mx-auto px-5 relative z-[2]">
           <RevealOnScroll>
             <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-3 text-center">O que dizem nossos assinantes</h2>
-            <p className="text-gray-600 mb-12 text-center">Milhares de pessoas já aproveitam os benefícios</p>
+            <p className="text-gray-600 mb-8 md:mb-12 text-center">Milhares de pessoas já aproveitam os benefícios</p>
           </RevealOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Mobile: Horizontal scroll, Desktop: Grid */}
+          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x snap-mandatory md:snap-none scrollbar-hide">
             {testimonials.map((testimonial, i) => (
-              <TestimonialCard key={testimonial.name} testimonial={testimonial} index={i} />
+              <div key={testimonial.name} className="min-w-[300px] md:min-w-0 snap-start last:pr-5 md:last:pr-0">
+                <TestimonialCard testimonial={testimonial} index={i} />
+              </div>
             ))}
           </div>
         </div>
@@ -1181,7 +1184,7 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
       {/* CTA Section */}
       <section 
         ref={ctaSectionRef}
-        className="relative min-h-screen md:min-h-screen flex flex-col items-center justify-between bg-white md:bg-black overflow-hidden"
+        className="relative min-h-[auto] md:min-h-screen flex flex-col items-center justify-between bg-white md:bg-black overflow-hidden"
       >
         {/* Video Background for Desktop / Video Block for Mobile */}
         <div className="absolute inset-0 md:block hidden">
@@ -1206,8 +1209,8 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
         </div>
 
         {/* Mobile Layout: Text Top, Video Bottom */}
-        <div className="md:hidden w-full flex flex-col h-full min-h-screen">
-          <div className="pt-16 px-5 text-center z-10">
+        <div className="md:hidden w-full flex flex-col h-full min-h-[auto]">
+          <div className="pt-12 px-5 text-center z-10">
             <RevealOnScroll>
               <h2 className="text-3xl font-extrabold text-gray-900 mb-4">Tenha seu Meli+</h2>
               <p className="text-gray-600 mb-8">E comece a aproveitar todos os benefícios agora mesmo</p>
@@ -1222,7 +1225,7 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
             </RevealOnScroll>
           </div>
           
-          <div className="flex-1 relative w-full flex items-center justify-center overflow-hidden">
+          <div className="relative w-full flex items-center justify-center overflow-hidden pb-0">
              <video
               className="w-full h-auto object-contain"
               muted
