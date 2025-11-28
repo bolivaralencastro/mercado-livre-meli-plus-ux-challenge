@@ -1062,34 +1062,41 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
             <p className="text-gray-600 mb-12">Tranforme suas compras no melhor negócio</p>
           </RevealOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-            <BenefitCard
-              icon={Truck}
-              title="Frete grátis rápido"
-              description="Em milhões de produtos a partir de R$ 19."
-              delay={0}
-            />
-            <BenefitCard
-              icon={Coins}
-              title="Cashback que volta para você"
-              description="Até 3% no ML, 0,5% em qualquer compra e até 10% em parceiros."
-              delay={0.05}
-            />
-            <BenefitCard
-              icon={Shield}
-              title="Seu dinheiro rende mais"
-              description="120% do CDI nas Caixinhas do Mercado Pago."
-              delay={0.1}
-            />
+          {/* Mobile: Horizontal scroll, Desktop: Grid */}
+          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 text-left overflow-x-auto md:overflow-visible pb-4 md:pb-0 -mx-5 px-5 md:mx-0 md:px-0 snap-x snap-mandatory md:snap-none scrollbar-hide">
+            <div className="min-w-[280px] md:min-w-0 snap-start">
+              <BenefitCard
+                icon={Truck}
+                title="Frete grátis rápido"
+                description="Em milhões de produtos a partir de R$ 19."
+                delay={0}
+              />
+            </div>
+            <div className="min-w-[280px] md:min-w-0 snap-start">
+              <BenefitCard
+                icon={Coins}
+                title="Cashback que volta para você"
+                description="Até 3% no ML, 0,5% em qualquer compra e até 10% em parceiros."
+                delay={0.05}
+              />
+            </div>
+            <div className="min-w-[280px] md:min-w-0 snap-start">
+              <BenefitCard
+                icon={Shield}
+                title="Seu dinheiro rende mais"
+                description="120% do CDI nas Caixinhas do Mercado Pago."
+                delay={0.1}
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Pricing Section */}
       <section id="planos" className="py-20 relative overflow-visible">
-        {/* Piggy Bank Decoration - Aligned with title */}
+        {/* Piggy Bank Decoration - Hidden on mobile */}
         <div 
-          className="absolute left-[-20px] w-[400px] h-[400px] bg-contain bg-center bg-no-repeat z-[100] pointer-events-none opacity-100 md:opacity-100 max-md:opacity-20 max-md:scale-50 max-md:left-[-150px]"
+          className="absolute left-[-20px] w-[400px] h-[400px] bg-contain bg-center bg-no-repeat z-[100] pointer-events-none hidden md:block"
           style={{ 
             backgroundImage: "url('https://smolljrfjqknp6nm.public.blob.vercel-storage.com/assets/piggy-bank-image.webp')",
             top: '-50px',
@@ -1097,9 +1104,9 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
           }}
         />
         
-        {/* Delivery Man Decoration */}
+        {/* Delivery Man Decoration - Hidden on mobile */}
         <div 
-          className="absolute right-[-72px] w-[400px] h-[500px] z-[100] pointer-events-none opacity-100 md:opacity-100 max-md:opacity-20 max-md:scale-50 max-md:right-[-150px]"
+          className="absolute right-[-72px] w-[400px] h-[500px] z-[100] pointer-events-none hidden md:block"
           style={{ bottom: '-200px' }}
         >
           <div 
@@ -1174,7 +1181,7 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
       {/* CTA Section */}
       <section 
         ref={ctaSectionRef}
-        className="relative min-h-screen md:min-h-screen flex flex-col items-center justify-between bg-black overflow-hidden"
+        className="relative min-h-screen md:min-h-screen flex flex-col items-center justify-between bg-white md:bg-black overflow-hidden"
       >
         {/* Video Background for Desktop / Video Block for Mobile */}
         <div className="absolute inset-0 md:block hidden">
@@ -1301,12 +1308,19 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
         </div>
       </footer>
 
-      {/* Float Animation Keyframes */}
+      {/* Float Animation Keyframes and Utility Classes */}
       <style jsx global>{`
         @keyframes float {
           0% { transform: translateY(0px); }
           50% { transform: translateY(-5px); }
           100% { transform: translateY(0px); }
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
     </div>

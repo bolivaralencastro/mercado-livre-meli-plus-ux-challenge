@@ -189,7 +189,7 @@ export default function MobilePriceTable() {
     >
       {/* Pricing Toggle - Sticky at top */}
       <div 
-        className="sticky top-0 z-[100] bg-white py-3 flex justify-center"
+        className="sticky top-0 z-[100] bg-transparent py-3 flex justify-center"
         style={{ height: `${styles.toggleHeight}px` }}
       >
         <div className="flex bg-white border border-gray-200 p-1 rounded-full shadow-sm">
