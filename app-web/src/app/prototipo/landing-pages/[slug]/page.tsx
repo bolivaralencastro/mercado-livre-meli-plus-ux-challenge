@@ -2,7 +2,7 @@
 
 import { useRouter, useParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import { ArrowLeft, ChevronLeft, ChevronRight, Info, X, Monitor, Smartphone, Workflow } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Info, X, Monitor, Smartphone, Workflow, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
 import { landingPages, getLandingPageBySlug, LandingPageEntry } from "@/lib/landing-pages";
 import OfertaMonoliticaPage from "@/components/landing-pages/OfertaMonolitica";
 import CinemaPage from "@/components/landing-pages/Cinema";
@@ -17,16 +17,6 @@ function FlowchartViewer({ url }: { url: string }) {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
-
-  const handleWheel = (e: React.WheelEvent) => {
-    if (e.ctrlKey || e.metaKey) {
-      e.preventDefault();
-      const delta = e.deltaY > 0 ? 0.9 : 1.1;
-      setScale(s => Math.min(Math.max(0.1, s * delta), 5));
-    } else {
-       setPosition(p => ({ x: p.x - e.deltaX, y: p.y - e.deltaY }));
-    }
-  };
 
   const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true);
@@ -49,37 +39,39 @@ function FlowchartViewer({ url }: { url: string }) {
   return (
     <div 
       className="w-full h-full overflow-hidden bg-[#f0f2f5] cursor-move relative flex items-center justify-center"
-      onWheel={handleWheel}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
     >
-      <div className="absolute bottom-8 right-8 flex gap-2 z-10">
-        <div className="bg-white rounded-lg shadow-lg p-1 flex gap-1">
-          <button 
-            onClick={() => setScale(s => Math.max(0.1, s - 0.1))} 
-            className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded text-gray-600 font-bold"
-            title="Zoom Out"
-          >
-            -
-          </button>
-          <div className="w-px bg-gray-200 my-1" />
-          <button 
-            onClick={() => { setScale(1); setPosition({x:0,y:0}); }} 
-            className="px-3 h-8 flex items-center justify-center hover:bg-gray-100 rounded text-gray-600 text-xs font-medium"
-            title="Reset View"
-          >
-            {Math.round(scale * 100)}%
-          </button>
-          <div className="w-px bg-gray-200 my-1" />
+      <div className="absolute top-8 right-8 flex flex-col gap-2 z-10">
+        <div className="bg-white rounded-lg shadow-lg p-1 flex flex-col gap-1">
           <button 
             onClick={() => setScale(s => Math.min(s + 0.1, 5))} 
-            className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded text-gray-600 font-bold"
+            className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded text-gray-600"
             title="Zoom In"
           >
-            +
+            <ZoomIn className="w-4 h-4" />
           </button>
+          <div className="h-px bg-gray-200 mx-1" />
+          <button 
+            onClick={() => setScale(s => Math.max(0.1, s - 0.1))} 
+            className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded text-gray-600"
+            title="Zoom Out"
+          >
+            <ZoomOut className="w-4 h-4" />
+          </button>
+          <div className="h-px bg-gray-200 mx-1" />
+          <button 
+            onClick={() => { setScale(1); setPosition({x:0,y:0}); }} 
+            className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded text-gray-600"
+            title="Reset View"
+          >
+            <RotateCcw className="w-4 h-4" />
+          </button>
+        </div>
+        <div className="bg-white/80 backdrop-blur px-2 py-1 rounded text-xs font-medium text-center shadow-sm">
+          {Math.round(scale * 100)}%
         </div>
       </div>
       
@@ -251,23 +243,21 @@ export default function LandingPageViewerPage() {
                 <span className="text-xs font-medium hidden sm:inline">Mobile</span>
               </button>
               
-              {currentLandingPage.flowchartUrl && (
-                <button
-                  onClick={() => setViewMode("flowchart")}
-                  className={`
-                    p-2 rounded-md transition-all duration-200 flex items-center gap-1.5
-                    ${viewMode === "flowchart" 
-                      ? "bg-white text-[#2D3277] shadow-sm" 
-                      : "text-gray-500 hover:text-gray-700"
-                    }
-                  `}
-                  aria-label="Visualizar fluxograma"
-                  title="Fluxograma"
-                >
-                  <Workflow className="w-4 h-4" />
-                  <span className="text-xs font-medium hidden sm:inline">Fluxo</span>
-                </button>
-              )}
+              <button
+                onClick={() => setViewMode("flowchart")}
+                className={`
+                  p-2 rounded-md transition-all duration-200 flex items-center gap-1.5
+                  ${viewMode === "flowchart" 
+                    ? "bg-white text-[#2D3277] shadow-sm" 
+                    : "text-gray-500 hover:text-gray-700"
+                  }
+                `}
+                aria-label="Visualizar fluxograma"
+                title="Fluxograma"
+              >
+                <Workflow className="w-4 h-4" />
+                <span className="text-xs font-medium hidden sm:inline">Fluxo</span>
+              </button>
             </div>
 
             <div className="h-6 w-px bg-gray-200" />
@@ -356,9 +346,21 @@ export default function LandingPageViewerPage() {
             {currentLandingPage.slug === 'financas' && <FinancasPage />}
             {currentLandingPage.slug === 'logistica' && <LogisticaPage />}
           </div>
-        ) : viewMode === "flowchart" && currentLandingPage.flowchartUrl ? (
+        ) : viewMode === "flowchart" ? (
           /* Flowchart view */
-          <FlowchartViewer url={currentLandingPage.flowchartUrl} />
+          currentLandingPage.flowchartUrl ? (
+            <FlowchartViewer url={currentLandingPage.flowchartUrl} />
+          ) : (
+            <div className="flex flex-col items-center justify-center h-full text-gray-400 gap-4">
+              <div className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center">
+                <Workflow className="w-10 h-10 opacity-30" />
+              </div>
+              <div className="text-center">
+                <h3 className="text-lg font-medium text-gray-600">Nenhum fluxograma disponível</h3>
+                <p className="text-sm mt-1">Este protótipo ainda não possui um fluxo mapeado.</p>
+              </div>
+            </div>
+          )
         ) : (
           /* Mobile view - Phone frame */
           <div className="flex flex-col items-center">
