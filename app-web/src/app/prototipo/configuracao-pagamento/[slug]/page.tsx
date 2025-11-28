@@ -116,8 +116,10 @@ export default function PaymentFlowViewerPage() {
       if (e.key === '1') setViewMode('desktop');
       if (e.key === '2') setViewMode('mobile');
       if (e.key === '3') setViewMode('flowchart');
+      if (e.key === 'm' || e.key === 'M') setViewMode((prev) => prev === "desktop" ? "mobile" : "desktop");
       if (e.key === "Escape") setIsInfoPanelOpen(false);
       if (e.key === "i" || e.key === "I") setIsInfoPanelOpen((prev) => !prev);
+      if (e.key === "h" || e.key === "H") setHideHeader((prev) => !prev);
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
@@ -213,9 +215,19 @@ export default function PaymentFlowViewerPage() {
       </header>
 
       {/* Main Content Area */}
-      <main className="flex-1 relative overflow-hidden flex flex-col">
+      <main 
+        className={`
+          flex-1 relative overflow-hidden flex flex-col transition-all duration-300
+          ${viewMode === "mobile" 
+            ? "bg-[#1a1a2e] items-center justify-center py-8 px-4" 
+            : viewMode === "flowchart"
+              ? "bg-[#f0f2f5]"
+              : "bg-gray-100"
+          }
+        `}
+      >
         {viewMode === "desktop" && (
-          <div className="flex-1 overflow-auto bg-gray-100">
+          <div className="flex-1 overflow-auto bg-gray-100 w-full">
             <div className="min-h-full">
               <PaymentConfigPrototype />
             </div>
@@ -223,38 +235,49 @@ export default function PaymentFlowViewerPage() {
         )}
 
         {viewMode === "mobile" && (
-          <div className="flex-1 bg-gray-900 flex items-center justify-center p-4 sm:p-8">
-            <div className="relative w-full max-w-[375px] h-[812px] bg-white rounded-[3rem] shadow-2xl overflow-hidden border-[8px] border-gray-800">
-              {/* Notch */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-gray-800 rounded-b-2xl z-20"></div>
-              
-              {/* Status Bar Simulation */}
-              <div className="h-12 bg-white w-full absolute top-0 left-0 z-10 flex justify-between items-center px-6 pt-2 text-xs font-medium text-gray-900">
-                <span>9:41</span>
-                <div className="flex gap-1.5">
-                  <div className="w-4 h-2.5 bg-gray-900 rounded-[1px]"></div>
-                  <div className="w-4 h-2.5 bg-gray-900 rounded-[1px]"></div>
-                  <div className="w-5 h-2.5 border border-gray-900 rounded-[2px] relative">
-                    <div className="absolute inset-0.5 bg-gray-900"></div>
-                  </div>
-                </div>
+          <div className="flex flex-col items-center">
+            {/* Phone Frame */}
+            <div 
+              className="relative bg-[#1c1c1e] rounded-[50px] p-3 shadow-2xl"
+              style={{
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.1)",
+              }}
+            >
+              {/* Notch / Dynamic Island */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120px] h-[35px] bg-[#1c1c1e] rounded-b-3xl z-10 flex items-center justify-center">
+                <div className="w-[80px] h-[25px] bg-black rounded-full" />
               </div>
-
-              {/* Iframe Content */}
-              <iframe
-                src={`/prototipo/configuracao-pagamento/${slug}/standalone`}
-                className="w-full h-full pt-8 bg-gray-50"
-                title="Mobile Preview"
-              />
+              
+              {/* Screen */}
+              <div 
+                className="bg-white rounded-[38px] overflow-hidden relative"
+                style={{
+                  width: "375px",
+                  height: "calc(100vh - 180px)",
+                  maxHeight: "812px",
+                  minHeight: "600px",
+                }}
+              >
+                <iframe
+                  src={`/prototipo/configuracao-pagamento/${slug}/standalone`}
+                  className="w-full h-full border-none"
+                  title="Mobile Preview"
+                />
+              </div>
               
               {/* Home Indicator */}
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-gray-900 rounded-full z-20"></div>
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-[134px] h-[5px] bg-white/30 rounded-full" />
             </div>
+            
+            {/* Device label */}
+            <p className="mt-4 text-gray-400 text-sm">
+              iPhone 14 Pro • 375 × 812
+            </p>
           </div>
         )}
 
         {viewMode === "flowchart" && (
-          <div className="flex-1 bg-white relative">
+          <div className="flex-1 bg-white relative w-full h-full">
             {currentPaymentFlow.flowchartUrl ? (
               <FlowchartViewer url={currentPaymentFlow.flowchartUrl} />
             ) : (
