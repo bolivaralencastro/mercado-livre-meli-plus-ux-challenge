@@ -581,7 +581,7 @@ export default function LogisticaPage() {
             </div>
             
             <h1 className={styles.heroTitle}>
-              Sua última compra com frete pago deveria ter sido a última.
+              <span className="bg-gradient-to-r from-[#65a5ff] to-[#3483fa] bg-clip-text text-transparent">Sua última compra com frete pago</span> deveria ter sido a última.
             </h1>
             
             <p className={styles.subH}>
@@ -590,7 +590,7 @@ export default function LogisticaPage() {
             </p>
             
             <div className={styles.bonusBlock}>
-              <span className={`material-icons-round ${styles.bonusIcon}`}>redeem</span>
+              <span className={`material-icons-round ${styles.bonusIcon}`} style={{ color: '#00a650' }}>redeem</span>
               <div className={styles.bonusText}>
                 <strong>Bônus incluso:</strong>
                 Streamings, rendimento maior e cashback — tudo no mesmo plano Meli+ Mega.

@@ -591,8 +591,9 @@ export default function FinancasPage() {
             </div>
             
             <h1 className={styles.heroTitle}>
-              Seu dinheiro parado está <br />
-              <span className={styles.highlightNegative}>rendendo menos</span> do que deveria.
+              Seu dinheiro parado <br />
+              está <span className={styles.highlightNegative}>rendendo menos</span> <br />
+              do que deveria.
             </h1>
             
             <p className={styles.subH}>
