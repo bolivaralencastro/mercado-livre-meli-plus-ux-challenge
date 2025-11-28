@@ -167,7 +167,10 @@ export default function MobilePriceTable() {
   // Calculate top position for each card
   // Cards stack below the toggle (which is at top: 0)
   const getCardTop = (index: number) => {
-    return styles.toggleHeight + (styles.headerHeight * index);
+    // Base offset for the first card (toggle height + some spacing)
+    const baseOffset = styles.toggleHeight + 20;
+    // Each subsequent card is offset by the header height of the previous cards
+    return baseOffset + (styles.headerHeight * index);
   };
 
   const getStuckOffset = (index: number) => {
@@ -189,13 +192,13 @@ export default function MobilePriceTable() {
         className="sticky top-0 z-[100] bg-white py-3 flex justify-center"
         style={{ height: `${styles.toggleHeight}px` }}
       >
-        <div className="flex bg-[#dcdcdc] p-1 rounded-full">
+        <div className="flex bg-white border border-gray-200 p-1 rounded-full shadow-sm">
           <button
             onClick={() => setBillingCycle("monthly")}
             className={`
               px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300
               ${billingCycle === "monthly" 
-                ? "bg-white text-[#A90F90] shadow-md" 
+                ? "bg-[#EFEFEF] text-[#A90F90]" 
                 : "bg-transparent text-gray-500"
               }
             `}
@@ -207,7 +210,7 @@ export default function MobilePriceTable() {
             className={`
               px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 flex items-center gap-1.5
               ${billingCycle === "annual" 
-                ? "bg-white text-[#A90F90] shadow-md" 
+                ? "bg-[#EFEFEF] text-[#A90F90]" 
                 : "bg-transparent text-gray-500"
               }
             `}
