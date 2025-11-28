@@ -1019,7 +1019,7 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
         {/* Bottom Section Title */}
         <div className="max-w-[1200px] mx-auto px-5 mt-16 text-center">
           <RevealOnScroll>
-            <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-3">São muitos benefícios para você</h2>
+            <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-3">São muitos benefícios<br className="md:hidden" /><span className="hidden md:inline"> </span>para você</h2>
             <p className="text-gray-600 mb-4">Descubra tudo que você ganha ao assinar Meli+</p>
           </RevealOnScroll>
         </div>
@@ -1117,7 +1117,7 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
         
         {/* Section Title */}
         <div className="max-w-[1200px] mx-auto px-5 relative z-[2] text-center mb-8">
-          <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-3">Escolha o plano ideal para você</h2>
+          <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-3">Escolha o plano<br className="md:hidden" /><span className="hidden md:inline"> </span>ideal para você</h2>
           <p className="text-gray-600">Economia garantida em todos os períodos</p>
         </div>
 
@@ -1166,7 +1166,7 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
       <section className="py-8 md:py-20 relative overflow-hidden md:overflow-visible">
         <div className="max-w-[1200px] mx-auto px-5 relative z-[2]">
           <RevealOnScroll>
-            <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-3 text-center">O que dizem nossos assinantes</h2>
+            <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-3 text-center">O que dizem<br className="md:hidden" /><span className="hidden md:inline"> </span>nossos assinantes</h2>
             <p className="text-gray-600 mb-8 md:mb-12 text-center">Milhares de pessoas já aproveitam os benefícios</p>
           </RevealOnScroll>
 
@@ -1208,12 +1208,12 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
           />
         </div>
 
-        {/* Mobile Layout: Title Top, Video Middle, Button Bottom */}
+        {/* Mobile Layout: Title Top, Video Bottom */}
         <div className="md:hidden w-full flex flex-col h-full min-h-[auto]">
           <div className="pt-12 px-5 text-center z-10">
             <RevealOnScroll>
-              <h2 className="text-3xl font-extrabold text-gray-900 mb-4">Tenha seu Meli+</h2>
-              <p className="text-gray-600">E comece a aproveitar todos os benefícios agora mesmo</p>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Tenha seu Meli+</h2>
+              <p className="text-gray-600">E comece a aproveitar<br />todos os benefícios agora mesmo</p>
             </RevealOnScroll>
           </div>
           
@@ -1230,26 +1230,13 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
               <source src="https://smolljrfjqknp6nm.public.blob.vercel-storage.com/videos/logo-meli-animacao.mp4" type="video/mp4" />
             </video>
           </div>
-          
-          <div className="px-5 pb-8 text-center z-10">
-            <RevealOnScroll>
-              <a
-                href="https://www.mercadolivre.com.br/assinaturas/melimais/planos?plan_selected=MEGA#origin=redirect-vdp-meliplus"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-gradient-to-b from-[#65a5ff] to-[#3483fa] text-white px-12 py-4 text-lg rounded-md font-semibold shadow-lg w-full"
-              >
-                Quero ser Meli+
-              </a>
-            </RevealOnScroll>
-          </div>
         </div>
 
         {/* Desktop Content Overlay */}
         <div className="hidden md:flex flex-col items-center justify-between w-full h-full min-h-screen absolute inset-0 z-10 py-16">
           <RevealOnScroll className="text-center">
-            <h2 className="text-5xl font-extrabold text-white mb-4 drop-shadow-2xl">Tenha seu Meli+</h2>
-            <p className="text-white/90">E comece a aproveitar todos os benefícios agora mesmo</p>
+            <h2 className="text-4xl font-semibold text-white mb-4 drop-shadow-2xl">Tenha seu Meli+</h2>
+            <p className="text-white/90">E comece a aproveitar<br />todos os benefícios agora mesmo</p>
           </RevealOnScroll>
 
           <div className="flex-1" />
@@ -1271,6 +1258,18 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
       <section className="py-12 md:py-20 bg-gray-200">
         <div className="max-w-[1200px] mx-auto px-5">
           <RevealOnScroll>
+            {/* Mobile CTA Button */}
+            <div className="md:hidden text-center mb-8">
+              <a
+                href="https://www.mercadolivre.com.br/assinaturas/melimais/planos?plan_selected=MEGA#origin=redirect-vdp-meliplus"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-gradient-to-b from-[#65a5ff] to-[#3483fa] text-white px-12 py-4 text-lg rounded-md font-semibold shadow-lg w-full"
+              >
+                Quero ser Meli+
+              </a>
+            </div>
+            
             <h2 className="text-lg md:text-2xl font-extrabold text-gray-700 text-center mb-8 md:mb-12 uppercase tracking-wider">
               Perguntas Frequentes
             </h2>
@@ -1284,26 +1283,6 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
                   onToggle={() => setOpenFaq(openFaq === i ? -1 : i)}
                 />
               ))}
-            </div>
-          </RevealOnScroll>
-        </div>
-      </section>
-
-      {/* Flowchart Section */}
-      <section className="py-12 md:py-20 bg-white">
-        <div className="max-w-[1200px] mx-auto px-5">
-          <RevealOnScroll>
-            <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-3 text-center">Como funciona</h2>
-            <p className="text-gray-600 mb-8 md:mb-12 text-center">Veja o fluxo de compra do Meli+</p>
-            
-            <div className="max-w-[900px] mx-auto overflow-x-auto pb-4 scrollbar-hide">
-              <Image
-                src="https://smolljrfjqknp6nm.public.blob.vercel-storage.com/fluxogramas/fluxograma-de-compra-meli-mais.svg"
-                alt="Fluxograma de compra Meli+"
-                width={900}
-                height={600}
-                className="w-full h-auto min-w-[600px]"
-              />
             </div>
           </RevealOnScroll>
         </div>

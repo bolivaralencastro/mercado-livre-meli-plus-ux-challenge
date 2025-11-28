@@ -354,7 +354,7 @@ export default function MobilePriceTable() {
                     href={`https://www.mercadolivre.com.br/assinaturas/melimais/planos?plan_selected=${plan.slug.toUpperCase()}#origin=redirect-vdp-meliplus`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 bg-[#3483FA] text-white py-4 rounded-xl font-semibold text-base text-center block hover:bg-[#2968c8] transition-colors"
+                    className="flex-1 bg-gradient-to-b from-[#65a5ff] to-[#3483fa] text-white py-4 rounded-xl font-semibold text-base text-center block shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
                   >
                     Assinar {plan.name}
                   </a>
