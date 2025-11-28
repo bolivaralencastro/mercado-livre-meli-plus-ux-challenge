@@ -325,10 +325,10 @@ export default function ApresentacaoPage() {
           {/* Stats section with counter animation */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { value: "50+", label: "Entrevistas" },
+              { value: "3", label: "Entrevistas" },
               { value: "200+", label: "Reviews analisados" },
               { value: "15", label: "Competidores" },
-              { value: "8", label: "Personas" },
+              { value: "6", label: "Personas" },
             ].map((stat, index) => (
               <div 
                 key={stat.label}

@@ -18,6 +18,7 @@ import {
   Play,
   Menu
 } from "lucide-react";
+import MobilePriceTable from "./MobilePriceTable";
 
 // ============ MOVIE DATA ============
 const moviesData = {
@@ -1103,39 +1104,46 @@ export default function OfertaMonoliticaPage() {
           />
         </div>
         
-        <div className="max-w-[1200px] mx-auto px-5 relative z-[2] text-center">
-          <div>
-            <h2 className="text-4xl font-semibold text-gray-900 mb-3">Escolha o plano ideal para você</h2>
-            <p className="text-gray-600 mb-8">Economia garantida em todos os períodos</p>
+        {/* Section Title */}
+        <div className="max-w-[1200px] mx-auto px-5 relative z-[2] text-center mb-8">
+          <h2 className="text-4xl font-semibold text-gray-900 mb-3">Escolha o plano ideal para você</h2>
+          <p className="text-gray-600">Economia garantida em todos os períodos</p>
+        </div>
 
-            {/* Toggle */}
-            <div className="inline-block mb-12">
-              <div className="bg-gray-300 rounded-full p-1 flex shadow-inner">
-                <button
-                  onClick={() => setBillingCycle("monthly")}
-                  className={`px-8 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${
-                    billingCycle === "monthly" 
-                      ? "bg-white text-gray-800 shadow-md scale-105" 
-                      : "text-gray-600"
-                  }`}
-                >
-                  Mensal
-                </button>
-                <button
-                  onClick={() => setBillingCycle("annual")}
-                  className={`px-8 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${
-                    billingCycle === "annual" 
-                      ? "bg-white text-gray-800 shadow-md scale-105" 
-                      : "text-gray-600"
-                  }`}
-                >
-                  Anual
-                </button>
-              </div>
+        {/* Mobile Price Table - Sticky Cards (visible on mobile only) */}
+        <div className="md:hidden">
+          <MobilePriceTable />
+        </div>
+
+        {/* Desktop Price Table (hidden on mobile) */}
+        <div className="hidden md:block max-w-[1200px] mx-auto px-5 relative z-[2] text-center">
+          {/* Toggle */}
+          <div className="inline-block mb-12">
+            <div className="bg-gray-300 rounded-full p-1 flex shadow-inner">
+              <button
+                onClick={() => setBillingCycle("monthly")}
+                className={`px-8 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${
+                  billingCycle === "monthly" 
+                    ? "bg-white text-gray-800 shadow-md scale-105" 
+                    : "text-gray-600"
+                }`}
+              >
+                Mensal
+              </button>
+              <button
+                onClick={() => setBillingCycle("annual")}
+                className={`px-8 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${
+                  billingCycle === "annual" 
+                    ? "bg-white text-gray-800 shadow-md scale-105" 
+                    : "text-gray-600"
+                }`}
+              >
+                Anual
+              </button>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1100px] mx-auto">
+          <div className="grid grid-cols-3 gap-6 max-w-[1100px] mx-auto">
             {plans.map((plan, i) => (
               <PlanCard key={plan.slug} plan={plan} isAnnual={billingCycle === "annual"} index={i} />
             ))}

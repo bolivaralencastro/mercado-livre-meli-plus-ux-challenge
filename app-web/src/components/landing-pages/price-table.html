@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meli+ Sticky Oferta Simples</title>
+    <style>
+        :root {
+            --primary-blue: #3483FA;
+            --primary-purple: #A90F90;
+            --meli-green: #00A650;
+            --bg-gray: #EFEFEF;
+            --white: #FFFFFF;
+            --card-radius: 24px;
+            --header-height: 70px;
+            --top-offset-base: 82px;
+            
+            /* Ajustes de posição stuck */
+            --stuck-offset-1: 0px;
+            --stuck-offset-2: -14px;
+            --stuck-offset-3: -16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Proxima Nova', -apple-system, sans-serif; }
+
+        body {
+            background-color: var(--bg-gray);
+            padding-bottom: 50px;
+            min-height: 100vh;
+        }
+
+        .controls-container {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-gray);
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .pricing-toggle {
+            display: flex;
+            background: #dcdcdc;
+            padding: 4px;
+            border-radius: 30px;
+        }
+
+        .toggle-btn {
+            padding: 8px 24px;
+            border: none;
+            background: transparent;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #666;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .toggle-btn.active {
+            background: var(--white);
+            color: var(--primary-purple);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .toggle-btn .discount-text {
+            color: var(--meli-green);
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .stack-container {
+            padding: 0 16px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .card {
+            position: sticky;
+            background: var(--white);
+            border-radius: var(--card-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease;
+            min-height: calc(var(--header-height) + 260px);
+        }
+
+        .card:last-child { margin-bottom: 40px; min-height: auto; }
+
+        .card-1 { top: var(--top-offset-base); z-index: 10; }
+        .card-2 { top: calc(var(--top-offset-base) + var(--header-height)); z-index: 20; }
+        .card-3 { top: calc(var(--top-offset-base) + var(--header-height) * 2); z-index: 30; border: 1px solid var(--primary-purple); }
+
+        .card.is-stuck.card-1 { transform: translateY(var(--stuck-offset-1)); }
+        .card.is-stuck.card-2 { transform: translateY(var(--stuck-offset-2)); }
+        .card.is-stuck.card-3 { transform: translateY(var(--stuck-offset-3)); }
+
+        /* --- HEADER --- */
+        .card-header {
+            height: var(--header-height);
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fafafa;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .header-left { display: flex; align-items: center; gap: 8px; }
+        .meli-logo { font-weight: 800; font-style: italic; color: var(--primary-purple); }
+        .plan-name { font-weight: 700; color: #2D3277; text-transform: uppercase; font-size: 14px; }
+
+        .header-right {
+            text-align: right;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        /* Preços dos cards 1 e 2 */
+        .mini-price {
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+            opacity: 0;
+            transform: translateX(10px);
+            transition: all 0.3s ease;
+        }
+        /* Cards 1 e 2 mostram preço quando stuck */
+        .card:not(#card-mega).is-stuck .mini-price { opacity: 1; transform: translateX(0); }
+        
+        /* Card Mega header tag */
+        .header-special-tag {
+            color: var(--meli-green);
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            /* Sempre visível, não importa se stuck ou não */
+            display: block; 
+        }
+
+        /* Muda fundo do header quando stuck */
+        .card.is-stuck .card-header { background-color: #f5f5f5; }
+
+        /* --- BODY --- */
+        .card-body {
+            padding: 24px;
+            background: var(--white);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .btn-subscribe {
+            width: 100%;
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-details {
+            display: block; width: 100%; text-align: center; margin-top: 15px;
+            color: var(--primary-blue); font-weight: 600; background: none; border: none;
+        }
+
+        .desc { color: #666; line-height: 1.5; margin-bottom: 24px; font-size: 15px; }
+        .main-price { font-size: 42px; font-weight: 600; color: #333; margin-bottom: 8px; line-height: 1; }
+        .main-price span { font-size: 16px; font-weight: 400; color: #666; margin-left: 4px; }
+
+        /* Preços do Body Mega */
+        .mega-body-pricing { margin-bottom: 8px; }
+        .mb-row-1 { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+        .mb-old { text-decoration: line-through; color: #999; font-size: 16px; }
+        .mb-off { color: var(--meli-green); font-weight: 700; font-size: 16px; }
+        
+        .mb-row-2 { font-size: 42px; font-weight: 600; color: #333; line-height: 1; }
+        .mb-period { font-size: 16px; font-weight: 400; color: #666; margin-left: 4px; }
+
+    </style>
+</head>
+<body>
+
+    <div class="controls-container">
+        <div class="pricing-toggle">
+            <button class="toggle-btn active" onclick="setCycle('monthly')">Mensal</button>
+            <button class="toggle-btn" onclick="setCycle('annual')">Anual <span class="discount-text">15% OFF</span></button>
+        </div>
+    </div>
+
+    <div class="stack-container">
+        <!-- Card 1 -->
+        <div class="card card-1" id="card-essencial">
+            <div class="card-header">
+                <div class="header-left">
+                    <span class="meli-logo">meli+</span>
+                    <span class="plan-name">Essencial</span>
+                </div>
+                <div class="header-right">
+                    <div class="mini-price val-essencial">R$ 9,90</div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="main-price val-essencial">R$ 9,90<span>/mês</span></div>
+                <p class="desc">A porta de entrada. Frete Grátis em milhões de produtos.</p>
+                <button class="btn-subscribe">Assinar Essencial</button>
+                <button class="btn-details">Ver detalhes</button>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card card-2" id="card-total">
+            <div class="card-header">
+                <div class="header-left">
+                    <span class="meli-logo">meli+</span>
+                    <span class="plan-name">Total</span>
+                </div>
+                <div class="header-right">
+                    <div class="mini-price val-total">R$ 24,90</div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="main-price val-total">R$ 24,90<span>/mês</span></div>
+                <p class="desc">Inclui Disney+ Padrão com Anúncios e Deezer Premium.</p>
+                <button class="btn-subscribe">Assinar Total</button>
+                <button class="btn-details">Ver detalhes</button>
+            </div>
+        </div>
+
+        <!-- Card 3 (Mega) -->
+        <div class="card card-3" id="card-mega">
+            <div class="card-header">
+                <div class="header-left">
+                    <span class="meli-logo">meli+</span>
+                    <span class="plan-name">Mega</span>
+                </div>
+                
+                <div class="header-right">
+                    <!-- APENAS A TAG (Removido preço, % e período do header) -->
+                    <div class="header-special-tag">OFERTA ESPECIAL</div>
+                </div>
+
+            </div>
+            <div class="card-body">
+                
+                <!-- Informações completas continuam apenas aqui no Body -->
+                <div class="mega-body-pricing">
+                    <div class="mb-row-1">
+                        <span class="mb-old val-mega-base">R$ 74,90</span>
+                        <span class="mb-off">46% OFF</span>
+                    </div>
+                    <div class="mb-row-2">
+                        <span class="val-mega-promo">R$ 39,90</span>
+                        <span class="mb-period">/mês por 2 meses</span>
+                    </div>
+                </div>
+                
+                <p class="desc">A experiência definitiva. Disney+, Max, Netflix (Padrão) e mais.</p>
+                <button class="btn-subscribe">Assinar Mega</button>
+                <button class="btn-details">Ver detalhes</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const prices = {
+            monthly: { 
+                ess: 'R$ 9,90', 
+                tot: 'R$ 24,90', 
+                megaBase: 'R$ 74,90', 
+                megaPromo: 'R$ 39,90' 
+            },
+            annual: { 
+                ess: 'R$ 8,90', 
+                tot: 'R$ 22,90', 
+                megaBase: 'R$ 59,90', 
+                megaPromo: 'R$ 34,90'
+            }
+        };
+
+        function setCycle(type) {
+            document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            
+            const p = prices[type];
+            
+            // Essencial e Total
+            updatePrice('.val-essencial', p.ess);
+            updatePrice('.val-total', p.tot);
+
+            // Mega
+            document.querySelectorAll('.val-mega-base').forEach(el => el.textContent = p.megaBase);
+            document.querySelectorAll('.val-mega-promo').forEach(el => el.textContent = p.megaPromo);
+        }
+
+        function updatePrice(selector, value) {
+            document.querySelectorAll(selector).forEach(el => {
+                if(el.classList.contains('main-price')) {
+                    el.innerHTML = value + '<span>/mês</span>';
+                } else {
+                    el.textContent = value;
+                }
+            });
+        }
+
+        function checkSticky() {
+            const cards = document.querySelectorAll('.card');
+            
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const top = parseFloat(getComputedStyle(card).top);
+                
+                if (rect.top <= top + 2) {
+                    card.classList.add('is-stuck');
+                } else {
+                    card.classList.remove('is-stuck');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkSticky);
+        checkSticky();
+    </script>
+</body>
+</html>

@@ -1,0 +1,594 @@
+{
+  "article_metadata": {
+    "id": "ux-ui-planos-pagamento",
+    "slug": "ux-ui-planos-pagamento",
+    "title": "Boas Práticas de UX/UI para Seções de Planos de Pagamento",
+    "subtitle": "Psicologia cognitiva, economia comportamental, acessibilidade e métricas para otimizar conversões em páginas de pricing.",
+    "author": "Pesquisa Interna",
+    "publication_date": "2025-11",
+    "publication_display": "Novembro 2025",
+    "read_time": "25 minutos",
+    "summary": "Exploração detalhada das melhores práticas de UX/UI para visualização de planos de pagamento, incluindo fundamentos de psicologia cognitiva (paradoxo da escolha, efeito do dígito à esquerda, aversão à perda), layouts eficazes, métricas de sucesso e ferramentas de prototipação e testes.",
+    "categoria": "UX & Narrativa",
+    "tags": [
+      "experiência do usuário",
+      "assinaturas",
+      "meli+"
+    ]
+  },
+  "content": {
+    "key_points": {
+      "heading": "Pontos-Chave sobre Boas Práticas de UX/UI para Seções de Planos de Pagamento",
+      "items": [
+        {
+          "title": "Elementos Essenciais",
+          "description": "Pesquisas sugerem que componentes centrais como preços claros, listas de recursos, ofertas de teste e CTAs destacados são cruciais para a compreensão do usuário, embora a combinação exata dependa da complexidade do produto."
+        },
+        {
+          "title": "Efetividade de Layout",
+          "description": "Formatos baseados em cartões ou tabelas tendem a melhorar a clareza e as conversões, com comparações lado a lado ajudando na tomada de decisão quando as opções são limitadas."
+        },
+        {
+          "title": "Apresentação de Preços",
+          "description": "As evidências apontam para a exibição de opções mensais e anuais com economia destacada (por exemplo, valores absolutos em vez de porcentagens) para influenciar positivamente a escolha dos usuários."
+        },
+        {
+          "title": "Métricas de Sucesso",
+          "description": "Indicadores comuns incluem taxas de conversão e cliques, com testes A/B frequentemente vinculando ajustes de design a ganhos de desempenho, embora os resultados variem conforme o contexto."
+        },
+        {
+          "title": "Impacto Visual",
+          "description": "Cores, tipografia e ícones podem moldar percepções — por exemplo, azul evoca confiança — mas seus efeitos são sutis e devem ser testados com públicos específicos."
+        },
+        {
+          "title": "Tendências Emergentes",
+          "description": "Personalização impulsionada por IA e animações interativas mostram-se promissoras para engajar usuários, potencialmente aumentando a retenção em mercados dinâmicos."
+        }
+      ]
+    },
+    "organization": {
+      "heading": "Organização de Elementos para Clareza e Conversão",
+      "text_body": [
+        "Para maximizar o engajamento do usuário, priorize uma hierarquia visual em que o plano mais popular seja destacado (por exemplo, com selos ou acentos de cor). Agrupe recursos por categoria, use listas com marcadores para facilitar a leitura e posicione CTAs na parte inferior de cada card ou coluna.",
+        "Essa abordagem reduz a carga cognitiva e orienta os usuários em direção às decisões, como apoiado por diretrizes de especialistas em UX. Evite sobrecarregar com muitos detalhes; em vez disso, ofereça seções expansíveis para informações aprofundadas."
+      ],
+      "source": "https://www.nngroup.com/articles/comparison-tables/"
+    },
+    "layouts": {
+      "heading": "Layouts Eficazes e Formatos de Preço",
+      "text_body": [
+        "Layouts baseados em cartões funcionam bem para responsividade mobile, enquanto formatos tabulares se destacam em comparações de 3 a 5 planos em desktop.",
+        "Para preços, exiba o valor mensal como padrão, mas mostre claramente a economia anual para incentivar compromissos mais longos. Descontos devem ser enfatizados, com frases como 'Economize R$ X' superando porcentagens em alguns testes."
+      ],
+      "source": "https://www.stymix.com/blog/ab-testing-examples-case-studies"
+    },
+    "success_metrics": {
+      "heading": "Medindo e Melhorando o Sucesso",
+      "text_body": [
+        "Acompanhe métricas como taxa de conversão (por exemplo, novas assinaturas) e tempo na página para avaliar a eficácia.",
+        "Estudos quantitativos correlacionam designs simplificados a aumentos de até 40% nas vendas, reforçando a necessidade de testes iterativos."
+      ],
+      "source": "https://unbounce.com/a-b-testing/examples/"
+    },
+    "recommendations_tools": {
+      "heading": "Recomendações Específicas e Ferramentas",
+      "text_body": [
+        "Baseie designs em aprendizados de testes A/B, como usar símbolos para recursos e garantir adaptabilidade mobile.",
+        "Para prototipação, ferramentas como Figma permitem iterações rápidas. Teste com plataformas como Maze para heatmaps e feedback dos usuários."
+      ],
+      "links": [
+        {
+          "name": "Ferramentas de Prototipação",
+          "url": "https://www.uxdesigninstitute.com/blog/best-prototyping-tools-for-ux-designers/"
+        },
+        {
+          "name": "Ferramentas de Teste de Usabilidade",
+          "url": "https://maze.co/guides/usability-testing/tools/"
+        }
+      ]
+    },
+    "detailed_exploration": {
+      "heading": "Exploração Detalhada das Práticas de UX/UI",
+      "introduction": "O design de seções de planos de pagamento — frequentemente chamadas de páginas de preços ou níveis de assinatura — desempenha um papel fundamental na aquisição e retenção de usuários em produtos e serviços digitais. Essas seções devem equilibrar densidade informacional com navegação intuitiva para facilitar a tomada de decisão sem sobrecarregar o usuário."
+    },
+    "essential_elements": {
+      "heading": "Elementos Essenciais na Visualização de Planos de Pagamento",
+      "introduction": "No centro dos designs eficazes de planos de pagamento estão elementos que comunicam valor de forma transparente e persuasiva.",
+      "components": [
+        {
+          "name": "Informações de Preço",
+          "description": "Custos claramente apresentados, frequentemente divididos em opções mensais, anuais ou por níveis. As pesquisas enfatizam a exibição proeminente dos preços-base para ancorar expectativas, com complementos ou upgrades listados separadamente para evitar confusão."
+        },
+        {
+          "name": "Períodos de Teste e Descontos",
+          "description": "Testes gratuitos (por exemplo, 7–30 dias) ou ofertas introdutórias reduzem o risco percebido, incentivando a experimentação. Descontos, como '46% OFF' para planos combinados, devem ser visualizados com destaques ou selos para atrair atenção."
+        },
+        {
+          "name": "Listas de Recursos",
+          "description": "Listas em bullet points ou baseadas em ícones, categorizadas por nível de plano (por exemplo, 'Entretenimento Incluso' com logos como Disney+ ou Netflix). Isso auxilia na leitura rápida, pois usuários frequentemente comparam recursos lado a lado."
+        },
+        {
+          "name": "Botões de Chamada para Ação (CTA)",
+          "description": "Botões proeminentes e orientados para ação, como 'Assinar o Meli+ Mega', posicionados no final de cada plano. CTAs devem usar cores contrastantes para visibilidade e incluir microtextos como 'Iniciar Teste Gratuito' para aumentar cliques."
+        },
+        {
+          "name": "Suportes Adicionais",
+          "description": "Indicadores de rendimento (por exemplo, '120% do CDI em Cofres') ou detalhes de cashback fornecem contexto, enquanto tooltips ou links explicam termos técnicos como 'CDI'."
+        }
+      ],
+      "organization_tips": "Organizacionalmente, esses elementos devem seguir um fluxo lógico: preços no topo, seguidos de recursos e, por fim, CTAs. Essa hierarquia maximiza a clareza ao alinhar-se com padrões de escaneamento visual (da esquerda para a direita, de cima para baixo)."
+    },
+    "layout_models": {
+      "heading": "Modelos e Formatos para Layout e Apresentação de Preços",
+      "introduction": "Layouts eficazes facilitam decisões compensatórias, onde usuários ponderam trade-offs entre planos.",
+      "models": [
+        {
+          "type": "Layouts Tabulares",
+          "description": "Linhas para recursos e colunas para planos, ideais para usuários desktop comparando 3–5 opções. Cabeçalhos fixos evitam desorientação durante rolagem, e cores (por exemplo, verde para recursos incluídos) aumentam a escaneabilidade."
+        },
+        {
+          "type": "Layouts Baseados em Cartões",
+          "description": "Cartões verticais ou horizontais para cada plano, responsivos no mobile. Esse formato utiliza espaçamento e sombras para separação, tornando a experiência menos sobrecarregante."
+        },
+        {
+          "type": "Comparações Lado a Lado",
+          "description": "Combina elementos tabulares e de cartões, com toggles dinâmicos para mostrar/ocultar recursos. Para conjuntos maiores, permita personalização pelo usuário para focar em atributos relevantes."
+        }
+      ],
+      "pricing_formats": [
+        {
+          "type": "Mensal vs. Anual",
+          "description": "Apresente o mensal por padrão, mas destaque economia anual (por exemplo, 'R$ 39,90/mês por 2 meses' com preço original tachado) para incentivar compromissos longos. Estudos mostram que valores absolutos ('Economize R$ X') superam porcentagens em produtos de maior valor, alinhando-se à 'Regra do 100'."
+        },
+        {
+          "type": "Apresentação de Descontos",
+          "description": "Use texto em negrito ou ícones para ofertas como 'Oferta Especial', com barras de progresso temporais para criar urgência sem pressão excessiva."
+        }
+      ],
+      "saas_note": "Em contextos SaaS, modelos escalonados (por exemplo, Essential, Total, Mega) predominam, com taxa de adoção de 76,7% segundo análises recentes. Limitar os níveis a três evita paralisia de decisão.",
+      "comparison_table": [
+        {
+          "modelo": "Tabular",
+          "pros": "Alta escaneabilidade; Suporta comparações detalhadas",
+          "contras": "Pode sobrecarregar no mobile; Rolagem horizontal",
+          "ideal_para": "SaaS em desktop",
+          "exemplo": "NNG Comparison Tables (2024)"
+        },
+        {
+          "modelo": "Baseado em Cartões",
+          "pros": "Mobile-friendly; Visualmente atrativo",
+          "contras": "Menos eficiente para análises profundas",
+          "ideal_para": "Apps de consumo",
+          "exemplo": "Fintech UX Trends (2025)"
+        },
+        {
+          "modelo": "Comparação Dinâmica",
+          "pros": "Personalizável; Reduz desordem visual",
+          "contras": "Maior custo de desenvolvimento",
+          "ideal_para": "E-commerce",
+          "exemplo": "SaaS Pricing Case Studies (2025)"
+        }
+      ]
+    },
+    "metrics_correlations": {
+      "heading": "Métricas de Sucesso e Correlações Quantitativas",
+      "introduction": "Sucesso em seções de planos é medido pelo comportamento do usuário e pelos resultados de negócio.",
+      "common_metrics": [
+        {
+          "name": "Taxa de Conversão",
+          "description": "Porcentagem de visitantes que assinam ou compram."
+        },
+        {
+          "name": "Tempo na Seção",
+          "description": "Tempo gasto analisando planos — pode indicar engajamento ou confusão."
+        },
+        {
+          "name": "CTR em CTAs",
+          "description": "Rastreamento de interações com botões e links."
+        },
+        {
+          "name": "Taxa de Abandono",
+          "description": "Usuários que deixam a página sem ação."
+        },
+        {
+          "name": "NPS",
+          "description": "Lealdade após a interação."
+        }
+      ],
+      "research_findings": "Pesquisas quantitativas correlacionam designs a desempenho: testes A/B mostram que layouts simplificados podem aumentar conversões entre 21% e 195%, dependendo dos elementos testados.",
+      "metrics_table": [
+        {
+          "metrica": "Taxa de Conversão",
+          "descricao": "Assinaturas/compras por visitante",
+          "correlacao": "+40% ao remover descontos em pré-vendas de jogos",
+          "fonte": "Unbounce (2024)"
+        },
+        {
+          "metrica": "Taxa de Abandono",
+          "descricao": "Saída da página",
+          "correlacao": "-52% com formulários abaixo da dobra",
+          "fonte": "Ibid."
+        },
+        {
+          "metrica": "NPS",
+          "descricao": "Satisfação/Lealdade",
+          "correlacao": "Relacionado a preços transparentes",
+          "fonte": "UX ROI Study"
+        },
+        {
+          "metrica": "CTR",
+          "descricao": "Cliques em CTAs",
+          "correlacao": "+21% com botões vermelhos",
+          "fonte": "Ibid."
+        }
+      ]
+    },
+    "ab_testing_insights": {
+      "heading": "Pesquisas, Estudos e Insights de Testes A/B",
+      "case_studies": [
+        {
+          "company": "Codecademy",
+          "finding": "A alteração para destacar economia em valores reais aumentou em 28% as assinaturas do plano Pro."
+        },
+        {
+          "company": "Electronic Arts",
+          "finding": "Observou aumento de 40% nas vendas ao remover descontos, contrariando expectativas."
+        },
+        {
+          "company": "Fintech Dashboards",
+          "finding": "Dashboards personalizados com cartões coloridos melhoraram a categorização de despesas, reduzindo erros."
+        }
+      ],
+      "visual_impacts": [
+        "Cores evocam emoções — azul transmite confiança, vermelho urgência.",
+        "Níveis de saturação influenciam percepção de luxo (menos saturação = mais premium).",
+        "Tipografia afeta legibilidade; fontes sans-serif como Arial favorecem listas.",
+        "Ícones melhoram compreensão, especialmente quando simples e familiares — um estudo PLOS ONE (2024) mostra correlação direta entre familiaridade do ícone e velocidade de execução de tarefas."
+      ],
+      "academic_insights": "Insights acadêmicos sobre pricing em SaaS (2025) destacam o papel dos níveis na retenção, com testes gratuitos reduzindo barreiras e pricing baseado em valor fortalecendo fidelização. Casos como Slack e Zoom mostram que segmentar públicos por níveis maximiza receita."
+    },
+    "specific_recommendations": {
+      "heading": "Recomendações Específicas",
+      "categories": [
+        {
+          "category": "Princípios de Design",
+          "items": [
+            "Limite planos a 3–5 níveis",
+            "Use checkmarks para recursos",
+            "Padronize terminologias",
+            "Utilize cores de alto contraste",
+            "Use tipografia responsiva"
+          ]
+        },
+        {
+          "category": "Ajustes Baseados no Usuário",
+          "items": [
+            "Incorpore elementos validados por A/B tests",
+            "Textos dinâmicos adaptados a buscas (+31% em assinaturas)",
+            "Em B2B, destaque ROI"
+          ]
+        },
+        {
+          "category": "Tendências e Inovações",
+          "items": [
+            "Personalização via IA ajusta planos em tempo real",
+            "AR/VR permite comparações imersivas",
+            "Em 2025, destaca-se automação via agentes de IA",
+            "Uso de animações 3D"
+          ]
+        }
+      ]
+    },
+    "tools": {
+      "heading": "Ferramentas e Recursos para Prototipação e Testes",
+      "prototyping": [
+        "Figma para wireframes colaborativos",
+        "ProtoPie para interações avançadas",
+        "UXPin para mocks de alta fidelidade com IA"
+      ],
+      "testing": [
+        "Maze (US$ 75/mês) para heatmaps e testes com protótipos",
+        "Hotjar (US$ 32/mês) para gravações",
+        "Loop11 (US$ 199/mês) para A/B e insights via IA"
+      ],
+      "tools_table": [
+        {
+          "categoria": "Prototipação",
+          "exemplos": "Figma, UXPin",
+          "funcionalidades": "Interações, IA, colaboração",
+          "preco": "Gratuito a US$ 12/mês",
+          "caso_uso": "Cards interativos com CTA"
+        },
+        {
+          "categoria": "Testes de Usabilidade",
+          "exemplos": "Maze, Hotjar",
+          "funcionalidades": "Heatmaps, primeiros cliques",
+          "preco": "US$ 32–75/mês",
+          "caso_uso": "Mapear caminhos e abandonos"
+        },
+        {
+          "categoria": "Avançado",
+          "exemplos": "ProtoPie, Loop11",
+          "funcionalidades": "A/B, triggers, IA",
+          "preco": "US$ 199+/mês",
+          "caso_uso": "Pricing dinâmico"
+        }
+      ]
+    },
+    "cognitive_psychology": {
+      "heading": "1. Fundamentos Científicos: Psicologia Cognitiva e Economia Comportamental",
+      "introduction": "Para projetar interfaces que convertem, é necessário entender as falhas sistemáticas no raciocínio humano (vieses cognitivos).",
+      "sections": [
+        {
+          "name": "O Paradoxo da Escolha (Choice Overload)",
+          "reference": "Iyengar, S. S., & Lepper, M. R. (2000). When choice is demotivating: Can one desire too much of a good thing?",
+          "reference_url": "https://psycnet.apa.org/doiLanding?doi=10.1037%2F0022-3514.79.6.995",
+          "study": "No famoso 'estudo das geleias', consumidores expostos a 24 opções paravam mais para olhar, mas apenas 3% compravam. Já com 6 opções, a taxa de compra subia para 30%. Uma meta-análise recente de quase 100 estudos (Shaw, 2025) confirma que opções excessivas reduzem satisfação, aumentam arrependimento e diminuem escolhas.",
+          "application_ui": [
+            "Lei de Hick-Hyman: O tempo de decisão aumenta de forma logarítmica conforme o número de escolhas.",
+            "Regra Prática: Se o produto possui mais de 5 planos, use um 'wizard' (assistente) ou filtros prévios para reduzir as opções visíveis a 3."
+          ]
+        },
+        {
+          "name": "O Efeito do Dígito à Esquerda (Left-Digit Effect)",
+          "reference": "Thomas, M., & Morwitz, V. (2005). Penny Wise and Pound Foolish: The Left-Digit Effect in Price Cognition.",
+          "reference_url": "https://academic.oup.com/jcr/article/32/1/54/1796377",
+          "study": "A magnitude percebida do preço é codificada pelo dígito mais à esquerda antes mesmo de lermos os centavos. A diferença percebida entre R$ 2,99 e R$ 3,00 é muito maior do que entre R$ 2,98 e R$ 2,99.",
+          "application_ui": [
+            "Use preços terminados em ,90 ou ,99 para planos de entrada B2C.",
+            "Em planos Enterprise/B2B de alto valor, prefira números inteiros (ex.: R$ 5.000) para sinalizar qualidade superior."
+          ]
+        },
+        {
+          "name": "Aversão à Perda e Framing (Enquadramento)",
+          "reference": "Kahneman, D., & Tversky, A. (1979). Prospect Theory: An Analysis of Decision under Risk.",
+          "reference_url": "https://www.jstor.org/stable/1914185",
+          "study": "A dor de perder é aproximadamente duas vezes mais intensa do que o prazer de ganhar.",
+          "application_ui": [
+            "Ao alternar entre planos mensais e anuais, prefira 'Economize R$ 240/ano' a 'Ganhe 20% de desconto'.",
+            "A formulação monetária concreta reduz a sensação de estar 'perdendo dinheiro' ao não escolher o anual."
+          ]
+        }
+      ]
+    },
+    "advanced_ui": {
+      "heading": "2. UI Avançada: Tipografia, Cor e Acessibilidade",
+      "sections": [
+        {
+          "name": "Tipografia Numérica (Tabular Lining Figures)",
+          "description": "Muitas fontes utilizam números oldstyle, que flutuam acima/abaixo da linha de base — o que atrapalha colunas de preço.",
+          "recommendation": "Utilize tabular lining figures (números monoespaçados e alinhados à altura da caixa alta). Isso garante colunas de valores visualmente alinhadas e comparações mais rápidas.",
+          "css": "font-variant-numeric: tabular-nums;"
+        },
+        {
+          "name": "Efeito Von Restorff (Efeito de Isolamento)",
+          "description": "Quando múltiplos itens similares são apresentados, o que difere é mais lembrado.",
+          "recommendation": "Use cor de ação apenas no plano recomendado e estilos mais neutros (outline/cinza) nos planos secundários. Estudos de 2025 mostram aumento de até 25% nos cliques do plano-alvo."
+        },
+        {
+          "name": "Acessibilidade (WCAG 2.2)",
+          "description": "Ignorar acessibilidade pode reduzir o mercado endereçável em até 15%.",
+          "requirements": [
+            "Contraste: Preço e nome do plano devem ter contraste mínimo AA (4,5:1) com o fundo.",
+            "Leitores de Tela: Tabelas complexas devem usar <th> com scope='col' e scope='row'.",
+            "Focus Visible (2.4.11): CTAs e toggles precisam de estados de foco evidentes."
+          ]
+        }
+      ]
+    },
+    "nng_insights": {
+      "heading": "3. Layouts e Interação: Evidências do Nielsen Norman Group",
+      "introduction": "Estudos de eye-tracking do NN/g (2020–2025) mostram padrões de leitura em 'lawn mower' em tabelas de comparação.",
+      "sections": [
+        {
+          "name": "Sticky Headers (Cabeçalhos Fixos)",
+          "description": "Em tabelas longas, a memória de curto prazo não sustenta qual coluna representa qual plano.",
+          "recommendation": "Manter nome do plano e CTA fixos no topo reduz erros em ~20%."
+        },
+        {
+          "name": "Desafios no Mobile",
+          "problems": ["Scroll horizontal quase invisível"],
+          "recommendations": [
+            "Cards empilhados com accordions para 'ver detalhes'",
+            "Opção de comparar apenas 2 planos lado a lado (matrix view)"
+          ]
+        }
+      ]
+    },
+    "paddle_metrics": {
+      "heading": "4. Métricas de Sucesso Correlacionadas",
+      "introduction": "Relatórios Paddle/ProfitWell (2023–2025) conectam decisões de design a métricas como MRR, CAC e churn.",
+      "metrics_table": [
+        {
+          "metrica": "Conversão",
+          "correlacao": "Simplificação de opções",
+          "dados": "+15–20% com <5 planos",
+          "fonte": "Paddle Q1 2025"
+        },
+        {
+          "metrica": "Expansão de Receita",
+          "correlacao": "Framing de descontos",
+          "dados": "42–48% em top-quartile",
+          "fonte": "Benchmarks 2025"
+        },
+        {
+          "metrica": "CAC",
+          "correlacao": "Transparência de preços",
+          "dados": "-10–15% com valores visíveis",
+          "fonte": "OpenView 2023"
+        },
+        {
+          "metrica": "Retenção (Churn)",
+          "correlacao": "Acessibilidade e clareza",
+          "dados": "-5–10% com WCAG 2.2",
+          "fonte": "Siteimprove 2023"
+        }
+      ]
+    },
+    "checklist": {
+      "heading": "5. Checklist de Recomendações Práticas",
+      "items": [
+        {
+          "item": "Quantidade",
+          "description": "Limitar a 3 planos principais (com possível efeito isca)"
+        },
+        {
+          "item": "Leitura",
+          "description": "Usar tabular-nums para alinhar preços"
+        },
+        {
+          "item": "Foco Visual",
+          "description": "Aplicar Efeito Von Restorff no plano recomendado"
+        },
+        {
+          "item": "Mobile",
+          "description": "Evitar scroll horizontal; priorizar cards empilhados/accordions"
+        },
+        {
+          "item": "Ancoragem",
+          "description": "Mostrar preço cheio riscado ao lado do preço com desconto"
+        },
+        {
+          "item": "Social Proof",
+          "description": "Incluir 'Confiado por [logos]' especialmente no plano Enterprise"
+        },
+        {
+          "item": "Personalização via IA",
+          "description": "Recomendar planos com base em comportamento e perfil"
+        }
+      ]
+    },
+    "recommended_tools": {
+      "heading": "6. Ferramentas Recomendadas para Análise e Experimentação",
+      "tools_table": [
+        {
+          "ferramenta": "VWO",
+          "foco": "A/B Testing",
+          "preco": "A partir de US$ 199/mês",
+          "beneficio": "Testes em páginas de preços com insights comportamentais"
+        },
+        {
+          "ferramenta": "Optimizely",
+          "foco": "Experimentação",
+          "preco": "Enterprise",
+          "beneficio": "Integração profunda com stacks SaaS"
+        },
+        {
+          "ferramenta": "FullStory",
+          "foco": "Análise de Sessões",
+          "preco": "A partir de US$ 299/mês",
+          "beneficio": "Replay de sessão e detecção de hesitação"
+        },
+        {
+          "ferramenta": "Paddle/ProfitWell",
+          "foco": "Métricas SaaS",
+          "preco": "Plano básico gratuito",
+          "beneficio": "Análise de churn, LTV e expansão pós-redesign"
+        },
+        {
+          "ferramenta": "AB Tasty",
+          "foco": "A/B Testing",
+          "preco": "A partir de US$ 29/mês",
+          "beneficio": "Ótimo para experimentos de pricing e left-digit effect"
+        }
+      ]
+    },
+    "main_references": {
+      "heading": "Principais Referências",
+      "references": [
+        {
+          "author": "Nielsen Norman Group",
+          "year": "2024",
+          "title": "Comparison Tables for Products, Services, and Features",
+          "url": "https://www.nngroup.com/articles/comparison-tables/"
+        },
+        {
+          "author": "Design Studio UI/UX",
+          "year": "2025",
+          "title": "7 Latest Fintech UX Design Trends & Case Studies for 2025",
+          "url": "https://www.designstudiouiux.com/blog/fintech-ux-design-trends/"
+        },
+        {
+          "author": "Unbounce",
+          "year": "2024",
+          "title": "10 A/B Testing Examples and Case Studies",
+          "url": "https://unbounce.com/a-b-testing/examples/"
+        },
+        {
+          "author": "Iyengar & Lepper",
+          "year": "2000",
+          "title": "When Choice is Demotivating",
+          "url": "https://psycnet.apa.org/doiLanding?doi=10.1037%2F0022-3514.79.6.995"
+        },
+        {
+          "author": "Thomas & Morwitz",
+          "year": "2005",
+          "title": "The Left-Digit Effect in Price Cognition",
+          "url": "https://academic.oup.com/jcr/article/32/1/54/1796377"
+        },
+        {
+          "author": "Kahneman & Tversky",
+          "year": "1979",
+          "title": "Prospect Theory",
+          "url": "https://www.jstor.org/stable/1914185"
+        },
+        {
+          "author": "Paddle",
+          "year": "2025",
+          "title": "SaaS Market Report Q1 2025",
+          "url": "https://www.paddle.com/blog/saas-market-report-q1-2025"
+        },
+        {
+          "author": "W3C",
+          "year": "2023/2025",
+          "title": "What's New in WCAG 2.2",
+          "url": "https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/"
+        }
+      ]
+    }
+  },
+  "insights": [
+    {
+      "id": "paradoxo-escolha",
+      "title": "Paradoxo da Escolha",
+      "description": "Limitar opções a 3–5 planos reduz sobrecarga cognitiva e aumenta conversões em até 30%.",
+      "application": "Meli+: Manter máximo de 3 planos principais (Essential, Total, Mega) para evitar paralisia de decisão e maximizar conversões.",
+      "highlightId": "highlight-paradoxo"
+    },
+    {
+      "id": "digito-esquerda",
+      "title": "Efeito do Dígito à Esquerda",
+      "description": "Preços como R$ 9,90 parecem significativamente menores que R$ 10,00 devido ao viés cognitivo.",
+      "application": "Meli+: Utilizar preços terminados em ,90 para planos B2C, ancorando percepção de valor mais baixo.",
+      "highlightId": "highlight-digito"
+    },
+    {
+      "id": "aversao-perda",
+      "title": "Aversão à Perda e Framing",
+      "description": "A dor da perda é ~2x mais forte que o ganho. Enquadre descontos como 'Economize R$ X' em vez de percentuais.",
+      "application": "Meli+: Comunicar economia anual em valores absolutos (ex.: 'Economize R$ 120/ano') para reduzir hesitação.",
+      "highlightId": "highlight-aversao"
+    },
+    {
+      "id": "von-restorff",
+      "title": "Efeito Von Restorff",
+      "description": "O item que difere visualmente é mais lembrado. Destaque o plano recomendado com cores vibrantes.",
+      "application": "Meli+: Isolar visualmente o plano 'Total' com cor de destaque e selo 'Mais Popular' para direcionar escolhas.",
+      "highlightId": "highlight-restorff"
+    },
+    {
+      "id": "acessibilidade",
+      "title": "Acessibilidade WCAG 2.2",
+      "description": "Contraste 4,5:1 e headers em tabelas são obrigatórios. Ignorar reduz mercado em até 15%.",
+      "application": "Meli+: Garantir contraste adequado em CTAs e usar semântica correta em tabelas de comparação.",
+      "highlightId": "highlight-wcag"
+    },
+    {
+      "id": "mobile-first",
+      "title": "Design Mobile-First",
+      "description": "Evitar scroll horizontal no mobile; priorizar cards empilhados com accordions.",
+      "application": "Meli+: Implementar cards empilhados com 'ver detalhes' expansível para experiência mobile otimizada.",
+      "highlightId": "highlight-mobile"
+    }
+  ]
+}

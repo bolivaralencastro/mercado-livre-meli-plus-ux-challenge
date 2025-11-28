@@ -1,0 +1,305 @@
+"use client";
+
+import { useState, useEffect, useCallback, useRef } from "react";
+
+// ============ TYPES ============
+interface PlanPricing {
+  price: string;
+  originalPrice?: string;
+  discount?: string;
+  period: string;
+}
+
+interface Plan {
+  id: string;
+  name: string;
+  slug: string;
+  monthly: PlanPricing;
+  annual: PlanPricing;
+  description: string;
+  highlighted?: boolean;
+  badge?: string;
+}
+
+// ============ PLAN DATA ============
+const mobilePlans: Plan[] = [
+  {
+    id: "card-essencial",
+    name: "Essencial",
+    slug: "essencial",
+    monthly: {
+      price: "R$ 9,90",
+      period: "/mês",
+    },
+    annual: {
+      price: "R$ 8,25",
+      originalPrice: "R$ 9,90",
+      discount: "17% OFF",
+      period: "/mês (cobrado anualmente)",
+    },
+    description: "A porta de entrada. Frete Grátis em milhões de produtos.",
+  },
+  {
+    id: "card-total",
+    name: "Total",
+    slug: "total",
+    monthly: {
+      price: "R$ 24,90",
+      period: "/mês",
+    },
+    annual: {
+      price: "R$ 20,75",
+      originalPrice: "R$ 24,90",
+      discount: "17% OFF",
+      period: "/mês (cobrado anualmente)",
+    },
+    description: "Inclui Disney+ Padrão com Anúncios e Deezer Premium.",
+  },
+  {
+    id: "card-mega",
+    name: "Mega",
+    slug: "mega",
+    monthly: {
+      price: "R$ 39,90",
+      originalPrice: "R$ 74,90",
+      discount: "46% OFF",
+      period: "/mês por 2 meses",
+    },
+    annual: {
+      price: "R$ 33,25",
+      originalPrice: "R$ 39,90",
+      discount: "17% OFF",
+      period: "/mês (cobrado anualmente)",
+    },
+    description: "A experiência definitiva. Disney+, Max, Netflix (Padrão) e mais.",
+    highlighted: true,
+    badge: "OFERTA ESPECIAL",
+  },
+];
+
+// ============ STYLES ============
+const styles = {
+  // CSS Variables
+  primaryBlue: "#3483FA",
+  primaryPurple: "#A90F90",
+  meliGreen: "#00A650",
+  bgGray: "#EFEFEF",
+  white: "#FFFFFF",
+  cardRadius: "24px",
+  headerHeight: 70,
+  topOffsetBase: 82,
+  
+  // Stuck offsets
+  stuckOffset1: 0,
+  stuckOffset2: -14,
+  stuckOffset3: -16,
+};
+
+// ============ COMPONENT ============
+export default function MobilePriceTable() {
+  const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly");
+  const [stuckCards, setStuckCards] = useState<Set<string>>(new Set());
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Check which cards are stuck
+  const checkSticky = useCallback(() => {
+    const cards = document.querySelectorAll('[data-mobile-plan-card]');
+    const newStuckCards = new Set<string>();
+    
+    cards.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      const computedStyle = window.getComputedStyle(card);
+      const top = parseFloat(computedStyle.top);
+      
+      if (rect.top <= top + 2) {
+        const id = card.getAttribute('data-mobile-plan-card');
+        if (id) newStuckCards.add(id);
+      }
+    });
+    
+    setStuckCards(newStuckCards);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', checkSticky, { passive: true });
+    checkSticky();
+    
+    return () => window.removeEventListener('scroll', checkSticky);
+  }, [checkSticky]);
+
+  const getCardTop = (index: number) => {
+    return styles.topOffsetBase + (styles.headerHeight * index);
+  };
+
+  const getStuckOffset = (index: number) => {
+    switch (index) {
+      case 0: return styles.stuckOffset1;
+      case 1: return styles.stuckOffset2;
+      case 2: return styles.stuckOffset3;
+      default: return 0;
+    }
+  };
+
+  return (
+    <div 
+      ref={containerRef}
+      className="bg-[#EFEFEF] pb-12"
+    >
+      {/* Pricing Toggle */}
+      <div className="sticky top-0 z-[100] bg-[#EFEFEF] py-5 flex justify-center">
+        <div className="flex bg-[#dcdcdc] p-1 rounded-full">
+          <button
+            onClick={() => setBillingCycle("monthly")}
+            className={`
+              px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300
+              ${billingCycle === "monthly" 
+                ? "bg-white text-[#A90F90] shadow-md" 
+                : "bg-transparent text-gray-500"
+              }
+            `}
+          >
+            Mensal
+          </button>
+          <button
+            onClick={() => setBillingCycle("annual")}
+            className={`
+              px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 flex items-center gap-1.5
+              ${billingCycle === "annual" 
+                ? "bg-white text-[#A90F90] shadow-md" 
+                : "bg-transparent text-gray-500"
+              }
+            `}
+          >
+            Anual
+            <span className="text-[#00A650] font-bold text-xs">15% OFF</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Stack Container */}
+      <div className="px-4 max-w-[500px] mx-auto">
+        {mobilePlans.map((plan, index) => {
+          const isStuck = stuckCards.has(plan.id);
+          const isLast = index === mobilePlans.length - 1;
+          const pricing = billingCycle === "monthly" ? plan.monthly : plan.annual;
+          
+          return (
+            <div
+              key={plan.id}
+              data-mobile-plan-card={plan.id}
+              className={`
+                sticky bg-white rounded-3xl shadow-md overflow-hidden
+                flex flex-col transition-transform duration-200
+                ${plan.highlighted ? "border border-[#A90F90]" : "border border-gray-100"}
+                ${isLast ? "mb-10" : "mb-4"}
+              `}
+              style={{
+                top: getCardTop(index),
+                zIndex: (index + 1) * 10,
+                minHeight: isLast ? 'auto' : `calc(${styles.headerHeight}px + 260px)`,
+                transform: isStuck ? `translateY(${getStuckOffset(index)}px)` : 'translateY(0)',
+              }}
+            >
+              {/* Card Header */}
+              <div 
+                className={`
+                  h-[70px] px-5 flex items-center justify-between border-b border-gray-100
+                  cursor-pointer transition-colors duration-300
+                  ${isStuck ? "bg-gray-100" : "bg-gray-50"}
+                `}
+              >
+                <div className="flex items-center gap-2">
+                  <span className="font-extrabold italic text-[#A90F90]">meli+</span>
+                  <span className="font-bold text-[#2D3277] uppercase text-sm">{plan.name}</span>
+                </div>
+                
+                <div className="text-right flex items-center justify-end">
+                  {plan.highlighted ? (
+                    // Mega card always shows badge
+                    <span className="text-[#00A650] font-bold text-xs uppercase">
+                      {plan.badge}
+                    </span>
+                  ) : (
+                    // Other cards show price when stuck
+                    <span 
+                      className={`
+                        text-base font-bold text-gray-800 transition-all duration-300
+                        ${isStuck ? "opacity-100 translate-x-0" : "opacity-0 translate-x-2.5"}
+                      `}
+                    >
+                      {pricing.price}
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              {/* Card Body */}
+              <div className="p-6 bg-white flex-1 flex flex-col">
+                {/* Pricing Display */}
+                {plan.highlighted ? (
+                  // Mega pricing with promo
+                  <div className="mb-2">
+                    <div className="flex items-center gap-2.5 mb-1">
+                      <span className="line-through text-gray-400 text-base">
+                        {pricing.originalPrice}
+                      </span>
+                      <span className="text-[#00A650] font-bold text-base">
+                        {pricing.discount}
+                      </span>
+                    </div>
+                    <div className="text-[42px] font-semibold text-gray-800 leading-none">
+                      {pricing.price}
+                      <span className="text-base font-normal text-gray-500 ml-1">
+                        {pricing.period}
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  // Standard pricing
+                  <div className="mb-2">
+                    {pricing.originalPrice && (
+                      <div className="flex items-center gap-2.5 mb-1">
+                        <span className="line-through text-gray-400 text-base">
+                          {pricing.originalPrice}
+                        </span>
+                        <span className="text-[#00A650] font-bold text-base">
+                          {pricing.discount}
+                        </span>
+                      </div>
+                    )}
+                    <div className="text-[42px] font-semibold text-gray-800 leading-none">
+                      {pricing.price}
+                      <span className="text-base font-normal text-gray-500 ml-1">
+                        {pricing.period}
+                      </span>
+                    </div>
+                  </div>
+                )}
+
+                {/* Description */}
+                <p className="text-gray-500 leading-relaxed mb-6 text-[15px]">
+                  {plan.description}
+                </p>
+
+                {/* CTA Button */}
+                <a
+                  href={`https://www.mercadolivre.com.br/assinaturas/melimais/planos?plan_selected=${plan.slug.toUpperCase()}#origin=redirect-vdp-meliplus`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-[#3483FA] text-white py-4 rounded-xl font-semibold text-base text-center block hover:bg-[#2968c8] transition-colors"
+                >
+                  Assinar {plan.name}
+                </a>
+
+                {/* Details Button */}
+                <button className="w-full text-center mt-4 text-[#3483FA] font-semibold bg-transparent border-none cursor-pointer">
+                  Ver detalhes
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
