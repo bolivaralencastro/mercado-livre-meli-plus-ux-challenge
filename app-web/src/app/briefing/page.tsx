@@ -1,5 +1,6 @@
 import PageTemplate from "@/components/layout/PageTemplate";
 import AndesMeliPlusPlans from "@/components/ui/AndesMeliPlusPlans";
+import Link from "next/link";
 import { 
   Target, 
   Users, 
@@ -9,7 +10,8 @@ import {
   Lightbulb, 
   BookOpen,
   CheckCircle2,
-  AlertTriangle
+  AlertTriangle,
+  ExternalLink
 } from "lucide-react";
 
 export default function BriefingPage() {
@@ -178,9 +180,15 @@ export default function BriefingPage() {
               <p className="mb-4 text-sm text-[#666666]">
                 Criar uma proposta inovadora e persuasiva para incentivar a inscrição.
               </p>
-              <div className="rounded bg-gray-50 p-2 text-xs text-[#666666]">
+              <div className="rounded bg-gray-50 p-2 text-xs text-[#666666] mb-4">
                 <strong>Requisito:</strong> Visual impactante, quebra de padrões, despertar desejo.
               </div>
+              <Link 
+                href="/prototipo/landing-pages/oferta-monolitica" 
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#3483fa] hover:underline"
+              >
+                Ver protótipo <ExternalLink size={14} />
+              </Link>
             </div>
 
             {/* Task 2 */}
@@ -193,9 +201,15 @@ export default function BriefingPage() {
               <p className="mb-4 text-sm text-[#666666]">
                 Desenvolver fluxo para adicionar meio de pagamento secundário na área de gestão.
               </p>
-              <div className="rounded bg-gray-50 p-2 text-xs text-[#666666]">
+              <div className="rounded bg-gray-50 p-2 text-xs text-[#666666] mb-4">
                 <strong>Métrica:</strong> Usuário não perder acesso por falha no cartão principal.
               </div>
+              <Link 
+                href="/prototipo/mobile" 
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#3483fa] hover:underline"
+              >
+                Ver protótipo <ExternalLink size={14} />
+              </Link>
             </div>
 
             {/* Task 3 */}

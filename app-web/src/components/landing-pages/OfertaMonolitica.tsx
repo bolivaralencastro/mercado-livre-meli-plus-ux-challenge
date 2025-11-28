@@ -1062,32 +1062,26 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
             <p className="text-gray-600 mb-12">Tranforme suas compras no melhor negócio</p>
           </RevealOnScroll>
 
-          {/* Mobile: Horizontal scroll, Desktop: Grid */}
-          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 text-left overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x snap-mandatory md:snap-none scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0">
-            <div className="min-w-[280px] md:min-w-0 snap-start shrink-0">
-              <BenefitCard
-                icon={Truck}
-                title={<>Frete grátis<br className="md:hidden" /><span className="hidden md:inline"> </span>rápido</>}
-                description="Em milhões de produtos a partir de R$ 19."
-                delay={0}
-              />
-            </div>
-            <div className="min-w-[280px] md:min-w-0 snap-start shrink-0">
-              <BenefitCard
-                icon={Coins}
-                title="Cashback que volta para você"
-                description="Até 3% no ML, 0,5% em qualquer compra e até 10% em parceiros."
-                delay={0.05}
-              />
-            </div>
-            <div className="min-w-[280px] md:min-w-0 snap-start shrink-0 mr-5 md:mr-0">
-              <BenefitCard
-                icon={Shield}
-                title="Seu dinheiro rende muito mais"
-                description="120% do CDI nas Caixinhas do Mercado Pago."
-                delay={0.1}
-              />
-            </div>
+          {/* Stacked on mobile, Grid on desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-left">
+            <BenefitCard
+              icon={Truck}
+              title={<>Frete grátis<br className="md:hidden" /><span className="hidden md:inline"> </span>rápido</>}
+              description="Em milhões de produtos a partir de R$ 19."
+              delay={0}
+            />
+            <BenefitCard
+              icon={Coins}
+              title="Cashback que volta para você"
+              description="Até 3% no ML, 0,5% em qualquer compra e até 10% em parceiros."
+              delay={0.05}
+            />
+            <BenefitCard
+              icon={Shield}
+              title="Seu dinheiro rende muito mais"
+              description="120% do CDI nas Caixinhas do Mercado Pago."
+              delay={0.1}
+            />
           </div>
         </div>
       </section>
@@ -1170,12 +1164,10 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
             <p className="text-gray-600 mb-8 md:mb-12 text-center">Milhares de pessoas já aproveitam os benefícios</p>
           </RevealOnScroll>
 
-          {/* Mobile: Horizontal scroll, Desktop: Grid */}
-          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x snap-mandatory md:snap-none scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0">
+          {/* Stacked on mobile, Grid on desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             {testimonials.map((testimonial, i) => (
-              <div key={testimonial.name} className={`min-w-[300px] md:min-w-0 snap-start shrink-0 ${i === testimonials.length - 1 ? 'mr-5 md:mr-0' : ''}`}>
-                <TestimonialCard testimonial={testimonial} index={i} />
-              </div>
+              <TestimonialCard key={testimonial.name} testimonial={testimonial} index={i} />
             ))}
           </div>
         </div>
@@ -1208,12 +1200,20 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
           />
         </div>
 
-        {/* Mobile Layout: Title Top, Video Bottom */}
+        {/* Mobile Layout: Title Top, Video Middle, Button Bottom */}
         <div className="md:hidden w-full flex flex-col h-full min-h-[auto]">
           <div className="pt-12 px-5 text-center z-10">
             <RevealOnScroll>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Tenha seu Meli+</h2>
-              <p className="text-gray-600">E comece a aproveitar<br />todos os benefícios agora mesmo</p>
+              <p className="text-gray-600 mb-8">E comece a aproveitar<br />todos os benefícios agora mesmo</p>
+              <a
+                href="https://www.mercadolivre.com.br/assinaturas/melimais/planos?plan_selected=MEGA#origin=redirect-vdp-meliplus"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-gradient-to-b from-[#65a5ff] to-[#3483fa] text-white px-12 py-4 text-lg rounded-md font-semibold shadow-lg w-full"
+              >
+                Quero ser Meli+
+              </a>
             </RevealOnScroll>
           </div>
           
@@ -1258,18 +1258,6 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
       <section className="py-12 md:py-20 bg-gray-200">
         <div className="max-w-[1200px] mx-auto px-5">
           <RevealOnScroll>
-            {/* Mobile CTA Button */}
-            <div className="md:hidden text-center mb-8">
-              <a
-                href="https://www.mercadolivre.com.br/assinaturas/melimais/planos?plan_selected=MEGA#origin=redirect-vdp-meliplus"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-gradient-to-b from-[#65a5ff] to-[#3483fa] text-white px-12 py-4 text-lg rounded-md font-semibold shadow-lg w-full"
-              >
-                Quero ser Meli+
-              </a>
-            </div>
-            
             <h2 className="text-lg md:text-2xl font-extrabold text-gray-700 text-center mb-8 md:mb-12 uppercase tracking-wider">
               Perguntas Frequentes
             </h2>
