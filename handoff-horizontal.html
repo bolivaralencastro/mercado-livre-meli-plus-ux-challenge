@@ -663,11 +663,11 @@
         <div class="toolbar-divider"></div>
         
         <div class="toolbar-tabs">
-            <button class="toolbar-tab active" onclick="scrollToSection('overview')">Visão Geral</button>
-            <button class="toolbar-tab" onclick="scrollToSection('desktop')">Desktop</button>
-            <button class="toolbar-tab" onclick="scrollToSection('mobile')">Mobile</button>
-            <button class="toolbar-tab" onclick="scrollToSection('components')">Componentes</button>
-            <button class="toolbar-tab" onclick="scrollToSection('specs')">Especificações</button>
+            <button class="toolbar-tab active" onclick="scrollToSection('overview', event)">Visão Geral</button>
+            <button class="toolbar-tab" onclick="scrollToSection('desktop', event)">Desktop</button>
+            <button class="toolbar-tab" onclick="scrollToSection('mobile', event)">Mobile</button>
+            <button class="toolbar-tab" onclick="scrollToSection('components', event)">Componentes</button>
+            <button class="toolbar-tab" onclick="scrollToSection('specs', event)">Especificações</button>
         </div>
         
         <div class="toolbar-spacer"></div>
@@ -1221,14 +1221,11 @@
         }
 
         // Scroll to section
-        function scrollToSection(sectionId) {
+        function scrollToSection(sectionId, clickEvent) {
             const section = document.getElementById(sectionId);
             if (section) {
-                const rect = section.getBoundingClientRect();
-                const canvasRect = canvas.getBoundingClientRect();
-                
                 container.scrollTo({
-                    left: (section.offsetLeft - 60) * scale,
+                    left: section.offsetLeft - 60,
                     top: 0,
                     behavior: 'smooth'
                 });
@@ -1237,9 +1234,14 @@
                 document.querySelectorAll('.toolbar-tab').forEach(tab => {
                     tab.classList.remove('active');
                 });
-                event.target.classList.add('active');
+                if (clickEvent && clickEvent.target) {
+                    clickEvent.target.classList.add('active');
+                }
             }
         }
+
+        // Pan sensitivity constant
+        const PAN_SENSITIVITY = 1.5;
 
         // Drag to pan
         container.addEventListener('mousedown', (e) => {
@@ -1266,8 +1268,8 @@
             e.preventDefault();
             const x = e.pageX - container.offsetLeft;
             const y = e.pageY - container.offsetTop;
-            const walkX = (x - startX) * 1.5;
-            const walkY = (y - startY) * 1.5;
+            const walkX = (x - startX) * PAN_SENSITIVITY;
+            const walkY = (y - startY) * PAN_SENSITIVITY;
             container.scrollLeft = scrollLeft - walkX;
             container.scrollTop = scrollTop - walkY;
         });
