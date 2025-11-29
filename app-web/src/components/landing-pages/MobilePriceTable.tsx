@@ -90,7 +90,7 @@ export default function MobilePriceTable() {
   const [stuckCards, setStuckCards] = useState<Set<string>>(new Set());
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Check which cards are stuck - seguindo o modelo HTML
+  // Check which cards are stuck
   const checkSticky = useCallback(() => {
     const cards = document.querySelectorAll('[data-mobile-plan-card]');
     const newStuckCards = new Set<string>();
@@ -101,7 +101,7 @@ export default function MobilePriceTable() {
       const topValue = parseFloat(computedStyle.top);
       
       // Card is stuck when its top position is at or near the sticky top value
-      if (rect.top <= topValue) {
+      if (rect.top <= topValue + 1) { // +1 for rounding tolerance
         const id = card.getAttribute('data-mobile-plan-card');
         if (id) {
           newStuckCards.add(id);
@@ -115,15 +115,18 @@ export default function MobilePriceTable() {
   useEffect(() => {
     window.addEventListener('scroll', checkSticky, { passive: true });
     window.addEventListener('resize', checkSticky);
-    checkSticky();
+    
+    // Initial check after a small delay to ensure layout is ready
+    const timer = setTimeout(checkSticky, 100);
     
     return () => {
       window.removeEventListener('scroll', checkSticky);
       window.removeEventListener('resize', checkSticky);
+      clearTimeout(timer);
     };
   }, [checkSticky]);
 
-  // Calculate top position for each card - EXATAMENTE como o HTML
+  // Calculate top position for each card
   const getCardTop = (index: number): number => {
     switch (index) {
       case 0: return TOP_AREA_SPACE;                                    // Card 1
@@ -142,7 +145,7 @@ export default function MobilePriceTable() {
     <div 
       ref={containerRef}
       className="relative"
-      style={{ paddingBottom: '100vh' }} // Espaço extra para scroll como no HTML
+      style={{ paddingBottom: '400px' }} // Espaço para scroll - ajustado para integração na LP
     >
       {/* Pricing Toggle - Sticky at top, z-index 0 (abaixo dos cards) */}
       <div 
@@ -152,6 +155,7 @@ export default function MobilePriceTable() {
           zIndex: 0,
           height: `${TAB_HEIGHT}px`,
           marginBottom: `${TAB_MARGIN}px`,
+          position: 'sticky', // Força sticky positioning
         }}
       >
         <div 
@@ -248,7 +252,7 @@ export default function MobilePriceTable() {
               <div className="p-6 bg-white flex-1 flex flex-col">
                 {/* Pricing Display */}
                 {isMega ? (
-                  // Mega pricing with promo - seguindo exatamente o HTML
+                  // Mega pricing with promo
                   <div className="mb-2">
                     <div className="flex items-center gap-2.5 mb-1">
                       <span className="line-through text-gray-400 text-base">
@@ -314,13 +318,12 @@ export default function MobilePriceTable() {
           );
         })}
         
-        {/* Card Espaçador invisível - garante scroll suficiente como no HTML */}
+        {/* Card Espaçador invisível - garante scroll suficiente para o sticky funcionar */}
         <div 
-          className="sticky opacity-0 pointer-events-none"
+          className="opacity-0 pointer-events-none"
+          aria-hidden="true"
           style={{
-            top: `${TOP_AREA_SPACE + (HEADER_HEIGHT * 3)}px`,
-            zIndex: 4,
-            height: '200px',
+            height: '100px',
           }}
         />
       </div>

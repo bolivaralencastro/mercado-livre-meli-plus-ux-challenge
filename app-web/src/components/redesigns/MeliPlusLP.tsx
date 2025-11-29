@@ -1,4 +1,4 @@
-'use client';
+f'use client';
 
 import React from 'react';
 import AndesMeliPlusPlans from '@/components/ui/AndesMeliPlusPlans';
