@@ -276,9 +276,8 @@ export default function PaymentFlowViewerPage() {
               >
                 <iframe
                   src={`/prototipo/configuracao-pagamento/${slug}/standalone`}
-                  className="w-full h-full border-none overflow-hidden"
+                  className="w-full h-full border-none no-scrollbar"
                   title="Mobile Preview"
-                  scrolling="no"
                 />
               </div>
               

@@ -34,6 +34,11 @@ body {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+  
+  /* Hide scrollbar inside iframes */
+  iframe.no-scrollbar {
+    overflow: auto;
+  }
 }
 
 /* Fullscreen mode - hide header by default */
