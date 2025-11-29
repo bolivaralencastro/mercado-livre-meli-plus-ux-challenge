@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figma Handoff - Meli+ Landing Page | Oferta Monolítica</title>
+    <style>
+        /* ============ CSS RESET & BASE ============ */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --canvas-bg: #1e1e1e;
+            --panel-bg: #2c2c2c;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent-purple: #8e24aa;
+            --accent-yellow: #ffe600;
+            --accent-blue: #3483fa;
+            --border-color: #3c3c3c;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'Inter', 'Proxima Nova', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--canvas-bg);
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ============ TOP TOOLBAR (Figma-style) ============ */
+        .toolbar {
+            height: 48px;
+            background: var(--panel-bg);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            gap: 24px;
+            flex-shrink: 0;
+            z-index: 100;
+        }
+
+        .toolbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toolbar-logo-icon {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--accent-yellow) 0%, #f5ce00 100%);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #2d3277;
+            font-size: 8px;
+        }
+
+        .toolbar-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .toolbar-divider {
+            width: 1px;
+            height: 24px;
+            background: var(--border-color);
+        }
+
+        .toolbar-tabs {
+            display: flex;
+            gap: 4px;
+        }
+
+        .toolbar-tab {
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            background: transparent;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .toolbar-tab:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-primary);
+        }
+
+        .toolbar-tab.active {
+            background: rgba(142, 36, 170, 0.2);
+            color: var(--accent-purple);
+        }
+
+        .toolbar-spacer {
+            flex: 1;
+        }
+
+        .toolbar-badge {
+            padding: 4px 10px;
+            font-size: 11px;
+            font-weight: 600;
+            background: var(--accent-purple);
+            color: white;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .toolbar-zoom {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .toolbar-zoom button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 14px;
+            padding: 4px;
+        }
+
+        .toolbar-zoom button:hover {
+            color: var(--text-primary);
+        }
+
+        /* ============ MAIN CANVAS CONTAINER ============ */
+        .canvas-container {
+            flex: 1;
+            overflow: auto;
+            position: relative;
+        }
+
+        .canvas {
+            position: relative;
+            width: 8000px;
+            height: 12000px;
+            background-color: var(--canvas-bg);
+            background-image: 
+                radial-gradient(circle, #333 1px, transparent 1px);
+            background-size: 24px 24px;
+            transform-origin: 0 0;
+            transition: transform 0.1s ease;
+        }
+
+        /* ============ FRAME STYLES ============ */
+        .frame {
+            position: absolute;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .frame-label {
+            position: absolute;
+            top: -28px;
+            left: 0;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent-purple);
+            white-space: nowrap;
+        }
+
+        .frame-sublabel {
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-left: 8px;
+        }
+
+        /* ============ SECTION TITLE ON CANVAS ============ */
+        .canvas-section-title {
+            position: absolute;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        .canvas-section-subtitle {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        /* ============ COMPONENT FRAME STYLES ============ */
+        .component-frame {
+            position: absolute;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        /* ============ SPEC CARD STYLES ============ */
+        .spec-card {
+            position: absolute;
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            color: var(--text-primary);
+        }
+
+        .spec-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--accent-purple);
+        }
+
+        .spec-card h4 {
+            font-size: 13px;
+            font-weight: 600;
+            margin: 16px 0 8px 0;
+            color: var(--text-primary);
+        }
+
+        .spec-card p, .spec-card li {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .spec-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .spec-card li {
+            padding: 4px 0;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .spec-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-purple);
+        }
+
+        .color-swatch {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 4px 0;
+        }
+
+        .color-swatch .swatch {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .color-swatch .code {
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        /* ============ STATIC CONTENT PLACEHOLDERS ============ */
+        .static-page {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Landing Page Static Representation */
+        .lp-header {
+            background: #fff159;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .lp-logo {
+            font-size: 18px;
+            font-weight: 800;
+            color: #2d3277;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .lp-logo svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .lp-nav {
+            display: flex;
+            gap: 20px;
+            font-size: 13px;
+            color: #333;
+        }
+
+        .lp-hero {
+            background: linear-gradient(135deg, #f8f8ff 0%, #fff 100%);
+            padding: 60px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .lp-hero-content {
+            max-width: 450px;
+        }
+
+        .lp-hero-badge {
+            display: inline-block;
+            background: #8e24aa;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-weight: 800;
+            font-style: italic;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        .lp-hero h1 {
+            font-size: 48px;
+            font-weight: 900;
+            color: #1a1a1a;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .lp-hero h1 span {
+            color: #8e24aa;
+        }
+
+        .lp-hero p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+
+        .lp-hero-cta {
+            display: inline-block;
+            background: linear-gradient(180deg, #65a5ff 0%, #3483fa 100%);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        .lp-hero-image {
+            width: 400px;
+            height: 350px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .lp-benefits {
+            background: #f5f5f7;
+            padding: 60px 40px;
+        }
+
+        .lp-benefits-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 40px;
+        }
+
+        .lp-benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .lp-benefit-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .lp-benefit-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            border-radius: 16px;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .lp-benefit-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .lp-benefit-card p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .lp-pricing {
+            background: white;
+            padding: 60px 40px;
+        }
+
+        .lp-pricing-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 40px;
+        }
+
+        .lp-pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .lp-pricing-card {
+            background: #f8f8fa;
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .lp-pricing-card.highlighted {
+            border-color: #8e24aa;
+            background: white;
+            box-shadow: 0 8px 32px rgba(142, 36, 170, 0.15);
+        }
+
+        .lp-pricing-card .plan-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: #8e24aa;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .lp-pricing-card .plan-price {
+            font-size: 32px;
+            font-weight: 800;
+            color: #1a1a1a;
+        }
+
+        .lp-pricing-card .plan-period {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+
+        .lp-pricing-card .plan-features {
+            text-align: left;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .lp-pricing-card .plan-features li {
+            padding: 6px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lp-faq {
+            background: #e8e8eb;
+            padding: 60px 40px;
+        }
+
+        .lp-faq-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 40px;
+        }
+
+        .lp-faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .lp-faq-item {
+            background: white;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 12px;
+        }
+
+        .lp-faq-item h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        /* ============ ATOMIC COMPONENT STYLES ============ */
+        .atom-button {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .atom-button.primary {
+            background: linear-gradient(180deg, #65a5ff 0%, #3483fa 100%);
+            color: white;
+        }
+
+        .atom-button.secondary {
+            background: #f5f5f7;
+            color: #1a1a1a;
+            border: 1px solid #d2d2d7;
+        }
+
+        .atom-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .atom-badge.purple {
+            background: #8e24aa;
+            color: white;
+        }
+
+        .atom-badge.yellow {
+            background: #ffe600;
+            color: #2d3277;
+        }
+
+        .atom-input {
+            padding: 12px 16px;
+            border: 1px solid #d2d2d7;
+            border-radius: 6px;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        .atom-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        /* ============ MINI MAP ============ */
+        .minimap {
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+            width: 200px;
+            height: 150px;
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .minimap-canvas {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .minimap-viewport {
+            position: absolute;
+            border: 2px solid var(--accent-purple);
+            background: rgba(142, 36, 170, 0.1);
+            pointer-events: none;
+        }
+
+        .minimap-frame {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 1px;
+        }
+
+        /* ============ HELP HINT ============ */
+        .help-hint {
+            position: fixed;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        .help-hint kbd {
+            background: rgba(255,255,255,0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Toolbar -->
+    <header class="toolbar">
+        <div class="toolbar-logo">
+            <div class="toolbar-logo-icon">meli+</div>
+            <span class="toolbar-title">Handoff - Oferta Monolítica</span>
+        </div>
+        
+        <div class="toolbar-divider"></div>
+        
+        <div class="toolbar-tabs">
+            <button class="toolbar-tab active" onclick="scrollToSection('overview', event)">Visão Geral</button>
+            <button class="toolbar-tab" onclick="scrollToSection('desktop', event)">Desktop</button>
+            <button class="toolbar-tab" onclick="scrollToSection('mobile', event)">Mobile</button>
+            <button class="toolbar-tab" onclick="scrollToSection('components', event)">Componentes</button>
+            <button class="toolbar-tab" onclick="scrollToSection('specs', event)">Especificações</button>
+        </div>
+        
+        <div class="toolbar-spacer"></div>
+        
+        <div class="toolbar-badge">Pronto para Dev</div>
+        
+        <div class="toolbar-zoom">
+            <button onclick="zoomOut()">−</button>
+            <span id="zoomLevel">100%</span>
+            <button onclick="zoomIn()">+</button>
+        </div>
+    </header>
+
+    <!-- Canvas Container -->
+    <div class="canvas-container" id="canvasContainer">
+        <div class="canvas" id="canvas">
+            
+            <!-- ============ SECTION: OVERVIEW ============ -->
+            <div class="canvas-section-title" id="overview" style="top: 60px; left: 60px;">
+                01 — Visão Geral
+                <div class="canvas-section-subtitle">Landing Page Meli+ • Oferta Monolítica</div>
+            </div>
+            
+            <!-- Overview Info Card -->
+            <div class="spec-card" style="top: 160px; left: 60px; width: 400px;">
+                <h3>📋 Sobre o Projeto</h3>
+                <p>Landing page principal do Meli+ com proposta de valor completa, comunicando frete grátis, streaming e benefícios financeiros.</p>
+                
+                <h4>Seções da Página</h4>
+                <ul>
+                    <li>Header com navegação</li>
+                    <li>Hero Section com CTA</li>
+                    <li>Cards de Benefícios</li>
+                    <li>Tabela de Preços</li>
+                    <li>Depoimentos</li>
+                    <li>FAQ Accordion</li>
+                    <li>Footer</li>
+                </ul>
+                
+                <h4>Dispositivos</h4>
+                <ul>
+                    <li>Desktop: 1200px</li>
+                    <li>Mobile: 375px</li>
+                </ul>
+            </div>
+            
+            <!-- ============ SECTION: DESKTOP FULL PAGE ============ -->
+            <div class="canvas-section-title" id="desktop" style="top: 60px; left: 600px;">
+                02 — Desktop
+                <div class="canvas-section-subtitle">Versão Web • 1200 × 4000px</div>
+            </div>
+            
+            <!-- Desktop Frame -->
+            <div class="frame" style="top: 160px; left: 600px; width: 1200px; height: 4000px;">
+                <div class="frame-label">
+                    Desktop — Landing Page Completa
+                    <span class="frame-sublabel">1200 × 4000</span>
+                </div>
+                <div class="static-page">
+                    <!-- Header -->
+                    <div class="lp-header">
+                        <div class="lp-logo">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>
+                            mercado livre
+                        </div>
+                        <div class="lp-nav">
+                            <span>Categorias</span>
+                            <span>Ofertas</span>
+                            <span>Vender</span>
+                            <span>Contato</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Hero -->
+                    <div class="lp-hero">
+                        <div class="lp-hero-content">
+                            <div class="lp-hero-badge">meli+</div>
+                            <h1>Gaste menos<br><span>e receba muito+</span></h1>
+                            <p>Frete grátis, cashback e os melhores streamings reunidos.</p>
+                            <a href="#" class="lp-hero-cta">Assinar com até 46% OFF</a>
+                        </div>
+                        <div class="lp-hero-image">
+                            [Imagem Hero - Produto Meli+]
+                        </div>
+                    </div>
+                    
+                    <!-- Benefits -->
+                    <div class="lp-benefits">
+                        <h2 class="lp-benefits-title">Por que ser Meli+?</h2>
+                        <div class="lp-benefits-grid">
+                            <div class="lp-benefit-card">
+                                <div class="lp-benefit-icon">🚚</div>
+                                <h3>Frete Grátis</h3>
+                                <p>Entregas rápidas sem custo adicional em milhares de produtos.</p>
+                            </div>
+                            <div class="lp-benefit-card">
+                                <div class="lp-benefit-icon">🎬</div>
+                                <h3>Streaming</h3>
+                                <p>Disney+, Star+, HBO Max e muito mais incluso na assinatura.</p>
+                            </div>
+                            <div class="lp-benefit-card">
+                                <div class="lp-benefit-icon">💰</div>
+                                <h3>Cashback</h3>
+                                <p>Dinheiro de volta em todas as suas compras no Mercado Livre.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pricing -->
+                    <div class="lp-pricing">
+                        <h2 class="lp-pricing-title">Escolha seu plano</h2>
+                        <div class="lp-pricing-grid">
+                            <div class="lp-pricing-card">
+                                <div class="plan-name">ESSENCIAL</div>
+                                <div class="plan-price">R$ 9,90</div>
+                                <div class="plan-period">/mês</div>
+                                <ul class="plan-features">
+                                    <li>✓ Frete Grátis Rápido</li>
+                                    <li>✓ Cashback ML</li>
+                                    <li>✓ Conta 105% CDI</li>
+                                    <li>✗ Disney+</li>
+                                    <li>✗ Netflix</li>
+                                </ul>
+                            </div>
+                            <div class="lp-pricing-card highlighted">
+                                <div class="plan-name">MEGA</div>
+                                <div class="plan-price">R$ 39,90</div>
+                                <div class="plan-period">/mês</div>
+                                <ul class="plan-features">
+                                    <li>✓ Frete Grátis Rápido</li>
+                                    <li>✓ Cashback ML</li>
+                                    <li>✓ Conta 105% CDI</li>
+                                    <li>✓ Disney+ Star+</li>
+                                    <li>✓ Netflix</li>
+                                </ul>
+                            </div>
+                            <div class="lp-pricing-card">
+                                <div class="plan-name">TOTAL</div>
+                                <div class="plan-price">R$ 24,90</div>
+                                <div class="plan-period">/mês</div>
+                                <ul class="plan-features">
+                                    <li>✓ Frete Grátis Rápido</li>
+                                    <li>✓ Cashback ML</li>
+                                    <li>✓ Conta 105% CDI</li>
+                                    <li>✓ Disney+</li>
+                                    <li>✗ Netflix</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ -->
+                    <div class="lp-faq">
+                        <h2 class="lp-faq-title">Perguntas Frequentes</h2>
+                        <div class="lp-faq-list">
+                            <div class="lp-faq-item">
+                                <h4>O que é o Meli+?</h4>
+                            </div>
+                            <div class="lp-faq-item">
+                                <h4>Como funciona o frete grátis?</h4>
+                            </div>
+                            <div class="lp-faq-item">
+                                <h4>Posso cancelar a qualquer momento?</h4>
+                            </div>
+                            <div class="lp-faq-item">
+                                <h4>Como acesso os streamings?</h4>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Continuation placeholder -->
+                    <div style="background: #f5f5f7; padding: 100px 40px; text-align: center; color: #666;">
+                        [Continuação da página - CTA Final, Footer, etc.]
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ============ SECTION: MOBILE FULL PAGE ============ -->
+            <div class="canvas-section-title" id="mobile" style="top: 60px; left: 1900px;">
+                03 — Mobile
+                <div class="canvas-section-subtitle">Versão iOS • 375 × 6000px</div>
+            </div>
+            
+            <!-- Mobile Frame -->
+            <div class="frame" style="top: 160px; left: 1900px; width: 375px; height: 5000px; border-radius: 40px;">
+                <div class="frame-label">
+                    Mobile — Landing Page Completa
+                    <span class="frame-sublabel">375 × 5000</span>
+                </div>
+                <div class="static-page" style="border-radius: 40px; overflow: hidden;">
+                    <!-- Mobile Header -->
+                    <div class="lp-header" style="padding: 10px 16px;">
+                        <div class="lp-logo" style="font-size: 14px;">
+                            <svg viewBox="0 0 24 24" fill="currentColor" style="width: 16px; height: 16px;"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>
+                            mercado livre
+                        </div>
+                        <div style="font-size: 20px;">☰</div>
+                    </div>
+                    
+                    <!-- Mobile Hero -->
+                    <div style="background: linear-gradient(135deg, #f8f8ff 0%, #fff 100%); padding: 32px 20px; text-align: center;">
+                        <div class="lp-hero-badge" style="font-size: 14px;">meli+</div>
+                        <h1 style="font-size: 32px; font-weight: 900; color: #1a1a1a; line-height: 1.1; margin: 16px 0;">
+                            Gaste menos<br><span style="color: #8e24aa;">e receba muito+</span>
+                        </h1>
+                        <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Frete grátis, cashback e os melhores streamings reunidos.</p>
+                        <a href="#" class="lp-hero-cta" style="display: block; margin: 0 20px;">Assinar com até 46% OFF</a>
+                        
+                        <div style="margin-top: 32px; height: 200px; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #666;">
+                            [Imagem Hero Mobile]
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Benefits -->
+                    <div style="background: #f5f5f7; padding: 40px 20px;">
+                        <h2 style="text-align: center; font-size: 22px; font-weight: 700; margin-bottom: 24px;">Por que ser Meli+?</h2>
+                        
+                        <div class="lp-benefit-card" style="margin-bottom: 16px;">
+                            <div class="lp-benefit-icon" style="width: 48px; height: 48px; font-size: 20px;">🚚</div>
+                            <h3 style="font-size: 16px;">Frete Grátis</h3>
+                            <p style="font-size: 12px;">Entregas rápidas sem custo adicional.</p>
+                        </div>
+                        
+                        <div class="lp-benefit-card" style="margin-bottom: 16px;">
+                            <div class="lp-benefit-icon" style="width: 48px; height: 48px; font-size: 20px;">🎬</div>
+                            <h3 style="font-size: 16px;">Streaming</h3>
+                            <p style="font-size: 12px;">Disney+, Star+, HBO Max incluso.</p>
+                        </div>
+                        
+                        <div class="lp-benefit-card">
+                            <div class="lp-benefit-icon" style="width: 48px; height: 48px; font-size: 20px;">💰</div>
+                            <h3 style="font-size: 16px;">Cashback</h3>
+                            <p style="font-size: 12px;">Dinheiro de volta em compras.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Pricing -->
+                    <div style="background: white; padding: 40px 20px;">
+                        <h2 style="text-align: center; font-size: 22px; font-weight: 700; margin-bottom: 24px;">Escolha seu plano</h2>
+                        
+                        <div class="lp-pricing-card" style="margin-bottom: 16px;">
+                            <div class="plan-name">ESSENCIAL</div>
+                            <div class="plan-price" style="font-size: 28px;">R$ 9,90</div>
+                            <div class="plan-period">/mês</div>
+                        </div>
+                        
+                        <div class="lp-pricing-card highlighted" style="margin-bottom: 16px;">
+                            <div class="plan-name">MEGA • MAIS POPULAR</div>
+                            <div class="plan-price" style="font-size: 28px;">R$ 39,90</div>
+                            <div class="plan-period">/mês</div>
+                        </div>
+                        
+                        <div class="lp-pricing-card">
+                            <div class="plan-name">TOTAL</div>
+                            <div class="plan-price" style="font-size: 28px;">R$ 24,90</div>
+                            <div class="plan-period">/mês</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile FAQ -->
+                    <div style="background: #e8e8eb; padding: 40px 20px;">
+                        <h2 style="text-align: center; font-size: 22px; font-weight: 700; margin-bottom: 24px;">FAQ</h2>
+                        
+                        <div class="lp-faq-item" style="margin-bottom: 8px;">
+                            <h4 style="font-size: 14px;">O que é o Meli+?</h4>
+                        </div>
+                        <div class="lp-faq-item" style="margin-bottom: 8px;">
+                            <h4 style="font-size: 14px;">Como funciona o frete grátis?</h4>
+                        </div>
+                        <div class="lp-faq-item" style="margin-bottom: 8px;">
+                            <h4 style="font-size: 14px;">Posso cancelar a qualquer momento?</h4>
+                        </div>
+                    </div>
+                    
+                    <!-- Continuation -->
+                    <div style="background: #f5f5f7; padding: 100px 20px; text-align: center; color: #666; font-size: 12px;">
+                        [Continuação - CTA Final, Footer Mobile]
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ============ SECTION: ATOMIC COMPONENTS ============ -->
+            <div class="canvas-section-title" id="components" style="top: 60px; left: 2400px;">
+                04 — Componentes Atômicos
+                <div class="canvas-section-subtitle">Biblioteca de UI • Design System</div>
+            </div>
+            
+            <!-- Buttons Component -->
+            <div class="component-frame" style="top: 160px; left: 2400px; width: 300px; padding: 24px;">
+                <div class="frame-label">Buttons</div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <button class="atom-button primary">Botão Primário</button>
+                    <button class="atom-button secondary">Botão Secundário</button>
+                    <button class="atom-button primary" style="opacity: 0.5;">Botão Disabled</button>
+                </div>
+            </div>
+            
+            <!-- Badges Component -->
+            <div class="component-frame" style="top: 160px; left: 2740px; width: 300px; padding: 24px;">
+                <div class="frame-label">Badges</div>
+                <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+                    <span class="atom-badge purple">meli+</span>
+                    <span class="atom-badge yellow">46% OFF</span>
+                    <span class="atom-badge" style="background: #e8f5e9; color: #2e7d32;">Incluído</span>
+                    <span class="atom-badge" style="background: #ffebee; color: #c62828;">Não incluído</span>
+                </div>
+            </div>
+            
+            <!-- Input Component -->
+            <div class="component-frame" style="top: 360px; left: 2400px; width: 300px; padding: 24px;">
+                <div class="frame-label">Inputs</div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <input class="atom-input" placeholder="Campo de texto" />
+                    <input class="atom-input" placeholder="Campo de busca" style="background: #f5f5f7;" />
+                </div>
+            </div>
+            
+            <!-- Card Component -->
+            <div class="component-frame" style="top: 360px; left: 2740px; width: 300px; padding: 24px;">
+                <div class="frame-label">Card</div>
+                <div class="atom-card">
+                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #f3e5f5, #e1bee7); border-radius: 8px; margin-bottom: 12px;"></div>
+                    <h4 style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px;">Título do Card</h4>
+                    <p style="font-size: 13px; color: #666;">Descrição breve do componente card.</p>
+                </div>
+            </div>
+            
+            <!-- Header Component -->
+            <div class="component-frame" style="top: 560px; left: 2400px; width: 640px;">
+                <div class="frame-label">Header Navigation</div>
+                <div class="lp-header" style="border-radius: 8px;">
+                    <div class="lp-logo">
+                        <svg viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px;"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>
+                        mercado livre
+                    </div>
+                    <div class="lp-nav">
+                        <span>Categorias</span>
+                        <span>Ofertas</span>
+                        <span>Vender</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Benefit Card Component -->
+            <div class="component-frame" style="top: 700px; left: 2400px; width: 300px; padding: 0;">
+                <div class="frame-label">Benefit Card</div>
+                <div class="lp-benefit-card" style="border-radius: 8px;">
+                    <div class="lp-benefit-icon">🚚</div>
+                    <h3>Frete Grátis</h3>
+                    <p>Entregas rápidas sem custo adicional em milhares de produtos.</p>
+                </div>
+            </div>
+            
+            <!-- Pricing Card Component -->
+            <div class="component-frame" style="top: 700px; left: 2740px; width: 280px; padding: 0;">
+                <div class="frame-label">Pricing Card</div>
+                <div class="lp-pricing-card highlighted" style="border-radius: 8px;">
+                    <div class="plan-name">MEGA</div>
+                    <div class="plan-price">R$ 39,90</div>
+                    <div class="plan-period">/mês</div>
+                </div>
+            </div>
+            
+            <!-- FAQ Item Component -->
+            <div class="component-frame" style="top: 960px; left: 2400px; width: 500px; padding: 0;">
+                <div class="frame-label">FAQ Accordion Item</div>
+                <div class="lp-faq-item" style="border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                    <h4>O que é o Meli+?</h4>
+                    <span style="color: #666;">▼</span>
+                </div>
+            </div>
+            
+            <!-- ============ SECTION: SPECIFICATIONS ============ -->
+            <div class="canvas-section-title" id="specs" style="top: 60px; left: 3200px;">
+                05 — Especificações Técnicas
+                <div class="canvas-section-subtitle">Design Tokens • Guidelines</div>
+            </div>
+            
+            <!-- Typography Spec -->
+            <div class="spec-card" style="top: 160px; left: 3200px; width: 350px;">
+                <h3>🔤 Tipografia</h3>
+                <h4>Font Family</h4>
+                <p>Proxima Nova</p>
+                
+                <h4>Font Weights</h4>
+                <ul>
+                    <li>Regular: 400</li>
+                    <li>Semi-bold: 600</li>
+                    <li>Bold: 700</li>
+                    <li>Extra-bold: 800</li>
+                </ul>
+                
+                <h4>Sizes</h4>
+                <ul>
+                    <li>H1: 48px / 32px mobile</li>
+                    <li>H2: 28px / 22px mobile</li>
+                    <li>H3: 18px / 16px mobile</li>
+                    <li>Body: 15px / 14px mobile</li>
+                    <li>Small: 13px / 12px mobile</li>
+                </ul>
+            </div>
+            
+            <!-- Colors Spec -->
+            <div class="spec-card" style="top: 160px; left: 3600px; width: 350px;">
+                <h3>🎨 Cores</h3>
+                
+                <h4>Brand Colors</h4>
+                <div class="color-swatch">
+                    <span class="swatch" style="background: #8e24aa;"></span>
+                    <span class="code">Meli+ Purple #8e24aa</span>
+                </div>
+                <div class="color-swatch">
+                    <span class="swatch" style="background: #ffe600;"></span>
+                    <span class="code">ML Yellow #ffe600</span>
+                </div>
+                <div class="color-swatch">
+                    <span class="swatch" style="background: #3483fa;"></span>
+                    <span class="code">ML Blue #3483fa</span>
+                </div>
+                
+                <h4>UI Colors</h4>
+                <div class="color-swatch">
+                    <span class="swatch" style="background: #1a1a1a;"></span>
+                    <span class="code">Text Primary #1a1a1a</span>
+                </div>
+                <div class="color-swatch">
+                    <span class="swatch" style="background: #666666;"></span>
+                    <span class="code">Text Secondary #666666</span>
+                </div>
+                <div class="color-swatch">
+                    <span class="swatch" style="background: #f5f5f7;"></span>
+                    <span class="code">Background #f5f5f7</span>
+                </div>
+            </div>
+            
+            <!-- Spacing Spec -->
+            <div class="spec-card" style="top: 580px; left: 3200px; width: 350px;">
+                <h3>📐 Espaçamentos</h3>
+                
+                <h4>Grid Base</h4>
+                <p>8px grid system</p>
+                
+                <h4>Container</h4>
+                <ul>
+                    <li>Max-width: 1200px</li>
+                    <li>Padding: 40px desktop</li>
+                    <li>Padding: 20px mobile</li>
+                </ul>
+                
+                <h4>Section Spacing</h4>
+                <ul>
+                    <li>Vertical: 60px desktop</li>
+                    <li>Vertical: 40px mobile</li>
+                </ul>
+                
+                <h4>Component Gaps</h4>
+                <ul>
+                    <li>Cards Grid: 24px</li>
+                    <li>List Items: 12px</li>
+                    <li>Button Groups: 8px</li>
+                </ul>
+            </div>
+            
+            <!-- Animations Spec -->
+            <div class="spec-card" style="top: 580px; left: 3600px; width: 350px;">
+                <h3>✨ Animações</h3>
+                
+                <h4>Transitions</h4>
+                <ul>
+                    <li>Duration: 300ms</li>
+                    <li>Easing: ease-out</li>
+                </ul>
+                
+                <h4>Hover Effects</h4>
+                <ul>
+                    <li>Scale: 1.02</li>
+                    <li>Shadow elevation</li>
+                    <li>Color transitions</li>
+                </ul>
+                
+                <h4>Scroll Animations</h4>
+                <ul>
+                    <li>Reveal on scroll</li>
+                    <li>Parallax on hero image</li>
+                    <li>Intersection Observer</li>
+                </ul>
+            </div>
+            
+            <!-- Breakpoints Spec -->
+            <div class="spec-card" style="top: 1000px; left: 3200px; width: 350px;">
+                <h3>📱 Breakpoints</h3>
+                
+                <h4>Responsive</h4>
+                <ul>
+                    <li>Mobile: 375px</li>
+                    <li>Tablet: 768px</li>
+                    <li>Desktop: 1200px</li>
+                </ul>
+                
+                <h4>Approach</h4>
+                <p>Mobile-first responsive design with progressive enhancement.</p>
+            </div>
+            
+            <!-- Accessibility Spec -->
+            <div class="spec-card" style="top: 1000px; left: 3600px; width: 350px;">
+                <h3>♿ Acessibilidade</h3>
+                
+                <h4>Standards</h4>
+                <ul>
+                    <li>WCAG 2.1 AA compliance</li>
+                    <li>Minimum contrast 4.5:1</li>
+                    <li>Focus states visible</li>
+                    <li>Alt texts em imagens</li>
+                    <li>Semantic HTML</li>
+                    <li>Keyboard navigation</li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Help Hint -->
+    <div class="help-hint">
+        <span>Navegue pelo canvas:</span>
+        <span><kbd>Scroll</kbd> ou <kbd>Arrastar</kbd></span>
+        <span>|</span>
+        <span><kbd>+</kbd> / <kbd>−</kbd> Zoom</span>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const container = document.getElementById('canvasContainer');
+        let scale = 1;
+        let isDragging = false;
+        let startX, startY, scrollLeft, scrollTop;
+
+        // Zoom functionality
+        function zoomIn() {
+            scale = Math.min(scale + 0.1, 2);
+            updateZoom();
+        }
+
+        function zoomOut() {
+            scale = Math.max(scale - 0.1, 0.25);
+            updateZoom();
+        }
+
+        function updateZoom() {
+            canvas.style.transform = `scale(${scale})`;
+            document.getElementById('zoomLevel').textContent = Math.round(scale * 100) + '%';
+        }
+
+        // Scroll to section
+        function scrollToSection(sectionId, clickEvent) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                container.scrollTo({
+                    left: section.offsetLeft - 60,
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                
+                // Update active tab
+                document.querySelectorAll('.toolbar-tab').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                if (clickEvent && clickEvent.target) {
+                    clickEvent.target.classList.add('active');
+                }
+            }
+        }
+
+        // Pan sensitivity constant
+        const PAN_SENSITIVITY = 1.5;
+
+        // Drag to pan
+        container.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - container.offsetLeft;
+            startY = e.pageY - container.offsetTop;
+            scrollLeft = container.scrollLeft;
+            scrollTop = container.scrollTop;
+            container.style.cursor = 'grabbing';
+        });
+
+        container.addEventListener('mouseleave', () => {
+            isDragging = false;
+            container.style.cursor = 'default';
+        });
+
+        container.addEventListener('mouseup', () => {
+            isDragging = false;
+            container.style.cursor = 'default';
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const y = e.pageY - container.offsetTop;
+            const walkX = (x - startX) * PAN_SENSITIVITY;
+            const walkY = (y - startY) * PAN_SENSITIVITY;
+            container.scrollLeft = scrollLeft - walkX;
+            container.scrollTop = scrollTop - walkY;
+        });
+
+        // Keyboard zoom
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '+' || e.key === '=') zoomIn();
+            if (e.key === '-') zoomOut();
+        });
+
+        // Wheel zoom with Ctrl
+        container.addEventListener('wheel', (e) => {
+            if (e.ctrlKey) {
+                e.preventDefault();
+                if (e.deltaY < 0) zoomIn();
+                else zoomOut();
+            }
+        });
+    </script>
+</body>
+</html>
