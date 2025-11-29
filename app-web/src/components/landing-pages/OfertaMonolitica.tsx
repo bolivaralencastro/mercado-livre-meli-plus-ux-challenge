@@ -19,6 +19,7 @@ import {
   Menu
 } from "lucide-react";
 import MobilePriceTable from "./MobilePriceTable";
+import ScrollVideo from "./ScrollVideo";
 
 // ============ MOVIE DATA ============
 const moviesData = {
@@ -1088,26 +1089,24 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
 
       {/* Pricing Section */}
       <section id="planos" className="py-8 md:py-20 relative overflow-hidden md:overflow-visible">
-        {/* Piggy Bank Decoration - Hidden on mobile */}
-        <div 
-          className="absolute left-[-20px] w-[400px] h-[400px] bg-contain bg-center bg-no-repeat z-[100] pointer-events-none hidden md:block"
-          style={{ 
-            backgroundImage: "url('https://smolljrfjqknp6nm.public.blob.vercel-storage.com/assets/piggy-bank-image.webp')",
-            top: '-50px',
-            transform: 'scaleX(-1)',
-          }}
+        {/* Piggy Bank Video - Controlled by scroll - Hidden on mobile */}
+        <ScrollVideo
+          src="/assets/videos/pig.webm"
+          className="absolute left-[-20px] w-[400px] h-[400px] z-[100] pointer-events-none hidden md:block"
+          style={{ top: '-50px' }}
+          startTrigger={0.9}
+          endTrigger={0.1}
+          mirror={true}
         />
         
-        {/* Delivery Man Decoration - Hidden on mobile */}
-        <div 
+        {/* Delivery Man Video - Controlled by scroll - Hidden on mobile */}
+        <ScrollVideo
+          src="/assets/videos/entregador.webm"
           className="absolute right-[-72px] w-[400px] h-[500px] z-[100] pointer-events-none hidden md:block"
           style={{ bottom: '-200px' }}
-        >
-          <div 
-            className="w-full h-full bg-contain bg-center bg-no-repeat"
-            style={{ backgroundImage: "url('https://smolljrfjqknp6nm.public.blob.vercel-storage.com/assets/entregador.webp')" }}
-          />
-        </div>
+          startTrigger={0.8}
+          endTrigger={0.0}
+        />
         
         {/* Section Title */}
         <div className="max-w-[1200px] mx-auto px-5 relative z-[2] text-center mb-8">
