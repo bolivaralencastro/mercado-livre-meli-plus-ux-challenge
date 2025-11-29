@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handoff - Fluxo de Configuração de Pagamento</title>
+    <link rel="stylesheet" href="handoff.css">
+</head>
+<body>
+    <div class="main-container">
+        <section class="screen" id="overview">
+            <h1>Visão Geral do Fluxo</h1>
+            <h2>Configuração de Pagamento</h2>
+            <p>Este protótipo aborda o desafio de reduzir o churn involuntário, permitindo que os usuários gerenciem seus métodos de pagamento de forma proativa. A interface oferece uma visão clara da assinatura, com opções para adicionar um método de pagamento de backup, garantindo a continuidade do serviço mesmo em caso de falha no pagamento principal. O fluxo foi desenhado para ser intuitivo e seguro, transmitindo confiança ao usuário e fortalecendo o relacionamento com a plataforma.</p>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <h3>Cenário</h3>
+                    <p>Usuário precisa atualizar ou adicionar um método de pagamento para evitar o cancelamento da assinatura.</p>
+                </div>
+                <div class="detail-item">
+                    <h3>Objetivo</h3>
+                    <p>Facilitar a gestão de métodos de pagamento e reduzir o churn involuntário.</p>
+                </div>
+            </div>
+        </section>
+        <section class="screen" id="entry-flow">
+            <h1>Tela: EntryFlow</h1>
+            <div class="screen-representation">
+                <div class="mockup-phone">
+                    <div class="mockup-screen">
+                        <div class="entry-flow-content">
+                            <div class="entry-flow-icon">
+                                <!-- Icon representing payment security -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#3483fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            </div>
+                            <h2 class="screen-title">Gerencie suas formas de pagamento</h2>
+                            <p class="screen-description">Adicione um método de backup para garantir que sua assinatura Meli+ nunca seja interrompida.</p>
+                            <button class="button-primary">Ver minhas formas de pagamento</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>Componentes Atômicos</h2>
+            <div class="component-list">
+                <div class="component-item">
+                    <code>button-primary</code>
+                    <p>Botão principal de ação. Usado para a navegação primária do usuário.</p>
+                </div>
+                 <div class="component-item">
+                    <code>screen-title</code>
+                    <p>Título principal da tela.</p>
+                </div>
+            </div>
+             <h2>Notas Técnicas</h2>
+            <p>Esta é a tela de entrada do fluxo. O botão "Ver minhas formas de pagamento" navega o usuário para a tela <code>PaymentDetails</code>. O estado inicial da aplicação é <code>ViewState.ENTRY</code>.</p>
+        </section>
+        <section class="screen" id="payment-details">
+            <h1>Tela: PaymentDetails</h1>
+            <div class="screen-representation">
+                <div class="mockup-phone">
+                    <div class="mockup-screen">
+                        <!-- Header -->
+                        <div class="header">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                            <h3 class="header-title">Sua assinatura Meli+</h3>
+                        </div>
+
+                        <!-- Subscription Status -->
+                        <div class="card subscription-card">
+                            <div class="subscription-card-header">
+                                <h4>Próximo pagamento <strong>28/12</strong></h4>
+                                <span>R$ 17,99</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%;"></div>
+                            </div>
+                            <p class="subscription-card-footer">Seu período de faturamento vai de 29/11 a 28/12.</p>
+                        </div>
+
+                        <!-- Payment Method -->
+                        <div class="card payment-method-card">
+                            <div class="payment-method-icon visa-icon"></div>
+                            <div class="payment-method-details">
+                                <p><strong>Visa **** 0169</strong></p>
+                                <p class="text-sm text-gray">Principal</p>
+                            </div>
+                            <a href="#" class="change-link">Gerenciar</a>
+                        </div>
+
+                        <!-- Backup Method -->
+                        <div class="card backup-method-section">
+                            <div class="backup-method-header">
+                                <div class="backup-method-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3483fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4><strong>Não perca seus benefícios</strong></h4>
+                                    <p class="text-sm text-gray">Adicione um método de pagamento de backup.</p>
+                                </div>
+                            </div>
+                            <button class="button-secondary">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>Componentes Atômicos</h2>
+            <div class="component-list">
+                <div class="component-item">
+                    <code>.card</code>
+                    <p>Container principal para seções de conteúdo.</p>
+                </div>
+                <div class="component-item">
+                    <code>.button-secondary</code>
+                    <p>Botão de ação secundária, usado para ações como "Adicionar".</p>
+                </div>
+            </div>
+            <h2>Notas Técnicas</h2>
+            <p>Esta tela exibe o status da assinatura e o método de pagamento principal. O botão "Gerenciar" navega para a tela <code>PaymentManagement</code>. O botão "Adicionar" no método de backup inicia o fluxo para adicionar um novo método de pagamento, começando pela tela <code>AddCardForm</code>.</p>
+        </section>
+        <section class="screen" id="payment-management">
+            <h1>Tela: PaymentManagement</h1>
+            <div class="screen-representation">
+                <div class="mockup-phone">
+                    <div class="mockup-screen">
+                        <!-- Header -->
+                        <div class="header">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                            <h3 class="header-title">Formas de pagamento</h3>
+                        </div>
+
+                        <!-- Payment Method List -->
+                        <div class="payment-method-list">
+                             <div class="card payment-method-item">
+                                <div class="payment-method-icon visa-icon"></div>
+                                <div class="payment-method-details">
+                                    <p><strong>Visa **** 0169</strong></p>
+                                    <p class="text-sm text-green">Principal</p>
+                                </div>
+                            </div>
+                            <div class="card payment-method-item">
+                                <div class="payment-method-icon mastercard-icon"></div>
+                                <div class="payment-method-details">
+                                    <p><strong>Mastercard **** 5522</strong></p>
+                                    <p class="text-sm text-gray">Backup</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Add Method Button -->
+                        <button class="add-method-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                            <span>Adicionar nova forma de pagamento</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <h2>Componentes Atômicos</h2>
+            <div class="component-list">
+                <div class="component-item">
+                    <code>.payment-method-item</code>
+                    <p>Item da lista de métodos de pagamento.</p>
+                </div>
+                 <div class="component-item">
+                    <code>.add-method-button</code>
+                    <p>Botão para adicionar um novo método de pagamento.</p>
+                </div>
+            </div>
+            <h2>Notas Técnicas</h2>
+            <p>Esta tela permite ao usuário visualizar e gerenciar seus métodos de pagamento. O botão "Adicionar nova forma de pagamento" navega para a tela <code>AddCardForm</code>.</p>
+        </section>
+        <section class="screen" id="add-card-form">
+            <h1>Tela: AddCardForm</h1>
+            <div class="screen-representation">
+                <div class="mockup-phone">
+                    <div class="mockup-screen">
+                        <!-- Header -->
+                        <div class="header">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                            <h3 class="header-title">Adicionar Cartão</h3>
+                        </div>
+
+                        <!-- Add Card Form -->
+                        <div class="add-card-form">
+                            <div class="form-group">
+                                <label for="card-number">Número do Cartão</label>
+                                <input type="text" id="card-number" placeholder="**** **** **** ****">
+                            </div>
+                            <div class="form-group">
+                                <label for="card-name">Nome do Titular</label>
+                                <input type="text" id="card-name" placeholder="Nome como no cartão">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="card-expiry">Vencimento</label>
+                                    <input type="text" id="card-expiry" placeholder="MM/AA">
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-cvv">CVV</label>
+                                    <input type="text" id="card-cvv" placeholder="***">
+                                </div>
+                            </div>
+                            <button class="button-primary">Salvar Cartão</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>Componentes Atômicos</h2>
+            <div class="component-list">
+                <div class="component-item">
+                    <code>.form-group</code>
+                    <p>Grupo de formulário contendo um rótulo e um campo de entrada.</p>
+                </div>
+                 <div class="component-item">
+                    <code>.form-row</code>
+                    <p>Container para campos de formulário que devem aparecer na mesma linha.</p>
+                </div>
+            </div>
+            <h2>Notas Técnicas</h2>
+            <p>Este formulário é usado para adicionar um novo cartão de crédito. O botão "Salvar Cartão" salva o novo método de pagamento e retorna o usuário para a tela anterior (<code>PaymentDetails</code> ou <code>PaymentManagement</code>).</p>
+        </section>
+        <section class="screen" id="flowchart">
+            <h1>Fluxograma Simplificado</h1>
+            <div class="flowchart-container">
+                <div class="flowchart-step">
+                    <div class="flowchart-box">EntryFlow</div>
+                    <div class="flowchart-arrow">&#8594;</div>
+                </div>
+                <div class="flowchart-step">
+                    <div class="flowchart-box">PaymentDetails</div>
+                    <div class="flowchart-arrow">&#8594;</div>
+                </div>
+                <div class="flowchart-step">
+                    <div class="flowchart-box">PaymentManagement</div>
+                    <div class="flowchart-arrow">&#8594;</div>
+                </div>
+                <div class="flowchart-step">
+                    <div class="flowchart-box">AddCardForm</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
