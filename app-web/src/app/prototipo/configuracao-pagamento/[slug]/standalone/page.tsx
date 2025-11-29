@@ -1,3 +1,5 @@
+"use client";
+
 import PaymentConfigPrototype from "../PaymentConfigPrototype";
 
 export default function PaymentFlowStandalonePage() {
