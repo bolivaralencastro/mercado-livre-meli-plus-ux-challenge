@@ -1,8 +1,8 @@
-'use client';
+'use client'
 
-import React from 'react';
-import AndesMeliPlusPlans from '@/components/ui/AndesMeliPlusPlans';
-import { Truck, Play, Wallet, ChevronDown } from 'lucide-react';
+import React from 'react'
+import AndesMeliPlusPlans from '@/components/ui/AndesMeliPlusPlans'
+import { Truck, Play, Wallet, ChevronDown } from 'lucide-react'
 
 export default function MeliPlusLP() {
   return (
@@ -160,5 +160,5 @@ export default function MeliPlusLP() {
         </div>
       </section>
     </div>
-  );
+  )
 }

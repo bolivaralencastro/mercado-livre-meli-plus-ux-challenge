@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import "../styles/tokens.css";
 import "../styles/andes-components.css";
@@ -6,6 +7,13 @@ import MainLayout from "@/components/layout/MainLayout";
 import ProgressBarProvider from "@/components/providers/ProgressBarProvider";
 import FullScreenProvider from "@/components/providers/FullScreenProvider";
 import Script from "next/script";
+
+const roboto = Roboto({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto',
+});
 
 export const metadata: Metadata = {
   title: "Meli+ UX Challenge",
@@ -18,11 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={roboto.variable}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
       </head>
       <body className="andes-body antialiased">
