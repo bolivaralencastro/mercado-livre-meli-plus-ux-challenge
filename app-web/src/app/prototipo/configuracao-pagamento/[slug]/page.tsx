@@ -235,7 +235,7 @@ export default function PaymentFlowViewerPage() {
         className={`
           flex-1 relative overflow-hidden flex flex-col transition-all duration-300
           ${viewMode === "mobile" 
-            ? "bg-[#1a1a2e] items-center justify-center py-8 px-4" 
+            ? "bg-gray-100 items-center justify-center py-8 px-4" 
             : viewMode === "flowchart"
               ? "bg-[#f0f2f5]"
               : "bg-gray-100"
@@ -276,8 +276,9 @@ export default function PaymentFlowViewerPage() {
               >
                 <iframe
                   src={`/prototipo/configuracao-pagamento/${slug}/standalone`}
-                  className="w-full h-full border-none"
+                  className="w-full h-full border-none overflow-hidden"
                   title="Mobile Preview"
+                  scrolling="no"
                 />
               </div>
               
@@ -286,7 +287,7 @@ export default function PaymentFlowViewerPage() {
             </div>
             
             {/* Device label */}
-            <p className="mt-4 text-gray-400 text-sm">
+            <p className="mt-4 text-gray-500 text-sm">
               iPhone 14 Pro • 375 × 812
             </p>
           </div>

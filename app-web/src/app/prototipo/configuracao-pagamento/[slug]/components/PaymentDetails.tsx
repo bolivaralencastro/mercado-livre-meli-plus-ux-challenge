@@ -357,6 +357,14 @@ export const PaymentDetails: React.FC<PaymentDetailsProps> = ({
                                     )}
                                     {method.type === 'visa' && <span className="text-[10px] font-bold text-[#1a1f71] italic">VISA</span>}
                                     {method.type === 'account' && <span className="text-lg">🤝</span>}
+                                    {method.type === 'apple_pay' && <span className="text-lg"></span>}
+                                    {method.type === 'pix' && <span className="text-sm">🔷</span>}
+                                    {method.type === 'pix_recurring' && <span className="text-sm">🔷🔄</span>}
+                                    {method.type === 'boleto' && <span className="text-xs">📄</span>}
+                                    {method.type === 'debit_account' && <span className="text-xs">🏦</span>}
+                                    {method.type === 'paypal' && <span className="text-[10px] font-bold text-[#003087]">PayPal</span>}
+                                    {method.type === 'ticket' && <span className="text-xs">🎫</span>}
+                                    {!['mastercard', 'visa', 'account', 'apple_pay', 'pix', 'pix_recurring', 'boleto', 'debit_account', 'paypal', 'ticket'].includes(method.type) && <CreditCard size={16} className="text-gray-400" />}
                                 </div>
                                 <div>
                                     <div className="text-sm font-medium text-[#333333]">{method.title}</div>
