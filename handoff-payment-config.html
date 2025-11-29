@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figma Handoff - Fluxo de Configuração de Pagamento | Meli+</title>
+    <style>
+        /* ============ CSS RESET & BASE ============ */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --canvas-bg: #1e1e1e;
+            --panel-bg: #2c2c2c;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent-purple: #8e24aa;
+            --accent-yellow: #ffe600;
+            --accent-blue: #3483fa;
+            --accent-green: #00a650;
+            --border-color: #3c3c3c;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'Inter', 'Proxima Nova', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--canvas-bg);
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ============ TOP TOOLBAR ============ */
+        .toolbar {
+            height: 48px;
+            background: var(--panel-bg);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            gap: 24px;
+            flex-shrink: 0;
+            z-index: 100;
+        }
+
+        .toolbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toolbar-logo-icon {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--accent-yellow) 0%, #f5ce00 100%);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #2d3277;
+            font-size: 8px;
+        }
+
+        .toolbar-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .toolbar-divider {
+            width: 1px;
+            height: 24px;
+            background: var(--border-color);
+        }
+
+        .toolbar-tabs {
+            display: flex;
+            gap: 4px;
+        }
+
+        .toolbar-tab {
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            background: transparent;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .toolbar-tab:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-primary);
+        }
+
+        .toolbar-tab.active {
+            background: rgba(52, 131, 250, 0.2);
+            color: var(--accent-blue);
+        }
+
+        .toolbar-spacer { flex: 1; }
+
+        .toolbar-badge {
+            padding: 4px 10px;
+            font-size: 11px;
+            font-weight: 600;
+            background: var(--accent-blue);
+            color: white;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .toolbar-zoom {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .toolbar-zoom button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 14px;
+            padding: 4px;
+        }
+
+        .toolbar-zoom button:hover { color: var(--text-primary); }
+
+        /* ============ CANVAS CONTAINER ============ */
+        .canvas-container {
+            flex: 1;
+            overflow: auto;
+            position: relative;
+        }
+
+        .canvas {
+            position: relative;
+            width: 10000px;
+            height: 6000px;
+            background-color: var(--canvas-bg);
+            background-image: radial-gradient(circle, #333 1px, transparent 1px);
+            background-size: 24px 24px;
+            transform-origin: 0 0;
+            transition: transform 0.1s ease;
+        }
+
+        /* ============ FRAME STYLES ============ */
+        .frame {
+            position: absolute;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .frame-label {
+            position: absolute;
+            top: -28px;
+            left: 0;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent-blue);
+            white-space: nowrap;
+        }
+
+        .frame-sublabel {
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-left: 8px;
+        }
+
+        /* ============ SECTION TITLE ============ */
+        .canvas-section-title {
+            position: absolute;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        .canvas-section-subtitle {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        /* ============ SPEC CARD ============ */
+        .spec-card {
+            position: absolute;
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            color: var(--text-primary);
+        }
+
+        .spec-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--accent-blue);
+        }
+
+        .spec-card h4 {
+            font-size: 13px;
+            font-weight: 600;
+            margin: 16px 0 8px 0;
+            color: var(--text-primary);
+        }
+
+        .spec-card p, .spec-card li {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .spec-card ul { list-style: none; }
+
+        .spec-card li {
+            padding: 4px 0;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .spec-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+        }
+
+        /* ============ MOBILE FRAME STYLES ============ */
+        .mobile-frame {
+            position: absolute;
+            width: 420px;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+
+        /* ============ SCREEN COMPONENTS ============ */
+        
+        /* Header Yellow */
+        .header-yellow {
+            background: #ffe600;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            gap: 24px;
+        }
+
+        .header-yellow .back-icon {
+            width: 24px;
+            height: 24px;
+            color: #333;
+        }
+
+        .header-yellow h1 {
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        /* Header Light */
+        .header-light {
+            background: #f5f5f5;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+        }
+
+        .header-light .back-icon,
+        .header-light .close-icon {
+            width: 24px;
+            height: 24px;
+            color: #333;
+        }
+
+        .header-light h1 {
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        /* Content Area */
+        .content-area {
+            padding: 16px;
+            background: #f5f5f5;
+            min-height: 500px;
+        }
+
+        /* Card White */
+        .card-white {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            border: 1px solid #f0f0f0;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        /* List Row */
+        .list-row {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .list-row:last-child {
+            border-bottom: none;
+        }
+
+        /* Icon Box */
+        .icon-box {
+            width: 48px;
+            height: 32px;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            background: white;
+        }
+
+        .icon-box.visa {
+            font-size: 10px;
+            font-weight: 700;
+            font-style: italic;
+            color: #1a1f71;
+        }
+
+        .icon-box.mastercard {
+            position: relative;
+        }
+
+        .icon-box.mastercard::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #eb001b;
+            position: absolute;
+            left: 12px;
+        }
+
+        .icon-box.mastercard::after {
+            content: "";
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #f79e1b;
+            position: absolute;
+            right: 12px;
+        }
+
+        .icon-box.pix {
+            font-size: 10px;
+            font-weight: 700;
+            color: #32BCAD;
+        }
+
+        .icon-box.apple-pay {
+            background: black;
+            font-size: 9px;
+            font-weight: 700;
+            color: white;
+        }
+
+        /* Button Primary */
+        .btn-primary {
+            width: 100%;
+            padding: 14px;
+            background: #3483fa;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Button Secondary */
+        .btn-secondary {
+            width: 100%;
+            padding: 14px;
+            background: #e3edfb;
+            color: #3483fa;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .badge-purple {
+            background: #8e24aa;
+            color: white;
+        }
+
+        .badge-green {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        /* Alert Box */
+        .alert-box {
+            background: #fff8e1;
+            border: 1px solid #ffe082;
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .alert-box.warning {
+            background: rgba(255, 152, 0, 0.1);
+            border-color: rgba(255, 152, 0, 0.3);
+        }
+
+        /* Toast */
+        .toast {
+            position: absolute;
+            bottom: 24px;
+            left: 16px;
+            right: 16px;
+            background: #00a650;
+            color: white;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        /* Modal Overlay */
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            width: 320px;
+            text-align: center;
+        }
+
+        .modal-content h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .modal-content p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+
+        /* Balance Card */
+        .balance-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .balance-card .label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .balance-card .amount {
+            font-size: 32px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 16px;
+        }
+
+        /* Form Input */
+        .form-input {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 14px 16px;
+            font-size: 15px;
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+        .form-input:focus {
+            border-color: #3483fa;
+            outline: none;
+        }
+
+        .form-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #666;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        /* Credit Card Visual */
+        .credit-card-visual {
+            width: 100%;
+            aspect-ratio: 1.586;
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            border-radius: 12px;
+            padding: 24px;
+            color: white;
+            margin-bottom: 24px;
+        }
+
+        .credit-card-visual .chip {
+            width: 44px;
+            height: 32px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+            margin-bottom: 24px;
+        }
+
+        .credit-card-visual .number {
+            font-family: monospace;
+            font-size: 18px;
+            letter-spacing: 3px;
+            margin-bottom: 24px;
+        }
+
+        .credit-card-visual .name {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Chevron */
+        .chevron-right {
+            width: 20px;
+            height: 20px;
+            color: #ccc;
+        }
+
+        /* Arrow icons */
+        .arrow-left {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* HELP HINT */
+        .help-hint {
+            position: fixed;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        .help-hint kbd {
+            background: rgba(255,255,255,0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 11px;
+        }
+
+        /* Connection Line */
+        .connection-line {
+            position: absolute;
+            height: 2px;
+            background: var(--accent-blue);
+            opacity: 0.3;
+        }
+
+        .connection-arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 8px solid var(--accent-blue);
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Toolbar -->
+    <header class="toolbar">
+        <div class="toolbar-logo">
+            <div class="toolbar-logo-icon">meli+</div>
+            <span class="toolbar-title">Handoff - Configuração de Pagamento</span>
+        </div>
+        
+        <div class="toolbar-divider"></div>
+        
+        <div class="toolbar-tabs">
+            <button class="toolbar-tab active" onclick="scrollToSection('overview', event)">Visão Geral</button>
+            <button class="toolbar-tab" onclick="scrollToSection('entry', event)">Entry Points</button>
+            <button class="toolbar-tab" onclick="scrollToSection('details', event)">Detalhes</button>
+            <button class="toolbar-tab" onclick="scrollToSection('wallet', event)">Carteira</button>
+            <button class="toolbar-tab" onclick="scrollToSection('add-card', event)">Adicionar</button>
+            <button class="toolbar-tab" onclick="scrollToSection('components', event)">Componentes</button>
+            <button class="toolbar-tab" onclick="scrollToSection('specs', event)">Specs</button>
+        </div>
+        
+        <div class="toolbar-spacer"></div>
+        
+        <div class="toolbar-badge">Fluxo Completo</div>
+        
+        <div class="toolbar-zoom">
+            <button onclick="zoomOut()">−</button>
+            <span id="zoomLevel">100%</span>
+            <button onclick="zoomIn()">+</button>
+        </div>
+    </header>
+
+    <!-- Canvas Container -->
+    <div class="canvas-container" id="canvasContainer">
+        <div class="canvas" id="canvas">
+            
+            <!-- ============ SECTION: OVERVIEW ============ -->
+            <div class="canvas-section-title" id="overview" style="top: 60px; left: 60px;">
+                01 — Visão Geral do Fluxo
+                <div class="canvas-section-subtitle">Configuração de Pagamento • Meli+</div>
+            </div>
+            
+            <div class="spec-card" style="top: 160px; left: 60px; width: 420px;">
+                <h3>📋 Sobre o Fluxo</h3>
+                <p>Fluxo de configuração e gerenciamento de meios de pagamento para assinantes Meli+. Permite adicionar, remover e definir métodos primários e de backup.</p>
+                
+                <h4>Telas do Fluxo</h4>
+                <ul>
+                    <li>Entry Points (Email/Notificação)</li>
+                    <li>Detalhes da Assinatura</li>
+                    <li>Gerenciamento de Carteira</li>
+                    <li>Adicionar Forma de Pagamento</li>
+                    <li>Formulário de Novo Cartão</li>
+                    <li>Informações do Método</li>
+                    <li>Adicionar Saldo</li>
+                </ul>
+                
+                <h4>Estados</h4>
+                <ul>
+                    <li>ViewState.ENTRY</li>
+                    <li>ViewState.DETAILS</li>
+                    <li>ViewState.MANAGEMENT</li>
+                    <li>ViewState.ADD_METHOD_SELECTION</li>
+                    <li>ViewState.ADD_CARD</li>
+                    <li>ViewState.METHOD_INFO</li>
+                    <li>ViewState.ADD_BALANCE</li>
+                </ul>
+            </div>
+
+            <!-- ============ SECTION: ENTRY POINTS ============ -->
+            <div class="canvas-section-title" id="entry" style="top: 60px; left: 560px;">
+                02 — Entry Points
+                <div class="canvas-section-subtitle">Pontos de Entrada • Notificação e Email</div>
+            </div>
+
+            <!-- Entry: Notification -->
+            <div class="mobile-frame" style="top: 160px; left: 560px; height: 700px;">
+                <div class="frame-label">Entry — Notificação<span class="frame-sublabel">420 × 700</span></div>
+                
+                <!-- Android Status Bar -->
+                <div style="background: #f5d400; height: 24px; display: flex; justify-content: space-between; align-items: center; padding: 0 16px; font-size: 11px; color: rgba(0,0,0,0.7);">
+                    <span>09:41</span>
+                    <span>5G ●</span>
+                </div>
+                
+                <!-- App Header -->
+                <div class="header-yellow">
+                    <svg class="back-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    <h1>Notificações</h1>
+                </div>
+                
+                <!-- Notification List -->
+                <div style="background: #f5f5f5; min-height: 600px;">
+                    <div style="background: white; padding: 16px; border-bottom: 1px solid #f0f0f0; display: flex; gap: 16px;">
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background: #8e24aa; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <span style="color: white; font-weight: 700; font-style: italic; font-size: 10px;">meli+</span>
+                        </div>
+                        <div style="flex: 1;">
+                            <h3 style="font-size: 14px; font-weight: 600; color: #333; margin-bottom: 4px;">Mantenha sua assinatura ativa</h3>
+                            <p style="font-size: 13px; color: #666; line-height: 1.4;">Adicione outro meio de pagamento em caso de problemas com o principal.</p>
+                            <span style="font-size: 12px; color: #999; margin-top: 8px; display: block;">Agora</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entry: Email -->
+            <div class="mobile-frame" style="top: 160px; left: 1040px; height: 800px;">
+                <div class="frame-label">Entry — Email<span class="frame-sublabel">420 × 800</span></div>
+                
+                <!-- Email Header -->
+                <div style="background: white; padding: 16px; border-bottom: 1px solid #e0e0e0; display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: #e0e0e0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #666;">ML</div>
+                    <div style="flex: 1;">
+                        <div style="font-size: 14px; font-weight: 600; color: #333;">Mercado Livre</div>
+                        <div style="font-size: 12px; color: #666;">Mantenha sua assinatura ativa...</div>
+                    </div>
+                    <span style="font-size: 11px; color: #999;">10:23</span>
+                </div>
+                
+                <!-- Email Content -->
+                <div style="background: #f5f5f5; padding: 16px;">
+                    <div style="background: white; border-radius: 8px; overflow: hidden;">
+                        <!-- ML Header -->
+                        <div style="background: #ffe600; padding: 16px; display: flex; align-items: center; gap: 8px;">
+                            <div style="width: 32px; height: 32px; background: #2d3277; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <span style="font-size: 12px;">🤝</span>
+                            </div>
+                            <span style="font-weight: 500; color: #2d3277; font-size: 14px;">mercado libre</span>
+                        </div>
+                        
+                        <!-- Body -->
+                        <div style="padding: 24px;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;">
+                                <h1 style="font-size: 20px; font-weight: 600; color: #333; line-height: 1.3; max-width: 80%;">Mantenha sua assinatura ativa adicionando outro meio de pagamento</h1>
+                                <span class="badge badge-purple">meli+</span>
+                            </div>
+                            
+                            <p style="font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 16px;">Agora você pode adicionar um meio de pagamento alternativo para sua assinatura do Meli+.</p>
+                            <p style="font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 24px;">Só vamos usá-lo se houver algum problema com o meio de pagamento que você escolheu no momento da assinatura.</p>
+                            
+                            <button class="btn-primary">Adicionar outro meio de pagamento</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ SECTION: PAYMENT DETAILS ============ -->
+            <div class="canvas-section-title" id="details" style="top: 60px; left: 1540px;">
+                03 — Detalhes da Assinatura
+                <div class="canvas-section-subtitle">ViewState.DETAILS • Tela Principal</div>
+            </div>
+
+            <!-- Details Screen -->
+            <div class="mobile-frame" style="top: 160px; left: 1540px; height: 900px;">
+                <div class="frame-label">PaymentDetails<span class="frame-sublabel">420 × 900</span></div>
+                
+                <div class="header-yellow">
+                    <svg class="back-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    <h1>Assinaturas</h1>
+                </div>
+                
+                <div class="content-area" style="min-height: 800px;">
+                    <!-- Subscription Info -->
+                    <div class="card-white">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                            <span style="font-size: 16px; font-weight: 600; color: #333;">Meli+ | Mega</span>
+                            <span style="font-size: 14px; font-weight: 500; color: #3483fa;">Alterar</span>
+                        </div>
+                        <div style="border-top: 1px solid #f0f0f0; padding-top: 16px;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="font-size: 15px; color: #333;">Assinatura mensal</span>
+                                <span style="font-size: 15px; font-weight: 500; color: #333;">R$ 24,90/mês</span>
+                            </div>
+                            <span style="font-size: 13px; color: #999;">Próxima fatura: 23 de dezembro</span>
+                        </div>
+                    </div>
+
+                    <!-- Streamings -->
+                    <h2 class="section-title">Streamings contratados</h2>
+                    <div class="card-white" style="padding: 0;">
+                        <div class="list-row">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: #fef0f0; border: 1px solid #fee; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+                                <span style="color: #E50914; font-weight: 700; font-size: 16px;">N</span>
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="font-size: 14px; font-weight: 500; color: #333;">Netflix</div>
+                                <div style="font-size: 12px; color: #999;">Padrão com anúncios</div>
+                            </div>
+                            <svg class="chevron-right" viewBox="0 0 24 24" fill="none" stroke="#3483fa" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                        </div>
+                        <div class="list-row">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: white; border: 1px solid #e0e0e0; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+                                <span style="color: #113CCF; font-weight: 700; font-size: 9px;">Disney+</span>
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="font-size: 14px; font-weight: 500; color: #333;">Disney+</div>
+                                <div style="font-size: 12px; color: #999;">Padrão com anúncios</div>
+                            </div>
+                            <button style="background: #3483fa; color: white; font-size: 12px; font-weight: 600; padding: 6px 16px; border: none; border-radius: 4px;">Ativar</button>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <h2 class="section-title">Meios de pagamento</h2>
+                    <div class="card-white" style="padding: 0;">
+                        <div class="list-row">
+                            <div class="icon-box visa">VISA</div>
+                            <div style="flex: 1;">
+                                <div style="font-size: 14px; font-weight: 500; color: #333;">Visa **** 0169</div>
+                                <div style="font-size: 12px; color: #999;">Principal</div>
+                            </div>
+                        </div>
+                        
+                        <div style="border-top: 1px solid #f0f0f0;"></div>
+                        
+                        <!-- Alert for backup -->
+                        <div style="padding: 16px;">
+                            <div class="alert-box warning">
+                                <div style="width: 32px; height: 32px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <span style="color: #ff9800; font-size: 16px;">⚠️</span>
+                                </div>
+                                <div>
+                                    <h3 style="font-size: 14px; font-weight: 600; color: #333; margin-bottom: 4px;">Evite a suspensão do serviço</h3>
+                                    <p style="font-size: 12px; color: #666; line-height: 1.4;">Adicione um meio de pagamento reserva para garantir que sua assinatura continue ativa.</p>
+                                </div>
+                            </div>
+                            <button style="width: 100%; margin-top: 12px; padding: 12px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; font-size: 14px; font-weight: 600; color: #3483fa; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                <span style="font-size: 18px;">+</span> Adicionar backup
+                            </button>
+                        </div>
+                        
+                        <div style="border-top: 1px solid #f0f0f0;"></div>
+                        
+                        <div class="list-row" style="cursor: pointer;">
+                            <span style="font-size: 14px; font-weight: 500; color: #3483fa;">Gerenciar meios de pagamento</span>
+                            <svg class="chevron-right" viewBox="0 0 24 24" fill="none" stroke="#3483fa" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ SECTION: WALLET ============ -->
+            <div class="canvas-section-title" id="wallet" style="top: 60px; left: 2040px;">
+                04 — Carteira
+                <div class="canvas-section-subtitle">ViewState.MANAGEMENT • Gerenciamento</div>
+            </div>
+
+            <!-- Wallet Screen -->
+            <div class="mobile-frame" style="top: 160px; left: 2040px; height: 900px;">
+                <div class="frame-label">PaymentManagement<span class="frame-sublabel">420 × 900</span></div>
+                
+                <div class="header-light">
+                    <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    <h1>Carteira</h1>
+                    <div style="width: 24px;"></div>
+                </div>
+                
+                <div class="content-area">
+                    <!-- Balance Card -->
+                    <div class="balance-card">
+                        <div class="label">Saldo Mercado Pago</div>
+                        <div class="amount">R$ 1.250,00</div>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+                            <span style="width: 14px; height: 14px; border: 1px solid #999; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8px; color: #999;">i</span>
+                            <span style="font-size: 12px; color: #666;">Rendimento anual de 105% do CDI. A recarga automática está desativada.</span>
+                        </div>
+                        <button style="background: #3483fa; color: white; padding: 12px 24px; border: none; border-radius: 100px; font-size: 14px; font-weight: 600;">+ Adicionar saldo</button>
+                    </div>
+
+                    <h2 class="section-title">Formas de pagamento</h2>
+                    <div class="card-white" style="padding: 0;">
+                        <div class="list-row">
+                            <div class="icon-box visa">VISA</div>
+                            <div style="flex: 1;">
+                                <div style="font-size: 14px; font-weight: 500; color: #333;">Visa **** 0169</div>
+                            </div>
+                            <span style="font-size: 12px; color: #999; margin-right: 8px;">Principal</span>
+                            <svg class="chevron-right" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                        </div>
+                        <div class="list-row">
+                            <div class="icon-box apple-pay">Pay</div>
+                            <div style="flex: 1;">
+                                <div style="font-size: 14px; font-weight: 500; color: #333;">Apple Pay</div>
+                            </div>
+                            <svg class="chevron-right" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                        </div>
+                        <div class="list-row">
+                            <div class="icon-box pix">PIX</div>
+                            <div style="flex: 1;">
+                                <div style="font-size: 14px; font-weight: 500; color: #333;">Pix</div>
+                                <div style="font-size: 12px; color: #999;">Pagamento instantâneo</div>
+                            </div>
+                            <svg class="chevron-right" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                        </div>
+                    </div>
+
+                    <!-- Add new -->
+                    <div class="card-white" style="display: flex; align-items: center; gap: 16px; cursor: pointer;">
+                        <div class="icon-box" style="background: #f5f5f5;">
+                            <span style="font-size: 18px; color: #333;">+</span>
+                        </div>
+                        <span style="font-size: 14px; font-weight: 500; color: #333;">Adicionar forma de pagamento</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ SECTION: ADD CARD ============ -->
+            <div class="canvas-section-title" id="add-card" style="top: 60px; left: 2540px;">
+                05 — Adicionar Cartão
+                <div class="canvas-section-subtitle">ViewState.ADD_CARD • Formulário</div>
+            </div>
+
+            <!-- Add Method Selection -->
+            <div class="mobile-frame" style="top: 160px; left: 2540px; height: 600px;">
+                <div class="frame-label">AddMethodSelection<span class="frame-sublabel">420 × 600</span></div>
+                
+                <div class="header-light">
+                    <svg class="back-icon" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    <h1>Adicionar forma de pagamento</h1>
+                    <div style="width: 24px;"></div>
+                </div>
+                
+                <div class="content-area">
+                    <h2 style="font-size: 12px; font-weight: 600; color: #666; text-transform: uppercase; margin-bottom: 12px;">Opções disponíveis</h2>
+                    
+                    <div class="card-white" style="padding: 0;">
+                        <div class="list-row" style="cursor: pointer;">
+                            <div class="icon-box" style="background: #f5f5f5;">
+                                <span style="font-size: 18px; color: #333;">+</span>
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="font-size: 14px; font-weight: 500; color: #333;">Cartão de crédito ou débito</div>
+                                <div style="font-size: 12px; color: #999;">Novo cartão</div>
+                            </div>
+                            <svg class="chevron-right" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                        </div>
+                        <div class="list-row" style="cursor: pointer;">
+                            <div class="icon-box" style="font-size: 10px; font-weight: 700; color: #003087; font-style: italic;">Pay</div>
+                            <div style="flex: 1;">
+                                <div style="font-size: 14px; font-weight: 500; color: #333;">PayPal</div>
+                                <div style="font-size: 12px; color: #999;">Conectar conta</div>
+                            </div>
+                            <svg class="chevron-right" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Card Form -->
+            <div class="mobile-frame" style="top: 160px; left: 3020px; height: 900px;">
+                <div class="frame-label">AddCardForm<span class="frame-sublabel">420 × 900</span></div>
+                
+                <div style="background: white; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; border-bottom: 1px solid #f0f0f0;">
+                    <svg class="back-icon" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    <h1 style="font-size: 18px; font-weight: 500; color: #333;">Adicionar cartão</h1>
+                    <div style="width: 24px;"></div>
+                </div>
+                
+                <div class="content-area">
+                    <!-- Card Visual -->
+                    <div class="credit-card-visual">
+                        <div class="chip"></div>
+                        <div class="number">•••• •••• •••• ••••</div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <div>
+                                <div style="font-size: 9px; color: rgba(255,255,255,0.6); text-transform: uppercase; margin-bottom: 4px;">Nome do titular</div>
+                                <div class="name">NOME COMPLETO</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 9px; color: rgba(255,255,255,0.6); text-transform: uppercase; margin-bottom: 4px;">Validade</div>
+                                <div style="font-size: 12px;">MM/AA</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-white">
+                        <div style="margin-bottom: 16px;">
+                            <label class="form-label">Número do cartão</label>
+                            <input class="form-input" placeholder="0000 0000 0000 0000" />
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                            <label class="form-label">Nome impresso no cartão</label>
+                            <input class="form-input" placeholder="Como aparece no cartão" style="text-transform: uppercase;" />
+                        </div>
+                        <div style="display: flex; gap: 12px; margin-bottom: 16px;">
+                            <div style="flex: 1;">
+                                <label class="form-label">Validade</label>
+                                <input class="form-input" placeholder="MM/AA" />
+                            </div>
+                            <div style="flex: 1;">
+                                <label class="form-label">CVV</label>
+                                <input class="form-input" placeholder="123" />
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label">CPF do titular</label>
+                            <input class="form-input" placeholder="000.000.000-00" />
+                        </div>
+                    </div>
+
+                    <button class="btn-primary" style="margin-top: 16px;">Salvar cartão</button>
+                    <div style="text-align: center; margin-top: 12px; font-size: 11px; color: #999; display: flex; align-items: center; justify-content: center; gap: 4px;">
+                        <span>🔒</span> Suas informações estão criptografadas.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ SECTION: COMPONENTS ============ -->
+            <div class="canvas-section-title" id="components" style="top: 60px; left: 3540px;">
+                06 — Componentes Atômicos
+                <div class="canvas-section-subtitle">UI Components • Design System</div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="spec-card" style="top: 160px; left: 3540px; width: 300px;">
+                <h3>🔘 Botões</h3>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <button class="btn-primary" style="width: 100%;">Botão Primário</button>
+                    <button class="btn-secondary" style="width: 100%;">Botão Secundário</button>
+                    <button style="width: 100%; padding: 12px; background: white; border: 1px solid #e0e0e0; border-radius: 8px; font-size: 14px; color: #333;">Botão Outline</button>
+                    <button style="width: 100%; padding: 12px; background: #f5f5f5; border: none; border-radius: 8px; font-size: 14px; color: #999;">Botão Disabled</button>
+                </div>
+            </div>
+
+            <!-- Badges -->
+            <div class="spec-card" style="top: 160px; left: 3880px; width: 300px;">
+                <h3>🏷️ Badges</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <span class="badge badge-purple">meli+</span>
+                    <span class="badge badge-green">Backup Ativo</span>
+                    <span style="background: #3483fa; color: white; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 600;">Principal</span>
+                    <span style="background: #fff8e1; color: #f57c00; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 600;">Pendente</span>
+                </div>
+            </div>
+
+            <!-- Icons -->
+            <div class="spec-card" style="top: 400px; left: 3540px; width: 300px;">
+                <h3>💳 Ícones de Pagamento</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+                    <div class="icon-box visa" style="position: relative;">VISA</div>
+                    <div class="icon-box mastercard"></div>
+                    <div class="icon-box pix">PIX</div>
+                    <div class="icon-box apple-pay">Pay</div>
+                    <div class="icon-box" style="font-size: 10px; font-weight: 700; color: #003087; font-style: italic;">Pay</div>
+                </div>
+            </div>
+
+            <!-- Form Elements -->
+            <div class="spec-card" style="top: 400px; left: 3880px; width: 300px;">
+                <h3>📝 Form Elements</h3>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <div>
+                        <label class="form-label">Input Default</label>
+                        <input class="form-input" placeholder="Placeholder text" style="margin: 0;" />
+                    </div>
+                    <div>
+                        <label class="form-label">Input Focus</label>
+                        <input class="form-input" placeholder="Focused" style="margin: 0; border-color: #3483fa;" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toast -->
+            <div class="spec-card" style="top: 680px; left: 3540px; width: 300px;">
+                <h3>🔔 Toast</h3>
+                <div style="background: #00a650; color: white; padding: 14px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; text-align: center;">
+                    Cartão adicionado com sucesso!
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="spec-card" style="top: 680px; left: 3880px; width: 320px; padding: 0; overflow: hidden;">
+                <div style="padding: 24px;">
+                    <h3 style="margin-bottom: 12px;">💬 Modal</h3>
+                </div>
+                <div style="background: white; padding: 24px; text-align: center;">
+                    <h3 style="font-size: 16px; font-weight: 600; color: #333; margin-bottom: 8px;">Excluir forma de pagamento?</h3>
+                    <p style="font-size: 13px; color: #666; margin-bottom: 20px;">Você tem certeza que deseja remover?</p>
+                    <button class="btn-primary" style="margin-bottom: 8px;">Sim, excluir</button>
+                    <button style="width: 100%; padding: 10px; background: transparent; border: none; font-size: 14px; font-weight: 500; color: #3483fa;">Cancelar</button>
+                </div>
+            </div>
+
+            <!-- ============ SECTION: SPECS ============ -->
+            <div class="canvas-section-title" id="specs" style="top: 60px; left: 4300px;">
+                07 — Especificações
+                <div class="canvas-section-subtitle">Design Tokens • Guidelines</div>
+            </div>
+
+            <!-- Typography -->
+            <div class="spec-card" style="top: 160px; left: 4300px; width: 350px;">
+                <h3>🔤 Tipografia</h3>
+                <h4>Font Family</h4>
+                <p>System UI / Proxima Nova</p>
+                
+                <h4>Sizes</h4>
+                <ul>
+                    <li>Page Title: 18px medium</li>
+                    <li>Section Title: 16px semibold</li>
+                    <li>Body: 14px regular</li>
+                    <li>Caption: 12px regular</li>
+                    <li>Label: 11px bold uppercase</li>
+                </ul>
+            </div>
+
+            <!-- Colors -->
+            <div class="spec-card" style="top: 160px; left: 4700px; width: 350px;">
+                <h3>🎨 Cores</h3>
+                
+                <h4>Brand</h4>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <div style="width: 24px; height: 24px; background: #ffe600; border-radius: 4px;"></div>
+                        <span style="font-size: 12px; color: var(--text-secondary);">ML Yellow #ffe600</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <div style="width: 24px; height: 24px; background: #3483fa; border-radius: 4px;"></div>
+                        <span style="font-size: 12px; color: var(--text-secondary);">ML Blue #3483fa</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <div style="width: 24px; height: 24px; background: #00a650; border-radius: 4px;"></div>
+                        <span style="font-size: 12px; color: var(--text-secondary);">Success #00a650</span>
+                    </div>
+                </div>
+                
+                <h4>UI</h4>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <div style="width: 24px; height: 24px; background: #333333; border-radius: 4px;"></div>
+                        <span style="font-size: 12px; color: var(--text-secondary);">Text Primary #333333</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <div style="width: 24px; height: 24px; background: #f5f5f5; border-radius: 4px; border: 1px solid #444;"></div>
+                        <span style="font-size: 12px; color: var(--text-secondary);">Background #f5f5f5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spacing -->
+            <div class="spec-card" style="top: 580px; left: 4300px; width: 350px;">
+                <h3>📐 Espaçamentos</h3>
+                <h4>Container</h4>
+                <ul>
+                    <li>Mobile Width: 420px max</li>
+                    <li>Padding: 16px</li>
+                    <li>Card Padding: 20px</li>
+                </ul>
+                
+                <h4>Components</h4>
+                <ul>
+                    <li>Header Height: 56px</li>
+                    <li>List Row: 16px padding</li>
+                    <li>Button: 14px padding</li>
+                    <li>Border Radius: 8px / 12px</li>
+                </ul>
+            </div>
+
+            <!-- Animations -->
+            <div class="spec-card" style="top: 580px; left: 4700px; width: 350px;">
+                <h3>✨ Animações</h3>
+                <h4>Transitions</h4>
+                <ul>
+                    <li>slide-in-right: 300ms</li>
+                    <li>slide-up: 300ms</li>
+                    <li>fade-in: 200ms</li>
+                    <li>scale-in: 150ms</li>
+                </ul>
+                
+                <h4>Toast</h4>
+                <ul>
+                    <li>Duration: 3000ms</li>
+                    <li>Position: bottom 24px</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Help Hint -->
+    <div class="help-hint">
+        <span>Navegue pelo canvas:</span>
+        <span><kbd>Scroll</kbd> ou <kbd>Arrastar</kbd></span>
+        <span>|</span>
+        <span><kbd>+</kbd> / <kbd>−</kbd> Zoom</span>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const container = document.getElementById('canvasContainer');
+        let scale = 1;
+        let isDragging = false;
+        let startX, startY, scrollLeft, scrollTop;
+
+        const PAN_SENSITIVITY = 1.5;
+
+        function zoomIn() {
+            scale = Math.min(scale + 0.1, 2);
+            updateZoom();
+        }
+
+        function zoomOut() {
+            scale = Math.max(scale - 0.1, 0.25);
+            updateZoom();
+        }
+
+        function updateZoom() {
+            canvas.style.transform = `scale(${scale})`;
+            document.getElementById('zoomLevel').textContent = Math.round(scale * 100) + '%';
+        }
+
+        function scrollToSection(sectionId, clickEvent) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                container.scrollTo({
+                    left: section.offsetLeft - 60,
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                
+                document.querySelectorAll('.toolbar-tab').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                if (clickEvent && clickEvent.target) {
+                    clickEvent.target.classList.add('active');
+                }
+            }
+        }
+
+        container.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - container.offsetLeft;
+            startY = e.pageY - container.offsetTop;
+            scrollLeft = container.scrollLeft;
+            scrollTop = container.scrollTop;
+            container.style.cursor = 'grabbing';
+        });
+
+        container.addEventListener('mouseleave', () => {
+            isDragging = false;
+            container.style.cursor = 'default';
+        });
+
+        container.addEventListener('mouseup', () => {
+            isDragging = false;
+            container.style.cursor = 'default';
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const y = e.pageY - container.offsetTop;
+            const walkX = (x - startX) * PAN_SENSITIVITY;
+            const walkY = (y - startY) * PAN_SENSITIVITY;
+            container.scrollLeft = scrollLeft - walkX;
+            container.scrollTop = scrollTop - walkY;
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '+' || e.key === '=') zoomIn();
+            if (e.key === '-') zoomOut();
+        });
+
+        container.addEventListener('wheel', (e) => {
+            if (e.ctrlKey) {
+                e.preventDefault();
+                if (e.deltaY < 0) zoomIn();
+                else zoomOut();
+            }
+        });
+    </script>
+</body>
+</html>
