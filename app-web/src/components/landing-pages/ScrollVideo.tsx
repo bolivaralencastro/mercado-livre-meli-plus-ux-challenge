@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback, useState } from "react";
 
 interface ScrollVideoProps {
   src: string;
@@ -25,6 +25,7 @@ export default function ScrollVideo({
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number | null>(null);
+  const [isHovering, setIsHovering] = useState(false);
 
   const updateVideoTime = useCallback(() => {
     const video = videoRef.current;
@@ -114,8 +115,40 @@ export default function ScrollVideo({
     };
   }, [handleScroll, updateVideoTime]);
 
+  // Efeito para controlar o play/pause baseado no hover
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (isHovering) {
+      video.loop = true;
+      video.play().catch(() => {
+        // Ignora erros de autoplay
+      });
+    } else {
+      video.loop = false;
+      video.pause();
+      // Retorna ao frame controlado pelo scroll
+      updateVideoTime();
+    }
+  }, [isHovering, updateVideoTime]);
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
+
   return (
-    <div ref={containerRef} className={className} style={style}>
+    <div 
+      ref={containerRef} 
+      className={className} 
+      style={style}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <video
         ref={videoRef}
         src={src}

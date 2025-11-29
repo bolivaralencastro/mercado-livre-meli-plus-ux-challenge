@@ -1092,7 +1092,7 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
         {/* Piggy Bank Video - Controlled by scroll - Hidden on mobile */}
         <ScrollVideo
           src="/assets/videos/pig.webm"
-          className="absolute left-0 w-[450px] h-[450px] z-[100] pointer-events-none hidden md:block"
+          className="absolute left-0 w-[450px] h-[450px] z-[100] cursor-pointer hidden md:block"
           style={{ top: '-50px' }}
           startTrigger={0.9}
           endTrigger={0.1}
@@ -1101,7 +1101,7 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
         {/* Delivery Man Video - Controlled by scroll - Hidden on mobile */}
         <ScrollVideo
           src="/assets/videos/entregador.webm"
-          className="absolute right-0 w-[450px] h-[550px] z-[100] pointer-events-none hidden md:block"
+          className="absolute right-0 w-[450px] h-[550px] z-[100] cursor-pointer hidden md:block"
           style={{ bottom: '-200px' }}
           startTrigger={0.8}
           endTrigger={0.0}
@@ -1186,8 +1186,7 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
             playsInline
             preload="auto"
           >
-            <source src="https://smolljrfjqknp6nm.public.blob.vercel-storage.com/videos/logo-meli-animacao.webm" type="video/webm" />
-            <source src="https://smolljrfjqknp6nm.public.blob.vercel-storage.com/videos/logo-meli-animacao.mp4" type="video/mp4" />
+            <source src="/assets/videos/cartao-meli-mais.webm" type="video/webm" />
           </video>
           {/* Vinheta sutil nas bordas */}
           <div 
@@ -1224,8 +1223,7 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
               autoPlay
               preload="auto"
             >
-              <source src="https://smolljrfjqknp6nm.public.blob.vercel-storage.com/videos/logo-meli-animacao.webm" type="video/webm" />
-              <source src="https://smolljrfjqknp6nm.public.blob.vercel-storage.com/videos/logo-meli-animacao.mp4" type="video/mp4" />
+              <source src="/assets/videos/cartao-meli-mais.webm" type="video/webm" />
             </video>
           </div>
         </div>
