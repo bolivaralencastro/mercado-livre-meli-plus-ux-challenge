@@ -1092,17 +1092,16 @@ export default function OfertaMonoliticaPage({ isMobileViewer = false }: OfertaM
         {/* Piggy Bank Video - Controlled by scroll - Hidden on mobile */}
         <ScrollVideo
           src="/assets/videos/pig.webm"
-          className="absolute left-[-20px] w-[400px] h-[400px] z-[100] pointer-events-none hidden md:block"
+          className="absolute left-0 w-[450px] h-[450px] z-[100] pointer-events-none hidden md:block"
           style={{ top: '-50px' }}
           startTrigger={0.9}
           endTrigger={0.1}
-          mirror={true}
         />
         
         {/* Delivery Man Video - Controlled by scroll - Hidden on mobile */}
         <ScrollVideo
           src="/assets/videos/entregador.webm"
-          className="absolute right-[-72px] w-[400px] h-[500px] z-[100] pointer-events-none hidden md:block"
+          className="absolute right-0 w-[450px] h-[550px] z-[100] pointer-events-none hidden md:block"
           style={{ bottom: '-200px' }}
           startTrigger={0.8}
           endTrigger={0.0}
