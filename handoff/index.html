@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handoff Simulado - Meli+ Cinema</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="handoff-header">
+        <h1>Protótipo: Landing Page Cinema</h1>
+        <p>Simulação de handoff de componentes para desenvolvimento</p>
+    </header>
+
+    <main class="handoff-container">
+        <!-- Frame 1: Hero Section -->
+        <div class="handoff-frame">
+            <div class="frame-title">
+                <span>1. Hero Section</span>
+                <span class="frame-dims">1440 x 800px</span>
+            </div>
+            <div class="frame-content">
+                <div class="cinema-container">
+                    <div class="hero-wrapper">
+                        <div class="hero-grid">
+                            <!-- Left Side -->
+                            <div class="hero-left">
+                                <div class="logo-lockup">
+                                    <span class="logo-text">meli+</span>
+                                    <span class="plan-badge">TOTAL</span>
+                                </div>
+                                <h1 class="hero-title">
+                                    Seus streamings inclusos.<br>
+                                    <span class="gradient-text">Pare de pagar separado.</span>
+                                </h1>
+                                <p class="sub-h">
+                                    Assinando individualmente, os preços só aumentam.
+                                    No Meli+ você leva tudo em um único plano por muito menos.
+                                </p>
+                                <div class="bonus-block">
+                                    <span class="material-icons-round bonus-icon">redeem</span>
+                                    <div class="bonus-text">
+                                        <strong>Bônus incluso:</strong> Frete Grátis em milhões de produtos no Mercado Livre.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Right Side: Streaming Simulator -->
+                            <div class="hero-right">
+                                <div class="sim-card card-revealed">
+                                    <div class="card-top">
+                                        <div class="title-row">
+                                            <h3 class="title">Streaming</h3>
+                                        </div>
+                                        <p class="subtitle">Quanto você gasta todo mês pagando assinaturas separadas?</p>
+                                        <div class="display-area">
+                                            <span class="status-badge status-badge-bad">SEM MELI+</span>
+                                            <div class="price-value price-value-danger">R$ 149,60</div>
+                                            <div style="font-size: 0.9rem; color: #666; margin-top: 8px;">
+                                                (Netflix + Disney+ + Max + Apple TV+)
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slider-area">
+                                        <input type="range" min="0" max="4" step="1" value="4">
+                                    </div>
+                                    <button class="cta-btn" disabled>→ Ver preço com Meli+</button>
+                                    <div class="reveal-overlay" style="transform: translateY(0%);">
+                                        <span class="reveal-tag">COM MELI+ MEGA</span>
+                                        <div class="reveal-price">R$ 39,90</div>
+                                        <p class="reveal-sub">4 streamings + Frete</p>
+                                        <div class="savings-badge-sim">
+                                            <span class="savings-label">Sua economia mensal</span>
+                                            <span class="savings-value-sim">R$ 109,70</span>
+                                        </div>
+                                        <button class="reveal-cta">Quero assistir agora</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="frame-annotations">
+                <div class="annotation" style="top: 15%; left: 5%;">
+                    <div class="annotation-dot"></div>
+                    <div class="annotation-text">
+                        <strong>Título Principal</strong><br>
+                        Fonte: Lato, Bold<br>
+                        Cor: #333<br>
+                        Tamanho: 48px
+                    </div>
+                </div>
+                 <div class="annotation" style="top: 50%; left: 60%;">
+                    <div class="annotation-dot"></div>
+                    <div class="annotation-text">
+                        <strong>Card Interativo</strong><br>
+                        Estado: Revelado<br>
+                        Sombra: `box-shadow: 0 10px 30px rgba(0,0,0,0.1)`
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Frame 2: Planos -->
+        <div class="handoff-frame">
+            <div class="frame-title">
+                <span>2. Tabela de Planos</span>
+                <span class="frame-dims">1440 x 900px</span>
+            </div>
+            <div class="frame-content" style="background-color: #f8f8f8; display: flex; align-items: center; justify-content: center;">
+                 <section class="plans-section">
+                    <h2 class="section-title">Escolha o plano ideal para você</h2>
+                    <p class="section-subtitle">Economia garantida em todos os períodos</p>
+                    <div class="billing-toggle">
+                        <button class="toggle-btn active">Mensal</button>
+                        <button class="toggle-btn">Anual</button>
+                    </div>
+                    <div class="plans-grid">
+                        <!-- Plan Card: Essencial -->
+                        <div class="plan-card">
+                             <div class="plan-header">
+                                <span class="plan-name">ESSENCIAL</span>
+                             </div>
+                             <div class="plan-price-area">
+                                <div class="plan-price">R$ 9,90<span class="plan-period">/mês</span></div>
+                             </div>
+                             <ul class="plan-features">
+                                <li><span class="check">✓</span> Frete Grátis Rápido</li>
+                                <li><span class="check">✓</span> Cashback ML</li>
+                                <li><span class="x">✕</span> Disney+</li>
+                                <li><span class="x">✕</span> Netflix</li>
+                             </ul>
+                             <a href="#" class="plan-cta">Assinar Essencial</a>
+                        </div>
+                        <!-- Plan Card: Mega (Highlighted) -->
+                        <div class="plan-card highlighted">
+                             <div class="plan-badge-popular">MAIS POPULAR</div>
+                             <div class="plan-header">
+                                <span class="plan-name">MEGA</span>
+                             </div>
+                             <div class="plan-price-area">
+                                <div class="plan-original-price">
+                                    <span class="line-through">R$ 74,90</span>
+                                    <span class="discount-badge">46% OFF</span>
+                                </div>
+                                <div class="plan-price">R$ 39,90<span class="plan-period">/mês</span></div>
+                             </div>
+                             <ul class="plan-features">
+                                <li><span class="check">✓</span> Frete Grátis Rápido</li>
+                                <li><span class="check">✓</span> Cashback ML (até 3%)</li>
+                                <li><span class="check">✓</span> Disney+</li>
+                                <li><span class="check">✓</span> Netflix</li>
+                             </ul>
+                             <a href="#" class="plan-cta">Assinar Mega</a>
+                        </div>
+                        <!-- Plan Card: Total -->
+                        <div class="plan-card">
+                             <div class="plan-header">
+                                <span class="plan-name">TOTAL</span>
+                             </div>
+                             <div class="plan-price-area">
+                                <div class="plan-price">R$ 24,90<span class="plan-period">/mês</span></div>
+                             </div>
+                             <ul class="plan-features">
+                                <li><span class="check">✓</span> Frete Grátis Rápido</li>
+                                <li><span class="check">✓</span> Cashback ML</li>
+                                <li><span class="check">✓</span> Disney+</li>
+                                 <li><span class="x">✕</span> Netflix</li>
+                             </ul>
+                             <a href="#" class="plan-cta">Assinar Total</a>
+                        </div>
+                    </div>
+                 </section>
+            </div>
+             <div class="frame-annotations">
+                <div class="annotation" style="top: 50%; left: 65%;">
+                    <div class="annotation-dot"></div>
+                    <div class="annotation-text">
+                        <strong>Card Destacado</strong><br>
+                        Borda: `2px solid #8e24aa`<br>
+                        Badge `MAIS POPULAR` com animação.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Frame 3: Atomic Components -->
+        <div class="handoff-frame">
+            <div class="frame-title">
+                <span>3. Componentes Atômicos</span>
+                <span class="frame-dims">1440 x 900px</span>
+            </div>
+            <div class="frame-content" style="padding: 40px; background-color: #f8f8f8;">
+                <div class="atom-grid">
+                    <!-- Buttons -->
+                    <div class="atom-category">
+                        <h3 class="atom-title">Botões</h3>
+                        <div class="atom-item">
+                            <button class="cta-btn">Primary CTA</button>
+                            <span class="atom-label">.cta-btn</span>
+                        </div>
+                        <div class="atom-item">
+                             <button class="reveal-cta">Reveal CTA</button>
+                             <span class="atom-label">.reveal-cta</span>
+                        </div>
+                        <div class="atom-item">
+                            <a href="#" class="plan-cta">Plan CTA</a>
+                            <span class="atom-label">.plan-cta</span>
+                        </div>
+                        <div class="atom-item">
+                            <div class="billing-toggle" style="background: white; padding: 4px;">
+                                <button class="toggle-btn active">Toggle Active</button>
+                                <button class="toggle-btn">Toggle Idle</button>
+                            </div>
+                            <span class="atom-label">.toggle-btn</span>
+                        </div>
+                    </div>
+
+                    <!-- Badges -->
+                    <div class="atom-category">
+                        <h3 class="atom-title">Badges</h3>
+                        <div class="atom-item">
+                            <div class="plan-badge-popular" style="position: static;">MAIS POPULAR</div>
+                            <span class="atom-label">.plan-badge-popular</span>
+                        </div>
+                        <div class="atom-item">
+                            <span class="discount-badge">46% OFF</span>
+                            <span class="atom-label">.discount-badge</span>
+                        </div>
+                        <div class="atom-item">
+                           <span class="reveal-tag">COM MELI+ MEGA</span>
+                           <span class="atom-label">.reveal-tag</span>
+                        </div>
+                        <div class="atom-item">
+                            <span class="status-badge status-badge-bad">SEM MELI+</span>
+                            <span class="atom-label">.status-badge</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Styles -->
+                    <div class="atom-category">
+                        <h3 class="atom-title">Estilos de Texto</h3>
+                        <div class="atom-item">
+                            <h1 class="hero-title" style="font-size: 24px;">Hero Title</h1>
+                            <span class="atom-label">.hero-title</span>
+                        </div>
+                        <div class="atom-item">
+                            <span class="gradient-text" style="font-size: 24px; font-weight: bold;">Gradient Text</span>
+                            <span class="atom-label">.gradient-text</span>
+                        </div>
+                        <div class="atom-item">
+                            <h2 class="section-title" style="font-size: 24px;">Section Title</h2>
+                            <span class="atom-label">.section-title</span>
+                        </div>
+                    </div>
+
+                     <!-- Interactive Elements -->
+                    <div class="atom-category">
+                        <h3 class="atom-title">Elementos Interativos</h3>
+                        <div class="atom-item" style="width: 250px;">
+                            <div class="slider-area" style="margin: 0;">
+                                <input type="range" min="0" max="4" step="1" value="2">
+                            </div>
+                            <span class="atom-label">.slider-area</span>
+                        </div>
+                         <div class="atom-item">
+                            <div class="bonus-block">
+                                <span class="material-icons-round bonus-icon">redeem</span>
+                                <div class="bonus-text">
+                                    <strong>Bônus incluso:</strong> Descrição do bônus.
+                                </div>
+                            </div>
+                             <span class="atom-label">.bonus-block</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>
