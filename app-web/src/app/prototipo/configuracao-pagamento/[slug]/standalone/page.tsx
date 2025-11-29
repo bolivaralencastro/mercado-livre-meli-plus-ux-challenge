@@ -6,13 +6,16 @@ export default function PaymentFlowStandalonePage() {
   return (
     <>
       <style jsx global>{`
-        body {
-          overflow: auto;
-          scrollbar-width: none;
-          -ms-overflow-style: none;
+        html, body {
+          overflow: auto !important;
+          scrollbar-width: none !important;
+          -ms-overflow-style: none !important;
         }
-        body::-webkit-scrollbar {
-          display: none;
+        html::-webkit-scrollbar, body::-webkit-scrollbar {
+          display: none !important;
+          width: 0 !important;
+          height: 0 !important;
+          background: transparent !important;
         }
       `}</style>
       <div className="min-h-screen bg-white">
