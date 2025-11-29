@@ -1086,28 +1086,42 @@
     </div>
 
     <script>
-        // Hide scroll indicator after first scroll
-        let hasScrolled = false;
-        document.querySelector('.horizontal-scroll').addEventListener('scroll', function() {
-            if (!hasScrolled) {
-                hasScrolled = true;
-                document.querySelector('.scroll-indicator').style.opacity = '0';
-                setTimeout(() => {
-                    document.querySelector('.scroll-indicator').style.display = 'none';
-                }, 300);
-            }
-        });
-
-        // Active nav link on scroll
+        // Cache DOM elements
+        const horizontalScroll = document.querySelector('.horizontal-scroll');
+        const scrollIndicator = document.querySelector('.scroll-indicator');
         const sections = document.querySelectorAll('.section-container');
         const navLinks = document.querySelectorAll('.nav-link');
-        
-        document.querySelector('.horizontal-scroll').addEventListener('scroll', function() {
+
+        // Throttle function for scroll performance
+        function throttle(fn, wait) {
+            let lastTime = 0;
+            return function(...args) {
+                const now = Date.now();
+                if (now - lastTime >= wait) {
+                    lastTime = now;
+                    fn.apply(this, args);
+                }
+            };
+        }
+
+        // Hide scroll indicator after first scroll
+        let hasScrolled = false;
+        function handleScrollIndicator() {
+            if (!hasScrolled) {
+                hasScrolled = true;
+                scrollIndicator.style.opacity = '0';
+                setTimeout(() => {
+                    scrollIndicator.style.display = 'none';
+                }, 300);
+            }
+        }
+
+        // Active nav link on scroll
+        function updateActiveNavLink() {
+            const scrollLeft = horizontalScroll.scrollLeft;
             let current = '';
             sections.forEach(section => {
-                const sectionLeft = section.offsetLeft;
-                const scrollLeft = this.scrollLeft;
-                if (scrollLeft >= sectionLeft - 200) {
+                if (scrollLeft >= section.offsetLeft - 200) {
                     current = section.getAttribute('id') || '';
                 }
             });
@@ -1118,7 +1132,15 @@
                     link.classList.add('active');
                 }
             });
-        });
+        }
+
+        // Combined throttled scroll handler
+        const handleScroll = throttle(function() {
+            handleScrollIndicator();
+            updateActiveNavLink();
+        }, 100);
+
+        horizontalScroll.addEventListener('scroll', handleScroll);
 
         // Smooth scroll for nav links
         navLinks.forEach(link => {
@@ -1127,7 +1149,7 @@
                 const targetId = this.getAttribute('href');
                 const target = document.querySelector(targetId);
                 if (target) {
-                    document.querySelector('.horizontal-scroll').scrollTo({
+                    horizontalScroll.scrollTo({
                         left: target.offsetLeft - 40,
                         behavior: 'smooth'
                     });
