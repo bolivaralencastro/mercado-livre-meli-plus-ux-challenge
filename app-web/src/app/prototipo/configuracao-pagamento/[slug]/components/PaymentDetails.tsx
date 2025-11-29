@@ -1,9 +1,44 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
-import { ArrowLeft, MoreVertical, ChevronRight, Plus, CreditCard, AlertTriangle, X } from 'lucide-react';
+import { ArrowLeft, MoreVertical, ChevronRight, Plus, CreditCard, AlertTriangle, X, Wallet, QrCode, Barcode, Landmark, Repeat } from 'lucide-react';
 import { PaymentMethod } from '../types';
 import { Modal } from './ui/Modal';
+
+// Helper function to render payment method icons
+const renderPaymentIcon = (type: string, size: number = 16) => {
+  const iconClass = "text-gray-600";
+  
+  switch (type) {
+    case 'mastercard':
+      return (
+        <div className="flex relative">
+          <div className="w-3 h-3 rounded-full bg-[#eb001b] opacity-90 translate-x-1"></div>
+          <div className="w-3 h-3 rounded-full bg-[#f79e1b] opacity-90 -translate-x-1"></div>
+        </div>
+      );
+    case 'visa':
+      return <span className="text-[10px] font-bold text-[#1a1f71] italic">VISA</span>;
+    case 'account':
+      return <Wallet size={size} className={iconClass} />;
+    case 'apple_pay':
+      return <span className="text-[10px] font-bold">Apple Pay</span>;
+    case 'pix':
+      return <QrCode size={size} className={iconClass} />;
+    case 'pix_recurring':
+      return <Repeat size={size} className={iconClass} />;
+    case 'boleto':
+      return <Barcode size={size} className={iconClass} />;
+    case 'debit_account':
+      return <Landmark size={size} className={iconClass} />;
+    case 'paypal':
+      return <span className="text-[10px] font-bold text-[#003087]">PayPal</span>;
+    case 'ticket':
+      return <CreditCard size={size} className="text-orange-600" />;
+    default:
+      return <CreditCard size={size} className="text-gray-400" />;
+  }
+};
 
 interface PaymentDetailsProps {
   allMethods: PaymentMethod[];
@@ -188,14 +223,7 @@ export const PaymentDetails: React.FC<PaymentDetailsProps> = ({
             <div className="p-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-8 bg-white border border-gray-200 rounded flex items-center justify-center shadow-sm shrink-0">
-                   {primaryMethod?.type === 'mastercard' && (
-                        <div className="flex relative">
-                            <div className="w-3 h-3 rounded-full bg-[#eb001b] opacity-90 translate-x-1"></div>
-                            <div className="w-3 h-3 rounded-full bg-[#f79e1b] opacity-90 -translate-x-1"></div>
-                        </div>
-                   )}
-                   {primaryMethod?.type === 'visa' && <span className="text-[10px] font-bold text-[#1a1f71] italic">VISA</span>}
-                   {primaryMethod?.type === 'account' && <span className="text-xs">🤝</span>}
+                   {primaryMethod && renderPaymentIcon(primaryMethod.type, 16)}
                 </div>
                 <div>
                   <div className="text-sm font-medium text-[#333333]">{primaryMethod?.title || 'Selecione...'}</div>
@@ -236,15 +264,7 @@ export const PaymentDetails: React.FC<PaymentDetailsProps> = ({
                 <div className="flex items-start justify-between animate-fade-in">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-8 rounded bg-gray-50 border border-gray-200 flex items-center justify-center shrink-0">
-                       {secondaryPayment.type === 'mastercard' && (
-                          <div className="flex relative">
-                            <div className="w-3 h-3 rounded-full bg-[#eb001b] opacity-90 translate-x-1"></div>
-                            <div className="w-3 h-3 rounded-full bg-[#f79e1b] opacity-90 -translate-x-1"></div>
-                          </div>
-                       )}
-                       {secondaryPayment.type === 'visa' && <span className="text-[10px] font-bold text-[#1a1f71]">VISA</span>}
-                       {secondaryPayment.type === 'account' && <span>🤝</span>}
-                       {secondaryPayment.type === 'new' && <CreditCard size={16} className="text-gray-600" />}
+                       {renderPaymentIcon(secondaryPayment.type, 16)}
                     </div>
                     <div>
                       <div className="text-sm font-medium text-[#333333]">{secondaryPayment.title}</div>
@@ -349,22 +369,7 @@ export const PaymentDetails: React.FC<PaymentDetailsProps> = ({
                             className="flex items-center p-4 border border-gray-100 rounded-lg hover:bg-blue-50 hover:border-blue-200 cursor-pointer transition-all"
                           >
                                 <div className="w-12 h-8 rounded border border-gray-200 flex items-center justify-center bg-white flex-shrink-0 mr-4">
-                                    {method.type === 'mastercard' && (
-                                    <div className="flex relative">
-                                        <div className="w-3 h-3 rounded-full bg-[#eb001b] opacity-90 translate-x-1"></div>
-                                        <div className="w-3 h-3 rounded-full bg-[#f79e1b] opacity-90 -translate-x-1"></div>
-                                    </div>
-                                    )}
-                                    {method.type === 'visa' && <span className="text-[10px] font-bold text-[#1a1f71] italic">VISA</span>}
-                                    {method.type === 'account' && <span className="text-lg">🤝</span>}
-                                    {method.type === 'apple_pay' && <span className="text-lg"></span>}
-                                    {method.type === 'pix' && <span className="text-sm">🔷</span>}
-                                    {method.type === 'pix_recurring' && <span className="text-sm">🔷🔄</span>}
-                                    {method.type === 'boleto' && <span className="text-xs">📄</span>}
-                                    {method.type === 'debit_account' && <span className="text-xs">🏦</span>}
-                                    {method.type === 'paypal' && <span className="text-[10px] font-bold text-[#003087]">PayPal</span>}
-                                    {method.type === 'ticket' && <span className="text-xs">🎫</span>}
-                                    {!['mastercard', 'visa', 'account', 'apple_pay', 'pix', 'pix_recurring', 'boleto', 'debit_account', 'paypal', 'ticket'].includes(method.type) && <CreditCard size={16} className="text-gray-400" />}
+                                    {renderPaymentIcon(method.type, 16)}
                                 </div>
                                 <div>
                                     <div className="text-sm font-medium text-[#333333]">{method.title}</div>
